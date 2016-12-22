@@ -1,0 +1,572 @@
+&File
+&Plik
+&New
+&Nowy
+&Open...
+&Otwórz...
+&Save
+&Zapisz
+&Edit
+&Edycja
+&Copy
+&Kopiuj
+&Paste
+&Wklej
+&Add Command
+Dodaj &Polecenie
+&Delete
+&Usuñ
+&Test Command
+&Testuj polecenie
+&Reset All States
+&Reset ogólny
+&Help
+&Pomoc
+&About
+&O programie
+&Disable Input Device(s)
+W&y³¹cz urz¹dzenie(a) wejœciowe
+&Enable Input Device(s)
+&W³¹cz urz¹dzenie(a) wejœciowe
+Apply
+Zastosuj
+APM Event Generator
+Generator zdarzeñ APM
+APM Event Plugin 1.0 for Girder 3.0
+Wtyczka zdarzeñ APM 1.0 do Girder-a 3.0
+Add &MultiGroup
+Dodaj &Makro
+Add &Group
+Dodaj &Grupê
+Antirepeat wait time [ms]
+Zw³oka repetycji [ms]
+Accelerate
+Przyspiesz
+Alt
+Alt
+Autoload file does not exist.
+Plik Autoload nie istnieje.
+Auto Enable Input device
+Automatycznie w³¹cz urz¹dzenie wejœciowe
+Auto Load
+Wczytaj przy starcie
+Auto execute on startup
+Uruchom przy starcie
+Available plugins
+Dostêpne wtyczki
+Action Plugins
+Wtyczki dzia³añ
+Antirepeat active
+Antyrepetycja aktywna
+About
+O programie
+Allowed Clients
+Dopuszczalni klienci
+Address
+Adres
+Address edit
+Edycja adresu
+Add
+Dodaj
+Browse
+Przegl¹daj
+Begin state
+Stan pocz¹tkowy
+Baud Rate
+Baud Rate
+Cancel
+Anuluj
+Comport
+Port szeregowy
+Captured IR code.
+Odebrany kod IR..
+Cannot load plugin.
+Nie mo¿na wczytaæ wtyczki.
+Cannot save datafile.
+Nie mo¿na zapisaæ danych.
+Cannot load datafile.
+Nie mo¿na wczytaæ danych.
+Could not enable IR device.
+Nie mo¿na w³¹czyæ odbiornika IR.
+Contents
+Zawartoœæ
+Capture Window
+Okno chwytania polecenia
+Contact and Copyright information
+Kontakt i prawa autorskie
+Clicked
+Klikniêcie
+Close
+Zamknij
+Command
+Polecenie
+Capture
+Chwytaj
+Control
+Ctrl
+Cannot find window
+Nie mo¿na znaleŸæ okna
+Child Name
+Nazwa potomka
+Child Class
+Klasa potomka
+Checking the Settings
+Kontrola ustawieñ
+Class Name
+Nazwa klasy
+Clear List
+Wyczyœæ listê
+Cannot enable 
+Nie mo¿na w³¹czyæ
+Cannot play wavfile.
+Nie mo¿na odtworzyæ pliku waw.
+Cannot Shutdown windows.
+Nie mo¿na zamkn¹æ systemu.
+Clicked sent.
+Klikniêcie wys³ane.
+Close sent.
+Zamkniêcie wys³ane.
+Command State
+Stan polecenia
+Current State
+Aktualny stan
+Cannot find group
+Nie mo¿na znaleŸæ grupy
+Cannot find icon
+Nie mo¿na znaleŸæ ikony
+Cannot Find Softplugin.
+Nie ma wtyczki programowej.
+Could not enable input device(s).
+Nie mo¿na w³aczyæ urz¹dzeñ(nia) wejœciowych.
+Command executed
+Polecenie wykonane
+Command ID
+ID polecenia
+Change the Target Settings of the follwing command ?
+Zmieniæ ustawienia celu dla nastepuj¹cego polecenia ?
+Cannot import group.
+Nie mo¿na importowaæ grupy.
+Cannot export group.
+Nie mo¿na eksportowaæ grupy.
+Default
+Typowe
+Double Clicked
+Podwójne klikniêcie
+Don't send the IR commands when Girder is the Foreground window
+Nie wysy³aj poleceñ IR gdy okno Girder-a jest aktywne
+Display Splashscreen
+Wyœwietl czo³ówkê
+Description
+Opis
+Delete
+Usuñ
+Dotmatrix font
+Czcionka punktowa
+Example plugin for Girder 3.0
+Przyk³adowa wtyczka Girder-a 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Wykonywalne (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+E&xit
+&Koniec
+Enabled
+W³¹czony
+Execute
+Wykonaj
+Executable
+Wykonywalny
+Error: Cannot set volume
+B³¹d: Nie mo¿na ustawiæ g³oœnoœci
+Execute on all states except 1
+Wykonaj dla stanów oprócz 1-go
+Error: Cannot execute command.
+B³¹d: Nie mozna wykonaæ polecenia.
+Export Group...
+Eksportowanie grupy...
+Fast UIR Init
+Szybka inicjalizacja UIR
+Fast
+Szybko
+File
+Plik
+Filename
+Nazwa pliku
+Find
+ZnajdŸ
+GNU General Public License
+Licencja GNU GPL
+Girder files (*.gir)|*.GIR
+Pliki Girder-a (*.gir)|*.GIR
+Group Enable
+W³¹cz grupê
+Group Disable
+Wy³¹cz grupê
+Girder Standby Toggle
+W³¹cz/wy³¹cz gotowoœæ Girder-a
+General
+Ogólny
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder spróbuje ustawiæ opcje w oparciu o te informacje. Mo¿e to wymagaæ rêcznych poprawek.
+Group Enabled
+Grupa w³¹czona
+Group Disabled
+Gupa wy³¹czona
+Girder Standby
+Girder w gotowoœci
+Girder Active
+Girder aktywny
+Girder Homepage: Http://www.stack.nl/~stilgar
+Strona Girder-a: Http://www.stack.nl/~stilgar
+Goto
+IdŸ do
+Hibernate
+Hibernuj
+Howto
+Jak to zrobiæ:
+Hide
+Ukryj
+Hide on startup
+Ukryj przy starcie
+Hardware Plugins
+Wtyczki sprzêtowe
+Handle
+Uchwyt
+Hide sent.
+Ukrycie wys³ane.
+Host IP
+Adres IP hosta
+Host Port
+Port hosta
+IRSpeed
+Prêdkoœæ IR
+I Was here
+By³em tu
+I Was Here
+By³em Tu
+IR Device Enabled.
+Odbiornik IR w³¹czony.
+Icon files (*.ico)|*.ICO
+Pliki ikon (*.ico)|*.ICO
+Icon
+Ikona
+Input Device
+Urz¹dzenie wejœciowe
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Poszukujê chêtnych do przet³umaczenia Girder-a, to jest bardzo proste i da zadowolenie wielu osobom :). Najwa¿niejsze: Twoje imiê bêdzie widoczne w oknie Podziêkowañ pliku pomocy Girder-a!
+Initializing the Input Device(s)
+Inicjalizacja urz¹dzeñ(nia) wejœciowych
+Input Device Enabled.
+Urz¹dzenie wejsciowe w³¹czone.
+Input Device Disabled.
+Urz¹dzenie wejœciowe wy³¹czone.
+IrDA Settings
+Ustawienia IrDA
+Import Group...
+Import grupy...
+Icons on the action tabs
+Ikony na zak³adkach
+Keep focus
+Pozostaw aktywne
+Key sent
+Klawisz wys³any
+Keyboard
+Klawiatura
+Learn IR
+Wczytaj kod IR
+LogOff
+Wyloguj siê
+LParam
+LParam
+Launch Girder on windows startup
+Uruchom Girder-a przy starcie Windows
+Language
+Jêzyk
+Main Window
+G³ówne okno
+Monitor On
+W³¹cz monitor ekranowy
+Monitor Off
+Wy³¹cz monitor ekranowy
+Maximize
+Maksymalizuj
+Minimize
+Minimalizuj
+Minimize Girder
+Minimalizuj Girder-a
+Mouse
+Mysz
+Mouse Up
+Kursor w górê
+Mouse Down
+Kursor w dó³
+Mouse Left
+Kursor w lewo
+Mouse Right
+Kursor w prawo
+Mouse Left Click
+Lewy klik
+Mouse Left Doubleclick
+Lewy dwuklik
+Mouse Right Click
+Prawy klik
+Match invisble Tasks
+Porównaj niewidoczne procesy
+Minimized
+Zminimalizowany
+Maximum number of ClientAddresses reached cannot add.
+Iloœæ adresów klientów przekroczona - nie mo¿na dodaæ.
+Mouse Right Doubleclick
+Prawy dwuklik
+Mouse Middle click
+Œrodkowy klik
+Mouse Middle Doubleclick
+Œrodkowy dwuklik
+Mouse Up Right
+Kursor w prawo do góry
+Mouse Up Left
+Kursor w lewo do góry
+Mouse Down Right
+Kursor w prawo dó³
+Mouse Down Left
+Kursor w lewo dó³
+Mouse Wheel Up
+Kó³ko myszy w górê
+Mouse Wheel Down
+Kó³ko myszy w dó³
+New
+Nowy
+Not found.
+Nie znaleziono.
+Name
+Nazwa
+None
+¯aden
+Ok
+Ok
+O.S.
+Syst. oper.
+Only send to first match
+Wysy³aj do pierwszego trafienia
+OSD
+OSD
+Play Wav
+Odtwórz plik .wav
+Poweroff
+Wy³¹cz zasilanie
+Path to Hardware plugins
+Scie¿ka do wtyczek sprzêtowych
+Path to Action plugins
+Œcie¿ka do wtyczek dzia³añ
+Process ID
+ID procesu
+Parent
+Rodzic
+Plugins
+Wtyczki
+Port
+Port
+Password
+Has³o
+Question
+Pytanie
+Reboot
+Restartuj
+Register Filetype
+Zarejestruj typ pliku Girder-a
+Running Tasks/Windows
+Uruchomione procesy w Windows
+Refresh
+Odœwierz
+Ready.
+Gotowy.
+Rename
+Zmieñ nazwê
+Repeat Tolerance
+Tolerancja zw³oki
+Recognition Tolerance
+Tolerancja rozpoznawania
+Skip UIR init check
+Pomiñ test inicjalizacji UIR-a
+Strip Zeros from UIR string
+Usuñ zera z ³añcucha znaków UIR
+Slow
+Wolno
+Suspend Mode
+Tryb uœpienia
+Suspend to Ram
+Tryb uœpienia do RAM-u
+Select destination.
+Wybierz cel.
+Save &as...
+Z&apisz jako...
+Se&ttings...
+&Ustawienia...
+Settings Window
+Okno ustawieñ
+State Window
+Okno stanu
+State
+Stan
+Show
+Poka¿
+Set Focus
+Ustaw aktywne
+Screen Saver
+Wygaszacz ekranu
+Shutdown
+Zamknij
+Step Size
+Krok zmiany
+Startup Options
+Opcje startowe
+SysCommand
+Polecenie systemowe
+Set On-Trayicon
+W³¹cz ikonê "On" na pasku stanu
+Set Off-Trayicon
+W³acz ikonê "Off" na pasku stanu
+Set Active-Trayicon
+W³¹cz ikonê "Aktywny" na pasku stanu
+Set Standby-Trayicon
+W³acz ikonê "Gotowoœæ" na pasku stanu
+Step
+Krok
+Shift
+Shift
+Special Key
+Klawisz aktywny
+Sentence
+Fraza
+Settings
+Ustawienia
+Save datafile on shutdown/poweroff/logoff
+Zapisz dane przy zamykaniu/wy³aczeniu/wylogowaniu
+Scale Main Form
+Skaluj g³ówne okno
+State.
+Stan.
+Selected Task's Childobjects
+Procesy potomne wybranego
+Send to foreground task
+Wyœlij do procesu pierwszoplanowego
+Substring matching
+Fragment ³añcucha zgodny
+Start Capture
+W³¹cz chwytanie
+Stop Capture
+Zatrzymaj chwytanie
+System Wide Capturing
+Chwytanie systemowe
+SmartFill
+Automatyczne wype³nianie
+Show sent.
+Poka¿ wys³ane.
+State Count
+Licznik stanów
+See file Copying.txt for license details
+Szczegó³y licencji w pliku copying.txt
+String
+£añcuch znaków
+Set Group Targets
+Ustaw cele grupy
+Show Girder
+Poka¿ Girder'a
+Text
+Tekst
+This plugin sends a WM_SETTEXT message to the targets.
+Ta wtyczka wysy³a komunikat WM_SETTEXT do odbiorców.
+The file has changed, save ?
+Plik zosta³ zmieniony, zapisaæ ?
+Target Window
+Okno celu dzia³ania
+Target
+Cel
+Traybar mode
+Sygnalizuj ikon¹ na Pasku stanu
+The New input device gets activated when you press the apply button.
+Nowe urz¹dzenie wejœciowe bêdzie uruchomione po przycisku zastosuj.
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+To nie jest plik danych Girdera-a 3.0, czy spróbowaæ importu wersji 2.x? Jeœli zapiszesz ten plik, Girder 2.x nie bêdzie móg³ go odczytaæ.
+Target Selector
+Wybór celu
+Test Event
+SprawdŸ zdarzenie
+Type
+Typ
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+T³umaczenie: Jacek ¯arnowiecki <zarnow@cksr.ac.bialystok.pl>
+TCP/IP Server Settings
+Ustawienia serwera TCP/IP
+TCP/IP Client
+Klient TCP/IP
+Talking Clock
+Mówi¹cy zegar
+Timer
+Timer
+Timer plugin for Girder 3.0
+Wtyczka Timer'a Girder 3.0
+This plugin executes a command after a preset timeout.
+Ta wtyczka wykonuje polecenie po ustalonej zw³oce.
+This is not a Girder 3.0 ExportFile.
+To nie jest plik eksportu Girder-a 3.0.
+UIR/IRman Settings
+Ustawienia UIR/IRman
+Unregister Filetype
+Wyrejestruj typ pliku Girder-a
+User Interface
+Interfejs u¿ytkownika
+Volume Window
+Okno g³oœnoœci
+Volume Change
+Zmiana g³oœnoœci
+Volume Right Change
+Zmiana kana³u prawego
+Volume Left Change
+Zmiana kana³u lewego
+Volume Balance Change
+Zmiana balansu
+Volume Mute Toggle
+Wyciszenie w³¹cz/wy³¹cz
+Volume ID
+ID regulacji
+Volume
+G³oœnoœæ
+Version
+Wersja
+Volume Settings
+Ustawienia g³oœnoœci
+Volume Left
+G³oœnoœæ - kana³ lewy
+Volume Right
+G³oœnoœæ - kana³ prawy
+Volume Mute
+Wyciszenie
+Waiting for IR Code.
+Czekanie na kod IR.
+Window
+Okno
+Wait
+Czekaj
+Wait for Window
+Czekaj na okno
+WParam
+WParam
+Window Name
+Nazwa okna
+Window Class
+Klasa okna
+Wparam
+Wparam
+Wavfile played.
+Plik Waw odtworzony.
+Windows is shutting down.
+Windows zamyka siê.
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Pliki Wav (*.wav)|*.WAV|Wykonywalne (*.exe)|*.EXE
+X/Timeout [ms]
+X/Zw³oka [ms]
+Y
+Y
+command sent.
+polecenie wys³ane.
+sys command sent.
+polecenie systemowe wys³ane.

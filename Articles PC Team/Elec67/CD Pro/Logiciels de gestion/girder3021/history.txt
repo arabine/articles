@@ -1,0 +1,605 @@
+11-2-2000
+	- Started work on Girder 2.0 from scratch.
+
+15-2-2000
+	- First release 2.0.0.1 (Private)
+
+16-2-2000
+	- Better startup when there are no settings in the registry.
+	- Start on Windows start option.
+	- AutoSave when windows shutsdown option.
+	- check if autoloadfile exists when setting         autoload.
+	- Fixed an error in the sample.gir.
+	- Added the filetype register and unregister
+	- Fixed stupid bug, you couldn't select an other com port.
+
+17-2-2000
+	- Totally rewritten the Sendkey part, windows cannot send
+	  control/shift/alt codes to another thread in the back
+	  ground, so we hacked that. (The window becomes the 
+	  foreground window for a very short time.)
+	- Added the Target submatch part, for those windows that
+	  constantly change their caption (eg. Winamp)
+	  This means breaking file compatibility with 2.0.0.1
+	  whoops....
+	- Added Minimize Girder
+	- Released 2.0.0.2 privately.
+
+18-2-2000
+	- Reorganized some code
+	- Started work on a WM_COMMAND and WM_SYSCOMMAND event 
+	  Capturing facility.
+
+19-2-2000
+	- Integrate the message capturing facility code and dll !
+	- Added the message (WM_COMMAND WM_SYSCOMMAND) send facility.
+	- Complete Rewritten the file load, much more flexible file loading 
+	  This solves the problem of datafile layout changes breaking compatibility.
+	- Save doesn't save all the fields anymore, only the ones with info
+          This is possible since the rewritten load_file.
+	- Resizing of the main form is now possible
+	- Save this width and height of the main form.
+	- Added WinExec options.
+	- Added Copy paste options
+	- Corrected a shutdown bug.
+	- Released version 2.0.0.3 
+
+19-2-2000
+	- Changed the behavior of the message capturing
+	- changed the paste and copy shortcut
+	- My first BUGREPORTs !
+	- Ruud Nabben : when i enable the UIR on the wrong comport
+	  and then switch to the right one, Girder doesn't work !
+	  ** FIXED **
+	- Ruud Nabben : when i don't fill in a autoload filename
+	  and autoload file is not checked girder still complains
+	  about a none existent file.
+	  ** FIXED **
+	- Ruud Nabben : sended is not really English, try Sent.
+	  ** FIXED ** ;)
+	- Ruud Nabben : (feature request) Gray out apply button when there
+		is nothing to apply.
+	- Somehow file registering broke, fixed.
+	- Figured out how to write a help file.
+	- Written the helpfile.
+20-2-2000
+	- Renamed version.txt to history.txt
+	- Makedist, makeclean batch files.
+21-2-2000
+	- Removed all long filenames.
+	- Update all images to work in 256 colors.
+	- Release 2.0.0.4 onto the internet.
+22-2-2000
+	- Added settings.uirenabled.
+	- Added the multi command
+	- Added the wait command
+	- Centralized add_to_tree	
+	- Centralized set_icons
+	- Centralized new_data
+	- Added the state settings and window
+23-2-2000
+	- Programmed the TLedDisplay Component.
+	- Added the TLedDisplay Component.
+	- Figured out how to get the filename of an application/window
+	- Started the work on the renewed Target window
+	- Started Split the getwindow**** function into winhandl
+	- FindProcessEx
+	- Finished the Target window
+	- Rewritten message handling and sending
+	- Fixed bugs in the send routine.
+	- Redid the System capturing window.
+	- Redesigned the splash screen
+	- bumped version to 2.1.
+24-2-2000
+	- Centralized the Child matching
+	- Added the child windowclass/name matching matching 
+	- Find the parent window in the capture system
+	- Added the smartFill option to the Capture window
+	- Upgraded the smartfill
+	- Fixed minor bug in load_file
+	- Finally found how to tell the shell that the filetype icon changed.
+25-2-2000
+	- LEARNING 
+2-3-2000
+	- Technische Matriaalkunde
+3-3-2000	
+	- Analyse 5
+
+4-3-2000
+	- Update the help file.	
+	- Release version 2.1.0
+15-3-2000
+	- Finished all my exams
+	- Fixed cannot shutdown bug under win95/98
+	- Fixed a resize bug with the statusbar.
+	- Added the DVDstation 1.81 profile.	
+	- Released 2.1.1
+
+22-3-2000
+	- Added the Anti-Repeat Wait time settings
+	- Speeded up the IR rec. thread.
+	- Updated the Help file.
+	- Released 2.1.2
+25-3-2000
+	- Implemented a generic dll class (finally)
+	- Implemented a internationalization library.
+	- Started on implementing the libint on Girder
+26-3-2000
+	- Finished the implementation of the i18n_translate into girder.
+	- Translated Girder into dutch
+	- Created a very simple, basic and preliminairy translation tool.
+	- Released 2.1.3	
+27-3-2000
+	- Major bugs creeped into 2.1.2 with the antirepeat option, Fixed 		  them all i hope.
+	- Bugfix release 2.1.4 !!!
+28-3-2000
+	- Fixed the setlanguage bug, if Girder's working dir wasn't the 
+          path to the executable, the loading would fail. Stupid.
+	- Added the Croatian translation. (Radovan Kanizaj)
+	- Bugfix Release 2.1.5 (the last one this week I hope)
+29-3-2000
+	- Well oke, another little bug squashed. Error in while loading
+	  a file that only has as the first element in the first group
+	  a multicommand.
+	- Another translation error fixed, the last i hope :)
+	- Updated the Dutch translation.
+	- Radovan Kanizaj updated the Croatian language.
+	- Bugfix release 2.1.6 (the definitly last one this week)
+2-4-2000
+	- Fixed the language setting routine during startup.
+	- Fixed the not translation of settings in the help menu.
+	- Added the Czech Language done by David Pribyl.
+	- Tomas Najbert also sent the Czech language file but i can't
+  	  determine which one is better so David's translation wins because
+          he sent it first. But THANKS anyway Tomas !!!
+	- Added the Slovak Language by Miroslav Hlina 
+	- Released 2.1.7 (The Language Update) 
+
+4-4-2000
+	- Added support for Large font settings in windows
+	- Strip zeros added
+	- fixed the findprocessex	
+	- fixed the substring matching (whoops i18n error again...)
+	- substring matching for childwindows.
+	- Grey out controls in target window when send to foreground
+		window is selected.
+	- Added the SetFocus, but Win2000 (win98??) is messed up and 
+	  doesn't bring these windows to the front. :(
+	- File has changed option to cancel the closing of Girder.
+	- Added the mouse motions, clicks and double clicks.
+5-4-2000
+	- Started work on the volume control stuff.
+6-4-2000
+	- Implemented the volume control stuff into Girder.
+	- Added the set_trayicon code
+	- Updated the internat application BIG update.
+	- 1000 Visitors to the Girder page !
+	- Updated the helpfile somewhat.
+	- Check the Bigfont thing, it's better but not
+	  quite good yet. Oh well leave that for version 3.0 
+	- Bumped version to 2.1.8 
+7-4-2000
+	- The big font changes really messed up the interface,
+          So i removed these pieces again
+        - Added skip UIR init check, for partially defective UIR's
+	- Updated the languages: Slovak and Hrvatski, dutch
+	- Made some minor interface changes (buttons larger...)
+	- Fixed a BACK key error.
+	- added a doubleclick to window option. (by special request)
+	- Released version 2.1.9 (sorry for that)
+8-4-2000
+	- Finetuning the interface.
+	- Fixed the forgotten matchhidden bug.
+	- Put in a new harddisk :)
+
+*****************************************************************************************
+* GIRDER 3.0  Started                                                                   *
+*****************************************************************************************
+	
+9-4-2000
+	- Started Work on Girder 3.0
+	- Worked out the new interface
+	- Worked out the hardware dll plugin interface (without the VCL)
+10-4-2000
+	- Finished (i think) the hardware dll plugin interface.
+	- Added all functionality to the treeview 
+		* DragCopy command, groups, multigroups, multicommands incl. child nodes
+		* Add, Delete
+		* Rename
+		* Drag
+		* Nice Cursor
+		* Add****toTreeView()
+		* CopyCommand
+		* DeleteCommand
+		* AllocCommand
+11-4-2000
+	- Split the Command record manipulating Routings into Command.PAS
+	- Implemented the SaveFile Routine in IOMISC.PAS
+12-4-2000
+	- LoadFile
+	- SaveFile	
+	- Registry Routines
+	- Configuration dialog
+	- Trayicon
+	- Hardware support.
+	- Added version_dll and compare_ir to plugin dll
+	- Keyboard action
+	- OS Action added
+	- Volume and volume window
+	- Target Window
+13-4-2000
+	- System actions
+	- Trayicon configurable
+	- Mouse actions
+	- State window
+	- splashscreen
+	- execute program
+	- bugs
+	- about window
+	- General settings
+	- LOADS o'stuff
+15-4-2000
+	- Main UI scaling finished!
+	- Statusbar nice bitmap led.
+	- Resizable statusbar
+16-4-2000
+	- Software plugin created
+	- Started on the keyboard plugin but somehow it didn't work
+17-4-2000
+	- Got Keyplug to work (almost), when a dll gets called from outside (callback)
+	  the local variables aren't correct anymore so we need to use the 
+	  memory mapped files.:( That took me about 4 hours stupid M$)
+
+18-4-2000
+	- Finished the keyplugin
+	- Added icons to the hardwareplugins
+	- changed the path in the REgistry that the plugins save to.
+	- Stdcalls for compatibility with other languages
+	- fixed topmost bug. (i hope)
+	- switching between hardware dlls
+	- Temp Fixed switching between dlls, we need a mutex because the thread 
+	  called read_ir after close_dll was called !@#
+	- Copy and Paste Implemented
+19-4-2000
+	- Gray out stuff
+	- i18n
+	- batch mode compile 
+	- make clean
+	- make dist
+	- updated internat.exe
+	- dutch translation
+	- converting
+
+20-4-2000 - 23-4-2000
+	- Oh boy, Borland (Delphi) really messed up the DLL stuff, 
+	  I had to use M$ Visual C++ to make the Hardware DLLs work. This took me 
+	  2 days to figure out Borland messed up and 2 days of work :(
+		
+24-4-2000
+	- Added the icons to the UIR DLL
+	- Cleaned up UIR Dll
+	- Finished the Implementation of the DLLs
+	- Lotsa bugfixing and hunting
+	
+25-4-2000
+	- Started on the helpfile
+26-4-2000
+	- Working on the helpfile
+	- Added commandline support for Girder
+	- Semi finished the helpfile
+	- Added help file support for Girder
+	- prepared a distribution: Girder 3.0pre2
+27-4-2000
+	- Whoops, forgot to update the English.lng
+	- 3 days on the net and nobody found any bugs ???
+	- Another pre-release 3.0pre3
+28-4-2000
+	- Got Slovak translation from Miroslav HLINA <miroslav.hlina@ovp.sk>
+
+29-4-2000
+	- A few bugs repaired
+	- By popular demand : Multiple Hardware plugins can be active !!!!
+	- Written "Plugin API.rtf"
+	- Got German Translation from Uwe Heidrich
+	- Prerelease-4 with the last big change in 3.0
+1-5-2000
+	- I think I passed Chemical Physics :-) Yep 9 of 10 !! YAHOOO!
+	- Fixed the mouse left-right mixup
+	- Written the READ.txt
+4-5-2000
+	- Passed Material Science ( i think YEP ! 6 of 10 !!!!!)....
+	- Last change to the plugin mechanism, it works !!!!
+	- Updates the Plugins to support any background color
+	- Changed some labels
+	- Dumped the WinExec and used the real CreateProcess to set the exepath.
+	- Made 3 distros. Usage/Internationalization/Develop
+5-5-2000
+	- Fixed a small bug that cause the UIR plugin to hang if 
+          the init didn't work out.
+	- Release 3.0 !!!!!
+7-5-2000
+	- Change the copyiright license to a non-open-source one (sorry).
+	- Added the updated czech language.
+	- Fixed a small bug in the plugin list window
+	- Added the setforegroundwindow stuff for the windows.
+	- Girder now saves the device number with the command, this serves 2
+          purposes:
+	       1. (Small) Speedup in match routine
+	       2. (IR) Codes don't need to be unique thoughout the plugins.
+	- Added the saveas filename
+	- Release 3.0.1
+8-5-2000
+	- Figuring out how TCP/IP works in the win32 sdk.
+	- I've got a nice server ready. 
+9-5-2000
+	- Fixed the drag/drop bug. 
+	- Fixed UIR problem. After a failed initialization, the plugin would never
+		again init. You would have to restart Girder. 
+	
+10-5-2000
+	- Created the TCP/IP server plugin
+	- Started work on the TCP/IP action plugin
+11-5-2000
+	- Finshed the work on the TCP/IP server and action plugin
+	- changed the actionplugin format a bit.
+	- Added the Polish translation
+	- Release 3.0.2
+	
+12-5-2000
+	- Updated slovak & czech
+	- Fixed a small translation prob.
+	- Hopefully fixed the TCPIP stack problem linked against wsock2.lib instead of ws32_2.lib
+	- Release 3.0.3
+13-5-2000
+	- Speaking Clock
+	- Rename in the menu
+	- Added the Greek Translation
+	- Added the French Translation
+14-5-2000
+	- Added a OSD
+	- Received the talking clock wavs from John Paton
+	- Released 3.0.4
+	- Made a better looking mute icon
+15-5-2000
+	- Added a identifier to each record
+	- Changed the group enable/disable to use the identifier
+	- Added the Question Girder type
+	- Made the right click on the treeview also select the node. 
+	- Added the learndevice call to plugins, so they know when girder
+	  wants to learn a IR command.
+16-5-2000
+	- Created a Treeviewpicker for the groups
+	- Implemented the treeview picker into the settings dialog
+	- Implemented the treeview picker into the OS tab
+17-5-2000
+	- Rewritten the unique number creator
+	- Redone the group selection part.
+	- Removed all windows from the autocreate list, and 
+	  create the windows only when needed. -> 15 - 30% memory usage reduction !
+18-5-2000
+	- Upgraded the Action plugin interface to support the treepicker and
+          the OSD !
+	- Created a Timer plugin !
+19-5-2000
+	- Updated the other plugins
+	- Written a Actionplugin API doc
+	- Updated the Languages
+	- These where the last large changes to Girder 3.0, from now on only bug fixes.
+	  and new plugins.
+	- Released 3.0.5
+20-5-2000
+	- Updated the German translation.
+23-5-2000
+	- Changed Createprocess to ShellExecute, now users can start any document !
+24-5-2000
+	- Change the labels of the tabsheet into icons, all that needs to be done
+	is to make some nice labels.
+28-5-2000
+	- Undo the label change until i come up with some nice icons to go there.
+	- included the TCPclient.exe in the girder distro.
+	- Released 3.0.6
+1-6-2000
+	- Really undid the tab changes WHOOPS
+	- Fixed the Shell Execute to support parameters
+	- Added the minimize window action
+	- Added the maximize window action
+	- Added all mouse directions
+	- Added all mouse clicks
+	- Added a goto action
+	- Updated German and Czech translation
+	- Released 3.0.7
+4-6-2000
+	- Fixed a access violation bug in the settings window.
+	- Made the browse button on the settings dialog translatable.
+	- Updated the polish translation.
+	- Added change group target.
+	- Minor Fixes.
+	- Released 3.0.8
+	- Added the export functions and pre-released 3.0.9
+	- Added 3 link fields to the main record so they can be 
+		updated when a file gets imported and the numbers aren't unique
+		anymore. This means breaking comp. with pre 3.0.9 versions
+	- I Really should continu studying not extending Girder :(
+5-6-2000
+	- Created a algorithm that detects repeats in the IrDA stream and a
+		scoring mechanism.
+	- Implemented that into a plugin.
+	- Released 3.0.9
+6-6-2000
+	- Added Danish Translation
+	- Updated Polish Translation
+	- Changed the link to Teemu's site.
+	- Re-released 3.0.9	
+7-6-2000
+	- Fixed the broken copy & paste stuff, stupid double linked list move that
+		i oversaw.
+10-6-2000
+	- Fixed some memory leaks
+	- Added the icons to the action tabs
+	- Added the check if girder is allready running.
+	- Added a gettings started section to the helpfile
+	- Finally figured out how to do the showcutkeys right.
+	- Drag and drop with the filemanager.
+12-6-2000
+	- Worked on a new DotMatrix display that supports loading a
+	  other fonts. Needed for foreign languages.
+	- Started work on the new keyboard send routine.
+13-6-2000
+	- Got the new keyboard send routine to work, IT IS A BEAUTY !
+	- Optimized the TDotMatrix.
+14-6-2000
+	- Fixed a small error in the target window
+	- Released version 3.0.10
+15-6-2000
+	- Got hit by a car, this guy pushed us off the road on purpose !!! Can
+	  you believe that ? I got away with a few scratches,... luckily. His
+          Car was damaged more than our bikes. He thought we where taking up to
+	  much space. Damn were is the world going to.
+	- On the bright side, the holiday to Germany, Poland and Czech is on !
+      	  Expo here we come !
+	- Anyways, removed the stupid DEL error.
+	- Released 3.0.11
+16-6-2000
+	- Added a time parameter to the mouse click, some programs need
+	  some time before they recognise the mouseclick
+	- Added support for extended (media) keyboard keys to the keyboard plugin
+	
+17-6-2000
+	- Fixed some problems with the new keysend routine.
+	- Created a asynchrone methode for sending events to girder,
+	  this improves performance of the keyboard driver.
+30-6-2000
+	- Fixed volume dialog bug.
+7-7-2000
+	- Yes at last my summer vacation has started, 
+	- Added a translation
+	- Made the target selector case-insensitive
+	- I'll be on my vacation from 10-7-2000 until 22-7-2000 so
+	  don't mail me during that peroid, i won't respond. I'm laying
+  	  on my back in the beautifull country's of Czech Republic and Poland !
+9-7-2000
+	- Removed a testing dialog from the sendkey routine whoops...
+	- Hacked a small bug (not good lookinto this KeyCom.PAS)
+	- Added Swedish translation
+	- Added Brazillian translation
+	- Released version 3.0.13
+19-8-2000
+	- Finally fixed the state bug
+	- Added a check so that girder warns a user when he hasn't got any input devices selected.
+27-8-2000
+	- fixed the APM bug
+	- Added the AST/NEC/IBM/Logitech Mouse driver.
+	- Released 3.0.14
+1-9-2000
+	- Fixed a little bug that caused the click action to forget the coordinates.
+	- Added slovinian translation
+	- Updated french translation
+	- Added Silitek driver
+	- Added SFH-56 driver
+	- Updated Polish translation
+	- Released 3.0.15
+22-10-2000
+	- Created a TaskSwitch detector plugin
+	- Added the option for a command to be executed when the irstrings don't match
+		 (invert)
+	- Finally found why the TCPIP plugin was messing up. The WM_COPYDATA really sucks.
+	- Added a new and FAST mechanism to send an event to girder.
+	- Converted all plugins to use this one.
+	- Fixed minor bugs in Girder
+x-11-2000
+	- Reworded the Taskdet plugin
+	- Added the eventblock plugin
+	- fixed resource leaks
+	- Release 3.0.17
+21-11-2000
+	- Added a drag target option
+	- Added the click capture
+	- Rewrote the capture module
+22-11-2000
+	- Redid some graphics
+	- Added set mouse absolute
+	- Removed the pathname form the matching routines, this should eleviate the problems encoutered when switching
+          from Win9x to win2k
+	- Added the WinLirc driver by Alexander Seitz
+	- Released 3.0.18 Sneak preview to the mailinglist for testing
+24-11-2000
+	- Added first support for HID keyboards, this by allowing girder to 
+	  just display the mute and volume, instead of changing them, because windows
+	  allready does this.
+25-11-2000
+	- Added move window and size window. With these you can rescale a window, 
+          for example a DVD player window.
+	- small fix to the targetting routine.
+	- internal naming option
+	- added a 'hidden' comandline option to totally hide girder from sight.
+	- release 3.0.18
+26-11-2000
+	- Made the TaskDet plugin return only the filename not the complete path, for compatibility with win2k
+	- Task Create / Close detector
+	- Enable / Disable device
+	- Task switcher
+	- Added resolution change
+	- Added cdrom open and close for win2k/nt
+	- Added cdrom open on win9x
+	- Eventblocker now does not use the pathname anymore!!!!
+	- Added center and resize easier for DVD windows
+	- Release 3.0.19
+30-11-2000
+	- Fixed the task switch detector
+	- Added winexists
+	- Fixed the invert saving problem
+	- Fixed the media eject segfault when no drive letter was supplied
+	- load/eject file label enable
+6-12-2000
+	- Fixed the task switcher for win9x
+14-12-2000
+	- Written additional Keysend routines
+	- Fixed the forgotten syscommand 
+	- Release 3.0.20 preview 2
+26-12-2000
+	- worked on the APM resume failure
+	- add the OSD font option, preliminary
+3-1-2001
+	- Added the Stop Processing command
+	- Added the Spanish translation by Xavi Rodríguez <x_nobita@hotmail.com>
+	- Release 3.0.20 preview 3
+12-1-2001
+	- Fixed the talking clock
+	- Target selector now fits on a 640x480 screen
+19-1-2001
+	- Plugin work
+20-1-2001
+	- Plugin work
+
+21-1-2001
+	- Worked on Girder in general
+	- Updated the helpfile
+	- Updated the translations
+	- Added show hidden for the execute action
+	- Written RedRat drivers,.... at least beta version ;)
+	- Released 3.0.20 final
+31-1-2001
+	- Fixed the Anti-repeat failure in multicommands
+	- Release 3.0.21 pre 2
+1-2-2001
+	- Fixed the broken goto
+	- Extended the Resolution pickup routine to include all resolution // disabled in std release
+	- Release 3.0.21 pre 3
+	
+3-2-2001
+	- Added reset state action
+	- release 3.0.21 pre 4
+6-2-2001
+	- Fixed some translation errors
+	- Updated english.lng
+14-2-2001
+	- Fixed (i hope) OSD focus problem
+	- Fixed the resolution change problem
+	- Fixed the Irda numer change problem
+	- Added disble device on APM suspend checkbox
+	- Finally found the problem with some of the plugins EM_GETLINE needs the buffer
+		to be inited to the length of the buffer
+	- Made the label size on the plugin a little smaller so they don't overlap anymore
+	- Made the balance work properly
+	- Balance OSD
+	- Released version 3.0.21 final

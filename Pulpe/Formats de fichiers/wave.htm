@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+</head>
+
+<body>
+<table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+
+<tr align="center">
+       <td>Offset (en octets)</td>
+       <td>Taille du champ (en octets)</td>
+       <td>Nom du champ</td>
+       <td>Détails</td>
+</tr>
+<tr align="center">
+       <td>0</td>
+       <td>4</td>
+       <td>ChunkID</td>
+       <td>Type de fichier. Contient les lettres "RIFF" en ASCII (0x52494646)</td>
+</tr>
+<tr align="center">
+       <td>4</td>
+       <td>4</td>
+       <td>ChunkSize</td>
+       <td>Contient le nombre d'octets qui suivent, soit la taille du fichier moins 8 octets 
+	   (c'est à dire sans compter ce champ et le champ précédent)</td>
+</tr>
+<tr align="center">
+       <td>8</td>
+       <td>4</td>
+       <td>Format</td>
+       <td>Type de fichier RIFF. Contient les lettres "WAVE" en ASCII (0x57415645)</td>
+</tr>
+</table>
+
+<table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+<tr align="center">
+       <td>Offset (en octets)</td>
+       <td>Taille du champ (en octets)</td>
+       <td>Nom du champ</td>
+       <td>Détails</td>
+</tr>
+<tr align="center">
+       <td>12</td>
+       <td>4</td>
+       <td>fmtID</td>
+       <td>Contient les lettre "fmt " en ASCII (avec un espace après fmt, 0x666d7420)</td>
+</tr>
+<tr align="center">
+       <td>16</td>
+       <td>4</td>
+       <td>fmtSize</td>
+       <td>Taille du reste du Chunk, toujours 16 dans le cas du format PCM (en octets)</td>
+</tr>
+<tr align="center">
+       <td>20</td>
+       <td>2</td>
+       <td>AudioFormat</td>
+       <td>Toujours 1 dans le cas du format PCM. D'autres valeurs indiquent des formats de compression</td>
+</tr>
+<tr align="center">
+       <td>22</td>
+       <td>2</td>
+       <td>NumChannels</td>
+       <td>Mono = 1, Stéréo = 2</td>
+</tr>
+<tr align="center">
+       <td>24</td>
+       <td>4</td>
+       <td>SampleRate</td>
+       <td>Fréquence d'échantillonnage (en Hz) : 8000, 11025, 22050, 44100 etc. </td>
+</tr>
+<tr align="center">
+       <td>28</td>
+       <td>4</td>
+       <td>avgBytesPerSec</td>
+       <td>Taux de transfert nécessaire, en octets par seconde. Égal à : SampleRate * NumChannels * BitsPerSample/8</td>
+</tr>
+<tr align="center">
+       <td>32</td>
+       <td>2</td>
+       <td>BlockAlign</td>
+       <td>Nombre d'octets par échantillon. Égal à : NumChannels * BitsPerSample/8</td>
+</tr>
+<tr align="center">
+       <td>34</td>
+       <td>2</td>
+       <td>BitsPerSample</td>
+       <td>Nombre de bits par échantillon.</td>
+</tr>
+<tr align="center">
+       <td>36</td>
+       <td>2</td>
+       <td>ExtraParamSize</td>
+       <td>Taille des paramètres supplémentaires. Ce champ <b>N'EXISTE PAS</b> dans le cas du PCM</td>
+</tr>
+</table>
+
+<table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+<tr align="center">
+       <td>Offset (en octets)</td>
+       <td>Taille du champ (en octets)</td>
+       <td>Nom du champ</td>
+       <td>Détails</td>
+</tr>
+<tr align="center">
+       <td>36</td>
+       <td>4</td>
+       <td>dataChunk</td>
+       <td>Contient les lettres "data" en ASCII (0x64617461)</td>
+</tr>
+<tr align="center">
+       <td>40</td>
+       <td>4</td>
+       <td>dataSize</td>
+       <td>Nombre d'octets de données à suivre (taille des données en octets)</td>
+</tr>
+<tr align="center">
+       <td>44</td>
+       <td>-</td>
+       <td>Data</td>
+       <td>Données audio (voir section suivante pour l'explication du rangement)</td>
+</tr>
+</table>
+
+
+</body>
+</html>

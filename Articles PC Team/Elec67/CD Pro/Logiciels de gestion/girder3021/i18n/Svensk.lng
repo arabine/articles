@@ -1,0 +1,688 @@
+&File
+&Arkiv
+&New
+&Ny
+&Open...
+&Öppna...
+&Save
+&Spara
+&Edit
+&Redigera
+&Copy
+&Kopiera
+&Paste
+&Klistra In
+&Add Command
+&Lägg Till Kommando
+&Delete
+&Ta Bort
+&Test Command
+&Testa Kommando
+&Reset All States
+&Återställ Alla Värden
+&Help
+&Hjälp
+&About
+&Om
+&Disable Input Device(s)
+&Stoppa Fjärrstyrningsenhete(r)
+&Enable Input Device(s)
+&Starta Fjärrstyrningsenhete(r)
+Apply
+Använd
+APM Event Generator
+APM Händelse Generator
+Add &MultiGroup
+Lägg Till &MultiGrupp
+Add &Group
+Lägg Till &Grupp
+Antirepeat wait time [ms]
+Antirepetera väntetid [ms]
+Accelerate
+Accelerera
+Alt
+Alt 
+Autoload file does not exist.
+Autoladdningsfil existerar inte.
+Auto Enable Input device
+Starta Fjärrstyrningsenhet Automatiskt
+Auto Load
+Ladda Automatiskt
+Auto execute on startup
+Starta Automatiskt vid uppstart
+Available plugins
+Tillgängliga plugins
+Action Plugins
+Action Plugins 
+Antirepeat active
+Antirepetera aktiv
+About
+Om
+Allowed Clients
+Tillåtna Klienter
+Address
+Adress
+Address edit
+Redigera Adress
+Add
+Lägg Till
+APM Event Plugin 1.0 for Girder 3.0
+APM Event Plugin 1.0 for Girder 3.0
+AST/NEC/IBM IR Mouse plugin.
+AST/NEC/IBM IR Mouse plugin.
+ALTKey sent
+ALTKey sent
+Absolute Mouse move
+Absolute Mouse move
+Alternative proc.
+Alternative proc.
+Browse
+Bläddra
+Begin state
+Starta Inställning
+Baud Rate
+Port Hastighet
+Bit Number
+Bit Number
+Cancel
+Avbryt
+Comport
+Serieport
+Captured IR code.
+Mottagen IR Signal.
+Cannot load plugin.
+Kan inte ladda plugin.
+Cannot save datafile.
+Kan inte spara datafil.
+Cannot load datafile.
+Kan inte ladda datafil.
+Could not enable IR device.
+Kan inte starta IR enhet.
+Contents
+Innehåll
+Capture Window
+Mottaget Fönster
+Contact and Copyright information
+Kontakt och Copyright information
+Clicked
+Klickad
+Close
+Stäng
+Command
+Kommando
+Capture
+Fånga
+Control
+Kontroll
+Cannot find window
+Kan inte inte hitta fönster
+Child Name
+Child Namn 
+Child Class
+Child Klass
+Checking the Settings
+Kontrollera Inställningar
+Class Name
+Klass Namn
+Clear List
+Rensa Lista
+Cannot enable 
+Kan inte starta 
+Cannot play wavfile.
+Kan inte spela wavfil.
+Cannot Shutdown windows.
+Kan inte avsluta Windows.
+Clicked sent.
+Klick skickad.
+Close sent.
+Stäng skickad.
+Command State
+Kommando Värde
+Current State
+Tillfälligt Tillstånd
+Cannot find group
+Kan inte hitta grupp
+Cannot find icon
+Kan inte hitta Icon
+Cannot Find Softplugin.
+Kan inte hitta Softplugin.
+Could not enable input device(s).
+Kunde inte starta fjärrstyrningsenhet(r).
+Command executed
+Kommando utfört
+Command ID
+Kommando ID
+Change the Target Settings of the follwing command ?
+Ändra inställningarna till följande kommando ?
+Cannot import group.
+Kan inte importera grupp.
+Cannot export group.
+Kan inte exportera grupp.
+Click command sent.
+Click command sent.
+Cannot find command
+Cannot find command
+Command state reset
+Command state reset
+Command not found
+Command not found
+Cannot open drive
+Cannot open drive
+Cannot change mode
+Cannot change mode
+Center and Resize window
+Center and Resize window
+Change Resolution
+Change Resolution
+Default
+Standard
+Double Clicked
+Dubbel Klickad
+Display Splashscreen
+Visa Splashscreen
+Description
+Beskrivning
+Delete
+Ta Bort
+Dotmatrix font
+Dotmatrix teckensnitt
+Don't send the IR commands when Girder is the Foreground window
+Skicka inte IR kommandon när Girder är aktivt fönster
+Default speed
+Default speed
+Dtr
+Dtr
+DFX 3.3 Plugin Controller
+DFX 3.3 Plugin Controller
+Down
+Down
+Device started
+Device started
+Device start failed
+Device start failed
+Device stopped
+Device stopped
+Device stop failed
+Device stop failed
+Device number
+Device number
+Drag me to target window
+Drag me to target window
+Disable Device
+Disable Device
+E&xit
+A&vsluta
+Enabled
+Starta
+Execute
+Utföra
+Executable
+Program
+Error: Cannot set volume
+Error: Kan inte ändra volym
+Execute on all states except 1
+Utför på alla stadier utom 1
+Error: Cannot execute command.
+Error: Kan inte utföra kommando.
+Export Group...
+Exportera Grupp...
+Example plugin for Girder 3.0
+Example plugin for Girder 3.0
+Error: Cannot find command
+Error: Cannot find command
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV|All Files (*.*)|*.*
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV|All Files (*.*)|*.*
+Eject Media
+Eject Media
+Enable Device
+Enable Device
+Fast UIR Init
+Snabb UIR Enhet
+Fast
+Snabb
+File
+Fil
+Filename
+Filnamn
+Find
+Hitta
+Fast Silitek Init
+Fast Silitek Init
+GNU General Public License
+GNU General Public License 
+Group Enable
+Grupp Starta
+Group Disable
+Grupp Stoppa
+General
+Allmän
+Group Enabled
+Grupp Startad
+Group Disabled
+Grupp Stoppad
+Goto
+Gå Till
+Girder files (*.gir)|*.GIR
+Girder files (*.gir)|*.GIR
+Girder Standby Toggle
+Girder Standby Toggle
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder Homepage: Http://www.stack.nl/~stilgar
+Girder Homepage: Http://www.stack.nl/~stilgar
+Hibernate
+Vila på disk
+Howto
+Hur
+Hide
+Göm
+Hide on startup
+Göm vid uppstart
+Hardware Plugins
+Hårdvara Plugins
+Handle
+Hantera
+Hide sent.
+Göm skickat.
+Host IP
+Värd IP
+Host Port
+Värd Port
+Hidden
+Hidden
+IRSpeed
+IRHastighet
+I Was here
+Jag Var här
+I Was Here
+Jag Var Här
+IR Device Enabled.
+IR Enhet Startad.
+Icon files (*.ico)|*.ICO
+Icon filer (*.ico)|*.ICO
+Input Device
+Fjärrstyrningsenhet
+Initializing the Input Device(s)
+Initierar Fjärrstyrningsenhete(r)
+Input Device Enabled.
+Fjärrstyrningsenheter Startade.
+Input Device Disabled.
+Fjärrstyrningsenheter Stoppade.
+IrDA Settings
+IrDA Inställningar
+Import Group...
+Importera Grupp...
+Icons on the action tabs
+Iconer på action fliken
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Girder Control kan även fås med andra språkversioner, vid förfrågan.
+IR Mouse Settings
+IR Mouse Settings
+Invert
+Invert
+Icon / Device
+Icon / Device
+Keep focus
+Behåll fokus
+Key sent
+Tangent skickad
+Keyboard
+Tangentbord
+LogOff
+LogOff 
+LParam
+LParam 
+Language
+Språk
+Launch Girder on windows startup
+Starta Girder när Windows startar
+Learn Event
+Lär IR-kod
+Load Media
+Load Media
+Left Click
+Left Click
+Left Double Click
+Left Double Click
+Main Window
+Huvud Fönster
+Monitor On
+Monitor På
+Monitor Off
+Monitor Av
+Maximize
+Maximera
+Minimize
+Minimera
+Mouse
+Mus
+Mouse Up
+Mus Upp
+Mouse Down
+Mus Ner
+Mouse Left
+Mus Vänster
+Mouse Right
+Mus Höger
+Mouse Left Click
+Mus Vänster Klick
+Mouse Left Doubleclick
+Mus Vänster Dubbeklick
+Mouse Right Click
+Mus Höger Klick
+Match invisble Tasks
+Matcha osynliga Uppgifter
+Minimized
+Minimerad
+Maximum number of ClientAddresses reached cannot add.
+Maximalt numer av ClientAddresses kan inte lägga till.
+Mouse Right Doubleclick
+Mus Höger Dubbelklick
+Mouse Middle click
+Mus Mitten klick
+Mouse Middle Doubleclick
+Mus Mitten Dubbelklick
+Mouse Up Right
+Mus Upp Höger
+Mouse Up Left
+Mus Upp Vänster
+Mouse Down Right
+Mus Ner Höger
+Mouse Down Left
+Mus Ner Vänster
+Mouse Wheel Up
+Mus Hjul Upp
+Mouse Wheel Down
+Mus Hjul Ner
+Message for key down
+Message for key down
+Message for key up
+Message for key up
+Message for key still pressed
+Message for key still pressed
+Minimize Girder
+Minimize Girder
+Move window
+Move window
+Mouse Pos.
+Mouse Pos.
+Mute Display
+Mute Display
+New
+Ny
+Not found.
+Ej Hittad.
+Name
+Namn
+None
+Ingen
+No input devices selected, please select one first in the settings dialog.
+No input devices selected, please select one first in the settings dialog.
+Ok
+Ok 
+O.S.
+O.S. 
+Only send to first match
+Skicka bara första matchningen
+OSD
+OSD 
+OEM Licensed to Broadbandbox AB
+OEM Licensed to Broadbandbox AB
+OSD Font
+OSD Font
+Play Wav
+Spela Wav
+Poweroff
+Slåav
+Path to Hardware plugins
+Sökväg till hårdvaru plugins
+Path to Action plugins
+Sökväg till Action plugins
+Process ID
+Process ID 
+Parent
+Förälder
+Plugins
+Plugins 
+Port
+Port 
+Password
+Lösenord
+Port Speed
+Port Speed
+Plugin not found
+Plugin not found
+Plugin not loaded
+Plugin not loaded
+Question
+Fråga
+Reboot
+Omstart
+Register Filetype
+Registrera Filtyper
+Running Tasks/Windows
+Körande Uppgifter/Fönster
+Refresh
+Uppdatera
+Ready.
+Klar.
+Rename
+Döp om
+Repeat Tolerance
+Repetions Tolerans
+Recognition Tolerance
+Igenkännings Tolerans
+Resize window
+Resize window
+Right Click
+Right Click
+Right Double Click
+Right Double Click
+Reset State
+Reset State
+Skip UIR init check
+Skippa UIR init koll
+Strip Zeros from UIR string
+Strippa Nollorna UIR stringen
+Slow
+Sakta
+Suspend Mode
+Vilo Tillstånd
+Suspend to Ram
+Suspend to RAM
+Select destination.
+Välj destination.
+Save &as...
+Spara &som...
+Se&ttings...
+In&ställningar...
+Settings Window
+Inställningsfönster
+State Window
+Tillstånds Fönster
+State
+Tillstånd
+Show
+Visa
+Set Focus
+Sätt Fokus
+Screen Saver
+Skärmsläckare
+Shutdown
+Stäng Av
+Step Size
+Steg Storlek
+Startup Options
+Uppstartsinställningar
+SysCommand
+SysKommando
+Set On-Trayicon
+Sätt Trayicon på
+Set Off-Trayicon
+Sätt Trayicon av
+Set Active-Trayicon
+Sätt Aktiv-Trayicon
+Set Standby-Trayicon
+Sätt Standby-Trayicon
+Step
+Steg
+Shift
+Shift 
+Special Key
+Speciell Tangent
+Sentence
+Mening
+Settings
+Inställningar
+Save datafile on shutdown/poweroff/logoff
+Spara datafil vid avstängning/avloggning
+Scale Main Form
+Skala Huvud Form
+State.
+Tillstånd.
+Selected Task's Childobjects
+Vald Uppgifts Childobjekt
+Send to foreground task
+Skicka till backgrunds uppgift
+Substring matching
+Substring matchning
+Start Capture
+Starta Mottagning
+Stop Capture
+Stoppa Mottagning
+System Wide Capturing
+System Wide Capturing 
+SmartFill
+SmartFill 
+Show sent.
+Visa skickad.
+State Count
+Tillstånd Räkning
+String
+String 
+Set Group Targets
+Sätt Grupp Mål
+Skip Silitek init check
+Skip Silitek init check
+Strip Zeros from Silitek string
+Strip Zeros from Silitek string
+Silitek Settings
+Silitek Settings
+Stop Bit
+Stop Bit
+See file Copying.txt for license details
+See file Copying.txt for license details
+Show Girder
+Show Girder
+Slide shift
+Slide shift
+Slider num
+Slider num
+Size
+Size
+Stop Processing
+Stop Processing
+Text
+Text 
+This plugin sends a WM_SETTEXT message to the targets.
+Denna plugin skickar ett WM_SETTEXT meddelande till målen.
+The file has changed, save ?
+Denna fil har ändrats, spara ?
+Target Window
+Mål Fönster
+Target
+Mål
+Traybar mode
+Traybar tillstånd
+The New input device gets activated when you press the apply button.
+De nya fjärrstyrningseneheterna aktiveras när du trycker på använd knappen.
+Target Selector
+Mål Väljare
+Test Event
+Testa Händelse
+Type
+Typ
+TCP/IP Server Settings
+TCP/IP Server Inställningar
+TCP/IP Client
+TCP/IP Klient
+Talking Clock
+Talande Klocka
+Timer
+Timer 
+This plugin executes a command after a preset timeout.
+Denna plugin kör ett kommando efter ett inställt tidsslut.
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Timer plugin for Girder 3.0
+Timer plugin for Girder 3.0
+Task Switcher
+Task Switcher
+UIR/IRman Settings
+UIR/IRman Inställningar
+Unregister Filetype
+Avregistrera Filtyp
+User Interface
+Användargräsnsnitt
+Up
+Up
+Volume Window
+Volym Fönster
+Volume Change
+Ändra Volym
+Volume Right Change
+Ändra Volym Höger
+Volume Left Change
+Ändra Volym Vänster
+Volume Balance Change
+Ändra Balans
+Volume Mute Toggle
+Volym På/Av
+Volume ID
+Volym ID
+Volume
+Volym
+Version
+Version 
+Volume Settings
+Volym Inställningar
+Volume Left
+Volym Vänster
+Volume Right
+Volym Höger
+Volume Mute
+Volym På/Av
+Volume Display
+Volume Display
+Waiting for IR Code.
+Väntar på IRC Kod.
+Window
+Fönster
+Wait
+Vänta
+Wait for Window
+Väntar på Fönster
+WParam
+WParam 
+Window Name
+Fönster Namn
+Window Class
+Fönster Klass
+Wparam
+Wparam 
+Wavfile played.
+Wavfil spelad.
+Windows is shutting down.
+Windows Avslutas.
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE|All Files (*.*)|*.*
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE|All Files (*.*)|*.*
+Window Exists
+Window Exists
+X/Timeout [ms]
+X/Timeout [Ms]
+Y
+Y 
+command sent.
+kommando skickat.
+sys command sent.
+sys kommando skickat.

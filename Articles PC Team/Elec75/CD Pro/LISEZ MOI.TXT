@@ -1,0 +1,62 @@
+Bonjour à tous, voici une petite présentation du contenu du CD Pro.
+
+***************
+DOCUMENTATION
+***************
+
+- 16F84A.pdf : le datasheet INDISPENSABLE du 16F84A.
+
+- Mémento électronique.htm : une page tirée du site http://www.programmationworld.com.
+Cette page a pour but de vous aider dans le choix des composants, connecteurs et autres joyeusetés ;o) Elle se remplira peu à peu au fil des mois et sera bien sûr présente dans chaque numéro !
+
+***************
+PROGRAMMES
+***************
+
+- piclite.exe : le compilateur C gratuit pour 16F84, entièrement compatible avec l'IDE de développement MPLAB !
+
+- Manuel_piclite.zip : le manuel du compilateur. A consulter pour connaitre les syntaxes spéciales et les options.
+
+- led.avi : la petite surprise du mois, la vidéo du circuit de test. Rien de bien impressionnant, on y voit juste une LED clignoter. Attention, codecs DivX 4.02 requis !! Si vous aimez ce genre de choses, faites-le moi savoir.
+
+- Projet_MPLAB.zip : le projet de ce mois-ci, avec le code source et le fichier hexadécimal. Ce programme fait clignoter une LED branchée sur la broche RB0.
+
+***************
+REPERTOIRES
+***************
+
+Programmateur PIC : le programmateur IcProg, avec son fichier d'aide, son driver pour windows2000 ainsi que le schéma du programmateur JDM, pour ceux ayant raté le PC Team du mois précédent :)
+
+****************************************************************
+Comme tous les mois, n'hésitez pas à me contacter pour toute information supplémentaire concernant le sujet du mois, ou tout autre problème d'électronique. J'essayerai de vous aider dans la mesure du possible !
+
+Bonne bidouille.
+
+Anthony RABINE
+arabine@programmationworld.com
+http://www.programmationworld.com
+IRC : #progworld et #pcteam sur IRCnet
+ICQ : 61144679
+
+                              ___I___
+                             /=  |  #\
+                            /.__-| __ \
+                            |/ _\_/_ \|
+                            (( __ \__))
+                         __ ((()))))()) __
+                       ,'  |()))))(((()|# `.
+                      /    |^))()))))(^|   =\
+                     /    /^v^(())()()v^\'  .\
+                     |__.'^v^v^))))))^v^v`.__|
+                    /_ ' \______(()_____(   |
+               _..-'   _//_____[xxx]_____\.-|
+              /,_#\.=-' /v^v^v^v^v^v^v^v^| _|
+              \)|)      v^v^v^v^v^v^v^v^v| _|
+               ||       :v^v^v^v^v^v`.-' |#  \,
+               ||       v^v^v^v`_/\__,--.|\_=_/
+               ><       :v^v____|  \_____|_
+            ,  ||       v^      /  \       /
+           //\_||_)\    `/_..-._\   )_...__\
+          ||   \/  #|     |_='_(     |  =_(_
+          ||  _/\_  |    /     =\    /  '  =\
+           \\/ \/ )/     |=____#|    '=....#|

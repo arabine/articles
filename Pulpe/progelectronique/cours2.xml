@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name></name><email></email><web-site></web-site></author><page name="page"><title>Gestion d'un écran LCD</title><keywords>port parallèle écran lcd</keywords><description>Gestion d'un écran LCD</description><links><link type="prev">E:\Documents\Cours Progworld\progelectronique\cours1.htm</link><link type="index">E:\Documents\Cours Progworld\progelectronique\index.htm</link><link type="next">E:\Documents\Cours Progworld\progelectronique\cours3.htm</link></links><introduction>Le dernier cours était consacré à la découverte du port 
+parallèle. Cette fois-ci, nous allons utiliser nos connaissances 
+en mettant en oeuvre un écran LCD, que l'on trouve 
+aujourd'hui un peu partout dans les appareils électroniques. Certes, 
+le port parallèle est adapté pour cette application mais l'utilité 
+de cette interface n'est pas forcément évidente. Ce n'est pas grave 
+car c'est le principe qui compte ; il est en effet très facile de reprendre 
+les algorithmes ci-dessous pour d'autres langages (je pense notamment 
+aux microcontrôleurs plus adaptés à cette application).
+</introduction></page><section name="section 1" title="Présentation"><paragraph name="paragraph">Réaliser l'interface d'un écran LCD est une expérience très 
+intéressante. Ses possibilités d'utilisation sont importantes car 
+les afficheurs envahissent littéralement notre quotidien. 
+L'écran étudié ici est du type alphanumérique (écriture de 
+chiffres, de lettres et de signes) et est complètement 
+standard. Il possède un générateur de caractères, 
+un contrôleur intégré et est capable d'afficher 2 lignes de 
+16 caractères. Enfin, grâce à la présence d'une LED derrière 
+l'écran, l'afficheur est doté d'un rétro éclairage du plus bel 
+effet. Un tel écran coûte aux alentours de 100 F, le prix 
+variant selon le nombre de lignes, la présence d'un rétro 
+éclairage et le système de transmission (série ou parallèle). 
+Vérifier seulement que le contrôleur est compatible avec le 
+HD44780 de Hitashi, dont la documentation complète est 
+fournie en bas de cette page.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\ecran.jpg</link><legend>L'écran que nous utilisons.</legend></image></section><section name="section 2" title="Principe de fonctionnement"><paragraph name="paragraph">Le fonctionnement est relativement simple car la plus grande 
+partie du travail est laissée au contrôleur d'écran. En dehors 
+de l'alimentation, seuls deux signaux de contrôle et huit bits de 
+données sont nécessaires pour faire fonctionner notre écran.&lt;br&gt;
+&lt;br&gt;
+Le bus de données bidirectionnel va nous servir principalement 
+à envoyer des paramètres et des caractères vers l'écran. Les 
+caractères à écrire sont codés en ASCII, donc sur 8 bits. Le 
+bit de contrôle E joue le rôle d'horloge : la donnée est 
+effective sur un front descendant. Le bit RS sert quant à lui à 
+indiquer au contrôleur que l'information présente sur le bus de 
+données est une instruction (RS à 0) ou un caractère (RS à 1).
+ L'entrée de configuration R/_W permet de configurer l'écran 
+en écriture (R/_W à 0) ou en lecture (R/_W à 1) ; pour 
+simplifier notre montage, nous connecterons directement cette 
+broche à la masse car seule l'écriture nous intéressera. Notez 
+cependant que si vous désirez lire certains paramètres de l'écran 
+(Busy Flag, DDRAM etc.) vous devez connecter la ligne RS au port 
+parallèle et la prendre en compte dans vos fonctions. Enfin, la 
+tension V0 vous permet de régler le contraste des digits à l'aide 
+d'un potentiomètre.&lt;br&gt;
+&lt;br&gt;
+En ce qui concerne le hardware, l'écran est constitué d'un 
+contrôleur qui se charge d'allumer ou d'éteindre les cellules 
+correspondantes. Chaque caractère est ainsi formé à l'aide 
+d'une matrice de 5*8 cellules. Le plus souvent, seules les 7 
+lignes supérieures de la matrice servent, la dernière étant
+ réservée à la visualisation d'un curseur. Il y a deux types de 
+mémoires inclues dans l'écran : la CG RAM (Character 
+Generator) qui contient les caractères ASCII mais également des 
+signes japonais, et la DD RAM qui contient l'adresse courante 
+du curseur.&lt;br&gt;
+&lt;br&gt;
+En bref, voici les trois tableaux qui vous seront indispensables.</paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Brochage&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Broche N°&lt;/td&gt;
+       &lt;td&gt;Nom&lt;/td&gt;
+       &lt;td&gt;Niveau&lt;/td&gt;
+       &lt;td&gt;Fonction&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;Vss&lt;/td&gt;
+       &lt;td&gt;0V&lt;/td&gt;
+       &lt;td&gt;Alimentation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;Vcc&lt;/td&gt;
+       &lt;td&gt;5V&lt;/td&gt;
+       &lt;td&gt;Alimentation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;V&lt;sub&gt;0&lt;/sub&gt;&lt;/td&gt;
+       &lt;td&gt;0 à 5V&lt;/td&gt;
+       &lt;td&gt;Contraste&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;RS&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;0 = instruction&lt;br&gt;1 = caractère&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;R/W&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;0 = écriture&lt;br&gt;1 = lecture&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;E&lt;/td&gt;
+       &lt;td&gt;H --&gt; L&lt;/td&gt;
+       &lt;td&gt;Enable (front descendant)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;D0&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;Donnée LSB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;8&lt;/td&gt;
+       &lt;td&gt;D1&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;Donnée&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;9&lt;/td&gt;
+       &lt;td&gt;D2&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;Donnée&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;10&lt;/td&gt;
+       &lt;td&gt;D3&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;Donnée&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;11&lt;/td&gt;
+       &lt;td&gt;D4&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;Donnée&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;12&lt;/td&gt;
+       &lt;td&gt;D5&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;Donnée&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;13&lt;/td&gt;
+       &lt;td&gt;D6&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;Donnée&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;14&lt;/td&gt;
+       &lt;td&gt;D7&lt;/td&gt;
+       &lt;td&gt;H/L&lt;/td&gt;
+       &lt;td&gt;Donnée MSB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;15&lt;/td&gt;
+       &lt;td&gt;A&lt;/td&gt;
+       &lt;td&gt;0 à 5V&lt;/td&gt;
+       &lt;td&gt;Anode - LED de rétro éclairage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;16&lt;/td&gt;
+       &lt;td&gt;K&lt;/td&gt;
+       &lt;td&gt;0V&lt;/td&gt;
+       &lt;td&gt;Cathode - LED de rétro éclairage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+Notez que le brochage ci-dessus n'est valable que pour un 
+afficheur de 80 caractères au maximum. Les afficheurs ne 
+disposant pas de rétro éclairage n'ont pas de broche 15 et 16.</paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Set d'instructions&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;ADDRESSES INSTRUCTION&lt;/td&gt;
+       &lt;td&gt;RS&lt;/td&gt;
+       &lt;td&gt;R/W&lt;/td&gt;
+       &lt;td&gt;D7&lt;/td&gt;
+       &lt;td&gt;D6&lt;/td&gt;
+       &lt;td&gt;D5&lt;/td&gt;
+       &lt;td&gt;D4&lt;/td&gt;
+       &lt;td&gt;D3&lt;/td&gt;
+       &lt;td&gt;D2&lt;/td&gt;
+       &lt;td&gt;D1&lt;/td&gt;
+       &lt;td&gt;D0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Display clear&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Cursor home&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Entry mode set&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;I/D&lt;/td&gt;
+       &lt;td&gt;S&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Display on/off control&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;D&lt;/td&gt;
+       &lt;td&gt;C&lt;/td&gt;
+       &lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Cursor display shift&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;S/C&lt;/td&gt;
+       &lt;td&gt;R/L&lt;/td&gt;
+       &lt;td&gt;*&lt;/td&gt;
+       &lt;td&gt;*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Function set&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;DL&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;*&lt;/td&gt;
+       &lt;td&gt;*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;CG RAM address set&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td colspan="6" align="center"&gt;ACC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;DD RAM address set&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td colspan="7" align="center"&gt;ADD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Busy flag/address read&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;BF&lt;/td&gt;
+       &lt;td colspan="7" align="center"&gt;AC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;CG RAM/DD RAM data write&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td colspan="8" align="center"&gt;Write data&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;CG RAM/DD RAM data read&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td colspan="8" align="center"&gt;Read data&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+Plusieurs éléments à définir :&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;*&lt;/b&gt;  = le niveau importe, donc la valeur du bit n'est pas prise en compte&lt;br&gt;
+&lt;b&gt;ACC&lt;/b&gt; = adresse de la CG RAM&lt;br&gt;
+&lt;b&gt;ADD&lt;/b&gt; = adresse de la DD RAM, correspond à l'adresse courante du
+curseur&lt;br&gt;
+&lt;b&gt;AC&lt;/b&gt; = Address Counter, utilisé pour les adresses des DD et CG RAM&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;I/D&lt;/b&gt; = 1/0 : increment/decrement&lt;br&gt;
+&lt;b&gt;S/C&lt;/b&gt; = 1/0 : display shift/cursor move&lt;br&gt;
+&lt;b&gt;S&lt;/b&gt; = 1/0 : display shift/freeze&lt;br&gt;
+&lt;b&gt;R/L&lt;/b&gt; = 1/0 : right/left shift&lt;br&gt;
+&lt;b&gt;D&lt;/b&gt; = 1/0 : display on/off&lt;br&gt;
+&lt;b&gt;DL&lt;/b&gt; = 1/0 : 8/4 bits data bus&lt;br&gt;
+&lt;b&gt;C&lt;/b&gt; = 1/0 : cursor on/off&lt;br&gt;
+&lt;b&gt;BF&lt;/b&gt; = 1/0 : during/end of internal operation&lt;br&gt;
+&lt;b&gt;B&lt;/b&gt; = 1/0 : character at cursor position blinks/does not blinks&lt;br&gt;</paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Adresses de l'affichage&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+Les adresses ci dessous sont exprimées en hexadécimal et correspondent 
+à la position physique de chaque digit. Si vous voulez afficher un 
+caractère à un emplacement précis, vous passer d'abord cette adresse à 
+l'écran (dans la DD RAM) puis ensuite la valeur à afficher.&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Digit&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;8&lt;/td&gt;
+       &lt;td&gt;9&lt;/td&gt;
+       &lt;td&gt;10&lt;/td&gt;
+       &lt;td&gt;11&lt;/td&gt;
+       &lt;td&gt;12&lt;/td&gt;
+       &lt;td&gt;13&lt;/td&gt;
+       &lt;td&gt;14&lt;/td&gt;
+       &lt;td&gt;15&lt;/td&gt;
+       &lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Ligne 1&lt;/td&gt;
+       &lt;td&gt;00&lt;/td&gt;
+       &lt;td&gt;01&lt;/td&gt;
+       &lt;td&gt;02&lt;/td&gt;
+       &lt;td&gt;03&lt;/td&gt;
+       &lt;td&gt;04&lt;/td&gt;
+       &lt;td&gt;05&lt;/td&gt;
+       &lt;td&gt;06&lt;/td&gt;
+       &lt;td&gt;07&lt;/td&gt;
+       &lt;td&gt;08&lt;/td&gt;
+       &lt;td&gt;09&lt;/td&gt;
+       &lt;td&gt;0A&lt;/td&gt;
+       &lt;td&gt;0B&lt;/td&gt;
+       &lt;td&gt;0C&lt;/td&gt;
+       &lt;td&gt;0D&lt;/td&gt;
+       &lt;td&gt;0E&lt;/td&gt;
+       &lt;td&gt;0F&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Ligne 2&lt;/td&gt;
+       &lt;td&gt;40&lt;/td&gt;
+       &lt;td&gt;41&lt;/td&gt;
+       &lt;td&gt;42&lt;/td&gt;
+       &lt;td&gt;43&lt;/td&gt;
+       &lt;td&gt;44&lt;/td&gt;
+       &lt;td&gt;45&lt;/td&gt;
+       &lt;td&gt;46&lt;/td&gt;
+       &lt;td&gt;47&lt;/td&gt;
+       &lt;td&gt;48&lt;/td&gt;
+       &lt;td&gt;49&lt;/td&gt;
+       &lt;td&gt;4A&lt;/td&gt;
+       &lt;td&gt;4B&lt;/td&gt;
+       &lt;td&gt;4C&lt;/td&gt;
+       &lt;td&gt;4D&lt;/td&gt;
+       &lt;td&gt;4E&lt;/td&gt;
+       &lt;td&gt;4F&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Enfin, sûrement le plus imporant, le chronogramme de communication.
+ Celui-ci est très important, si vous ne le respectez pas vous ne pourrez 
+rien afficher. Les deux signaux RS et RW sont assez compréhensibles. Le 
+signal E est important, car c'est lui qui détermine quand la valeur 
+sur le bus de données est valide (en lecture ou en écriture).</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\chrono.jpg</link><legend>Le protocole de communication.</legend></image><paragraph name="paragraph">Si vous souhaitez lire le Busy Flag, qui indique l'état de l'écran, 
+vous devrez suivre le chronogramme d'exemple ci-dessous. Utiliser 
+le Busy Flag est beaucoup plus fiable qu'un simple "delay" mais impose 
+une connexion supplémentaire entre l'écran et le système maître.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\busyflag.gif</link><legend>Un exemple d'utilisation du Busy Flag.</legend></image></section><section name="section 3" title="Mise en oeuvre"><paragraph name="paragraph">Le schéma ci-dessous montre un exemple d'interfaçage sur le 
+port parallèle. Le bus de données du port ne fonctionne ici qu'en 
+sortie : il est donc relié directement à celui de l'écran (qui est 
+bien sûr compatible TTL). Certains ports parallèles possèdent des 
+broches de sortie en collecteur ouvert ; il peut être alors utile 
+d'ajouter une résistance de tirage au +5V de 10K Ohms sur les
+ lignes E et RS. Le contraste et la luminosité du rétro éclairage 
+se règlent à l'aide de deux potentiomètres. Veillez à 
+interconnecter toutes les masses et à relier l'ensemble à la 
+masse du port parallèle située sur les broches 18 à 25.</paragraph><image name="image"><link type="img">F:\Documents\Cours Progworld\progelectronique\images\schema_lcd.jpg</link><legend>Le schéma de l'interface avec le port parallèle.</legend></image><paragraph name="paragraph">L'alimentation du circuit est laissée à un classique 7805 dont il 
+convient de câbler comme indiqué sur le schéma ci-après. Ce 
+composant se charge de transformer une tension comprise entre 
+7 à 15V en un 5V continu et est capable de débiter une intensité 
+relativement importante.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\alim.jpg</link><legend>Le branchement classique d'un 7805.</legend></image><paragraph name="paragraph">En effet, le port parallèle est incapable de fournir le courant 
+nécessaire au fonctionnement de l'écran. Celui-ci consomme 
+100mA environ, ajouté au rétro éclairage (optionnel) qui absorbe 
+au bas mot 300mA, cela fait au total près de 0,5 A ! Le 7805 est 
+toujours accompagné d'une série de condensateurs servant de 
+réserves d'énergie, c'est un montage que nous utiliserons très 
+souvent dans cette rubrique. Enfin, il est très facile 
+d'implémenter ce schéma sur une plaquette à bandes cuivrées 
+que l'on peut trouver aisément aux alentours de 20F. Pour la 
+liaison entre l'écran et le PC, il faut éviter d'utiliser un câble 
+parallèle de plus de 3m : dans certains cas, il peut y avoir des 
+erreurs de transmission.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\brochage.jpg</link><legend>Un petit rappel des brochages.</legend></image></section><section name="section 4" title="Programmation de l'écran"><paragraph name="paragraph">L'écran ainsi branché ne sert pas à grand chose sans un 
+minimum de programmation. Nous allons faire appel une fois de 
+plus au C et au Visual Basic accompagné de sa dll inpout.dll, 
+lui donnant la possibilité de gérer les ports d'entrées/sorties. La 
+programmation en C se révèle d'ailleurs un peu plus aisée car 
+toutes les routines de base sont incluses en standard (et 
+notamment la fonction de retard &lt;b&gt;delay&lt;/b&gt; qui permet 
+de définir une attente en millisecondes. Tous les programmes 
+sont comme à l'accoutumée fournis ci dessous et accompagnés 
+de leurs sources commentées.&lt;br&gt;
+&lt;br&gt;
+Comme nous l'avons vu précédemment, la communication avec 
+l'afficheur obéit à un protocole assez simple. La meilleure manière 
+de programmer un tel projet est de créer plusieurs procédures :&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;Init_LCD () : cette fonction se chargera d'initialiser l'écran (bus de 4 ou 8 bits, configuration du curseur, etc.) 
+&lt;li&gt;Efface_LCD () : son nom est assez explicite, l'écran est effacé et le curseur revient au début de la première ligne. 
+&lt;li&gt;Ecrire_LCD (Chaine, Position) : cette fonction écrit sur l'écran la phrase passée en paramètre à l'emplacement désiré.
+&lt;/ul&gt;&lt;br&gt;
+&lt;br&gt;
+Pour les programmeurs en C, il suffira d'inclure le fichier 
+d'en-tête LCD.h à un projet pour bénéficier de ces procédures. 
+Le dialogue le plus simple est l'écriture d'un caractère à l'écran : 
+le travail à faire est de traduire en programmation les 
+chronogrammes du protocole de communication présentés ci-dessus. 
+Et pour les utilisateurs de &lt;b&gt;Linux&lt;/b&gt;, vous pouvez télécharger le programme de ce cours en bas 
+de cette page (allez voir le cours sur le port parallèle pour plus de détails). Voici par exemple l'algorithme qui écrit le caractère 'A' :</paragraph><code syntax="C" name="code">void Ecrire_Caractere (void)
+{
+outportb(0x37A, inportb(0x37A) &amp; 0xF7); // RS = 1 , l'octet envoyé est un caractère
+outportb(0x378, 65); // on place la valeur ASCII de A sur le bus de données
+outportb(0x37A,inportb(0x37A) &amp; 0xFE); // E = 1 pour préparer un front descendant
+delay(2); // petit délais pour avoir une bonne impulsion
+outportb(0x37A,inportb(0x37A) | 0x01); // E = 0 : le caractère est inscrit sur l'écran
+outportb(0x37A, inportb(0x37A) | 0x08); // RS=0
+}</code><paragraph name="paragraph">Dans le cas de l'envoi d'une instruction, l'algorithme reste 
+exactement le même sauf pour les délais qui doivent être un 
+peu plus important. Les délais sont utilisés pour éviter de 
+"planter" l'écran. Lorsque celui-ci reçoit une instruction, comme 
+effacer l'écran par exemple, le contrôleur met un certain temps
+ pour exécuter l'ordre et est alors indisponible durant cette 
+période. La documentation technique nous fournit heureusement
+ tous ces temps d'exécution ; les sources fournies ci dessous
+ sont donc à adapter au contrôleur utilisé. Notons cependant 
+qu'il existe une solution plus fiable : en commutant l'écran en 
+lecture, il est possible de voir si l'écran est occupé grâce à 
+l'état du bit BF (Busy Flag) disponible sur D7.</paragraph><paragraph name="paragraph">Enfin, n'oublions pas qu'il est nécessaire d'initialiser l'écran 
+avant toute tentative d'écriture. Cette étape est importante et 
+onsiste à configurer l'écran selon le matériel disponible et ses 
+préférences : nombre de lignes d'affichage, mode de 
+communication, présence du curseur, etc. A la mise sous tension, 
+l'écran est automatiquement initialisé avec un bus de données de 8 
+bits. Il faut au moins attendre 15 ms après cette mise sous tension 
+pour que l'écran soit disponible en écriture. Puis, la 
+documentation du contrôleur nous fourni la procédure 
+à suivre :&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;1. &lt;/b&gt;Display clear&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;2. &lt;/b&gt;Function set:&lt;br&gt;
+DL = 1; 8-bit interface data&lt;br&gt;
+N = 0; 1-line display&lt;br&gt;
+F = 0; 5 ´ 8 dot character font&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;3. &lt;/b&gt;Display on/off control:&lt;br&gt;
+D = 0; Display off&lt;br&gt;
+C = 0; Cursor off&lt;br&gt;
+B = 0; Blinking off&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;4. &lt;/b&gt;Entry mode set:&lt;br&gt;
+I/D = 1; Increment by 1&lt;br&gt;
+S = 0; No shift&lt;br&gt;</paragraph></section><section name="section 5" title="Conclusion"><paragraph name="paragraph">Une fois que l'on a bien compris le principe de fonctionnement, 
+il devient facile d'étendre les possibilités de notre système. Il est 
+possible par exemple de connecter la borne Read/_Write au port 
+parallèle pour pouvoir lire la mémoire et utiliser le signal "Busy 
+Flag". Il est également envisageable d'utiliser les possibilités de 
+création de caractères et, partant, créer les signes propres au 
+français (les é, à, è etc.). Les applications sont nombreuses,
+ n'hésitez donc pas à nous envoyer vos réalisations pour les 
+faire figurer sur ce site !</paragraph></section><section name="section 6" title="Téléchargements"><paragraph name="paragraph">&lt;ul&gt;
+&lt;li&gt;&lt;a href="downloads/teamlcd.zip"&gt;teamlcd.zip&lt;/a&gt; : le logiciel pour gérer l'écran LCD en Visual Basic avec ses sources (25,5ko) 
+&lt;li&gt;&lt;a href="downloads/lcd_c.zip"&gt;lcd_c.zip&lt;/a&gt; : la version en C (DOS) avec ses sources (41,6ko) 
+&lt;li&gt;&lt;a href="downloads/TestLCD.c"&gt;TestLCD.c&lt;/a&gt; : la version en C (pour Linux) avec ses sources (41,6ko) 
+&lt;li&gt;&lt;a href="downloads/lcd.pdf"&gt;lcd.pdf&lt;/a&gt; : un petit résumé en attendant que je complète le cours en HTML (16,1ko) 
+&lt;li&gt;&lt;a href="downloads/hd44780.pdf"&gt;hd44780.pdf&lt;/a&gt; : la doc (ultra) complète sur le contrôleur LCD, à avoir absolument (278ko) 
+&lt;li&gt;&lt;a href="downloads/78xx.pdf"&gt;78xx.pdf&lt;/a&gt; : le datasheet du régulateur de tension 78xx (224ko) 
+&lt;/ul&gt;
+</paragraph></section></document>

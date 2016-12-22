@@ -1,0 +1,20 @@
+Voici les deux schémas, l'un à base du PIC12C509 et l'autre avec le PIC16F84. Ils fonctionnent tous 
+les deux très bien. Vous trouverez également deux schémas différents pour brancher le module 
+infrarouge directement sur le port série ; mais là, le fonctionnement est un peu plus aléatoire.
+Vous trouverez les logiciels de gestion dans le répertoire sur ce CD et aux adresses suivantes :
+
+http://www.epanorama.net/irremote.html
+et
+http://winlirc.free.fr/
+
+Les archivent contiennent le code objet pour chaque version :
+
+* ir16f84b : pour le schéma à base du PIC16F84
+* ir509b-in : pour le schéma à base du PIC12C509 sans quartz externe (un circuit RC interne au 
+microcontrôleur le remplace)
+* ir509b-xt : pour le schéma présent dans ce répertoire
+
+Voilà, contactez-moi si vous avez des problèmes, j'essayerai de vous aider dans la mesure du possible.
+
+Anthony Rabine
+arabine@programmationworld.com

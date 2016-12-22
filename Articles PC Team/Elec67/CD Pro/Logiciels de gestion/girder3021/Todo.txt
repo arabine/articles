@@ -1,0 +1,31 @@
+Girder TODO
+
++ = done
+* = TODO
+
+[Version 3.0] 
+* DirectX OSD
+* win9x cdrom close
+* update the helpfile!!!!
+* Make the TCP/IP plugin accept hostnames
+
+
+
+[Version 4.0]
+
+* Commandline interface
+* Multiple events for 1 command
+* Tree not limited to 1 level
+* CLEAN user interface
+* Keyboard Kernel driver
+
+
+
+Text popup (OSD)
+
+image in the OSD
+
+Anything you can think of.
+Greets,
+
+Ron

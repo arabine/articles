@@ -1,0 +1,4 @@
+Pour compiler les exemples, avec les librairies Lua convenablement installées :
+
+gcc fichier.c -llua -llualib -o binaire
+

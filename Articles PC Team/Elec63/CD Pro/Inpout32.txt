@@ -1,0 +1,17 @@
+Résumé des fonctions de INPOUT32.DLL
+------------------------------------
+
+* Pour écrire vers un registre
+
+   Out PortAddress, ValueToWrite 
+
+   	Exemple:
+   	Out &h378, &h55 
+
+* Pour lire un registre
+   
+   ValueRead = Inp(PortAddress) 
+
+   	Example: 
+   	ValueRead = Inp(&h378) 
+ 

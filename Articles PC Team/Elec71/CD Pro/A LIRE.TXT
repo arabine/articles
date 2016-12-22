@@ -1,0 +1,24 @@
+Une petite présentation du répertoire
+-------------------------------------
+
+* DCF-77.PDF : c'est la documentation du module DCF achetée chez Selectronic. Vous
+pouvez l'acheter sur Internet ou via leur catalogue. Notez que ce module existe également
+chez Conrad. Chez Selectronic, il coûte 90 F.
+Liens :
+http://www.selectronic.fr
+http://www.conrad.fr
+
+* Team DCF : ce programme se charge de décoder les signaux en provenance du capteur via le port série.
+Notez que ce programme est loin d'être fini et ne contient pas le traitement de la trame pour 
+ressortir l'heure. Contactez moi pour savoir si une version plus complète existe.
+
+Notez la dll "port.dll" qui provient du magazine Elektor et est en libre téléchargement sur leur site.
+Cette dll permet d'accéder aux ports d'entrée/sortie , et ce même sous Windows 2000 ce qui est très 
+pratique !
+
+Voilà, n'hésitez pas à me contacter si vous avez des problèmes, j'essayerai de vous aider
+du mieux que je peux.
+
+Anthony Rabine
+arabine@programmationworld.com
+http://www.programmationworld.com

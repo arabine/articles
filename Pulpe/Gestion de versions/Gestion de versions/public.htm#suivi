@@ -1,0 +1,2892 @@
+<HTML>
+
+
+
+<HEAD>
+
+
+
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+
+
+
+   <META NAME="Author" CONTENT="Michael">
+
+
+
+   <TITLE>Les publications du secteur</TITLE>
+
+
+
+</HEAD>
+
+
+
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#FF0000" VLINK="#FF0000" ALINK="#FF6666" BACKGROUND="../images/fond_a.gif">
+<CENTER>
+
+
+
+  <p><font size="+2" color="#330099"><img src="../images/intro_publications.gif" usemap="#Publications" border="0" align="left"></font><font color="#003300"></font><font size="+2" color="#330099"> 
+
+    </font></p>
+
+
+
+  <p>&nbsp;</p>
+
+
+
+  <p><font size="+2" color="#330099">Publications techniques</font></p>
+
+
+
+  <p align="center"><font color="#003300">Vous trouverez sur cette page la quasi-totalit&eacute; 
+
+
+
+    des notices techniques et logiciels du secteur Espace. </font></p>
+
+
+
+  <p align="left"><font color="#003300"> Certains fichiers sont consultables sous 
+
+
+
+    forme HTML et t&eacute;l&eacute;chargeables sous forme de fichiers PDF ou 
+
+
+
+    d'archives ZIP, d'autres doivent faire l'objet d'une demande par E-mail via 
+
+
+
+    un <a href="bon_commande.htm">bon de commande electronique</a>.</font> </p>
+
+
+
+  <p align="center"><font color="#003300">Cliquez sur le nom d'un document pour 
+
+
+
+    le t&eacute;l&eacute;charger ou sur 'consultable ici' pour une consultation en ligne.</font></p>
+
+
+
+  <hr>
+  <img src="../images/g.gif" hspace=10 height=10 width=19 align=absmiddle><font size=-1>Logiciels 
+  </font><b>-</b><font size=-1> <a href="#fusex">Fusex</a> </font><b>-</b><font size=-1> 
+  <a href="#minif">Minif</a> </font><b>-</b><font size=-1> <a href="#micro">Micro</a> 
+  </font><b>-</b><font size=-1> <a href="#ballon">Ballon</a> </font><b>-</b><font size=-1> 
+  <a href="#suivi">Suivi et organisation</a>&nbsp;- <a href="#h2o">Fus&eacute;es 
+  &agrave; eau</a></font><img src="../images/d.gif" hspace=10 height=10 width=19 align=absmiddle> 
+  <hr>
+
+
+
+<p>&nbsp;</p></CENTER>
+
+
+
+<div align="center"> 
+
+
+
+  <p>&nbsp; <b><font color="#FF0000"><font size=+2><a name="logiciels"></a>Logiciels</font></font></b> 
+
+
+
+  </p>
+
+
+
+  </div>
+
+
+
+<TABLE BORDER bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000" WIDTH="100%" >
+
+  <TR> 
+
+    <TD BGCOLOR="#66FFFF"> 
+
+      <CENTER>
+
+        <b><i><font size=+1>T&eacute;l&eacute;chargement du document</font></i></b> 
+
+      </CENTER>
+
+    </TD>
+
+    <TD BGCOLOR="#66FFFF"> 
+
+      <CENTER>
+
+        <B><I><FONT SIZE=+1>Type</FONT></I></B> 
+
+      </CENTER>
+
+    </TD>
+
+    <TD BGCOLOR="#66FFFF"> 
+
+      <CENTER>
+
+        <B><I><FONT SIZE=+1>Taille</FONT></I></B> 
+
+      </CENTER>
+
+    </TD>
+
+    <TD BGCOLOR="#66FFFF"> 
+
+      <CENTER>
+
+        <B><I><FONT SIZE=+1>Descriptif</FONT></I></B> 
+
+      </CENTER>
+
+    </TD>
+
+    <TD BGCOLOR="#66FFFF"> 
+
+      <CENTER>
+
+        <B><I><FONT SIZE=+1>Consultation</FONT></I></B> 
+
+      </CENTER>
+
+      <CENTER>
+
+        <B><I><FONT SIZE=+1>en ligne</FONT></I></B> 
+
+      </CENTER>
+
+    </TD>
+
+  </TR>
+
+  <TR> 
+
+    <TD> 
+
+      <div align="center"><A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?trajec23.zip">Trajec23.zip</A></div>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        <div align="center"><img src="../images/icone_programme_msdos.gif" width="63" height="66"></div>
+
+      </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+        834 Ko 
+      </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        &nbsp; 
+
+      </CENTER>
+
+      <CENTER>
+        <p>Ce logiciel vous permettra de d&eacute;terminer la stabilit&eacute; 
+          de votre fus&eacute;e. Attention il ne faut tenir compte que des r&eacute;sultats 
+          num&eacute;riques et v&eacute;rifier &agrave; l'aide du cahier des charges 
+          si votre fus&eacute;e est stable. C'est avec ce logiciel que votre fus&eacute;e 
+          sera contr&ocirc;l&eacute;e au Festival des Clubs Espace. <br>
+          Manuel inclus<br>
+          Version 2.3</p>
+
+        </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        Non consultable 
+
+      </CENTER>
+
+    </TD>
+
+  </TR>
+
+  <TR> 
+
+    <TD> 
+
+      <div align="center"><FONT SIZE=+2>&nbsp; </FONT><A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?snr.zip">SNR.zip</A></div>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        <div align="center"><img src="../images/icone_programme_msdos.gif" width="63" height="66"></div>
+
+      </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <div align="center">948 Ko</div>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        Ce logiciel permet de recevoir les trames SNR, de les afficher et de les 
+
+        enregistrer. 
+
+      </CENTER>
+
+      <CENTER>
+
+        &nbsp; 
+
+      </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        Non consultable 
+
+      </CENTER>
+
+    </TD>
+
+  </TR>
+
+  <TR> 
+
+    <TD> 
+
+      <CENTER>
+
+        <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?k-com.zip">K-COM.zip</A> 
+
+      </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        <div align="center"><img src="../images/icone_programme_win95.gif" width="91" height="61"></div>
+
+      </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        215 Ko 
+
+      </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        <p>Ce logiciel permet de recevoir des trames type SNR ou personnalis&eacute;es, 
+
+          de les afficher en temps r&eacute;el et de les enregistrer</p>
+
+        <p>Aout 97 </p>
+
+      </CENTER>
+
+    </TD>
+
+    <TD> 
+
+      <CENTER>
+
+        Non consultable 
+
+      </CENTER>
+
+    </TD>
+
+  </TR>
+
+  <tr> 
+
+    <td> 
+
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?carina201.zip">carina201.zip</a></div>
+
+    </td>
+
+    <td> 
+
+      <p align="center"><img src="../images/icone_programme_win95.gif" width="91" height="61"></p>
+
+    </td>
+
+    <td> 
+
+      <div align="center">1158 Ko</div>
+
+    </td>
+
+    <td> 
+
+      <div align="center">Ce logiciel vous permet de v&eacute;rifier la stabilit&eacute; 
+
+        de votre micro fus&eacute;e</div>
+
+    </td>
+
+    <td> 
+
+      <div align="center">Non consultable</div>
+
+    </td>
+
+  </tr>
+
+  <tr> 
+
+    <td><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?logiciel_de_reception_kiwi.zip">logiciel_de_reception_kiwi.zip</a></td>
+
+    <td> 
+
+      <div align="center"><img src="../images/icone_programme_msdos.gif" width="63" height="66"></div>
+
+    </td>
+
+    <td> 
+
+      <div align="center">6 Ko</div>
+
+    </td>
+
+    <td> 
+
+      <div align="center"> 
+
+        <p>Logiciel d'enregistrement de trames re&ccedil;ues par la baie de t&eacute;l&eacute;mesure 
+
+          Kiwi</p>
+
+        <p>Version DOS</p>
+
+      </div>
+
+    </td>
+
+    <td>Non consultable</td>
+
+  </tr>
+
+  <tr> 
+
+    <td> 
+
+      <center>
+
+        <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?kicapt.zip">Kicapt</a> 
+
+      </center>
+
+    </td>
+
+    <td> 
+
+      <center>
+
+        <div align="center"><img src="../images/icone_programme_win95.gif" width="91" height="61"></div>
+
+      </center>
+
+    </td>
+
+    <td> 
+
+      <center>
+        828 Ko 
+      </center>
+
+    </td>
+
+    <td> 
+
+      <center>
+        <p>Logiciel d'enregistrement de trames re&ccedil;ues par la baie de t&eacute;l&eacute;mesure 
+          Kiwi<br>
+          Documentation incluse<br>
+          Version Windows</p>
+      </center>
+
+    </td>
+
+    <td> 
+
+      <center>
+
+        Non consultable 
+
+      </center>
+
+    </td>
+
+  </tr>
+
+  <tr> 
+
+    <td> 
+
+      <center>
+
+        <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?keasy.zip">Keasy</a> 
+
+      </center>
+
+    </td>
+
+    <td> 
+
+      <center>
+
+        <div align="center"><img src="../images/icone_programme_win95.gif" width="91" height="61"></div>
+
+      </center>
+
+    </td>
+
+    <td> 
+
+      <center>
+        309 Ko 
+      </center>
+
+    </td>
+
+    <td> 
+
+      <center>
+
+        <p>Logiciel de suivi GPS</p>
+
+        <p>Version 20/01/02</p>
+
+      </center>
+
+    </td>
+
+    <td> 
+
+      <center>
+
+        Non consultable 
+
+      </center>
+
+    </td>
+
+  </tr>
+
+</table>
+
+
+
+<P><B> </B> 
+
+
+
+<hr>
+
+
+
+<div align="center"><img src="../images/g.gif" hspace=10 height=10 width=19 align=absmiddle><font size=-1><a href="#logiciels">Logiciels</a> 
+  </font><b>-</b><font size=-1> Fusex </font><b>-</b><font size=-1> <a href="#minif">Minif</a> 
+  </font><b>-</b><font size=-1> <a href="#micro">Micro</a> </font><b>-</b><font size=-1> 
+  <a href="#ballon">Ballon</a> </font><b>-</b><font size=-1> <a href="#suivi">Suivi 
+  et organisation</a> <b>-</b><font size=-1> <a href="#h2o">Fus&eacute;es &agrave; 
+  eau</a></font>&nbsp;</font><img src="../images/d.gif" hspace=10 height=10 width=19 align=absmiddle> 
+</div>
+
+
+
+<HR>
+
+
+
+<p>&nbsp;</p><CENTER>
+
+
+
+  <B><FONT COLOR="#FF0000"><FONT SIZE=+2><a name="fusex"></a>Fus&eacute;es exp&eacute;rimentales</FONT></FONT></B> 
+
+
+
+</CENTER>
+
+
+
+
+
+
+
+<CENTER>&nbsp;</CENTER>
+
+
+
+
+
+
+
+<TABLE BORDER="1" bordercolor="#000000" WIDTH="100%" >
+  <TR> 
+    <TD BGCOLOR="#66FFFF"> 
+      <CENTER>
+        <B><I><FONT SIZE=+1>T&eacute;l&eacute;chargement du document</FONT></I></B> 
+      </CENTER>
+    </TD>
+    <TD BGCOLOR="#66FFFF"> 
+      <CENTER>
+        <B><I><FONT SIZE=+1>Type</FONT></I></B> 
+      </CENTER>
+    </TD>
+    <TD BGCOLOR="#66FFFF"> 
+      <div align="center"><B><I><FONT SIZE=+1>Taille</FONT></I></B> </div>
+    </TD>
+    <TD BGCOLOR="#66FFFF"> 
+      <CENTER>
+        <B><I><FONT SIZE=+1>Descriptif</FONT></I></B> 
+      </CENTER>
+    </TD>
+    <TD BGCOLOR="#66FFFF"> 
+      <CENTER>
+        <B><I><FONT SIZE=+1>Consultation</FONT></I></B> 
+      </CENTER>
+      <CENTER>
+        <B><I><FONT SIZE=+1>en ligne</FONT></I></B> 
+      </CENTER>
+    </TD>
+  </TR>
+  <tr> 
+    <td> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?jauges_deformation.pdf">jauges_deformation.pdf</a></div>
+    </td>
+    <td> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </td>
+    <td> 
+      <div align="center">1181 Ko</div>
+    </td>
+    <td> 
+      <div align="center">Les jauges m&eacute;talliques de d&eacute;formation</div>
+    </td>
+    <td> 
+      <div align="center">Non consultable</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?conditionneurs_signaux.pdf">conditionneurs_signaux.pdf</a></div>
+    </td>
+    <td> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </td>
+    <td> 
+      <div align="center">382 Ko</div>
+    </td>
+    <td> 
+      <div align="center">Les conditionneurs de signaux</div>
+    </td>
+    <td> 
+      <div align="center">Non consultable</div>
+    </td>
+  </tr>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?cahier_des_charges_fusex.pdf">cahier_des_charges_fusex.pdf 
+        </A> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p><img src="../images/logo_pdf.gif" width="46" height="55"></p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">206 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        &nbsp; 
+      </CENTER>
+      <CENTER>
+        <p>Cahier des charges pour fus&eacute;es exp&eacute;rimentales mono-&eacute;tage<br>
+          Janvier 98</p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <a href="cahier_des_charges_fusex_98/introduction.htm">consultable ici</a> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?virole_isard.pdf">virole_isard.pdf</A> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <img src="../images/logo_pdf.gif" width="46" height="55"> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">193 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>Plan de la virole standard pour propulseur Isard<br>
+          Janvier 98</p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <A HREF="virole_isard/virole_isard.htm">consultable ici</A> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?virole_chamois.pdf">virole_chamois.pdf 
+        </A> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <img src="../images/logo_pdf.gif" width="46" height="55"> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">187 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>Plan de la virole standard pour propulseur Chamois<br>
+          Janvier 98 </p>
+      </CENTER>
+      <CENTER>
+        &nbsp; 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <A HREF="virole_chamois/virole_chamois.htm">consultable ici</A> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?vol_de_la_fusee.pdf">vol_de_la 
+          fusee.pdf</a></p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">&nbsp;<img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </TD>
+    <TD> 
+      <div align="center">3743 Ko&nbsp; </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>Le vol de la fus&eacute;e<br>
+          Mai 91 </p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        Non consultable 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?parachutes.pdf">Les 
+        parachutes</a></div>
+    </TD>
+    <TD> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </TD>
+    <TD> 
+      <div align="center">1370 Ko</div>
+    </TD>
+    <TD> 
+      <div align="center">Les parachutes, leur pliage et leurs suspentes.</div>
+    </TD>
+    <TD> 
+      <div align="center">Non consultable </div>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <p align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?ressorts.pdf">ressorts</a> 
+      </p>
+    </TD>
+    <TD> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </TD>
+    <TD> 
+      <div align="center">1850 Ko</div>
+    </TD>
+    <TD> 
+      <div align="center">Les ressorts</div>
+    </TD>
+    <TD> 
+      <div align="center">Non consultable</div>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?propulseurs_spatiaux.pdf">Les 
+        propulseurs des clubs scientifiques spatiaux</a> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">1003 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>Caract&eacute;ristiques des propulseurs pour fus&eacute;es exp&eacute;rimentales<br>
+          Fevrier 2002</p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <a href="propulseurs_fusex/legislation.htm">consultable ici </a> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?inflammateur_pyrotechnique.pdf">inflammateur_pyrotechnique.pdf</A> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">406 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>Plan et caract&eacute;ristiques &eacute;lectriques de l'inflammateur 
+          <a href="http://www.daveybickford.fr/index-vf.htm" target="_blank">Davey-Bickford</a><br>
+          Novembre 94 </p>
+      </CENTER>
+      <CENTER>
+        &nbsp; 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <a href="gevelot/gevelot.htm">consultable ici</a> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?chronologie_fusex.pdf">chronologie_fusex.pdf</A> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">58 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>Aide &agrave; la r&eacute;daction d'une chronologie de fus&eacute;e 
+          exp&eacute;rimentale<br>
+          Mars 95</p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <a href="chronologie_fusex/chronologie_fusex.htm">consultable ici </a> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?integration_d'une_fusee.pdf">integration_d'une_fusee.pdf</a></div>
+    </TD>
+    <TD> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </TD>
+    <TD> 
+      <div align="center">1400 Ko</div>
+    </TD>
+    <TD> 
+      <div align="center">L'int&eacute;gration d'une fus&eacute;e</div>
+    </TD>
+    <TD> 
+      <div align="center">Non consultable</div>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?exemple_de_planning.pdf">exemple_de_planning.pdf</a> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <img src="../images/logo_pdf.gif" width="46" height="55"> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">91 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>Exemple de planning<br>
+          Octobre 96</p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <a href="planning/planning.htm">consultable ici </a> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?vco_xr2206.pdf">vco_xr2206.pdf</A> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <img src="../images/logo_pdf.gif" width="46" height="55"> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">184 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>Le V.C.O &agrave; circuit int&eacute;gr&eacute; XR2206<br>
+          Aout 2002</p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <A HREF="vco_xr2206/vco_xr2206.htm">consultable ici</A> 
+      </CENTER>
+      <CENTER>
+        &nbsp; 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?multiplexage_en_frequence.pdf">Le 
+        multiplexage_en_frequence</a> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <img src="../images/logo_pdf.gif" width="46" height="55"> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">1445 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        Le multiplexage en fr&eacute;quence 
+      </CENTER>
+      <CENTER>
+        &nbsp; 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        Non consultable 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <CENTER>
+        <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?telemesure_numerique.pdf">telemesure_numerique.pdf</a> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        <img src="../images/logo_pdf.gif" width="46" height="55"> 
+      </CENTER>
+    </TD>
+    <TD> 
+      <div align="center">&nbsp; 3734 Ko </div>
+    </TD>
+    <TD> 
+      <CENTER>
+        <p>La t&eacute;l&eacute;mesure num&eacute;rique SNR<br>
+          Mars 93</p>
+      </CENTER>
+    </TD>
+    <TD> 
+      <CENTER>
+        Non consultable 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?amplificateur_operationel.pdf">amplificateur_operationel.pdf</a></div>
+    </TD>
+    <TD> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </TD>
+    <TD> 
+      <div align="center">734 Ko</div>
+    </TD>
+    <TD> 
+      <div align="center">L'amplificateur op&eacute;rationnel</div>
+    </TD>
+    <TD> 
+      <div align="center">Non consultable</div>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?transmission_phases_vol.pdf">transmission_phases_vol.pdf</a></div>
+    </TD>
+    <TD> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </TD>
+    <TD> 
+      <div align="center">1820 Ko</div>
+    </TD>
+    <TD> 
+      <p align="center">Transmission des phases de vol<br>
+        Mars 91</p>
+    </TD>
+    <TD> 
+      <div align="center">Non consultable</div>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?tube_de_pitot.pdf">tube_de_pitot.pdf</a></div>
+    </TD>
+    <TD> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </TD>
+    <TD> 
+      <div align="center">4656 Ko</div>
+    </TD>
+    <TD> 
+      <div align="center"> 
+        <p>Le tube de Pitot</p>
+      </div>
+    </TD>
+    <TD> 
+      <div align="center">Non consultable</div>
+    </TD>
+  </TR>
+  <tr> 
+    <td> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?guide_maquette_satellite.pdf">guide_maquette_satellite.pdf</a></div>
+    </td>
+    <td> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </td>
+    <td> 
+      <div align="center">4152 Ko</div>
+    </td>
+    <td> 
+      <div align="center"> 
+        <p>Guide pour la construction d'une maquette active de satellite</p>
+      </div>
+    </td>
+    <td> 
+      <div align="center">Non consultable</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <center>
+        <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?protection_hf.pdf">protection_hf.pdf</a> 
+      </center>
+    </td>
+    <td> 
+      <center>
+        <img src="../images/logo_pdf.gif" width="46" height="55"> 
+      </center>
+    </td>
+    <td> 
+      <div align="center">268 Ko </div>
+    </td>
+    <td> 
+      <center>
+        <p>La protection electromagnetique des t&eacute;l&eacute;mesures hautes 
+          fr&eacute;quences<br>
+          Octobre 99</p>
+      </center>
+    </td>
+    <td> 
+      <center>
+        Non consultable 
+      </center>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?spotkite.pdf">spotkite.pdf</a></div>
+    </td>
+    <td> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </td>
+    <td> 
+      <div align="center">426 Ko</div>
+    </td>
+    <td> 
+      <div align="center"> 
+        <p>Exemples de traitement d'images prises en altitude<br>
+          Octobre 99</p>
+      </div>
+    </td>
+    <td> 
+      <div align="center">Non consultable</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?decodeur_telemesure_irig.pdf">D&eacute;codeur 
+        de t&eacute;l&eacute;mesure IRIG</a></div>
+    </td>
+    <td> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </td>
+    <td> 
+      <div align="center">2296 Ko</div>
+    </td>
+    <td> 
+      <p align="center">Plans et manuel d'utilisation du d&eacute;codeur de t&eacute;l&eacute;msure 
+        IRIG<br>
+        Octobre 99</p>
+    </td>
+    <td> 
+      <div align="center">Non consultable</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?stabilite_dynamique.pdf">Stabilit&eacute; 
+        dynamique</a></div>
+    </td>
+    <td> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </td>
+    <td> 
+      <div align="center">356 Ko</div>
+    </td>
+    <td> 
+      <p align="center">Stabilit&eacute; dynamique et &eacute;lements pour logiciels 
+        de trajectographie<br>
+        Aout 2000</p>
+    </td>
+    <td> 
+      <div align="center">Non consultable</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?propulsion_fusex.pdf">propulsion_fusex.pdf</a></div>
+    </td>
+    <td> 
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+    </td>
+    <td> 
+      <div align="center">1251 Ko</div>
+    </td>
+    <td> 
+      <p align="center">La propulsion des fus&eacute;es exp&eacute;rimentales<br>
+        Aout 2002</p>
+    </td>
+    <td> 
+      <div align="center">Non consultable</div>
+    </td>
+  </tr>
+</TABLE>
+
+
+
+
+
+
+
+<CENTER>
+
+
+
+  <p>&nbsp;</p>
+
+
+
+  <p>&nbsp;</p>
+
+
+
+  <hr>
+  &nbsp; <img src="../images/g.gif" hspace=10 height=10 width=19 align=absmiddle><font size=-1><a href="#logiciels">Logiciels</a> 
+  </font><b>-</b><font size=-1> <a href="#fusex">Fusex</a> </font><b>-</b><font size=-1> 
+  Minif </font><b>-</b><font size=-1> <a href="#micro">Micro</a> </font><b>-</b><font size=-1> 
+  <a href="#ballon">Ballon</a> </font><b>-</b><font size=-1> <a href="#suivi">Suivi 
+  et organisation</a>&nbsp;</font><b>-</b><font size=-1> <a href="#h2o">Fus&eacute;es 
+  &agrave; eau</a></font><img src="../images/d.gif" hspace=10 height=10 width=19 align=absmiddle>&nbsp; 
+</CENTER>
+
+
+
+
+
+
+
+<CENTER>
+
+
+
+<HR WIDTH="100%">
+
+
+
+  <p><B><FONT COLOR="#FF0000"><FONT SIZE=+2><a name="minif"></a>Mini-Fus&eacute;es</FONT></FONT></B></p>
+
+
+
+</CENTER>
+
+
+
+
+
+
+
+<TABLE BORDER bordercolor="#000000" WIDTH="100%" >
+
+
+
+  <TR> 
+
+
+
+    <TD BGCOLOR="#66FFFF"> 
+
+
+
+      <CENTER>
+
+
+
+        <b><i><font size=+1>T&eacute;l&eacute;chargement du document</font></i></b> 
+
+
+
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+    <TD BGCOLOR="#66FFFF"> 
+
+
+
+      <CENTER>
+
+
+
+        <B><I><FONT SIZE=+1>Type</FONT></I></B> 
+
+
+
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+    <TD BGCOLOR="#66FFFF"> 
+
+
+
+      <CENTER>
+
+
+
+        <B><I><FONT SIZE=+1>Taille</FONT></I></B> 
+
+
+
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+    <TD BGCOLOR="#66FFFF"> 
+
+
+
+      <CENTER>
+
+
+
+        <B><I><FONT SIZE=+1>Descriptif</FONT></I></B> 
+
+
+
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+    <TD BGCOLOR="#66FFFF"> 
+
+
+
+      <CENTER>
+
+
+
+        <B><I><FONT SIZE=+1>Consultation</FONT></I></B> 
+
+
+
+      </CENTER>
+
+
+
+      <CENTER>
+
+
+
+        <B><I><FONT SIZE=+1>en ligne</FONT></I></B> 
+
+
+
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+  </TR>
+
+
+
+  <TR> 
+
+
+
+    <TD> 
+
+
+
+      <CENTER>
+
+
+
+        <FONT SIZE=+2>&nbsp;</FONT><A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?cahier_des_charges_minif.pdf">cahier_des_charges_minif</A> 
+
+
+
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+    <TD> 
+
+
+
+      <CENTER>
+
+
+
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+
+
+
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+    <TD> 
+
+
+
+      <CENTER>
+        1145 Ko 
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+    <TD> 
+
+
+
+      <CENTER>
+        <p>Cahier des charges pour minifus&eacute;es<br>
+          Version 5- Septembre 2002</p>
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+    <TD> 
+
+
+
+      <CENTER>
+        Non consultable 
+      </CENTER>
+
+
+
+    </TD>
+
+
+
+  </TR>
+
+
+
+  <TR> 
+
+
+
+    <TD> 
+
+
+
+      <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?navettes_spatiales_minifusees.pdf">navettes_spatiales_minifusees.pdf</a></div>
+
+
+
+    </TD>
+
+
+
+    <TD> 
+
+
+
+      <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+
+
+
+    </TD>
+
+
+
+    <TD> 
+
+
+
+      <div align="center">2810 Ko</div>
+
+
+
+    </TD>
+
+
+
+    <TD> 
+
+
+
+      <div align="center">Les navettes spatiales en minifus&eacute;es</div>
+
+
+
+    </TD>
+
+
+
+    <TD> 
+
+
+
+      <div align="center">Non consultable</div>
+
+
+
+    </TD>
+
+
+
+  </TR>
+
+
+
+  <tr> 
+
+
+
+    <td> 
+
+
+
+      <div align="center"> 
+
+
+
+        <p>Non t&eacute;l&eacute;chargeable</p>
+
+
+
+      </div>
+
+
+
+    </td>
+
+
+
+    <td> 
+
+
+
+      <div align="center"><a href="bon_commande.htm"><img src="../images/bon_de_commande.gif" width="104" height="70" border="0"></a></div>
+
+
+
+    </td>
+
+
+
+    <td> 
+
+
+
+      <div align="center"></div>
+
+
+
+    </td>
+
+
+
+    <td> 
+
+
+
+      <div align="center">Pr&eacute;sentation: Une minif au coll&egrave;ge</div>
+
+
+
+    </td>
+
+
+
+    <td>&nbsp;</td>
+
+
+
+  </tr>
+
+
+
+</TABLE>
+
+
+
+
+
+
+
+<div align="center"></div>
+
+
+
+<div align="center"></div>
+
+
+
+<CENTER>
+
+
+
+  <p>&nbsp;</p>
+
+
+
+  <p>&nbsp;</p>
+
+
+
+  </CENTER>
+
+
+
+
+
+
+
+<CENTER>
+
+
+
+  <hr>
+
+
+
+  <img src="../images/g.gif" hspace=10 height=10 width=19 align=absmiddle><font size=-1><a href="#logiciels">Logiciels</a> 
+
+
+
+  </font><b>-</b><font size=-1> <a href="#fusex">Fusex</a> </font><b>-</b><font size=-1> 
+
+
+
+  <a href="#minif">Minif</a> </font><b>-</b><font size=-1> Micro </font><b>-</b><font size=-1> 
+
+
+
+  <a href="#ballon">Ballon</a> </font><b>-</b><font size=-1> <a href="#suivi">Suivi 
+
+
+
+  et organisation</a>&nbsp;</font><img src="../images/d.gif" hspace=10 height=10 width=19 align=absmiddle>&nbsp; 
+
+
+
+</CENTER>
+
+
+
+
+
+
+
+<CENTER>
+
+
+
+<HR WIDTH="100%">
+
+
+
+  <p><B><FONT COLOR="#FF0000"><FONT SIZE=+2><a name="micro"></a>Micro-Fus&eacute;es</FONT></FONT></B></p>
+
+
+
+</CENTER>
+
+
+
+
+
+
+
+<TABLE BORDER WIDTH="100%" bordercolor="#000000" >
+  <TR> 
+    <TD WIDTH="228" BGCOLOR="#66FFFF"> 
+      <CENTER>
+        <b><i><font size=+1>T&eacute;l&eacute;chargement du document</font></i></b> 
+      </CENTER>
+    </TD>
+    <TD BGCOLOR="#66FFFF" width="124"> 
+      <CENTER>
+        <B><I><FONT SIZE=+1>Type</FONT></I></B> 
+      </CENTER>
+    </TD>
+    <TD BGCOLOR="#66FFFF" width="79"> 
+      <CENTER>
+        <B><I><FONT SIZE=+1>Taille</FONT></I></B> 
+      </CENTER>
+    </TD>
+    <TD BGCOLOR="#66FFFF" width="397"> 
+      <CENTER>
+        <B><I><FONT SIZE=+1>Descriptif</FONT></I></B> 
+      </CENTER>
+    </TD>
+    <TD BGCOLOR="#66FFFF" width="146"> 
+      <CENTER>
+        <B><I><FONT SIZE=+1>Consultation</FONT></I></B> 
+      </CENTER>
+      <CENTER>
+        <B><I><FONT SIZE=+1>en ligne</FONT></I></B> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <TD WIDTH="228"> 
+      <CENTER>
+        <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?legislation_microfusee.pdf">legislation_microfusee.pdf</A> 
+      </CENTER>
+    </TD>
+    <TD width="124"> 
+      <CENTER>
+        <img src="../images/logo_pdf.gif" width="46" height="55"> 
+      </CENTER>
+    </TD>
+    <TD width="79"> 
+      <CENTER>
+        63 Ko 
+      </CENTER>
+    </TD>
+    <TD width="397"> 
+      <CENTER>
+        <p>&nbsp;Information en mati&egrave;re de l&eacute;gislation micro-fus&eacute;es<br>
+          D&eacute;cembre 96 </p>
+      </CENTER>
+      <CENTER>
+        &nbsp; 
+      </CENTER>
+    </TD>
+    <TD width="146"> 
+      <CENTER>
+        <A HREF="legislation_microfusee/legislation_microfusee.htm">consultable 
+        ici</A> 
+      </CENTER>
+    </TD>
+  </TR>
+  <TR> 
+    <td> 
+      <center>
+        <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?propulseurs_spatiaux.pdf">Les 
+        propulseurs des clubs scientifiques spatiaux</a> 
+      </center>
+    </td>
+    <td> 
+      <center>
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </center>
+    </td>
+    <td> 
+      <center>
+        1110 Ko 
+      </center>
+    </td>
+    <TD width="397"> 
+      <div align="center">Caract&eacute;ristiques de quelques micro-propulseurs</div>
+    </TD>
+    <TD width="146"> 
+      <div align="center"><a href="micro_propulseurs/micro_propulseurs.htm">consultable 
+        ici</a></div>
+    </TD>
+  </TR>
+  <TR> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="397"> 
+      <div align="center">La microfus&eacute;e en 10 points</div>
+    </td>
+    <td width="146"> 
+      <div align="center"><a href="argonaute/index.htm">consultable ici</a></div>
+    </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+
+<CENTER>
+
+
+
+  <p>&nbsp; </p>
+
+
+
+  <p>&nbsp; </p>
+
+
+
+</CENTER>
+
+
+
+
+
+
+
+<CENTER>
+
+
+
+  <hr>
+  <img src="../images/g.gif" hspace=10 height=10 width=19 align=absmiddle><font size=-1><a href="#logiciels">Logiciels</a> 
+  </font><b>-</b><font size=-1> <a href="#fusex">Fusex</a> </font><b>-</b><font size=-1> 
+  <a href="#minif">Minif</a> </font><b>-</b><font size=-1> <a href="#micro">Micro</a> 
+  </font><b>-</b><font size=-1> Ballon </font><b>-</b><font size=-1> <a href="#suivi">Suivi 
+  et organisation </a><b>-</b><font size=-1> <a href="#h2o">Fus&eacute;es &agrave; 
+  eau</a></font>&nbsp;</font><img src="../images/d.gif" hspace=10 height=10 width=19 align=absmiddle> 
+  <hr>
+
+
+
+<p>&nbsp;</p></CENTER>
+
+
+
+<CENTER>
+
+
+
+  <p><B><FONT COLOR="#FF0000"><FONT SIZE=+2><a name="ballon"></a></FONT></FONT></B><B><FONT COLOR="#FF0000"><FONT SIZE=+2>Ballons 
+
+
+
+    Exp&eacute;rimentaux</FONT></FONT></B></p>
+
+
+
+  </CENTER>
+
+
+
+
+
+
+
+<div align="center">
+
+
+
+  <TABLE BORDER bordercolor="#000000" WIDTH="100%" >
+    <TR> 
+      <TD BGCOLOR="#66FFFF"> 
+        <CENTER>
+          <b><i><font size=+1>T&eacute;l&eacute;chargement du document</font></i></b> 
+        </CENTER>
+      </TD>
+      <TD BGCOLOR="#66FFFF"> 
+        <CENTER>
+          <B><I><FONT SIZE=+1>Type</FONT></I></B> 
+        </CENTER>
+      </TD>
+      <TD BGCOLOR="#66FFFF"> 
+        <CENTER>
+          <B><I><FONT SIZE=+1>Taille</FONT></I></B> 
+        </CENTER>
+      </TD>
+      <TD BGCOLOR="#66FFFF"> 
+        <CENTER>
+          <B><I><FONT SIZE=+1>Descriptif</FONT></I></B> 
+        </CENTER>
+      </TD>
+      <TD BGCOLOR="#66FFFF"> 
+        <CENTER>
+          <B><I><FONT SIZE=+1>Consultation</FONT></I></B> 
+        </CENTER>
+        <CENTER>
+          <B><I><FONT SIZE=+1>en ligne</FONT></I></B> 
+        </CENTER>
+      </TD>
+    </TR>
+    <TR> 
+      <TD> 
+        <CENTER>
+          <A HREF="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?gestion_projet_ballon.pdf">gestion_projet_ballon.pdf</A> 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <img src="../images/logo_pdf.gif" width="46" height="55"> 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          82 Ko 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <p>La gestion d'un projet de ballon<br>
+            Juin 99</p>
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <A HREF="gestion_projet_ballon/gestion_projet_ballon.htm">consultable 
+          ici</A> 
+        </CENTER>
+      </TD>
+    </TR>
+    <TR> 
+      <TD> 
+        <CENTER>
+          <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?cahier_des_charges_ballon.pdf"> 
+          cahier_des_charges_ballon.pdf</a> 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <img src="../images/logo_pdf.gif" width="46" height="55"> 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          &nbsp;576 Ko 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <p>Les ballons exp&eacute;rimentaux: Mise en oeuvre et cahier des charges<br>
+            Version 6<br>
+            Novembre 2001</p>
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          Non consultable 
+        </CENTER>
+      </TD>
+    </TR>
+    <TR> 
+      <TD> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?couverture_nacelle.pdf">couverture_nacelle.pdf</a></div>
+      </TD>
+      <TD> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </TD>
+      <TD> 
+        <div align="center">17 Ko</div>
+      </TD>
+      <TD> 
+        <div align="center">De quelle cot&eacute; faut il placer la couverture 
+          isolante autour de la nacelle ?</div>
+      </TD>
+      <TD> 
+        <div align="center"><a href="couverture_nacelle/couverture_nacelle.htm">consultable 
+          ici</a></div>
+      </TD>
+    </TR>
+    <TR> 
+      <TD> 
+        <CENTER>
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?caracteristiques_atmosphere+meca_vol_ballon.pdf">caracteristiques_atmosphere</a></p>
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?caracteristiques_atmosphere+meca_vol_ballon.pdf">+meca_vol_ballon.pdf</a></p>
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <img src="../images/logo_pdf.gif" width="46" height="55"> 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          151 Ko 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <p>Caract&eacute;ristiques de l'atmosph&egrave;re moyenne<br>
+            +<br>
+            M&eacute;canique du vol.<br>
+            Octobre 95</p>
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <a href="carac_atmos/carac_atmos.htm">consultable ici</a> 
+        </CENTER>
+      </TD>
+    </TR>
+    <tr> 
+      <td> 
+        <center>
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?systeme_kiwi_clubs.pdf">Syst&egrave;me 
+            Kiwi_clubs</a></p>
+        </center>
+      </td>
+      <td> 
+        <center>
+          <img src="../images/logo_pdf.gif" width="46" height="55"> 
+        </center>
+      </td>
+      <td> 
+        <center>
+          554 Ko 
+        </center>
+      </td>
+      <td> 
+        <center>
+          <p>Le syst&egrave;me de t&eacute;l&eacute;mesure KIWI &agrave; l'usage 
+            des clubs<br>
+            Version 2 - Janvier 2003</p>
+        </center>
+      </td>
+      <td> 
+        <center>
+          Non consultable 
+        </center>
+      </td>
+    </tr>
+    <TR> 
+      <TD> 
+        <CENTER>
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?systeme_kiwi_ecoles.pdf">Syst&egrave;me 
+            Kiwi_ecoles</a></p>
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <img src="../images/logo_pdf.gif" width="46" height="55"> 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          387 Ko 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <p>Le syst&egrave;me de t&eacute;l&eacute;mesure KIWI &agrave; l'usage 
+            des &eacute;coles<br>
+            Version 2 - Janvier 2003</p>
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          Non consultable 
+        </CENTER>
+      </TD>
+    </TR>
+    <TR> 
+      <TD> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?radio_navigation_gps.pdf">radio_navigation_gps.pdf</a></div>
+      </TD>
+      <TD> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </TD>
+      <TD> 
+        <div align="center">2089 Ko</div>
+      </TD>
+      <TD> 
+        <div align="center">Radio navigation et GPS</div>
+      </TD>
+      <TD>Non consultable</TD>
+    </TR>
+    <TR> 
+      <TD> 
+        <CENTER>
+          <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?le_jour_du_lacher.pdf">le_jour_du_lacher.pdf 
+          </a> 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <img src="../images/logo_pdf.gif" width="46" height="55"> 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          1109 Ko 
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          <p>Le jour du l&acirc;cher<br>
+            F&eacute;vrier 98 </p>
+        </CENTER>
+      </TD>
+      <TD> 
+        <CENTER>
+          Non consultable 
+        </CENTER>
+      </TD>
+    </TR>
+    <TR> 
+      <TD> 
+        <div align="center">Non t&eacute;l&eacute;chargeable</div>
+      </TD>
+      <TD> 
+        <div align="center"><a href="bon_commande.htm"><img src="../images/bon_de_commande.gif" width="104" height="70" border="0"></a></div>
+      </TD>
+      <TD>&nbsp;</TD>
+      <TD> 
+        <p align="center">Un ballon pour l'&eacute;cole<br>
+          Juillet 98</p>
+      </TD>
+      <TD> 
+        <div align="center">Non consultable</div>
+      </TD>
+    </TR>
+    <TR> 
+      <TD> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?vol_simule_bso.pdf">vol_simule_bso.pdf</a></div>
+      </TD>
+      <TD> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </TD>
+      <TD> 
+        <div align="center">21 Ko</div>
+      </TD>
+      <TD> 
+        <p align="center">Vol simul&eacute; d'un ballon stratosph&eacute;rique<br>
+          F&eacute;vrier 95</p>
+      </TD>
+      <TD> 
+        <div align="center"><a href="vol_simule_bso/vol_simule_bso.htm">consultable 
+          ici</a></div>
+      </TD>
+    </TR>
+    <tr> 
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?guide_du_suiveur_ubpe.pdf">guide_du_suiveur_ubpe.pdf</a></div>
+      </td>
+      <td> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </td>
+      <td> 
+        <div align="center">2155 Ko</div>
+      </td>
+      <td> 
+        <p align="center">Guide du suiveur de l'op&eacute;ration '<a href="../ballons/present_ubpe.htm">Un 
+          ballon pour l'&eacute;cole</a>'<br>
+          Novembre 2002</p>
+      </td>
+      <td> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+  </TABLE>
+
+
+
+</div>
+
+
+
+<p align="left">&nbsp;</p>
+
+
+
+<hr>
+
+
+
+<div align="center"><img src="../images/g.gif" hspace=10 height=10 width=19 align=absmiddle><font size=-1><a href="#logiciels">Logiciels</a> 
+  </font><b>-</b><font size=-1> <a href="#fusex">Fusex</a> </font><b>-</b><font size=-1> 
+  <a href="#minif">Minif</a> </font><b>-</b><font size=-1> <a href="#micro">Micro</a> 
+  </font><b>-</b><font size=-1> <a href="#ballon">Ballon</a> </font><b>-</b><font size=-1> 
+  Suivi et organisation&nbsp;</font><b>-</b><font size=-1> <a href="#h2o">Fus&eacute;es 
+  &agrave; eau</a></font><img src="../images/d.gif" hspace=10 height=10 width=19 align=absmiddle> 
+  <hr>
+
+
+
+<p>&nbsp;</p></div>
+
+
+
+<p align="center"><b><font color="#FF0000"><font size=+2><a name="suivi"></a>Documents 
+
+
+
+  de suivi de club ou de pr&eacute;paration de campagne</font></font></b></p>
+
+
+
+<div align="center">
+
+
+
+  <table border width="100%" bordercolor="#000000" >
+    <tr> 
+      <td width="420" bgcolor="#66FFFF"> 
+        <center>
+          <b><i><font size=+1>T&eacute;l&eacute;chargement du document</font></i></b> 
+        </center>
+      </td>
+      <td bgcolor="#66FFFF" width="111"> 
+        <center>
+          <b><i><font size=+1>Type</font></i></b> 
+        </center>
+      </td>
+      <td bgcolor="#66FFFF" width="67"> 
+        <center>
+          <b><i><font size=+1>Taille</font></i></b> 
+        </center>
+      </td>
+      <td bgcolor="#66FFFF" width="242"> 
+        <center>
+          <b><i><font size=+1>Descriptif</font></i></b> 
+        </center>
+      </td>
+      <td bgcolor="#66FFFF" width="134"> 
+        <center>
+          <b><i><font size=+1>Consultation</font></i></b> 
+        </center>
+        <center>
+          <b><i><font size=+1>en ligne</font></i></b> 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <center>
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?fiche_declaration_projet_experimental.zip">fiche_declaration_projet_experimental.zip</a></p>
+        </center>
+      </td>
+      <td> 
+        <center>
+          <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+        </center>
+      </td>
+      <td> 
+        <center>
+          527 Ko 
+        </center>
+      </td>
+      <td> 
+        <center>
+          <p>Feuille de d&eacute;claration de projet exp&eacute;rimental<br>
+            Septembre 2002</p>
+        </center>
+      </td>
+      <td> 
+        <center>
+          Non consultable 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <center>
+          <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?gestion_projet_fusex.pdf">Gestion 
+          d'un projet fusex</a> 
+        </center>
+      </td>
+      <td width="111"> 
+        <center>
+          <img src="../images/logo_pdf.gif" width="46" height="55"> 
+        </center>
+      </td>
+      <td width="67"> 
+        <center>
+          886 Ko 
+        </center>
+      </td>
+      <td width="242"> 
+        <center>
+          <p>La gestion d'un projet de fus&eacute;e exp&eacute;rimentale<br>
+            Octobre 99</p>
+        </center>
+      </td>
+      <td width="134"> 
+        <center>
+          Non consultable 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"> 
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?conditions_securite.pdf">conditions_securite.pdf</a></p>
+        </div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </td>
+      <td width="67">1692 Ko</td>
+      <td width="242"> 
+        <div align="center"> 
+          <p>Conditions de s&eacute;curit&eacute; relatives &agrave; la mise en 
+            oeuvre de fus&eacute;es amateurs<br>
+            Avril 91</p>
+        </div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"> 
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?fiche_participation_plan_d_op.zip">fiche_participation</a></p>
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?fiche_participation_plan_d_op.pdf">plan_d_op.pdf</a></p>
+        </div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">13 Ko</div>
+      </td>
+      <td width="242"> 
+        <div align="center"> 
+          <p>Fiches de participation au plan d'op&eacute;ration et controles<br>
+            Juin 98</p>
+        </div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?fiches_visite_avancement.pdf">fiches_visite_avancement.pdf</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </td>
+      <td width="67">60 Ko</td>
+      <td width="242"> 
+        <div align="center"> 
+          <p>Fiche de visite d'avancement<br>
+            Juin 98</p>
+        </div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?fiche_inscription_campagne.pdf">fiche_inscription_campagne.pdf</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">59 Ko</div>
+      </td>
+      <td width="242"> 
+        <div align="center"> 
+          <p>Fiche d'inscription &agrave; la campgne nationale de lancements de 
+            Millau<br>
+            Mars 2002</p>
+        </div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center">Non t&eacute;l&eacute;chargeable</div>
+      </td>
+      <td width="111"> 
+        <div align="center"><a href="bon_commande.htm"><img src="../images/bon_de_commande.gif" width="104" height="70" border="0"></a></div>
+      </td>
+      <td width="67">&nbsp;</td>
+      <td width="242"> 
+        <div align="center">Organiser une f&ecirc;te r&eacute;gionale de l'espace</div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?plan_aire_lancement_bourges.zip">plan_aire_lancement_bourges.zip</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/icone_gif.gif" width="66" height="49"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">96 Ko</div>
+      </td>
+      <td width="242"> 
+        <div align="center">Plan et carte de l'aire de lancement de Bourges</div>
+      </td>
+      <td width="134"> 
+        <div align="center"><a href="cartes/cartes.htm">consultable ici</a></div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <center>
+          <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?fiches_controles_fusex.pdf">fiches_controles_fusex.pdf</a> 
+        </center>
+      </td>
+      <td> 
+        <center>
+          <img src="../images/logo_pdf.gif" width="46" height="55"> 
+        </center>
+      </td>
+      <td> 
+        <div align="center">89 Ko </div>
+      </td>
+      <td> 
+        <center>
+          <p>Fiches de contr&ocirc;le des fus&eacute;es exp&eacute;rimentales<br>
+            Mai 2002</p>
+        </center>
+      </td>
+      <td> 
+        <center>
+          Non consultable 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <center>
+          Non t&eacute;l&eacute;chargeable 
+        </center>
+      </td>
+      <td width="111"> 
+        <center>
+          <div align="center"><a href="bon_commande.htm"><img src="../images/bon_de_commande.gif" width="104" height="70" border="0"></a></div>
+        </center>
+      </td>
+      <td width="67"> 
+        <center>
+        </center>
+      </td>
+      <td width="242"> 
+        <center>
+          <p>Manuel du Poste de Coordination aux Localisations<br>
+            Mars 98</p>
+        </center>
+      </td>
+      <td width="134"> 
+        <center>
+          <a href="manuel_pc_loc/manuel_pc_loc.htm">consultable ici</a> 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center">Non t&eacute;l&eacute;chargeable</div>
+      </td>
+      <td width="111"> 
+        <div align="center"><a href="bon_commande.htm"><img src="../images/bon_de_commande.gif" width="104" height="70" border="0"></a></div>
+      </td>
+      <td width="67"> 
+        <div align="center"></div>
+      </td>
+      <td width="242"> 
+        <p align="center">Manuel du Poste de Coordination aux lancements de fus&eacute;es 
+          exp&eacute;rimentales<br>
+          Mai 98</p>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"> 
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?manuel_sonorisation_reseau_aire_de_lancements.pdf">manuel_reseau_sonorisation</a></p>
+          <p><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?manuel_sonorisation_reseau_aire_de_lancements.pdf">aire_lancements.pdf</a></p>
+        </div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">106 Ko</div>
+      </td>
+      <td width="242"> 
+        <p align="center">Réseau de sonorisation à l'usage des campagnes de lancement<br>
+          (Document de campagne)<br>
+          Juin 1998 </p>
+      </td>
+      <td width="134"> 
+        <div align="center"><a href="sono/sono.htm">consultable ici</a></div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?manuel_entretien_radiotelephones.pdf">manuel_entretien_radiotelephones.pdf</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">112 Ko</div>
+      </td>
+      <td width="242"> 
+        <p align="center">Manuel de maintenance des radiot&eacute;l&eacute;phones<br>
+          Juin 1998</p>
+      </td>
+      <td width="134"> 
+        <div align="center"><a href="radiotelephones/radiotelephones.htm">consultable 
+          ici</a></div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <center>
+          <a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?temps_max_de_descente.pdf"> 
+          temps_max_descente.pdf</a> 
+        </center>
+      </td>
+      <td width="111"> 
+        <center>
+          <p><img src="../images/logo_pdf.gif" width="46" height="55"></p>
+        </center>
+      </td>
+      <td width="67"> 
+        <center>
+          613 Ko&nbsp; 
+        </center>
+      </td>
+      <td width="242"> 
+        <center>
+          <p>Temps maximum de descente sous parachute autoris&eacute; pour le 
+            terrain de l'ETBS<br>
+            Janvier 97 </p>
+        </center>
+        <center>
+          &nbsp; 
+        </center>
+      </td>
+      <td width="134"> 
+        <center>
+          <a href="temps_max_descente/temps_max_descente.htm">consultable ici 
+          </a> 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?manuel_photorampe.zip">manuel_photorampe.zip</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/icone_word.gif" width="48" height="51"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">236 Ko</div>
+      </td>
+      <td width="242"> 
+        <div align="center"> 
+          <p>Manuel d'utilisation de l'exp&eacute;rience Photorampe<br>
+            Novembre 98</p>
+        </div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?documentation_anemometres.zip">documentation_anemometres.zip</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/icone_word.gif" width="48" height="51"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">36 Ko</div>
+      </td>
+      <td width="242"> 
+        <div align="center"> 
+          <p>Notice de montage et fonctionnement des an&eacute;mom&egrave;tres 
+            de campagne<br>
+            Juillet 98</p>
+        </div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?de_l_art_de_faire_choir.pdf">de_l_art_de_faire_choir.pdf</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">334 Ko</div>
+      </td>
+      <td width="242"> 
+        <div align="center"> 
+          <p>L'art de faire choir les fus&eacute;es l&agrave; o&ugrave; on souhaite 
+            qu'elles choissent<br>
+            Version 2 - Juillet 98</p>
+        </div>
+      </td>
+      <td width="134"> 
+        <div align="center"><a href="meteocal/meteocal.htm">consultable ici</a></div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?gestion_chrono.zip">gestion_chrono.zip</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"><img src="../images/icone_programme_msdos.gif" width="63" height="66"></div>
+      </td>
+      <td width="67"> 
+        <div align="center">425 Ko</div>
+      </td>
+      <td width="242"> 
+        <div align="center">Logiciel de gestion et d'affichage des chronologies 
+          de lancement</div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center">Non t&eacute;l&eacute;chargeable</div>
+      </td>
+      <td width="111"> 
+        <div align="center"><a href="bon_commande.htm"><img src="../images/bon_de_commande.gif" width="104" height="70" border="0"></a></div>
+      </td>
+      <td width="67">&nbsp;</td>
+      <td width="242"> 
+        <div align="center"> 
+          <p>Annuaire des structures microfus&eacute;es<br>
+            Novembre 97</p>
+        </div>
+      </td>
+      <td width="134"> 
+        <div align="center">Non consultable</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <center>
+          Non t&eacute;l&eacute;chargeable 
+        </center>
+      </td>
+      <td width="111"> 
+        <center>
+          <div align="center"><a href="bon_commande.htm"><img src="../images/bon_de_commande.gif" width="104" height="70" border="0"></a></div>
+        </center>
+      </td>
+      <td width="67"> 
+        <center>
+        </center>
+      </td>
+      <td width="242"> 
+        <center>
+          <p>Le pupitre de mise &agrave; feu des microfus&eacute;es<br>
+            Avril 2001</p>
+        </center>
+      </td>
+      <td width="134"> 
+        <center>
+          Non consultable 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?allumeur_microfusees.pdf">allumeur_microfusee.pdf</a></div>
+      </td>
+      <td width="111"> 
+        <div align="center"> 
+          <p align="center"><img src="../images/logo_pdf.gif" width="46" height="55"></p>
+        </div>
+      </td>
+      <td width="67"> 
+        <div align="center">124 Ko</div>
+      </td>
+      <td width="242"> 
+        <div align="center">Mise en oeuvre d'un allumeur micro-moteurs</div>
+      </td>
+      <td width="134"> 
+        <div align="center"><a href="allumeur_microfusee/allumeur_microfusee.htm"><b>consultable 
+          ici</b></a></div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="420"> 
+        <center>
+          Non t&eacute;l&eacute;chargeable 
+        </center>
+      </td>
+      <td width="111"> 
+        <center>
+          <img src="../images/icone_word.gif" width="48" height="51"> 
+        </center>
+      </td>
+      <td width="67"> 
+        <center>
+          34 Ko 
+        </center>
+      </td>
+      <td width="242"> 
+        <center>
+          <p>&nbsp; Fiches de contr&ocirc;les des minifus&eacute;es<br>
+            D&eacute;cembre 97 </p>
+        </center>
+        <center>
+          &nbsp; 
+        </center>
+      </td>
+      <td width="134"> 
+        <center>
+          Non consultable 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"> 
+          <p>Non t&eacute;l&eacute;chargeable</p>
+        </div>
+      </td>
+      <td> 
+        <div align="center"><a href="bon_commande.htm"><img src="../images/bon_de_commande.gif" width="104" height="70" border="0"></a></div>
+      </td>
+      <td> 
+        <div align="center"></div>
+      </td>
+      <td> 
+        <div align="center">Progression p&eacute;dagogique au sein du r&eacute;seau 
+          STJ</div>
+      </td>
+      <td>Non consultable </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?guide_suiveur.pdf">guide_suiveur.pdf</a></div>
+      </td>
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?la_fusee_h2o.pdf"><img src="../images/logo_pdf.gif" width="46" height="55" border="0"></a></div>
+      </td>
+      <td> 
+        <div align="center">567 Ko</div>
+      </td>
+      <td> 
+        <div align="center">Le guide du parfait suiveur de projet fusex</div>
+      </td>
+      <td> 
+        <div align="center">Non consultable </div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?feuilles_de_pourcentage_suivi.pdf">feuilles_de_pourcentage_suivi.pdf</a></div>
+      </td>
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?la_fusee_h2o.pdf"><img src="../images/logo_pdf.gif" width="46" height="55" border="0"></a></div>
+      </td>
+      <td> 
+        <div align="center">13 Ko</div>
+      </td>
+      <td> 
+        <div align="center">Feuille de pourcentage d'avancement de projet et de 
+          visite de qualification</div>
+      </td>
+      <td> 
+        <div align="center">Non consultable </div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?trame_compte_rendu_visite_suivi.pdf">trame_compte_rendu_visite_suivi.pdf</a></div>
+      </td>
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?la_fusee_h2o.pdf"><img src="../images/logo_pdf.gif" width="46" height="55" border="0"></a></div>
+      </td>
+      <td> 
+        <div align="center">63 Ko</div>
+      </td>
+      <td> 
+        <div align="center">Trame de compte rendu de visite de suivi</div>
+      </td>
+      <td> 
+        <div align="center">Non consultable </div>
+      </td>
+    </tr>
+  </table>
+
+
+
+</div>
+
+
+
+<p align="center">&nbsp;</p>
+
+
+
+<p align="center"><img src="../images/g.gif" hspace=10 height=10 width=19 align=absmiddle><font size=-1><a href="#logiciels">Logiciels</a> 
+  </font><b>-</b><font size=-1> <a href="#fusex">Fusex</a> </font><b>-</b><font size=-1> 
+  <a href="#minif">Minif</a> </font><b>-</b><font size=-1> <a href="#micro">Micro</a> 
+  </font><b>-</b><font size=-1> <a href="#ballon">Ballon</a> </font><b>-</b><font size=-1> 
+  <a href="#suivi">Suivi et organisation</a>&nbsp;</font><b>-</b><font size=-1> 
+  <a href="#h2o">Fus&eacute;es &agrave; eau</a>&nbsp;</font><img src="../images/d.gif" hspace=10 height=10 width=19 align=absmiddle></p>
+
+
+
+<div align="center">
+  <hr>
+  <p>&nbsp;</p>
+</div>
+<p align="center"><b><font color="#FF0000"><font size=+2><a name="h2o"></a>Fus&eacute;es 
+  hydropneumatiques</font></font></b></p>
+<div align="center"> 
+  <table border width="100%" bordercolor="#000000" >
+    <tr> 
+      <td width="420" bgcolor="#66FFFF"> 
+        <center>
+          <b><i><font size=+1>T&eacute;l&eacute;chargement du document</font></i></b> 
+        </center>
+      </td>
+      <td bgcolor="#66FFFF" width="111"> 
+        <center>
+          <b><i><font size=+1>Type</font></i></b> 
+        </center>
+      </td>
+      <td bgcolor="#66FFFF" width="67"> 
+        <center>
+          <b><i><font size=+1>Taille</font></i></b> 
+        </center>
+      </td>
+      <td bgcolor="#66FFFF" width="242"> 
+        <center>
+          <b><i><font size=+1>Descriptif</font></i></b> 
+        </center>
+      </td>
+      <td bgcolor="#66FFFF" width="134"> 
+        <center>
+          <b><i><font size=+1>Consultation</font></i></b> 
+        </center>
+        <center>
+          <b><i><font size=+1>en ligne</font></i></b> 
+        </center>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?la_fusee_h2o.pdf">La 
+          fus&eacute;e H2O.pdf</a></div>
+      </td>
+      <td> 
+        <div align="center"><a href="http://www.planetesciences.org/cgi-bin/compteur_telechargement_publications_espace.cgi?la_fusee_h2o.pdf"><img src="../images/logo_pdf.gif" width="46" height="55" border="0"></a></div>
+      </td>
+      <td> 
+        <div align="center">7500 Ko</div>
+      </td>
+      <td> 
+        <div align="center">Les techniques de construction de rampes et fus&eacute;es 
+          &agrave; eau</div>
+      </td>
+      <td> 
+        <div align="center"><a href="fusee_h2o/index.html"><b>consultable</b> 
+          ici</a> </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+
+
+
+<p align="center"><font size="+2" color="#330099"><img src="../images/intro_publications.gif" usemap="#Publications" border="0"></font></p>
+
+
+
+<hr>
+
+
+
+<CENTER>ANSTJ 16, Place J. BREL 91130 Ris Orangis - <U>Tel</U>: 0169027610 - <U>Fax</U>: 0169432143-<U> E-Mail</U>:<A HREF="mailto:espace@planetesciences.org">espace@planetesciences.org</A><BR>
+  <FONT SIZE=+3></FONT>
+</CENTER>
+
+
+
+<map name="Publications">
+
+
+
+  <area shape="rect" coords="0,119,196,204" href="inscription_feuille_de_chou.htm">
+
+
+
+  <area shape="rect" coords="289,24,418,164" href="index_periodiques.htm">
+
+
+
+</map>
+
+
+
+</BODY>
+
+
+
+</HTML>
+
+
+

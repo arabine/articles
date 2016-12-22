@@ -1,0 +1,1113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Anthony Rabine">
+    <meta name="keywords" content=
+    "port parall&egrave;le linux windows entr&eacute;e sortie inportb outportb">
+    <meta name="description" content="Le port parall&egrave;le et les ports d'entr&eacute;es/sorties">
+
+    <title>Le port parall&egrave;le et les ports d'entr&eacute;es/sorties</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">Le port parall&egrave;le et les ports d'entr&eacute;es/sorties<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous allons commencer une s&eacute;rie d'articles
+            consacr&eacute;s aux ports du PC. Avant d'attaquer quelques montages pratiques, voyons comment
+            mettre en oeuvre ce bon vieux port parall&egrave;le encore bien utile.<br>
+            <br>
+            Le port parall&egrave;le est bas&eacute; sur une architecture assez ancienne mais tr&egrave;s
+            simple &agrave; utiliser, ce qui en fait l'interface de pr&eacute;dilection pour tout
+            &eacute;lectronicien amateur. Comme son nom l'indique, il fournit, entres autres, 8 broches de
+            donn&eacute;es directement utilisables et ne n&eacute;cessitant pas de circuits d'interfaces
+            suppl&eacute;mentaires pour r&eacute;aliser des taches simples. De plus, comme nous le verrons
+            plus loin, la programmation de ce port est tr&egrave;s ais&eacute;e et ce, &agrave; partir de
+            nombreux langages. Quoi de mieux pour r&eacute;aliser vos montages personnels avec votre PC.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Brochage et performances</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Les registres</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">Programmation du port</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">T&eacute;l&eacute;chargements</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Brochage et performances</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le port parall&egrave;le se pr&eacute;sente sous
+            la forme d'un connecteur SUBD femelle &agrave; 25 broches. Seules 17 broches sont utilisables,
+            les 8 broches restantes sont interconnect&eacute;es &agrave; la masse du PC. Le sch&eacute;ma
+            ci-dessous montre le brochage de ce port.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours1/parallelport.gif"><br>
+        <b><u>Le port parall&egrave;le femelle vu de l'ext&eacute;rieur.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voici le nom de chaque broche :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Broche</td>
+
+                <td>Nom</td>
+
+                <td>Sens</td>
+
+                <td>Inversion</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>/STROBE</td>
+
+                <td>entr&eacute;e/sortie</td>
+
+                <td>OUI</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+
+                <td>D0</td>
+
+                <td>entr&eacute;e/sortie (si EPP*)</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+
+                <td>D1</td>
+
+                <td>entr&eacute;e/sortie (si EPP*)</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+
+                <td>D2</td>
+
+                <td>entr&eacute;e/sortie (si EPP*)</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+
+                <td>D3</td>
+
+                <td>entr&eacute;e/sortie (si EPP*)</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+
+                <td>D4</td>
+
+                <td>entr&eacute;e/sortie (si EPP*)</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+
+                <td>D5</td>
+
+                <td>entr&eacute;e/sortie (si EPP*)</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+
+                <td>D6</td>
+
+                <td>entr&eacute;e/sortie (si EPP*)</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+
+                <td>D7</td>
+
+                <td>entr&eacute;e/sortie (si EPP*)</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+
+                <td>/ACK</td>
+
+                <td>entr&eacute;e</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>11</td>
+
+                <td>BUSY</td>
+
+                <td>entr&eacute;e</td>
+
+                <td>OUI</td>
+              </tr>
+
+              <tr>
+                <td>12</td>
+
+                <td>PE (Paper End)</td>
+
+                <td>entr&eacute;e</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>13</td>
+
+                <td>SELECT</td>
+
+                <td>entr&eacute;e</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>14</td>
+
+                <td>/AUTOFEED</td>
+
+                <td>entr&eacute;e/sortie</td>
+
+                <td>OUI</td>
+              </tr>
+
+              <tr>
+                <td>15</td>
+
+                <td>/ERROR</td>
+
+                <td>entr&eacute;e</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>16</td>
+
+                <td>/INIT</td>
+
+                <td>entr&eacute;e/sortie</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>17</td>
+
+                <td>/SELECT IN</td>
+
+                <td>entr&eacute;e/sortie</td>
+
+                <td>OUI</td>
+              </tr>
+
+              <tr>
+                <td>18-25</td>
+
+                <td>Masse</td>
+
+                <td>-</td>
+
+                <td>-</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/rmq.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Remarque<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">* Pour que le port parall&egrave;le soit utilisable en
+              entr&eacute;e/sortie, il faut configurer le port parall&egrave;le en mode EPP exclusivement. Ne
+              pas utiliser le mode EPP/ECP sous peine d'avoir quelques probl&egrave;mes. Nous rappelons que
+              le mode se configure dans le BIOS.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous remarquons que le nom de certaines broches
+            nous est assez familier ; en fait ce port a &eacute;t&eacute; con&ccedil;u &agrave; l'origine
+            pour y brancher des imprimantes. Le d&eacute;bit fourni par ce port est de l'ordre de 150ko/s, ce
+            qui limite fortement les possibilit&eacute;s d'y connecter d'autres p&eacute;riph&eacute;riques.
+            C'est pourquoi les grands noms de l'informatique ont cr&eacute;&eacute; 5 standards
+            regroup&eacute;s dans la norme IEEE 1284 (dans l'ordre croissant de performance) :<br>
+            <br>
+
+            <ul>
+              <li>Compatibility Mode</li>
+
+              <li>Nibble Mode</li>
+
+              <li>Byte Mode</li>
+
+              <li>EPP Mode (Enhanced Parallel Port)</li>
+
+              <li>ECP Mode (Extended Capabilities Port)</li>
+            </ul>
+            <br>
+            <br>
+            Ces standards ont une compatibilit&eacute; ascendante et les PC actuels sont capables de
+            travailler dans n'importe lequel de ces modes, sous r&eacute;serve que le port a
+            &eacute;t&eacute; configur&eacute; convenablement. Il vous faudra conna&icirc;tre l'adresse de
+            base du port parall&egrave;le. Cela peut se faire tr&egrave;s facilement sous Windows par
+            l'interm&eacute;diaire du panneau "Propri&eacute;t&eacute;s syst&egrave;me" et dans l'onglet
+            "Gestionnaire de p&eacute;riph&eacute;riques". Cliquer sur "Ports", "Port imprimante (LTP1)",
+            "Propri&eacute;t&eacute;s" puis "Ressources". La grande majorit&eacute; des ordinateurs ont une
+            adresse de 0x378 (en hexad&eacute;cimal). Cette adresse est appel&eacute;e adresse de base, et
+            correspond au registre de donn&eacute;es. Voici une capture d'&eacute;cran illustrant cela :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours1/paramportparallel.jpg"><br>
+        <b><u>Windows vous montre l'adresse de base du port.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le mode de fonctionnement du port se modifie
+            quant &agrave; lui dans le BIOS ; red&eacute;marrer l'ordinateur, aller dans la section
+            "Peripherial Setup" et changer l'option "Parallel Port Mode" selon la configuration
+            d&eacute;sir&eacute;e. Dans sa version la plus simple (Compatibility Mode), les donn&eacute;es ne
+            peuvent servir qu'en sortie. Il existe cependant une m&eacute;thode pour acc&eacute;der &agrave;
+            une lecture de donn&eacute;es 8 bits en utilisant d'autres broches du port et un
+            proc&eacute;d&eacute; &eacute;lectronique appel&eacute; multiplexage. Ce que nous retiendrons est
+            que le mode EPP rend possible la lecture par l'interm&eacute;diaire du bus de donn&eacute;es. Le
+            d&eacute;bit a &eacute;t&eacute; ainsi augment&eacute; &agrave; 2 Mo/s, ce qui a permis de
+            connecter sur le port parall&egrave;le des p&eacute;riph&eacute;riques plus rapides tels que
+            scanners, lecteurs cd CD-ROM etc.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Au point de vue des performances
+            &eacute;lectriques, chaque broche du port est capable de fournir un courant maximal de 12 mA
+            environ. Il faut donc faire attention &agrave; la charge que l'on applique et calculer les
+            r&eacute;sistances de limitations ad&eacute;quates. Une solution pour &eacute;viter tout
+            probl&egrave;me de consommation est de placer un circuit buffer juste &agrave; la sortie du port.
+            Les niveaux de tension sont compatibles TTL : cela signifie qu'un bit mis &agrave; 1 provoquera
+            une mise &agrave; +5V sur la broche correspondante, et un 0 logique mettra cette broche &agrave;
+            0V (la masse du PC). Pour la lecture de donn&eacute;es, il faut faire un peu plus attention car
+            cela d&eacute;pend de la technologie utilis&eacute;e. En effet, certaines broches du port
+            poss&egrave;dent une r&eacute;sistance interne dite de "pull-up" (tirage au +5V) sur leurs
+            broches tandis que d'autres ont leurs sorties dites en "collecteur ouvert" (sans ausune
+            r&eacute;sistance). Une r&eacute;sistance de pull-up &agrave; l'entr&eacute;e de ces broches, de
+            l'ordre de 4,7 K Ohms, rendra votre montage comptatible sur tous les ports parall&egrave;les.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Les registres</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toute la gestion du port parall&egrave;le se
+            r&eacute;alise par l'interm&eacute;diaire de trois registres de 8 bits. Le premier correspond
+            &agrave; l'adresse de base du port : c'est le registre de donn&eacute;es (0x378 par exemple). Les
+            lignes D0 &agrave; D7 du connecteur prennent le niveau correspondant &agrave; la donn&eacute;e
+            inscrite dans ce registre et si le port a &eacute;t&eacute; configur&eacute; en mode EPP (bus de
+            donn&eacute;es bidirectionnel) on peut y lire l'&eacute;tat des broches. L'octet suivant (0x379)
+            est le registre d'&Eacute;tat accessible en lecture uniquement. Enfin, on trouve le registre de
+            Contr&ocirc;le (0x37A) accessible en lecture et en &eacute;criture. Une attention
+            particuli&egrave;re doit &ecirc;tre port&eacute;e sur le bit 5 (BID CTRL) qui permet, lorsqu'il
+            est &agrave; 1, de configurer le bus de donn&eacute;es en lecture. Le tableau ci-dessous nous
+            permettra de configurer facilement ces registres.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>Donn&eacute;es (lecture/&eacute;criture) 0x378</td>
+
+                <td>D7</td>
+
+                <td>D6</td>
+
+                <td>D5</td>
+
+                <td>D4</td>
+
+                <td>D3</td>
+
+                <td>D2</td>
+
+                <td>D1</td>
+
+                <td>D0</td>
+              </tr>
+
+              <tr>
+                <td>Etat (lecture) 0x379</td>
+
+                <td>BUSY</td>
+
+                <td>/ACK</td>
+
+                <td>PE</td>
+
+                <td>SELECT</td>
+
+                <td>/ERROR</td>
+
+                <td>-</td>
+
+                <td>-</td>
+
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>Contr&ocirc;le (lecture/&eacute;criture) 0x37A</td>
+
+                <td>-</td>
+
+                <td>-</td>
+
+                <td>BID CONTROL</td>
+
+                <td>IRQ ENABLE</td>
+
+                <td>/SELECT IN</td>
+
+                <td>/INIT</td>
+
+                <td>/AUTOFEED</td>
+
+                <td>/STROBE</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Note</b> : le signe / devant le nom signifie
+            "barre", c'est &agrave; dire que la logique active est z&eacute;ro. On les conserve juste pour se
+            rappeler des tests &agrave; effectuer dans le cas d'un dialogue avec une imprimante. Ne surtout
+            pas confondre avec l'inversion de niveau pr&eacute;sente sur certaines broches, information
+            indiqu&eacute;e dans le premier tableau.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>Programmation du port</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/rmq.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Remarque<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2"><b>Attention :</b> les codes propos&eacute;s en C et en Visual
+              Basic utilisent des appels directs aux ports d'entr&eacute;es sorties, ce qui est
+              d&eacute;fendu sur les syst&egrave;mes NT (Windows NT4, 2000, XP). Les programmes ci-dessous ne
+              fonctionnent donc que sous Win9x et WinME. pour contourner ce probl&egrave;me, il existe des
+              librairires : allez voir cela un peu plus bas ! :)</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/rmq.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Remarque<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">Notez que les exemples ci-dessous vous permettent d'acc&eacute;der
+              &agrave; l'ensemble des entr&eacute;es/sorties de l'ordinateur (ports s&eacute;rie,
+              parall&egrave;le, ISA ...). Le code est donc identique, seul change la taille des
+              donn&eacute;es (8bits, 16 bits) et les adresses de destination.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le port parall&egrave;le est extr&ecirc;mement
+            simple &agrave; programmer. Plusieurs langages poss&egrave;dent les fonctions pour acc&eacute;der
+            au contr&ocirc;le des registres. Ainsi, il est possible de programmer en Basic &agrave; l'aide de
+            INP et OUT ou dans des langages plus &eacute;volu&eacute;s comme le C. Nous nous
+            int&eacute;resserons plus particuli&egrave;rement &agrave; ce dernier langage mais
+            &eacute;galement au Visual Basic qui nous permettra de cr&eacute;er des applications sous
+            Windows.<br>
+            <br>
+            <font size="5" color="#0000FF">En langage C</font><br>
+            <br>
+            Dans le cas du C, il existe deux fonctions pour &eacute;crire et lire dans un registre. Elles
+            sont accessibles dans les biblioth&egrave;ques standards, &agrave; savoir :<br>
+            <br>
+
+            <ul>
+              <li>dos.h pour le compilateur Borland</li>
+
+              <li>pc.h pour le compilateur DJGPP (t&eacute;l&eacute;chargeable sur ce site, dans la section
+              Logiciels)</li>
+
+              <li>conio.h pour le compilateur de Microsoft</li>
+            </ul>
+            <br>
+            <br>
+             Les prototypes des fonctions sont les suivantes :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#FF0000">void</font> <font color="#000000"><b>outportb</b></font>(<font
+color="#FF0000">unsigned</font> <font color="#FF0000">short</font> ADRESSE, <font color=
+"#FF0000">unsigned</font> <font color="#FF0000">char</font> VALEUR);
+<font color="#FF0000">unsigned</font> <font color="#FF0000">char</font> <font color=
+"#000000"><b>inportb</b></font>(<font color="#FF0000">unsigned</font> <font color=
+"#FF0000">short</font> ADRESSE);</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dans le cas du compilateur Microsoft, remplacez
+            outportb et inportb par leurs &eacute;quivalents <b>outp</b> et <b>inp</b>. Notez que le 'b'
+            apr&egrave;s les noms signifie que vous acc&eacute;dez &agrave; un port de 8 bits. Si vous
+            souhaitez g&eacute;rer le port ISA par exemple, il faudra prendre les fonctions 16 bits :
+            <b>outport</b> et <b>inport</b>.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&eacute;alisons sans plus attendre notre
+            premi&egrave;re application. Un moyen tr&egrave;s pratique pour comprendre et v&eacute;rifier le
+            fonctionnement du port parall&egrave;le est de r&eacute;aliser le sch&eacute;ma de test
+            ci-dessous. Connect&eacute; sur le bus de donn&eacute;es, on peut visualiser directement le
+            contenu du registre gr&acirc;ce aux LED. Les r&eacute;sistances servent &agrave; limiter le
+            courant traversant les diodes. D&egrave;s lors, il suffit d'une simple ligne en C pour allumer
+            les LED d&eacute;sir&eacute;es. Il est possible &eacute;galement d'utiliser le programme
+            Output.exe (t&eacute;l&eacute;chargeable en bas de cette page) qui permet d'&eacute;crire une
+            donn&eacute;e sur le port parall&egrave;le.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours1/schema.gif"><br>
+        <b><u>Un montage simple pour visualiser les donn&eacute;es.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#FF9900">#include &lt;pc.h&gt;</font>
+
+<font color="#FF0000">void</font> <font color="#000000"><b>main</b></font>(<font color="#FF0000">void</font>)
+{
+<font color="#FF0000">unsigned</font> <font color="#FF0000">char</font> Valeur;
+<font color="#000000"><b>outportb</b></font>(0x378,0xFF); <font color=
+"#009900"><i>// On allume toutes les LED</i></font>
+Valeur = <font color="#000000"><b>inportb</b></font>(0x378); <font color=
+"#009900"><i>// On lit le registre de donn&eacute;es</i></font>
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Une remarque peut &ecirc;tre apport&eacute;e au
+            listing pr&eacute;c&eacute;dent. En effet, nous n'avons pas configur&eacute; le bus de
+            donn&eacute;es en entr&eacute;e, donc ce que nous lisons est juste la valeur du registre, soit
+            Valeur=255 ici. Le registre de donn&eacute;es ne devient l'image des broches que si le bit 5 du
+            registre de contr&ocirc;le est &agrave; 1.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color="#0000FF">En Visual
+            Basic</font><br>
+            <br>
+            Le cas de Visual Basic est un peu plus d&eacute;licat. En effet, aucune fonction n'existe en
+            standard. Pour cela, nous avons recours aux c&eacute;l&egrave;bres DLL qui permettent
+            d'&eacute;tendre les possibilit&eacute;s du langage. Nous allons utiliser Inpout.dll (comprendre
+            Inp-out, en rapport avec les fonctions du m&ecirc;me nom en Basic) qui contient deux fonctions
+            permettant de lire et d'&eacute;crire dans un des trois registres. Cette dll est disponible un
+            peu partout sur le net et en t&eacute;l&eacute;chargement ici :<br>
+            <br>
+            <a href="downloads/cours1/inpout32.dll">inpout32.dll</a><br>
+            <br>
+            Les prototypes des fonctions sont les suivants :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000">Out ADRESSE, VALEUR
+VALEUR = <font color="#000000"><b>Inp</b></font>(ADRESSE)</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tout projet n&eacute;cessitant l'utilisation de
+            cette DLL doit contenir un module servant &agrave; d&eacute;clarer ces nouvelles fonctions que
+            Visual Basic ne conna&icirc;t pas. Il faut aller dans le menu "Projet" puis cliquer sur "Ajouter
+            un module". Inscrire alors dans ce module le code suivant :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#0000FF"><b>Public</b></font> <font color=
+"#0000FF"><b>Declare</b></font> <font color="#0000FF"><b>Function</b></font> Inp <font color=
+"#0000FF"><b>Lib</b></font> <font color="#9999FF">"inpout32.dll"</font> _
+<font color="#0000FF"><b>Alias</b></font> <font color="#9999FF">"Inp32"</font><font color=
+"#000000"><b></b></font>(<font color="#0000FF"><b>ByVal</b></font> PortAddress <font color=
+"#0000FF"><b>As</b></font> <font color="#FF0000">Integer</font>) <font color="#0000FF"><b>As</b></font> <font
+color="#FF0000">Integer</font>
+<font color="#0000FF"><b>Public</b></font> <font color="#0000FF"><b>Declare</b></font> <font color=
+"#0000FF"><b>Sub</b></font> Out <font color="#0000FF"><b>Lib</b></font> <font color=
+"#9999FF">"inpout32.dll"</font> _
+<font color="#0000FF"><b>Alias</b></font> <font color="#9999FF">"Out32"</font><font color=
+"#000000"><b></b></font>(<font color="#0000FF"><b>ByVal</b></font> PortAddress <font color=
+"#0000FF"><b>As</b></font> <font color="#FF0000">Integer</font>, <font color=
+"#0000FF"><b>ByVal</b></font> Value <font color="#0000FF"><b>As</b></font> <font color=
+"#FF0000">Integer</font>)</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours1/testparallel.jpg"><br>
+        <b><u>Notre programme de test en Visual Basic.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Et voil&agrave; ce n'est pas plus difficile que
+            &ccedil;a. Ceux n'ayant pas Visual Basic peuvent utiliser le programme d&eacute;j&agrave;
+            compil&eacute; TestParall&egrave;le.exe t&eacute;l&eacute;chargeable ci-dessous. Il est capable
+            d'&eacute;crire dans tous les registres et montre en permanence leur valeur. Tous les programmes
+            sont accompagn&eacute;s de leurs sources avec des commentaires. Il n'y a aucune difficult&eacute;
+            de programmation.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color="#0000FF">Sous les
+            syst&egrave;mes NT (Windows 2000, XP)</font><br>
+            <br>
+            Nombreux sont ceux ayant un jour ou l'autre rencontr&eacute; ce probl&egrave;me. La seule
+            solution est soit (1) d'&eacute;crire un drivers ou (2) de ne pas s'emb&ecirc;ter et d'en
+            utiliser un tout fait ! :)<br>
+            Le drivers ci-dessous vous sera donc bien utile. Il poss&egrave;de une librairie &agrave; inclure
+            dans vos projets C++ et Visual Basic. En outre, des exemples vous sont propos&eacute;s (en C++ et
+            en Visual Basic) donc vous n'avez aucune raison de ne pas r&eacute;ussir. Pour le
+            t&eacute;l&eacute;charger, cliquez sur le lien ci-dessous.<br>
+            <br>
+
+            <div align="center">
+              <a href="downloads/cours1/port95nt.exe"><img src="images/cours1/zip.jpg" border=
+              "0"><b>port95nt.exe</b></a>
+            </div>
+            <br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color="#0000FF">Sous
+            Linux</font><br>
+            <br>
+            Le fonctionnement des ports sous Linux suit la m&ecirc;me logique. N&eacute;anmoins, il est
+            important d'avoir les droits de <b>root</b> pour acc&eacute;der aux ports
+            d'entr&eacute;es/sorties. Les fonctions propos&eacute;es sont les classiques
+            lectures/&eacute;critures et sont accessibles en incluant le fichier d'en-t&ecirc;te
+            <b>asm/io.h</b>.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#FF0000">unsigned</font> <font color="#FF0000">char</font> inb (<font
+color="#FF0000">unsigned</font> <font color="#FF0000">long</font> port); <font color=
+"#009900"><i>// Donn&eacute;e sur 8 bits (b = byte)</i></font>
+<font color="#FF0000">unsigned</font> <font color="#FF0000">short</font> inw (<font color=
+"#FF0000">unsigned</font> <font color="#FF0000">long</font> port);  <font color=
+"#009900"><i>// Donn&eacute;e sur 16 bits (w = word)</i></font>
+<font color="#FF0000">unsigned</font> <font color="#FF0000">long</font> inl (<font color=
+"#FF0000">unsigned</font> <font color="#FF0000">long</font> port);  <font color=
+"#009900"><i>// Donn&eacute;e sur 32 bits (l = long)</i></font>
+
+<font color="#FF0000">void</font> outb (<font color="#FF0000">unsigned</font> <font color=
+"#FF0000">char</font> value, <font color="#FF0000">unsigned</font> <font color="#FF0000">long</font> port);
+<font color="#FF0000">void</font> outw (<font color="#FF0000">unsigned</font> <font color=
+"#FF0000">short</font> value, <font color="#FF0000">unsigned</font> <font color="#FF0000">long</font> port);
+<font color="#FF0000">void</font> outl (<font color="#FF0000">unsigned</font> <font color=
+"#FF0000">long</font> value, <font color="#FF0000">unsigned</font> <font color="#FF0000">long</font> port);
+</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Un conseil : jettez un coup d'oeil sur deux
+            sources : 
+
+            <ul>
+              <li>L'excellent document HOW-TO de linux : <a href=
+              "downloads/cours1/Linux I-O port programming mini-HOWTO.htm">Linux I-O port programming
+              mini-HOWTO.htm</a></li>
+
+              <li>Un exemple de prammation en C sous linux utilisant le port parall&egrave;le et un
+              &eacute;cran LCD : allez voir le cours suivant, sur cette m&ecirc;me zone !!</li>
+            </ul>
+            <br>
+            Voil&agrave;, nh'&eacute;sitez pas &agrave; me faire part de vos id&eacute;es/programmes et
+            autres commentaires &agrave; ce sujet.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cette introduction au port parall&egrave;le nous
+            a donn&eacute; les bases pour d&eacute;velopper des applications plus compl&egrave;tes, ce que
+            nous verrons dans des prochains cours.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>T&eacute;l&eacute;chargements</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <ul>
+              <li><a href="downloads/cours1/testparallelc.zip">testparallelc.zip</a> : deux petits programmes
+              en C montrant comment lire et &eacute;crire des donn&eacute;es sur le port parall&egrave;le.
+              Sources incluses. (79,5 ko)</li>
+
+              <li><a href="downloads/cours1/testparallelvb.zip">testparallelvb.zip</a> : le logiciel en VB
+              pr&eacute;sent&eacute; ci-dessus accompagn&eacute; de toutes ses sources et de la dll
+              inpout.dll. (42,7 ko)</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ Pr&eacute;c&eacute;dent | <a href="index.htm">Index</a> | <a href=
+          "cours2.htm">Suivant</a> ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Anthony Rabine<br>
+        <a href="mailto:arabine@programmationworld.com">arabine@programmationworld.com</a><br>
+        <a href="http://www.programmationworld.com">http://www.programmationworld.com</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

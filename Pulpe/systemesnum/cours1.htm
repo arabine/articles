@@ -1,0 +1,1837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="">
+    <meta name="keywords" content="mantisse r&eacute;solution binaire hexad&eacute;cimal">
+    <meta name="description" content="Codage des donn&eacute;es">
+
+    <title>Codage des donn&eacute;es</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">Codage des donn&eacute;es<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Il existe un certain nombre de standards et de
+            r&egrave;gles pour repr&eacute;senter des donn&eacute;es en m&eacute;moire. Il convient de les
+            respecter pour que l'information soit valide et coh&eacute;rente. C'est la base de toute forme
+            d'&eacute;lectronique, de dialogue, de stockage et de repr&eacute;sentation des donn&eacute;es.
+            Vous verrez ici toutes les propri&eacute;t&eacute;s &eacute;tonnantes et la puissance de ce
+            syst&egrave;me. Commen&ccedil;ons sans plus tarder par quelques bases importantes.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Le binaire</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Les bases</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">Le codage binaire sign&eacute;</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">Le codage des nombres r&eacute;els</a>
+          </div>
+
+          <div style="margin-left:1em">
+            5. <a href="#_topic_5">Les autres codages</a>
+          </div>
+
+          <div style="margin-left:1em">
+            6. <a href="#_topic_6">Les op&eacute;rations</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Le binaire</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D&eacute;sireux d'automatiser certaines taches
+            ingrates ou trop compliqu&eacute;es (les calculs &agrave; l'&eacute;poque), les scientifiques ont
+            cr&eacute;&eacute; un standard pour repr&eacute;senter les nombres en &eacute;lectronique. Le
+            syst&egrave;me binaire a &eacute;t&eacute; utilis&eacute; : comme son nom l'indique, il comporte
+            deux &eacute;tats possibles : 0 ou 1. A ces chiffres, on associe une r&eacute;f&eacute;rence de
+            tension afin de repr&eacute;senter ces &eacute;tats avec des composants &eacute;lectroniques.
+            Ainsi, dans la plupart des cas, 0 correspond &agrave; une tension de 0V et 1 &agrave; une tension
+            de 5V.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le binaire n'a rien d'une invention, il s'agit
+            d'une base de comptage. La base la plus courante est la base dix (les chiffres vont de 0 &agrave;
+            9). Le num&eacute;ro de base correspond au nombre de chiffres avant de passer au poids suivant.
+            Cette notion de poids est tr&egrave;s importante : le poids d'un nombre correspond &agrave; sa
+            place dans l'&eacute;criture. Par exemple, dans le nombre suivant :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+3765
+
+3 est le digit de poids le plus fort et 5 celui de poids le plus faible. 
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ainsi, comme vous l'avez appris dans votre
+            enfance, un nombre d&eacute;cimal est form&eacute; par une somme de multiplications. L'exemple ci
+            dessus peut se d&eacute;composer comme cela :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+3765 = 3*1000 + 7*100 + 6*10 + 5
+
+Soit, en utilisant des puissances :
+
+3765 = 3*10^3 + 7*10^2 + 6*10^1 + 5*10^0
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cet exemple utilise une base bien connue, le base
+            10. Le binaire, la base 2, se forme exactement de la m&ecirc;me mani&egrave;re. Bien
+            &eacute;videmment, on ne peut utiliser que des 1 ou des 0. L'&eacute;criture standard est
+            appel&eacute;e le binaire naturel. Il existe d'autres &eacute;critures comme le binaire
+            r&eacute;l&eacute;chi par exemple. Le binaire naturel se code de la fa&ccedil;on suivante, avec
+            le poids fort &agrave; gauche et le poids faible &agrave; droite (comme pour toutes les bases en
+            fait).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a<sub>i</sub> ... a<sub>3</sub> a<sub>2</sub>
+            a<sub>1</sub> a<sub>0</sub><br>
+            <br>
+            a est une variable qui prend la valeur "0" ou "1". L'indice repr&eacute;sente le poids de a.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ai" est appel&eacute; BIT, qui signifie "Binary
+            digIT", et vaut donc 0 ou 1. La taille d'un nombre binaire est exprim&eacute; en bit. Ainsi, on
+            peut former un nombre de n'importe quelle taille, 1 bit, 2 bits, 3 bits etc. Il existe des
+            tailles normalis&eacute;es : 4 bits, 8 bits, 16 bits, 32 bits etc. On nomme ainsi par mot le
+            regroupement de bits. L'octet (8 bits) est le mot le plus r&eacute;pendu ; par exemple la GameBoy
+            ou l'Amstrad contiennent des processeurs dits 8 bits. Le bit de poids fort est appel&eacute; MSB
+            (Most Significant Bit) et le bit de poids faible LSB (Least Significant Bit).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Poids</td>
+
+                <td>2<sup>7</sup></td>
+
+                <td>2<sup>6</sup></td>
+
+                <td>2<sup>5</sup></td>
+
+                <td>2<sup>4</sup></td>
+
+                <td>2<sup>3</sup></td>
+
+                <td>2<sup>2</sup></td>
+
+                <td>2<sup>1</sup></td>
+
+                <td>2<sup>0</sup></td>
+              </tr>
+
+              <tr>
+                <td>Valeur</td>
+
+                <td>128</td>
+
+                <td>64</td>
+
+                <td>32</td>
+
+                <td>16</td>
+
+                <td>8</td>
+
+                <td>4</td>
+
+                <td>2</td>
+
+                <td>1</td>
+              </tr>
+
+              <tr>
+                <td>Nombre</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+              </tr>
+            </table>
+            <br>
+             Le nombre &eacute;crit ci-dessus est donc &eacute;gal &agrave; :<br>
+             0*2^7 + 1*2^6 + 1*2^5 + 0*2^4 + 1*2^3 + 0*2^2 + 0*2^1 + 1*2^0 = 0*128 + 1*64 + 1*32 + 0*16 + 1*8
+            + 0*4 + 0*2 + 1*1 = <b>105</b>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None?Voil&agrave;, et c'est la m&ecirc;me
+            m&eacute;thode pour toutes les bases. Ici, avec 8 bits, nous pouvons coder jusqu'&agrave; 255,
+            soit 2^8 - 1. D'une mani&egrave;re g&eacute;n&eacute;rale, la r&eacute;solution d'un nombre
+            binaire est : sur n bits : 0 &lt; x &lt; 2n - 1
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Les bases</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color=
+            "#0000FF">L'hexad&eacute;cimal et l'octal</font><br>
+            <br>
+             Le syst&egrave;me hexad&eacute;cimal est une forme d'&eacute;criture des nombres dans la base
+            16. L'hexad&eacute;cimal poss&egrave;de les m&ecirc;mes propri&eacute;t&eacute;s des autres
+            bases. Il contient 16 chiffres, de 0 &agrave; 9 et les 6 premi&egrave;res lettres de
+            l'alphabet.<br>
+            L'octal voit ses nombres cod&eacute;s en base 8, c'est &agrave; dire que seuls les digits de 0
+            &agrave; 7 sont utilis&eacute;s pour repr&eacute;senter un nombre. Ce codage est peu
+            r&eacute;pendu car il est plus difficile "d'appr&eacute;hender" la valeur d'un nombre
+            &eacute;crit en octal. Voici un d&eacute;but de correspondance entre ces bases :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>D&eacute;cimal<br>
+                Base 10</td>
+
+                <td>Hexad&eacute;cimal<br>
+                Base 16</td>
+
+                <td>Binaire<br>
+                base 2</td>
+
+                <td>Octal<br>
+                Base 8</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0000</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>0001</td>
+
+                <td>1</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+
+                <td>2</td>
+
+                <td>0010</td>
+
+                <td>2</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+
+                <td>3</td>
+
+                <td>0011</td>
+
+                <td>3</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+
+                <td>4</td>
+
+                <td>0100</td>
+
+                <td>4</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+
+                <td>5</td>
+
+                <td>0101</td>
+
+                <td>5</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+
+                <td>6</td>
+
+                <td>0110</td>
+
+                <td>6</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+
+                <td>7</td>
+
+                <td>0111</td>
+
+                <td>7</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+
+                <td>8</td>
+
+                <td>1000</td>
+
+                <td>10</td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+
+                <td>9</td>
+
+                <td>1001</td>
+
+                <td>11</td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+
+                <td>A</td>
+
+                <td>1010</td>
+
+                <td>12</td>
+              </tr>
+
+              <tr>
+                <td>11</td>
+
+                <td>B</td>
+
+                <td>1011</td>
+
+                <td>13</td>
+              </tr>
+
+              <tr>
+                <td>12</td>
+
+                <td>C</td>
+
+                <td>1100</td>
+
+                <td>14</td>
+              </tr>
+
+              <tr>
+                <td>13</td>
+
+                <td>D</td>
+
+                <td>1101</td>
+
+                <td>15</td>
+              </tr>
+
+              <tr>
+                <td>14</td>
+
+                <td>E</td>
+
+                <td>1110</td>
+
+                <td>16</td>
+              </tr>
+
+              <tr>
+                <td>15</td>
+
+                <td>F</td>
+
+                <td>1111</td>
+
+                <td>17</td>
+              </tr>
+
+              <tr>
+                <td>16</td>
+
+                <td>10</td>
+
+                <td>10000</td>
+
+                <td>20</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tr&egrave;s vite on a utilis&eacute; cette forme
+            d'&eacute;criture pour quantifier la m&eacute;moire des PC. Celle-ci a augment&eacute;
+            tr&egrave;s rapidement et c'est nettement plus simple et compr&eacute;hensible d'&eacute;crire :
+            A &agrave; la place de 1010 ; un caract&egrave;re au lieu de 4 !
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color="#0000FF">Passage d'une base
+            &agrave; l'autre</font><br>
+            <br>
+             Eh oui, la calculatrice de Windows est bien pratique mais il est int&eacute;ressant de savoir
+            comment passer d'une base &agrave; l'autre "&agrave; la main". Bon, pour passer du binaire
+            &agrave; la base d&eacute;cimale, il faut proc&eacute;der comme ci-dessus, en ajoutant les bits
+            des puissances de 2. L'inverse est cependant un peu plus dur. Prenons un exemple : 431. On peut
+            d&eacute;j&agrave; voir que ce nombre ne tiendra pas sur 8 bits (255 maxi) mais sera cod&eacute;
+            sur 9 bits (511 maxi). Pour transfomer ce nombre en binaire, il suffit de diviser successivement
+            le quotient par 2 (binaire = base 2). S'il y a un reste, on note 1, sinon on notera 0. Notre
+            exemple donne donc :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        <b><u>Ainsi, (431)<sub>10</sub> = (110101111)<sub>2</sub></u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La conversion du binaire &agrave;
+            l'hexad&eacute;cimal est extr&ecirc;mement simple : il suffit de regrouper le nombre binaire en
+            paquets de 4 bits en commen&ccedil;ant par le bit de poids faible (sinon &ccedil;a n'a aucun
+            sens). Apr&egrave;s il ne reste qu'&agrave; traduire chaque paquet de 4 bits par son
+            &eacute;quivalent en hexad&eacute;cimal.<br>
+             Pour diff&eacute;rencier un &eacute;criture hexa d'une &eacute;criture d&eacute;cimale, on
+            utilise une identification par un signe que l'on place devant le nombre. Le plus souvent c'est
+            0x, dans le C par exemple mais il y a aussi &amp;H en Visual basic, h ou $ en assembleur etc...
+            Nous garderons ici la notation 0x qui est la plus r&eacute;pendue. On peut aussi &eacute;crire
+            (D6)16 mais c'est assez lourd. Cela peut para&icirc;tre anodin mais, par exemple, 1001011 ne vaut
+            pas le m&ecirc;me en binaire et en hexad&eacute;cimal !
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+Quelques exemples :
+
+01100111
+on regroupe par 4 :
+0110 0111
+on traduit : 0x67
+
+011010100010001110
+on regroupe par 4 :
+01 1010 1000 1000 1110
+on traduit : 0x1A88E
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remarquez que le dernier regroupement n'a que
+            deux bits : cela est normal, vous pouvez rajouter autant de 0 que vous voulez apr&egrave;s le
+            MSB, comme dans toute les bases. En effet, si vous prenez le nombre d&eacute;cimal 47, vous
+            pouvez parfaitement l'&eacute;crire 00047, c'est pareil. Cependant, comme nous le verrons plus
+            loin, les z&eacute;ros apr&egrave;s le MSB peuvent avoir une tr&egrave;s grande importance dans
+            le cas du binaire sign&eacute;.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>Le codage binaire sign&eacute;</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'ennui avec le binaire tel que nous l'avons
+            d&eacute;fini plus haut est qu'il est impossible de coder des nombres n&eacute;gatifs. Mais
+            heureusement, il existe une norme pour arranger tout &ccedil;a. On va ainsi d&eacute;finir que
+            les nombres positifs sont les nombres binaires commen&ccedil;ant par un 0 (le bit de poids fort)
+            et les nombres n&eacute;gatifs sont les nombres binaires terminant par un 1 (le bit de poids
+            faible). Prenons un nombre A et proc&eacute;dons &agrave; l'op&eacute;ration suivante :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On additionne A avec son compl&eacute;ment et 1.
+            Nous voyons que, pour une taille fix&eacute;e (ici 8 bits) le r&eacute;sultat est 0. Le 1
+            suppl&eacute;mentaire est appel&eacute; retenue (carry en anglais), il ne nous int&eacute;resse
+            pas ici car nous avons r&eacute;alis&eacute; une addition de deux nombres de 8 bits, donc le
+            r&eacute;sultat est sur 8 bits.<br>
+            On en conclu alors que (en fixant le taille des nombres) :<br>
+            <br>
+            A + /A + 1 = 0<br>
+            <br>
+            Et d'autre part nous avons :<br>
+            <br>
+            A - A = 0<br>
+            <br>
+            D&egrave;s lors, on d&eacute;finit tout nombre n&eacute;gatif par :<br>
+            <br>
+            - A = /A + 1<br>
+            <br>
+            Cette &eacute;galit&eacute; s'appelle le compl&eacute;ment &agrave; deux de A. Le
+            compl&eacute;ment &agrave; 1 de A est /A, on rajoute 1 ce qui donne le compl&eacute;ment &agrave;
+            deux. Note : Le compl&eacute;ment &agrave; deux de 0000 0000 est 0000 0000 (z&eacute;ro n'est ni
+            n&eacute;gatif, ni positif) Voici la grille de tous les nombres binaires sign&eacute;s sur 4
+            bits.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>-8</td>
+
+                <td>1000</td>
+              </tr>
+
+              <tr>
+                <td>-7</td>
+
+                <td>1001</td>
+              </tr>
+
+              <tr>
+                <td>-6</td>
+
+                <td>1010</td>
+              </tr>
+
+              <tr>
+                <td>-5</td>
+
+                <td>1011</td>
+              </tr>
+
+              <tr>
+                <td>-4</td>
+
+                <td>1100</td>
+              </tr>
+
+              <tr>
+                <td>-3</td>
+
+                <td>1101</td>
+              </tr>
+
+              <tr>
+                <td>-2</td>
+
+                <td>1110</td>
+              </tr>
+
+              <tr>
+                <td>-1</td>
+
+                <td>1111</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>0000</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>0001</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+
+                <td>0010</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+
+                <td>0011</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+
+                <td>0100</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+
+                <td>0101</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+
+                <td>0110</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+
+                <td>0111</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Un nombre binaire A sign&eacute; sur n bits a
+            donc la r&eacute;solution suivante :<br>
+            - 2<sup>n-1</sup>&lt; A &lt; 2<sup>n-1</sup> - 1<br>
+            <br>
+            Prenons un exemple : imaginons que l'on code un nombre sur 1 octet (soit 8 bits) en non
+            sign&eacute; (pas de nombres n&eacute;gatifs). La r&eacute;solution est donc 0 ... 255.
+            Maintenant, on garde la m&ecirc;me r&eacute;solution (1 octet) mais on veut y repr&eacute;senter
+            des nombres n&eacute;gatifs. pour garder une sym&eacute;trie la r&eacute;solution va passer de
+            -128 &agrave; 127 ce qui fait bien 128+127=256 nombres diff&eacute;rents. La d&eacute;monstration
+            ci-dessus montre que :<br>
+            <br>
+            -A= /A + 1<br>
+            <br>
+            Exemple : comment coder -5 ? Il faut tout d'abord d&eacute;terminer la r&eacute;solution ! -5 ne
+            peut pas tenir sur 3 bits (-4 minimum), donc la r&eacute;solution de -5 est sur 4 bits (dans ce
+            cas on a -8 minimum). On proc&egrave;de comme cela :<br>
+            <br>
+            1) on code +5 : 0101<br>
+            2) on prend /A (le compl&eacute;ment) : 1010<br>
+            3) on ajoute 1 &agrave; ce compl&eacute;ment : 1010+1 = 1011<br>
+            <br>
+            C'est fini !
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>Le codage des nombres r&eacute;els</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous avons vu jusqu'&agrave; maintenant le codage
+            des nombres entiers. Le codage des nombres &agrave; virgule est assez diff&eacute;rent et
+            d&eacute;pend en plus du syst&egrave;me sur lequel on se trouve. Comment vous l'avez
+            s&ucirc;rement d&eacute;j&agrave; entendu, on parle souvent de format &agrave; virgule fixe ou
+            &agrave; virgule flottante.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color=
+            "#0000FF">Repr&eacute;sentation en virgule fixe</font><br>
+            <br>
+             Dans cette repr&eacute;sentation, la place de la virgule dans un mot est
+            d&eacute;termin&eacute;e. La partie enti&egrave;re se code comme &agrave; l'accoutum&eacute; avec
+            les puissances de 2 mais la partie fractionnaire se code avec les puissances de 2
+            n&eacute;gatives. L'exemple suivant code un nombre en virgule fixe sur 8 bits dont 3 pour la
+            partie fractionnaire :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td rowspan="2">poids</td>
+
+                <td>2<sup>4</sup></td>
+
+                <td>2<sup>3</sup></td>
+
+                <td>2<sup>2</sup></td>
+
+                <td>2<sup>1</sup></td>
+
+                <td>2<sup>0</sup></td>
+
+                <td>2<sup>-1</sup></td>
+
+                <td>2<sup>-2</sup></td>
+
+                <td>2<sup>-3</sup></td>
+              </tr>
+
+              <tr>
+                <td>16</td>
+
+                <td>8</td>
+
+                <td>4</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0,5</td>
+
+                <td>0,25</td>
+
+                <td>0,125</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quelques exemples pour clarifier tout &ccedil;a :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>+15,875</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>7F</td>
+              </tr>
+
+              <tr>
+                <td>+7,625</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>3D</td>
+              </tr>
+
+              <tr>
+                <td>+0,125</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>01</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>00</td>
+              </tr>
+
+              <tr>
+                <td>-0,125</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>FF</td>
+              </tr>
+
+              <tr>
+                <td>-15,875</td>
+
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>81</td>
+              </tr>
+
+              <tr>
+                <td>-16</td>
+
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>80</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cette m&eacute;thode est simple mais
+            limit&eacute;e. D&egrave;s lors elle n'est pas adapt&eacute;e aux calculs scientifiques. Au
+            passage, c'est pour cela que la puissance des processeurs en virgule flottante est importante ;
+            il y a beaucoup de calculs dans les jeux en 3D actuels (Quake ? :) et cette m&eacute;thode n'est
+            pas du tout adapt&eacute;e. En effet :<br>
+            <br>
+
+            <ul>
+              <li>La pr&eacute;cision absolue est constante (0,125 dans notre exemple) donc la
+              pr&eacute;cision relative est variable.</li>
+
+              <li>L'amplitude des nombres repr&eacute;sentables est limit&eacute;e [-16 ... 15,875] dans
+              notre exemple.</li>
+
+              <li style="list-style: none">
+                <div style="margin-left: 2em">
+                  <br>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color=
+            "#0000FF">Repr&eacute;sentation en virgule flottante</font><br>
+            <br>
+             On part du principe suivant : une m&ecirc;me valeur peut s'&eacute;crire de multiples
+            fa&ccedil;ons. Par exemple :<br>
+            <br>
+             1997 = 199,7*10 = 19,97*102 = 1,997*103 = 0,1997*104 = ...<br>
+            <br>
+            D'une mani&egrave;re g&eacute;n&eacute;rale, tout nombre d&eacute;cimal peut se mettre sous la
+            forme :<br>
+            <br>
+             
+
+            <div align="center">
+              <font size="4"><b>sM*B<sup>E</sup></b></font>
+            </div>
+            <br>
+            <br>
+             Avec :<br>
+            <br>
+             <b>s</b> = signe de la Mantisse<br>
+             <b>M</b> = Mantisse<br>
+             <b>B</b> = Base<br>
+             <b><sup>E</sup></b> = Exposant<br>
+            <br>
+             la mantisse est dite normalis&eacute;e si :<br>
+            <br>
+             
+
+            <div align="center">
+              <b>1 &lt;= mantisse normalis&eacute;e &lt; Base</b>
+            </div>
+            <br>
+            <br>
+             Exemple en base 10 :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td><b>Valeur</b></td>
+
+                <td><b>Repr&eacute;sentation normalis&eacute;e</b></td>
+              </tr>
+
+              <tr>
+                <td>-0,002458</td>
+
+                <td>-2,458*10<sup>-3</sup></td>
+              </tr>
+
+              <tr>
+                <td>12564,78</td>
+
+                <td>1,256478*10<sup>4</sup></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La base &eacute;tant implicite, il reste &agrave;
+            coder le signe, la mantisse normalis&eacute;e et l'exposant. Plusieurs repr&eacute;sentations
+            existent dont le format standard IEEE 754 P simple pr&eacute;cision (32 bits) utilis&eacute; sur
+            de nombreux processeurs arithm&eacute;tiques. Voici comment est r&eacute;partie l'information sur
+            ces 32 bits :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td><b>Bit</b></td>
+
+                <td><b>31</b></td>
+
+                <td><b>30&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;23</b></td>
+
+                <td>
+                <b>22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</b></td>
+              </tr>
+
+              <tr>
+                <td>Contenu</td>
+
+                <td>s<br>
+                (+=0,-=1)</td>
+
+                <td>E = E + 127</td>
+
+                <td>F = partie fractionnaire de la mantisse normalis&eacute;e</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'exposant est cod&eacute; en ex&eacute;dent 127
+            (8bits). La r&eacute;solution maximale sera donc :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td><b>E</b></td>
+
+                <td><b>E + 127</b></td>
+              </tr>
+
+              <tr>
+                <td>+ 128</td>
+
+                <td>FF</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>7F</td>
+              </tr>
+
+              <tr>
+                <td>- 127</td>
+
+                <td>00</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attention, pr&eacute;parez les aspirines
+            &ccedil;a va commencer. Voici un exemple de codage complet :<br>
+            <br>
+             On prend X = 15,71875<br>
+            1) Conversion en binaire : X = 1111,10111 2) Normalisation de la mantisse : X =
+            1,11110111*2<sup>3</sup> 3) Codage de l'exposant : 3 + 127 = 130 = 0x82<br>
+            <br>
+             D'o&ugrave; le r&eacute;sultat : X = <font color="#E22000">0</font><font color="#0000FF">100
+            0001 0</font> <font color="#008000">111 1011 1000 0000 0000 0000</font> = 0x417B8000<br>
+             En rouge : le signe<br>
+            En bleu : l'exposant<br>
+            En vert : la mantisse<br>
+            <br>
+            On proc&egrave;de &agrave; l'op&eacute;ration inverse avec un autre exemple :<br>
+            <br>
+             Soit Y = 0xC048C000<br>
+            <br>
+             On &eacute;crit le nombre en bianire pour en extraire les composantes :<br>
+            <br>
+            Y = <font color="#E22000">1</font><font color="#0000FF">100 0000 0</font> <font color=
+            "#008000">100 1000 1100 0000 0000 0000</font><br>
+            <br>
+             D&egrave;s lors, on obtient :<br>
+            <br>
+            s=1 ; E + 127 = 1000 0000 = 128 d'o&ugrave; E=1<br>
+            M=1,1001 0001 1000 0000 0000 000<br>
+            <br>
+             D'o&ugrave; :<br>
+            <br>
+             Y = -1,1001 0001 1 * 2<sup>1</sup> = -11,00100011 = - (3 + 2<sup>-3</sup> + 2<sup>-7</sup> +
+            2<sup>-8</sup>) = -3,13671875<br>
+            <br>
+             D'une mani&egrave;re g&eacute;n&eacute;rale :<br>
+            <br>
+             
+
+            <div align="center">
+              <font size="4"><b>Y = (-1)<sup>s</sup> * 1,F * 2<sup>E-127</sup></b></font>
+            </div>
+            <br>
+            <br>
+             Propri&eacute;t&eacute;s de cette repr&eacute;sentation :<br>
+            <br>
+             
+
+            <ul>
+              <li>Amplitude des nombres repr&eacute;sentables : 1,0*2<sup>-127</sup> &lt;= |X| &lt;
+              1,11111111111111111111111*2<sup>+128</sup></li>
+
+              <li>Pr&eacute;cision disponible : pr&eacute;cision relative dX/X=2<sup>-24</sup></li>
+
+              <li>Permet de comparer 2 r&eacute;els de m&ecirc;me signe comme des entiers non
+              sign&eacute;s</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_5"></a>Les autres codages</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color="#0000FF">Le codage
+            DCBN</font><br>
+            <br>
+             Cela signifie D&eacute;cimal Cod&eacute; Binaire Naturel, ou code pond&eacute;r&eacute;
+            d&eacute;cimal. Peu de chose &agrave; dire, c'est simplement une forme d'&eacute;criture. Elle
+            est tr&egrave;s utilis&eacute;e par exemple dans les syst&egrave;mes &agrave; base d'afficheurs 7
+            segments. Chaque digit d&eacute;cimal est cod&eacute; individuellement en binaire. Seules les
+            combinaisons de 0000 &agrave; 1001 sont utilis&eacute;es. Juste un exemple pour comprendre
+            l'&eacute;criture :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+Le nombre 1984 s'&eacute;crit en binaire :
+
+0001 1001 1000 0100
+
+Chaque regroupement de 4 bits correspond, dans l'ordre, &agrave; un chiffre dont est compos&eacute; le nombre.
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On peut choisir une autre pond&eacute;ration,
+            comme le code AIKEN 2421 :<br>
+            <br>
+            Exemple : 1997 = 0001 1111 1111 1101
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_6"></a>Les op&eacute;rations</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voil&agrave; de quoi vous faire travailler les
+            m&eacute;ninges ;). Si on a l'habitude d'effectuer de t&ecirc;te les op&eacute;rations simples en
+            d&eacute;cimal, il nous est plus difficile d'effectuer les m&ecirc;mes op&eacute;rations dans les
+            bases 16 et 2. Pourtant, les op&eacute;rations ob&eacute;issent exactement aux m&ecirc;mes lois
+            et aux m&ecirc;mes propri&eacute;t&eacute;s. Le seul probl&egrave;me vient de la capacit&eacute;,
+            notion que l'on retrouve dans nos calculatrices. Il vous est d&eacute;j&agrave; arriv&eacute;
+            d'&eacute;crire une op&eacute;ration, du type 112313548 * 23134548 et de vous retrouver avec un
+            beau OL (Out of Limit) sur l'&eacute;cran. Cela vient du fait que le r&eacute;sultat ne tient pas
+            sur la zone m&eacute;moire allou&eacute;e pour stocker le r&eacute;sultat. Si cette
+            m&eacute;moire a 8 bits, le nombre maximal qu'elle peut contenir est 255 (nombre non
+            sign&eacute;). Allez, hop quelques exemples (TOUS les nombres sont cod&eacute;s en binaire
+            sign&eacute;, et donc le r&eacute;sultat de m&ecirc;me) :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+
+
+1010 0110 -90
++ 1100 1101 -51
+-------------- -------
+1 0111 0011 -141
+
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voici un exemple o&ugrave; tout se passe bien :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Un exemple de d&eacute;passement de
+            capacit&eacute; (overflow) :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&agrave; il y a un probl&egrave;me, le MSB est
+            1, ce qui signifie que le nombre est n&eacute;gatif (-72). Hors, le r&eacute;sultat d'une<br>
+            addition de deux nombres positifs ne peut pas &ecirc;tre n&eacute;gatif.<br>
+            <br>
+            Voici un exemple o&ugrave; il y a une retenue (illustration de l'importance de la
+            r&eacute;solution) :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le r&eacute;sultat est exact, si l'on tient pas
+            compte de la retenue, c'est &agrave; dire du 9i&egrave;me bit (calculs sur 8 bits, donc<br>
+            r&eacute;sultat sur 8 bits).<br>
+            <br>
+            Une dernier exemple montrant un autre probl&egrave;me :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous avons ici une retenue que nous laissons de
+            c&ocirc;t&eacute; compte tenu de la r&eacute;solution. Cependant, le nombre sur 8<br>
+            bits est positif (il commence par un z&eacute;ro) ce qui est impossible car l'addition de deux
+            nombres n&eacute;gatifs donne<br>
+            forc&eacute;ment un nombre n&eacute;gatif : il y a d&eacute;passement de capacit&eacute;.<br>
+            <br>
+            Finalement, nous pouvons tirer la loi suivante :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+Si on a :
+
+nombre positif + nombre positif = nombre n&eacute;gatif
+
+ou
+
+nombre n&eacute;gatif + nombre n&eacute;gatif = nombre positif
+
+Alors il y a d&eacute;passement de capacit&eacute;. 
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Un dernier point concernant les calculs avec les
+            nombres hexad&eacute;cimaux. Encore une fois, pensez &agrave; effectuer la m&ecirc;me
+            m&eacute;thode que pour les nombres d&eacute;cimaux (la retenue s'additionne aux digits suivants
+            et la base &agrave; ajouter est 16, lorsque le nombre &agrave; soustraire est plus grand).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Une addition :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Une soustraction :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ Pr&eacute;c&eacute;dent | Index | Suivant ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par<br>
+         <a href="mailto:"></a><br>
+        <a href=""></a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

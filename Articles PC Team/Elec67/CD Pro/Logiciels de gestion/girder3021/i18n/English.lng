@@ -1,0 +1,688 @@
+&Disable Input Device(s)
+&Disable Input Device(s)
+&Enable Input Device(s)
+&Enable Input Device(s)
+&File
+&File
+&New
+&New
+&Open...
+&Open...
+&Save
+&Save
+&Edit
+&Edit
+&Copy
+&Copy
+&Paste
+&Paste
+&Add Command
+&Add Command
+&Delete
+&Delete
+&Test Command
+&Test Command
+&Reset All States
+&Reset All States
+&Help
+&Help
+&About
+&About
+Apply
+Apply
+AST/NEC/IBM IR Mouse plugin.
+AST/NEC/IBM IR Mouse plugin.
+Allowed Clients
+Allowed Clients
+Address
+Address
+Address edit
+Address edit
+Add
+Add
+APM Event Generator
+APM Event Generator
+APM Event Plugin 1.0 for Girder 3.0
+APM Event Plugin 1.0 for Girder 3.0
+About
+About
+Antirepeat active
+Antirepeat active
+ALTKey sent
+ALTKey sent
+Autoload file does not exist.
+Autoload file does not exist.
+Auto Enable Input device
+Auto Enable Input device
+Auto Load
+Auto Load
+Auto execute on startup
+Auto execute on startup
+Available plugins
+Available plugins
+Action Plugins
+Action Plugins
+Add &MultiGroup
+Add &MultiGroup
+Add &Group
+Add &Group
+Antirepeat wait time [ms]
+Antirepeat wait time [ms]
+Absolute Mouse move
+Absolute Mouse move
+Accelerate
+Accelerate
+Alt
+Alt
+Alternative proc.
+Alternative proc.
+Baud Rate
+Baud Rate
+Bit Number
+Bit Number
+Browse
+Browse
+Begin state
+Begin state
+Cancel
+Cancel
+Comport
+Comport
+Command ID
+Command ID
+Click command sent.
+Click command sent.
+Cannot find window
+Cannot find window
+Cannot find group
+Cannot find group
+Cannot find command
+Cannot find command
+Command state reset
+Command state reset
+Cannot find icon
+Cannot find icon
+Command not found
+Command not found
+Cannot enable 
+Cannot enable 
+Cannot open drive
+Cannot open drive
+Cannot play wavfile.
+Cannot play wavfile.
+Cannot Shutdown windows.
+Cannot Shutdown windows.
+Command executed
+Command executed
+Cannot change mode
+Cannot change mode
+Cannot Find Softplugin.
+Cannot Find Softplugin.
+Command State
+Command State
+Current State
+Current State
+Change the Target Settings of the follwing command ?
+Change the Target Settings of the follwing command ?
+Child Name
+Child Name
+Child Class
+Child Class
+Checking the Settings
+Checking the Settings
+Class Name
+Class Name
+Captured IR code.
+Captured IR code.
+Cannot load plugin.
+Cannot load plugin.
+Cannot save datafile.
+Cannot save datafile.
+Cannot load datafile.
+Cannot load datafile.
+Could not enable input device(s).
+Could not enable input device(s).
+Could not enable IR device.
+Could not enable IR device.
+Contents
+Contents
+Capture Window
+Capture Window
+Contact and Copyright information
+Contact and Copyright information
+Clicked
+Clicked
+Close
+Close
+Center and Resize window
+Center and Resize window
+Change Resolution
+Change Resolution
+Command
+Command
+Capture
+Capture
+Control
+Control
+Cannot import group.
+Cannot import group.
+Cannot export group.
+Cannot export group.
+Clicked sent.
+Clicked sent.
+Close sent.
+Close sent.
+Clear List
+Clear List
+Default
+Default
+Default speed
+Default speed
+Dtr
+Dtr
+Delete
+Delete
+DFX 3.3 Plugin Controller
+DFX 3.3 Plugin Controller
+Down
+Down
+Device started
+Device started
+Device start failed
+Device start failed
+Device stopped
+Device stopped
+Device stop failed
+Device stop failed
+Don't send the IR commands when Girder is the Foreground window
+Don't send the IR commands when Girder is the Foreground window
+Display Splashscreen
+Display Splashscreen
+Description
+Description
+Device number
+Device number
+Dotmatrix font
+Dotmatrix font
+Drag me to target window
+Drag me to target window
+Double Clicked
+Double Clicked
+Disable Device
+Disable Device
+Example plugin for Girder 3.0
+Example plugin for Girder 3.0
+Error: Cannot find command
+Error: Cannot find command
+Error: Cannot set volume
+Error: Cannot set volume
+Error: Cannot execute command.
+Error: Cannot execute command.
+Execute on all states except 1
+Execute on all states except 1
+Executable
+Executable
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV|All Files (*.*)|*.*
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV|All Files (*.*)|*.*
+E&xit
+E&xit
+Export Group...
+Export Group...
+Enabled
+Enabled
+Execute
+Execute
+Eject Media
+Eject Media
+Enable Device
+Enable Device
+Fast
+Fast
+Fast Silitek Init
+Fast Silitek Init
+Fast UIR Init
+Fast UIR Init
+Filename
+Filename
+Find
+Find
+File
+File
+GNU General Public License
+GNU General Public License
+Girder Homepage: Http://www.stack.nl/~stilgar
+Girder Homepage: Http://www.stack.nl/~stilgar
+Group Enabled
+Group Enabled
+Group Disabled
+Group Disabled
+General
+General
+Girder files (*.gir)|*.GIR
+Girder files (*.gir)|*.GIR
+Group Enable
+Group Enable
+Group Disable
+Group Disable
+Girder Standby Toggle
+Girder Standby Toggle
+Goto
+Goto
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Hibernate
+Hibernate
+Host IP
+Host IP
+Host Port
+Host Port
+Hide on startup
+Hide on startup
+Hardware Plugins
+Hardware Plugins
+Handle
+Handle
+Howto
+Howto
+Hide
+Hide
+Hidden
+Hidden
+Hide sent.
+Hide sent.
+IR Mouse Settings
+IR Mouse Settings
+IRSpeed
+IRSpeed
+IrDA Settings
+IrDA Settings
+I Was here
+I Was here
+I Was Here
+I Was Here
+Icons on the action tabs
+Icons on the action tabs
+Input Device
+Input Device
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Initializing the Input Device(s)
+Initializing the Input Device(s)
+Input Device Enabled.
+Input Device Enabled.
+IR Device Enabled.
+IR Device Enabled.
+Input Device Disabled.
+Input Device Disabled.
+Icon files (*.ico)|*.ICO
+Icon files (*.ico)|*.ICO
+Import Group...
+Import Group...
+Invert
+Invert
+Icon / Device
+Icon / Device
+Key sent
+Key sent
+Keep focus
+Keep focus
+Keyboard
+Keyboard
+Launch Girder on windows startup
+Launch Girder on windows startup
+Language
+Language
+Learn Event
+Learn Event
+LogOff
+LogOff
+Load Media
+Load Media
+Left Click
+Left Click
+Left Double Click
+Left Double Click
+LParam
+LParam
+Message for key down
+Message for key down
+Message for key up
+Message for key up
+Message for key still pressed
+Message for key still pressed
+Maximum number of ClientAddresses reached cannot add.
+Maximum number of ClientAddresses reached cannot add.
+Minimized
+Minimized
+Match invisble Tasks
+Match invisble Tasks
+Main Window
+Main Window
+Maximize
+Maximize
+Minimize
+Minimize
+Move window
+Move window
+Mouse Pos.
+Mouse Pos.
+Monitor On
+Monitor On
+Monitor Off
+Monitor Off
+Mute Display
+Mute Display
+Minimize Girder
+Minimize Girder
+Mouse
+Mouse
+Mouse Up
+Mouse Up
+Mouse Down
+Mouse Down
+Mouse Left
+Mouse Left
+Mouse Right
+Mouse Right
+Mouse Left Click
+Mouse Left Click
+Mouse Left Doubleclick
+Mouse Left Doubleclick
+Mouse Right Click
+Mouse Right Click
+Mouse Right Doubleclick
+Mouse Right Doubleclick
+Mouse Middle click
+Mouse Middle click
+Mouse Middle Doubleclick
+Mouse Middle Doubleclick
+Mouse Up Right
+Mouse Up Right
+Mouse Up Left
+Mouse Up Left
+Mouse Down Right
+Mouse Down Right
+Mouse Down Left
+Mouse Down Left
+Mouse Wheel Up
+Mouse Wheel Up
+Mouse Wheel Down
+Mouse Wheel Down
+New
+New
+None
+None
+Name
+Name
+Not found.
+Not found.
+No input devices selected, please select one first in the settings dialog.
+No input devices selected, please select one first in the settings dialog.
+Ok
+Ok
+OEM Licensed to Broadbandbox AB
+OEM Licensed to Broadbandbox AB
+OSD Font
+OSD Font
+Only send to first match
+Only send to first match
+O.S.
+O.S.
+OSD
+OSD
+Port Speed
+Port Speed
+Port
+Port
+Password
+Password
+Plugin not found
+Plugin not found
+Plugin not loaded
+Plugin not loaded
+Path to Hardware plugins
+Path to Hardware plugins
+Path to Action plugins
+Path to Action plugins
+Process ID
+Process ID
+Play Wav
+Play Wav
+Poweroff
+Poweroff
+Plugins
+Plugins
+Parent
+Parent
+Question
+Question
+Repeat Tolerance
+Repeat Tolerance
+Recognition Tolerance
+Recognition Tolerance
+Register Filetype
+Register Filetype
+Running Tasks/Windows
+Running Tasks/Windows
+Refresh
+Refresh
+Rename
+Rename
+Resize window
+Resize window
+Reboot
+Reboot
+Right Click
+Right Click
+Right Double Click
+Right Double Click
+Reset State
+Reset State
+Ready.
+Ready.
+Skip UIR init check
+Skip UIR init check
+Strip Zeros from UIR string
+Strip Zeros from UIR string
+Slow
+Slow
+Silitek Settings
+Silitek Settings
+Stop Bit
+Stop Bit
+Skip Silitek init check
+Skip Silitek init check
+Strip Zeros from Silitek string
+Strip Zeros from Silitek string
+Suspend Mode
+Suspend Mode
+Suspend to Ram
+Suspend to Ram
+Slide shift
+Slide shift
+Slider num
+Slider num
+String
+String
+State.
+State.
+See file Copying.txt for license details
+See file Copying.txt for license details
+Settings
+Settings
+Save datafile on shutdown/poweroff/logoff
+Save datafile on shutdown/poweroff/logoff
+Scale Main Form
+Scale Main Form
+Size
+Size
+State Count
+State Count
+Selected Task's Childobjects
+Selected Task's Childobjects
+Send to foreground task
+Send to foreground task
+Substring matching
+Substring matching
+Select destination.
+Select destination.
+Save &as...
+Save &as...
+Se&ttings...
+Se&ttings...
+Show Girder
+Show Girder
+Set Group Targets
+Set Group Targets
+Settings Window
+Settings Window
+State Window
+State Window
+State
+State
+Show
+Show
+Set Focus
+Set Focus
+Screen Saver
+Screen Saver
+Shutdown
+Shutdown
+Step Size
+Step Size
+Startup Options
+Startup Options
+SysCommand
+SysCommand
+Set On-Trayicon
+Set On-Trayicon
+Set Off-Trayicon
+Set Off-Trayicon
+Set Active-Trayicon
+Set Active-Trayicon
+Set Standby-Trayicon
+Set Standby-Trayicon
+Stop Processing
+Stop Processing
+Step
+Step
+Shift
+Shift
+Special Key
+Special Key
+Sentence
+Sentence
+Show sent.
+Show sent.
+Start Capture
+Start Capture
+Stop Capture
+Stop Capture
+System Wide Capturing
+System Wide Capturing
+SmartFill
+SmartFill
+TCP/IP Server Settings
+TCP/IP Server Settings
+Text
+Text
+This plugin sends a WM_SETTEXT message to the targets.
+This plugin sends a WM_SETTEXT message to the targets.
+TCP/IP Client
+TCP/IP Client
+Timer
+Timer
+Timer plugin for Girder 3.0
+Timer plugin for Girder 3.0
+This plugin executes a command after a preset timeout.
+This plugin executes a command after a preset timeout.
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Traybar mode
+Traybar mode
+The New input device gets activated when you press the apply button.
+The New input device gets activated when you press the apply button.
+Target Selector
+Target Selector
+The file has changed, save ?
+The file has changed, save ?
+Target Window
+Target Window
+Target
+Target
+Talking Clock
+Talking Clock
+Task Switcher
+Task Switcher
+Test Event
+Test Event
+Type
+Type
+UIR/IRman Settings
+UIR/IRman Settings
+Up
+Up
+Unregister Filetype
+Unregister Filetype
+User Interface
+User Interface
+Version
+Version
+Volume
+Volume
+Volume Mute
+Volume Mute
+Volume Left
+Volume Left
+Volume Right
+Volume Right
+Volume Window
+Volume Window
+Volume Change
+Volume Change
+Volume Right Change
+Volume Right Change
+Volume Left Change
+Volume Left Change
+Volume Balance Change
+Volume Balance Change
+Volume Mute Toggle
+Volume Mute Toggle
+Volume Display
+Volume Display
+Volume ID
+Volume ID
+Volume Settings
+Volume Settings
+Wavfile played.
+Wavfile played.
+Windows is shutting down.
+Windows is shutting down.
+Window Name
+Window Name
+Window Class
+Window Class
+Waiting for IR Code.
+Waiting for IR Code.
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE|All Files (*.*)|*.*
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE|All Files (*.*)|*.*
+Window
+Window
+Wait
+Wait
+Wait for Window
+Wait for Window
+WParam
+WParam
+Window Exists
+Window Exists
+Wparam
+Wparam
+X/Timeout [ms]
+X/Timeout [ms]
+Y
+Y
+command sent.
+command sent.
+sys command sent.
+sys command sent.

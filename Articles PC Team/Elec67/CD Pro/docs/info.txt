@@ -1,0 +1,5 @@
+Voici une petite collection de datasheets utiles pour fabriquer le programmateur PIC et le 
+récepteur infrarouge. S'il vous manque des informations, contactez-moi.
+
+Anthony Rabine
+arabine@programmationworld.com

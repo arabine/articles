@@ -1,0 +1,1174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Anthony Rabine">
+    <meta name="keywords" content="port parall&egrave;le &eacute;cran lcd">
+    <meta name="description" content="Gestion d'un &eacute;cran LCD">
+
+    <title>Gestion d'un &eacute;cran LCD</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">Gestion d'un &eacute;cran LCD<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le dernier cours &eacute;tait consacr&eacute;
+            &agrave; la d&eacute;couverte du port parall&egrave;le. Cette fois-ci, nous allons utiliser nos
+            connaissances en mettant en oeuvre un &eacute;cran LCD, que l'on trouve aujourd'hui un peu
+            partout dans les appareils &eacute;lectroniques. Certes, le port parall&egrave;le est
+            adapt&eacute; pour cette application mais l'utilit&eacute; de cette interface n'est pas
+            forc&eacute;ment &eacute;vidente. Ce n'est pas grave car c'est le principe qui compte ; il est en
+            effet tr&egrave;s facile de reprendre les algorithmes ci-dessous pour d'autres langages (je pense
+            notamment aux microcontr&ocirc;leurs plus adapt&eacute;s &agrave; cette application).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Pr&eacute;sentation</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Principe de fonctionnement</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">Mise en oeuvre</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">Programmation de l'&eacute;cran</a>
+          </div>
+
+          <div style="margin-left:1em">
+            5. <a href="#_topic_5">Conclusion</a>
+          </div>
+
+          <div style="margin-left:1em">
+            6. <a href="#_topic_6">T&eacute;l&eacute;chargements</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Pr&eacute;sentation</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&eacute;aliser l'interface d'un &eacute;cran LCD
+            est une exp&eacute;rience tr&egrave;s int&eacute;ressante. Ses possibilit&eacute;s d'utilisation
+            sont importantes car les afficheurs envahissent litt&eacute;ralement notre quotidien.
+            L'&eacute;cran &eacute;tudi&eacute; ici est du type alphanum&eacute;rique (&eacute;criture de
+            chiffres, de lettres et de signes) et est compl&egrave;tement standard. Il poss&egrave;de un
+            g&eacute;n&eacute;rateur de caract&egrave;res, un contr&ocirc;leur int&eacute;gr&eacute; et est
+            capable d'afficher 2 lignes de 16 caract&egrave;res. Enfin, gr&acirc;ce &agrave; la
+            pr&eacute;sence d'une LED derri&egrave;re l'&eacute;cran, l'afficheur est dot&eacute; d'un
+            r&eacute;tro &eacute;clairage du plus bel effet. Un tel &eacute;cran co&ucirc;te aux alentours de
+            100 F, le prix variant selon le nombre de lignes, la pr&eacute;sence d'un r&eacute;tro
+            &eacute;clairage et le syst&egrave;me de transmission (s&eacute;rie ou parall&egrave;le).
+            V&eacute;rifier seulement que le contr&ocirc;leur est compatible avec le HD44780 de Hitashi, dont
+            la documentation compl&egrave;te est fournie en bas de cette page.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours2/ecran.jpg"><br>
+        <b><u>L'&eacute;cran que nous utilisons.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Principe de fonctionnement</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le fonctionnement est relativement simple car la
+            plus grande partie du travail est laiss&eacute;e au contr&ocirc;leur d'&eacute;cran. En dehors de
+            l'alimentation, seuls deux signaux de contr&ocirc;le et huit bits de donn&eacute;es sont
+            n&eacute;cessaires pour faire fonctionner notre &eacute;cran.<br>
+            <br>
+            Le bus de donn&eacute;es bidirectionnel va nous servir principalement &agrave; envoyer des
+            param&egrave;tres et des caract&egrave;res vers l'&eacute;cran. Les caract&egrave;res &agrave;
+            &eacute;crire sont cod&eacute;s en ASCII, donc sur 8 bits. Le bit de contr&ocirc;le E joue le
+            r&ocirc;le d'horloge : la donn&eacute;e est effective sur un front descendant. Le bit RS sert
+            quant &agrave; lui &agrave; indiquer au contr&ocirc;leur que l'information pr&eacute;sente sur le
+            bus de donn&eacute;es est une instruction (RS &agrave; 0) ou un caract&egrave;re (RS &agrave; 1).
+            L'entr&eacute;e de configuration R/_W permet de configurer l'&eacute;cran en &eacute;criture
+            (R/_W &agrave; 0) ou en lecture (R/_W &agrave; 1) ; pour simplifier notre montage, nous
+            connecterons directement cette broche &agrave; la masse car seule l'&eacute;criture nous
+            int&eacute;ressera. Notez cependant que si vous d&eacute;sirez lire certains param&egrave;tres de
+            l'&eacute;cran (Busy Flag, DDRAM etc.) vous devez connecter la ligne RS au port parall&egrave;le
+            et la prendre en compte dans vos fonctions. Enfin, la tension V0 vous permet de r&eacute;gler le
+            contraste des digits &agrave; l'aide d'un potentiom&egrave;tre.<br>
+            <br>
+            En ce qui concerne le hardware, l'&eacute;cran est constitu&eacute; d'un contr&ocirc;leur qui se
+            charge d'allumer ou d'&eacute;teindre les cellules correspondantes. Chaque caract&egrave;re est
+            ainsi form&eacute; &agrave; l'aide d'une matrice de 5*8 cellules. Le plus souvent, seules les 7
+            lignes sup&eacute;rieures de la matrice servent, la derni&egrave;re &eacute;tant
+            r&eacute;serv&eacute;e &agrave; la visualisation d'un curseur. Il y a deux types de
+            m&eacute;moires inclues dans l'&eacute;cran : la CG RAM (Character Generator) qui contient les
+            caract&egrave;res ASCII mais &eacute;galement des signes japonais, et la DD RAM qui contient
+            l'adresse courante du curseur.<br>
+            <br>
+            En bref, voici les trois tableaux qui vous seront indispensables.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color=
+            "#0000FF">Brochage</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Broche N&deg;</td>
+
+                <td>Nom</td>
+
+                <td>Niveau</td>
+
+                <td>Fonction</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>Vss</td>
+
+                <td>0V</td>
+
+                <td>Alimentation</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+
+                <td>Vcc</td>
+
+                <td>5V</td>
+
+                <td>Alimentation</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+
+                <td>V<sub>0</sub></td>
+
+                <td>0 &agrave; 5V</td>
+
+                <td>Contraste</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+
+                <td>RS</td>
+
+                <td>H/L</td>
+
+                <td>0 = instruction<br>
+                1 = caract&egrave;re</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+
+                <td>R/W</td>
+
+                <td>H/L</td>
+
+                <td>0 = &eacute;criture<br>
+                1 = lecture</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+
+                <td>E</td>
+
+                <td>H --&gt; L</td>
+
+                <td>Enable (front descendant)</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+
+                <td>D0</td>
+
+                <td>H/L</td>
+
+                <td>Donn&eacute;e LSB</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+
+                <td>D1</td>
+
+                <td>H/L</td>
+
+                <td>Donn&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+
+                <td>D2</td>
+
+                <td>H/L</td>
+
+                <td>Donn&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+
+                <td>D3</td>
+
+                <td>H/L</td>
+
+                <td>Donn&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>11</td>
+
+                <td>D4</td>
+
+                <td>H/L</td>
+
+                <td>Donn&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>12</td>
+
+                <td>D5</td>
+
+                <td>H/L</td>
+
+                <td>Donn&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>13</td>
+
+                <td>D6</td>
+
+                <td>H/L</td>
+
+                <td>Donn&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>14</td>
+
+                <td>D7</td>
+
+                <td>H/L</td>
+
+                <td>Donn&eacute;e MSB</td>
+              </tr>
+
+              <tr>
+                <td>15</td>
+
+                <td>A</td>
+
+                <td>0 &agrave; 5V</td>
+
+                <td>Anode - LED de r&eacute;tro &eacute;clairage</td>
+              </tr>
+
+              <tr>
+                <td>16</td>
+
+                <td>K</td>
+
+                <td>0V</td>
+
+                <td>Cathode - LED de r&eacute;tro &eacute;clairage</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            Notez que le brochage ci-dessus n'est valable que pour un afficheur de 80 caract&egrave;res au
+            maximum. Les afficheurs ne disposant pas de r&eacute;tro &eacute;clairage n'ont pas de broche 15
+            et 16.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color="#0000FF">Set
+            d'instructions</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>ADDRESSES INSTRUCTION</td>
+
+                <td>RS</td>
+
+                <td>R/W</td>
+
+                <td>D7</td>
+
+                <td>D6</td>
+
+                <td>D5</td>
+
+                <td>D4</td>
+
+                <td>D3</td>
+
+                <td>D2</td>
+
+                <td>D1</td>
+
+                <td>D0</td>
+              </tr>
+
+              <tr>
+                <td>Display clear</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+              </tr>
+
+              <tr>
+                <td>Cursor home</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>*</td>
+              </tr>
+
+              <tr>
+                <td>Entry mode set</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>I/D</td>
+
+                <td>S</td>
+              </tr>
+
+              <tr>
+                <td>Display on/off control</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>D</td>
+
+                <td>C</td>
+
+                <td>B</td>
+              </tr>
+
+              <tr>
+                <td>Cursor display shift</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>S/C</td>
+
+                <td>R/L</td>
+
+                <td>*</td>
+
+                <td>*</td>
+              </tr>
+
+              <tr>
+                <td>Function set</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>DL</td>
+
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>*</td>
+
+                <td>*</td>
+              </tr>
+
+              <tr>
+                <td>CG RAM address set</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td colspan="6" align="center">ACC</td>
+              </tr>
+
+              <tr>
+                <td>DD RAM address set</td>
+
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td colspan="7" align="center">ADD</td>
+              </tr>
+
+              <tr>
+                <td>Busy flag/address read</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>BF</td>
+
+                <td colspan="7" align="center">AC</td>
+              </tr>
+
+              <tr>
+                <td>CG RAM/DD RAM data write</td>
+
+                <td>1</td>
+
+                <td>0</td>
+
+                <td colspan="8" align="center">Write data</td>
+              </tr>
+
+              <tr>
+                <td>CG RAM/DD RAM data read</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td colspan="8" align="center">Read data</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            Plusieurs &eacute;l&eacute;ments &agrave; d&eacute;finir :<br>
+            <br>
+            <b>*</b> = le niveau importe, donc la valeur du bit n'est pas prise en compte<br>
+            <b>ACC</b> = adresse de la CG RAM<br>
+            <b>ADD</b> = adresse de la DD RAM, correspond &agrave; l'adresse courante du curseur<br>
+            <b>AC</b> = Address Counter, utilis&eacute; pour les adresses des DD et CG RAM<br>
+            <br>
+            <b>I/D</b> = 1/0 : increment/decrement<br>
+            <b>S/C</b> = 1/0 : display shift/cursor move<br>
+            <b>S</b> = 1/0 : display shift/freeze<br>
+            <b>R/L</b> = 1/0 : right/left shift<br>
+            <b>D</b> = 1/0 : display on/off<br>
+            <b>DL</b> = 1/0 : 8/4 bits data bus<br>
+            <b>C</b> = 1/0 : cursor on/off<br>
+            <b>BF</b> = 1/0 : during/end of internal operation<br>
+            <b>B</b> = 1/0 : character at cursor position blinks/does not blinks<br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5" color="#0000FF">Adresses de
+            l'affichage</font><br>
+            <br>
+            <br>
+            Les adresses ci dessous sont exprim&eacute;es en hexad&eacute;cimal et correspondent &agrave; la
+            position physique de chaque digit. Si vous voulez afficher un caract&egrave;re &agrave; un
+            emplacement pr&eacute;cis, vous passer d'abord cette adresse &agrave; l'&eacute;cran (dans la DD
+            RAM) puis ensuite la valeur &agrave; afficher.<br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Digit</td>
+
+                <td>1</td>
+
+                <td>2</td>
+
+                <td>3</td>
+
+                <td>4</td>
+
+                <td>5</td>
+
+                <td>6</td>
+
+                <td>7</td>
+
+                <td>8</td>
+
+                <td>9</td>
+
+                <td>10</td>
+
+                <td>11</td>
+
+                <td>12</td>
+
+                <td>13</td>
+
+                <td>14</td>
+
+                <td>15</td>
+
+                <td>16</td>
+              </tr>
+
+              <tr>
+                <td>Ligne 1</td>
+
+                <td>00</td>
+
+                <td>01</td>
+
+                <td>02</td>
+
+                <td>03</td>
+
+                <td>04</td>
+
+                <td>05</td>
+
+                <td>06</td>
+
+                <td>07</td>
+
+                <td>08</td>
+
+                <td>09</td>
+
+                <td>0A</td>
+
+                <td>0B</td>
+
+                <td>0C</td>
+
+                <td>0D</td>
+
+                <td>0E</td>
+
+                <td>0F</td>
+              </tr>
+
+              <tr>
+                <td>Ligne 2</td>
+
+                <td>40</td>
+
+                <td>41</td>
+
+                <td>42</td>
+
+                <td>43</td>
+
+                <td>44</td>
+
+                <td>45</td>
+
+                <td>46</td>
+
+                <td>47</td>
+
+                <td>48</td>
+
+                <td>49</td>
+
+                <td>4A</td>
+
+                <td>4B</td>
+
+                <td>4C</td>
+
+                <td>4D</td>
+
+                <td>4E</td>
+
+                <td>4F</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enfin, s&ucirc;rement le plus imporant, le
+            chronogramme de communication. Celui-ci est tr&egrave;s important, si vous ne le respectez pas
+            vous ne pourrez rien afficher. Les deux signaux RS et RW sont assez compr&eacute;hensibles. Le
+            signal E est important, car c'est lui qui d&eacute;termine quand la valeur sur le bus de
+            donn&eacute;es est valide (en lecture ou en &eacute;criture).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours2/chrono.jpg"><br>
+        <b><u>Le protocole de communication.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si vous souhaitez lire le Busy Flag, qui indique
+            l'&eacute;tat de l'&eacute;cran, vous devrez suivre le chronogramme d'exemple ci-dessous.
+            Utiliser le Busy Flag est beaucoup plus fiable qu'un simple "delay" mais impose une connexion
+            suppl&eacute;mentaire entre l'&eacute;cran et le syst&egrave;me ma&icirc;tre.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours2/busyflag.gif"><br>
+        <b><u>Un exemple d'utilisation du Busy Flag.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>Mise en oeuvre</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le sch&eacute;ma ci-dessous montre un exemple
+            d'interfa&ccedil;age sur le port parall&egrave;le. Le bus de donn&eacute;es du port ne fonctionne
+            ici qu'en sortie : il est donc reli&eacute; directement &agrave; celui de l'&eacute;cran (qui est
+            bien s&ucirc;r compatible TTL). Certains ports parall&egrave;les poss&egrave;dent des broches de
+            sortie en collecteur ouvert ; il peut &ecirc;tre alors utile d'ajouter une r&eacute;sistance de
+            tirage au +5V de 10K Ohms sur les lignes E et RS. Le contraste et la luminosit&eacute; du
+            r&eacute;tro &eacute;clairage se r&egrave;glent &agrave; l'aide de deux potentiom&egrave;tres.
+            Veillez &agrave; interconnecter toutes les masses et &agrave; relier l'ensemble &agrave; la masse
+            du port parall&egrave;le situ&eacute;e sur les broches 18 &agrave; 25.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours2/schema.jpg"><br>
+        <b><u>Le sch&eacute;ma de l'interface avec le port parall&egrave;le.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'alimentation du circuit est laiss&eacute;e
+            &agrave; un classique 7805 dont il convient de c&acirc;bler comme indiqu&eacute; sur le
+            sch&eacute;ma ci-apr&egrave;s. Ce composant se charge de transformer une tension comprise entre 7
+            &agrave; 15V en un 5V continu et est capable de d&eacute;biter une intensit&eacute; relativement
+            importante.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours2/alim.jpg"><br>
+        <b><u>Le branchement classique d'un 7805.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En effet, le port parall&egrave;le est incapable
+            de fournir le courant n&eacute;cessaire au fonctionnement de l'&eacute;cran. Celui-ci consomme
+            100mA environ, ajout&eacute; au r&eacute;tro &eacute;clairage (optionnel) qui absorbe au bas mot
+            300mA, cela fait au total pr&egrave;s de 0,5 A ! Le 7805 est toujours accompagn&eacute; d'une
+            s&eacute;rie de condensateurs servant de r&eacute;serves d'&eacute;nergie, c'est un montage que
+            nous utiliserons tr&egrave;s souvent dans cette rubrique. Enfin, il est tr&egrave;s facile
+            d'impl&eacute;menter ce sch&eacute;ma sur une plaquette &agrave; bandes cuivr&eacute;es que l'on
+            peut trouver ais&eacute;ment aux alentours de 20F. Pour la liaison entre l'&eacute;cran et le PC,
+            il faut &eacute;viter d'utiliser un c&acirc;ble parall&egrave;le de plus de 3m : dans certains
+            cas, il peut y avoir des erreurs de transmission.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours2/brochage.jpg"><br>
+        <b><u>Un petit rappel des brochages.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>Programmation de l'&eacute;cran</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'&eacute;cran ainsi branch&eacute; ne sert pas
+            &agrave; grand chose sans un minimum de programmation. Nous allons faire appel une fois de plus
+            au C et au Visual Basic accompagn&eacute; de sa dll inpout.dll, lui donnant la possibilit&eacute;
+            de g&eacute;rer les ports d'entr&eacute;es/sorties. La programmation en C se r&eacute;v&egrave;le
+            d'ailleurs un peu plus ais&eacute;e car toutes les routines de base sont incluses en standard (et
+            notamment la fonction de retard <b>delay</b> qui permet de d&eacute;finir une attente en
+            millisecondes. Tous les programmes sont comme &agrave; l'accoutum&eacute;e fournis ci dessous et
+            accompagn&eacute;s de leurs sources comment&eacute;es.<br>
+            <br>
+            Comme nous l'avons vu pr&eacute;c&eacute;demment, la communication avec l'afficheur ob&eacute;it
+            &agrave; un protocole assez simple. La meilleure mani&egrave;re de programmer un tel projet est
+            de cr&eacute;er plusieurs proc&eacute;dures :<br>
+            <br>
+
+            <ul>
+              <li>Init_LCD () : cette fonction se chargera d'initialiser l'&eacute;cran (bus de 4 ou 8 bits,
+              configuration du curseur, etc.)</li>
+
+              <li>Efface_LCD () : son nom est assez explicite, l'&eacute;cran est effac&eacute; et le curseur
+              revient au d&eacute;but de la premi&egrave;re ligne.</li>
+
+              <li>Ecrire_LCD (Chaine, Position) : cette fonction &eacute;crit sur l'&eacute;cran la phrase
+              pass&eacute;e en param&egrave;tre &agrave; l'emplacement d&eacute;sir&eacute;.</li>
+            </ul>
+            <br>
+            <br>
+            Pour les programmeurs en C, il suffira d'inclure le fichier d'en-t&ecirc;te LCD.h &agrave; un
+            projet pour b&eacute;n&eacute;ficier de ces proc&eacute;dures. Le dialogue le plus simple est
+            l'&eacute;criture d'un caract&egrave;re &agrave; l'&eacute;cran : le travail &agrave; faire est
+            de traduire en programmation les chronogrammes du protocole de communication
+            pr&eacute;sent&eacute;s ci-dessus. Et pour les utilisateurs de <b>Linux</b>, vous pouvez
+            t&eacute;l&eacute;charger le programme de ce cours en bas de cette page (allez voir le cours sur
+            le port parall&egrave;le pour plus de d&eacute;tails). Voici par exemple l'algorithme qui
+            &eacute;crit le caract&egrave;re 'A' :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#FF0000">void</font> Ecrire_Caractere (<font color="#FF0000">void</font>)
+{
+<font color="#000000"><b>outportb</b></font>(0x37A, <font color=
+"#000000"><b>inportb</b></font>(0x37A) &amp; 0xF7); <font color=
+"#009900"><i>// RS = 1 , l'octet envoy&eacute; est un caract&egrave;re</i></font>
+<font color="#000000"><b>outportb</b></font>(0x378, 65); <font color=
+"#009900"><i>// on place la valeur ASCII de A sur le bus de donn&eacute;es</i></font>
+<font color="#000000"><b>outportb</b></font>(0x37A,<font color=
+"#000000"><b>inportb</b></font>(0x37A) &amp; 0xFE); <font color=
+"#009900"><i>// E = 1 pour pr&eacute;parer un front descendant</i></font>
+<font color="#000000"><b>delay</b></font>(2); <font color=
+"#009900"><i>// petit d&eacute;lais pour avoir une bonne impulsion</i></font>
+<font color="#000000"><b>outportb</b></font>(0x37A,<font color=
+"#000000"><b>inportb</b></font>(0x37A) | 0x01); <font color=
+"#009900"><i>// E = 0 : le caract&egrave;re est inscrit sur l'&eacute;cran</i></font>
+<font color="#000000"><b>outportb</b></font>(0x37A, <font color=
+"#000000"><b>inportb</b></font>(0x37A) | 0x08); <font color="#009900"><i>// RS=0</i></font>
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dans le cas de l'envoi d'une instruction,
+            l'algorithme reste exactement le m&ecirc;me sauf pour les d&eacute;lais qui doivent &ecirc;tre un
+            peu plus important. Les d&eacute;lais sont utilis&eacute;s pour &eacute;viter de "planter"
+            l'&eacute;cran. Lorsque celui-ci re&ccedil;oit une instruction, comme effacer l'&eacute;cran par
+            exemple, le contr&ocirc;leur met un certain temps pour ex&eacute;cuter l'ordre et est alors
+            indisponible durant cette p&eacute;riode. La documentation technique nous fournit heureusement
+            tous ces temps d'ex&eacute;cution ; les sources fournies ci dessous sont donc &agrave; adapter au
+            contr&ocirc;leur utilis&eacute;. Notons cependant qu'il existe une solution plus fiable : en
+            commutant l'&eacute;cran en lecture, il est possible de voir si l'&eacute;cran est occup&eacute;
+            gr&acirc;ce &agrave; l'&eacute;tat du bit BF (Busy Flag) disponible sur D7.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enfin, n'oublions pas qu'il est n&eacute;cessaire
+            d'initialiser l'&eacute;cran avant toute tentative d'&eacute;criture. Cette &eacute;tape est
+            importante et onsiste &agrave; configurer l'&eacute;cran selon le mat&eacute;riel disponible et
+            ses pr&eacute;f&eacute;rences : nombre de lignes d'affichage, mode de communication,
+            pr&eacute;sence du curseur, etc. A la mise sous tension, l'&eacute;cran est automatiquement
+            initialis&eacute; avec un bus de donn&eacute;es de 8 bits. Il faut au moins attendre 15 ms
+            apr&egrave;s cette mise sous tension pour que l'&eacute;cran soit disponible en &eacute;criture.
+            Puis, la documentation du contr&ocirc;leur nous fourni la proc&eacute;dure &agrave; suivre :<br>
+            <br>
+            <b>1.</b> Display clear<br>
+            <br>
+             <b>2.</b> Function set:<br>
+            DL = 1; 8-bit interface data<br>
+            N = 0; 1-line display<br>
+            F = 0; 5 &acute; 8 dot character font<br>
+            <br>
+             <b>3.</b> Display on/off control:<br>
+            D = 0; Display off<br>
+            C = 0; Cursor off<br>
+            B = 0; Blinking off<br>
+            <br>
+             <b>4.</b> Entry mode set:<br>
+            I/D = 1; Increment by 1<br>
+            S = 0; No shift<br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_5"></a>Conclusion</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Une fois que l'on a bien compris le principe de
+            fonctionnement, il devient facile d'&eacute;tendre les possibilit&eacute;s de notre
+            syst&egrave;me. Il est possible par exemple de connecter la borne Read/_Write au port
+            parall&egrave;le pour pouvoir lire la m&eacute;moire et utiliser le signal "Busy Flag". Il est
+            &eacute;galement envisageable d'utiliser les possibilit&eacute;s de cr&eacute;ation de
+            caract&egrave;res et, partant, cr&eacute;er les signes propres au fran&ccedil;ais (les &eacute;,
+            &agrave;, &egrave; etc.). Les applications sont nombreuses, n'h&eacute;sitez donc pas &agrave;
+            nous envoyer vos r&eacute;alisations pour les faire figurer sur ce site !
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_6"></a>T&eacute;l&eacute;chargements</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <ul>
+              <li><a href="downloads/cours2/teamlcd.zip">teamlcd.zip</a> : le logiciel pour g&eacute;rer
+              l'&eacute;cran LCD en Visual Basic avec ses sources (25,5ko)</li>
+
+              <li><a href="downloads/cours2/lcd_c.zip">lcd_c.zip</a> : la version en C (DOS) avec ses sources
+              (41,6ko)</li>
+
+              <li><a href="downloads/cours2/TestLCD.c">TestLCD.c</a> : la version en C (pour Linux) avec ses
+              sources (41,6ko)</li>
+
+              <li><a href="downloads/cours2/lcd.pdf">lcd.pdf</a> : un petit r&eacute;sum&eacute; en attendant
+              que je compl&egrave;te le cours en HTML (16,1ko)</li>
+
+              <li><a href="downloads/cours2/hd44780.pdf">hd44780.pdf</a> : la doc (ultra) compl&egrave;te sur
+              le contr&ocirc;leur LCD, &agrave; avoir absolument (278ko)</li>
+
+              <li><a href="downloads/cours2/78xx.pdf">78xx.pdf</a> : le datasheet du r&eacute;gulateur de
+              tension 78xx (224ko)</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ <a href="cours1.htm">Pr&eacute;c&eacute;dent</a> | <a href=
+          "index.htm">Index</a> | <a href="cours3.htm">Suivant</a> ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Anthony Rabine<br>
+        <a href="mailto:arabine@programmationworld.com">arabine@programmationworld.com</a><br>
+        <a href="http://www.programmationworld.com">http://www.programmationworld.com</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

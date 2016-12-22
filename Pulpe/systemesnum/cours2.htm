@@ -1,0 +1,1159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Anthony Rabine">
+    <meta name="keywords" content="Boole logique porte and or et ou xor exclusif">
+    <meta name="description" content="L'alg&egrave;bre de Boole et les fonctions logiques">
+
+    <title>L'alg&egrave;bre de Boole et les fonctions logiques</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">L'alg&egrave;bre de Boole et les fonctions logiques<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ah ce sacr&eacute; George, que serions nous sans
+            lui. George Boole &eacute;tait un math&eacute;maticien britannique (1815-1864) qui a
+            cr&eacute;&eacute; la logique math&eacute;matique moderne. Ouvrons notre dictionnaire &agrave; la
+            partie alg&egrave;bre :<br>
+            <br>
+             <font color="#FF0000"><b>"<i>Alg&egrave;bre de Boole</i>, ou <i>alg&egrave;bre de la logique</i>
+            : structure alg&eacute;brique appliqu&eacute;e &agrave; l'&eacute;tude des relations logiques, et
+            dans laquelle les op&eacute;rations de r&eacute;union, d'intersection et de
+            compl&eacute;mentation expriment respectivement la disjonction, la conjonction et la
+            n&eacute;gation logique."</b></font><br>
+            <br>
+             Quoi... &ccedil;a fait d&eacute;j&agrave; mal au cr&acirc;ne ?
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Les trois op&eacute;rateurs de base</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Combinaisons entre op&eacute;rateurs et cas particuliers</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">Propri&eacute;t&eacute;s</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">Les fonctions logiques</a>
+          </div>
+
+          <div style="margin-left:1em">
+            5. <a href="#_topic_5">Le tableau de Karnaugh</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Les trois op&eacute;rateurs de base</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'alg&egrave;bre de Boole est compos&eacute;e de
+            trois principaux op&eacute;rateurs : les fonctions ET, OU et NON. Cet alg&egrave;bre s'applique
+            au binaire, c'est &agrave; dire entre des variables ne pouvant prendre que 0 ou 1 comme valeurs
+            (des nombres de 1 bit en somme). On peut r&eacute;aliser par exemple 37 ET 4, le calcul se fera
+            en fait entre chaque bit du nombre binaire correspondant. Voyons sans plus tarder chacun de ces
+            op&eacute;rateurs, que l'on nomme op&eacute;rateurs bool&eacute;ens.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/rmq.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Remarque<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">On appelle table de v&eacute;rit&eacute; le tableau qui regroupe
+              l'&eacute;tat de la (ou des) sortie(s) pour TOUTES les combinaisons de (ou des)
+              l'entr&eacute;e(s).</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">l'op&eacute;rateur ET (AND)</font><br>
+            <br>
+            <u>D&eacute;finition</u> : y = f(a, b) est la fonction logique ET si et seulement si y vaut 1
+            lorsque a=1 et b=1.<br>
+            <u>Notations et appellations</u> : y = ab (fonction ET), y = a.b (produit logique)<br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/and_elec.jpg"><br>
+        <b><u>Ce sh&eacute;ma illustre le comportement d'un ET. R&eacute;alisez les combinaisons pour allumer
+        la LED.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La table de v&eacute;rit&eacute; se d&eacute;duit
+            donc : 
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td width="33%">
+                  <p align="center"><strong>a</strong></p>
+                </td>
+
+                <td width="33%">
+                  <p align="center"><strong>b</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>y</strong></p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/and_gate.jpg"><br>
+        <b><u>Le symbole normalis&eacute; (il peut y avoir plus de 2 entr&eacute;es) sous sa
+        r&eacute;f&eacute;rence (HCMOS).</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">l'op&eacute;rateur OU (OR)</font><br>
+            <br>
+            <u>D&eacute;finition</u> : y = f(a, b) est la fonction logique OU si et seulement si y vaut 1
+            lorsque soit a, soit b valent 1 (a=1 ou b=1).<br>
+            <u>Notations et appellations</u> : y = a + b (fonction OU)<br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/or_elec.jpg"><br>
+        <b><u>L&agrave; encore, une illustration du comportement du OU en sch&eacute;ma
+        &eacute;lectrique.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La table de v&eacute;rit&eacute; se d&eacute;duit
+            donc : 
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td width="33%">
+                  <p align="center"><strong>a</strong></p>
+                </td>
+
+                <td width="33%">
+                  <p align="center"><strong>b</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>y</strong></p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/or_gate.jpg"><br>
+        <b><u>Le symbole normalis&eacute; (il peut y avoir plus de 2 entr&eacute;es) sous sa
+        r&eacute;f&eacute;rence (HCMOS).</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">l'op&eacute;rateur NON (ou NOT)</font><br>
+            <br>
+            <u>D&eacute;finition</u> : y = f(a) est la fonction logique NON qui inverse l'&eacute;tat d'une
+            variable. On a ainsi 0=not(1) et 1=not(0) : NON permet d'obtenir le compl&eacute;ment d'un
+            nombre.<br>
+            <u>Notations et appellations</u> : y = not(a), y = /a (une barre sur le a)<br>
+            <br>
+            La table de v&eacute;rit&eacute; de cet op&eacute;rateur est tout simplement : 
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td width="33%">
+                  <p align="center"><strong>a</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>y</strong></p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/not_gate.jpg"><br>
+        <b><u>Le symbole normalis&eacute; est le suivant avec sa r&eacute;f&eacute;rence (HCMOS). Notez le
+        rond &agrave; la sortie de la porte qui indique la pr&eacute;sence de l'op&eacute;rateur NON. Sans ce
+        rond, la sortie &eacute;gale l'entr&eacute;e (y=a).</u></b> </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Combinaisons entre op&eacute;rateurs et cas
+        particuliers</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'avantage est que l'on peut combiner les
+            op&eacute;rateurs ET et OU avec l'op&eacute;rateur NON afin de r&eacute;aliser une logique
+            particuli&egrave;re. En pratique, il suffit de relier la sortie d'une porte ET ou OU &agrave;
+            l'entr&eacute;e d'une porte NON. Le r&eacute;sultat donne un ET-NON ou un OU-NON. Les tables de
+            v&eacute;rit&eacute; sont donc tr&egrave;s simples &agrave; compl&eacute;ter.<br>
+            <br>
+            <br>
+            <font size="5" color="#0000FF">l'op&eacute;rateur ET-NON (ou NAND pour NOT-AND)</font><br>
+            <br>
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td width="33%">
+                  <p align="center"><strong>a</strong></p>
+                </td>
+
+                <td width="33%">
+                  <p align="center"><strong>b</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>AND</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>NAND</strong></p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/nand_gate.jpg"><br>
+        <b><u>Le symbole normalis&eacute; avec sa r&eacute;f&eacute;rence (HCMOS). Ce symbole est identique
+        au ET avec le rond &agrave; la sortie, repr&eacute;sentant le NON (sortie
+        compl&eacute;ment&eacute;e).</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">l'op&eacute;rateur OU-NON (ou NOR pour NOT-OR)</font><br>
+            <br>
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td width="33%">
+                  <p align="center"><strong>a</strong></p>
+                </td>
+
+                <td width="33%">
+                  <p align="center"><strong>b</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>OR</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>NOR</strong></p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/nor_gate.jpg"><br>
+        <b><u>Le symbole normalis&eacute; avec sa r&eacute;f&eacute;rence (HCMOS). Ce symbole est identique
+        au OU avec le rond &agrave; la sortie, repr&eacute;sentant le NON (sortie
+        compl&eacute;ment&eacute;e).</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">l'op&eacute;rateur OU exclusif, OU-EX (XOR)</font><br>
+            <br>
+            <u>D&eacute;finition</u> : y = f(a,b) est la fonction logique XOR (le sh&eacute;rif, le
+            sh&eacute;rif de l'espace... X-OR .... oui je sais c'est nul ;) si et seulement si y vaut 1
+            lorsque soit a, soit b valent 1 (a=1 ou b=1) mais pas en m&ecirc;me temps.<br>
+            <u>Notations et appellations</u> : y = a<img src="images/xor_op.gif">b (fonction XOR). Le symbole
+            est un + entour&eacute; d'un cercle.<br>
+            <br>
+             
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td width="33%">
+                  <p align="center"><strong>a</strong></p>
+                </td>
+
+                <td width="33%">
+                  <p align="center"><strong>b</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>y</strong></p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            <b><u>Remarque</u></b> : on peut trouver &eacute;galement le ET inclusif mais il n'existe pas en
+            porte. Il existe aussi la porte NOT-XOR, disponible en HCMOS (74HC266).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/xor_gate.jpg"><br>
+        <b><u>Le symbole normalis&eacute; avec sa r&eacute;f&eacute;rence (HCMOS).</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>Propri&eacute;t&eacute;s</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'alg&egrave;bre de Bool poss&egrave;de les
+            propri&eacute;t&eacute;s suivantes. Attention, oubliez vos habitudes et la logique
+            math&eacute;matique !<br>
+            <br>
+
+            <ul>
+              <li><b>Commutativit&eacute; :</b> <u>ex</u>: a.b = b.a tous les op&eacute;rateurs logiques sont
+              commutatifs.</li>
+
+              <li><b>Associativit&eacute; :</b> on peut placer les parenth&egrave;ses o&ugrave; l'on veut
+              dans une expression. Cela est vrai pour les op&eacute;rateurs AND, OR et XOR mais <b>pas</b>
+              pour les versions compl&eacute;ment&eacute;es.</li>
+
+              <li><b>Distributivit&eacute; :</b> <u>ex</u>: a.(b+c) = a.b + a.c on peut y voir la m&ecirc;me
+              analogie qu'en math&eacute;matique, mais attention cette propri&eacute;t&eacute; s'applique
+              &eacute;galement &agrave; l'op&eacute;rateur + (qui, rappelons le, n'est pas "plus" mais "ou").
+              <u>ex</u>: a+(b.c) = (a+b).(a+c)<br>
+              <br>
+              </li>
+            </ul>
+            <b>Remarque sur l'&eacute;criture :</b> dans ces cours ainsi que d'autres sur ce site, nous
+            allons repr&eacute;senter le compl&eacute;ment d'une variable en ajoutant un slash devant comme
+            cela : /a alors que la vraie &eacute;criture est un 'a' avec une barre horizontale dessus.<br>
+            <br>
+             Ceci &eacute;tant dit, voici les propri&eacute;t&eacute;s et relations importantes. Elles
+            peuvent toutes se d&eacute;montrer tr&egrave;s facilement en construisant les tables de
+            v&eacute;rit&eacute; associ&eacute;es &agrave; chaque variable et en effectuant les
+            &eacute;quations logiques.<br>
+            <br>
+
+            <div align="center">
+              <img src="images/cours2/equ_fondamentales.gif">
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>Les fonctions logiques</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le principe ressemble &agrave; une
+            &eacute;quation math&eacute;matique : la sortie est sur un bit et le second membre comprend n
+            entr&eacute;es. Par exemple :<br>
+            <br>
+
+            <div align="center">
+              <img src="images/cours2/equ.gif"><br>
+              La sortie est Y qui prend la valeur '0' ou '1' selon les combinaisons logiques entre les trois
+              entr&eacute;es a,b et c.
+            </div>
+            <br>
+            <br>
+            Si le second membre est compos&eacute; d'une somme de AND, alors la forme est dite
+            <b>disjonctive</b>. Si le second membre est compos&eacute; de produit de OR, alors la forme est
+            dite <b>conjonctive</b>.<br>
+            <br>
+            <b>La table de v&eacute;rit&eacute;</b> permet de lister <u>toutes</u> les solutions selon les
+            &eacute;tats des entr&eacute;es. Si il y a n entr&eacute;es, alors il y a 2<sup>n</sup>
+            possibilit&eacute;s (ce qui se traduit par un tableau &agrave; 2<sup>n</sup> lignes).<br>
+            <br>
+             
+
+            <table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td width="33%">
+                  <p align="center"><strong>a</strong></p>
+                </td>
+
+                <td width="33%">
+                  <p align="center"><strong>b</strong></p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center"><strong>y</strong></p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">1</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">0</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%">
+                  <p align="center">1</p>
+                </td>
+
+                <td width="33%" bgcolor="#C0C0C0">
+                  <p align="center">0</p>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            Le tableau ci dessus rassemble toutes les possibilit&eacute;s. On va donc maintenant
+            d&eacute;terminer la fonction logique simulant ce comportement. On regarde quand la sortie est
+            &eacute;gal &agrave; 1, donc cela donne :<br>
+            <br>
+
+            <div align="center">
+              <img src="images/cours2/equ2.gif">
+            </div>
+            <br>
+            <br>
+            Il est quelques fois possible de simplifier les &eacute;quations gr&acirc;ce aux formules et aux
+            propri&eacute;t&eacute;s.<br>
+            <br>
+
+            <div align="center">
+              <img src="images/cours2/equ3.gif">
+            </div>
+            <br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_5"></a>Le tableau de Karnaugh</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous n'allons pas nous &eacute;tendre l&agrave;
+            dessus car le tableau de Karnaugh est un peu d&eacute;pass&eacute; vu les logiciels qui existent
+            actuellement. Il s'applique lorsque vous avez un syst&egrave;me connu, ou d&eacute;crit dans un
+            cahier des charges. Vous trouvez alors l'&eacute;quation logique simplifi&eacute;e directement.
+            Il fonctionne selon 3 &eacute;tapes :<br>
+            <br>
+
+            <ol type="1">
+              <li>On place les '1' et les '0' en accord avec le cahier des charges, on met un "x" lorsque la
+              combinaison importe et n'a aucun effet sur le syst&egrave;me.</li>
+
+              <li>on regroupe les '1' en ligne ou en colonne, par puissances de 2 (1, 2, 4, 8, 16, ...),
+              sachant que les lignes et les colonnes se rejoignent aux extr&ecirc;mit&eacute;s. Il ne faut
+              pas regrouper les '1' en diagonale.</li>
+
+              <li>Pour chaque groupe, &eacute;crire l'&eacute;quation correspondante selon l'&eacute;tat des
+              entr&eacute;es. Lorsqu'une entr&eacute;e change (elle est &agrave; z&eacute;ro et &agrave; un
+              dans le m&ecirc;me groupe), il suffit de l'ignorer. Mettre un OU entre chaque &eacute;quation
+              ainsi &eacute;crite.</li>
+            </ol>
+            <br>
+            <br>
+             Hop, je sens qu'on a besoin d'un petit exemple l&agrave;. Voici le tableau d&eacute;j&agrave;
+            rempli &agrave; l'aide d'un cahier des charges.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours2/karnaugh.gif"><br>
+        <b><u>On regroupe les '1' par puissances de 2.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On a regroup&eacute; les '1' en puissance de 2.
+            Notez que sur la premi&egrave;re ligne, au maximum deux '1' peuvent &ecirc;tre regroup&eacute;s.
+            Notez aussi les deux '1' en haut &agrave; droite et en bas &agrave; droite sont regroup&eacute;s
+            car ils se situent sur le bord. Voici chaque &eacute;quation :<br>
+            <br>
+             
+
+            <ul>
+              <li><font color="#C0C000">Equation 1 : /a./c./d</font></li>
+
+              <li><font color="#C000C0">Equation 2 : /a.b</font></li>
+
+              <li><font color="#008000">Equation 3 : a./b./d</font></li>
+            </ul>
+            <br>
+            <br>
+             Et donc, y = Equation 1 + Equation 2 + Equation 3, c'est &agrave; dire :<br>
+            <br>
+
+            <div align="center">
+              <img src="images/cours2/equ2.gif">
+            </div>
+            <br>
+            <br>
+             <u>Remarque</u> : S'il y a plus de '1' que de '0' dans le tableau, il est peut &ecirc;tre plus
+            facile de regrouper les z&eacute;ros et d'&eacute;crire l'&eacute;quation /y au lieu de y.<br>
+            <br>
+            <font size="5" color="#0000FF">Le logigramme</font><br>
+            <br>
+            Les logigrammes sont la repr&eacute;sentation des &eacute;quations logiques en circuit
+            int&eacute;gr&eacute;s. L&agrave; encore, c'est le m&ecirc;me principe : les logigrammes
+            repr&eacute;sentent une fonction logique avec des op&eacute;rateurs, des entr&eacute;es et une
+            sortie. Exemple :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours2/logigramme.jpg"><br>
+        <b><u>Rien de compliqu&eacute; ici, c'est un simple sch&eacute;ma &agrave; portes
+        logiques.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ <a href="cours1.htm">Pr&eacute;c&eacute;dent</a> | <a href=
+          "index.htm">Index</a> | <a href="cours3.htm">Suivant</a> ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Anthony Rabine<br>
+        <a href="mailto:arabine@programmationworld.com">arabine@programmationworld.com</a><br>
+        <a href="http://www.programmationworld.com">http://www.programmationworld.com</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

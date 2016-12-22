@@ -1,0 +1,572 @@
+&File
+&Datoteka
+&New
+&Novo
+&Open...
+&Odpri...
+&Save
+&Shrani
+&Edit
+&Urejanje
+&Copy
+&Kopiraj
+&Paste
+&Prilepi
+&Add Command
+&Dodaj ukaz
+&Delete
+&Izbriši
+&Test Command
+&Preizkusi ukaz
+&Reset All States
+&Ponastavi vsa stanja
+&Help
+&Pomoè
+&About
+&Vizitka
+&Disable Input Device(s)
+&Izklopi vhodne naprave
+&Enable Input Device(s)
+&Vklopi vhodne naprave
+Apply
+Uporabi
+APM Event Generator
+APM generator dogodkov
+APM Event Plugin 1.0 for Girder 3.0
+APM vtiènik dogodkov 1.0 za Girder 3.0
+Add &MultiGroup
+Dodaj &sestavljeno skupino
+Add &Group
+Dodaj &skupino
+Antirepeat wait time [ms]
+Èakaj naslednji ukaz [ms]
+Accelerate
+Pospeši
+Alt
+Alt
+Autoload file does not exist.
+Datoteka za samodejno nalaganje ne obstaja.
+Auto Enable Input device
+Samodejno vklopi vhodno napravo
+Auto Load
+Samodejno nalaganje
+Auto execute on startup
+Samodejno zaženi ob zagonu
+Available plugins
+Dostopni vtièniki
+Action Plugins
+Akcijski vtièniki
+Antirepeat active
+Antirepeat aktiviran
+About
+Vizitka
+Allowed Clients
+Dovoljeni klienti
+Address
+Naslov
+Address edit
+Urejanje naslova
+Add
+Dodaj
+Browse
+Prebrskaj
+Begin state
+Zaèetno stanje
+Baud Rate
+Hitrost
+Cancel
+Preklièi
+Comport
+COM vrata
+Captured IR code.
+Zajeta IR koda.
+Cannot load plugin.
+Ne morem naložiti vtiènika.
+Cannot save datafile.
+Ne morem shraniti podatkovne datoteke.
+Cannot load datafile.
+Ne morem naložiti podatkovne datoteke.
+Could not enable IR device.
+Ne morem vklopiti IR naprave.
+Contents
+Vsebina
+Capture Window
+Okno za zajemanje
+Contact and Copyright information
+O avtorju
+Clicked
+Klik
+Close
+Zapri
+Command
+Ukaz
+Capture
+Zajemi
+Control
+Ctrl
+Cannot find window
+Ne najdem okna
+Child Name
+Ime podrejenega
+Child Class
+Razred podrejenega
+Checking the Settings
+Preverjam nastavitve
+Class Name
+Ime razreda
+Clear List
+Poèisti listo
+Cannot enable
+Ne morem vklopiti
+Cannot play wavfile.
+Ne morem predvajati wav datoteke.
+Cannot Shutdown windows.
+Ne morem zaustaviti sistema.
+Clicked sent.
+Klik poslan.
+Close sent.
+Zapri poslano.
+Command State
+Ukazno stanje
+Current State
+Trenutno stanje
+Cannot find group
+Ne najdem skupine
+Cannot find icon
+Ne najdem ikone
+Cannot Find Softplugin.
+Ne najdem programskega vtiènika
+Could not enable input device(s).
+Ne morem vklopiti vhodne naprave.
+Command executed
+Ukaz izveden
+Command ID
+ID Ukaza
+Change the Target Settings of the follwing command ?
+Spremeni ciljne nastavitve naslednjega ukaza ?
+Cannot import group.
+Ne morem uvoziti skupine.
+Cannot export group.
+Ne morem izvoziti skupine.
+Default
+Privzeto
+Double Clicked
+Dvojni klik
+Don't send the IR commands when Girder is the Foreground window
+Ne pošiljaj IR ukazov, èe je Girder v ospredju
+Display Splashscreen
+Prikaži zaèetno sliko
+Description
+Opis
+Delete
+Izbriši
+Dotmatrix font
+Dotmatrix oblika èrk
+Example plugin for Girder 3.0
+Primer vtiènika za Girder 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Zagonske (*.exe)|*.EXE|Wav datoteke (*.wav)|*.WAV
+E&xit
+I&zhod
+Enabled
+Vklopljen
+Execute
+Izvedi
+Executable
+Zagonski
+Error: Cannot set volume
+Napaka: Ne morem nastaviti glasnosti
+Execute on all states except 1
+Izvedi v vseh stanjih razen 1
+Error: Cannot execute command.
+Napaka: Ne morem izvesti ukaza.
+Export Group...
+Izvozi skupino...
+Fast UIR Init
+Hitra inicializacija UIR
+Fast
+Hitro
+File
+Datoteka
+Filename
+Ime datoteke
+Find
+Najdi
+GNU General Public License
+GNU splošna javna licenca
+Girder files (*.gir)|*.GIR
+Girder datoteke (*.gir)|*.GIR
+Group Enable
+Vklopi skupino
+Group Disable
+Izklopi skupino
+Girder Standby Toggle
+Girder Standby stikalo
+General
+Splošno
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder bo poskušal nastaviti opcije iz informacij tukaj. Pri tem je lahko potrebno nekaj  roènega nastavljanja
+Group Enabled
+Skupina vklopljena
+Group Disabled
+Skupina izklopljena
+Girder Standby
+Girder v pripravljenosti
+Girder Active
+Girder aktiven
+Girder Homepage: Http://www.stack.nl/~stilgar
+Girder spletna stran: Http://www.stack.nl/~stilgar
+Goto
+Pojdi
+Hibernate
+Hiberniraj
+Howto
+FAQ vprašanja
+Hide
+Skrij
+Hide on startup
+Skrij ob zagonu
+Hardware Plugins
+Strojni vtièniki
+Handle
+Roèica
+Hide sent.
+Skrij poslano.
+Host IP
+IP Gostitelja
+Host Port
+Vrata gostitelja
+IRSpeed
+IR Hitrost
+I Was here
+Bil sem tukaj
+I Was Here
+Bil sem tukaj
+IR Device Enabled.
+IR naprava vklopljena.
+Icon files (*.ico)|*.ICO
+Ikonske datoteke (*.ico)|*.ICO
+Icon
+Ikona
+Input Device
+Vhodna naprava
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Za lažje razumevanje nekaterih nastavitev uporabi angleški jezik.
+Initializing the Input Device(s)
+Inicializiram vhodne naprave
+Input Device Enabled.
+Vhodna naprava vklopljena.
+Input Device Disabled.
+Vhodna naprava izklopljena.
+IrDA Settings
+IrDA nastavitve
+Import Group...
+Uvozi skupino....
+Icons on the action tabs
+Ikone na akcijskih jezièkih
+Keep focus
+Ohrani fokus
+Key sent
+Tipka poslana
+Keyboard
+Tipkovnica
+Learn IR
+Zajemi IR
+LogOff
+Odjavi
+LParam
+LParam
+Launch Girder on windows startup
+Zaženi Girder ob zagonu sistema
+Language
+Jezik
+Main Window
+Glavno okno
+Monitor On
+Vklopi monitor
+Monitor Off
+Izklopi monitor
+Maximize
+Maksimiraj
+Minimize
+Minimiziraj
+Minimize Girder
+Minimiziraj Girder
+Mouse
+Miška
+Mouse Up
+Miška gor
+Mouse Down
+Miška dol
+Mouse Left
+Miška levo
+Mouse Right
+Miška desno
+Mouse Left Click
+Miška levi klik
+Mouse Left Doubleclick
+Miška levi dvojni klik
+Mouse Right Click
+Miška desni klik
+Match invisble Tasks
+Primerjaj nevidna opravila
+Minimized
+Minimizirano
+Maximum number of ClientAddresses reached cannot add.
+Doseženao maksimalno število klientov, ne morem dodati.
+Mouse Right Doubleclick
+Miška desni dvojni klik
+Mouse Middle click
+Miška srednji klik
+Mouse Middle Doubleclick
+Miška srednji dvojni klik
+Mouse Up Right
+Miška gor desno
+Mouse Up Left
+Miška gor levo
+Mouse Down Right
+Miška dol desno
+Mouse Down Left
+Miška dol levo
+Mouse Wheel Up
+Miška kolešèek gor
+Mouse Wheel Down
+Miška kolešèek dol
+New
+Novo
+Not found.
+Ne najdem.
+Name
+Ime
+None
+Brez
+Ok
+V redu
+O.S.
+Operacijski sitem
+Only send to first match
+Pošlji samo prvo ujemanje
+OSD
+OSD
+Play Wav
+Predvajaj Wav
+Poweroff
+Izklop
+Path to Hardware plugins
+Pot do strojnih vtiènikov
+Path to Action plugins
+Pot do akcijskih vtiènikov
+Process ID
+ID procesa
+Parent
+Nadrejen
+Plugins
+Vtièniki
+Port
+Vrata
+Password
+Geslo
+Question
+Vprašanje
+Reboot
+Ponovni zagon
+Register Filetype
+Prijavi datoteèni tip
+Running Tasks/Windows
+Zagnana opravila/okna
+Refresh
+Osveži
+Ready.
+Pripravljen.
+Rename
+Preimenuj
+Repeat Tolerance
+Toleranca za ponovitve
+Recognition Tolerance
+Toleranca za razpoznavanje
+Skip UIR init check
+Preskoèi UIR zaèetno preverjanje
+Strip Zeros from UIR string
+Odstrani vodilne nièle iz IR niza
+Slow
+Poèasi
+Suspend Mode
+Zaèasno ustavi
+Suspend to Ram
+Zaèasno ustavi v spomin
+Select destination.
+Izberi cilj.
+Save &as...
+Shrani &kot...
+Se&ttings...
+Nas&tavitve...
+Settings Window
+Nastavitveno okno
+State Window
+Okno stanja
+State
+Stanje
+Show
+Prikaži
+Set Focus
+V ospredje
+Screen Saver
+Ohranjevalnik zaslona
+Shutdown
+Zaustavitev sistema
+Step Size
+Velikost koraka
+Startup Options
+Zagonske nastavitve
+SysCommand
+SysUkaz
+Set On-Trayicon
+Vklopi Tray ikono
+Set Off-Trayicon
+Izklopi Tray ikono
+Set Active-Trayicon
+Vklopi aktivno Tray ikono
+Set Standby-Trayicon
+Izberi Standby Tray ikono
+Step
+Korak
+Shift
+Shift
+Special Key
+Posebna tipka
+Sentence
+Stavek
+Settings
+Nastavitve
+Save datafile on shutdown/poweroff/logoff
+Shrani podatkovno datoteko ob zaustavitvi/izklopu/odjavi
+Scale Main Form
+Poveèaj glavno okno
+State.
+Stanje.
+Selected Task's Childobjects
+Izbrani podrejeni opravilni objekti
+Send to foreground task
+Pošlji aktivnemu opravilu
+Substring matching
+Ujemanje podniza
+Start Capture
+Zaèni z zajemanjem
+Stop Capture
+Ustavi zajemanje
+System Wide Capturing
+Obširno sistemsko zajemanje
+SmartFill
+Pametno zapolnjevanje
+Show sent.
+Prikaži poslan.
+State Count
+Števec stanj
+See file Copying.txt for license details
+Veè o licenciranju najdete v datoteki Copying.txt
+String
+Niz
+Set Group Targets
+Nastavi skupinske cilje
+Show Girder
+Prikaži Girder
+Text
+Besedilo
+This plugin sends a WM_SETTEXT message to the targets.
+Ta vtiènik pošlje ciljem WM_SETTEXT sporoèilo.
+The file has changed, save ?
+Shranim spremembe ?
+Target Window
+Ciljno okno
+Target
+Cilj
+Traybar mode
+Traybar naèin
+The New input device gets activated when you press the apply button.
+Nova vhodna naprava se vklopi, ko pritisnete tipko Uporabi.
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+To ni Girder 3.0 podatkovna datoteka, naj poizkusim uvoziti iz 2.x ? Èe boste shranili to datoteko je Girder 2.x ne bo mogel veè odpreti.
+Target Selector
+Izbira cilja
+Test Event
+Preizkus dogodka
+Type
+Tip
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Prevod v slovenšèino Gregor Gliha <gregor.gliha@anni.si>
+TCP/IP Server Settings
+TCP/IP strežniške nastavitve
+TCP/IP Client
+TCP/IP klient
+Talking Clock
+Govoreèa ura
+Timer
+Èasomerilec
+Timer plugin for Girder 3.0
+Èasovni vtiènik za Girder 3.0
+This plugin executes a command after a preset timeout.
+Ta vtiènik izvede ukaz ob nastavljenem èasu.
+This is not a Girder 3.0 ExportFile.
+To ni Girder 3.0 izvozna datoteka.
+UIR/IRman Settings
+UIR/IRman nastavitve
+Unregister Filetype
+Odjavi datoteèni tip
+User Interface
+Uporabniški vmesnik
+Volume Window
+Okno za glasnost
+Volume Change
+Sprememba glasnosti
+Volume Right Change
+Spremeni glasnost desno
+Volume Left Change
+Spremeni glasnost levo
+Volume Balance Change
+Spremeni ravnovesje glasnosti
+Volume Mute Toggle
+Vklop/izklop funkcije nemo
+Volume ID
+ID glasnosti
+Volume
+Glasnost
+Version
+Razlièica
+Volume Settings
+Nastavitve glasnosti
+Volume Left
+Glasnost levo
+Volume Right
+Glasnost desno
+Volume Mute
+Glasnost nemo
+Waiting for IR Code.
+Èakam na IR kodo.
+Window
+Okno
+Wait
+Èakaj
+Wait for Window
+Èakaj na okno
+WParam
+WParam
+Window Name
+Ime okna
+Window Class
+Razred okna
+Wparam
+Wparam
+Wavfile played.
+Wav datoteka predvajana.
+Windows is shutting down.
+Sistem se zaustavlja.
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Wav datoteke (*.wav)|*.WAV|izvršilne (*.exe)|*.EXE
+X/Timeout [ms]
+X/Prekinitev [ms]
+Y
+Y
+command sent.
+ukaz poslan.
+sys command sent.
+sistemski ukaz poslan.

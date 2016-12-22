@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document type="Cours">
+  <author>
+    <name>Anthony Anthony Anthony Anthony Sylvain Hellegouarch</name>
+    <email>shellegouarch@programmationworld.com</email>
+    <web-site>www.programmationworld.com</web-site>
+  </author>
+  <page>
+    <title>Documentations officielles</title>
+    <introduction>Cette annexe rassemble les documentations officielles de certains formats de fichiers. Ce sont donc des ressources certifiées et extrêmement complètes. Nous rassemblons ces ressources pour vous, nous n'assurons donc pas le support sur ces documentations.</introduction>
+  </page>
+  <section title="Format PDF">
+    <paragraph>&lt;a href="downloads/Spec_Format_PDF_1.3.pdf"&gt;Spécifications du format PDF version 1.3&lt;/a&gt;</paragraph>
+  </section>
+</document>

@@ -1,0 +1,185 @@
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Interfacer un clavier matriciel</title><keywords></keywords><description></description><links><link type="prev">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\cours2.htm</link><link type="index">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\index.htm</link><link type="next">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\cours4.htm</link></links><introduction>Notre application ducours précédent était consacrée à l'affichage. Nous 
+allons compléter notre système avec un clavier qui jouera le rôle 
+d'interface avec l'utilisateur et rendra ainsi l'application plus interactive.
+L'écran LCD ne nous a pas laissé beaucoup de broches disponibles sur 
+le port parallèle. Mais heureusement, quelques astuces vont nous 
+permettre de contourner ce problème. Le bus de données est pris, ainsi 
+que deux broches de contrôle. Cela nous laisse donc sept broches dont 
+cinq en entrées et deux en entrées/sorties. L'inventaire est terminé,
+ passons maintenant à ce qui nous intéresse à savoir la gestion d'un
+ clavier. Il se présente sous la forme d'un pavé numérique à 
+12 touches, semblable à ce qui existe sur les téléphones. On y trouve 
+donc les chiffres de 0 à 9, ainsi que les caractères spéciaux * et #.
+
+</introduction></page><section name="section 1" title="Les deux types de clavier"><paragraph name="paragraph">Le clavier que nous allons utiliser est en plastique (voir l'illustration) et ne 
+coûte qu'une dizaine de francs. Il mesure 6 cm sur 5 environ et possède 12
+ touches. Les claviers à 16 touches dits "alphanumériques" possèdent en 
+plus les lettres A à F pour coder des nombres hexadécimaux. Ces claviers 
+supportent généralement près de 300mA sous 24V et ont une durée de vie 
+supérieure à 107 manoeuvres. Il existe deux technologies de fabrication du 
+circuit électrique ; on parle alors de clavier à matrice et de clavier à point 
+commun. Les deux versions possèdent des avantages et des
+ inconvénients. Un clavier à point commun est très facile à mettre en oeuvre 
+et à traiter mais possède 13 sorties (12 pour chaque touche plus le point 
+commun). Un clavier matriciel n'a que 7 sorties (pour 12 touches) mais
+ sera plus difficile à gérer. Nous avons opté pour la deuxième version, 
+vu qu'il ne nous reste que peu de broches disponibles sur le port 
+parallèle. Nous n'aurons encore une fois que peu de composants 
+additionnels car la scrutation des touches sera entièrement logicielle.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours3\clavier.jpg</link><legend>Voici les deux claviers à deux et seize touches.</legend></image></section><section name="section 2" title="Plagions un peu ..."><paragraph name="paragraph">Bien sûr, il existe quelques circuits qui pourraient nous épargner bien des 
+lignes de codes. Malheureusement ce type de circuits, comme le 74C922, 
+ coûte assez cher, 80 F environ. Nous allons donc contourner le problème
+ en réalisant la plupart des fonctions intégrées dans ce composant à l'aide
+ d'un peu de programmation. Le 74C922, dont la documentation technique 
+est fournie sur le CD Pro, est très pratique pour encoder des claviers car il
+ contient toute la logique nécessaire : des résistances de tirage, une 
+horloge interne, un registre de sortie mémorisant la dernière touche
+ activée, un système anti-rebonds, un signal annonçant qu'une touche a 
+été appuyée... il suffit de connecter le clavier et le tour est joué. Regardons 
+d'un peu plus près l'intérieur du 74C922 : le schéma fonctionnel ci-contre 
+nous montre la voie à suivre. Une résistance de tirage au +5V (résistance
+ dite de "pull-up") est connectée sur chaque ligne du clavier. Quand 
+aucune touche n'est appuyée, le potentiel est au 5V. Les colonnes sont 
+connectées à une horloge via un décodeur 2 vers 4, dont les sorties 
+actives sont au niveau bas. Cela est très intéressant : l'horloge sert en 
+fait de compteur, qui permet de scruter les colonnes les unes après les
+ autres. Il suffit d'appliquer tour à tour un 0V sur une colonne et, lorsqu'une 
+touche est pressée, le 0V se retrouve sur la ligne correspondante. La
+ logique externe détermine en fonction de tous ces paramètres la touche 
+qui a été appuyée.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours3\encodeur.jpg</link><legend>L'encodeur de clavier 74C922, une solution simple mais onéreuse.</legend></image></section><section name="section 3" title="Mise en oeuvre"><paragraph name="paragraph">Le schéma ci-contre montre l'interfaçage du clavier au port parallèle ; il n'y
+ a que très peu de composants additionnels. Nous avons le réseau de 
+résistances (entre 4.7k Ohms et 10k Ohms), et le circuit logique 74HCT139, 
+un décodeur 2 vers 4 qui nous permettra d'étendre le système à un clavier 
+de 16 touches. En plus de réduire le nombre de fils partant du port 
+parallèle le 74HCT139 a l'avantage de posséder des sorties actives au 
+niveau bas. Cette propriété est très intéressante pour notre application 
+car nous souhaitons scruter les colonnes une par une (la colonne à tester 
+sera alors à 0V tandis que les autres seront au potentiel de 5V). Au niveau 
+de la réalisation, le mieux est de compléter la plaquette à trous ou à 
+bandes cuivrées du mois dernier, et d'utiliser la même source 
+d'alimentation à base de 7805. Comme nous le voyons, tout cela reste 
+très simple.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours3\schema.jpg</link><legend>Le câblage entre l'écran et le port parallèle.</legend></image></section><section name="section 5" title="La programmation"><paragraph name="paragraph">Nous allons utiliser ici uniquement Visual Basic car comme son nom 
+l'indique ce langage est un peu plus visuel que le C. Cependant, il est tout 
+à fait possible de réaliser la programmation dans un autre langage qui 
+possède des fonctions permettant la gestion du port parallèle (C, Basic, 
+Pascal etc.). Dès lors, il suffit de reprendre les sources ci-dessous et de
+ traduire les algorithmes. Nous rappelons que les fichiers .frm ainsi que les 
+fichiers .bas sont lisibles à partir de n'importe quel éditeur de texte. Nous 
+retrouvons ici la Dll InpOut.dll que nous avons déjà utilisée les mois 
+précédents. Elle doit se placer dans le répertoire où se situe le 
+programme ou dans le répertoire Windows. Deux fonctions sont déclarées 
+dans un module et servent à écrire et à lire dans les registres du port 
+parallèle.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours3\brochage.jpg</link><legend>Le câblage électrique d'un clavier matriciel.</legend></image><paragraph name="paragraph"> Ceci étant dit, intéressons nous plus particulièrement à la 
+fonction principale du programme. Comme nous l'avons mentionné plus 
+haut, le but est de scruter le clavier. Pour cela, nous allons prendre le 
+contrôle "Timer" et le configurer pour qu'il s'exécute toutes les 100 ms. 
+Cette valeur est purement arbitraire, il faut simplement prendre une valeur 
+suffisamment petite devant le temps de la pression d'un bouton. Bien qu'il 
+soit possible de descendre plus bas pour améliorer les performances, il 
+est déconseillé de descendre en dessous de 100 ms en Visual Basic car 
+ce langage n'est pas très rigoureux au niveau de la gestion du temps. 
+Donc, toutes les 100 ms, le programme exécutera les instructions 
+contenues dans cette fonction. Voici ce que ça donne, pour un clavier à 
+douze touches :</paragraph><code syntax="Visual Basic 6.0" name="code">Private Sub Timer1_Timer()
+    ' On scanne les touches
+    
+    Flag = False ' Détecte si une touche a été appuyée
+        
+    ' Première colonne à 0V
+    Out Control, Inp(Control) Or &amp;H2
+    Out Control, Inp(Control) And &amp;HFB
+        
+    Touches = (Inp(Status)) ' On lit l'état des touches
+
+    Select Case Touches ' Et on affiche celle correspondante
+    
+    Case 56
+        Image1(2) = Image3(2)
+        Flag = True
+    Case 248
+        Image1(5) = Image3(5)
+        Flag = True
+    Case 88
+        Image1(8) = Image3(8)
+        Flag = True
+    Case 104
+        Image1(11) = Image3(11)
+        Flag = True
+    Case Else
+        Call RAZ_Touches
+    End Select
+    
+    If Flag = False Then ' On a rien détecté, on continue de scanner...
+    
+    ' Deuxième colonne à 0V
+    Out Control, Inp(Control) And &amp;HFD
+    Out Control, Inp(Control) And &amp;HFB
+    
+     Touches = (Inp(Status))
+
+    Select Case Touches
+    
+    Case 56
+        Image1(1) = Image3(1)
+        Flag = True
+    Case 248
+        Image1(4) = Image3(4)
+        Flag = True
+    Case 88
+        Image1(7) = Image3(7)
+        Flag = True
+    Case 104
+        Image1(10) = Image3(10)
+        Flag = True
+    Case Else
+        Call RAZ_Touches
+    End Select
+    
+    End If
+    
+    If Flag = False Then ' On a rien détecté, on continue à scanner...
+    
+    ' Troisième colonne à 0V
+     Out Control, Inp(Control) Or &amp;H6
+
+     Touches = (Inp(Status))
+
+    Select Case Touches
+    
+    Case 56
+        Image1(0) = Image3(0)
+        Flag = True
+    Case 248
+        Image1(3) = Image3(3)
+        Flag = True
+    Case 88
+        Image1(6) = Image3(6)
+        Flag = True
+    Case 104
+        Image1(9) = Image3(9)
+        Flag = True
+    Case Else
+        Call RAZ_Touches
+    End Select
+    
+    End If
+  
+End Sub</code><paragraph name="paragraph">Le traitement est en fait le décodage de l'information lue dans le registre 
+d'Etat, en fonction des quatre bits d'entrées. Les sources sont 
+suffisamment simples et commentées pour enlever toute ambiguïté. Le 
+reste du programme est aussi facile à comprendre.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours3\prog.jpg</link><legend>Notre application en pleine action.</legend></image></section><section name="section 6" title="Le système complet"><paragraph name="paragraph">Nous possédons maintenant un ensemble complet d'interface utilisateur. 
+A vous d'imaginer les applications, comme le contrôle d'accès ou comme 
+interface dans un système plus complexe. Le programme final gérant 
+l'écran LCD et le clavier se trouve en téléchargement ci-dessous.
+C'est en fait le rassemblement des programmes du cours précédent et de 
+celui-ci. Nous avons imaginé un petit système invitant l'utilisateur à entrer 
+un code de 4 chiffres s'affichant sur l'écran LCD. L'ordinateur compare 
+ensuite le code saisi avec un code en mémoire et affiche le résultat.
+Il est également possible de reprendre les algorithmes afin d'utiliser ce 
+système dans n'importe quelle électronique embarquée.
+</paragraph></section><section name="section 7" title="Téléchargements"><paragraph name="paragraph">&lt;ul&gt;
+&lt;li&gt;&lt;a href="downloads/cours3/teamcontrol.zip"&gt;teamcontrol.zip&lt;/a&gt;
+&lt;li&gt;&lt;a href="downloads/cours3/teamkeypad.zip"&gt;teamkeypad.zip&lt;/a&gt;
+&lt;li&gt;&lt;a href="downloads/cours3/74c922.pdf"&gt;74c922.pdf&lt;/a&gt; : la documentation du décodeur de clavier
+&lt;li&gt;&lt;a href="downloads/cours3/74hct139.pdf"&gt;74hct139.pdf&lt;/a&gt; : le double décodeur 2 vers 4
+&lt;/ul&gt;</paragraph></section></document>

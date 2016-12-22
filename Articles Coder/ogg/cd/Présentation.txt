@@ -1,0 +1,30 @@
+Présentation du contenu du CD
+------------------------------
+
+Toutes les informations et les ressources de l'article et du format Ogg/Vorbis.
+Les projets sont au format Visual C++ 6.0
+
+--------------
+Répertoire src
+--------------
+
+ - répertoire OggEditor : les deux versions du programme du magazine
+ - répertoire ogg-vorbis : le code source de l'API OggVorbis et des utilitaires
+   (en bonus : la toute dernière version 1.0.1 des outils Ogg/Vorbis
+ - répertoire GenCRCTable : projet pour générer une table CRC statique
+
+--------------
+Répertoire doc
+--------------
+
+ - Vorbis_I_spec.pdf : spécifications officielles du format Vorbis
+ - rfc3533.txt : RFC sur l'encapsulation de Vorbis dans un flux Ogg
+ - crc_v3.txt : un guide sur les codes d'erreurs (CRC)
+
+
+Bonne programmation.
+
+-------------------------------------------------------------------------------
+octobre 2003
+Anthony RABINE
+arabine@programmationworld.com

@@ -1,0 +1,13 @@
+L'asservissement est réalisé par la carte 4I27 de mesa (www.mesanet.com)
+
+Cette carte est équipée de deux chips LM629 spécialisé dans l'asservissement des moteurs.
+Chaque chip lm629 est équipé d'un PID numérique et emet un signal PWM
+
+doc 
+
+LM629.PDF	la documentation officielle du lm629 (national seniconductor)
+4i27ds.pdf	résumé de la carte 4I27 de Mesa
+4i27man.pdf	datasheet de la carte 4I27
+
+codeurs/HEDL_5540_3.pdf
+		doc des codeurs

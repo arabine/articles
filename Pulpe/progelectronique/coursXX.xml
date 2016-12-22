@@ -1,0 +1,19 @@
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Un récepteur infrarouge pour PC</title><keywords></keywords><description></description><links><link type="prev">E:\Cours Progworld\progelectronique\cours5.htm</link><link type="index">E:\Cours Progworld\progelectronique\index.htm</link><link type="next"></link></links><introduction>Avec format MP3, l'ordinateur est devenu une véritable 
+machine à musique. Cependant, il lui manque encore une 
+télécommande pour être totalement fonctionnel. Quoi de mieux 
+pour mettre en pratique nos connaissances sur le port série. 
+En plus, comme nous le verrons, ce récepteur infrarouge va nous 
+permettre de commander n'importe quel logiciel ...</introduction></page><section name="section 1" title="Introduction et principe"><paragraph name="paragraph">Le montage présenté ici est tiré du site Internet suivant :&lt;br&gt;
+&lt;br&gt;
+&lt;a href="http://www.geocities.com/SiliconValley/Sector/3863/uir/" target="_blank"&gt;
+http://www.geocities.com/SiliconValley/Sector/3863/uir/&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+
+Ce récepteur possède de nombreux avantages, dont le principal est d'être compatible avec la grande majorité 
+des logiciels que l'on peut trouver sur Internet. Le but de ce montage ? il est extrêmement simple et salvateur ; 
+il offre au PC un récepteur infrarouge, pouvant être utilisé avec la plupart des télécommandes du commerce 
+(celle d'une télévision, d'une chaîne HI-FI ou une télécommande multifonction). Vous comprenez l'avantage : en 
+installant un logiciel sur votre PC, vous pourrez assigner une touche de la télécommande à un évènement sous 
+Windows : bouger le curseur de la souris, envoyer un raccourcis clavier à une application, télécommander Winamp 
+commme une chaîne HI-FI... bref des possibilités infinies. Le système complet se présente sous la forme d'un récepteur infrarouge et d'un logiciel associé pour pouvoir exploiter les informations en provenance du capteur. Cela peut être un logiciel complet permettant de contrôler tous les évènements de Windows ou bien un plug-in donnant la possibilité de piloter entièrement Winamp. Pour le système de réception proprement dit, il est possible de choisir entre deux versions. La première, très simple et peu coûteuse, consiste à brancher (presque) directement le décodeur infrarouge au port série et laisse ainsi au logiciel tout le travail de décodage. Cependant, cette méthode est gourmande en ressources et il est beaucoup plus difficile de créer son propre "driver" exploitant ce montage. La deuxième méthode met en œuvre un microcontrôleur 8 bits de la famille PIC qui fournit tout le travail de décodage. Il dialogue alors avec le PC par l'intermédiaire de l'UART du port série. Dès lors, la programmation d'un logiciel s'en trouve simplifiée. Malgré la plus grande complexité de cette solution, il est possible de s'en sortir facilement en suivant scrupuleusement les instructions de cet article, même si l'on n'en comprend pas le fonctionnement.</paragraph></section></document>

@@ -1,0 +1,5 @@
+il faut bien que le robot embarque un peu d'énergie
+
+Caractéristiques 12V 1.2Ah
+
+DataSheet

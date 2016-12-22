@@ -1,0 +1,312 @@
+&File
+&Datoteka
+&New
+&Novo
+&Open
+&Otvori
+&Save
+&Spremi
+&Edit
+&Izmjene
+&Help
+&Pomoæ
+&About
+&O Programu
+&Target
+&Cilj
+Add Group
+Dodaj Grupu
+Add Multi Command
+Dodaj Složenu Naredbu
+Add Command
+Dodaj Naredbu
+Antirepeat wait time [ms]
+Èekaj iduèu naredbu  [ms]
+Apply
+Prihvati
+Actions
+Akcije
+Alt
+Alt
+About
+O Programu
+Autoload file does not exist.
+Datoteka za samostalno uèitavanje ne postoji.
+Auto Enable UIR
+Samostalno ukljuèi UIR
+Auto Load
+Uèitaj kod pokretanja
+Browse
+Potraži
+Begin state
+Poèetno stanje
+Captured IR code.
+Uhvaèen IR kod.
+Copy Command
+Kopiraj Naredbu
+Contents
+Sadržaj
+Capture Window
+Prozor za Hvatanje
+Contact and Legal Info
+Kontakt i Pravne Informacije
+Control
+Control
+Command line
+Komandna linija
+Capture Message
+Uhvati Poruku
+Cancel
+Odustani
+Comport
+Komunikaciski ulaz
+Communication
+Komunikacija
+Command State
+Status Komande
+Current State
+      Stanje Sada
+Child Name
+Child Name
+Child Class
+Child Class
+Checking the Settings
+Provjera Postavki
+Class Name
+Class Name
+Clear List
+Obriši Listu
+Clicked sent.
+Klik poslan.
+Close sent.
+Zatvori prozor. Poslan.
+Cannot find window
+Nemogu naæi Prozor
+Cannot Shutdown windows.
+Nemogu zatvoriti Prozore.
+Cannot reboot windows.
+Nemogu restartati Prozore.
+Cannot power down the computer.
+Nemogu zagasiti raèunalo.
+Cannot log off.
+Nemogu odjaviti korisnika.
+Cannot play wavfile.
+Nemogu izvesti WAV datoteku.
+Cannot find icon
+Nemogu naèi ikonu
+Disable UIR
+Iskljuèi UIR
+Delete
+Obriši
+Don't send the IR commands when Girder is the Foreground window
+Nemoj slati IR naredbe dok je Girder-ov prozor glavni prozor
+Display Splashscreen
+Prikaži Poèetnu Sliku
+Default
+Poèetno
+Executable Files|*.EXE|Batch Files|*.BAT|All Files|*.*
+Izvršne Datoteke|*.EXE|Skript Datoteke|*.BAT|Sve Datoteke|*.*
+Enable UIR
+Ukljuèi UIR
+Error: Cannot shutdown the UIR...
+Greška: Nemogu iskljuèiti UIR...
+Error: File 
+Greška: Datoteka 
+E&xit
+I&zlaz
+Exit
+Izlaz
+Enabled
+Aktivno
+Execute
+Izvedi
+Execute options
+Izvedi opcije
+Execute on all states except 1
+Izvedi u svim stanjima osim 1
+Executable
+Izvršna datoteka
+Error: Cannot set volume
+Greška: Nemogu podesiti Glasnoèu
+File open failed, please check filename.
+Neuspjelo otvaranje datoteke, molim provjerite ime.
+File save failed, please check filename.
+Neuspjelo spremanje datoteke, molim provjerite ime.
+Fast
+Brzo
+Fast UIR Initialization
+Brzo ukljuèivanje UIR-a
+Filename
+Ime Datoteke
+Find
+Pronaði
+Girder Data Files|*.GIR|All Files|*.*
+Datoteku s Girder-ovim podatcima|*.GIR|Sve Datoteke|*.*
+General
+Opèenito
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder æe pokušati popuniti tražene opcije na temelju podataka koji se ovdje nalaze, a ako ne ruèno podesi.
+HOWTO
+KAKO
+Hide on startup
+Sakri prilikom pokretanja
+Handle
+Handle
+Hide sent.
+Sakri poslato.
+Homepage
+Internet adresa autora programa
+Initializing the UIR
+Ukljuèujem UIR
+IR speed
+Brzina IR-a
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Za jednostavnije snalaženje u programu koristite engleski jezik.
+Keyboard
+Tipkovnica
+Key sequence
+Niz tipki
+Learn IR
+Nauèi IR kod
+Launch Girder on windows startup
+Startaj Girder prilikom pokretanja Prozora
+Language
+Jezik
+LParam
+LParam
+Logging off.
+Odjavljivanje.
+Main Window
+Glavni Prozor
+Match invisble Tasks
+Upari pozadinski Proces
+Message Sent.
+Poruka poslana.
+Not found.
+Nije naðeno.
+Name
+Ime
+Opened comport [
+Otvoren komunikacijski ulaz [
+Operating System information
+Informacije o operativnom sistemu
+Ok
+U REDU
+Only send to first match
+Pošalji samo prvom uparenom
+Paste Command
+Priljepi Naredbu
+Process ID
+ID Procesa
+Parent
+Roditelj
+Register Filetype
+Prijavi tip Datoteke
+Running Tasks/Windows
+Posao/Prozor koji radi
+Refresh
+Osvježi
+Ready.
+Spreman.
+Save &As
+Spremi &Kao
+Se&ttings
+Po&stavke
+Settings
+Postavke
+State
+Stanje
+Show Girder
+Pokaži Girder
+Shift
+Shift
+Special Key
+Posebna Tipka
+Save datafile on shutdown/poweroff/logoff
+Spremi datoteku prilikom zatvaranja/gašenja/odjavljivanja
+Slow
+Sporo
+State Count
+Brojaè stanja
+Selected Task's Childobjects
+Selected Task's Childobjects
+Send to foreground task
+Pošalji u aktivni proces
+Substring matching
+Upari dio niza
+Start Capture
+Poèni Hvatati
+Stop Capture
+Prestani Hvatati
+System Wide Capturing
+Hvatanje sistemskih poruka
+SmartFill
+Pametno Popuni
+Show sent.
+Pokaži poslano.
+Strip leading and trailing zeros from IRstring
+Izbaci poèetne i završne nule iz IRniza
+Step Size
+Velièina koraka
+Skip UIR initialization check
+Preskoèi provjeru inicijalizacije UIR-a
+The file has changed, save ?
+Datoteka se promijenila, spremiti?
+Target Window
+Ciljni Prozor
+Type
+Tip
+This option makes Girder wait either for a preset time or until a program has started.
+Ovom opcijom Girder èeka dok ne proðe unaprijed postavljeno vrijeme ili dok Program ne starta.
+Time (out)
+Vrijeme 
+Traybar mode
+Traybar mod
+Target Selector
+Odabir Cilja
+Test Event
+Testiraj dogaðaj
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Na Hrvatski preveo Radovan Kanižaj <Radovan.Kanizaj@crosco.tel.hr>
+UIRman not enabled
+UIRman nije ukljuèen
+UIR Disabled.
+UIR Iskljuèen.
+Unregister Filetype
+Odjavi tip Datoteke
+Value
+Vrijednost
+Version
+Verzija
+Volume Settings
+Postavke Zvuka
+Waiting for IR Code.
+Èekam na IR Kod.
+Wait
+Èekaj
+Wait for Target Window
+Èekaj na Ciljni Prozor
+Window Name
+Ime Prozora
+Window Class
+Klasa Prozora
+Wparam
+Wparam
+Windows is shutting down.
+Prozori se Zatvaraju.
+Windows is rebooting
+Prozori se restartaju
+Windows is powering down.
+Prozori se gase.
+Wavfile played.
+WAV Datoteka izvedena.
+Wav files|*.wav|Icons|*.ico|All Files|*.*
+Wav datoteke|*.wav|Ikone|*.ico|Sve datoteke|*.*
+] and UIR initialized !
+] i UIR inicijaliziran !
+] and UIR initialized  NOT !@$#!@!
+] i UIR inicijaliziran NIJE !@$#!@!
+command sent.
+naredba poslana.
+sys command sent.
+sistemska naredba poslana.

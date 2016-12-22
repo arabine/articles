@@ -1,0 +1,14 @@
+Les meilleurs logiciels pour contrôler Windows :
+
+* gen_ir253 : LE plug-in qu'il faut installer
+* gen_uice : un autre plug-in
+* pcremote4b et IRPC : deux logiciels pour créer des évènements sous l'action d'une touche de 
+la télécommande.
+* winlirc-0.6 : le logiciel WinLIRC pour gérer le récepteur le plus simple (sources incluses)
+
+N'hésitez pas à chercher sur le Net, il en existe encore d'autres mais la place sur le CD manque. Si 
+vous trouvez un bon programme qui méritrait de figurer sur le CD-Pro, envoyez le moi je le mettrai le 
+mois prochain.
+
+Anthony Rabine
+arabine@programmationworld.com

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document type="Cours">
+  <author>
+    <name>Anthony Anthony Anthony Anthony Anthony Anthony Anthony Anthony Anthony Anthony Anthony Sylvain Hellegouarch</name>
+    <email>shellegouarch@programmationworld.com</email>
+    <web-site>www.programmationworld.com</web-site>
+  </author>
+  <page>
+    <title>La gestion de versions</title>
+    <introduction>Les outils de gestion de versions permettent de garder l'historique et toutes les étapes de réalisation d'un logiciel. Ce genre d'outils devient vite indispensable lorsque plusieurs développeurs travaillent sur le même projet mais cette aide au développement peut être utilisée dans tout projet informatique, et pas seulement dans le cas de la programmation. Nous allons découvrir les avantages que ces outils procurent ainsi que les logiciels les plus populaires.</introduction>
+  </page>
+  <section title="Motivations">
+    <paragraph>Tout programmeur a un jour ou l'autre vécu le drame de la perte de versions antérieures de son programme en cours de développement. Dans ces cas là, il est salvateur de retrouver une vieille version sauvegardée dans un emplacement improbable, si tant est que l'on fusse suffisamment prévoyant pour avoir réalisé quelques sauvegardes en cours de développement.</paragraph>
+    <paragraph>Dans un contexte plus professionnel, il est vital de garder les traces de développement d'une application pour d'importantes raisons de qualité et de suivi de la vie d'un logiciel. Lorsqu'un logiciel regroupe plusieurs modules développés indépendamment à l'instar des programmes embarqués, l'utilisation d'outils de gestion de versions est quasi obligatoire : l'intégrateur du logiciel final aura la possibilité de monter son application avec les versions des modules de son choix.</paragraph>
+    <paragraph>La gestion de versions prend toute sa dimension dans le cas de développements collaboratifs. Les outils permettent alors de gérer les différents utilisateurs et de stocker les contributions de chacun sans ne jamais détruire les codes sources précédents. On imagine aisément l'utilité ce ces outils dans le cas de développement de très gros projets comme celui de Linux.</paragraph>
+    <paragraph>Enfin, les outils de gestion de versions permettent de s'adonner à des essais, des corrections de bugs ou des ajouts sans risque de perturber la branche principale de développement du logiciel. Ainsi, toute une série de ramifications peuvent apparaitre, chacune gardant son propre historique et sauvegardes. Après coup, il est possible de rassembler certaines versions entres elles (on parle alors de "merge", c'est à dire de fusion), par exemple lorsqu'un patch a été approuvé : la modification apportée rejoint alors la branche principale du projet.</paragraph>
+    <paragraph>La gestion efficace de versions d'un logiciel ou d'un enssemble de logiciels permet de maîtriser totalement le processus de développement et offre une sécurité sans failles à un projet, qu'il soit réalisé en collaboration ou non. Ces outils se nomment &lt;a href="http://www.gnu.org/software/rcs/rcs.html"&gt;RCS (Revision Control System)&lt;/a&gt;, &lt;a href="http://www.cvshome.org/"&gt;CVS (Concurrent Versions System)&lt;/a&gt;, tous deux gratuits ou ClearCase (de IBM/Rational), payant et réservé à un contexte plus professionnel. Nous reparlerons de ces logiciels un peu plus bas dans plusieurs études de cas.</paragraph>
+    <paragraph>Expressions que l'on retrouve souvent lorsque l'on parle de gestion de versions : gestion de configuration, gestion d'historique, contrôle de version, révisions, deltas ...</paragraph>
+  </section>
+  <section title="Principe de fonctionnement">
+    <paragraph>Les outils de gestion de version se basent tous sur le même principe bien qu'ils possèdent chacun une philosophie un peu différente.</paragraph>
+  </section>
+  <section title="Étude de cas : RCS">
+    <paragraph>RCS est un système de gestion de versions et fait parti des outils GNU. Son principal avantage est donc sa complète gratuité. Nous verrons qu'il est sous certains points assez similaire au programme ClearCase. Vous trouverez en bas de cette page un portage de RCS sous Windows prêt à être utilisé. Nous allons nous baser sur cette version pour l'installation. Sous Linux, la procédure sera sensiblement similaire. Néanmoins, Linux sera nettement plus pratique pour l'utilisation courante de RCS.&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;i&gt;Installation&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Dézippez l'archive, dans le répertoire c:\programs\rcs par exemple. Ajoutez le chemin c:\programs\rcs\bin dans la variable Path du système (propriétés système -&gt; Avancé -&gt; variables systèmes).  La deuxième chose à faire est de spécifier la variable Timezone de RCS pour initialiser le système de date. Dans la même fenêtre, créez une variable appelée TZ et fixez sa valeur à TZ=CET-1 (pour l'europe). Reportez-vous à la documentation correspondante pour plus de précision. Voilà, le système est maintenant installé sous Windows&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;i&gt;Stockage des versions&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;RCS nécessite d'avoir un répertoire appelé "RCS" à la racine de votre répertoire de travail. Sous un système Unix, le mieux est d'avoir un disque ou serveur spécialement prévu à cet effet, autre que le disque local de développement. En cas de crash vous éviterez ainsi de tout perdre. Le répertoire "RCS" à la racine de votre répertoire de travail sera donc un lien symbolique vers un autre emplacement sécurisé. Sous Windows, un tel lien n'est pas possible.</paragraph>
+  </section>
+  <section title="Téléchargements">
+    <paragraph>RCS&lt;br&gt;CVS&lt;br&gt;Le pack de codes source pour faire des essais</paragraph>
+  </section>
+</document>

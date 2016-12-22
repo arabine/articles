@@ -1,0 +1,688 @@
+&File
+&Bestand
+&New
+&Nieuw
+&Save
+&Opslaan
+&Edit
+&Bewerken
+&Help
+&Help
+&About
+&Over
+&Open...
+&Openen...
+&Copy
+&Kopiëren
+&Paste
+&Plakken
+&Add Command
+&Commando Toevoegen
+&Delete
+&Verwijderen
+&Test Command
+&Test Commando
+&Reset All States
+&Reset alle statusen
+&Disable Input Device(s)
+&Invoer Apparaten Uitzetten
+&Enable Input Device(s)
+&Invoer Apparaten Aanzetten
+Apply
+Toepassen
+Alt
+Alt
+Autoload file does not exist.
+Autoload bestand bestaat niet.
+Auto Load
+Automatisch lezen
+APM Event Generator
+APM event maker
+APM Event Plugin 1.0 for Girder 3.0
+APM Event Plugin 1.0 voor Girder 3.0
+Add &MultiGroup
+&Multigroep Toevoegen
+Add &Group
+&Groep Toevoegen
+Accelerate
+Versnellen
+Auto execute on startup
+Automatisch uitvoeren na starten
+Available plugins
+Beschikbare plugins
+Antirepeat wait time [ms]
+Antiherhaal wachttijd [ms]
+Auto Enable Input device
+Invoer apparaat  automatisch aanzetten
+Antirepeat active
+Antirepeat aktief
+About
+Over
+Action Plugins
+Aktie Plugins
+Allowed Clients
+Toegestane adressen
+Address
+Adres
+Address edit
+Adres edit
+Add
+Toevoegen
+AST/NEC/IBM IR Mouse plugin.
+AST/NEC/IBM IR Mouse plugin.
+ALTKey sent
+ALTKey verzonden
+Absolute Mouse move
+Absolute Muis beweging
+Alternative proc.
+Alternatieve proc.
+Browse
+Bladeren
+Begin state
+Begin status
+Baud Rate
+Communicatie snelheid
+Bit Number
+Bit Nummer
+Captured IR code.
+IR code ontvangen.
+Control
+Control
+Cancel
+Annuleren
+Comport
+Compoort
+Command State
+Commando Status
+Current State
+Huidige Status
+Child Name
+Child Naam
+Child Class
+Child Klasse
+Checking the Settings
+Controleer de instellingen
+Class Name
+Class Naam
+Clear List
+Maak lijst leeg
+Clicked sent.
+Clicked verzonden
+Close sent.
+Close verzonden
+Cannot find window
+Kan het doel window niet vinden
+Cannot Shutdown windows.
+Kan windows niet afsluiten.
+Cannot play wavfile.
+Kan wav bestand niet afspelen
+Cannot find icon
+Kan het icoon niet vinden
+Cannot load plugin.
+Kan plugin niet laden
+Cannot save datafile.
+Kan de datafile niet opslaan
+Cannot load datafile.
+Kan de datafile niet lezen
+Could not enable IR device.
+Het IR apparaat kan niet aangezet worden
+Clicked
+Klikken
+Close
+Sluiten
+Command
+Commando
+Capture
+Capture
+Cannot find group
+Kan de group niet vinden
+Cannot Find Softplugin.
+Kan de softplugin niet vinden
+Contents
+Inhoud
+Capture Window
+Capture Venster
+Contact and Copyright information
+Kontact en Copyright informatie
+Could not enable input device(s).
+Kan de invoer apparaten niet aanzetten
+Cannot enable 
+Kan niet aanzetten
+Command executed
+Command uitgevoerd
+Command ID
+Commando ID
+Change the Target Settings of the follwing command ?
+Verander het doelvenster van dit commando ?
+Cannot import group.
+Kan de groep niet importeren
+Cannot export group.
+Kan de groep niet exporteren
+Click command sent.
+Click command sent.
+Cannot find command
+Kan commando niet vinden
+Command state reset
+Commando status gereset
+Command not found
+Commando niet gevonden
+Cannot open drive
+Kan drive niet openen
+Cannot change mode
+Kan mode niet veranderen
+Center and Resize window
+Window centreren en verschalen
+Change Resolution
+Verander resolutie
+Don't send the IR commands when Girder is the Foreground window
+IR commando's niet verzenden als Girder het voorste window is.
+Display Splashscreen
+Toon Splashscreen
+Default
+Standaard
+Double Clicked
+Dubbel klik
+Description
+Beschrijving
+Delete
+Verwijderen
+Dotmatrix font
+Dotmatrix lettertype
+Default speed
+Standaard snelheid
+Dtr
+Dtr
+DFX 3.3 Plugin Controller
+DFX 3.3 Plugin Controller
+Down
+Omlaag
+Device started
+Device gestart
+Device start failed
+Device start mislukt
+Device stopped
+Device gestopt
+Device stop failed
+Device stop mislukt
+Device number
+Device nummer
+Drag me to target window
+Sleep mij naar het doel window
+Disable Device
+Device uitzetten
+E&xit
+Slui&ten
+Enabled
+Aan
+Execute
+Uitvoeren
+Execute on all states except 1
+Uitvoeren op alle statussen behalve 1
+Executable
+Bestand
+Error: Cannot set volume
+Fout: Kan het volume niet veranderen.
+Example plugin for Girder 3.0
+Voorbeeld plugin voor Girder 3.0
+Error: Cannot execute command.
+Fout: Kan het commando niet uitvoeren
+Export Group...
+Exporteer groep...
+Error: Cannot find command
+Fount: Kan commando niet vinden
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV|All Files (*.*)|*.*
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV|All Files (*.*)|*.*
+Eject Media
+Media uitwerpen
+Enable Device
+Device inschakelen
+Fast
+Snel
+Filename
+Bestandsnaam
+Find
+Zoek
+Fast UIR Init
+Snelle UIR Initialisatie
+File
+Bestand
+Fast Silitek Init
+Fast Silitek Init
+General
+Algemeen
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder probeert de target opties te vullen, het kan zijn dat dit handmatig moet worden aangepast.
+Group Enable
+Groep aanzetten
+Group Disable
+Groep uitzetten
+GNU General Public License
+GNU General Public License
+Girder files (*.gir)|*.GIR
+Girder bestanden (*.gir)|*.GIR
+Girder Standby Toggle
+Girder Standby schakelaar
+Group Enabled
+Group Aan
+Group Disabled
+Group Uit
+Girder Homepage: Http://www.stack.nl/~stilgar
+Girder Homepage: Http://www.stack.nl/~stilgar
+Goto
+Ga naar
+Hide on startup
+Verberg bij starten
+Handle
+Handle
+Hide sent.
+Verberg verzonden.
+Hibernate
+Hibernate
+Hide
+Verbergen
+Hardware Plugins
+Hardware Plugins
+Howto
+Hoe ?
+Host IP
+Host IP
+Host Port
+Host Port
+Hidden
+Hidden
+IRSpeed
+IRSnelheid
+I Was Here
+Ik was hier
+IR Device Enabled.
+IR Apparaat aangezet.
+Input Device
+Invoer apparaat
+I Was here
+Ik was hier
+Icon files (*.ico)|*.ICO
+Icoon (*.ico)|*.ICO
+Initializing the Input Device(s)
+Initialiseren van de invoer apparaten
+Input Device Enabled.
+Invoer apparaten aangezet.
+Input Device Disabled.
+Invoer apparaten uitgezet
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+IrDA Settings
+IrDA Instellingen
+Import Group...
+Importeer groep...
+Icons on the action tabs
+Icons on the action tabs
+IR Mouse Settings
+IR Mouse Settings
+Invert
+Inverteer
+Icon / Device
+Icon / Device
+Keep focus
+Hou focus
+Key sent
+Toets verzonden
+Keyboard
+Toetsenbord
+Launch Girder on windows startup
+Start Girder tijdens windows start.
+Language
+Taal
+LParam
+LParam
+LogOff
+UitLoggen
+Learn Event
+Leer Event
+Load Media
+Media laden
+Left Click
+Links klik
+Left Double Click
+links dubbel klik
+Match invisble Tasks
+Toon onzichtbare taken
+Monitor On
+Monitor Aan
+Monitor Off
+Monitor Uit
+Minimize Girder
+Girder minimaliseren
+Mouse
+Muis
+Mouse Up
+Muis omhoog
+Mouse Down
+Muis Omlaag
+Mouse Left
+Muis Links
+Mouse Right
+Muis Rechts
+Mouse Left Click
+Muis links klik
+Mouse Left Doubleclick
+Muis links dubbelklik
+Mouse Right Click
+Muis rechts klik
+Maximize
+Maximalizeren
+Minimize
+Minimalizeren
+Minimized
+Geminimalizeerd
+Main Window
+Hoofd Venster
+Maximum number of ClientAddresses reached cannot add.
+Maximum number of ClientAddresses reached cannot add.
+Mouse Right Doubleclick
+Muis rechts dubbleklik
+Mouse Middle click
+Muis middel klik
+Mouse Middle Doubleclick
+Muis middel dubbelklik
+Mouse Up Right
+Muis omhoog rechts
+Mouse Up Left
+Muis omhoog links
+Mouse Down Right
+Muis omlaag Rechts
+Mouse Down Left
+Muis omlaag links
+Mouse Wheel Up
+Muis wiel omhoog
+Mouse Wheel Down
+Muis wiel omlaag
+Message for key down
+Message for key down
+Message for key up
+Message for key up
+Message for key still pressed
+Message for key still pressed
+Move window
+Window verplaatsen
+Mouse Pos.
+Muis Pos.
+Mute Display
+Mute Display
+Not found.
+Niet gevonden.
+Name
+Naam
+New
+Nieuw
+None
+Geen
+No input devices selected, please select one first in the settings dialog.
+No input devices selected, please select one first in the settings dialog.
+Ok
+Ok
+Only send to first match
+Alleen naar eerste window sturen
+O.S.
+O.S.
+OSD
+OSD
+OEM Licensed to Broadbandbox AB
+OEM Licensed to Broadbandbox AB
+OSD Font
+OSD Lettertype
+Process ID
+Proces ID
+Parent
+Parent
+Play Wav
+Wav afspelen
+Poweroff
+Computer Uitschakelen
+Path to Hardware plugins
+Pad van de Hardware plugins
+Path to Action plugins
+Pad naar Aktie plugins
+Plugins
+Plugins
+Port
+Port
+Password
+Wachtwoord
+Port Speed
+Port Speed
+Plugin not found
+Plugin not found
+Plugin not loaded
+Plugin not loaded
+Question
+Vraag
+Register Filetype
+Registreer GIR
+Running Tasks/Windows
+Active Tasks/Windows
+Refresh
+Ververs
+Ready.
+Klaar.
+Reboot
+Herstarten
+Rename
+Hernoem
+Repeat Tolerance
+Herhaal toleratie
+Recognition Tolerance
+Herkennings toleratie
+Resize window
+Window verschalen
+Right Click
+Rechts klik
+Right Double Click
+Rechts dubbel klik
+Reset State
+Status resetten
+Settings
+Instellingen
+State
+Status
+Shift
+Shift
+Special Key
+Speciale Toets
+Save datafile on shutdown/poweroff/logoff
+Datafile opslaan tijdens shutdown.
+Slow
+Langzaam
+State Count
+Status aantal
+Selected Task's Childobjects
+Geselecteerde Taak z'n Childobjects
+Send to foreground task
+Stuur naar voorgrond taak
+Substring matching
+Deelstring overeenkomst
+Start Capture
+Start Capture
+Stop Capture
+Stop Capture
+System Wide Capturing
+System Wide Capturing
+SmartFill
+SmartFill
+Show sent.
+Toon verzonden.
+Step Size
+Stap groote
+Skip UIR init check
+Sla UIR initialisatie controle over
+Strip Zeros from UIR string
+Knip nullen van de UIR string af
+Suspend Mode
+Suspend Modus
+Suspend to Ram
+Suspend to Ram
+Select destination.
+Kies doel
+Save &as...
+Opslaan &als...
+Se&ttings...
+Ins&tellingen
+Show
+Zichtbaar maken
+Set Focus
+Naar voorgrond halen
+Screen Saver
+Scherm beveiliging
+Shutdown
+Windows Afsluiten
+Startup Options
+Start Opties
+SysCommand
+SysCommand
+Set On-Trayicon
+Aan-Trayicoon instellen
+Set Off-Trayicon
+Uit-Trayicoon instellen
+Set Active-Trayicon
+Aktief-Trayicoon instellen
+Step
+Stapgrootte
+Sentence
+Zin
+Scale Main Form
+Hoofd venster schaling
+Set Standby-Trayicon
+Standby-Trayicoon instellen
+State.
+Status.
+Settings Window
+Instellingen Venster
+State Window
+Status Venster
+See file Copying.txt for license details
+Zie het bestand Copying.txt for de licentie details
+String
+String
+Set Group Targets
+Zet group doelvensters
+Show Girder
+Show Girder
+Silitek Settings
+Silitek Settings
+Stop Bit
+Stop Bit
+Skip Silitek init check
+Skip Silitek init check
+Strip Zeros from Silitek string
+Strip Zeros from Silitek string
+Slide shift
+Slide shift
+Slider num
+Slider num
+Size
+Groote
+Stop Processing
+Stop Processing
+The file has changed, save ?
+Het bestand is veranderd, opslaan ?
+Type
+Type
+Traybar mode
+Traybar modus
+Test Event
+Test Event
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Vertaald door Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Target Selector
+Doel vinder
+Text
+Tekst
+This plugin sends a WM_SETTEXT message to the targets.
+Deze plugin stuurt een WM_SETTEXT bericht naar de doelen
+Target
+Doel
+The New input device gets activated when you press the apply button.
+Het nieuwe invoer apparaat word aktief nadat u op de toepassen knop gedrukt heeft
+Target Window
+Doel Venster
+TCP/IP Server Settings
+TCP/IP Server Instellingen
+TCP/IP Client
+TCP/IP Client
+Talking Clock
+Sprekende klok
+Timer
+Timer
+Timer plugin for Girder 3.0
+Timer plugin for Girder 3.0
+This plugin executes a command after a preset timeout.
+This plugin executes a command after a preset timeout.
+Task Switcher
+Task Switcher
+Unregister Filetype
+de-registreer GIR
+User Interface
+Gebruikers Interface
+UIR/IRman Settings
+UIR/IRman Instellingen
+Up
+Up
+Version
+Versie
+Volume Settings
+Volume Instellingen
+Volume Change
+Volume Veranderen
+Volume Right Change
+Volume Rechts Veranderen
+Volume Left Change
+Volume links veranderen
+Volume Balance Change
+Volume balance veranderen
+Volume Mute Toggle
+Volume mute veranderen
+Volume ID
+Volume ID
+Volume
+Volume
+Volume Window
+Volume Venster
+Volume Left
+Volume Left
+Volume Right
+Volume Right
+Volume Mute
+Volume Mute
+Volume Display
+Volume Display
+Waiting for IR Code.
+Wacht op IR code
+Wait
+Wacht
+Window Name
+Window Naam
+Window Class
+Window Klasse
+Wparam
+Wparam
+Windows is shutting down.
+Windows is bezig af te sluiten.
+Wavfile played.
+Wav afgespeeld.
+Window
+Venster
+Wait for Window
+Wacht op venster
+WParam
+WParam
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE|All Files (*.*)|*.*
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE|All Files (*.*)|*.*
+Window Exists
+Window Exists
+X/Timeout [ms]
+X/Timeout [ms]
+Y
+Y
+command sent.
+commando verstuurd
+sys command sent.
+sys commando verstuurd

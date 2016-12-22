@@ -1,0 +1,190 @@
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Le récepteur infrarouge</title><keywords></keywords><description></description><links><link type="prev">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\annexe1.htm</link><link type="index">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\index.htm</link><link type="next"></link></links><introduction>Cette page va vous permettre de fabriquer le module de 
+réception infrarouge nommé UIR (Universal Infrared 
+Transmitter). Il a été présenté dans le PC Team N°67 d'avril 
+2001 et se base sur le montage original accessible à l'adresse 
+suivante : &lt;a href="http://www.geocities.com/SiliconValley/Sector/3863/uir/" target="blank"&gt;
+http://www.geocities.com/SiliconValley/Sector/3863/uir/&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+Vous pouvez utiliser n'importe quelle télécommande du 
+marché, celle de votre chaine HI-FI ou de votre télévision. 
+Les applications sont nombreuses, vous pouvez 
+télécommander Winamp, le lecteur de DVD, le logiciel de 
+votre carte TV ou même simuler des racourcis clavier, 
+démarrer des programmes, éteindre Windows ou bouger le 
+curseur de la souris !
+&lt;br&gt;
+&lt;br&gt;
+Cette annexe n'est pas complète et a permis à certains lecteurs 
+de ProgWorld de commander un exemplaire tout fait. Cette rubrique 
+a eu un beau succès, et, en attendant qu'une nouvelle version apparaisse 
+(sans compter quelques autres surprises), vous trouverez ici les 
+ressources nécessaires pour construire le votre.
+
+</introduction></page><section name="section 1" title="Présentation"><paragraph name="paragraph">J'ai réalisé la platine avec le logiciel Proteus de 
+&lt;a href="http://www.labcenter.co.uk/" target="blank"&gt;Labcenter&lt;/a&gt;. 
+Vous pouvez télécharger une version de démonstration 
+parfaitement fonctionnelle sur ce site. Voici ce que la platine 
+donne sous Ares :</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\annexe2\platine.jpg</link><legend>Le PCB terminé sous Ares.</legend></image><paragraph name="paragraph">Vous pouvez également télécharger le schéma, le PCB ainsi 
+que quelques librairies personnelles rassemblés dans l'archive 
+suivante :&lt;a href="downloads/annexe2/uir_proteus.zip"&gt;uir_proteus.zip&lt;/a&gt; (11,1 Ko)
+
+Voici la liste des composants, le prix indicatif et la référence 
+équivalente chez Radiospares. Notez que le prix des 
+résistances et des condensateurs est fixé à 1F arbitrairement, 
+cela dépend où je me fournis et la quantité commandée. Bien 
+sûr, n'allez pas acheter des résistances à 1F hein ... :o)
+</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\annexe2\schema.jpg</link><legend>Le schéma de principe sous Isis.</legend></image><paragraph name="paragraph">&lt;table border=1 cellspacing=1 cellpadding=2 align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;&lt;b&gt;Nom&lt;/b&gt;&lt;/td&gt;
+	   &lt;td&gt;&lt;b&gt;Composant&lt;/b&gt;&lt;/td&gt;
+       &lt;td&gt;&lt;b&gt;Référence&lt;/b&gt;&lt;/td&gt;
+       &lt;td&gt;&lt;b&gt;Prix (FHT)&lt;/b&gt;&lt;/td&gt;
+	   &lt;td&gt;&lt;b&gt;Quantité&lt;/b&gt;&lt;/td&gt;
+	   &lt;td&gt;&lt;b&gt;Total (FHT)&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;U1&lt;/td&gt;
+       &lt;td&gt;PIC12C509-04P&lt;/td&gt;
+       &lt;td&gt;2340338&lt;/td&gt;
+	   &lt;td&gt;14,10&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;14,10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;U2&lt;/td&gt;
+       &lt;td&gt;TSOP1736&lt;/td&gt;
+       &lt;td&gt;3219213&lt;/td&gt;
+	   &lt;td&gt;9,52 (47,62 par 5)&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;9,52&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;X1&lt;/td&gt;
+       &lt;td&gt;Quartz 4MHz&lt;/td&gt;
+       &lt;td&gt;1309229&lt;/td&gt;
+	   &lt;td&gt;8,00&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;8,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;C1,C2&lt;/td&gt;
+       &lt;td&gt;Condensateurs 22pF&lt;/td&gt;
+       &lt;td&gt;1670442&lt;/td&gt;
+	   &lt;td&gt;0,65 (6,49 par 10)&lt;/td&gt;
+	   &lt;td&gt;2&lt;/td&gt;
+	   &lt;td&gt;1,3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;D1,D2&lt;/td&gt;
+       &lt;td&gt;Diodes Zener 5,1V&lt;/td&gt;
+       &lt;td&gt;283659&lt;/td&gt;
+	   &lt;td&gt;0,79 (3,94 par 5)&lt;/td&gt;
+	   &lt;td&gt;2&lt;/td&gt;
+	   &lt;td&gt;1,58&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;D3,D4&lt;/td&gt;
+       &lt;td&gt;Diodes 1N4148&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+	   &lt;td&gt;1,00&lt;/td&gt;
+	   &lt;td&gt;2&lt;/td&gt;
+	   &lt;td&gt;2,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;C3&lt;/td&gt;
+       &lt;td&gt;Condensateur 4,7µF radial&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+	   &lt;td&gt;1,00&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;1,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;R1&lt;/td&gt;
+       &lt;td&gt;Résistance 1/4W 1k Ohms&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+	   &lt;td&gt;1,00&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;1,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;R2&lt;/td&gt;
+       &lt;td&gt;Résistance 1/4W 100k Ohms&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+	   &lt;td&gt;1,00&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;1,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;CONN-D9&lt;/td&gt;
+       &lt;td&gt;SUB-D mâle 9 broches coudé&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+	   &lt;td&gt;20,00&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;20,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Support SIP 8 broches&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+	   &lt;td&gt;8,00&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;8,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Circuit imprimé époxy&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+	   &lt;td&gt;10,00&lt;/td&gt;
+	   &lt;td&gt;1&lt;/td&gt;
+	   &lt;td&gt;10,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td colspan="5"&gt;SOUS-TOTAL&lt;/td&gt;
+	   &lt;td&gt;77,50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td colspan="5"&gt;T.V.A. (20%)&lt;/td&gt;
+	   &lt;td&gt;15,50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td colspan="5"&gt;&lt;b&gt;TOTAL&lt;/b&gt;&lt;/td&gt;
+	   &lt;td&gt;93,00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Voilà le prix en détail de tous les composants. Pour brancher le 
+module au PC vous avez trois solutions :&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;faire soi-même le câble
+&lt;li&gt;prendre un câble de modem qui se branche sur le port 
+série, en ajoutant un changeur de genre femelle-femelle
+&lt;li&gt;acheter un câble droit femelle-femelle DB9 tout 
+fait (www.conrad.fr, www.selectronic.fr dans leur catalogue, 
+leur magasin ou sur leur site), 25F environ
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+Notez que ce câble doit être droit (pas croisé).&lt;br&gt;
+&lt;br&gt;
+</paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Les améliorations :&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;Remplacer l'alimentation à diodes par un 7805
+&lt;li&gt;Router la carte pour pouvoir mettre un SUB-D femelle, plus pratique
+&lt;/ul&gt;
+
+Voici ce que donne ce récepteur :</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\annexe2\proto1.jpg</link><legend>Le prototype.</legend></image><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\annexe2\proto2.jpg</link><legend>Une deuxième vue.</legend></image></section><section name="section 2" title="Téléchargements"><paragraph name="paragraph">Voici maintenant en téléchargement quelques programmes 
+utiles pour faire fonctionner votre module. Il en existe 
+d'autres mais je les mettrai en temps voulu. Contactez moi si 
+vous en trouvez ou si vous avez fait le votre !&lt;br&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="downloads/annexe2/ir509b-xt.zip"&gt;ir509b-xt.zip&lt;/a&gt; : Le fichier hexadécimal, à programmer dans le PIC (obligatoire pour que le système fonctionne :o)
+&lt;li&gt;&lt;a href="downloads/annexe2/gen_ir253.zip"&gt;gen_ir253.zip&lt;/a&gt; : ça c'est à avoir absolument, LE plug-in Winamp !
+&lt;li&gt;&lt;a href="downloads/annexe2/gen_uice.exe"&gt;gen_uice.exe&lt;/a&gt; : un autre plug-in
+&lt;li&gt;&lt;a href="downloads/annexe2/girder3021.zip"&gt;girder3021.zip&lt;/a&gt;
+&lt;li&gt;&lt;a href="downloads/annexe2/irpc.zip"&gt;IRPC.zip&lt;/a&gt; : pour commander Windows
+&lt;li&gt;&lt;a href="downloads/annexe2/pcremote4b.zip"&gt;pcremote4b.zip&lt;/a&gt; : pareil
+&lt;li&gt;&lt;a href="downloads/annexe2/uice2full.zip"&gt;uice2full.zip&lt;/a&gt; : pour commander windows aussi (excellent), vérifiez s'il y a de nouvelles 
+versions ici : &lt;a href="http://www.mediatexx.com/" target="blank"&gt;www.mediatexx.com&lt;/a&gt;
+&lt;/ul&gt;</paragraph></section></document>

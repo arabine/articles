@@ -1,0 +1,68 @@
+Bonjour à tous, voici une petite présentation du contenu du CD Pro.
+
+Ce mois-ci, vous trouverez toutes les ressources nécessaires pour fabriquer et terminer
+notre robot, TeamBot. Nous avons donc des docs, du code assembleur et des schémas 
+électriques !
+
+***************
+LES FICHIERS
+***************
+
+- impalantation.rtf : une suggestion d'implantation des composants
+- Mémento électronique.html : une petite aide sur la technologie des composants
+- Nomenclature.txt : la liste des composants des schémas
+- robot.html : Une série de photos sur le matériel que nous avons utilisé
+
+***************
+LES RÉPERTOIRES
+***************
+
+- Soft PWM : 	la version du PC team 76, quelques fonctions sont encore à impémanter.
+		Néanmoins, la PWM est parfaiteemnt fonctionnelle.
+- Documentations :	toutes les documentations constructeurs des conmposants que nous avons 
+			utilisés dans les schémas.			
+- Schémas robot : les schémas en image. Me contacter si vous les voulez en format Orcad.
+
+
+****************************************************************
+Comme d'habitude, n'hésitez pas à me contacter pour toute information supplémentaire concernant le sujet du mois, ou tout autre problème d'électronique. J'essayerai de vous aider dans la mesure du possible !
+
+Et pensez à vous servir du forum de programmationworld.com, je serai là pour vous répondre.
+
+Bonne bidouille.
+
+Anthony RABINE
+arabine@programmationworld.com
+http://www.programmationworld.com
+IRC : #progworld et #pcteam sur IRCnet (ircnet.grolier.net par exemple)
+ICQ : 61144679
+
+
+Proverbe Nain du mois : 
+
+<< Elfe qui dort, nain qui mord >>
+Attribué au Mage Haut Elfe Galimdor, seul magicien connu possédant le sort 
+"Détection de Nain enragé".
+
+                              ___I___
+                             /=  |  #\
+                            /.__-| __ \
+                            |/ _\_/_ \|
+                            (( __ \__))
+                         __ ((()))))()) __
+                       ,'  |()))))(((()|# `.
+                      /    |^))()))))(^|   =\
+                     /    /^v^(())()()v^\'  .\
+                     |__.'^v^v^))))))^v^v`.__|
+                    /_ ' \______(()_____(   |
+               _..-'   _//_____[xxx]_____\.-|
+              /,_#\.=-' /v^v^v^v^v^v^v^v^| _|
+              \)|)      v^v^v^v^v^v^v^v^v| _|
+               ||       :v^v^v^v^v^v`.-' |#  \,
+               ||       v^v^v^v`_/\__,--.|\_=_/
+               ><       :v^v____|  \_____|_
+            ,  ||       v^      /  \       /
+           //\_||_)\    `/_..-._\   )_...__\
+          ||   \/  #|     |_='_(     |  =_(_
+          ||  _/\_  |    /     =\    /  '  =\
+           \\/ \/ )/     |=____#|    '=....#|

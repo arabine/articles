@@ -1,0 +1,544 @@
+&File
+&Datei
+&New
+&Neu
+&Save
+&Speichern
+&Edit
+&Bearbeiten
+&Help
+&Hilfe
+&About
+Info &über Girder
+&Open...
+&Öffnen...
+&Copy
+&Kopieren
+&Paste
+&Einfügen
+&Add Command
+&Befehl hinzufügen
+&Delete
+&Löschen
+&Test Command
+&Befehl testen
+&Reset All States
+&Zurücksetzen
+&Disable Input Device(s)
+&Geräte ausschalten
+&Enable Input Device(s)
+&Geräte einschalten
+Antirepeat wait time [ms]
+Antirepeat Wartezeit [ms]
+Apply
+Übernehmen
+Alt
+Alt Taste
+About
+Über
+Autoload file does not exist.
+Autolade-Datei nicht gefunden!
+Auto Load
+Dieses Profil automatisch laden:
+APM Event Generator
+APM Standby-Modus
+APM Event Plugin 1.0 for Girder 3.0
+APM Event Plugin 1.0 für Girder 3.0
+Add &MultiGroup
+&Multibefehl hinzufügen
+Add &Group
+&Gruppe hinzufügen
+Accelerate
+Beschleunigen
+Auto Enable Input device
+Gerät automatisch einschalten
+Auto execute on startup
+Aktion automatisch beim Start ausführen:
+Available plugins
+Verfügbare Plugins:
+Action Plugins
+Software Plugins
+Antirepeat active
+Antirepeat aktiv
+Allowed Clients
+Zugelassene Clients
+Address
+Addresse
+Address edit
+Addresse bearbeiten
+Add
+Hinzufügen
+Browse
+Suchen...
+Begin state
+Aktivieren bei
+Captured IR code.
+IR-Code empfangen.
+Contents
+Inhalt
+Capture Window
+Capture Fenster
+Control
+Strg Taste
+Cancel
+Abbrechen
+Comport
+COM-Port:
+Command State
+Tastendruck Anzahl
+Current State
+Aktuelle Anzahl
+Child Name
+Child Name
+Child Class
+Child Klasse
+Checking the Settings
+Auswahl überprüfen
+Class Name
+Klassen Name
+Clear List
+Liste löschen
+Clicked sent.
+Klick gesendet.
+Close sent.
+Schliessen gesendet.
+Cannot find window
+Fenster nicht gefunden
+Cannot Shutdown windows.
+Kann Windows nicht beenden.
+Cannot play wavfile.
+Wav-Wiedergabe gescheitert.
+Cannot find icon
+Finde Symbol nicht
+Cannot load plugin.
+Kann Plugin nicht laden.
+Cannot save datafile.
+Kann Datei nicht speichern.
+Cannot load datafile.
+Kann Datei nicht laden.
+Could not enable IR device.
+Kann IR-Gerät nicht einschalten.
+Clicked
+Klick
+Close
+Schliessen
+Command
+Befehl
+Capture
+Capture
+Contact and Copyright information
+Kontaktinformationen
+Cannot find group
+Kann Gruppe nicht finden
+Cannot Find Softplugin.
+Kann Softplugin nicht finden.
+Cannot enable 
+Kann nicht einschalten
+Could not enable input device(s).
+Kann Eingabegeräte nicht einschalten.
+Command executed
+Befehl ausgeführt
+Command ID
+Befehl ID Nummer
+Don't send the IR commands when Girder is the Foreground window
+Keine IR-Befehle im Hauptfenster ausführen
+Display Splashscreen
+Startbild anzeigen
+Default
+Standard
+Double Clicked
+Doppel Klick
+Description
+Beschreibung:
+Delete
+Löschen
+E&xit
+&Beenden
+Enabled
+Aktiv
+Execute
+Programm
+Execute on all states except 1
+Aktion 1 bei Wiederholung überspringen
+Executable
+Programm
+Error: Cannot set volume
+Fehler: Lautstärkeeinstellung
+Example plugin for Girder 3.0
+Beispiel Plugin für Girder 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Ausführbare Datei (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Error: Cannot execute command.
+Fehler: Cannot execute command.
+Fast
+Schnell
+Filename
+Dateiname
+Find
+Suchen...
+Fast UIR Init
+Schnelle UIR Initialisierung
+File
+Datei
+General
+Allgemein
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder versucht die Zieloptionen mit diesen Angaben auszufüllen. Damit sind Feineinstellungen möglich.
+Group Enable
+Gruppe einschalten
+Group Disable
+Gruppe ausschalten
+GNU General Public License
+GNU Allgemeine Öffentliche Lizenz
+Girder files (*.gir)|*.GIR
+Girder Dateien (*.gir)|*.GIR
+Girder Standby Toggle
+Standby umschalten
+Group Enabled
+Gruppe eingeschaltet
+Group Disabled
+Gruppe ausgeschaltet
+Girder Standby
+Standby einschalten
+Girder Active
+Girder Aktiviert
+Girder Homepage: Http://www.stack.nl/~stilgar
+Girder Homepage: http://www.stack.nl/~stilgar
+Goto
+Gehe zu
+Hide on startup
+Minimiert starten
+Handle
+Handle
+Hide sent.
+Hide gesendet.
+Hibernate
+Hibernate
+Hide
+Minimieren
+Howto
+Wie kann man...
+Hardware Plugins
+Geräte Plugins
+Host IP
+Host IP-Adresse
+Host Port
+Host Anschluss
+IRSpeed
+IR-Tempo:
+I Was here
+I Was here
+I Was Here
+I Was Here
+IR Device Enabled.
+IR-Gerät eingeschaltet.
+Icon
+Symbol
+Input Device
+Eingabe Gerät:
+Icon files (*.ico)|*.ICO
+Symbol Dateien (*.ico)|*.ICO
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Ich suche noch weltweit Personen die gerne bereit sind, Girder in eine hier nicht angezeigte Sprache zu übersetzen. Es ist sehr einfach und wir bereiten einer großen Menge Leute eine Freude :-). Am wichtigsten ist jedoch: Ihr Name wird im Dankkapitel in der Hilfe eingetragen! Senden Sie mir ihre Übersetzung einfach als e-mail an: R.E.M.W.Bessems@stud.tue.nl
+Initializing the Input Device(s)
+Initialisiere Eingabegeräte
+Input Device Enabled.
+Gerät eingeschaltet.
+Input Device Disabled.
+Gerät ausgeschaltet.
+Keep focus
+im Vordergrund
+Key sent
+Taste gesendet
+Keyboard
+Tastatur
+Learn IR
+Befehl lernen
+Launch Girder on windows startup
+Starte Girder automatisch mit Windows
+Language
+Sprache:
+LParam
+LParameter
+LogOff
+Abmelden
+Main Window
+Hauptfenster
+Match invisble Tasks
+im Hintergrund ausführen
+Monitor On
+Monitor an
+Monitor Off
+Monitor aus
+Minimize Girder
+Minimiere Girder
+Mouse
+Maus
+Mouse Up
+Maus nach oben
+Mouse Down
+Maus nach unten
+Mouse Left
+Maus nach links
+Mouse Right
+Maus nach rechts
+Mouse Left Click
+Maus linker Klick
+Mouse Left Doubleclick
+Maus linker Doppel-Klick
+Mouse Right Click
+Maus rechter Klick
+Maximize
+Vollbild
+Minimize
+Minimieren
+Minimized
+Minimiert
+Maximum number of ClientAddresses reached cannot add.
+Maximale Anzahl der Client-Addressen erreicht. Es können keine weiteren hinzugefügt werden.
+Mouse Right Doubleclick
+Maus Rechter Doppelklick
+Mouse Middle click
+Maus Mitteltaste Klick
+Mouse Middle Doubleclick
+Maus Mitteltaste Doppelklick
+Mouse Up Right
+Mausbewegung nach oben rechts
+Mouse Up Left
+Mausbewegung nach oben links
+Mouse Down Right
+Mausbewegung nach unten rechts
+Mouse Down Left
+Mausbewegung nach unten links
+Mouse Wheel Up
+Maus-Rad nach oben
+Mouse Wheel Down
+Maus-Rad nach unten
+Not found.
+Nicht gefunden.
+Name
+Name
+New
+Neu
+None
+Keine
+Ok
+OK
+Only send to first match
+Nur zum ersten match senden
+O.S.
+System
+OSD
+Mixer OSD
+Process ID
+Prozess ID
+Parent
+Parent
+Play Wav
+Wav-Datei abspielen
+Poweroff
+Ausschalten
+Path to Hardware plugins
+Ordner der Geräte Plugins:
+Path to Action plugins
+Ordner der Software Plugins:
+Plugins
+Plugins
+Port
+Anschluss
+Password
+Passwort
+Question
+Rückfrage
+Register Filetype
+Dateitypen registrieren
+Running Tasks/Windows
+Aktuelle Tasks/Fenster :
+Refresh
+Aktualisieren
+Ready.
+Fertig.
+Reboot
+Neustart
+Rename
+Umbenennen
+Settings
+Einstellungen
+State
+Tastendruck
+Shift
+Shift Taste
+Special Key
+Spezial Taste:
+Save datafile on shutdown/poweroff/logoff
+Datei beim Beenden automatisch speichern
+Slow
+Langsam
+State Count
+Gesamt
+Selected Task's Childobjects
+Programm Childobjekte auswählen :
+Send to foreground task
+zum aktiven Fenster senden
+Substring matching
+Zeichenkette anpassen
+Start Capture
+Capture starten
+Stop Capture
+Capture beenden
+System Wide Capturing
+Systemweites Capturing
+SmartFill
+Smart Fill
+Show sent.
+Show gesendet.
+Step Size
+Schrittweite
+Skip UIR init check
+Kein UIR Initialisierungs-Check
+Strip Zeros from UIR string
+Strip Zeros from UIR string
+Suspend Mode
+Standby-Modus
+Suspend to Ram
+Standby-Modus im Speicher
+Select destination.
+Ziel auswählen.
+Save &as...
+Speichern &unter...
+Se&ttings...
+&Einstellungen...
+Show
+Wiederherstellen
+Set Focus
+im Vordergrund anzeigen
+Screen Saver
+Bildschirmschoner
+Shutdown
+Herunterfahren
+Startup Options
+Start-Einstellung
+SysCommand
+SysCommand
+Set On-Trayicon
+Symbol im Systray anzeigen
+Set Off-Trayicon
+Symbol nicht im Systray anzeigen
+Set Active-Trayicon
+Eingeschaltet-Symbol im Systray
+Step
+Schritt
+Sentence
+Taste:
+Scale Main Form
+Stammfenster skalieren
+Settings Window
+Einstellungen Fenster
+State Window
+Tastendruck Fenster
+Set Standby-Trayicon
+Standby-Symbol im Systray
+State.
+Tastendruck.
+See file Copying.txt for license details
+Lesen Sie die Datei Copying.txt für die Lizenzdetails
+String
+String
+The file has changed, save ?
+Die Datei wurde geändert, speichern ?
+Target Window
+Ziel Fenster
+Type
+auswählen:
+Traybar mode
+Symbol im System Tray anzeigen
+Target Selector
+Ziel auswählen
+Test Event
+Event testen
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Deutsche Übersetzung von Uwe Heidrich <uweheidrich@hotmail.com>
+Text
+zu sendender Text
+This plugin sends a WM_SETTEXT message to the targets.
+Dieses Plugin sendet eine WM_SETTEXT Nachricht zum Ziel.
+Target
+Ziel
+The New input device gets activated when you press the apply button.
+Das neue Eingabe-Gerät wird erst aktiviert, wenn Sie auf die Schaltfläche "OK" drücken.
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+Das ist keine Girder 3.0 Datei, soll sie importiert werden? Nach dem speichern der Datei kann sie nicht mehr mit Girder 2.0 geöffnet werden.
+TCP/IP Server Settings
+TCP/IP Server Einstellungen
+TCP/IP Client
+TCP / IP Client
+Talking Clock
+Sprechende Uhr
+Timer
+Timer
+Timer plugin for Girder 3.0
+Timer plugin für Girder 3.0
+This plugin executes a command after a preset timeout.
+Dieses Plugin startet einen Befehl nach einer Zeitspanne.
+Unregister Filetype
+Dateitypen entfernen
+User Interface
+Benutzer Interface
+UIR/IRman Settings
+UIR/IRman Einstellungen
+Version
+Version:
+Volume Settings
+Mixer Einstellung
+Volume Change
+Lautstärkeregler
+Volume Right Change
+Lautstärkeregler nach Rechts
+Volume Left Change
+Lautstärkeregler nach Links
+Volume Balance Change
+Balance Regler
+Volume Mute Toggle
+Stummschalten
+Volume ID
+Mixer ID
+Volume
+Mixer
+Volume Window
+Lautstärke Fenster
+Volume Left
+Regler Links
+Volume Right
+Regler Rechts
+Volume Mute
+Stummschalten
+Waiting for IR Code.
+Warte auf IR-Befehl.
+Wait
+Warten
+Window Name
+Programm Name
+Window Class
+Programm Klasse
+Wparam
+WParameter
+Windows is shutting down.
+Windows wird heruntergefahren.
+Wavfile played.
+Wav-Datei abgespielt.
+Window
+Fenster
+Wait for Window
+auf Fenster warten
+WParam
+WParameter
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Wav Dateien (*.wav)|*.WAV|Ausführbare Dateien (*.exe)|*.EXE
+X/Timeout [ms]
+X Timeout [ms]
+Y
+Y Timeout [ms]
+command sent.
+Befehl gesendet.
+sys command sent.
+System Befehl gesendet.

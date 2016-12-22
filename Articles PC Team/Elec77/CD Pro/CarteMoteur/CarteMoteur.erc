@@ -1,0 +1,17 @@
+EAGLE Version 4.08r2 Copyright (c) 1988-2001 CadSoft
+
+Electrical Rule Check for e:/Documents/Eagle/CarteMoteur/CarteMoteur.sch at 21/01/2002 00:55:03 
+
+WARNING: Sheet 1/1: SUPPLY Pin 0V overwritten with N$17
+WARNING: Sheet 1/1: SUPPLY Pin VEE overwritten with N$24
+ERROR: Sheet 1/1: SUPPLY Pin 0V overwritten with more than one signal (0V, N$17)
+ERROR: Sheet 1/1: SUPPLY Pin VEE overwritten with more than one signal (VEE, N$24)
+WARNING: Sheet 1/1: POWER Pin IC1P VSS connected to 0V
+WARNING: Sheet 1/1: POWER Pin IC1P VDD connected to VEE
+WARNING: Sheet 1/1: POWER Pin IC2P VSS connected to 0V
+WARNING: Sheet 1/1: POWER Pin IC2P VDD connected to VEE
+
+Board and schematic are consistent
+
+    2 errors
+    6 warnings

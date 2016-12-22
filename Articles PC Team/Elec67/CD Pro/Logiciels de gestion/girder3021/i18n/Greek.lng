@@ -1,0 +1,524 @@
+&File
+&Αρχείο
+&New
+&Δημιουργία
+&Save
+Α&ποθήκευση
+&Edit
+&Τροποποίηση
+&Help
+&Βοήθεια
+&About
+&Περί
+&Open...
+’&νοιγμα...
+&Copy
+Α&ντιγραφή
+&Paste
+&Επικόλληση
+&Add Command
+&Προσθήκη εντολής
+&Delete
+&Διαγραφή
+&Test Command
+Δοκιμή &Εντολής
+&Reset All States
+&Μηδενισμός Καταστάσεων
+&Disable Input Device(s)
+Απενεργοποίηση συσκευών εισόδου
+&Enable Input Device(s)
+Ενεργοποίηση συσκευών εισόδου
+Antirepeat wait time [ms]
+Νεκρός χρόνος [ms]
+Apply
+Εφαρμογή
+Alt
+Alt
+Autoload file does not exist.
+Το αρχείο αυτόματης φόρτωσης δεν υπάρχει.
+Auto Load
+Αυτόματο φόρτωμα
+APM Event Generator
+Δημιουργία μηνυμάτων APM
+APM Event Plugin 1.0 for Girder 3.0
+APM Event Plugin 1.0 για το Girder 3.0
+Add &MultiGroup
+Προσθήκη Πο&λυΟμάδας
+Add &Group
+Προσθήκη &Ομάδας
+Accelerate
+Accelerate
+Auto Enable Input device
+Αυτόματη ενεργοποίηση συσκευής εισόδου
+Auto execute on startup
+Αυτόματο ξεκίνημα κατά την εκκίνηση
+Available plugins
+Διαθέσιμα plugins:
+Action Plugins
+Plugins Ενεργειών
+Antirepeat active
+Ενεργοποίηση νεκρού χρόνου
+About
+Περί
+Allowed Clients
+Allowed Clients
+Address
+Address
+Address edit
+Address edit
+Add
+Add
+Browse
+Ανεύρεση
+Begin state
+Αρχ. κατάσταση
+Captured IR code.
+Καταγραφή κωδικού IR.
+Control
+Control
+Cancel
+’κυρο
+Comport
+Σειριακή
+Command State
+Κατάσταση εντολής
+Current State
+Τρέχουσα
+Child Name
+Όνομα γόνου
+Child Class
+Κλάση γόνου
+Checking the Settings
+Έλεγχος Ρυθμίσεων
+Class Name
+Όνομα κλάσης
+Clear List
+Καθαρισμός λίστας
+Clicked sent.
+Στάλθηκε κλικ.
+Close sent.
+Στάλθηκε εντολή εξόδου.
+Cannot find window
+Δεν βρέθηκε το παράθυρο.
+Cannot Shutdown windows.
+Δεν είναι δυνατός ο τερματισμός λειτουργίας των Windows.
+Cannot play wavfile.
+Δεν μπορεί να παιχτεί ο ήχος.
+Cannot find icon
+δεν βρέθηκε το εικονίδιο
+Cannot load plugin.
+Δεν φορτώθηκε το plugin.
+Cannot save datafile.
+Δεν είναι δυνατή η αποθήκευση του αρχείου δεδομένων.
+Cannot load datafile.
+Δεν φορτώθηκε το αρχείο δεδομένων.
+Could not enable IR device.
+Δεν είναι δυνατή η ενεργοποίηση της συσκεύης IR.
+Clicked
+Κλικ
+Close
+Κλείσιμο
+Command
+Εντολή
+Capture
+Καταγραφή
+Contents
+Περιεχόμενα
+Capture Window
+Παράθυρο Εγγραφής
+Contact and Copyright information
+Επαφή και Πληροφορίες Copyright
+Cannot find group
+δεν βρέθηκε η ομάδα.
+Cannot Find Softplugin.
+Δεν βρέθηκε το SoftPlugin.
+Cannot enable 
+Δεν μπορεί να ενεργοποιηθεί.
+Could not enable input device(s).
+Δεν είναι δυνατή η ενεργοποιηση των συσκεών εισόδου
+Command executed
+Command executed
+Command ID
+Command ID
+Don't send the IR commands when Girder is the Foreground window
+Μή αποστολή IR εντολών όταν το Girder είναι στο προσκήνιο
+Display Splashscreen
+Εμφάνιση Αρχικής Εικόνας
+Default
+Προκαθ/σμένη
+Double Clicked
+Διπλό κλικ
+Description
+Περιγραφή
+Delete
+Delete
+E&xit
+Έ&ξοδος
+Enabled
+Ενεργοποιημένη
+Execute
+Εκτέλεση
+Execute on all states except 1
+Εκτέλεση σε όλες εκτός πρώτης
+Executable
+Εκτελέσιμο
+Error: Cannot set volume
+Πρόβλημα: Δεν ρυθμίστηκε η ένταση
+Example plugin for Girder 3.0
+Παράδειγμα plugin για το Girder 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Εκτελέσιμα (*.exe)|*.EXE|Αρχεία ήχου (*.wav)|*.WAV
+Error: Cannot execute command.
+Error: Cannot execute command.
+Fast
+Μεγάλη
+Filename
+Όνομα αρχείου
+Find
+Εύρεση
+Fast UIR Init
+Γρήγορη ενεργοποίηση UIR
+File
+Αρχείο
+General
+Γενικά
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Το Girder θα συμπληρώσει αυτόματα τα στοιχεία, ανάλογα με την επιλογή. Ίσως χρειαστεί επιλέον ρύθμιση.
+Group Enable
+Ενεργοποίηση ομάδας
+Group Disable
+Απενεργοποίηση ομάδας
+GNU General Public License
+GNU General Public License
+Girder files (*.gir)|*.GIR
+Αρχεία Girder (*.gir)|*.GIR
+Girder Standby Toggle
+Αναμονή Girder
+Group Enabled
+Ενεργοποίηση ομάδας
+Group Disabled
+Απενεργοποίηση ομάδας
+Girder Standby
+Αναμονή Girder
+Girder Active
+Ενεργοποίηση Girder
+Girder Homepage: Http://www.stack.nl/~stilgar
+Δικτυακός τόπος του Girder: http://www.stack.nl/~stilgar
+Hide on startup
+Απόκρυψη κατά την εκκίνηση
+Handle
+Handle
+Hide sent.
+Στάλθηκε εντολή απόκρυψης.
+Hibernate
+Νάρκη
+Hide
+Απόκρυψη
+Howto
+Howto
+Hardware Plugins
+Plugins συσκευών
+Host IP
+Host IP
+Host Port
+Host Port
+IRSpeed
+Ταχύτητα
+I Was here
+Ήμουν εδώ
+I Was Here
+Ήμουν κι εδώ
+IR Device Enabled.
+Συσκευή IR ενεργοποιημένη.
+Icon
+Εικονίδιο
+Input Device
+Συσκευή εισόδου
+Icon files (*.ico)|*.ICO
+Αρχεία εικονιδίων(*.ico)|*.ICO
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Ψάχνω για ανθρώπους που να θέλουν να μεταφράσουν το Girder, είναι πολύ εύκολο και θα κάνει πολλούς ανθρώπους να χαρούν. Το πιο σημαντικό, το όνομα θα σημειωθεί στις ευχαριστίες!
+Initializing the Input Device(s)
+Ενεργοποίηση συσκευών εισόδου
+Input Device Enabled.
+Ενεργοποιημένη συσκευή εισόδου.
+Input Device Disabled.
+Απενεργοποιημένη συσκευή εισόδου.
+Keep focus
+Στο προσκήνιο
+Key sent
+Στάλθηκε πλήκτρο
+Keyboard
+Πληκτρολόγιο
+Learn IR
+Εκμάθηση IR
+Launch Girder on windows startup
+Ξεκίνημα του Girder με την εκκίνηση
+Language
+Γλώσσα:
+LParam
+LParam
+LogOff
+Αποσύνδεση
+Match invisble Tasks
+Ταίριασμα αόρατων διεργασιών
+Monitor On
+’νοιγμα οθόνης
+Monitor Off
+Κλείσιμο οθόνης
+Minimize Girder
+Ελαχιστοποίηση Girder
+Mouse
+Ποντίκι
+Mouse Up
+Κίνηση πάνω
+Mouse Down
+Κίνηση κάτω
+Mouse Left
+Κίνηση αριστερά
+Mouse Right
+Κίνηση δεξιά
+Mouse Left Click
+Αριστερό κλικ
+Mouse Left Doubleclick
+Διπλό αριστερό κλικ
+Mouse Right Click
+Δεξί κλικ
+Main Window
+Κυρίως Παράθυρο
+Maximize
+Μεγέθυνση
+Minimize
+Ελαχιστοποίηση
+Minimized
+Ελαχιστοποιημένο
+Maximum number of ClientAddresses reached cannot add.
+Maximum number of ClientAddresses reached cannot add.
+Not found.
+Δεν βρέθηκε.
+Name
+Όνομα
+New
+Νέο
+None
+None
+Ok
+Ok
+Only send to first match
+Απόστολή μόνο στο πρώτο ταίριασμα
+O.S.
+Λειτουργικό
+OSD
+OSD
+Process ID
+Process ID
+Parent
+Parent
+Play Wav
+Παίξιμο ήχου
+Poweroff
+Κλείσιμο ρεύματος
+Path to Hardware plugins
+Τοποθεσία αποθήκευσης Hardware plugins:
+Path to Action plugins
+Τοποθεσία αποθήκευσης plugins ενεργειών:
+Plugins
+Plugins
+Port
+Port
+Password
+Password
+Question
+Question
+Register Filetype
+Καταχώρηση File Type
+Running Tasks/Windows
+Τρέχουσες διεργασίες/παράθυρα
+Refresh
+Ανανέωση
+Ready.
+Έτοιμο.
+Reboot
+Επανεκκίνηση
+Rename
+Rename
+Settings
+Ρυθμίσεις
+State
+Κατάσταση
+Shift
+Shift
+Special Key
+Ειδικό πλήκτρο
+Save datafile on shutdown/poweroff/logoff
+Αποθήκευση αρχείου δεδομένων σε shutdown/poweroff/logoff
+Slow
+Μικρή
+State Count
+Καταστάσεις
+Selected Task's Childobjects
+Γόνοι επιλεγμένης διεργασίας
+Send to foreground task
+Αποστολή στην εφαρμογή στο προσκήνιο
+Substring matching
+Ταίριασμα κομματιού λέξης
+Start Capture
+Αρχή καταγραφής
+Stop Capture
+Τέλος καταγραφής
+System Wide Capturing
+Καταγραφή σε όλο το σύστημα
+SmartFill
+Αυτόματο συμπλήρωμα
+Show sent.
+Αποστολή εντολής ένδειξης.
+Step Size
+Βήμα
+Skip UIR init check
+Παράκαμψη ελέγχου εκκίνησης UIR
+Strip Zeros from UIR string
+Αποκοπή μηδενικών από την εντολή του UIR
+Suspend Mode
+Λειτουργία αναστολής
+Suspend to Ram
+Αναστολή στη μνήμη
+Select destination.
+Επιλογη προορισμού.
+Save &as...
+Αποθήκευση &ως...
+Se&ttings...
+&Ρυθμίσεις...
+Show
+Εμφάνιση
+Set Focus
+Στο προσκήνιο
+Screen Saver
+Προστασία οθόνης
+Shutdown
+Κλείσιμο υπολογιστή
+Startup Options
+Επιλογές
+SysCommand
+ΕντολήΣυστήματος
+Set On-Trayicon
+Αναμμένο μίνι-εικονίδιο
+Set Off-Trayicon
+Κλειστό μίνι-εικονίδιο
+Set Active-Trayicon
+Ενεργοποιημένο μίνι-εικονίδιο
+Step
+Βήμα
+Sentence
+Χαρακτήρες
+Scale Main Form
+Μεγέθυνση παραθύρου:
+Settings Window
+Παράθυρο Ρυθμίσεων
+State Window
+Παράθυρο Καταστάσεων
+Set Standby-Trayicon
+Μίνι-εικονίδιο αναμονής
+State.
+Κατάσταση.
+See file Copying.txt for license details
+Δείτε το αρχείο Copying.txt για την άδεια
+String
+String
+The file has changed, save ?
+Το αρχείο αλλάχθηκε, να σωθεί;
+Type
+Type
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Η μετάφραση έγινε από τον Ανέστη Γεωργιάδη <mranest@iname.com>
+Traybar mode
+Εμφάνιση μόνο μίνι-εικονιδίου
+Target Selector
+Επιλογέας Στόχου
+Test Event
+Δοκιμή
+Text
+Κείμενο
+This plugin sends a WM_SETTEXT message to the targets.
+This plugin sends a WM_SETTEXT message to the targets.
+Target
+Στόχος
+The New input device gets activated when you press the apply button.
+Η καινούργια συσκευή εισόδου ενεργοποιείται πατώντας Εφαρμογή.
+Target Window
+Παράθυρο Στόχου
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+Αυτό δεν είναι αρχείο δεδομένων του Girder 3.0, να προσπαθήσω να το διαβάσω σαν 2.x? Αν το σώσετε το Girder 2.x δεν θα μπορεί πλέον να το ανοίξει.
+TCP/IP Server Settings
+TCP/IP Server Settings
+TCP/IP Client
+TCP/IP Client
+Talking Clock
+Talking Clock
+Timer
+Timer
+Timer plugin for Girder 3.0
+Timer plugin for Girder 3.0
+This plugin executes a command after a preset timeout.
+This plugin executes a command after a preset timeout.
+Unregister Filetype
+Διαγραφή File Type
+User Interface
+Περιβάλλον Χρήστη
+UIR/IRman Settings
+Ρυθμίσεις UIR/IRman
+Volume Settings
+Ρυθμίσεις έντασης
+Version
+Έκδοση
+Volume Change
+Αλλαγή Έντασης Ήχου
+Volume Right Change
+Αλλαγή Έντασης Δεξιού Καναλιού
+Volume Left Change
+Αλλαγή Έντασης Αριστερού Καναλιού
+Volume Balance Change
+Αλλαγή Ισορροπίας Καναλιών
+Volume Mute Toggle
+Αποκοπή ήχου
+Volume ID
+ID έντασης
+Volume
+Ένταση
+Volume Window
+Παράθυρο Έντασης Ήχου
+Volume Left
+Volume Left
+Volume Right
+Volume Right
+Volume Mute
+Volume Mute
+Waiting for IR Code.
+Αναμονή για κωδικό IR.
+Wait
+Αναμονή
+Window Name
+Όνομα παραθύρου
+Window Class
+Κλάση παραθύρου
+Wparam
+Wparam
+Windows is shutting down.
+Τα Windows κλείνουν.
+Wavfile played.
+Παίχθηκε ο ήχος.
+Window
+Παράθυρο
+Wait for Window
+Αναμονή για παράθυρο
+WParam
+WParam
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+X/Timeout [ms]
+X/Χρόνος [ms]
+Y
+Y
+command sent.
+εντολή στάλθηκε.
+sys command sent.
+εντολή συστήματος στάλθηκε.

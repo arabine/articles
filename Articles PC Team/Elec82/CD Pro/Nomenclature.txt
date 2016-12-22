@@ -1,0 +1,35 @@
+Processeurs  Revised: Thursday, July 11, 2002
+          Revision: 
+
+
+
+
+
+
+
+Bill Of Materials           July 11,2002      13:43:23	Page1
+
+Item	Quantity	Reference	Part
+______________________________________________
+
+1	3	C1,C3,C7	47u
+2	6	C2,C4,C5,C6,C12,C13	100n
+3	4	C8,C9,C10,C11	22p
+4	1	D1	1N4001
+5	1	D2	LED
+6	8	D3,D4,D5,D6,D7,D8,D9,D10	DIODE
+7	1	JP1	Moteurs
+8	2	K1,K2	BP
+9	3	R1,R3,R5	100
+10	3	R2,R4,R6	10k
+11	1	R7	330
+12	6	R8,R9,R10,R11,R12,R13	4.7k
+13	3	U1,U2,U3	HOA0149
+14	1	U4	7805
+15	2	U5,U6	7806
+16	1	U7	74HCT04
+17	1	U8	L293
+18	1	U9	PIC16F84 - Capteurs
+19	1	U10	PIC16F84 - PWM
+20	1	Y1	20MHz
+21	1	Y2	4MHz

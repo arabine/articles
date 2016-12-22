@@ -1,0 +1,8 @@
+Objectif: capturer des images
+Ref Philips PCVC 740K 
+
+doc
+voir sur le site internet de l auteur des drivers
+
+les drivers linux
+l outil camstream

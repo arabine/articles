@@ -1,0 +1,572 @@
+&File
+&Arquivo
+&New
+&Novo
+&Open...
+&Abrir...
+&Save
+&Salvar
+&Edit
+&Editar
+&Copy
+C&opiar
+&Paste
+Co&lar
+&Add Command
+&Adicionar Comando
+&Delete
+A&pagar
+&Test Command
+&Testar Comando
+&Reset All States
+&Resetar Todos os Estados
+&Help
+A&juda
+&About
+&Sobre
+&Disable Input Device(s)
+&Desabilita Dispositivo(s) de Entrada
+&Enable Input Device(s)
+&Habilita Dispositivo(s) de Entrada
+Apply
+Aplicar
+APM Event Generator
+Gerador de Eventos APM
+APM Event Plugin 1.0 for Girder 3.0
+Plugin Gerador de Eventos APM 1.0 para Girder 3.0
+Add &MultiGroup
+Adicionar &GrupoMúltiplo
+Add &Group
+Adicionar &Grupo
+Antirepeat wait time [ms]
+Espera para não Repetição [ms]
+Accelerate
+Acelerar
+Alt
+Alt
+Autoload file does not exist.
+Arquivo de Autoload não existe.
+Auto Enable Input device
+Habilita Dispositivo de Entrada Automaticamente
+Auto Load
+Carregamento Automátivo
+Auto execute on startup
+Executar automaticamente na entrada
+Available plugins
+Plugins disponíveis
+Action Plugins
+Plugins de Ação
+Antirepeat active
+Antirepetição ativa
+About
+Sobre
+Allowed Clients
+Clientes permitidos
+Address
+Endereço
+Address edit
+Editar endereço
+Add
+Adicionar
+Browse
+Browse
+Begin state
+Estado Inicial
+Baud Rate
+Velocidade
+Cancel
+Cancelar
+Comport
+Porta Com
+Captured IR code.
+Código IR capturado.
+Cannot load plugin.
+Não foi possível ler o plugin.
+Cannot save datafile.
+Não foi possível salvar o arquivo de dados.
+Cannot load datafile.
+Não foi possível abrir o arquivo de dados.
+Could not enable IR device.
+Não foi possível habilitar o dispositivo de IR.
+Contents
+Conteúdo
+Capture Window
+Janela de Captura
+Contact and Copyright information
+Informações de Contato e Copyright
+Clicked
+Clicar
+Close
+Fechar
+Command
+Comando
+Capture
+Capturar
+Control
+Control
+Cannot find window
+Não foi possível achar a janela
+Child Name
+Nome do Filho
+Child Class
+Classe do Filho
+Checking the Settings
+Verificar os parâmetros
+Class Name
+Nome da Classe
+Clear List
+Limpar Lista
+Cannot enable 
+Não foi possível habilitar 
+Cannot play wavfile.
+Não foi possível tocar o arquivo wav.
+Cannot Shutdown windows.
+Não foi possível fechar o Windows.
+Clicked sent.
+Clique enviado.
+Close sent.
+Comando de fechar enviado.
+Command State
+Estado do Comando
+Current State
+Estado Atual
+Cannot find group
+Não foi possível achar o grupo
+Cannot find icon
+Não foi possível achar o ícone
+Cannot Find Softplugin.
+Não foi possível achar o plugin de software
+Could not enable input device(s).
+Não foi possível habilitar o(s) dispositivo(s) de entrada
+Command executed
+Comando executado
+Command ID
+ID do Comando
+Change the Target Settings of the follwing command ?
+Mudar a configuração de alvo dos seguintes comandos ?
+Cannot import group.
+Não foi possível importar o grupo
+Cannot export group.
+Não é possível exportar o grupo.
+Default
+Padrão
+Double Clicked
+Clique Duplo
+Don't send the IR commands when Girder is the Foreground window
+Não mande comandos ID quando o Girder estiver como janela atual
+Display Splashscreen
+Mostrar Tela de Entrada
+Description
+Descrição
+Delete
+Apagar
+Dotmatrix font
+Fonte Dotmatrix
+Example plugin for Girder 3.0
+Plugin de exemplo para Girder 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Executável (*.exe)|*.EXE|Arquivos Wav (*.wav)|*.WAV
+E&xit
+&Sair
+Enabled
+Habilitado
+Execute
+Executar
+Executable
+Executável
+Error: Cannot set volume
+Erro: Não foi possível mudar volume
+Execute on all states except 1
+Executar em todos os estados exceto o 1
+Error: Cannot execute command.
+Erro: Não foi possível executar o comando
+Export Group...
+Exportar Grupo...
+Fast UIR Init
+Inicialização rápida de UIR
+Fast
+Rápido
+File
+Arquivo
+Filename
+Nome de Arquivo
+Find
+Achar
+GNU General Public License
+GNU General Public License
+Girder files (*.gir)|*.GIR
+Arquivos Girder (*.gir)|*.GIR
+Group Enable
+Habilita Grupo
+Group Disable
+Desabilita Grupo
+Girder Standby Toggle
+Trocar estado de Standby do Girder
+General
+Geral
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder irá tentar preencher as opções do alvo baseado nestas informações. Isto pode requerer alguns ajustes manuais.
+Group Enabled
+Grupo Habilitado
+Group Disabled
+Grupo Desabilitado
+Girder Standby
+Standby do Girder
+Girder Active
+Girder Ativo
+Girder Homepage: Http://www.stack.nl/~stilgar
+Homepage do Girder: Http://www.stack.nl/~stilgar
+Goto
+Ir Para
+Hibernate
+Hibernar
+Howto
+ComoFazer
+Hide
+Esconder
+Hide on startup
+Esconder no início
+Hardware Plugins
+Plugins de Hardware
+Handle
+Handle
+Hide sent.
+Comando de Esconder enviado.
+Host IP
+IP do Servidor
+Host Port
+Porta do Servidor
+IRSpeed
+IRSpeed
+I Was here
+Eu estive aqui
+I Was Here
+Eu estive aqui
+IR Device Enabled.
+Dispositivo de IR Habilitado.
+Icon files (*.ico)|*.ICO
+Arquivos de Ícone (*.ico)|*.ICO
+Icon
+Ícone
+Input Device
+Dispositivo de Entrada
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Estou procurando pessoas que estejam dispostas a traduzir o Girder. É bem fácil e pode trazer alegria para muitas pessoas :) Mais Importante: seu nome ficará anotado na seção de agradecimentos na Ajuda do Girder!
+Initializing the Input Device(s)
+Inicializando o(s) dispositivo(s) de entrada
+Input Device Enabled.
+Dispositivo de Entrada Habilitado.
+Input Device Disabled.
+Dispositivo de Entrada Desabilitado.
+IrDA Settings
+Configuração IrDA
+Import Group...
+Importar Grupo...
+Icons on the action tabs
+Ícones no tab de ação
+Keep focus
+Manter Foco
+Key sent
+Tecla Enviada
+Keyboard
+Teclado
+Learn IR
+Aprender IR
+LogOff
+LogOff
+LParam
+LParam
+Launch Girder on windows startup
+Iniciar Girder com o Windows
+Language
+Língua
+Main Window
+Janela Principal
+Monitor On
+Ligar Monitor
+Monitor Off
+Desligar Monitor
+Maximize
+Maximizar
+Minimize
+Minimizar
+Minimize Girder
+Minimizar o Girder
+Mouse
+Mouse
+Mouse Up
+Mouse para Cima
+Mouse Down
+Mouse para Baixo
+Mouse Left
+Mouse para a Esquerda
+Mouse Right
+Mouse para a Direita
+Mouse Left Click
+Clique Esquerdo no Mouse
+Mouse Left Doubleclick
+Duplo-Clique Esquerdo no Mouse
+Mouse Right Click
+Clique Direito no Mouse
+Match invisble Tasks
+Encontrar Tarefas Invisíveis
+Minimized
+Minimizado
+Maximum number of ClientAddresses reached cannot add.
+Número máximo de ClientAddresses atingido. Não é possível adicionar.
+Mouse Right Doubleclick
+Duplo-Clique Direito no Mouse
+Mouse Middle click
+Clique do Meio
+Mouse Middle Doubleclick
+Duplo-Clique do Meio
+Mouse Up Right
+Mouse para Cima-Direita
+Mouse Up Left
+Mouse para Cima-Esquerda
+Mouse Down Right
+Mouse para Baixo-Direita
+Mouse Down Left
+Mouse para Baixo-Esquerda
+Mouse Wheel Up
+Roda do Mouse para Cima
+Mouse Wheel Down
+Roda do Mouse para Baixo
+New
+Novo
+Not found.
+Não Encontrado.
+Name
+Nome
+None
+Nenhum
+Ok
+OK
+O.S.
+S.O.
+Only send to first match
+Mandar apenas para a primeira encontrada
+OSD
+OSD
+Play Wav
+Tocar Wav
+Poweroff
+Desligar Força
+Path to Hardware plugins
+Caminho para os plugins de Hardware
+Path to Action plugins
+Caminho para os plugins de Ação
+Process ID
+ID do Processo
+Parent
+Pai
+Plugins
+Plugins
+Port
+Porta
+Password
+Senha
+Question
+Pergunta
+Reboot
+Reiniciar
+Register Filetype
+Registrar Tipo de Arquivo
+Running Tasks/Windows
+Tarefas/Janelas rodando
+Refresh
+Atualizar
+Ready.
+Pronto.
+Rename
+Renomear
+Repeat Tolerance
+Tolerância a Repetição
+Recognition Tolerance
+Tolerância a Reconhecimento
+Skip UIR init check
+Não realizar verificação de inicialização de UIR
+Strip Zeros from UIR string
+Tirar zeros do código do UIR
+Slow
+Lento
+Suspend Mode
+Suspender
+Suspend to Ram
+Suspender para a Memória
+Select destination.
+Selecionar destino.
+Save &as...
+Salvar &como...
+Se&ttings...
+&Parâmetros...
+Settings Window
+Janela de Parâmetros
+State Window
+Janela de Estados
+State
+Estados
+Show
+Mostrar
+Set Focus
+Mandar Foco
+Screen Saver
+Proteção de Tela
+Shutdown
+Desligar Windows
+Step Size
+Incremento
+Startup Options
+Inicializar:
+SysCommand
+SysCommand
+Set On-Trayicon
+Mudar Ícone para Ligado
+Set Off-Trayicon
+Mudar Ícone para Desligado
+Set Active-Trayicon
+Mudar Ícone para Ativo
+Set Standby-Trayicon
+Mudar Ícone para Espera
+Step
+Incremento
+Shift
+Shift
+Special Key
+Tecla Especial
+Sentence
+Frase
+Settings
+Parâmetros
+Save datafile on shutdown/poweroff/logoff
+Salvar arquivo de dados ao desligar/logoff
+Scale Main Form
+Escalar Janela Principal
+State.
+Estado.
+Selected Task's Childobjects
+Selecione o objeto-filho da tarefa
+Send to foreground task
+Mandar para a tarefa ativa
+Substring matching
+Encontrar parte da palavra
+Start Capture
+Iniciar Captura
+Stop Capture
+Terminar Captura
+System Wide Capturing
+Capturar de Todo o Sistema
+SmartFill
+PreenchimentoInteligente
+Show sent.
+Mostrar envios.
+State Count
+Nro de Estados
+See file Copying.txt for license details
+Ver arquivo Copying.txt para detalhes de licença
+String
+Palavra
+Set Group Targets
+Setar Grupos-Alvo
+Show Girder
+Mostrar Girder
+Text
+Texto
+This plugin sends a WM_SETTEXT message to the targets.
+Este plugin manda uma mensgem WM_SETTEXT para os alvos
+The file has changed, save ?
+O arquivo mudou. Salvar ?
+Target Window
+Janela Alvo
+Target
+Alvo
+Traybar mode
+Modo de Ícone
+The New input device gets activated when you press the apply button.
+O Novo dipositivo de Entrada é ativado quando você aperta o botão de Aplicar
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+Este não é um arquivo de dados do Girder 3.0. Devo tentar importar da versão 2.x?Se você salvar este arquivo o Girder 2.x não poderá mais abrí-lo.
+Target Selector
+Selecionador de Alvo
+Test Event
+Testar Evento
+Type
+Tipo
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Tradução escrita por Gustavo Ambrozio <gustavo@engineer.com>
+TCP/IP Server Settings
+Parâmetros do Servidor TCP/IP
+TCP/IP Client
+Cliente TCP/IP
+Talking Clock
+Relógio Falante
+Timer
+Timer
+Timer plugin for Girder 3.0
+Plugin de Timer para o Girder 3.0
+This plugin executes a command after a preset timeout.
+Espe plugin executa um comando após um tempo especificado.
+This is not a Girder 3.0 ExportFile.
+Este não é um arquivo de exportar do Girder 3.0.
+UIR/IRman Settings
+Parâmetros UIR/IRman
+Unregister Filetype
+Desregistrar Tipo de Arquivo
+User Interface
+Interface de Usuário
+Volume Window
+Janela de Volume
+Volume Change
+Mudar Volume
+Volume Right Change
+Mudar Volume de Direita
+Volume Left Change
+Mudar Volume da Esquerda
+Volume Balance Change
+Mudar Balanço do Volume
+Volume Mute Toggle
+Trocar Mudo do Volume
+Volume ID
+ID Volume
+Volume
+Volume
+Version
+Versão
+Volume Settings
+Parâmetros de Volume
+Volume Left
+Volume Esquerdo
+Volume Right
+Volume Direito
+Volume Mute
+Mudo do Volume
+Waiting for IR Code.
+Esperando por Código IR.
+Window
+Janela
+Wait
+Espera
+Wait for Window
+Esperando por Janela
+WParam
+WParam
+Window Name
+Nome da Janela
+Window Class
+Classe da Janela
+Wparam
+Wparam
+Wavfile played.
+Arquivo Wav Tocado.
+Windows is shutting down.
+O Windows está desligando.
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Arquivos Wav (*.wav)|*.WAV|Executável (*.exe)|*.EXE
+X/Timeout [ms]
+X/Timeout [ms]
+Y
+Y
+command sent.
+comando enviado
+sys command sent.
+comando sys enviado.

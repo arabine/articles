@@ -1,0 +1,9 @@
+
+Aller à cette adresse :
+
+http://members.telocity.com/~schweitn/wa3/wa2mgr/
+
+1) Télécharger le plugin
+2) Créer un répertoire intitulé Plugins à la racine du répertoire Winamp3
+3) placer gen_ir.dll
+4) aller dans le menu de configuration de winamp pour configurer tout ça comme avec l'ancienne version

@@ -1,0 +1,7 @@
+La carte PC c'est un peu l organe central du robot
+
+doc
+pdf datasheet
+
+url
+WWW.advantech.com

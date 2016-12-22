@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document type="Cours">
+  <author>
+    <name>Anthony Anthony Anthony Anthony Anthony Sylvain Hellegouarch</name>
+    <email>shellegouarch@programmationworld.com</email>
+    <web-site>www.programmationworld.com</web-site>
+  </author>
+  <page>
+    <title>Formats de fichiers</title>
+    <introduction>Les documentations présentes dans cette section vous permettront de comprendre ou d'ajouter le support de fichiers normalisés au sein de vos applications. Chaque format est décrit avec le plus de précision possible et avec des conseils de programmation. Enfin, nous mettons à disposition, pour chaque description de fichier, une librairie le plus souvent en langage C/C++ pour vous aider à développer vos programmes. Les ressources sont toutes libres d'utilisation, vous pouvez donc intégrer les routines dans vos applications sans aucun problème.&lt;br&gt;&lt;br&gt;Si vous désirez ajouter un format de fichier que vous maîtrisez à cette liste, il suffit de nous en envoyez une description précise et des programmes de test.&lt;br&gt;&lt;br&gt;Enfin, si vous apportez des améliorations ou des corrections à certaines ressources de cette page, il serait souhaitable de nous tenir au courant et de nous envoyer vos modificatons.&lt;br&gt;&lt;br&gt;Contact : &lt;a href="mailto:arabine@programmationworld.com"&gt;arabine@programmationworld.com&lt;/a&gt;</introduction>
+  </page>
+  <section title="SOMMAIRE">
+    <paragraph>##SOMMAIRE##</paragraph>
+  </section>
+  <section title="ANNEXES">
+    <paragraph>##ANNEXE##</paragraph>
+    <paragraph>
+    </paragraph>
+  </section>
+</document>

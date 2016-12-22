@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>La logique combinatoire et séquentielle</title><keywords></keywords><description></description><links><link type="prev">C:\Mes Docs\www.programmationworld.com\site\langages\systemesnum\boole.htm</link><link type="index">C:\Mes Docs\www.programmationworld.com\site\langages\systemesnum\index.htm</link><link type="next"></link></links><introduction>Il faut distinguer deux types de logique. Nous avons d'un côté les systèmes qui agissent selon le temps, le plus souvent en référence à une horloge. 
+De l'autre, nous avons les systèmes qui permettent de modifier une entrée selon les règles d'une équation logique par exemple. Dans le premier cas, 
+le temps joue un rôle important tandis que dans le deuxième il n'est pas pris en compte (quoique ...). Nous allons en fait bâtir les bases pour suivre 
+les cours de VHDL plus facilement.</introduction></page><section name="section 1" title="La logique combinatoire"><paragraph name="paragraph">Text</paragraph></section></document>

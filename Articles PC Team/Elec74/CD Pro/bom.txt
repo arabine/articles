@@ -1,0 +1,24 @@
+Bill Of Material
+----------------
+
+Exported from TeamBot.sch at 18/10/2001 14:11:53 
+
+EAGLE Version 4.03 Copyright (c) 1988-2001 CadSoft
+
+Part	Value		DevicePackage		Library		Sheet
+---------------------------------------------------------------------
+C1	22uF, 16V	CPOL-EUE2.5-5		rcl		1
+C2	100uF, 40V	CPOL-EUE2.5-5		rcl		1
+D1	zener 8.2V	BZX55			diode		1
+D2	1N4148		1N4148			diode		1
+D3	1N4148		1N4148			diode		1
+D4	1N4148		1N4148			diode		1
+D5	zener 5.1V	BZX55			diode		1
+D6	1N4148		1N4148			diode		1
+IC1	Support		DIL20			dil		1
+R1	10k, 1/4W	R-EU_0207/10		rcl		1
+R2	1.5k, 1/4W	R-EU_0207/10		rcl		1
+SV1	Bornier HE14	FE05-1			con-lsta	1
+T1	BC547		TO92			transistor-npn	1
+T2	BC547		TO92			transistor-npn	1
+X1	SUBD Femelle	F09H			con-subd	1

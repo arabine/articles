@@ -1,0 +1,1522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-16">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Erik LOUISE">
+    <meta name="keywords" content="domotique ports parall&egrave;le s&eacute;rie supervision">
+    <meta name="description" content="Domotique simple avec les ports du PC">
+
+    <title>Domotique simple et supervision</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">Domotique simple et supervision<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Une premi&egrave;re partie de ce cours va nous
+            initier plus particuli&egrave;rement aux capteurs m&eacute;t&eacute;orologiques. Pour cela,
+            l'ordinateur va nous &ecirc;tre d'une grande aide afin de centraliser toutes les informations.
+            Dans une seconde partie, nous allons nous attaquer aux actionneurs, c'est &agrave; dire &agrave;
+            la possibilit&eacute; de d&eacute;marrer des appareils par l'interm&eacute;diaire des ports du
+            PC. Enfin, nous terminerons ce cours en faisant un petit tour du c&ocirc;t&eacute; de la
+            supervision, avec une application sympatique gr&acirc;ce &agrave; Internet. Au travail, car nous
+            avons beaucoup de boulot !
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Introduction &agrave; la domotique</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Capteur de luminosit&eacute;</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">Capteur d'humidit&eacute;</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">Capteur de temp&eacute;rature num&eacute;rique</a>
+          </div>
+
+          <div style="margin-left:1em">
+            5. <a href="#_topic_5">Informations suppl&eacute;mentaires</a>
+          </div>
+
+          <div style="margin-left:1em">
+            6. <a href="#_topic_6">Introduction aux actionneurs</a>
+          </div>
+
+          <div style="margin-left:1em">
+            7. <a href="#_topic_7">Notions d'&eacute;lectricit&eacute;</a>
+          </div>
+
+          <div style="margin-left:1em">
+            8. <a href="#_topic_8">Caf&eacute;-O-Matic</a>
+          </div>
+
+          <div style="margin-left:1em">
+            9. <a href="#_topic_9">Notions de supervision</a>
+          </div>
+
+          <div style="margin-left:1em">
+            10. <a href="#_topic_10">T&eacute;l&eacute;chargements</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Introduction &agrave; la domotique</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A l'&eacute;vidence, la maison du futur n'est pas
+            encore pour demain. Les constructeurs ayant du mal &agrave; s'entendre sur des normes communes,
+            le la maison toute-automatique r&ecirc;v&eacute;e par nos parents doit encore attendre.
+            Qu'&agrave; cela ne tienne, nous allons automatiser nous m&ecirc;me notre ch&egrave;re demeure
+            &agrave; l'aide de moyens relativement simples. Le but est d'effectuer certaines taches
+            automatiquement, comme r&eacute;aliser un d&eacute;lestage, fermer des volets, contr&ocirc;ler
+            l'&eacute;clairage d'une pi&egrave;ce ou tout autre chose. Nous allons commencer par apprendre
+            &agrave; interfacer quelques capteurs qui existent sur le march&eacute;. Une fois ces
+            informations centralis&eacute;es vers notre ordinateur, il nous sera facile d'agir en
+            cons&eacute;quence sur les actionneurs.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/avoid.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Danger<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">Le cours ci-dessous met en ouvre des appareils
+              &eacute;lectrom&eacute;nagers branch&eacute;s sur le secteur (230V). Nous vous pr&eacute;venons
+              donc qu'il existe un danger mortel si quelques pr&eacute;cautions ne sont pas prises. Tout
+              d'abord veillez bien &agrave; ne travailler que sur des appareils d&eacute;branch&eacute;s, ce
+              qui est le minimum au point de vue s&eacute;curit&eacute;. V&eacute;rifiez qu'aucun objet
+              inflammable est proche de votre montage lorsque vous l'essayez et enfin n'h&eacute;sitez pas
+              &agrave; demander l'aide d'un adulte ou d'une personne avertie si vous n'&ecirc;tes pas
+              s&ucirc;r de vous. Ceci reste un hobby, nous ne tenons pas &agrave; perdre nos lecteurs !<br>
+              Notez bien que ProgrammationWorld et ses partenaires <b>ne sont en aucun cas responsables</b>
+              des dommages provoqu&eacute;s sur des biens ou des personnes en cas de mauvaise utilisation des
+              programmes fournis ci-dessous. N'oubliez pas que les ports du PC ne sont pas indestructibles et
+              cela peut mener &agrave; la <b>d&eacute;terioration d&eacute;finitive</b> de votre carte
+              m&egrave;re.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Capteur de luminosit&eacute;</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce capteur est d'une simplicit&eacute; enfantine
+            : il s'agit d'une r&eacute;sistance dont la valeur varie en fonction de la luminosit&eacute;
+            re&ccedil;ue. Par exemple, la version pr&eacute;sent&eacute;e ici donne 300 Ohms pour 1000 lux,
+            et 30K Ohms pour la luminosit&eacute; ambiante. Il existe &eacute;norm&eacute;ment de versions,
+            qui varient selon la r&eacute;sistance maximale, la sensibilit&eacute;, la puissance etc.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/photoresistance.jpg"><br>
+        <b><u>Une photor&eacute;sistance classique (quelques francs).</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/lumiere_tension.jpg"><br>
+        <b><u>Un convertisseur lumi&egrave;re/tension (quelques dizaines de francs).</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plusieurs solutions s'offrent &agrave; nous pour
+            interfacer ce genre de capteur. La fa&ccedil;on la plus souple est d'utiliser un convertisseur
+            analogique-num&eacute;rique : on a ainsi acc&egrave;s &agrave; toute la plage de variation. Il y
+            a encore d'autres m&eacute;thodes comme de cr&eacute;er un petit oscillateur &agrave; l'aide d'un
+            74HCT14 ou d'un NE555. Nous avons choisi une solution encore plus simple. Le montage ci-dessous,
+            un tr&egrave;s classique comparateur &agrave; amplificateur op&eacute;rationnel, va nous donner
+            deux &eacute;tats : pr&eacute;sence de lumi&egrave;re ou non. Cela pourra nous &ecirc;tre utile
+            pour allumer une lampe &agrave; partir d'une certaine obscurit&eacute; par exemple. On peut
+            m&ecirc;me faire un montage plus efficace en fabriquant un comparateur &agrave;
+            hyst&eacute;r&eacute;sis, qui permet de fixer les deux seuils haut et bas avec effet
+            m&eacute;moire. Il n'y a pas de meilleur montage, tout d&eacute;pend de votre syst&egrave;me et
+            ce que vous voulez faire. Enfin, vous pouvez inverser les entr&eacute;es de l'amplificateur
+            op&eacute;rationnel selon la logique que vous souhaitez obtenir en sortie.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/montage_photoresistance.jpg"><br>
+        <b><u>Le plus simple des montages peut se r&eacute;v&eacute;ler tr&egrave;s pratique.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dans le montage ci-dessus, la LED D1 s'allume en
+            fonction de la valeur de la r&eacute;sistance LDR, la r&eacute;sistance interne du capteur de
+            luminosit&eacute;. Bien s&ucirc;r, la LED D1 n'est utile ici que pour tester le montage, &agrave;
+            vous d'utiliser la sortie selon vos besoins.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>Capteur d'humidit&eacute;</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&agrave; encore, il s'agit de fabriquer un petit
+            montage adaptateur. Le capteur d'humidit&eacute; utilis&eacute; est appel&eacute;
+            <b>humidistance</b> ; c'est un petit bo&icirc;tier &agrave; souder sur circuit imprim&eacute;
+            qui, bien qu'un peu cher - 80 F environ -, permet la mesure de l'humidit&eacute; relative au
+            degr&eacute; d'hygrom&eacute;trie ambiant. Il r&eacute;agit comme un simple condensateur dont la
+            valeur varie en fonction de cette humidit&eacute; relative.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/humidistance.jpg"><br>
+        <b><u>L'humidistance, un capteur d'humidit&eacute; simple.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/capteur_humidite.jpg"><br>
+        <b><u>Ce capteur d'humidit&eacute; est plus &eacute;volu&eacute; et donne une tension en fonction du
+        taux d'humidit&eacute; ambiant.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N'allons pas chercher compliqu&eacute;, encore
+            une fois les montages les plus simples s'av&egrave;rent les plus performants. C'est pour cela
+            qu'un petit montage oscillateur &agrave; base de 74HCT14 ou de 4011 fera parfaitement l'affaire.
+            Au niveau de la programmation, il faut r&eacute;aliser un fr&eacute;quencem&egrave;tre ou
+            p&eacute;riode m&egrave;tre, la diff&eacute;rence entre les deux est que le premier
+            proc&egrave;de &agrave; une mesure d'impulsions pendant un certain temps tandis que le second
+            calcule le temps entre deux fronts d'horloge. Nous rappelons que la fr&eacute;quence est
+            inversement proportionnelle &agrave; la p&eacute;riode. D&egrave;s lors, il s'agit de bien
+            choisir la m&eacute;thode de mesure en fonction de la plage de fr&eacute;quence mesur&eacute;e ;
+            par exemple, un fr&eacute;quencem&egrave;tre sera d'autant plus performant que la
+            fr&eacute;quence est grande. Le probl&egrave;me est qu'il faut au pr&eacute;alable faire des
+            tests &agrave; l'aide d'un vrai capteur d'humidit&eacute; afin d'avoir la correspondance entre le
+            fr&eacute;quence mesur&eacute;e et la valeur r&eacute;elle d'humidit&eacute; relative (relation
+            qui n'est pas lin&eacute;aire). Le plus simple &eacute;tant de faire des essais et d'en
+            d&eacute;terminer les valeurs &agrave; ne pas d&eacute;passer, sans avoir &agrave;
+            conna&icirc;tre pr&eacute;cis&eacute;ment la valeur d'humidit&eacute; ambiante. Le circuit
+            pr&eacute;sent&eacute; ci-dessous est &agrave; base d'un circuit CMOS 4011 classique,
+            aliment&eacute; entre 3 et 15V, et fourni une fr&eacute;quence sur la broche 4 &eacute;gale
+            &agrave; 1/(R1*C1). Remplacez le condensateur C1 par le capteur d'humidit&eacute; capacitif et
+            calculez alors la r&eacute;sistance &agrave; placer en fonction de la fr&eacute;quence
+            d&eacute;sir&eacute;e en sortie. A titre indicatif, sachez que le capteur utilis&eacute; ici (de
+            Philips, voir la photo ci dessus) poss&egrave;de une capacit&eacute; de 120pF &agrave; 40%
+            d'humidit&eacute; relative.<br>
+            Enfin, il peut &ecirc;tre int&eacute;ressant de connecter la broche 1 du 4011 &agrave; une broche
+            du port parall&egrave;le pour pouvoir commander l'oscillateur : broche 1 &agrave; 5V,
+            l'oscillateur est d&eacute;marr&eacute;, broche 1 &agrave; 0V, l'oscillateur est inhib&eacute;.
+            Pour rendre le montage un peu plus stable, on peut &eacute;galement placer une r&eacute;sistance
+            de 1M ohms entre la broche 2 et la r&eacute;sistance R1.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/oscillateur.jpg"><br>
+        <b><u>Un montage oscillateur tr&egrave;s classique.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>Capteur de temp&eacute;rature num&eacute;rique</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parmi la tr&egrave;s grande vari&eacute;t&eacute;
+            de capteurs dans ce domaine, nous avons choisi un composant original et tout &agrave; fait
+            remarquable. Le plus souvent, nous avons affaire &agrave; des capteurs &agrave; trois broches qui
+            nous fournissent une tension analogique proportionnelle &agrave; la temp&eacute;rature. L'ennui
+            est qu'il faut alors faire appel &agrave; un convertisseur analogique num&eacute;rique afin de
+            pouvoir traiter le signal par un automatisme quelconque.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/sonde_temperature.jpg"><br>
+        <b><u>Une sonde de temp&eacute;rature classique, fournissant une tension proportionnelle &agrave; la
+        temp&eacute;rature sur le boitier.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le DS1620 de Dallas Semiconductor est un capteur
+            num&eacute;rique empaquet&eacute; dans un petit bo&icirc;tier DIL &agrave; 8 broches ne
+            n&eacute;cessitant aucun composant suppl&eacute;mentaire (hormis l'alimentation) pour pouvoir
+            fonctionner. Le dialogue avec le capteur se r&eacute;alise par l'interm&eacute;diaire de 3 fils,
+            les donn&eacute;es &eacute;tant transmises en s&eacute;rie. La plage de temp&eacute;rature est
+            tr&egrave;s &eacute;tendue, allant de -55&deg;C &agrave; +125&deg;C, en esp&eacute;rant que vous
+            n'aurez jamais besoin d'une telle r&eacute;solution pour mesurer la temp&eacute;rature ambiante
+            de votre salon ! Bien entendu, vous retrouverez le datasheet en bas de cette page.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passons au branchement ; nous allons utiliser la
+            seule broche du port parall&egrave;le non invers&eacute;e et bidirectionnelle, la broche 16
+            /Init. Le deuxi&egrave;me fil est l'horloge et le troisi&egrave;me le signal Reset ; n'importe
+            qu'elles autres broches en sortie feront l'affaire. Comme d'habitude, nous allons utiliser Visual
+            Basic qui se pr&ecirc;te parfaitement &agrave; ce genre d'applications. Il est &eacute;galement
+            possible d'utiliser Visual Basic pour Applications, qui a l'immense int&eacute;r&ecirc;t
+            d'&ecirc;tre fourni en standard avec Microsoft Office : vous pourrez ainsi cr&eacute;er de beaux
+            graphiques, pr&eacute;sentant la variation de temp&eacute;rature en une journ&eacute;e par
+            exemple. Notre application se montre assez simple, a vous de l'adapter &agrave; vos besoins et de
+            la compl&eacute;ter &agrave; l'aide de la documentation fournie. Il peut &ecirc;tre
+            int&eacute;ressant d'utiliser les sorties thermostats &agrave; programmer dans la m&eacute;moire
+            EEPROM non volatile du DS1620. Par exemple, vous d&eacute;finissez deux valeurs, haute et basse,
+            limites pour votre syst&egrave;me (des temp&eacute;ratures critiques comme la temp&eacute;rature
+            d'un processeur si vous vous adonnez &agrave; l'overclocking) : d&egrave;s que la
+            temp&eacute;rature mesur&eacute;e atteint une de ces valeurs, la broche correspondante passe au
+            niveau haut, vous donnant les moyens d'actionner n'importe quel automatisme. Enfin, le dernier
+            (grand) avantage de ce capteur est qu'il peut fonctionner en mode autonome : plus besoin de votre
+            ordinateur, pour peu que vous ayez bien programm&eacute; tous les param&egrave;tres.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/montage_ds1620.jpg"><br>
+        <b><u>Le DS1620 seul suffit pour mesurer une temp&eacute;rature.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maintenant, nous allons voir comment utiliser ce
+            capteur de temp&eacute;rature en programmant une petite application en Visual Basic.<br>
+            <br>
+            Cr&eacute;ons tout d'abord un nouveau projet. Comme d'habitude (voir les cours
+            pr&eacute;c&eacute;dents), nous ajoutons un module pour se servir de la DLL inpout.dll qui nous
+            permettra d'acc&eacute;der aux ports du PC. L'aspect de notre petite interface est le suivant :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/test_ds1620.jpg"><br>
+        <b><u>L'interface minimale pour g&eacute;rer le capteur de temp&eacute;rature DS1620.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous ne parlerons pas des d&eacute;tails propres
+            &agrave; Visual Basic. Pour cela, nous vous dirigeons vers les sources compl&egrave;tes de ce
+            logiciel disponibles en bas de cette page.<br>
+            <br>
+            Nous cr&eacute;ons un Timer qui interrogera le composant toutes les secondes. Il est bien
+            s&ucirc;r possible de diminuer ou d'augmenter cette valeur selon la rapidit&eacute; de
+            l'ordinateur. Il faut cependant faire attention &agrave; ne pas baisser trop ce temps car le
+            capteur poss&egrave;de un temps de r&eacute;ponse minimal. Le mieux &eacute;tant de se
+            r&eacute;f&eacute;rer au datasheet qui fournira tous ces d&eacute;tails.<br>
+            <br>
+            Comme nous l'avons dit ci-dessus, le dialogue avec le DS1620 se fait en s&eacute;rie par
+            l'interm&eacute;diaire de trois broches. Nous envoyons donc des <b>trames</b> au composant
+            comportant des donn&eacute;es pr&eacute;cises. Le DS1620 poss&egrave;de deux modes qui nous
+            int&eacute;resse : le mode <b>configuration</b> et le mode <b>temp&eacute;rature</b>. Le premier
+            mode sert &agrave; configurer le fonctionnement du 1620 (voir tous les modes dans la
+            documentation). Le mode qui nous int&eacute;resse est le mode 0xAA, o&ugrave; le capteur se
+            charge de fournir la temp&eacute;rature instantan&eacute;e.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/configds1620.jpg"><br>
+        <b><u>Nous envoyons dans le composant la configuration qui nous int&eacute;resse.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Il nous manque plus qu'un seul
+            &eacute;l&eacute;ment pour mener &agrave; bien notre dialogue avec le composant : le chronogramme
+            de communication. Sans lui, rien n'est possible. Sa traduction en programmation est tr&egrave;s
+            simple, comme nous le verrons ci-apr&egrave;s.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/protocolesds1620.jpg"><br>
+        <b><u>Le protocole de lecture et d'&eacute;criture pour dialoguer avec le DS1620.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hop ! mettons nous au code maintenant. Il s'agit
+            comme &agrave; l'accoutum&eacute;e de simples manipulations de bits. Si vous &ecirc;tes un peu
+            perdus, nous vous dirigeons vers les cours d'introduction &agrave; la programmation et aux
+            syst&egrave;mes num&eacute;riques pr&eacute;sents sur ce site.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>' Phase 1 : On &eacute;crit le protocole</i></font>
+<font color="#009900"><i>' avec Protocol = &amp;HAA</i></font>
+    <font color="#0000FF"><b>For</b></font> j = 1 <font color="#0000FF"><b>To</b></font> 8
+        Out LPT_DATA, (<font color="#000000"><b>Inp</b></font>(LPT_DATA) <font color=
+"#FFC800"><b>And</b></font> &amp;HFD) <font color="#009900"><i>' Clock = 0</i></font>
+        <font color="#009900"><i>' Petit d&eacute;lai (pas forc&eacute;ment obligatoire)</i></font>
+        Delay (200)
+        
+        <font color="#009900"><i>' on place le bit sur l'entr&eacute;e</i></font>
+        n = Protocol <font color="#FFC800"><b>And</b></font> 1 <font color=
+"#009900"><i>' cela permet de masquer le LSB</i></font>
+        
+        <font color="#009900"><i>' On place ce bit sur la broche de donn&eacute;es</i></font>
+        <font color="#0000FF"><b>If</b></font> n = 1 <font color="#0000FF"><b>Then</b></font>
+            Out LPT_CONTROL, (<font color="#000000"><b>Inp</b></font>(LPT_CONTROL) <font color=
+"#FFC800"><b>Or</b></font> &amp;H4) <font color="#009900"><i>' DQ = 1</i></font>
+        <font color="#0000FF"><b>Else</b></font>
+            Out LPT_CONTROL, (<font color="#000000"><b>Inp</b></font>(LPT_CONTROL) <font color=
+"#FFC800"><b>And</b></font> &amp;HFB) <font color="#009900"><i>' DQ = 0</i></font>
+        <font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>If</b></font>
+        
+        <font color="#009900"><i>' PAF ! on provoque un front montant pour valider la valeur</i></font>
+        Out LPT_DATA, (<font color="#000000"><b>Inp</b></font>(LPT_DATA) <font color=
+"#FFC800"><b>Or</b></font> &amp;H2) <font color="#009900"><i>' Clock = 1</i></font>
+        
+        Delay (200)
+        Protocol = <font color="#000000"><b>Int</b></font>(Protocol / 2) <font color=
+"#009900"><i>' on d&eacute;cale vers la droite pour acc&eacute;der au bit suivant</i></font>
+    <font color="#0000FF"><b>Next</b></font> j</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voil&agrave;, le composant est en mode lecture.
+            Nous allons maintenant &eacute;crire la routine pour extraire la temp&eacute;rature
+            instantan&eacute;e. M&ecirc;me principe, on suit les chronogrammes.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000">   <font color="#0000FF"><b>For</b></font> j = 1 <font color=
+"#0000FF"><b>To</b></font> 9
+        <font color=
+"#009900"><i>' on g&eacute;n&egrave;re un front descendant (la valeur reste sur le niveau 1 apr&egrave;s)</i></font>
+        Out LPT_DATA, (<font color="#000000"><b>Inp</b></font>(LPT_DATA) <font color=
+"#FFC800"><b>Or</b></font> &amp;H2) <font color="#009900"><i>' Clock = 1</i></font>
+        Delay (200)
+        Out LPT_DATA, (<font color="#000000"><b>Inp</b></font>(LPT_DATA) <font color=
+"#FFC800"><b>And</b></font> &amp;HFD) <font color="#009900"><i>' Clock = 0</i></font>
+        Delay (200)
+
+        <font color=
+"#009900"><i>' On enregistre la valeur du bit pr&eacute;sent sur la broche de donn&eacute;es</i></font>
+        n = (<font color="#000000"><b>Inp</b></font>(LPT_CONTROL) <font color=
+"#FFC800"><b>And</b></font> &amp;H4) / 4
+        <font color="#0000FF"><b>If</b></font> n = 1 <font color=
+"#0000FF"><b>Then</b></font> Donnee = Donnee + 1
+        <font color="#0000FF"><b>If</b></font> j &lt;&gt; 9 <font color=
+"#0000FF"><b>Then</b></font> Donnee = Donnee * 2 <font color=
+"#009900"><i>' on d&eacute;cale vers la gauche, sauf pour la derni&egrave;re valeur</i></font>
+        <font color=
+"#009900"><i>' Notez que ce test peut &ecirc;tre effac&eacute; si vous ne divisez pas la sortie par 2 &agrave; la fin de</i></font>
+        <font color="#009900"><i>' cette fonction.</i></font>
+    <font color="#0000FF"><b>Next</b></font> j
+</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enfin, vu le sens de la trame lue, on inverse les
+            bits pour que la valeur lue ai un sens. R&eacute;f&eacute;rez vous aux sources pour connaitre
+            cette petite routine, mais il n'y a rien de difficile l&agrave; dedans. N'oubliez pas de diviser
+            la valeur lue par deux car la r&eacute;solution est de 0,5&deg; par bit, et non 1&deg; par bit
+            !<br>
+            <br>
+            Nous voil&agrave; dot&eacute;s d'une magnifique petite application qui nous donne la
+            temp&eacute;rature ambiante. Bien s&ucirc;r, il ne tient qu'&agrave; vous de compl&eacute;ter et
+            d'am&eacute;liorer ce programme car le DS1620 fournit d'innombrables options
+            suppl&eacute;mentaires.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_5"></a>Informations suppl&eacute;mentaires</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cette petite mise en bouche sur le (vaste)
+            th&egrave;me des capteurs est loin d'&ecirc;tre exhaustive tant les produits sont abondants dans
+            les catalogues. Il est possible d'aller beaucoup plus loin, en cr&eacute;ant un v&eacute;ritable
+            r&eacute;seau de capteurs, pourquoi pas avec un dialogue par infrarouge entre le PC et les
+            capteurs. Il y a vraiment une quantit&eacute; impressionnante d'applications qui peuvent
+            &eacute;merger.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/advice.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Astuce<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2"><b>Plus de place ?</b><br>
+              <br>
+              Les ports d'entr&eacute;es/sorties sont malheureusement limit&eacute;s. Si votre installation
+              devient cons&eacute;quente, il vous manquera s&ucirc;rement des broches. Pour rem&eacute;dier
+              &agrave; ce probl&egrave;me, sachez qu'il existe quelques astuces et possibilit&eacute;s fortes
+              int&eacute;ressantes. Tout d'abord, &agrave; condition de disposer d'un peu plus de
+              mat&eacute;riel, le port ISA peut fournir une solution parfaite. L'acc&egrave;s au port se fait
+              &agrave; l'aide des fonctions classiques que l'on utilise depuis d&eacute;j&agrave; quelques
+              cours (inportb, outportb etc.). Oubliez le port PCI qui est beaucoup trop complexe &agrave;
+              mettre en oeuvre. Les capacit&eacute;s des ports parall&egrave;le et s&eacute;rie peuvent
+              &ecirc;tre &eacute;tendus gr&acirc;ce &agrave; des "s&eacute;rialiseurs" et des registres
+              &agrave; d&eacute;calage &agrave; acc&egrave;s s&eacute;rie. Les 74HC165 et 74HC595, dont les
+              datasheets sont sur le CD Pro, sont deux composants id&eacute;aux pour ce genre de
+              probl&egrave;me. En outre, ils peuvent se c&acirc;bler en cascade ce qui est d'autant plus
+              int&eacute;ressant. Bref, toutes les diverses techniques de multiplexage et de conversion
+              s&eacute;rie/parall&egrave;le pourront vous rendre de fiers services.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jusqu'ici, nous nous &eacute;tions
+            concentr&eacute;s sur les capteurs m&eacute;t&eacute;orologiques. Nous avons pass&eacute; sous
+            silence les capteurs de position ou d'&eacute;v&egrave;nements tels que des barri&egrave;res
+            infrarouges ou de simples contacts secs. Cependant, ceux ci fonctionnant en tout ou rien,
+            l'interfa&ccedil;age avec un port quelconque du PC est vraiment tr&egrave;s simple &agrave;
+            faire.<br>
+            Attaquons maintenant la partie laiss&eacute;e aux actionneurs.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_6"></a>Introduction aux actionneurs</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abordons donc sans plus tarder le sujet des
+            actionneurs qui va nous permettre de nous initier, une fois n'est pas coutume, au domaine de
+            l'&eacute;lectrotechnique. On entend par actionneur tout proc&eacute;d&eacute; qui permet de
+            r&eacute;aliser une tache m&eacute;canique ou &eacute;lectrom&eacute;canique afin de changer
+            l'&eacute;tat d'un r&eacute;cepteur. L'actionneur est en quelque sorte le lien entre la partie
+            commande, mat&eacute;rialis&eacute;e ici par un PC, En effet, prenons l'exemple simple (mais non
+            moins int&eacute;ressant) de la fameuse cafeti&egrave;re qui se mettra &agrave; pr&eacute;parer
+            le caf&eacute; sit&ocirc;t le r&eacute;veil enclench&eacute;. Celui-ci est branch&eacute; sur le
+            secteur (230V) et la mani&egrave;re la plus simple pour d&eacute;marrer la cafeti&egrave;re est
+            de r&eacute;aliser un petit interrupteur sur l'alimentation. C'est la solution la plus basique
+            mais pourquoi faire plus compliquer.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_7"></a>Notions d'&eacute;lectricit&eacute;</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'&eacute;lectrotechnique est une mati&egrave;re
+            bien &agrave; part. L'&eacute;lectronique se pr&eacute;occupe peu du courant et seule la tension
+            int&eacute;resse : on cherche &agrave; v&eacute;hiculer des informations. En
+            &eacute;lectrotechnique, on transporte ou on modifie des grandeurs &eacute;lectriques (puissance,
+            courant, tension) : il est donc important de pouvoir les quantifier. Prenons l'exemple d'une
+            simple machine &agrave; caf&eacute; de 650 W qui est dot&eacute;e d'une r&eacute;sistance
+            chauffante. Ce r&eacute;cepteur, compl&egrave;tement r&eacute;sistif, absorbera une certaine
+            quantit&eacute; de courant. La relation entre ces grandeurs est donn&eacute;e par la formule
+            suivante :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+P = Ueff * Ieff
+Puissance active = Tension efficace * Intensit&eacute; efficace
+Watts = Volts * Amp&egrave;re
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La puissance active (ou puissance moyenne)
+            calcul&eacute;e ici correspond &agrave; la puissance de notre machine &agrave; caf&eacute;.
+            Celle-ci &eacute;tant branch&eacute;e sur le secteur monophas&eacute; de 230V efficaces, cela
+            nous donne un courant efficace de :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+Ieff = P / Ueff
+Ieff = 650 / 230 = 2,83 A
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous obtenons un courant efficace de pr&egrave;s
+            de 3A, ce qui va nous aider &agrave; dimensionner tous les &eacute;l&eacute;ments de puissance.
+            Et souvenez-vous bien qu'un courant efficace de 2,83A signifie un courant cr&ecirc;te de 4 A qui
+            a son importance. En effet, nous ne d&eacute;cidons pas &agrave; quel instant nous commutons le
+            r&eacute;cepteur. Cela peut se passer sur le z&eacute;ro ou sur le sommet de la sinuso&iuml;de :
+            il n'y a donc pas le m&ecirc;me courant &agrave; commuter.<br>
+            Le m&ecirc;me calcul peut donc se r&eacute;p&eacute;ter avec n'importe quelle charge
+            r&eacute;sistive : un radiateur, une ampoule incandescente etc. Attention, &eacute;vitez les
+            ampoules &agrave; &eacute;conomie d'&eacute;nergie qui poss&egrave;dent un fonctionnement
+            particulier et ne sont pas du tout r&eacute;sistives, au grand dam d'EDF.. Un circuit
+            &eacute;lectronique emmagasine l'&eacute;nergie lorsqu'elle est plus importante (au sommet de la
+            sinuso&iuml;de) et s'en sert comme source le reste du temps. Malheureusement, cela &agrave;
+            tendance &agrave; d&eacute;grader la qualit&eacute; du r&eacute;seau &eacute;lectrique.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La tension secteur, dont l'aspect est
+            repr&eacute;sent&eacute; ci-dessous, est de type sinuso&iuml;dal. Dans le cas d'une
+            sinuso&iuml;de pure, nous pouvons d&eacute;terminer les caract&eacute;ristiques du signal
+            &agrave; l'aide de trois grandeurs : La tension efficace, la fr&eacute;quence et la valeur
+            moyenne.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/sinus.jpg"><br>
+        <b><u>L'aspect de la tension secteur.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dans le cas du r&eacute;seau EDF typique, la
+            tension efficace est de 230V (elle n'est plus &agrave; 220V depuis plusieurs ann&eacute;es), la
+            fr&eacute;quence est de 50Hz et la valeur moyenne nulle (la sinuso&iuml;de est centr&eacute;e sur
+            le 0V). Pr&eacute;cisons &eacute;galement qu'il existe une relation entre la valeur efficace et
+            la valeur maximale (ou valeur cr&ecirc;te) de la sinuso&iuml;de :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+Umax = Ueff * sqrt(2)
+
+soit  : 
+
+230 * sqrt(2) = 325 Vmax !
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La tension EDF disponible sur nos prises aura
+            donc la formule math&eacute;matique suivante :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+u(t) = Umax * sin (wt)
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'w' (prononcez om&eacute;ga) est appel&eacute;e
+            la pulsation &eacute;lectrique. Elle est &eacute;gale &agrave; :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+w = 2 * PI * f
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avec f la fr&eacute;quence du r&eacute;seau (50Hz
+            en france). Enfin, pour tout r&eacute;cepteur r&eacute;sistif exclusivement, le courant aura la
+            m&ecirc;me allure que la tension, &agrave; R pr&egrave;s (souvenez-vous, u(t) = R * i(t), R
+            &eacute;tant une constante). Voil&agrave; quelques bases d'&eacute;lectrotechnique qui, bien que
+            (tr&egrave;s) succinctes, vous auront donn&eacute; quelques bases. N'h&eacute;sitez pas &agrave;
+            consulter les manuels scolaires pour en apprendre plus.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_8"></a>Caf&eacute;-O-Matic</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passons &agrave; la r&eacute;alisation de notre
+            interface de puissance. Nous allons utiliser le port parall&egrave;le, tr&egrave;s facile
+            &agrave; mettre en ouvre. Le sch&eacute;ma ci-contre est suffisamment clair et ne poss&egrave;de
+            que tr&egrave;s peut de composants. La charge, une lampe par exemple, doit &ecirc;tre
+            connect&eacute;e sur l'interrupteur du relais. Libre &agrave; vous d'utiliser l'une ou l'autre
+            sortie selon la logique que vous souhaitez avoir. L'&eacute;l&eacute;ment principal est le
+            relais, &agrave; choisir en fonction du courant &agrave; commuter, du courant efficace en
+            fonctionnement nominal et de la tension efficace de la charge. Nous allons prendre un relais
+            tr&egrave;s classique, supportant 16A sous 400V, de marque Finder. Le relais isole
+            compl&egrave;tement la partie puissance de la partie commande car il n'y a aucune liaison
+            &eacute;lectrique entre les deux mais une liaison m&eacute;canique. Point de danger pour notre
+            port parall&egrave;le. Pour encore plus de s&eacute;curit&eacute;, nous n'allons pas polariser
+            directement la bobine par une broche du port parall&egrave;le mais par l'interm&eacute;diaire
+            d'un transistor bipolaire classique et d'une alimentation externe. Soudez le tout sur une plaque
+            &agrave; bande cuivr&eacute;e, si toutefois la charge ne demande pas trop d'intensit&eacute;.
+            Dans le cas contraire, le mieux est de r&eacute;aliser une plaque de cuivre avec une
+            &eacute;paisseur de piste cons&eacute;quente. Il existe d'ailleurs des tables pour
+            conna&icirc;tre l'&eacute;paisseur minimale selon la puissance v&eacute;hicul&eacute;e.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/montage_relais.jpg"><br>
+        <b><u>Un montage simple pour commander n'importe quelle charge de petite puissance.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/relais.jpg"><br>
+        <b><u>Un relais id&eacute;al pour les petites puissances.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La proc&eacute;dure de test est simple mais doit
+            &ecirc;tre rigoureuse : ne branchez pas tout de suite la charge et v&eacute;rifiez que la partie
+            commande ob&eacute;it bien &agrave; vos ordres, et que le relais commute bien. Les relais, du
+            fait de leur fonctionnement m&eacute;canique, produisent un petit "clac!" lorsqu'ils
+            fonctionnent, ce qui est pratique pour v&eacute;rifier le bon fonctionnement de l'ensemble.
+            D&eacute;connectez ensuite la partie commande de l'ordinateur et connectez la partie puissance au
+            r&eacute;seau. V&eacute;rifiez qu'il n'y a aucun court circuit et si vous poss&eacute;dez un
+            voltm&egrave;tre v&eacute;rifiez les tensions. Au niveau de la programmation, reportez-vous aux
+            articles pr&eacute;c&eacute;dents et notamment celui qui montre comment g&eacute;rer le port
+            parall&egrave;le en C et en Visual Basic. En bas de la page, vous retrouverez les documentations
+            des composants ainsi que le programme de test du port parall&egrave;le. Pour vos essais, utilisez
+            une lampe de 40W par exemple, c'est ce qu'il y a de plus pratique pour voir si votre montage
+            fonctionne.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_9"></a>Notions de supervision</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La supervision est un terme issu de l'industrie.
+            Son concept est simple : le but de la supervision est de contr&ocirc;ler le d&eacute;roulement
+            d'un processus par l'interm&eacute;diaire de graphismes et de sh&eacute;mas simples. Pourquoi
+            faire me direz-vous ? Prenons un exmple. Mettons qu'une entreprise poss&egrave;de une chaine de
+            fabrication de plusieurs centaines de m&egrave;tres de long, bourr&eacute;e de capteurs de toute
+            sorte (fin de course, temp&eacute;rature, pression, vitesse...). Il serait extr&ecirc;mement
+            difficile, voire impossible, de contr&ocirc;ler l'ensemble des processus et de cibler, en cas de
+            panne, l'&eacute;l&eacute;ment d&eacute;ffectueux. Le meilleur moyen est de centraliser toutes
+            les informations vers une sorte de poste de contr&ocirc;le. A l'heure actuelle, la supervision se
+            r&eacute;alise par l'ordinateur, &agrave; l'aide de logiciels tr&egrave;s performants et
+            tr&egrave;s intuitifs. Avec la popularisation d'Internet, il est m&ecirc;me possible de
+            superviser un processeus de n'importe quel endroit de la plan&egrave;te. C'est d'ailleurs ce que
+            nous allons faire d&egrave;s maintenant !
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="0" align="center">
+              <tr>
+                <td align="center"><img src="images/cours8/super.gif" alt="" border="0"> </td>
+
+                <td align="center"><img src="images/cours8/super2.gif" alt="" border="0"> </td>
+              </tr>
+
+              <tr>
+                <td colspan="2" align="center"><img src="images/cours8/super2.gif" alt="" border="0"></td>
+              </tr>
+
+              <tr>
+                <td colspan="2" align="center"><b><u>Voici quelques exemples de supervision
+                industrielle.</u></b></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>But :</b> obtenir la temp&eacute;rature d'une
+            pi&egrave;ce de la maison, puis de la visualiser sur Internet. Pour capturer la
+            temp&eacute;rature de la pi&egrave;ce, nous allons utiliser le DS1620, dont l'interface a
+            &eacute;t&eacute; d&eacute;crite un peu plus haut. Le logiciel va &ecirc;tre un peu
+            modifi&eacute; afin de sauvegarder la valeur de la temp&eacute;rature dans un fichier texte. Ce
+            fichier va &ecirc;tre uploader sur un serveur web. Puis, gr&acirc;ce &agrave; une petite page en
+            ASP ou PHP, nous allons lire la valeur contenue dans ce fichier pour l'afficher !
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/diagramme.gif"><br>
+        <b><u>La s&eacute;quence de notre supervision.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous n'arborderons pas les deux premi&egrave;res
+            &eacute;tapes, c'est assez simple. Il suffit juste de modifier le logiciel Test1620 pour qu'il
+            sauvegarde la valeur de la temp&eacute;rature dans un fichier texte. Pour la troisi&egrave;me
+            &eacute;tape &eacute;tape , nous allons utiliser un OCX pour t&eacute;l&eacute;charger le fichier
+            sur un serveur via le protocole FTP. Celui-ci est disponible en freeware sur le tr&egrave;s bon
+            site de Kyle Katarn : <a href="http://www.katarncorp.com" target=
+            "_blank">http://www.katarncorp.com</a>. L'OCX se nomme K-FTP. Ce composant est tr&egrave;s simple
+            d'emploi. Voici un programme en exemple, qui se charge devinez quoi, de t&eacute;l&eacute;charger
+            un fichier sur un serveur. Ce logiciel est t&eacute;l&eacute;chargeable en bas de cette page.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/dialup_project.jpg"><br>
+        <b><u>Les fen&ecirc;tres du logiciel <i>Dialup</i>.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/dialup_config.jpg"><br>
+        <b><u>La fen&ecirc;tre de configuration.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voil&agrave;, c&ocirc;t&eacute; client, vous avez
+            tout ce qu'il faut ! Et pour ceux qui n'ont pas Internet en illimit&eacute;, sachez que Dialup se
+            connecte tout seul &agrave; Internet en utilisant votre acc&egrave;s par d&eacute;faut et se
+            d&eacute;connecte une fois que le fichier a &eacute;t&eacute; upload&eacute;. Vous pouvez
+            modifier le fichier comme bon vous semble, c'est un freeware et les sources sont incluses.<br>
+            <br>
+            En ex&eacute;cutant Dialup.exe, celui-ci se connecte directement &agrave; Internet pour uploader
+            son fichier. N'oubliez donc pas de configurer au pr&eacute;alable le logiciel en d&eacute;marrant
+            avec l'option de ligne de commande <i>-config</i>. Un racourcis a &eacute;t&eacute;
+            cr&eacute;&eacute; dans l'archive en t&eacute;l&eacute;chargement ci-dessous.<br>
+            <br>
+            Voil&agrave;, le fichier est sur notre serveur, il ne nous reste plus qu'&agrave; fabriquer une
+            petite page de supervision. On va dessiner le plan de notre maison, en consid&eacute;rant que
+            chaque pi&egrave;ce contient un capteur de temp&eacute;rature :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/maison.jpg"><br>
+        <b><u>Le plan de notre maison.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voil&agrave;, on cr&eacute;e une page HTML
+            appel&eacute;e <b>Data.asp</b> ou <b>Data.php</b> selon le serveur que vous utilisez. Mettez le
+            dessin de votre maison puis &eacute;crivez un des deux codes ci-dessous. Changez les
+            r&eacute;pertoires selon votre configuration.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000">&lt;%
+<font color="#009900"><i>'***********</i></font>
+<font color="#009900"><i>' Code en ASP</i></font>
+<font color="#009900"><i>'***********</i></font>
+
+<font color="#009900"><i>' Chemin courant</i></font>
+chemin=<font color="#000000"><b>server.MapPath</b></font>(<font color="#9999FF">"."</font>)
+set ScriptObject = <font color="#000000"><b>Server.CreateObject</b></font>(<font color=
+"#9999FF">"Scripting.FileSystemObject"</font>)
+
+<font color="#009900"><i>' On ouvre le fichier</i></font>
+<font color="#0000FF"><b>Set</b></font> MyFile = <font color=
+"#000000"><b>ScriptObject.OpenTextFile</b></font>(chemin + <font color="#9999FF">"\"</font> + <font color=
+"#9999FF">"data.txt"</font>, 1)
+
+<font color="#009900"><i>' On affiche tout son contenu</i></font>
+Response.Write MyFile.ReadAll
+
+<font color="#009900"><i>' On ferme tout</i></font>
+Myfile.close
+<font color="#0000FF"><b>Set</b></font> ScriptObject=nothing
+%&gt;</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000">&lt;?
+<font color="#009900"><i>//***********</i></font>
+<font color="#009900"><i>// Code en PHP</i></font>
+<font color="#009900"><i>//***********</i></font>
+
+<font color="#650099"><b>$Fnm</b></font> = <font color="#9999FF">"data.txt"</font>;
+
+<font color="#009900"><i>// on teste l'existence du fichier</i></font>
+<font color="#0000FF"><b>if</b></font> (<font color="#000000"><b>file_exists</b></font>(<font color=
+"#650099"><b>$Fnm</b></font>)) 
+{
+ <font color="#650099"><b>$inF</b></font> = <font color="#000000"><b>fopen</b></font>(<font color=
+"#650099"><b>$Fnm</b></font>,<font color="#9999FF">"r"</font>); <font color=
+"#009900"><i>// on l'ouvre...</i></font>
+ <font color="#0000FF"><b>while</b></font> (!<font color="#000000"><b>feof</b></font>(<font color=
+"#650099"><b>$inF</b></font>))
+   <font color="#FF9900">echo</font> <font color="#000000"><b>fgets</b></font>(<font color=
+"#650099"><b>$inF</b></font>, 4096); <font color=
+"#009900"><i>// et on lit enti&egrave;rement son contenu !</i></font>
+ <font color="#000000"><b>fclose</b></font>(<font color="#650099"><b>$inF</b></font>);
+}
+?&gt;</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voil&agrave;, ce cours est termin&eacute; ! Nous
+            avons cr&eacute;&eacute; une chaine compl&egrave;te d'automatique, le tout en manipulant un tas
+            de langages, et un peu d'&eacute;lectronique ! Donc, accessible au plus grand nombre. N'oubliez
+            pas la zone de t&eacute;l&eacute;chargements en bas de cette page. Amusez-vous bien.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours8/supervision.jpg"><br>
+        <b><u>Voil&agrave; ! nous obtenons la temp&eacute;rature d'une pi&egrave;ce sur Internet
+        !</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_10"></a>T&eacute;l&eacute;chargements</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <ul>
+              <li><a href="downloads/cours8/2N2222.pdf">2N2222.pdf</a> : transistor NPN.</li>
+
+              <li><a href="downloads/cours8/4011.pdf">4011.pdf</a> : porte NAND.</li>
+
+              <li><a href="downloads/cours8/74hc165.pdf">74hc165.pdf</a> : s&eacute;rialiseur.</li>
+
+              <li><a href="downloads/cours8/74hc595.pdf">74hc595.pdf</a> : registre &agrave; d&eacute;calage
+              &agrave; entr&eacute;e s&eacute;rie.</li>
+
+              <li><a href="downloads/cours8/DS1620.pdf">DS1620.pdf</a> : capteur num&eacute;rique de
+              temp&eacute;rature.</li>
+
+              <li><a href="downloads/cours8/LM124.pdf">LM124.pdf</a> : amplificateur op&eacute;rationel.</li>
+
+              <li><a href="downloads/cours8/ne555.pdf">ne555.pdf</a> : la doc du c&eacute;l&egrave;bre
+              oscillateur.</li>
+
+              <li><a href="downloads/cours8/relais.pdf">relais.pdf</a> : quelques exemples de
+              caract&eacute;ristiques de relais.</li>
+
+              <li><a href="downloads/cours8/Dialup.zip">Dialup.zip</a> : le logiciel pour se connecter au net
+              et uploader automatiquement un fichier.</li>
+
+              <li><a href="downloads/cours8/data_php.asp">data_php.asp</a> : Le fichier ASP qui ouvre et lit
+              un fichier sur le serveur.</li>
+
+              <li><a href="downloads/cours8/data_php.zip">data_php.zip</a> : la m&ecirc;me chose que
+              ci-dessus en PHP.</li>
+
+              <li><a href="downloads/cours8/test_ds1620.zip">test_ds1620.zip</a> : Le programme en Visual
+              Basic pour le DS1620.</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ <a href="cours7.htm">Pr&eacute;c&eacute;dent</a> | <a href=
+          "index.htm">Index</a> | Suivant ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Erik LOUISE<br>
+        <a href="mailto:ricostar@wanadoo.fr">ricostar@wanadoo.fr</a><br>
+        <a href="http://www.ricostar.fr.st/">http://www.ricostar.fr.st/</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

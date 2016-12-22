@@ -1,0 +1,544 @@
+&File
+&Fichier
+&New
+&Nouveau
+&Open...
+&Ouvrir...
+&Save
+&Sauver
+&Edit
+&Edition
+&Copy
+&Copier
+&Paste
+Col&ler
+&Add Command
+&Ajouter Commande
+&Delete
+&Supprimer
+&Test Command
+&Vérifier Commandes
+&Reset All States
+Initialise&r les états
+&Help
+Aide
+&About
+&A propos de
+&Disable Input Device(s)
+&Désactiver les périphériques d'entrées
+&Enable Input Device(s)
+Activ&er les périphériques d'entrées
+Apply
+Appliquer
+APM Event Generator
+Générateur APM 
+APM Event Plugin 1.0 for Girder 3.0
+Plugin Générateur APM 1.0 pour Girder 3.0
+Add &MultiGroup
+Ajout &MultiGroupe
+Add &Group
+Ajout &Groupe
+Antirepeat wait time [ms]
+Attente anti-répétitons[ms]
+Accelerate
+Accélérer
+Alt
+Alt
+Autoload file does not exist.
+Fichier auto-chargement inexistant.
+Auto Enable Input device
+Auto-activer le périphérique d'entrée
+Auto Load
+Auto-chargement
+Auto execute on startup
+Exécuter au démarrage
+Available plugins
+Plugins disponibles
+Action Plugins
+Plugins d'action
+Antirepeat active
+anti-répétitions activé
+About
+À propos de
+Allowed Clients
+Clients autorisés
+Address
+Adresse
+Address edit
+Edition adresse
+Add
+Ajouter
+Browse
+Explorer
+Begin state
+État de départ
+Cancel
+A&nnuler
+Comport
+Port série
+Captured IR code.
+Code IR capturé.
+Cannot load plugin.
+Le plugin ne peux être chargé.
+Cannot save datafile.
+Impossible de sauvegarder le fichier.
+Cannot load datafile.
+Impossible de charger le fichier.
+Could not enable IR device.
+Impossible d'activer l'IR.
+Contents
+Contenu
+Capture Window
+Capture de la fenêtre
+Contact and Copyright information
+Contact et information de droit d'auteur
+Clicked
+Cliqué
+Close
+Fermer
+Command
+Commande
+Capture
+Capture
+Control
+Contrôle
+Cannot find window
+Fenêtre introuvable
+Child Name
+Child Name
+Child Class
+Child Class
+Checking the Settings
+Vérification des paramètres
+Class Name
+Class Name
+Clear List
+Effacer liste
+Cannot enable 
+Impossible d'activer
+Cannot play wavfile.
+Ne peux jouer le fichier WAV
+Cannot Shutdown windows.
+Impossible de fermer Windows.
+Clicked sent.
+Clic envoyé.
+Close sent.
+Close envoyé.
+Command State
+État commande
+Current State
+État courant
+Cannot find group
+Groupe introuvable
+Cannot find icon
+Icône introuvable
+Cannot Find Softplugin.
+Plugin Soft introuvable.
+Could not enable input device(s).
+Impossible d'activer le périphérique d'entrée.
+Command executed
+Commande éxécutée
+Command ID
+Command ID
+Default
+Défaut
+Double Clicked
+Double-Cliqué
+Don't send the IR commands when Girder is the Foreground window
+Ne pas envoyer les commandes quand Girder est en avant-plan.
+Display Splashscreen
+Afficher intro
+Description
+Description
+Delete
+Delete
+Example plugin for Girder 3.0
+Exemple de plugin pour Girder 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Exécutable (*.exe)|*.EXE|Fichiers Wav (*.wav)|*.WAV
+E&xit
+Sortir
+Enabled
+Activé
+Execute
+Exécuter
+Executable
+Exécutable
+Error: Cannot set volume
+Erreur: Ne peux régler le volume
+Execute on all states except 1
+Exécuter sur tous les états sauf 1
+Error: Cannot execute command.
+Error: Cannot execute command.
+Fast Silitek Init
+Initialisation Silitek rapide
+Fast
+Rapide
+Slow
+Lent
+File
+Fichier
+Filename
+Nom du fichier
+Find
+Rechercher
+GNU General Public License
+GNU Licence publique générale
+Girder files (*.gir)|*.GIR
+Fichiers Girder (*.gir)|*.GIR
+Group Enable
+Groupe activé
+Group Disable
+Groupe désactivé
+Girder Standby Toggle
+On/off Girder
+General
+Générale
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder essaiera de remplir les options de cible basées sur les infos ici. Ceci peux nécessiter un ajustement manuel.
+Group Enabled
+Groupe activé
+Group Disabled
+Groupe désactivé
+Girder Standby
+Girder en attente
+Girder Active
+Girder Activé
+Girder Homepage: Http://www.stack.nl/~stilgar
+Page d'acceuil Girder: Http://www.stack.nl/~stilgar
+Hibernate
+Hiberner
+Howto
+Comment
+Hide
+Cacher
+Hide on startup
+Cacher au démarrage
+Hardware Plugins
+Plugins de matériel
+Handle
+Handle
+Hide sent.
+Cacher envoyé.
+Host IP
+Hôte IP
+Host Port
+Port hôte
+IRSpeed
+Vitesse IR
+I Was here
+J'étais ici
+IR Device Enabled.
+Périphérique IR activée.
+Icon files (*.ico)|*.ICO
+Fichiers d'icône (*.ico)|*.ICO
+Icon
+Icône
+Input Device
+Périphérique d'entrée
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Je recherche quelqu'un qui pourrait traduire Girder. C'est facile, et ceci rendra plusieurs personnes heureuses :). Le plus important est que votre nom sera publié dans la section des remerciements de l'option d'aide.
+Initializing the Input Device(s)
+Initialisation des périphériques d'entrée
+Input Device Enabled.
+Périphérique d'entrée activé
+Input Device Disabled.
+Périphérique d'entrée désactivé
+Keep focus
+Garder le focus
+Key sent
+Touche envoyée
+Keyboard
+Clavier
+Learn IR
+Apprendre Touche
+LogOff
+Déconnecter
+LParam
+LParam
+Launch Girder on windows startup
+Démarrer Girder au démarrage de Windows
+Language
+Langage
+Main Window
+Main Window
+Monitor On
+Allumer l'écran
+Monitor Off
+Éteindre l'écran
+Maximize
+Maximiser
+Minimize
+Minimiser
+Minimize Girder
+Minimiser Girder
+Mouse
+Souris
+Mouse Up
+Souris en haut
+Mouse Down
+Souris en bas
+Mouse Left
+Souris à gauche
+Mouse Right
+Souris à droite
+Mouse Left Click
+Souris clic gauche
+Mouse Left Doubleclick
+Souris double-clic gauche
+Mouse Right Click
+Souris clic droit
+Match invisble Tasks
+Envoyer aux tâches invisibles
+Minimized
+Minimisé
+Maximum number of ClientAddresses reached cannot add.
+Nombre maximum d'adresse client atteint : impossible d'ajouter.
+New
+Nouveau
+Not found.
+Introuvable.
+Name
+Nom
+None
+Aucun
+Ok
+Ok
+O.S.
+O.S.
+Only send to first match
+Envoyer a la première occurance seulement.
+OSD
+OSD
+Play Wav
+Jouer Wav
+Poweroff
+Éteindre
+Path to Hardware plugins
+Chemin d'accès aux fichiers de plugins matériel.
+Path to Action plugins
+Chemin d'accès aux fichiers de plugins d'action.
+Process ID
+Process ID
+Parent
+Parent
+Plugins
+Plugins
+Port
+Port
+Password
+Mot de passe
+Question
+Question
+Reboot
+Redémarrer
+Register Filetype
+Enregistrer type de fichier
+Running Tasks/Windows
+Tâches actives/Windows
+Refresh
+Actualiser
+Ready.
+Prêt.
+Rename
+Renommer
+Skip Silitek init check
+Sauter la vérification Silitek
+Strip Zeros from Silitek string
+Couper les zéros
+Slow
+Lent
+Suspend Mode
+Mode veille
+Suspend to Ram
+Mettre en veille en mémoire
+Select destination.
+Choisir destination.
+Save &as...
+Enregistrer sous....
+Se&ttings...
+Paramè&tres
+Settings Window
+Fenêtre de Paramètres
+State Window
+Fenêtre d'états
+State
+États
+Show
+Afficher
+Set Focus
+Établir le Focus
+Screen Saver
+Économiseur d'écran
+Shutdown
+Fermer
+Step Size
+Intervalle
+Startup Options
+Options de démarrage
+SysCommand
+SysCommand
+Set On-Trayicon
+Ouvrir l'icône de la barre des tâches
+Set Off-Trayicon
+Fermer l'icône de la barre des tâches
+Set Active-Trayicon
+Activer l'icône de la barre des tâches
+Set Standby-Trayicon
+Icône de la barre des tâches en attente
+Step
+Intervalle
+Shift
+Shift
+Special Key
+Touche spéciale
+Sentence
+Phrase
+Settings
+Paramètres
+Save datafile on shutdown/poweroff/logoff
+Sauvegarder à la fermeture de Windows
+Scale Main Form
+Échelle écran principale
+State.
+État.
+Selected Task's Childobjects
+Task's Childobjects sélectioonés
+Send to foreground task
+Envoyer aux tâches d'avant plan
+Substring matching
+Chercher dans n'importe quelle position
+Start Capture
+Début capture
+Stop Capture
+Arrêt capture
+System Wide Capturing
+Capturer à travers le système
+SmartFill
+Remplissage intelligent
+Show sent.
+Show envoyé
+State Count
+Compteur d'état
+See file Copying.txt for license details
+Voir Copying.txt pour les détails de la licence
+String
+Chaîne
+Text
+Texte
+This plugin sends a WM_SETTEXT message to the targets.
+Ce plugin envoie un WM_SETTEXT à la cible.
+The file has changed, save ?
+Le fichier a changé : sauvegarder ?
+Target Window
+Fenêtre cible
+Target
+Cible
+Traybar mode
+Mode Barre des tâches
+The New input device gets activated when you press the apply button.
+Appuyer sur appliquer pour activer le périphérique d'entrée
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+Ce fichier n'est pas un fichier Girder 3.0. Voulez-vous essayer d'importer au format 2.x? Si vous sauvegardez, il ne pourra plus être ouvert avec 2.x.
+Target Selector
+Sélecteur de cible
+Test Event
+Vérifier la condition
+Type
+Type
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Traduit par Michel Savaria <mike_savaria@hotmail.com> et corrigé par Erik Damiano <damiano@cls.fr>
+TCP/IP Server Settings
+TCP/IP Server Settings
+TCP/IP Client
+TCP/IP Client
+Talking Clock
+Talking Clock
+Timer
+Timer
+Timer plugin for Girder 3.0
+Timer plugin for Girder 3.0
+This plugin executes a command after a preset timeout.
+Ce plugin exécute une commande après un intervalle de temps défini.
+Silitek Settings
+Paramètres Silitek
+Unregister Filetype
+Effacer le type de fichier
+User Interface
+Interface utilisateur
+Volume Window
+Fenêtre volume
+Volume Change
+Changer volume
+Volume Right Change
+Volume à droite
+Volume Left Change
+Volume à gauche
+Volume Balance Change
+Volume Balance
+Volume Mute Toggle
+Volume muet
+Volume ID
+Volume ID
+Volume
+Volume
+Version
+Version
+Volume Settings
+Paramètres volume
+Volume Left
+Volume Gauche
+Volume Right
+Volume Droit
+Volume Mute
+Volume Off
+Waiting for IR Code.
+Code IR en attente.
+Window
+Fenêtre
+Wait
+Attendre
+Wait for Window
+Attendre la fenêtre
+WParam
+WParam
+Window Name
+Window Name
+Window Class
+Window Class
+Wparam
+Wparam
+Wavfile played.
+Le fichier WAV joué
+Windows is shutting down.
+Windows s'arrête.
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Fichier Wav (*.wav)|*.WAV|Exécutable (*.exe)|*.EXE
+X/Timeout [ms]
+X/Timeout [ms]
+Y
+Y
+command sent.
+commande envoyée.
+sys command sent.
+Commande sys envoyée.
+Message for key down
+Message de touche appuyée
+Message for key up
+Message de touche relevée
+Message for key still pressed
+Message de répétition touche
+Port Speed
+Vitesse port
+Default Speed
+Vitesse par défaut
+150
+150
+128000
+128000
+Bit Number
+Nombre de bit
+Stop Bit
+Bit de stop
+IRSpeed
+Vitesse IR

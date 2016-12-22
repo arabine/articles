@@ -1,0 +1,853 @@
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-16">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Werner BEROUX">
+    <meta name="keywords" content="puce, t2g, telecarte, lecteur, c++, carte, telephonique">
+    <meta name="description" content="Lecteur de t&eacute;l&eacute;cartes (carte &agrave; puces)">
+
+    <title>CPucePuce</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">CPucePuce<br>
+         <font size="1" color="#ffff00">Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                    document.writeln (document.lastModified.substring(0, 10))
+                  
+</script>
+        </font></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les cartes &agrave; puces sont de plus en plus
+            r&eacute;pandus. Leur s&eacute;curit&eacute; reste encore exemplaire. Nous allons les
+            &eacute;tudier d'un peu plus pr&egrave;s pour voir comment lire une carte
+            t&eacute;l&eacute;phonique classique, et cela sur plusieurs plans: Mat&eacute;riel,
+            fonctionnement de la puce, logiciel. Il nous faudra r&eacute;aliser un petit programme sur PC qui
+            lira les donn&eacute;es: CPucePuce. Nous allons voir rapidement comment cr&eacute;er une boite de
+            dialogue sans MFC, g&eacute;rer ses &eacute;v&egrave;nements, cr&eacute;er un liste
+            d&eacute;roulante, etc. Ensuite nous verrons comment lire la puce et interpr&eacute;ter les
+            donn&eacute;es.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Cr&eacute;ation d'un boite de dialogue</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On lance Visual C++, nouveau, Projets et on
+            s&eacute;lectionne "Win32 Application". On valide et on demande "A single Win32 Application" pour
+            avoir un truc vide tout pr&ecirc;t. Maintenant on va modifier notre boite de dialogue dans
+            l'&eacute;diteur de ressource et y ajouter tous les contr&ocirc;les etc. (voir la capture
+            d'&eacute;cran ci-dessous). Je pense que vous savez faire &ccedil;a.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/contribution/cpucepuce.png"><br>
+        <b><u>R&eacute;sultat final du programme.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Il reste ensuite &agrave; g&eacute;rer ces
+            contr&ocirc;les. On ouvre notre fichier source principal et on commence par modifier notre
+            WinMain(...) qui est la premi&egrave;re fonction ex&eacute;cut&eacute;e.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>// Le programmes commence ici.</i></font>
+<font color="#FF0000">int</font> APIENTRY WinMain(HINSTANCE hInstance,
+                     HINSTANCE hPrevInstance,
+                     LPSTR     lpCmdLine,
+                     <font color="#FF0000">int</font>       nCmdShow)
+{
+  <font color="#009900"><i>// On cr&eacute;&eacute; la boit de dialogue</i></font>
+  DialogBox(hInstance, (LPCTSTR)IDD_MAIN, <font color="#650099"><b>NULL</b></font>, (DLGPROC)DialogProc);
+
+  <font color="#0000FF"><b>return</b></font> <font color="#650099"><b>false</b></font>;
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Une fonction suffit pour cr&eacute;er une boite
+            de dialog. hInstance nous est fournis par Windows. On donne l'ID en cha&icirc;ne de notre
+            ressource. Pas de parent donc NULL. Et enfin DialogProc pour g&eacute;rer les
+            &eacute;v&egrave;nements. Il s'agit d'une fonction a d&eacute;clarer avant WinMain
+            &eacute;videmment.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>//  Traite les message de la fen&ecirc;tre.</i></font>
+LRESULT CALLBACK DialogProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+{
+  HWND  hWndCtrl;
+  <font color="#FF0000">int</font>    wmId,
+      wmEvent;
+
+  <font color="#0000FF"><b>switch</b></font> (message) 
+  {
+  <font color="#0000FF"><b>case</b></font> WM_INITDIALOG:   <font color=
+"#009900"><i>// Initialisation</i></font>
+    g_hDlg = hDlg;      <font color="#009900"><i>// Au d&eacute;finis la variable globale</i></font>
+    <font color="#009900"><i>// LPT</i></font>
+    hWndCtrl = GetDlgItem(hDlg, IDC_LPT_COMBO);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"0x378"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"0x278"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"0x3BC"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"0x2BC"</font>);
+    SendMessage(hWndCtrl, CB_SETCURSEL, 0, 0);
+    <font color="#009900"><i>// D&eacute;tection d'insertion</i></font>
+    hWndCtrl = GetDlgItem(hDlg, IDC_DETEC_COMBO);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"Aucun"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"/ERROR"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"SELECT"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"PE"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"/ACK"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"BUSY"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"/STROBE"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"/AUTOFEED"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"/INIT"</font>);
+    SendMessage(hWndCtrl, CB_ADDSTRING, 0, (LONG) (LPSTR) <font color="#9999FF">"/SELECT IN"</font>);
+    SendMessage(hWndCtrl, CB_SETCURSEL, 0, 0);
+    <font color="#009900"><i>/* ATTENTION : J'ai retir&eacute; des lignes ici pour &eacute;viter
+        de r&eacute;p&eacute;ter du code pour rien */</i></font>
+    <font color="#0000FF"><b>break</b></font>;
+
+  <font color="#0000FF"><b>case</b></font> WM_COMMAND:    <font color=
+"#009900"><i>// Traitre les commandes</i></font>
+    wmId    = LOWORD(wParam); 
+    wmEvent = HIWORD(wParam); 
+    <font color="#0000FF"><b>switch</b></font> (wmId)
+    {
+    <font color="#0000FF"><b>case</b></font> IDCANCEL:      <font color=
+"#009900"><i>// Quand on clique sur "Quitter"</i></font>
+      PostQuitMessage(0); <font color="#009900"><i>// Quitte l'application</i></font>
+      <font color="#0000FF"><b>break</b></font>;
+    <font color="#0000FF"><b>case</b></font> IDOK:      <font color=
+"#009900"><i>// Quand on clique sur "Lire"</i></font>
+      LirePuce();   <font color="#009900"><i>// Lance la lecture</i></font>
+      <font color="#0000FF"><b>break</b></font>;
+    }
+    <font color="#0000FF"><b>break</b></font>;
+
+  <font color="#0000FF"><b>case</b></font> WM_DESTROY:    <font color=
+"#009900"><i>// On quitte tout</i></font>
+    PostQuitMessage(0);
+    <font color="#0000FF"><b>break</b></font>;
+   }
+   <font color="#0000FF"><b>return</b></font> 0;
+}
+</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cette fonction est un CallBack. Soit une fonction
+            appel&eacute;e par une autre, ici par Windows. Nous allons ajouter les &eacute;l&eacute;ments
+            dans les liste d&eacute;roulantes &agrave; l'initialisation de la boite de dialogue:
+            WM_INITDIALOG. Pour ajouter, enlever, etc. des &eacute;l&eacute;ments d'une combo box (liste
+            d&eacute;roulante) on pr&eacute;c&egrave;de par &eacute;v&egrave;nement. Nous envoyons donc un
+            &eacute;v&egrave;nement &agrave; la fen&ecirc;tre (HWND) de notre contr&ocirc;le, en lui
+            demandant de rajouter un texte: hWndCtrl = GetDlgItem(hDlg, IDC_LPT_COMBO); SendMessage(hWndCtrl,
+            CB_ADDSTRING, 0, (LONG) (LPSTR) "0x378");
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ensuite il s'agit de g&eacute;rer les
+            &eacute;v&egrave;nement des boutons comme de quitter l'application quand on clique sur le bouton
+            Quitter (IDCANCEL). C'est g&eacute;r&eacute; dans WM_COMMAND. PostQuitMessage(0) quitte
+            l'application sans erreur (0). LirePuce() est la fonction qui va lire notre puce et afficher ses
+            informations.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Lecture de notre carte &agrave; puce</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voici le circuit pour lire les donn&eacute;es de
+            la puce. La petite animation vous montre les donn&eacute;es que le programme doit d&eacute;finir
+            et la r&eacute;ponse de puce. Remarquez que le port parall&egrave;le et la puce sont compatibles
+            TTL. Cela signifie qu'un bit 0=0V et 1=+5V. Donc pas besoins de composants.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voici le circuit pour pour lire les
+            donn&eacute;es de la puce. La petite animation vous montre les donn&eacute;es que le programme
+            doit d&eacute;finir et la r&eacute;ponse de puce.<br>
+            <br>
+
+            <div align="center">
+              <embed width="700" height="550" src="images/contribution/puce.swf"><noembed>Annimation flash
+              http://www.programmationworld.com</noembed>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Il faut dans l'ordre: 
+
+            <ul>
+              <li>R&eacute;cup&eacute;rer les informations entr&eacute;es dans la boite de dialogue.</li>
+
+              <li>Lire la puce et enregistrer ses donn&eacute;es.</li>
+
+              <li>Interpr&eacute;ter les donn&eacute;es pour en tirer des informations.</li>
+
+              <li>Afficher ces informations dans la boite de dialogue.</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous commen&ccedil;ons par d&eacute;clarer toutes
+            nos variables. Comme il n'existe pas de CString ou autre classe/variable pour g&eacute;rer
+            facilement les cha&icirc;nes, il s'agit de g&eacute;rer &ccedil;a sois m&ecirc;me. On
+            pr&eacute;vois donc un buffer pour enregistrer les donn&eacute;es de la puce brute (binaire), et
+            un pour les enregistrer en texte format&eacute;. Les cartes t&eacute;l&eacute;phone nouvelles
+            (T2G) contiennent 512 bits soit 64 octets.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#FF0000">bool</font> bData[512]; <font color=
+"#009900"><i>// 512 bits, soit la taille de la m&eacute;moire d'un T2G</i></font>
+<font color="#FF0000">char</font> lzDataText[600];  <font color=
+"#009900"><i>// On pr&eacute;vois plus de 512 pour les espaces etc.</i></font>
+</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/avoid.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Danger<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">Si vous pr&eacute;voyez un buffer pour le texte, n'oubliez jamais
+              qu'il doit y avoir un caract&egrave;re vide &agrave; la fin.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pour r&eacute;cup&eacute;rer l'adresse physique
+            du port ainsi que le bit &agrave; modifier pour acc&eacute;der aux donn&eacute;es voulues j'ai
+            cr&eacute;&eacute; une petite fonction. Elle donne pour un texte (ex: "D1") le port et le bit
+            &agrave; modifier: GetPortAndBit(...). Cette fonction va comparer deux cha&icirc;nes de
+            caract&egrave;re &agrave; l'aide de la fonction stricmp(a,b) qui compare sans prendre en compte
+            la case. Je vous invite &agrave; voir le code source complet pour cette fonction.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toutes donn&eacute;es en main, il faut s'occuper
+            de g&eacute;rer le port parall&egrave;le pour envoyer et recevoir les donn&eacute;es de la puce.
+            La fonction _outp(port, valeur) permet d'&eacute;crire &agrave; un port donn&eacute;e une
+            s&eacute;rie de 8 bits. Il nous faudra donc modifier souvent que un bit et laisser les 7 autres
+            bits intact (cf.: Cours sur les syst&egrave;me num&eacute;riques). De m&ecirc;me _inp(port)
+            revois la valeur des 8 bits de ce port.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On comment par tout mettre &agrave; 0, pas de
+            courant nulle part. Si on met &agrave; 1 l'un des bits, l'une des broches du port
+            parall&egrave;le aura un potentiel de +5V par rapport &agrave; la masse (cf: PC-Team, cours sur
+            le port parall&egrave;le, ...).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>// Initiatise</i></font>
+GetPort(sPortDonnees);  <font color=
+"#009900"><i>// Va r&eacute;cup&eacute;rer l'adresse du port parall&egrave;le</i></font>
+_outp(sPortDonnees, 0x00);  <font color=
+"#009900"><i>// 0x00 (hexad&eacute;cimal) = 0 (d&eacute;cimal)</i></font></font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si une alimentation de la puce par le port
+            parall&egrave;le est demand&eacute;e, nous mettons le bit correspondant &agrave; 1.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>// Alimentation</i></font>
+<font color="#0000FF"><b>if</b></font> (sPortVcc)
+  _outp(sPortVcc, _inp(sPortVcc) | cBitVcc);
+<font color="#0000FF"><b>if</b></font> (sPortVpp)
+  _outp(sPortVpp, _inp(sPortVpp) | cBitVpp);
+Sleep(20);  <font color="#009900"><i>// Attentio 20 ms</i></font></font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bits initialis&eacute;s &agrave; 0, puce
+            aliment&eacute;e, voila reste &agrave; initialiser le pointeur interne de la puce pour lire tout
+            ce qu'elle contient depuis le d&eacute;but. Il donc faut dire &agrave; la puce que nous voulons
+            faire un reset (du pointeur pas de la m&eacute;moire). Pour cela mettre le bit "Reset/Up" (qui
+            correspond &agrave; une branche de la puce) &agrave; 0. En effet "Reset/Up" signifit: bit
+            &agrave; 0 fait un reset, bit &agrave; 1 fait "Up", soit un d&eacute;placement du pointeur d'un
+            cran. C'est d&eacute;j&agrave; fait. Ensuite il faut dire &agrave; la puce d'agir. Pour cela il
+            faut mettre la branche "Clock" (ou "Horloge") de 0 &agrave; 1. Le passage de 1 &agrave; 0 ne fait
+            rien du tout.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+// Reset le pointeur
+_outp(sPortClk, _inp(sPortClk) | cBitClk);    // Clock 1 -&gt; Reset pointer
+_outp(sPortClk, _inp(sPortClk) &amp; ~cBitClk);   // Clock 0
+// Reset 1 -&gt; D&eacute;place le pointeur au prochain clock up
+_outp(sPortReset, _inp(sPortReset) | cBitReset);  // Reset 1
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Il nous reste plus qu'&agrave; lire les
+            donn&eacute;es. Le bit de reset/up est plac&eacute; &agrave; 1 donc d&egrave;s que nous faisons
+            un passage de Clock 0 &agrave; 1, nous lirons le bit suivant sur la branche du port
+            parall&egrave;le branch&eacute;e &agrave; R/W (I/O permet de dire si nous voulons lire ou
+            &eacute;crire).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#0000FF"><b>for</b></font> (i=0; i&lt;512; i++)
+{
+  <font color="#009900"><i>// Lis les donn&eacute;es</i></font>
+  <font color="#0000FF"><b>if</b></font> (_inp(sPortES) &amp; cBitES)
+    bData[i] = <font color="#650099"><b>false</b></font>;
+  <font color="#0000FF"><b>else</b></font>
+    bData[i] = <font color="#650099"><b>true</b></font>;
+
+  <font color="#009900"><i>// D&eacute;place le pointeur</i></font>
+  _outp(sPortClk, _inp(sPortClk) | cBitClk); <font color="#009900"><i>// Clock 1</i></font>
+  _outp(sPortClk, _inp(sPortClk) &amp; ~cBitClk); <font color="#009900"><i>// Clock 0</i></font>
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cette fonction de base doit &ecirc;tre
+            am&eacute;lior&eacute;e pour mettre les donn&eacute;es en texte. Texte qui doit avoir un espace
+            tous les 8 bits et des retours &agrave; la ligne tous les 8 octets (64 bits).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>// Lis toutes les donn&eacute;es</i></font>
+nBits = 0;
+nOctets = 0;
+nDataText = 0;
+<font color="#0000FF"><b>for</b></font> (i=0; i&lt;512; i++)
+{
+  <font color="#009900"><i>// Lis les donn&eacute;es</i></font>
+  <font color="#0000FF"><b>if</b></font> (_inp(sPortES) &amp; cBitES)
+  {
+    lzDataText[nDataText++] = <font color="#9999FF">'0'</font>;
+    bData[i] = <font color="#650099"><b>false</b></font>;
+  }
+  <font color="#0000FF"><b>else</b></font>
+  {
+    lzDataText[nDataText++] = <font color="#9999FF">'1'</font>;
+    bData[i] = <font color="#650099"><b>true</b></font>;
+  }
+
+  <font color="#009900"><i>// Met un peu en forme les donn&eacute;es</i></font>
+  nBits++;  <font color="#009900"><i>// Nombre de bits dans le bloc actuel</i></font>
+  <font color="#0000FF"><b>if</b></font> (nBits == 8) <font color="#009900"><i>// 8 bits par bloc</i></font>
+  {
+    nBits = 0;  <font color="#009900"><i>// Nouveau bloc, avec donc 0 bits</i></font>
+    nOctets++;  <font color="#009900"><i>// Un octet de plus</i></font>
+    lzDataText[nDataText++] = <font color="#9999FF">' '</font>; <font color=
+"#009900"><i>// Ajoute un espace</i></font>
+  }
+  <font color="#0000FF"><b>if</b></font> (nOctets == 8) <font color=
+"#009900"><i>// 8 octects par ligne</i></font>
+  {
+    nOctets = 0;  <font color="#009900"><i>// Nouvelle ligne, avec donc 0 octects</i></font>
+    lzDataText[nDataText++] = <font color="#9999FF">'\r'</font>;  <font color=
+"#009900"><i>// Place un saut de line (1)</i></font>
+    lzDataText[nDataText++] = <font color="#9999FF">'\n'</font>;  <font color=
+"#009900"><i>// Place un saut de line (2)</i></font>
+  }
+
+  <font color="#009900"><i>// D&eacute;place le pointeur</i></font>
+  _outp(sPortClk, _inp(sPortClk) | cBitClk);  <font color="#009900"><i>// Clock 1</i></font>
+  _outp(sPortClk, _inp(sPortClk) &amp; ~cBitClk); <font color="#009900"><i>// Clock 0</i></font>
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/rmq.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Remarque<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">Nous ne nous pr&eacute;occupons pas du format de la puce ici.
+              M&ecirc;me si la T1G ne contient que 256 bits, elle renverra 2 fois les m&ecirc;me
+              donn&eacute;es dans les 512 bits lus. Ainsi nous testons d'ailleurs apr&egrave;s le format de
+              la carte.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Un fois les donn&eacute;es lues et le type de
+            carte r&eacute;cup&eacute;r&eacute;, nous affichons d&eacute;j&agrave; ces premi&egrave;res
+            informations.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>// Affiche les donn&eacute;es brutes</i></font>
+SetDlgItemText(g_hDlg, IDC_DATA_EDIT, lzDataText);
+
+<font color="#009900"><i>// Version</i></font>
+<font color="#0000FF"><b>if</b></font> (bT2G)
+  SetDlgItemText(g_hDlg, IDC_VERSION_EDIT, <font color="#9999FF">"T2G"</font>);
+<font color="#0000FF"><b>else</b></font>
+  SetDlgItemText(g_hDlg, IDC_VERSION_EDIT, <font color="#9999FF">"T1G"</font>);</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Il nous faut convertir une s&eacute;rie de bits
+            d'une base en une autre. Binaire, d&eacute;cimal, hexad&eacute;cimal, octal, sont des bases. Par
+            exemple 110 en binaire (base 2) se calcule: 1x2^2 + 1x2^1 + 0x2^0 = 6. En octal (base 8), 123 se
+            calcule: 1x8^2 + 2x8^1 + 3x8^0 = 83. (Le symbole ^ veut dire "puissance").
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>// Convertion binaire en d&eacute;cimal</i></font>
+nPuissance = 1;
+<font color="#0000FF"><b>for</b></font> (i=63; i&gt;=52; i--)
+{
+  <font color="#0000FF"><b>if</b></font> (bData[i])
+    nUnitTotal += nPuissance;
+  nPuissance *= 2;
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Un peu plus loin dans le code source vous
+            remarquerez une conversion d'octal en d&eacute;cimal pour les unit&eacute;s utilis&eacute;es. Il
+            reste donc nUnit&eacute;sRestantes = nUnit&eacute;sTotales - nUnit&eacute;sUtilis&eacute;es. Pour
+            transformer notre valeur num&eacute;rique en cha&icirc;ne nous utiliserons sprint(...). Nous
+            affichons les derni&egrave;res informations et nous avons le contenu de notre puce. Et nous voila
+            avec les informations de cette petite merveille.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/avoid.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Danger<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">Ne pas oublier de d'inclure les headers des fonctions
+              utilis&eacute;es: "#include // sprintf(...)" et "#include // _inp(..) _outp(...)".</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Je remercies <a href=
+            "mailto:arabine@programmationworld.com">Anthony Rabine</a> pour son article dans PC-Team.
+            J'esp&egrave;re que aurez appr&eacute;ci&eacute; cet mini application. Je vous conseil de regarde
+            le code source complet qui est comment&eacute;. Les parties du code source ici
+            pr&eacute;sent&eacute;es ont &eacute;t&eacute; parfois un peu raccourcis par rapport au <a href=
+            "downloads/contribution/cpucepuce.zip">code complet</a>. Vous remarquerez que certains
+            fonctionnalit&eacute;s n'ont pas &eacute;t&eacute; impl&eacute;ment&eacute;es. Ainsi la fonction
+            de d&eacute;tection d'insertion. Vous avez du pain sur la planche.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ <a href="../logiciel.htm">Retour au sommaire</a> ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Werner BEROUX<br>
+        <a href="mailto:WernerBEROUX@aol.com">WernerBEROUX@aol.com</a><br>
+        <a href="www.alc-wbc.com">www.alc-wbc.com</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name></name><email></email><web-site></web-site></author><page name="page"><title>L'assembleur PIC 16F84</title><keywords>microchip assembleur microcontrôleur 16f84</keywords><description>L'assembleur PIC 16F84</description><index type="Langages">../langage.htm</index><introduction>&lt;table background="prog_avancee/pic/images/gris.jpg"&gt;&lt;tr&gt;&lt;td height="154px"&gt;&lt;font size="2"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;center&gt;&lt;img src="prog_avancee/pic/images/logo.jpg" alt="Microchip, le fondeur des microcontrôleurs PIC"&gt;&lt;/center&gt;&lt;br&gt;
+&lt;b&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;La famille PIC est extrêmement populaire et fait partie des microcontrôleurs 
+les plus utilisés sur le marché. Les microcontrôleurs de cette famille sont également très appréciés par les électroniciens amateurs 
+et les "hobby-istes" car ils sont simples à mettre en oeuvre et faciles à l'utilisation. On les trouve chez tous les revendeurs en 
+électronique pour un prix modique. Une autre particularité de cette famille est d'être fabriquée en technologie RISC, d'où le faible nombre 
+d'instructions et une vélocité remarquable. Cette série d'article se voudra très pratique : en effet, tous les cours auront pour but final la 
+construction... d'un robot !
+&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</introduction></page><section name="section 1" title="Sommaire des cours"><paragraph name="paragraph">##SOMMAIRE##
+
+##ANNEXE##</paragraph></section></document>

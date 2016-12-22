@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Domotique simple et supervision</title><keywords>domotique ports parallèle série supervision</keywords><description>Domotique simple avec les ports du PC</description><links><link type="prev">E:\Documents\Cours Progworld\progelectronique\cours7.htm</link><link type="index">E:\Documents\Cours Progworld\progelectronique\index.htm</link><link type="next"></link></links><introduction>Une première partie de ce cours va nous initier plus particulièrement aux capteurs météorologiques. Pour cela, 
+l'ordinateur va nous être d'une grande aide afin de centraliser toutes les informations. Dans une seconde partie, 
+nous allons nous attaquer aux actionneurs, c'est à dire à la possibilité de démarrer des appareils par l'intermédiaire des 
+ports du PC. Enfin, nous terminerons ce cours en faisant un petit tour du côté de la supervision, avec une application 
+sympatique grâce à Internet. Au travail, car nous avons beaucoup de boulot !</introduction></page><section name="section 1" title="Introduction à la domotique"><paragraph name="paragraph">A l'évidence, la maison du futur n'est pas encore pour demain. Les constructeurs ayant du mal à s'entendre sur 
+des normes communes, le la maison toute-automatique rêvée par nos parents doit encore attendre. Qu'à cela 
+ne tienne, nous allons automatiser nous même notre chère demeure à l'aide de moyens relativement simples. Le 
+but est d'effectuer certaines taches automatiquement, comme réaliser un délestage, fermer des volets, 
+contrôler l'éclairage d'une pièce ou tout autre chose. Nous allons commencer par apprendre à interfacer 
+quelques capteurs qui existent sur le marché. Une fois ces informations centralisées vers notre ordinateur, 
+il nous sera facile d'agir en conséquence sur les actionneurs.</paragraph><note title="Danger" img="http://www.programmationworld.com/site/images/avoid.gif" name="note">Le cours ci-dessous met en ouvre des appareils électroménagers branchés sur le secteur (230V). Nous vous 
+prévenons donc qu'il existe un danger mortel si quelques précautions ne sont pas prises. Tout d'abord veillez 
+bien à ne travailler que sur des appareils débranchés, ce qui est le minimum au point de vue sécurité. Vérifiez 
+qu'aucun objet inflammable est proche de votre montage lorsque vous l'essayez et enfin n'hésitez pas à 
+demander l'aide d'un adulte ou d'une personne avertie si vous n'êtes pas sûr de vous. Ceci reste un hobby, nous 
+ne tenons pas à perdre nos lecteurs !&lt;br&gt;
+Notez bien que ProgrammationWorld et ses partenaires &lt;b&gt;ne sont en aucun cas responsables&lt;/b&gt; des dommages 
+provoqués sur des biens ou des personnes en cas de mauvaise utilisation des programmes fournis ci-dessous. 
+N'oubliez pas que les ports du PC ne sont pas indestructibles et cela peut mener à la &lt;b&gt;déterioration définitive&lt;/b&gt; de 
+votre carte mère.</note></section><section name="section 2" title="Capteur de luminosité"><paragraph name="paragraph">Ce capteur est d'une simplicité enfantine : il s'agit d'une résistance dont la valeur varie en fonction de la 
+luminosité reçue. Par exemple, la version présentée ici donne 300 Ohms pour 1000 lux, et 30K Ohms pour la 
+luminosité ambiante. Il existe énormément de versions, qui varient selon la résistance maximale, la 
+sensibilité, la puissance etc.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\photoresistance.jpg</link><legend>Une photorésistance classique (quelques francs).</legend></image><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\lumiere_tension.jpg</link><legend>Un convertisseur lumière/tension (quelques dizaines de francs).</legend></image><paragraph name="paragraph">Plusieurs solutions s'offrent à nous pour interfacer ce genre de capteur. La façon la plus souple est d'utiliser un 
+convertisseur analogique-numérique : on a ainsi accès à toute la plage de variation. Il y a encore d'autres 
+méthodes comme de créer un petit oscillateur à l'aide d'un 74HCT14 ou d'un NE555. Nous avons choisi une 
+solution encore plus simple. Le montage ci-dessous, un très classique comparateur à amplificateur 
+opérationnel, va nous donner deux états : présence de lumière ou non. Cela pourra nous être utile pour 
+allumer une lampe à partir d'une certaine obscurité par exemple. On peut même faire un montage plus 
+efficace en fabriquant un comparateur à hystérésis, qui permet de fixer les deux seuils haut et bas avec 
+effet mémoire. Il n'y a pas de meilleur montage, tout dépend de votre système et ce que vous voulez faire. 
+Enfin, vous pouvez inverser les entrées de l'amplificateur opérationnel selon la logique que vous souhaitez 
+obtenir en sortie.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\montage_photoresistance.jpg</link><legend>Le plus simple des montages peut se révéler très pratique.</legend></image><paragraph name="paragraph">Dans le montage ci-dessus, la LED D1 s'allume en fonction de la valeur de la résistance LDR, la résistance 
+interne du capteur de luminosité. Bien sûr, la LED D1  n'est utile ici que pour tester le montage, à vous d'utiliser 
+la sortie selon vos besoins.</paragraph></section><section name="section 3" title="Capteur d'humidité"><paragraph name="paragraph">Là encore, il s'agit de fabriquer un petit montage adaptateur. Le capteur d'humidité utilisé est appelé 
+&lt;b&gt;humidistance&lt;/b&gt; ; c'est un petit boîtier à souder sur circuit imprimé qui, bien qu'un peu cher - 80 F environ -, 
+permet la mesure de l'humidité relative au degré d'hygrométrie ambiant. Il réagit comme un simple condensateur 
+dont la valeur varie en fonction de cette humidité relative.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\humidistance.jpg</link><legend>L'humidistance, un capteur d'humidité simple.</legend></image><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\capteur_humidite.jpg</link><legend>Ce capteur d'humidité est plus évolué et donne une tension en fonction du taux d'humidité ambiant.</legend></image><paragraph name="paragraph">N'allons pas chercher compliqué, encore une fois les montages les plus simples s'avèrent les plus performants. 
+C'est pour cela qu'un petit montage oscillateur à base de 74HCT14 ou de 4011 fera parfaitement l'affaire. Au 
+niveau de la programmation, il faut réaliser un fréquencemètre ou période mètre, la différence entre les deux est 
+que le premier procède à une mesure d'impulsions pendant un certain temps tandis que le second calcule le 
+temps entre deux fronts d'horloge. Nous rappelons que la fréquence est inversement proportionnelle à la 
+période. Dès lors, il s'agit de bien choisir la méthode de mesure en fonction de la plage de fréquence mesurée ; 
+par exemple, un fréquencemètre sera d'autant plus performant que la fréquence est grande. Le problème est 
+qu'il faut au préalable faire des tests à l'aide d'un vrai capteur d'humidité afin d'avoir la correspondance entre le 
+fréquence mesurée et la valeur réelle d'humidité relative (relation qui n'est pas linéaire). Le plus simple étant de 
+faire des essais et d'en déterminer les valeurs à ne pas dépasser, sans avoir à connaître précisément la valeur 
+d'humidité ambiante. Le circuit présenté ci-dessous est à base d'un circuit CMOS 4011 classique, alimenté entre 
+3 et 15V, et fourni une fréquence sur la broche 4 égale à 1/(R1*C1). Remplacez le condensateur C1 par le 
+capteur d'humidité capacitif et calculez alors la résistance à placer en fonction de la fréquence désirée en 
+sortie. A titre indicatif, sachez que le capteur utilisé ici (de Philips, voir la photo ci dessus) possède une capacité de 120pF à 40% 
+d'humidité relative.
+&lt;br&gt;
+Enfin, il peut être intéressant de connecter la broche 1 du 4011 à une broche du port parallèle pour pouvoir 
+commander l'oscillateur : broche 1 à 5V, l'oscillateur est démarré, broche 1 à 0V, l'oscillateur est inhibé. Pour 
+rendre le montage un peu plus stable, on peut également placer une résistance de 1M ohms entre la broche 2 et 
+la résistance R1.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\oscillateur.jpg</link><legend>Un montage oscillateur très classique.</legend></image></section><section name="section 4" title="Capteur de température numérique"><paragraph name="paragraph">Parmi la très grande variété de capteurs dans ce domaine, nous avons choisi un composant original et tout à 
+fait remarquable. Le plus souvent, nous avons affaire à des capteurs à trois broches qui nous fournissent une 
+tension analogique proportionnelle à la température. L'ennui est qu'il faut alors faire appel à un convertisseur 
+analogique numérique afin de pouvoir traiter le signal par un automatisme quelconque.
+</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\sonde_temperature.jpg</link><legend>Une sonde de température classique, fournissant une tension proportionnelle à la température sur le boitier.</legend></image><paragraph name="paragraph">Le DS1620 de Dallas Semiconductor est un capteur numérique empaqueté dans un petit boîtier DIL à 8 broches 
+ne nécessitant aucun composant supplémentaire (hormis l'alimentation) pour pouvoir fonctionner. Le dialogue 
+avec le capteur se réalise par l'intermédiaire de 3 fils, les données étant transmises en série. La plage de 
+température est très étendue, allant de -55°C à +125°C, en espérant que vous n'aurez jamais besoin d'une 
+telle résolution pour mesurer la température ambiante de votre salon ! Bien entendu, vous retrouverez le 
+datasheet en bas de cette page.</paragraph><paragraph name="paragraph">Passons au branchement ; nous allons utiliser la seule broche du port parallèle non inversée et bidirectionnelle, 
+la broche 16 /Init. Le deuxième fil est l'horloge et le troisième le signal Reset ; n'importe qu'elles autres broches 
+en sortie feront l'affaire. Comme d'habitude, nous allons utiliser Visual Basic qui se prête parfaitement à ce genre 
+d'applications. Il est également possible d'utiliser Visual Basic pour Applications, qui a l'immense intérêt d'être 
+fourni en standard avec Microsoft Office : vous pourrez ainsi créer de beaux graphiques, présentant la variation 
+de température en une journée par exemple. Notre application se montre assez simple, a vous de l'adapter à vos 
+besoins et de la compléter à l'aide de la documentation fournie. Il peut être intéressant d'utiliser les sorties 
+thermostats à programmer dans la mémoire EEPROM non volatile du DS1620. Par exemple, vous définissez deux 
+valeurs, haute et basse, limites pour votre système (des températures critiques comme la température d'un 
+processeur si vous vous adonnez à l'overclocking) : dès que la température mesurée atteint une de ces 
+valeurs, la broche correspondante passe au niveau haut, vous donnant les moyens d'actionner n'importe 
+quel automatisme. Enfin, le dernier (grand) avantage de ce capteur est qu'il peut fonctionner en mode 
+autonome : plus besoin de votre ordinateur, pour peu que vous ayez bien programmé tous les paramètres.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\montage_ds1620.jpg</link><legend>Le DS1620 seul suffit pour mesurer une température.</legend></image><paragraph name="paragraph">Maintenant, nous allons voir comment utiliser ce capteur de température en programmant une petite application 
+en Visual Basic.&lt;br&gt;
+&lt;br&gt;
+Créons tout d'abord un nouveau projet. Comme d'habitude (voir les cours précédents), nous ajoutons un module 
+pour se servir de la DLL inpout.dll qui nous permettra d'accéder aux ports du PC. L'aspect de notre petite interface 
+est le suivant :</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\test_ds1620.jpg</link><legend>L'interface minimale pour gérer le capteur de température DS1620.</legend></image><paragraph name="paragraph">Nous ne parlerons pas des détails propres à Visual Basic. Pour cela, nous vous dirigeons vers les sources complètes 
+de ce logiciel disponibles en bas de cette page.&lt;br&gt;
+&lt;br&gt;
+Nous créons un Timer qui interrogera le composant toutes les secondes. Il est bien sûr possible de diminuer ou d'augmenter 
+cette valeur selon la rapidité de l'ordinateur. Il faut cependant faire attention à ne pas baisser trop ce temps car 
+le capteur possède un temps de réponse minimal. Le mieux étant de se référer au datasheet qui fournira tous ces détails.&lt;br&gt;
+&lt;br&gt;
+Comme nous l'avons dit ci-dessus, le dialogue avec le DS1620 se fait en série par l'intermédiaire de trois broches. Nous 
+envoyons donc des &lt;b&gt;trames&lt;/b&gt; au composant comportant des données précises. Le DS1620 possède deux modes 
+qui nous intéresse : le mode &lt;b&gt;configuration&lt;/b&gt; et le mode &lt;b&gt;température&lt;/b&gt;. Le premier mode sert à configurer le 
+fonctionnement du 1620 (voir tous les modes dans la documentation). Le mode qui nous intéresse est le mode 0xAA, où le 
+capteur se charge de fournir la température instantanée.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\configds1620.jpg</link><legend>Nous envoyons dans le composant la configuration qui nous intéresse.</legend></image><paragraph name="paragraph">Il nous manque plus qu'un seul élément pour mener à bien notre dialogue avec le composant : 
+le chronogramme de communication. Sans lui, rien n'est possible. Sa traduction en programmation est très 
+simple, comme nous le verrons ci-après.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\protocolesds1620.jpg</link><legend>Le protocole de lecture et d'écriture pour dialoguer avec le DS1620.</legend></image><paragraph name="paragraph">Hop ! mettons nous au code maintenant. Il s'agit comme à l'accoutumée de simples manipulations de bits. Si 
+vous êtes un peu perdus, nous vous dirigeons vers les cours d'introduction à la programmation et aux systèmes numériques 
+présents sur ce site.</paragraph><code syntax="Visual Basic 6.0" name="code">' Phase 1 : On écrit le protocole
+' avec Protocol = &amp;HAA
+    For j = 1 To 8
+        Out LPT_DATA, (Inp(LPT_DATA) And &amp;HFD) ' Clock = 0
+        ' Petit délai (pas forcément obligatoire)
+        Delay (200)
+        
+        ' on place le bit sur l'entrée
+        n = Protocol And 1 ' cela permet de masquer le LSB
+        
+        ' On place ce bit sur la broche de données
+        If n = 1 Then
+            Out LPT_CONTROL, (Inp(LPT_CONTROL) Or &amp;H4) ' DQ = 1
+        Else
+            Out LPT_CONTROL, (Inp(LPT_CONTROL) And &amp;HFB) ' DQ = 0
+        End If
+        
+        ' PAF ! on provoque un front montant pour valider la valeur
+        Out LPT_DATA, (Inp(LPT_DATA) Or &amp;H2) ' Clock = 1
+        
+        Delay (200)
+        Protocol = Int(Protocol / 2) ' on décale vers la droite pour accéder au bit suivant
+    Next j</code><paragraph name="paragraph">Voilà, le composant est en mode lecture. Nous allons maintenant écrire la routine pour extraire la température 
+instantanée. Même principe, on suit les chronogrammes.</paragraph><code syntax="Visual Basic 6.0" name="code">    For j = 1 To 9
+        ' on génère un front descendant (la valeur reste sur le niveau 1 après)
+        Out LPT_DATA, (Inp(LPT_DATA) Or &amp;H2) ' Clock = 1
+        Delay (200)
+        Out LPT_DATA, (Inp(LPT_DATA) And &amp;HFD) ' Clock = 0
+        Delay (200)
+
+        ' On enregistre la valeur du bit présent sur la broche de données
+        n = (Inp(LPT_CONTROL) And &amp;H4) / 4
+        If n = 1 Then Donnee = Donnee + 1
+        If j &lt;&gt; 9 Then Donnee = Donnee * 2 ' on décale vers la gauche, sauf pour la dernière valeur
+        ' Notez que ce test peut être effacé si vous ne divisez pas la sortie par 2 à la fin de
+        ' cette fonction.
+    Next j
+</code><paragraph name="paragraph">Enfin, vu le sens de la trame lue, on inverse les bits pour que la valeur lue ai un sens. Référez vous aux sources 
+pour connaitre cette petite routine, mais il n'y a rien de difficile là dedans. N'oubliez pas de diviser la valeur lue 
+par deux car la résolution est de 0,5° par bit, et non 1° par bit !
+&lt;br&gt;&lt;br&gt;
+Nous voilà dotés d'une magnifique petite application qui nous donne la température ambiante. Bien sûr, il ne 
+tient qu'à vous de compléter et d'améliorer ce programme car le DS1620 fournit d'innombrables options 
+supplémentaires.</paragraph></section><section name="section 5" title="Informations supplémentaires"><paragraph name="paragraph">Cette petite mise en bouche sur le (vaste) thème des capteurs est loin d'être exhaustive tant les produits sont 
+abondants dans les catalogues. Il est possible d'aller beaucoup plus loin, en créant un véritable réseau de 
+capteurs, pourquoi pas avec un dialogue par infrarouge entre le PC et les capteurs. Il y a vraiment une 
+quantité impressionnante d'applications qui peuvent émerger.
+</paragraph><note title="Astuce" img="http://www.programmationworld.com/site/images/advice.gif" name="note">&lt;b&gt;Plus de place ?&lt;/b&gt;&lt;br&gt;
+&lt;br&gt;
+Les ports d'entrées/sorties sont malheureusement limités. Si votre installation devient conséquente, il vous 
+manquera sûrement des broches. Pour remédier à ce problème, sachez qu'il existe quelques astuces et 
+possibilités fortes intéressantes. Tout d'abord, à condition de disposer d'un peu plus de matériel, le port ISA 
+peut fournir une solution parfaite. L'accès au port se fait à l'aide des fonctions classiques que l'on utilise depuis 
+déjà quelques cours (inportb, outportb etc.). Oubliez le port PCI qui est beaucoup trop complexe à mettre en 
+oeuvre. Les capacités des ports parallèle et série peuvent être étendus grâce à des "sérialiseurs" et des 
+registres à décalage à accès série. Les 74HC165 et 74HC595, dont les datasheets sont sur le CD Pro, sont deux 
+composants idéaux pour ce genre de problème. En outre, ils peuvent se câbler en cascade ce qui est d'autant 
+plus intéressant. Bref, toutes les diverses techniques de multiplexage et de conversion série/parallèle pourront 
+vous rendre de fiers services.</note><paragraph name="paragraph">Jusqu'ici, nous nous étions concentrés sur les capteurs météorologiques. Nous avons passé sous silence les 
+capteurs de position ou d'évènements tels que des barrières infrarouges ou de simples contacts secs. 
+Cependant, ceux ci fonctionnant en tout ou rien, l'interfaçage avec un port quelconque du PC est vraiment 
+très simple à faire.&lt;br&gt;
+Attaquons maintenant la partie laissée aux actionneurs.</paragraph></section><section name="section 6" title="Introduction aux actionneurs"><paragraph name="paragraph">Abordons donc sans plus tarder le sujet des actionneurs qui va nous permettre de nous initier, une fois n'est 
+pas coutume, au domaine de l'électrotechnique. On entend par actionneur tout procédé qui permet de réaliser 
+une tache mécanique ou électromécanique afin de changer l'état d'un récepteur. L'actionneur est en quelque 
+sorte le lien entre la partie commande, matérialisée ici par un PC,  En effet, prenons l'exemple simple (mais 
+non moins intéressant) de la fameuse cafetière qui se mettra à préparer le café sitôt le réveil enclenché. 
+Celui-ci est branché sur le secteur (230V) et la manière la plus simple pour démarrer la cafetière est de 
+réaliser un petit interrupteur sur l'alimentation. C'est la solution la plus basique mais pourquoi faire plus 
+compliquer.</paragraph></section><section name="section 7" title="Notions d'électricité"><paragraph name="paragraph">L'électrotechnique est une matière bien à part. L'électronique se préoccupe peu du courant et seule la tension 
+intéresse : on cherche à véhiculer des informations. En électrotechnique, on transporte ou on modifie des 
+grandeurs électriques (puissance, courant, tension) : il est donc important de pouvoir les quantifier. Prenons 
+l'exemple d'une simple machine à café de 650 W qui est dotée d'une résistance chauffante. Ce récepteur, 
+complètement résistif, absorbera une certaine quantité de courant. La relation entre ces grandeurs est 
+donnée par la formule suivante :</paragraph><code syntax="None" name="code">P = Ueff * Ieff
+Puissance active = Tension efficace * Intensité efficace
+Watts = Volts * Ampère</code><paragraph name="paragraph">La puissance active (ou puissance moyenne) calculée ici correspond à la puissance de notre machine à café. 
+Celle-ci étant branchée sur le secteur monophasé de 230V efficaces, cela nous donne un courant efficace de :</paragraph><code syntax="None" name="code">Ieff = P / Ueff
+Ieff = 650 / 230 = 2,83 A</code><paragraph name="paragraph">Nous obtenons un courant efficace de près de 3A, ce qui va nous aider à dimensionner tous les éléments de 
+puissance. Et souvenez-vous bien qu'un courant efficace de 2,83A signifie un courant crête de 4 A qui a son importance. 
+En effet, nous ne décidons pas à quel instant nous commutons le récepteur. Cela peut se passer sur le zéro ou 
+sur le sommet de la sinusoïde : il n'y a donc pas le même courant à commuter. &lt;br&gt;
+Le même calcul peut donc se répéter avec n'importe quelle charge résistive : un radiateur, une ampoule 
+incandescente etc. Attention, évitez les ampoules à économie d'énergie qui possèdent un fonctionnement 
+particulier et ne sont pas du tout résistives, au grand dam d'EDF.. Un circuit électronique emmagasine l'énergie 
+lorsqu'elle est plus importante (au sommet de la sinusoïde) et s'en sert comme source le reste du temps. 
+Malheureusement, cela à tendance à dégrader la qualité du réseau électrique.
+
+</paragraph><paragraph name="paragraph">La tension secteur, dont l'aspect est représenté ci-dessous, est de type sinusoïdal. Dans le cas d'une 
+sinusoïde pure, nous pouvons déterminer les caractéristiques du signal à l'aide de trois grandeurs : La tension 
+efficace, la fréquence et la valeur moyenne.
+</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\sinus.jpg</link><legend>L'aspect de la tension secteur.</legend></image><paragraph name="paragraph">Dans le cas du réseau EDF typique, la tension efficace est de 
+230V (elle n'est plus à 220V depuis plusieurs années), la fréquence est de 50Hz et la valeur moyenne nulle 
+(la sinusoïde est centrée sur le 0V). Précisons également qu'il existe une relation entre la valeur efficace et la 
+valeur maximale (ou valeur crête) de la sinusoïde :</paragraph><code syntax="None" name="code">Umax = Ueff * sqrt(2)
+
+soit  : 
+
+230 * sqrt(2) = 325 Vmax !</code><paragraph name="paragraph">La tension EDF disponible sur nos prises aura donc la formule mathématique suivante :</paragraph><code syntax="None" name="code">u(t) = Umax * sin (wt)</code><paragraph name="paragraph">'w' (prononcez oméga) est appelée la pulsation électrique. Elle est égale à :</paragraph><code syntax="None" name="code">w = 2 * PI * f</code><paragraph name="paragraph">Avec f la fréquence du réseau (50Hz en france). Enfin, pour tout récepteur résistif exclusivement, le courant 
+aura la même allure que la tension, à R près (souvenez-vous, u(t) = R * i(t), R étant une constante). Voilà 
+quelques bases d'électrotechnique qui, bien que (très) succinctes, vous auront donné quelques bases. 
+N'hésitez pas à consulter les manuels scolaires pour en apprendre plus.</paragraph></section><section name="section 8" title="Café-O-Matic"><paragraph name="paragraph">Passons à la réalisation de notre interface de puissance. Nous allons utiliser le port parallèle, très facile à 
+mettre en ouvre. Le schéma ci-contre est suffisamment clair et ne possède que très peut de composants. 
+La charge, une lampe par exemple, doit être connectée sur l'interrupteur du relais. Libre à vous d'utiliser l'une 
+ou l'autre sortie selon la logique que vous souhaitez avoir. L'élément principal est le relais, à choisir en fonction 
+du courant à commuter, du courant efficace en fonctionnement nominal et de la tension efficace de la charge. 
+Nous allons prendre un relais très classique, supportant 16A sous 400V, de marque Finder. Le relais isole 
+complètement la partie puissance de la partie commande car il n'y a aucune liaison électrique entre les 
+deux mais une liaison mécanique. Point de danger pour notre port parallèle. Pour encore plus de sécurité, 
+nous n'allons pas polariser directement la bobine par une broche du port parallèle mais par l'intermédiaire 
+d'un transistor bipolaire classique et d'une alimentation externe. Soudez le tout sur une plaque à bande 
+cuivrée, si toutefois la charge ne demande pas trop d'intensité. Dans le cas contraire, le mieux est de 
+réaliser une plaque de cuivre avec une épaisseur de piste conséquente. Il existe d'ailleurs des tables pour 
+connaître l'épaisseur minimale selon la puissance véhiculée.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\montage_relais.jpg</link><legend>Un montage simple pour commander n'importe quelle charge de petite puissance.</legend></image><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\relais.jpg</link><legend>Un relais idéal pour les petites puissances.</legend></image><paragraph name="paragraph">La procédure de test est simple mais doit être rigoureuse : ne branchez pas tout de suite la charge et 
+vérifiez que la partie commande obéit bien à vos ordres, et que le relais commute bien. Les relais, du fait 
+de leur fonctionnement mécanique, produisent un petit "clac!" lorsqu'ils fonctionnent, ce qui est pratique 
+pour vérifier le bon fonctionnement de l'ensemble. Déconnectez ensuite la partie commande de l'ordinateur et 
+connectez la partie puissance au réseau. Vérifiez qu'il n'y a aucun court circuit et si vous possédez un 
+voltmètre vérifiez les tensions. Au niveau de la programmation, reportez-vous aux articles précédents et 
+notamment celui qui montre comment gérer le port parallèle en C et en Visual Basic. En bas de la page, vous 
+retrouverez les documentations des composants ainsi que le programme de test du port parallèle. Pour vos 
+essais, utilisez une lampe de 40W par exemple, c'est ce qu'il y a de plus pratique pour voir si votre montage 
+fonctionne.</paragraph></section><section name="section 9" title="Notions de supervision"><paragraph name="paragraph">La supervision est un terme issu de l'industrie. Son concept est simple : le but de la supervision est de contrôler 
+le déroulement d'un processus par l'intermédiaire de graphismes et de shémas simples. Pourquoi faire me 
+direz-vous ? Prenons un exmple. Mettons qu'une entreprise possède une chaine de fabrication de plusieurs 
+centaines de mètres de long, bourrée de capteurs de toute sorte (fin de course, température, pression, vitesse...). 
+Il serait extrêmement difficile, voire impossible, de contrôler l'ensemble des processus et de cibler, en cas de panne, 
+l'élément déffectueux. Le meilleur moyen est de centraliser toutes les informations vers une sorte de poste de contrôle. 
+A l'heure actuelle, la supervision se réalise par l'ordinateur, à l'aide de logiciels très performants et très intuitifs. Avec 
+la popularisation d'Internet, il est même possible de superviser un processeus de n'importe quel endroit de la planète. C'est 
+d'ailleurs ce que nous allons faire dès maintenant !
+</paragraph><paragraph name="paragraph">&lt;table border=0 align=center&gt;
+&lt;tr&gt;
+&lt;td align=center&gt;&lt;img src="prog_avancee/progelectronique/images/super.gif" alt="" border="0"&gt;
+&lt;/td&gt;
+&lt;td align=center&gt;&lt;img src="prog_avancee/progelectronique/images/super2.gif" alt="" border="0"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan=2 align=center&gt;&lt;img src="prog_avancee/progelectronique/images/super2.gif" alt="" border="0"&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan=2 align=center&gt;&lt;b&gt;&lt;u&gt;Voici quelques exemples de supervision industrielle.&lt;/u&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</paragraph><paragraph name="paragraph">&lt;b&gt;But :&lt;/b&gt; obtenir la température d'une pièce de la maison, puis de la visualiser sur Internet. Pour 
+capturer la température de la pièce, nous allons utiliser le DS1620, dont l'interface a été décrite un peu plus haut. 
+Le logiciel va être un peu modifié afin de sauvegarder la valeur de la température dans un fichier texte. Ce fichier 
+va être uploader sur un serveur web. Puis, grâce à une petite page en ASP ou PHP, nous allons lire la valeur contenue 
+dans ce fichier pour l'afficher !</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\diagramme.gif</link><legend>La séquence de notre supervision.</legend></image><paragraph name="paragraph">Nous n'arborderons pas les deux premières étapes, c'est assez simple. Il suffit juste de modifier le logiciel Test1620 pour qu'il 
+sauvegarde la valeur de la température dans un fichier texte.
+Pour la troisième étape étape , nous allons utiliser un OCX pour télécharger le fichier sur un serveur via le protocole 
+FTP. Celui-ci est disponible en freeware sur le très bon site de Kyle Katarn : 
+&lt;a href="http://www.katarncorp.com" target="_blank"&gt;http://www.katarncorp.com&lt;/a&gt;. L'OCX se nomme K-FTP. 
+Ce composant est très simple d'emploi. Voici un programme en exemple, qui se charge devinez quoi, de télécharger 
+un fichier sur un serveur. Ce logiciel est téléchargeable en bas de cette page.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\dialup_project.jpg</link><legend>Les fenêtres du logiciel &lt;i&gt;Dialup&lt;/i&gt;.</legend></image><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\dialup_config.jpg</link><legend>La fenêtre de configuration.</legend></image><paragraph name="paragraph">Voilà, côté client, vous avez tout ce qu'il faut ! Et pour ceux qui n'ont pas Internet en illimité, sachez que Dialup se 
+connecte tout seul à Internet en utilisant votre accès par défaut et se déconnecte une fois que le fichier a été uploadé. 
+Vous pouvez modifier le fichier comme bon vous semble, c'est un freeware et les sources sont incluses.&lt;br&gt;
+&lt;br&gt;
+En exécutant Dialup.exe, celui-ci se connecte directement à Internet pour uploader son fichier. N'oubliez donc pas de 
+configurer au préalable le logiciel en démarrant avec l'option de ligne de commande &lt;i&gt;-config&lt;/i&gt;. Un racourcis 
+a été créé dans l'archive en téléchargement ci-dessous.&lt;br&gt;
+&lt;br&gt;
+Voilà, le fichier est sur notre serveur, il ne nous reste plus qu'à fabriquer une petite page de supervision. On va dessiner 
+le plan de notre maison, en considérant que chaque pièce contient un capteur de température :
+</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\maison.jpg</link><legend>Le plan de notre maison.</legend></image><paragraph name="paragraph">Voilà, on crée une page HTML appelée &lt;b&gt;Data.asp&lt;/b&gt; ou &lt;b&gt;Data.php&lt;/b&gt; selon le serveur que vous utilisez. Mettez 
+le dessin de votre maison puis écrivez un des deux codes ci-dessous. Changez les répertoires selon votre configuration.</paragraph><code syntax="Visual Basic 6.0" name="code">&lt;%
+'***********
+' Code en ASP
+'***********
+
+' Chemin courant
+chemin=server.MapPath(".")
+set ScriptObject = Server.CreateObject("Scripting.FileSystemObject")
+
+' On ouvre le fichier
+Set MyFile = ScriptObject.OpenTextFile(chemin + "\" + "data.txt", 1)
+
+' On affiche tout son contenu
+Response.Write MyFile.ReadAll
+
+' On ferme tout
+Myfile.close
+Set ScriptObject=nothing
+%&gt;</code><code syntax="PHP" name="code">&lt;?
+//***********
+// Code en PHP
+//***********
+
+$Fnm = "data.txt";
+
+// on teste l'existence du fichier
+if (file_exists($Fnm)) 
+{
+ $inF = fopen($Fnm,"r"); // on l'ouvre...
+ while (!feof($inF))
+   echo fgets($inF, 4096); // et on lit entièrement son contenu !
+ fclose($inF);
+}
+?&gt;</code><paragraph name="paragraph">Voilà, ce cours est terminé ! Nous avons créé une chaine complète d'automatique, le tout en manipulant un tas de 
+langages, et un peu d'électronique ! Donc, accessible au plus grand nombre. N'oubliez pas la zone de téléchargements 
+en bas de cette page. Amusez-vous bien.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\supervision.jpg</link><legend>Voilà ! nous obtenons la température d'une pièce sur Internet !</legend></image></section><section name="section 10" title="Téléchargements"><paragraph name="paragraph">&lt;ul&gt;
+&lt;li&gt;&lt;a href="downloads/2N2222.pdf"&gt;2N2222.pdf&lt;/a&gt; : transistor NPN.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/4011.pdf"&gt;4011.pdf&lt;/a&gt; : porte NAND.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/74hc165.pdf"&gt;74hc165.pdf&lt;/a&gt; : sérialiseur.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/74hc595.pdf"&gt;74hc595.pdf&lt;/a&gt; : registre à décalage à entrée série.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/DS1620.pdf"&gt;DS1620.pdf&lt;/a&gt; : capteur numérique de température.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/LM124.pdf"&gt;LM124.pdf&lt;/a&gt; : amplificateur opérationel.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/ne555.pdf"&gt;ne555.pdf&lt;/a&gt; : la doc du célèbre oscillateur.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/relais.pdf"&gt;relais.pdf&lt;/a&gt; : quelques exemples de caractéristiques de relais.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/Dialup.zip"&gt;Dialup.zip&lt;/a&gt; : le logiciel pour se connecter au net et uploader automatiquement un fichier.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/data_php.asp"&gt;data_php.asp&lt;/a&gt; : Le fichier ASP qui ouvre et lit un fichier sur le serveur.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/data_php.zip"&gt;data_php.zip&lt;/a&gt; : la même chose que ci-dessus en PHP.&lt;/li&gt;
+&lt;li&gt;&lt;a href="downloads/test_ds1620.zip"&gt;test_ds1620.zip&lt;/a&gt; : Le programme en Visual Basic pour le DS1620.&lt;/li&gt;
+&lt;/ul&gt;</paragraph></section></document>

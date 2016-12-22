@@ -1,0 +1,60 @@
+Bonjour à tous, voici une petite présentation du contenu du CD Pro.
+
+***************
+DOCUMENTATION
+***************
+
+- 16F84A.pdf : le datasheet INDISPENSABLE du 16F84A.
+
+- Mémento électronique.htm : une page tirée du site http://www.programmationworld.com.
+Cette page a pour but de vous aider dans le choix des composants, connecteurs et autres joyeusetés ;o) Elle se remplira peu à peu au fil des mois et sera bien sûr présente dans chaque numéro !
+
+- robot.html : comme prévu, quelques images de TeamBot, encore en construction. ça avance, tout doucement mais ça avance !!
+
+***************
+REPERTOIRES
+***************
+
+try : un mini projet MPLAB déjà tout configuré. Cela vous montre un exemple d'un fichier assembleur relativement bien structuré. Bon y'a des commentaires un peu absurdes du genre "déclaration d'une constante" mais c'est pour commenter la grammaire de l'assembleur PIC.
+
+pcteam76 : le projet de ce mois-ci. Ce programme génère deux MLI selon les ordres en provenance du port A. Bon, il n'est pas optimisé mais ce n'est pas grave car nous avons le temps de tout faire.
+Il reste un peu de travail pour vous, notemment le nettoyage des sources ainsi que la mise en oeuvre des bits de sens pour les deux moteurs. Bon, c'est facile à faire ne vous inquiétez pas. La seule chose importante est de bien comprendre le fonctionnement de la MLI. Si vous avez un code meilleur que le miens, n'hésitez pas à me l'envoyer je le placerai dans le prochain CD.
+
+Dans tous les cas, vous pouvez m'écrire pour avoir le code source complet ou attendre le mois prochain il sera sur le CD.
+
+
+****************************************************************
+Comme tous les mois, n'hésitez pas à me contacter pour toute information supplémentaire concernant le sujet du mois, ou tout autre problème d'électronique. J'essayerai de vous aider dans la mesure du possible !
+
+Et pensez à vous servir du forum de programmationworld.com, je serai là pour vous répondre.
+
+Bonne bidouille.
+
+Anthony RABINE
+arabine@programmationworld.com
+http://www.programmationworld.com
+IRC : #progworld et #pcteam sur IRCnet
+ICQ : 61144679
+
+                              ___I___
+                             /=  |  #\
+                            /.__-| __ \
+                            |/ _\_/_ \|
+                            (( __ \__))
+                         __ ((()))))()) __
+                       ,'  |()))))(((()|# `.
+                      /    |^))()))))(^|   =\
+                     /    /^v^(())()()v^\'  .\
+                     |__.'^v^v^))))))^v^v`.__|
+                    /_ ' \______(()_____(   |
+               _..-'   _//_____[xxx]_____\.-|
+              /,_#\.=-' /v^v^v^v^v^v^v^v^| _|
+              \)|)      v^v^v^v^v^v^v^v^v| _|
+               ||       :v^v^v^v^v^v`.-' |#  \,
+               ||       v^v^v^v`_/\__,--.|\_=_/
+               ><       :v^v____|  \_____|_
+            ,  ||       v^      /  \       /
+           //\_||_)\    `/_..-._\   )_...__\
+          ||   \/  #|     |_='_(     |  =_(_
+          ||  _/\_  |    /     =\    /  '  =\
+           \\/ \/ )/     |=____#|    '=....#|

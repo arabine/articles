@@ -1,0 +1,75 @@
+Bonjour à tous, voici une petite présentation du répertoire qui fourmille de fichiers en tout genre :
+
+
+***************
+LOGICIELS
+***************
+
+eagle-4.03e.exe (http://www.cadsoft.de)
+PROLITE.EXE (http://www.multipower-fr.com)
+
+Voici deux logiciels de CAO électronique qui vous permettront de réaliser des typons. Notez bien que ces versions sont limitées à un usage personnel et ne doivent être utilisées en aucun cas pour des produits commerciaux.
+
+
+***************
+DOCUMENTATION
+***************
+
+16F84A.pdf : la doc du microcontrôleur 16F84A
+aresfr.pdf : un tutorial en français pour le logiciel Ares (Proteus)
+Eagle - tutorial-eng.pdf : un tutorial en anglais pour le logiciel Eagle
+isisfr.pdf : un tutorial en français pour le logiciel Isis (Proteus)
+Schéma raccordement tubes UV.doc : un schéma électrique pour construire votre insoleuse.
+BOM.TXT : Nomenclature du projet
+
+Mémento électronique.htm : une page tirée du site http://www.programmationworld.com.
+Cette page a pour but de vous aider dans le choix des composants, connecteurs et autres joyeusetés ;o) Elle se remplira peu à peu au fil des mois et sera bien sûr présente dans chaque numéro !
+
+***************
+REPERTOIRES
+***************
+
+./Programmateur PIC
+
+Vous y trouverez un logiciel pour programmer vos PIC compatible avec le programmateur présenté ce mois-ci. La dll est à utiliser pour ceux qui possèdent Windows NT (4 ou 5) et un fichier d'aide Windows est présent dans le même répertoire. Cela vous sera utile pour tester le montage, si vous ne voulez pas attendre le mois prochain :)
+
+./Fichiers Eagle
+
+Les deux fichiers (Schematic & Board) du programmateur sous Eagle.
+
+
+****************************************************************
+
+Comme tous les mois, n'hésitez pas à me contacter pour toute information supplémentaire concernant le sujet du mois, ou tout autre problème d'électronique. J'essayerai de vous aider dans la mesure du possible !
+
+Bonne bidouille.
+
+Anthony RABINE
+arabine@programmationworld.com
+http://www.programmationworld.com
+IRC : #progworld et #pcteam sur IRCnet
+ICQ : 61144679
+
+                                                  ___I___
+                                                 /=  |  #\
+                                                /.__-| __ \
+                                                |/ _\_/_ \|
+                                                (( __ \__))
+                                             __ ((()))))()) __
+                                           ,'  |()))))(((()|# `.
+                                          /    |^))()))))(^|   =\
+                                         /    /^v^(())()()v^\'  .\
+                                         |__.'^v^v^))))))^v^v`.__|
+                                        /_ ' \______(()_____(   |
+                                   _..-'   _//_____[xxx]_____\.-|
+                                  /,_#\.=-' /v^v^v^v^v^v^v^v^| _|
+                                  \)|)      v^v^v^v^v^v^v^v^v| _|
+                                   ||       :v^v^v^v^v^v`.-' |#  \,
+                                   ||       v^v^v^v`_/\__,--.|\_=_/
+                                   ><       :v^v____|  \_____|_
+                                ,  ||       v^      /  \       /
+                               //\_||_)\    `/_..-._\   )_...__\
+                              ||   \/  #|     |_='_(     |  =_(_
+                              ||  _/\_  |    /     =\    /  '  =\
+                               \\/ \/ )/ gnv |=____#|    '=....#|
+                                `

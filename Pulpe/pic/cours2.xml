@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Introduction : les outils de développement matériel et logiciel</title><keywords></keywords><description>Introduction : les outils de développement matériel et logiciel</description><links><link type="prev"></link><link type="index"></link><link type="next"></link></links><introduction>Nous venons de donner un petit aperçu sur le PIC 16F84. Nous savons maintenant comment le câbler, à quoi servent ses broches et nous avons 
+une bonne vue d'ensemble sur l'organisation de la mémoire interne. Abordons maintenant le plus intéressant, c'est à dire sa programmation.</introduction></page><section name="section 1" title="Programmateur pour PIC 16F84"><paragraph name="paragraph">La première chose à faire est de se munir d'un programmateur pour PIC 16F84. Vaste sujet, car il en existe une pléthore sur le marché. Deux  
+choix s'offrent à vous : soit vous achetez un programmateur tout fait, soit vous le construisez vous même. Quelque soit votre choix, vous vous 
+retrouverez avec encore énormément de choix. Si vous décidez de dépenser vos deniers dans un programmateur idoine, nous ne vous conseillons pas 
+de dépasser 400F dans un tel matériel. Vérifiez que le programmateur sur lequel vous avez jeté votre dévolu est capable de programmer un grand 
+nombre de microcontrôleurs ainsi que des petites mémoires EEPROM du style 24CXX.  Quitte à payer, autant en avoir pour son argent. Quant à nous, 
+nous allons en construire un de toute pièce. Notre programmateur sera capable de programmer presque toute la famille des microcontrôleurs 
+PIC et aura un autre avantage non néngligeable : il vous en coûtera que quelques Euros tout au plus. Et encore, il peut être gratuit si vous jouer 
+la récupération. (ou si vous possédez déjà un peu de matériel)</paragraph><paragraph name="paragraph">Notre programmateur salvateur est connu sous le nom de JDM. Courrez sur son site pour récupérer toutes les informations : 
+&lt;a href="http://www.jdm.homepage.dk/newpics.htm" target="_blank"&gt;http://www.jdm.homepage.dk/newpics.htm&lt;/a&gt;. Deux transistors, 
+quelques diodes, résistances et condensateurs suffisent à construire le programmateur. Ce programmateur sait programmer, en dehors 
+de presque toute la famille PIC, les mémoires EEPROM série ainsi que certaines cartes à puces. Notons enfin qu'il est capable de programmer 
+les PIC grâce à la méthode ISP (In Serial Programming) dont nous parlerons au prochain châpitre. Voici le schéma sous Eagle Freeware que nous 
+avons réalisé pour fabriquer le programmateur :</paragraph><image name="image"><link type="img">images\cours2_programmateur.gif</link><legend>Le programmateur JDM est parfait pour programmer les PIC à moindre coût.</legend></image><paragraph name="paragraph">Bien entendu, un tel programmateur ne serait rien sans le logiciel adéquat. C'est là qu'arrive Ic-Prog, un logiciel splandide compatible avec le 
+programmateur JDM. Vous le trouverez à cette adresse : &lt;a href="http://www.ic-prog.com/" target="_blank"&gt;http://www.ic-prog.com/&lt;/a&gt; ou en 
+bas de cette page. Si vous travaillez sur un système NT (Windows NT4, Windows 2000 et Windows XP), n'oubliez pas de télécharger le driver 
+pour permettre au logiciel d'accéder au port série.</paragraph><paragraph name="paragraph">Parlons maintenant un peu de Ic-Prog. Une fois le programme assemblé avec succès avec MPLAB, il faut le télécharger dans le PIC, c'est à dire 
+programmer la mémoire FLASH de celui-ci. Pour cela, Ic-Prog aura besoin d'un fichier appelé fichier objet. Dans le cas de la plate forme PIC, ce 
+fichier se présente sous la forme d'un fichier texte contenant du code hexadécimal. Ce type de fichier est au format Intel Hex. Nous vous 
+conseillons d'aller voir l'annexe à ce sujet pour en apprendre plus sur le sujet. Ce fichier se trouve dans le répertoire du projet, dans le même 
+répertoire où se trouve vos fichiers sources. Il possède l'extension &lt;b&gt;.hex&lt;/b&gt;.</paragraph><paragraph name="paragraph">Branchez le programmateur JDM sur le port série de votre choix (COM1 ou COM2), insérez un PIC 16F84 ou 16F84A dans le connecteur et 
+démarrez Ic-Prog. La première chose à faire est de paramétrer le matériel, c'est à dire quel programmateur nous allons utiliser. (Ic-Prog gère 
+de nombreux autres programmateurs) Allez dans le menu Settings puis Hardware, ou tapez sur F3 directement. Utilisez les paramètres 
+suivants, en modifiant le numéro du port série selon votre branchement.</paragraph><image name="image"><link type="img">images\cours2_icprog1.jpg</link><legend>La première étape consiste à paramétrer le programmateur utilisé.</legend></image><paragraph name="paragraph">Si vous êtes utilisateur de Windows 9x, cette seconde étape est inutile. Si vous êtes utilisateur d'un système NT (Windows NT4, Windows 2000 ou 
+Windows XP) vous devez utiliser le drivers pour accéder au port série. Celui-ci est téléchargeable à la fin de ce cours. Placez ce driver dans le même 
+répertoire que l'application et allez dans le menu settings puis options et cliquez sur l'onglet Misc. Validez ensuite l'option Enable NT/2000 Driver 
+puis redémarrez le logiciel.</paragraph><image name="image"><link type="img">images\cours2_icprog2.jpg</link><legend>Le driver est nécessaire pour accéder au port série sur les systèmes Windows NT, 2000 et XP.</legend></image><paragraph name="paragraph">Nous allons maintenant achever la configuration de Ic-Prog en choisissant le type de processeur utilisé. Cela s'appelle la cible. Allez encore une fois 
+dans le menu settings et suivez la capture d'écran suivante :</paragraph><image name="image"><link type="img">images\cours2_icprog3.jpg</link><legend>Choisissez la cible de programmation.</legend></image><paragraph name="paragraph">Laissez tous les autres paramètres par défaut. Viens ensuite la programmation proprement dite. Il faut en premier lieu charger le fichier objet 
+Intel Hex dans le logiciel. Aller dans le menu, et ouvrez le fichier nommé essai.hex par exemple. Vous devriez avoir quelque chose qui ressemble à ça :</paragraph><image name="image"><link type="img">images\cours2_icprog4.jpg</link><legend>Le fichier objet est chargé, la programmation peut commencer.</legend></image><paragraph name="paragraph">Remarquez les deux zones mémoires correspondant à la mémoire Flash (dans laquelle est situé le programme) et la mémoire EEPROM. La partie 
+droite du logiciel permet de configurer certains paramètres du PIC 16F84, comme le type de quartz utilisé ou la protection du code. Il est 
+possible de fixer ces paramètres via des lignes de code. SI de telles lignes ont été omises, alors Ic-Prog fixe des valeurs par défaut. Ces valeurs ne 
+sont pas toujours adaptées. Voici la signification des acronymes :
+
+&lt;ul&gt;
+&lt;li&gt;LP : Low power oscillator mode (en dessous de 200KHz)&lt;/li&gt;
+&lt;li&gt;XT : Crystal oscillator mode (standard, entre 200KHz et 4MHz)&lt;/li&gt;
+&lt;li&gt;HS : High Speed oscillator mode (plus de 4MHz, habituellement 10 ou 20 MHz dans le cas du 16F84)&lt;/li&gt;
+&lt;li&gt;RC : Resistor/Capacitor mode (circuit RC interne à certaines versions de la famille PIC&lt;/li&gt;
+&lt;/ul&gt;
+
+Il est conseillé de laisser les autres options par défaut :
+
+&lt;ul&gt;
+&lt;li&gt;WDT : Watchdog timer&lt;/li&gt;
+&lt;li&gt;PWRT : Power on reset&lt;/li&gt;
+&lt;li&gt;CP : Copy Protection (pour éviter que l'on puisse relire la mémoire programme à partir du composant)&lt;/li&gt;
+&lt;/ul&gt;
+
+Vous pouvez utiliser CP si vraiment cous en avez besoin mais c'est pas très utile pour le particulier.</paragraph><paragraph name="paragraph">Vérifiez que tous les paramètres sont corrects et cliquez ensuite sur "Program all" dans la barre d'outils ou appuyez sur F5. Ic-Prog lance alors 
+la programmation puis vérifie que la programmation s'est bien déroulée en relisant le code à partir de la mémoire du PIC. Un message vous 
+indique alors que la programmation s'est terminée avec succès ou échec.</paragraph></section><section name="section 2" title="La programmation sur site (ISP)"><paragraph name="paragraph"></paragraph></section><section name="section 3" title="Présentation de MPLAB"/><section name="section 5" title="L'assembleur PIC 16F84"><paragraph name="paragraph">(((inter))) L'assembleur 16F84
+Cela fait déjà quelques numéros que nous parlons de ce processeur. Nous vous invitons donc à vous reporter aux précédents articles, nous considérons à présent que votre chaîne de développement est pleinement fonctionnelle. Penchons-nous un peu sur l'assembleur de cette célèbre famille de Microchip. La première page du datasheet (fourni sur le CD) nous annonce ses caractéristiques alléchantes : seulement 35 instructions à connaître, 1024 mots pour le programme et 68 octets de RAM, le tout cadencé à la fréquence de 20MHz. Attention, le cycle (la fréquence de base) n'est pas de 20MHz mais de 5MHz car la fréquence est divisée en interne. Enfin, une des caractéristiques les plus importantes est l'architecture RISC du processeur. Ainsi, chaque instruction se verra exécutée en un seul cycle d'horloge, soit en 200ns. Ceci n'est pas vrai pour les instructions de branchement qui prennent deux cycles d'horloge. Cette architecture est parfaitement bien adaptée aux microcontrôleurs car le programmeur peut ainsi calculer précisément la durée de ses routines. Commençons par jeter un coup d'oil sur la grammaire de l'assembleur 16F84. Comme la majorité des assembleurs, le code s'écrit dans un fichier texte. Chaque ligne correspond à une instruction, et l'exécution du programme sera totalement séquentielle. L'illustration ci-contre montre un exemple de programme. L'écriture d'un programme en assembleur doit s'écrire de façon rigoureuse. En effet, même si un programme bien indenté est toujours plus facile à relire, l'assembleur impose une place particulière pour chaque élément. Ainsi, on distingue quatre colonnes. La première est réservée aux étiquettes (ou aux labels), la seconde est réservée aux directives et aux mnémoniques, la troisième est utilisée pour les opérandes et enfin la quatrième sert à placer des commentaires sur une seule ligne. Il faut séparer les différentes colonnes à l'aide d'une tabulation pour bien indenter le code source. Les étiquettes servent à marquer une adresse précise dans le programme, pour faire des boucles par exemple. Les directives (en bleu sur l'image) sont destinées à l'assembleur ; elles servent par exemple à indiquer à quelle adresse le code commence. Les mnémoniques (en rouge) constituent le jeu d'instructions compris par le processeur. Les opérandes (quand ils existent) sont constitués de zones mémoires spécifiques. Enfin, les commentaires (optionnels, en vert) permettent de décrire l'opération effectuée. Bien sûr, il est fortement recommandé d'en mettre le plus possible, surtout dans un code assembleur.
+</paragraph></section><section name="section 4" title="Programmation du PIC en C"><paragraph name="paragraph">
+(((inter))) Installation et paramétrage
+Tout d'abord, il faut se munir de deux logiciels. D'une part, l'environnement et l'assembleur totalement gratuit de Microchip, à savoir MPLAB. Celui-ci est téléchargeable sur le site du constructeur (www.microchip.com) et bien sûr disponible su le CD Pro. A cela, vient s'ajouter le compilateur C de Hi-Tech Software (www.htsoft.com), lui aussi également gratuit pour un usage personnel et non commercial. Vous le trouverez sur le site du constructeur et encore une fois également sur le CD Pro, toujours présent pour vous éviter des téléchargements. Installer proprement ces deux logiciels dans deux répertoires distincts, en évitant d'utiliser des noms de répertoire du plus de 8 lettres pour garder la compatibilité entre les logiciels. Redémarrer l'ordinateur, puis lancer MPLAB pour le configurer en suivant scrupuleusement les étapes suivantes. En premier lieu, aller dans le menu "Project" puis "Install Language Tool.", et choisir l'outil HI-TECH PICL. Pour le compilateur et le linker, spécifier le chemin de picl.exe, et pour l'assembleur choisir aspic.exe. Aller ensuite dans le menu "Project" et cliquer sur "New Project". Remplir les champs "Target Filename" et "Include Path" par les éléments qui conviennent, par exemple : "pcteam.hex" et " c:\piclite\include". Vérifier que la cible visée est bien le processeur 16F84A, cliquer sur "Node Properties" et mettre le champs à "PIC-C Lite Linker". Enfin, la dernière étape consiste à ajouter un nouveau noud, le fichier source de votre projet, soit "pcteam.c" dans notre exemple. N'oubliez pas de spécifier dans "Node Properties" qu'il faut faire appel au compilateur. Voilà votre environnement complètement configuré, libre à vous de séparer votre projets en plusieurs sources, en mixant le code C et assembleur par exemple. Dernière chose, ne pas oublier de spécifier le mode de développement en "MPLAB SIM 16F84A" afin de bénéficier du très pratique outil de simulation !
+
+(((inter))) Schéma et tests
+Il est courant dans le monde des microcontrôleurs de commencer par un montage simple, à l'instar du fameux "Hello world !". La coutume veut que l'on fasse clignoter une LED branchée sur un port. Cela nous permettra de faire le tour de toute la chaîne de développement. Commençons par monter le schéma électrique présenté ci-contre. Le 16F84 a besoin d'un minimum de composants pour pouvoir fonctionner. Le quartz, accompagné de ses condensateurs, fournit l'horloge de cadencement. Il y a l'inévitable alimentation de +5V issue d'un régulateur de type 7805 par exemple. Enfin, la broche de remise à zéro (MCLR) est mise au 5V pour éviter de relancer le programme. Bien sûr, la LED n'est utile ici que pour notre application. Une fois le schéma terminé, lancer MPLAB et, après avoir suivi la configuration précédente, recopier le code source suivant dans un fichier source avec l'extension .c.
+
+(((listing)))
+#define EVER ;;
+#include &lt;pic1684.h&gt;
+unsigned char Compteur;
+
+void main(void){
+  Compteur = 0;    
+  TRISB=0xFE;
+  RB0 = 0;
+  OPTION = 0x7;
+  INTCON = 0x20;
+  TMR0 = 0;  
+  GIE=1;
+  for(EVER){
+  }
+}
+
+void interrupt Timer_Overflow(void){
+  char i;    
+  if(T0IF){
+    T0IF=0;
+    Compteur++;
+    if(Compteur==38){
+    Compteur = 0;
+    i = RB0;
+    RB0 = ~i;
+    TMR0 = 0;
+    }
+  }
+}
+
+(((texte)))
+Ne vous inquiétez pas si vous ne comprenez pas tout, nous aurons le temps de voir certaines parties plus en détails durant les prochains mois. Ce même code source existe en version commentée sur le CD. Le programme est constituée de deux fonctions, une principale (main) et la deuxième (Timer_Overflow) invoquée lors d'une interruption interne. La fonction principale contient une boucle infinie, qui se charge de faire changer l'état de la LED toutes les 0,5 secondes. En fait, nous avons créé une fonction "perte de temps" similaire au Delay() existante en C sur PC. Une fois le code source recopié, appuyer sur F10 pour invoquer le compilateur, puis le linker. Si tout c'est bien passé, ce dernier a du générer un fichier hexadécimal au format Intel portant l'extension .hex. C'est en quelque sorte "l'exécutable" que nous allons placer dans la mémoire FLASH du 16F84.
+
+(((inter))) Programmation du PIC
+Voici la dernière étape. Placer le 16F84 sur le programmateur que nous avons réalisé le mois dernier. Ensuite; installer le logiciel IcProg disponible sur le CD Pro. Configurer les divers paramètres : le programmateur se nomme JDM, choisissez le bon port série (COM1 ou COM2 généralement) et le bon composant (16F84A). La capture d'écran ci-contre montre les autres paramètres à régler. Ouvrir le fichier hexadécimal généré par MPLAB puis lancer la programmation et la vérification. Lorsque tout est fini et est validé, ôter le composant du programmateur pour le placer sur le circuit de test. Alimenter le montage et la LED devrait clignoter au rythme très précis de la seconde. Bravo, vous avez réalisé votre premier développement sur PIC16F84 !
+</paragraph></section><section name="section 7" title="Téléchargements"><paragraph name="paragraph">&lt;ul&gt;
+&lt;li&gt;Fichiers Eagle du programmateur&lt;/li&gt;
+&lt;li&gt;MPLAB&lt;/li&gt;
+&lt;li&gt;Compilateur C pour 16F84&lt;/li&gt;
+&lt;li&gt;Sources assembleur&lt;/li&gt;
+&lt;/ul&gt;</paragraph></section></document>

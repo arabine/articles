@@ -1,0 +1,69 @@
+Bonjour à tous, voici une petite présentation du contenu du CD Pro.
+
+Ce mois-ci, nous attaquons le premier article concercant la programmation d'un module infrarouge. Vous trouverez dans ce 
+répertoire tout ce qui est utile pour développer le sujet du mois. Pour plus de renseignements sur le protocole RS232, 
+allez voir sur http://www.programmationworld.com
+
+***************
+LES FICHIERS
+***************
+
+- serialwatcher.zip : un logiciel Win9x qui donne toutes les informations en provenance du port série
+
+- gen_ir253.zip : le plug in Winamp pour utiliser le module IR
+
+- source253.zip : le code source de ce plugin
+
+- javacomm20-win32.zip : un package Java pour utiliser le port série
+
+- port95nt.exe : un driver pour utiliser les ports d'entrées/sorties sous les systèmes Windows NT
+
+- Uir.zip : Un petit programme Visual Basic pour observer ce que renvoit le module infrarouge
+
+- Serial Watcher Vb.zip : un programme Visual Basic pour tester notre communication série
+
+- 16F84A.pdf : la documentation constructeur du microcontrôleur PIC 16F84A
+
+- Ir.zip : le code source assembleur de l'article de ce mois ci : des routines d'émulation RS232
+
+****************************************************************
+Comme d'habitude, n'hésitez pas à me contacter pour toute information supplémentaire concernant le sujet du mois, ou tout autre problème d'électronique. J'essayerai de vous aider dans la mesure du possible !
+
+Et pensez à vous servir du forum de programmationworld.com, je serai là pour vous répondre.
+
+Bonne bidouille.
+
+Anthony RABINE
+arabine@programmationworld.com
+http://www.programmationworld.com
+IRC : #progworld et #pcteam sur IRCnet (ircnet.grolier.net par exemple)
+ICQ : 61144679
+
+
+Devinette du mois : 
+
+Q: Quelle est la différence entre un elfe aux oreilles pointus et un trampoline? 
+R: On enlève ses bottes avant de sauter sur le trampoline.
+
+                              ___I___
+                             /=  |  #\
+                            /.__-| __ \
+                            |/ _\_/_ \|
+                            (( __ \__))
+                         __ ((()))))()) __
+                       ,'  |()))))(((()|# `.
+                      /    |^))()))))(^|   =\
+                     /    /^v^(())()()v^\'  .\
+                     |__.'^v^v^))))))^v^v`.__|
+                    /_ ' \______(()_____(   |
+               _..-'   _//_____[xxx]_____\.-|
+              /,_#\.=-' /v^v^v^v^v^v^v^v^| _|
+              \)|)      v^v^v^v^v^v^v^v^v| _|
+               ||       :v^v^v^v^v^v`.-' |#  \,
+               ||       v^v^v^v`_/\__,--.|\_=_/
+               ><       :v^v____|  \_____|_
+            ,  ||       v^      /  \       /
+           //\_||_)\    `/_..-._\   )_...__\
+          ||   \/  #|     |_='_(     |  =_(_
+          ||  _/\_  |    /     =\    /  '  =\
+           \\/ \/ )/     |=____#|    '=....#|

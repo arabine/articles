@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Le port parallèle et les ports d'entrées/sorties</title><keywords>port parallèle linux windows entrée sortie inportb outportb</keywords><description>Le port parallèle et les ports d'entrées/sorties</description><links><link type="prev"></link><link type="index">E:\Documents\Cours Progworld\progelectronique\index.htm</link><link type="next">E:\Documents\Cours Progworld\progelectronique\cours2.htm</link></links><introduction>Nous allons commencer une série d'articles consacrés aux 
+ports du PC. Avant d'attaquer quelques montages pratiques, 
+voyons comment mettre en oeuvre ce bon vieux port parallèle 
+encore bien utile.&lt;br&gt;
+&lt;br&gt;
+Le port parallèle est basé sur une architecture assez ancienne 
+mais très simple à utiliser, ce qui en fait l'interface de 
+prédilection pour tout électronicien amateur. Comme son nom 
+l'indique, il fournit, entres autres, 8 broches de données 
+directement utilisables et ne nécessitant pas de circuits 
+d'interfaces supplémentaires pour réaliser des taches simples. 
+De plus, comme nous le verrons plus loin, la programmation de
+ ce port est très aisée et ce, à partir de nombreux langages. 
+Quoi de mieux pour réaliser vos montages personnels avec 
+votre PC. </introduction></page><section name="section 1" title="Brochage et performances"><paragraph name="paragraph">Le port parallèle se présente sous la forme d'un connecteur 
+SUBD femelle à 25 broches. Seules 17 broches sont utilisables, 
+les 8 broches restantes sont interconnectées à la masse du 
+PC. Le schéma ci-dessous montre le brochage de ce port. </paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\parallelport.gif</link><legend>Le port parallèle femelle vu de l'extérieur.</legend></image><paragraph name="paragraph">Voici le nom de chaque broche :</paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Broche&lt;/td&gt;
+       &lt;td&gt;Nom&lt;/td&gt;
+       &lt;td&gt;Sens&lt;/td&gt;
+	   &lt;td&gt;Inversion&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;/STROBE&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie&lt;/td&gt;
+	   &lt;td&gt;OUI&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;D0&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie (si EPP*)&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;D1&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie (si EPP*)&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;D2&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie (si EPP*)&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;D3&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie (si EPP*)&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;D4&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie (si EPP*)&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;D5&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie (si EPP*)&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;8&lt;/td&gt;
+       &lt;td&gt;D6&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie (si EPP*)&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;9&lt;/td&gt;
+       &lt;td&gt;D7&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie (si EPP*)&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;10&lt;/td&gt;
+       &lt;td&gt;/ACK&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;11&lt;/td&gt;
+       &lt;td&gt;BUSY&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e&lt;/td&gt;
+	   &lt;td&gt;OUI&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;12&lt;/td&gt;
+       &lt;td&gt;PE (Paper End)&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;13&lt;/td&gt;
+       &lt;td&gt;SELECT&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;14&lt;/td&gt;
+       &lt;td&gt;/AUTOFEED&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie&lt;/td&gt;
+	   &lt;td&gt;OUI&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;15&lt;/td&gt;
+       &lt;td&gt;/ERROR&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;16&lt;/td&gt;
+       &lt;td&gt;/INIT&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;17&lt;/td&gt;
+       &lt;td&gt;/SELECT IN&lt;/td&gt;
+       &lt;td&gt;entr&amp;eacute;e/sortie&lt;/td&gt;
+	   &lt;td&gt;OUI&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;18-25&lt;/td&gt;
+       &lt;td&gt;Masse&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+	   &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">* Pour que le port parallèle soit utilisable en entrée/sortie, il faut configurer 
+le port parallèle en mode EPP exclusivement. Ne pas utiliser le mode 
+EPP/ECP sous peine d'avoir quelques problèmes. Nous rappelons que le mode 
+se configure dans le BIOS.</note><paragraph name="paragraph">Nous remarquons que le nom de certaines broches nous est 
+assez familier ; en fait ce port a été conçu à l'origine pour y 
+brancher des imprimantes. Le débit fourni par ce port est de 
+l'ordre de 150ko/s, ce qui limite fortement les possibilités d'y 
+connecter d'autres périphériques. C'est pourquoi les grands 
+noms de l'informatique ont créé 5 standards regroupés dans 
+la norme IEEE 1284 (dans l'ordre croissant de performance) :&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;Compatibility Mode 
+&lt;li&gt;Nibble Mode 
+&lt;li&gt;Byte Mode 
+&lt;li&gt;EPP Mode (Enhanced Parallel Port) 
+&lt;li&gt;ECP Mode (Extended Capabilities Port) 
+&lt;/ul&gt;&lt;br&gt;
+&lt;br&gt;
+Ces standards ont une compatibilité ascendante et les PC 
+actuels sont capables de travailler dans n'importe lequel de 
+ces modes, sous réserve que le port a été configuré 
+convenablement. Il vous faudra connaître l'adresse de base 
+du port parallèle. Cela peut se faire très facilement sous 
+Windows par l'intermédiaire du panneau "Propriétés système" 
+et dans l'onglet "Gestionnaire de périphériques". Cliquer sur 
+"Ports", "Port imprimante (LTP1)", "Propriétés" puis 
+"Ressources". La grande majorité des ordinateurs ont une 
+adresse de 0x378 (en hexadécimal). Cette adresse est 
+appelée adresse de base, et correspond au registre de 
+données. Voici une capture d'écran illustrant cela :
+</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\paramportparallel.jpg</link><legend>Windows vous montre l'adresse de base du port.</legend></image><paragraph name="paragraph">Le mode de fonctionnement du port se modifie quant à lui dans
+ le BIOS ; redémarrer l'ordinateur, aller dans la section 
+"Peripherial Setup" et changer l'option "Parallel Port Mode" 
+selon la configuration désirée. Dans sa version la plus simple 
+(Compatibility Mode), les données ne peuvent servir qu'en 
+sortie. Il existe cependant une méthode pour accéder à une 
+lecture de données 8 bits en utilisant d'autres broches du 
+port et un procédé électronique appelé multiplexage. Ce que 
+nous retiendrons est que le mode EPP rend possible la lecture par l'intermédiaire du bus de 
+données. Le débit a été ainsi augmenté à 2 Mo/s, ce qui a 
+permis de connecter sur le port parallèle des périphériques 
+plus rapides tels que scanners, lecteurs cd CD-ROM etc. </paragraph><paragraph name="paragraph">Au point de vue des performances électriques, chaque broche 
+du port est capable de fournir un courant maximal de 12 mA 
+environ. Il faut donc faire attention à la charge que l'on 
+applique et calculer les résistances de limitations adéquates. 
+Une solution pour éviter tout problème de consommation est 
+de placer un circuit buffer juste à la sortie du port. Les 
+niveaux de tension sont compatibles TTL : cela signifie qu'un 
+bit mis à 1 provoquera une mise à +5V sur la broche 
+correspondante, et un 0 logique mettra cette broche à 0V 
+(la masse du PC). Pour la lecture de données, il faut faire un 
+peu plus attention car cela dépend de la technologie utilisée. 
+En effet, certaines broches du port possèdent une résistance 
+interne dite de "pull-up" (tirage au +5V) sur leurs broches 
+tandis que d'autres ont leurs sorties dites en "collecteur 
+ouvert" (sans ausune résistance). Une résistance de pull-up à 
+l'entrée de ces broches, de l'ordre de 4,7 K Ohms, rendra 
+votre montage comptatible sur tous les ports parallèles. </paragraph></section><section name="section 2" title="Les registres"><paragraph name="paragraph">Toute la gestion du port parallèle se réalise par l'intermédiaire 
+de trois registres de 8 bits. Le premier correspond à l'adresse 
+de base du port : c'est le registre de données (0x378 par 
+exemple). Les lignes D0 à D7 du connecteur prennent le 
+niveau correspondant à la donnée inscrite dans ce registre et 
+si le port a été configuré en mode EPP (bus de données
+ bidirectionnel) on peut y lire l'état des broches. L'octet 
+suivant (0x379) est le registre d'État accessible en lecture 
+uniquement. Enfin, on trouve le registre de Contrôle (0x37A) 
+accessible en lecture et en écriture. Une attention 
+particulière doit être portée sur le bit 5 (BID CTRL) qui permet, 
+lorsqu'il est à 1, de configurer le bus de données en lecture. 
+Le tableau ci-dessous nous permettra de configurer 
+facilement ces registres.</paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Bit&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Données (lecture/écriture) 0x378&lt;/td&gt;
+       &lt;td&gt;D7&lt;/td&gt;
+       &lt;td&gt;D6&lt;/td&gt;
+       &lt;td&gt;D5&lt;/td&gt;
+       &lt;td&gt;D4&lt;/td&gt;
+       &lt;td&gt;D3&lt;/td&gt;
+       &lt;td&gt;D2&lt;/td&gt;
+       &lt;td&gt;D1&lt;/td&gt;
+       &lt;td&gt;D0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Etat (lecture) 0x379&lt;/td&gt;
+       &lt;td&gt;BUSY&lt;/td&gt;
+       &lt;td&gt;/ACK&lt;/td&gt;
+       &lt;td&gt;PE&lt;/td&gt;
+       &lt;td&gt;SELECT&lt;/td&gt;
+       &lt;td&gt;/ERROR&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Contrôle (lecture/écriture) 0x37A&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;BID CONTROL&lt;/td&gt;
+       &lt;td&gt;IRQ ENABLE&lt;/td&gt;
+       &lt;td&gt;/SELECT IN&lt;/td&gt;
+       &lt;td&gt;/INIT&lt;/td&gt;
+       &lt;td&gt;/AUTOFEED&lt;/td&gt;
+       &lt;td&gt;/STROBE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">&lt;b&gt;Note&lt;/b&gt; : le signe / devant le nom signifie "barre", c'est 
+à dire que la logique active est zéro. On les conserve juste 
+pour se rappeler des tests à effectuer dans le cas d'un 
+dialogue avec une imprimante. Ne surtout pas confondre 
+avec l'inversion de niveau présente sur certaines broches, 
+information indiquée dans le premier tableau.</paragraph></section><section name="section 3" title="Programmation du port"><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">&lt;b&gt;Attention :&lt;/b&gt; les codes proposés en C et en Visual Basic 
+utilisent des appels directs aux ports d'entrées sorties, ce qui est défendu 
+sur les systèmes NT (Windows NT4, 2000, XP). Les programmes 
+ci-dessous ne fonctionnent donc que sous Win9x et WinME. pour contourner ce problème, il existe des librairires : allez 
+voir cela un peu plus bas ! :)</note><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">Notez que les exemples ci-dessous vous permettent d'accéder à l'ensemble des entrées/sorties de l'ordinateur 
+(ports série, parallèle, ISA ...). Le code est donc identique, seul change la taille des données (8bits, 16 bits) et les adresses de 
+destination.</note><paragraph name="paragraph">Le port parallèle est extrêmement simple à programmer. 
+Plusieurs langages possèdent les fonctions pour accéder au 
+contrôle des registres. Ainsi, il est possible de programmer en 
+Basic à l'aide de INP et OUT ou dans des langages plus 
+évolués comme le C. Nous nous intéresserons plus 
+particulièrement à ce dernier langage mais également au 
+Visual Basic qui nous permettra de créer des applications 
+sous Windows.&lt;br&gt;
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;En langage C&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+Dans le cas du C, il existe deux fonctions pour écrire et lire 
+dans un registre. Elles sont accessibles dans les bibliothèques 
+standards, à savoir :&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;dos.h pour le compilateur Borland 
+&lt;li&gt;pc.h pour le compilateur DJGPP (téléchargeable sur ce site, dans la section Logiciels) 
+&lt;li&gt;conio.h pour le compilateur de Microsoft 
+&lt;/ul&gt;&lt;br&gt;
+&lt;br&gt;
+
+Les prototypes des fonctions sont les suivantes :
+</paragraph><code syntax="C" name="code">void outportb(unsigned short ADRESSE, unsigned char VALEUR);
+unsigned char inportb(unsigned short ADRESSE);</code><paragraph name="paragraph">Dans le cas du compilateur Microsoft, remplacez outportb et
+ inportb par leurs équivalents &lt;b&gt;outp&lt;/b&gt; et &lt;b&gt;inp&lt;/b&gt;. Notez que le 'b' après 
+les noms signifie que vous accédez à un port de 8 bits. Si vous 
+souhaitez gérer le port ISA par exemple, il faudra prendre les fonctions 
+16 bits : &lt;b&gt;outport&lt;/b&gt; et &lt;b&gt;inport&lt;/b&gt;.</paragraph><paragraph name="paragraph">Réalisons sans plus attendre notre première application. Un 
+moyen très pratique pour comprendre et vérifier le 
+fonctionnement du port parallèle est de réaliser le schéma de 
+test ci-dessous. Connecté sur le bus de données, on peut 
+visualiser directement le contenu du registre grâce aux LED. 
+Les résistances servent à limiter le courant traversant les 
+diodes. Dès lors, il suffit d'une simple ligne en C pour allumer 
+les LED désirées. Il est possible également d'utiliser le 
+programme Output.exe (téléchargeable en bas de cette page) 
+qui permet d'écrire une donnée sur le port parallèle.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\schema.gif</link><legend>Un montage simple pour visualiser les données.</legend></image><code syntax="C" name="code">#include &lt;pc.h&gt;
+
+void main(void)
+{
+unsigned char Valeur;
+outportb(0x378,0xFF); // On allume toutes les LED
+Valeur = inportb(0x378); // On lit le registre de données
+}</code><paragraph name="paragraph">Une remarque peut être apportée au listing précédent. En 
+effet, nous n'avons pas configuré le bus de données en 
+entrée, donc ce que nous lisons est juste la valeur du 
+registre, soit Valeur=255 ici. Le registre de données ne 
+devient l'image des broches que si le bit 5 du registre de 
+contrôle est à 1.</paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;En Visual Basic&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+Le cas de Visual Basic est un peu plus délicat. En effet, 
+aucune fonction n'existe en standard. Pour cela, nous avons 
+recours aux célèbres DLL qui permettent d'étendre les 
+possibilités du langage. Nous allons utiliser Inpout.dll 
+(comprendre Inp-out, en rapport avec les fonctions du 
+même nom en Basic) qui contient deux fonctions permettant 
+de lire et d'écrire dans un des trois registres. Cette dll est disponible 
+un peu partout sur le net et en téléchargement ici :&lt;br&gt;
+&lt;br&gt;
+&lt;a href="downloads/inpout32.dll"&gt;inpout32.dll&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+Les prototypes des fonctions sont les suivants :</paragraph><code syntax="Visual Basic 6.0" name="code">Out ADRESSE, VALEUR
+VALEUR = Inp(ADRESSE)</code><paragraph name="paragraph">Tout projet nécessitant l'utilisation de cette DLL doit 
+contenir un module servant à déclarer ces nouvelles 
+fonctions que Visual Basic ne connaît pas. Il faut aller 
+dans le menu "Projet" puis cliquer sur "Ajouter un module". 
+Inscrire alors dans ce module le code suivant :</paragraph><code syntax="Visual Basic 6.0" name="code">Public Declare Function Inp Lib "inpout32.dll" _
+Alias "Inp32" (ByVal PortAddress As Integer) As Integer
+Public Declare Sub Out Lib "inpout32.dll" _
+Alias "Out32" (ByVal PortAddress As Integer, ByVal Value As Integer) </code><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\testparallel.jpg</link><legend>Notre programme de test en Visual Basic.</legend></image><paragraph name="paragraph">Et voilà ce n'est pas plus difficile que ça. Ceux n'ayant pas 
+Visual Basic peuvent utiliser le programme déjà compilé 
+TestParallèle.exe téléchargeable ci-dessous. Il est capable 
+d'écrire dans tous les registres et montre en permanence 
+leur valeur. Tous les programmes sont accompagnés de leurs 
+sources avec des commentaires. Il n'y a aucune difficulté de 
+programmation. </paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Sous les systèmes NT (Windows 2000, XP)&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+Nombreux sont ceux ayant un jour ou l'autre rencontré ce problème. La seule solution est soit (1) d'écrire un drivers ou (2) 
+de ne pas s'embêter et d'en utiliser un tout fait ! :)&lt;br&gt;
+Le drivers ci-dessous vous sera donc bien utile. Il possède une librairie à inclure dans vos projets C++ et Visual Basic. En outre, 
+des exemples vous sont proposés (en C++ et en Visual Basic) donc vous n'avez aucune raison de ne pas réussir. Pour le télécharger, 
+cliquez sur le lien ci-dessous.&lt;br&gt;
+&lt;br&gt;
+&lt;div align="center"&gt;&lt;a href="downloads/port95nt.exe"&gt;&lt;img src="images\zip.jpg" border="0"&gt;&lt;b&gt;port95nt.exe&lt;/b&gt;&lt;/a&gt;&lt;/div&gt;&lt;br&gt;
+</paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Sous Linux&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+Le fonctionnement des ports sous Linux suit la même logique. Néanmoins, il est important d'avoir les droits de &lt;b&gt;root&lt;/b&gt; pour accéder aux ports 
+d'entrées/sorties. Les fonctions proposées sont les classiques lectures/écritures et sont accessibles en incluant le fichier d'en-tête &lt;b&gt;asm/io.h&lt;/b&gt;.
+</paragraph><code syntax="C" name="code">unsigned char inb (unsigned long port); // Donnée sur 8 bits (b = byte)
+unsigned short inw (unsigned long port);  // Donnée sur 16 bits (w = word)
+unsigned long inl (unsigned long port);  // Donnée sur 32 bits (l = long)
+
+void outb (unsigned char value, unsigned long port);
+void outw (unsigned short value, unsigned long port);
+void outl (unsigned long value, unsigned long port);
+</code><paragraph name="paragraph">Un conseil : jettez un coup d'oeil sur deux sources :
+&lt;ul&gt;
+&lt;li&gt;L'excellent document HOW-TO de linux : &lt;a href="downloads/Linux I-O port programming mini-HOWTO.htm"&gt;Linux I-O port programming mini-HOWTO.htm&lt;/a&gt;
+&lt;li&gt;Un exemple de prammation en C sous linux utilisant le port parallèle et un écran LCD : allez voir le cours suivant, sur cette même zone !!
+&lt;/ul&gt;
+&lt;br&gt;
+Voilà, nh'ésitez pas à me faire part de vos idées/programmes et autres commentaires à ce sujet.</paragraph><paragraph name="paragraph">Cette introduction au port parallèle nous a donné les bases pour développer des applications plus complètes, 
+ce que nous verrons dans des prochains cours.</paragraph></section><section name="section 4" title="Téléchargements"><paragraph name="paragraph">&lt;ul&gt;
+&lt;li&gt;&lt;a href="downloads/testparallelc.zip"&gt;testparallelc.zip&lt;/a&gt; : deux petits programmes en C montrant comment lire et écrire des données sur le port parallèle. Sources incluses. (79,5 ko) 
+&lt;li&gt;&lt;a href="downloads/testparallelvb.zip"&gt;testparallelvb.zip&lt;/a&gt; : le logiciel en VB présenté ci-dessus accompagné de toutes ses sources et de la dll inpout.dll. (42,7 ko) 
+&lt;/ul&gt;
+</paragraph></section></document>

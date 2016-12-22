@@ -1,0 +1,572 @@
+&File
+&Файл
+&New
+&Создать
+&Open...
+&Открыть...
+&Save
+&Сохранить
+&Edit
+&Правка
+&Copy
+&Копировать
+&Paste
+Вст&авить
+&Add Command
+&Добавить команду
+&Delete
+&Удалить
+&Test Command
+&Проверить команду
+&Reset All States
+&Сбросить все
+&Help
+&Справка
+&About
+&О программе
+&Disable Input Device(s)
+В&ыключить
+&Enable Input Device(s)
+&Включить
+Apply
+Применить
+APM Event Generator
+APM Event Generator
+APM Event Plugin 1.0 for Girder 3.0
+APM Event Plugin 1.0 for Girder 3.0
+Add &MultiGroup
+Добавить &Мультигруппу
+Add &Group
+Добавить &Группу
+Antirepeat wait time [ms]
+Антиповтор (мс)
+Accelerate
+Ускорить
+Alt
+Alt
+Autoload file does not exist.
+Файл для автозагрузки не найден.
+Auto Enable Input device
+Автоматически включать
+Auto Load
+Автозагрузка
+Auto execute on startup
+Выполнять при загрузке
+Available plugins
+Доступные модули
+Action Plugins
+Программные модули
+Antirepeat active
+Антиповтор включен
+About
+О программе
+Allowed Clients
+Доступ для
+Address
+Адрес
+Address edit
+Изменить
+Add
+Добавить
+Browse
+Просмотр
+Begin state
+Начать с
+Baud Rate
+Baud Rate
+Cancel
+Отмена
+Comport
+Порт
+Captured IR code.
+ИК-код принят.
+Cannot load plugin.
+Невозможно загрузить модуль.
+Cannot save datafile.
+Невозможно записать файл.
+Cannot load datafile.
+Невозможно загрузить файл.
+Could not enable IR device.
+Ошибка при включении.
+Contents
+Содержание
+Capture Window
+Захват сообщений
+Contact and Copyright information
+Лицензионное соглашение
+Clicked
+Одиночный щелчок
+Close
+Закрыть
+Command
+Команда
+Capture
+Захватить
+Control
+Ctrl
+Cannot find window
+Окно не найдено.
+Child Name
+Child Name
+Child Class
+Child Class
+Checking the Settings
+Проверка настроек
+Class Name
+Class Name
+Clear List
+Очистить
+Cannot enable 
+Невозможно включить
+Cannot play wavfile.
+Невозможно проиграть звук
+Cannot Shutdown windows.
+Невозможно завершить работу
+Clicked sent.
+Clicked sent.
+Close sent.
+Close sent.
+Command State
+Состояние команды
+Current State
+Текущее
+Cannot find group
+Группа не найдена
+Cannot find icon
+Значок не найден
+Cannot Find Softplugin.
+Программный модуль не найден
+Could not enable input device(s).
+Невозможно включить.
+Command executed
+Command executed
+Command ID
+Command ID
+Change the Target Settings of the follwing command ?
+Change the Target Settings of the follwing command ?
+Cannot import group.
+Ошибка импорта группы.
+Cannot export group.
+Ошибка экспорта группы.
+Default
+По умолчанию
+Double Clicked
+Двойной щелчок
+Don't send the IR commands when Girder is the Foreground window
+Не посылать команду если окно Girder на виду
+Display Splashscreen
+Выводить заставку
+Description
+Описание
+Delete
+Удалить
+Dotmatrix font
+Шрифт панели
+Example plugin for Girder 3.0
+Пример модуля для Girder 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+E&xit
+Вы&ход
+Enabled
+Включено
+Execute
+Выполнить
+Executable
+Executable
+Error: Cannot set volume
+Ошибка при изменении громкости
+Execute on all states except 1
+Не выполнять в состоянии 1
+Error: Cannot execute command.
+Ошибка - команда не выполнена.
+Export Group...
+Экпортировать группу...
+Fast UIR Init
+Быстрая инициализация
+Fast
+Быстро
+File
+Файл
+Filename
+Имя файла
+Find
+Найти
+GNU General Public License
+GNU General Public License
+Girder files (*.gir)|*.GIR
+Girder files (*.gir)|*.GIR
+Group Enable
+Включить группу
+Group Disable
+Выключить группу
+Girder Standby Toggle
+Включить/отключить Girder
+General
+Общие
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder попытается выполнить необходимые настройки автоматически. Подстройте вручную.
+Group Enabled
+Группа включена
+Group Disabled
+Группа выключена
+Girder Standby
+Girder неактивен
+Girder Active
+Girder активен
+Girder Homepage: Http://www.stack.nl/~stilgar
+Домашняя страница Girder: http://www.stack.nl/~stilgar
+Goto
+Перейти
+Hibernate
+Приостановить работу
+Howto
+Часто задаваемые вопросы
+Hide
+Спрятать
+Hide on startup
+Прятать при загрузке
+Hardware Plugins
+Драйверы
+Handle
+Handle
+Hide sent.
+Hide sent.
+Host IP
+IP адрес
+Host Port
+IP порт
+IRSpeed
+Скорость
+I Was here
+I Was here
+I Was Here
+I Was Here
+IR Device Enabled.
+Включено.
+Icon files (*.ico)|*.ICO
+Icon files (*.ico)|*.ICO
+Icon
+Значок
+Input Device
+Устройство ввода
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Initializing the Input Device(s)
+Инициализация
+Input Device Enabled.
+Включено.
+Input Device Disabled.
+Выключено.
+IrDA Settings
+IrDA Settings
+Import Group...
+Импортировать группу...
+Icons on the action tabs
+Icons on the action tabs
+Keep focus
+Оставить фокус
+Key sent
+Нажатие послано
+Keyboard
+Клавиатура
+Learn IR
+Обучить
+LogOff
+Завершить сеанс
+LParam
+LParam
+Launch Girder on windows startup
+Запускать Girder вместе с Windows
+Language
+Язык
+Main Window
+Главное окно
+Monitor On
+Включить дисплей
+Monitor Off
+Выключить дисплей
+Maximize
+Развернуть
+Minimize
+Свернуть
+Minimize Girder
+Свернуть Girder
+Mouse
+Мышь
+Mouse Up
+Мышь вверх
+Mouse Down
+Мышь вниз
+Mouse Left
+Мышь влево
+Mouse Right
+Мышь вправо
+Mouse Left Click
+Нажатие левой кнопки
+Mouse Left Doubleclick
+Двойное нажатие левой кнопки
+Mouse Right Click
+Нажатие правой кнопки
+Match invisble Tasks
+Учитывать невидимые задачи
+Minimized
+Свернуто
+Maximum number of ClientAddresses reached cannot add.
+Невозможно добавить нового клиента.
+Mouse Right Doubleclick
+Двойное нажатие правой кнопки
+Mouse Middle click
+Нажатие средней кнопки
+Mouse Middle Doubleclick
+Двойное нажатие средней кнопки
+Mouse Up Right
+Mouse Up Right
+Mouse Up Left
+Mouse Up Left
+Mouse Down Right
+Mouse Down Right
+Mouse Down Left
+Mouse Down Left
+Mouse Wheel Up
+Mouse Wheel Up
+Mouse Wheel Down
+Mouse Wheel Down
+New
+Без имени
+Not found.
+Не найдено.
+Name
+Команда
+None
+Нет
+Ok
+OK
+O.S.
+Система
+Only send to first match
+Посылать первой найденной
+OSD
+OSD
+Play Wav
+Проиграть звуковой файл
+Poweroff
+Выключить компьютер
+Path to Hardware plugins
+Искать в папке
+Path to Action plugins
+Искать в папке
+Process ID
+Process ID
+Parent
+Parent
+Plugins
+Модули
+Port
+Порт
+Password
+Пароль
+Question
+Вопрос
+Reboot
+Перезагрузить компьютер
+Register Filetype
+Регистрировать тип
+Running Tasks/Windows
+Запущенные задачи
+Refresh
+Обновить
+Ready.
+Готово.
+Rename
+Переименовать
+Repeat Tolerance
+Repeat Tolerance
+Recognition Tolerance
+Recognition Tolerance
+Skip UIR init check
+Не проверять результат
+Strip Zeros from UIR string
+Удалять нули 
+Slow
+Медленно
+Suspend Mode
+Режим приостановки
+Suspend to Ram
+Приостанавливать в память
+Select destination.
+Выбрать задачу.
+Save &as...
+Сохранить к&ак
+Se&ttings...
+&Настройки...
+Settings Window
+Окно настроек
+State Window
+Состояние команды
+State
+Состояние
+Show
+Показать
+Set Focus
+Настроить фокус
+Screen Saver
+Хранитель экрана
+Shutdown
+Завершить работу
+Step Size
+Шаг
+Startup Options
+Окно
+SysCommand
+Системная команда
+Set On-Trayicon
+Установить значок Включен
+Set Off-Trayicon
+Установить значок Выключен
+Set Active-Trayicon
+Установить значок Активен
+Set Standby-Trayicon
+Установить значок Неактивен
+Step
+Шаг
+Shift
+Shift
+Special Key
+Специальные
+Sentence
+Строка
+Settings
+Настройки
+Save datafile on shutdown/poweroff/logoff
+Сохранять файл при выходе
+Scale Main Form
+Размер окна
+State.
+Состояние.
+Selected Task's Childobjects
+Дочерние окна задачи
+Send to foreground task
+Посылать активной задаче
+Substring matching
+Неполное сравнение строк
+Start Capture
+Начать
+Stop Capture
+Остановить
+System Wide Capturing
+Захват системных сообщений
+SmartFill
+Автозаполнение
+Show sent.
+Show sent.
+State Count
+Всего
+See file Copying.txt for license details
+Лицензионное соглашение в файле Copying.txt
+String
+Строка
+Set Group Targets
+Привязать группу
+Show Girder
+Показать Girder
+Text
+Текст
+This plugin sends a WM_SETTEXT message to the targets.
+This plugin sends a WM_SETTEXT message to the targets.
+The file has changed, save ?
+Файл был изменен, сохранить?
+Target Window
+Выбор задач
+Target
+Задача
+Traybar mode
+Прятать в трей
+The New input device gets activated when you press the apply button.
+Новое устройство будет включено при нажатии кнопки Применить.
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+Этот файл был создан предыдущей версией Girder. Преобразовать?
+Target Selector
+Выбор задачи
+Test Event
+Проверить
+Type
+Тип
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Перевод разработан Ilja V.Levinson <lev@oduurl.ru>
+TCP/IP Server Settings
+Настройки сервера TCP/IP
+TCP/IP Client
+Клиент TCP/IP
+Talking Clock
+Говорящие часы
+Timer
+Timer
+Timer plugin for Girder 3.0
+Timer plugin for Girder 3.0
+This plugin executes a command after a preset timeout.
+This plugin executes a command after a preset timeout.
+This is not a Girder 3.0 ExportFile.
+This is not a Girder 3.0 ExportFile.
+UIR/IRman Settings
+Установки ИК-приемника
+Unregister Filetype
+Не регистрировать тип
+User Interface
+Вид
+Volume Window
+Изменение громкости
+Volume Change
+Изменить громкость
+Volume Right Change
+Увеличить громкость
+Volume Left Change
+Уменьшить громкость
+Volume Balance Change
+Изменить баланс
+Volume Mute Toggle
+Включить/отключить звук
+Volume ID
+Источник
+Volume
+Громкость
+Version
+Версия
+Volume Settings
+Регулятор громкости
+Volume Left
+Уменьшить громкость
+Volume Right
+Увеличить громкость
+Volume Mute
+Выключить звук
+Waiting for IR Code.
+Ожидание ИК-кода.
+Window
+Окно
+Wait
+Ждать
+Wait for Window
+Ждать окно
+WParam
+WParam
+Window Name
+Window Name
+Window Class
+Window Class
+Wparam
+Wparam
+Wavfile played.
+Проигрывается звуковой файл.
+Windows is shutting down.
+Завершение работы Windows.
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+X/Timeout [ms]
+X/Таймаут
+Y
+Y
+command sent.
+Команда послана.
+sys command sent.
+Системная команда послана.

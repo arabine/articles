@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>L'algèbre de Boole et les fonctions logiques</title><keywords>Boole logique porte and or et ou xor exclusif</keywords><description>L'algèbre de Boole et les fonctions logiques</description><links><link type="prev">E:\Documents\Cours Progworld\systemesnum\cours1.htm</link><link type="index">E:\Documents\Cours Progworld\systemesnum\index.htm</link><link type="next">E:\Documents\Cours Progworld\systemesnum\cours3.htm</link></links><introduction>Ah ce sacré George, que serions nous sans lui. George Boole était un mathématicien britannique (1815-1864) qui a créé la logique mathématique moderne. Ouvrons notre dictionnaire à la partie algèbre :
+&lt;br&gt;&lt;br&gt;
+	&lt;font color=#FF0000&gt;&lt;b&gt;
+	"&lt;i&gt;Algèbre de Boole&lt;/i&gt;, ou &lt;i&gt;algèbre de la logique&lt;/i&gt; : structure algébrique appliquée 
+	à l'étude des relations logiques, et dans laquelle les opérations de réunion, d'intersection et de 
+	complémentation expriment respectivement la disjonction, la conjonction et la négation logique."
+	&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;
+	Quoi... ça fait déjà mal au crâne ?</introduction></page><section name="section 1" title="Les trois opérateurs de base"><paragraph name="paragraph">L'algèbre de Boole est composée de trois principaux opérateurs : les fonctions ET, OU et NON. Cet algèbre s'applique au binaire, c'est à dire entre des variables ne pouvant prendre que 0 ou 1 comme valeurs (des nombres de 1 bit en somme). On peut réaliser par exemple 37 ET 4, le calcul se fera en fait entre chaque bit du nombre binaire correspondant. Voyons sans plus tarder chacun de ces opérateurs, que l'on nomme opérateurs booléens.
+</paragraph><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">On appelle table de vérité le tableau qui regroupe l'état de la (ou des) sortie(s) pour TOUTES les combinaisons de (ou des) l'entrée(s). 
+</note><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;l'opérateur ET (AND)&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;u&gt;Définition&lt;/u&gt; : y = f(a, b) est la fonction logique ET si et seulement si y vaut 1 lorsque a=1 et b=1.&lt;br&gt;
+&lt;u&gt;Notations et appellations &lt;/u&gt;: y = ab (fonction ET), y = a.b (produit logique)&lt;br&gt;
+</paragraph><image name="image"><link type="img">images\and_elec.jpg</link><legend>Ce shéma illustre le comportement d'un ET. Réalisez les combinaisons pour allumer la LED.</legend></image><paragraph name="paragraph">La table de vérité se déduit donc :
+
+&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+    &lt;tr&gt;
+      
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;b&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;y&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;      
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</paragraph><image name="image"><link type="img">images\and_gate.jpg</link><legend>Le symbole normalisé (il peut y avoir plus de 2 entrées) sous sa référence (HCMOS).</legend></image><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;l'opérateur OU (OR)&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;u&gt;Définition &lt;/u&gt;: y = f(a, b) est la fonction logique OU si et seulement si y vaut 1 lorsque soit a, soit b valent 1 (a=1 ou b=1).&lt;br&gt;
+&lt;u&gt;Notations et appellations&lt;/u&gt; : y = a + b (fonction OU)&lt;br&gt;
+
+</paragraph><image name="image"><link type="img">images\or_elec.jpg</link><legend>Là encore, une illustration du comportement du OU en schéma électrique.</legend></image><paragraph name="paragraph">La table de vérité se déduit donc :
+
+&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;b&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;y&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+	&lt;/table&gt;</paragraph><image name="image"><link type="img">images\or_gate.jpg</link><legend>Le symbole normalisé (il peut y avoir plus de 2 entrées) sous sa référence (HCMOS).</legend></image><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;l'opérateur NON (ou NOT)&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;u&gt;Définition &lt;/u&gt;: y = f(a) est la fonction logique NON qui inverse l'état d'une variable. On a ainsi 0=not(1) et 1=not(0) : NON permet d'obtenir le complément d'un nombre.&lt;br&gt;
+&lt;u&gt;Notations et appellations &lt;/u&gt;: y = not(a), y = /a (une barre sur le a)&lt;br&gt;
+&lt;br&gt;
+La table de vérité de cet opérateur est tout simplement :
+&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;y&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</paragraph><image name="image"><link type="img">images\not_gate.jpg</link><legend>Le symbole normalisé est le suivant avec sa référence (HCMOS). Notez le rond à la sortie de la porte qui indique la présence de l'opérateur NON. Sans ce rond, la sortie égale l'entrée (y=a). </legend></image></section><section name="section 2" title="Combinaisons entre opérateurs et cas particuliers "><paragraph name="paragraph">L'avantage est que l'on peut combiner les opérateurs ET et OU avec l'opérateur NON afin de réaliser une logique particulière. En pratique, il suffit de relier la sortie d'une porte ET ou OU à l'entrée d'une porte NON. Le résultat donne un ET-NON ou un OU-NON. Les tables de vérité sont donc très simples à compléter. &lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;l'opérateur ET-NON (ou NAND pour NOT-AND)&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+      
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;b&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;AND&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;  
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;NAND&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;      
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+	&lt;/table&gt;</paragraph><image name="image"><link type="img">images\nand_gate.jpg</link><legend>Le symbole normalisé avec sa référence (HCMOS). Ce symbole est identique au ET avec le rond à la sortie, représentant le NON (sortie complémentée).</legend></image><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;l'opérateur OU-NON (ou NOR pour NOT-OR)&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+      
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;b&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;NOR&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+		&lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+	&lt;/table&gt;</paragraph><image name="image"><link type="img">images\nor_gate.jpg</link><legend>Le symbole normalisé avec sa référence (HCMOS). Ce symbole est identique au OU avec le rond à la sortie, représentant le NON (sortie complémentée).</legend></image><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;l'opérateur OU exclusif, OU-EX (XOR)&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;u&gt;Définition&lt;/u&gt; : y = f(a,b) est la fonction logique XOR (le shérif, le shérif de l'espace... X-OR .... oui je sais c'est nul ;) si et seulement si y vaut 1 lorsque soit a, soit b valent 1 (a=1 ou b=1) mais pas en même temps.&lt;br&gt;
+&lt;u&gt;Notations et appellations&lt;/u&gt; : y = a&lt;img src="apprentissage\systemesnum\images\xor_op.gif"&gt;b (fonction XOR). Le symbole est un + entouré d'un cercle.&lt;br&gt;&lt;br&gt;
+
+&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;b&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;y&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+   	    &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+	&lt;/table&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;b&gt;
+&lt;u&gt;Remarque &lt;/u&gt;&lt;/b&gt;: on peut trouver également le ET inclusif mais il n'existe pas en porte. Il existe aussi la porte NOT-XOR, disponible en HCMOS (74HC266). </paragraph><image name="image"><link type="img">images\xor_gate.jpg</link><legend>Le symbole normalisé avec sa référence (HCMOS).</legend></image></section><section name="section 3" title="Propriétés"><paragraph name="paragraph">L'algèbre de Bool possède les propriétés suivantes. Attention, oubliez vos habitudes et la logique mathématique !&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Commutativité :&lt;/b&gt; &lt;u&gt;ex&lt;/u&gt;: a.b = b.a tous les opérateurs logiques sont commutatifs.
+	&lt;li&gt;&lt;b&gt;Associativité :&lt;/b&gt; on peut placer les parenthèses où l'on veut dans une expression. Cela est vrai pour les 
+	opérateurs AND, OR et XOR mais &lt;b&gt;pas&lt;/b&gt; pour les versions complémentées.
+	&lt;li&gt;&lt;b&gt;Distributivité :&lt;/b&gt; &lt;u&gt;ex&lt;/u&gt;: a.(b+c) = a.b + a.c on peut y voir la même analogie qu'en mathématique, mais attention 
+	cette propriété s'applique également à l'opérateur + (qui, rappelons le, n'est pas "plus" mais "ou"). &lt;u&gt;ex&lt;/u&gt;: a+(b.c) = (a+b).(a+c)&lt;br&gt;&lt;br&gt;
+&lt;/ul&gt;	
+	&lt;b&gt;Remarque sur l'écriture :&lt;/b&gt; dans ces cours ainsi que d'autres sur ce site, nous allons représenter le complément d'une variable en 
+	ajoutant un slash devant comme cela : /a alors que la vraie écriture est un 'a' avec une barre horizontale dessus.&lt;br&gt;&lt;br&gt;
+	Ceci étant dit, voici les propriétés et relations importantes. Elles peuvent toutes se démontrer très facilement en construisant les 
+	tables de vérité associées à chaque variable et en effectuant les équations logiques.&lt;br&gt;
+&lt;br&gt;
+
+
+</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\equ_fondamentales.gif</link><legend></legend></image></section><section name="section 4" title="Les fonctions logiques"><paragraph name="paragraph">Le principe ressemble à une équation mathématique : la sortie est sur un bit et le second membre comprend n entrées. Par exemple :</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\equ.gif</link><legend>Legend</legend></image><paragraph name="paragraph">La sortie est Y qui prend la valeur '0' ou '1' selon les combinaisons logiques entre les trois entrées a,b et c.&lt;/div&gt;&lt;br&gt;
+&lt;br&gt;
+Si le second membre est composé d'une somme de AND, alors la forme est dite &lt;b&gt;disjonctive&lt;/b&gt;.
+Si le second membre est composé de produit de OR, alors la forme est dite &lt;b&gt;conjonctive&lt;/b&gt;.&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;La table de vérité&lt;/b&gt; permet de lister &lt;u&gt;toutes&lt;/u&gt; les solutions selon les états des entrées. Si il y a n entrées, 
+	alors il y a 2&lt;sup&gt;n&lt;/sup&gt; possibilités (ce qui se traduit par un tableau à 2&lt;sup&gt;n&lt;/sup&gt; lignes).&lt;br&gt;
+&lt;br&gt;
+
+&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;&lt;strong&gt;b&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;&lt;strong&gt;y&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+   	    &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%"&gt;&lt;p align="center"&gt;1&lt;/p&gt;&lt;/td&gt;
+        &lt;td width="33%" bgcolor="#C0C0C0"&gt;&lt;p align="center"&gt;0&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+	&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+Le tableau ci dessus rassemble toutes les possibilités. On va donc maintenant déterminer la fonction logique simulant ce comportement. On regarde quand la sortie est égal à 1, donc cela donne :
+</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\equ2.gif</link><legend></legend></image><paragraph name="paragraph">Il est quelques fois possible de simplifier les équations grâce aux formules et aux propriétés.</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\equ3.gif</link><legend></legend></image></section><section name="section 5" title="Le tableau de Karnaugh"><paragraph name="paragraph">Nous n'allons pas nous étendre là dessus car le tableau de Karnaugh est un peu dépassé vu les logiciels qui existent actuellement. Il s'applique lorsque vous avez un système connu, ou décrit dans un cahier des charges. Vous trouvez alors l'équation logique simplifiée directement. Il fonctionne selon 3 étapes :&lt;br&gt;
+&lt;br&gt;
+&lt;ol type="1"&gt;
+		&lt;li&gt; On place les '1' et les '0' en accord avec le cahier des charges, on met un "x" lorsque la combinaison 
+		importe et n'a aucun effet sur le système.
+		&lt;li&gt;on regroupe les '1' en ligne ou en colonne, par puissances de 2 (1, 2, 4, 8, 16, ...), sachant que les lignes 
+		et les colonnes se rejoignent aux extrêmités. Il ne faut pas regrouper les '1' en diagonale.
+		&lt;li&gt; Pour chaque groupe, écrire l'équation correspondante selon l'état des entrées. Lorsqu'une entrée change (elle 
+		est à zéro et à un dans le même groupe), il suffit de l'ignorer. Mettre un OU entre chaque équation ainsi 
+		écrite.
+	&lt;/ol&gt;
+
+&lt;br&gt;&lt;br&gt;
+Un petit exemple pour éclaircir tout cela. Voici le tableau déjà rempli à l'aide d'un cahier des charges.
+</paragraph><image name="image"><link type="img">images\karnaugh.gif</link><legend>On regroupe les '1' par puissances de 2.</legend></image><paragraph name="paragraph">On a regroupé les '1' en puissance de 2. Notez que sur la première ligne, au maximum deux '1' peuvent être 
+	regroupés. Notez aussi les deux '1' en haut à droite et en bas à droite sont regroupés car ils se situent sur 
+	le bord. Voici chaque équation :&lt;br&gt;&lt;br&gt;
+	&lt;ul&gt;
+	&lt;li&gt;&lt;font color="#C0C000"&gt;Equation 1 : /a./c./d&lt;/font&gt;
+	&lt;li&gt;&lt;font color="#C000C0"&gt;Equation 2 : /a.b&lt;/font&gt;
+	&lt;li&gt;&lt;font color="#008000"&gt;Equation 3 : a./b./d&lt;/font&gt;
+&lt;/ul&gt;
+	&lt;br&gt;&lt;br&gt;
+	
+Et donc, y = Equation 1 + Equation 2 + Equation 3, c'est à dire :
+</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\equ4.gif</link><legend></legend></image><paragraph name="paragraph">
+&lt;u&gt;Remarque&lt;/u&gt; : S'il y a plus de '1' que de '0' dans le tableau, il est peut être plus facile de regrouper les 
+	zéros et d'écrire l'équation /y au lieu de y.
+&lt;br&gt;
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Le logigramme&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+Les logigrammes sont la représentation des équations logiques en circuit intégrés. Là encore, c'est le même principe : les logigrammes représentent une fonction logique avec des opérateurs, des entrées et une sortie. Exemple : </paragraph><image name="image"><link type="img">images\logigramme.jpg</link><legend>Rien de compliqué ici, c'est un simple schéma à portes logiques.</legend></image></section></document>

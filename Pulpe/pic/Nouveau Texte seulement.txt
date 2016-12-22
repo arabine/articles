@@ -1,0 +1,49 @@
+;  PB3   |   PB2    |   PB1    |   PB0    | Vitesse
+; ------ | -------- | -------- | -------- | --------
+;  0     |    0     |   0      |   0      | Vitesse 25% avant
+;  0     |    0     |   0      |   1      | Vitesse 50% avant
+;  0     |    0     |   1      |   0      | Vitesse 75% avant
+;  0     |    0     |   1      |   1      | Vitesse 100% avant
+;  0     |    1     |   0      |   0      | ERREUR D'ORDRE !!
+;  0     |    1     |   0      |   1      | ERREUR D'ORDRE !!
+;  0     |    1     |   1      |   0      | Rotation : moteur gauche arrière vitesse 50%, moteur droit avant vitesse 100%
+;  0     |    1     |   1      |   1      | Arrêt robot
+;  1     |    0     |   0      |   0      | Vitesse 25% arrière
+;  1     |    0     |   0      |   1      | Vitesse 50% arrière
+;  1     |    0     |   1      |   0      | Vitesse 75% arrière
+;  1     |    0     |   1      |   1      | Vitesse 100% arrière
+;  1     |    1     |   0      |   0      | ERREUR D'ORDRE !!
+;  1     |    1     |   0      |   1      | ERREUR D'ORDRE !!
+;  1     |    1     |   1      |   0      | Rotation : moteur gauche avant vitesse 100%, moteur droit arrière vitesse 50%
+;  1     |    1     |   1      |   1      | Arrêt robot
+;**************************************************************************************
+
+
+;**************************************************************************************
+; DEFINITION DE CONSTANTES
+;**************************************************************************************
+
+; Broches en sortie
+
+PWM_G   EQU     0x00		; PWM moteur gauche RA0
+PWM_D   EQU     0x01		; PWM moteur droit RA1
+SENS_G  EQU     0x02		; Sens moteur gauche RA2
+SENS_D  EQU     0x03		; Sens moteur droit RA3
+
+LED	EQU	0x07		; LED de signalisation d'une erreur sur RB7
+
+;**************************************************************************************
+; VARIABLES EN RAM
+; LA RAM COMMENCE EN 0x0C
+;**************************************************************************************
+	CBLOCK 0x20
+
+	Image:1			; l'octet image des broches du port A
+	Ordre:1			; L'octet image du port B en provenance du PIC Capteurs
+	VAR:1
+
+; mémorisation des ordres pour chaque moteur
+;         6   5   4   3   2   1   0
+; MOT_X   -   -  100  75  50  25  SENS
+;
+; SENS=1 : arrière , SENS=0 : avant

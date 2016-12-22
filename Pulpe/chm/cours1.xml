@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document type="Cours">
+  <author>
+    <name>Anthony Anthony Anthony </name>
+    <email>
+    </email>
+    <web-site>
+    </web-site>
+  </author>
+  <page>
+    <title>Rédiger un fichier d'aide au format CHM</title>
+    <introduction>Le fichier d'aide marque le bouclage de votre logiciel. Une fois celui-ci terminé, il convient de fournir un support convenable à l'utilisateur de façon à ce qu'il puisse se servir seul de votre programme. Sous Windows, les fichiers d'aide se présentent sous la forme de fichiers au format .hlp ou .chm. Le premier type de fichier est maintenant abandonné au profil du .chm popularisé avec l'arrivée de Windows 2000. Une aide en CHM (Compiled HTML Module) se rédige exactement comme un site Internet car le langage de base est l'HTML. Nous vous conseillons donc fortement de commencer par apprendre ce langage avant de lire ce cours. Vous trouverez sur ce site un cours complet sur ce langage.</introduction>
+  </page>
+  <section name="Outils" title="Outils">
+    <paragraph>Les fichiers d'aide au format CHM se rédigent avec l'éditeur de texte de votre choix. Nous vous conseillons d'utiliser un éditeur de texte orienté programmation Web qui vous apportera la coloration syntaxique du code HTML ainsi que des outils annexes bien pratiques. Une revue de quelques éditeurs de textes est disponible &lt;a href="http://www.programmationworld.com/site/cours.asp?Action=cours&amp;numero=260"&gt;à cette adresse&lt;/a&gt;. Nous vous conseillons d'utiliser des éditeurs non graphiques de façon à contrôler le code HTML de vos pages d'aide.</paragraph>
+    <paragraph>Une fois les fichiers HTML rédigés, il faut utiliser un logiciel fournit par Microsoft afin de les compiler dans un seul fichier .chm. Ce programme s'appelle HTML Help WorkShop et est disponible gratuitement sur le site de Microsoft ou en bas de cette page.</paragraph>
+    <paragraph>Enfin, vous aurez probablement besoin d'un logiciel de traitement d'image, comme Paint Shop Pro par exemple qui se révèle idéal pour ce genre de travail. Nous vous conseillons d'utiliser exclusivement le format d'image PNG pour vos captures d'écran car il offre le meilleur compromis poids/résolution, en plus d'être totalement libre d'utilisation.&lt;br&gt;Nous n'allons pas vous présenter comment rédiger l'aide proprement dite, à vous de savoir comment bien organiser les chapitres de votre aide. Nous nous baserons également sur le fait que vous savez programmer en HTML.</paragraph>
+  </section>
+  <section name="Présentation du fichier d'aide" title="Présentation du fichier d'aide">
+    <paragraph>Nous allons faire le tour d'un fichier d'aide d'exemple afin de voir les principales caractéristiques de l'interface.</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\1.png</link>
+      <legend>Un exemple minimaliste de fichier d'aide&lt;br&gt;</legend>
+    </image>
+    <paragraph>La fenêtre du fichier d'aide est séparée en deux parties : on trouve à droite le texte de l'aide, et à gauche un menu de navigation sous forme d'arbre. D'autres onglets viendront s'ajouter à la partie de droite, nous verrons cela un peu plus tard. Enfin, le menu du haut vous permet de naviguer plus facilement dans l'aide et vous donne quelques options comme imprimer une page. Ce menu est montré ici dans sa version de base par défaut, mais il est paramétrable via HTML Help Workshop.</paragraph>
+  </section>
+  <section name="Construction d'un fichier d'aide" title="Construction d'un fichier d'aide">
+    <paragraph>Nous allons maintenant voir comment compiler le fichier d'aide précédent. Pour cela, installez et démarrez le logiciel HTML Help Workshop (fournit en bas de cette page). Aller dans le menu File puis New et choisissez "Project".</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\2.png</link>
+      <legend>La première chose à faire est de créer un projet.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Validez le choix. Un module Wizard apparaît alors, vous permettant de configurer pas à pas votre projet. Le premier écran vous permet d'importer une aide créée avec l'ancienne version de compilateur d'aide (WinHelp). Ce précédent format n'est pas du tout compatible avec HTML Help Workshop.</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\3.png</link>
+      <legend>Vous pouvez convertir une aide créée avec l'ancien format.&lt;br&gt;</legend>
+    </image>
+    <paragraph>L'écran suivant permet de choisir un nom de projet et son répertoire de sauvegarde. L'extension du fichier projet est .hhp pour Html Help Project.</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\4.png</link>
+      <legend>Précisez le nom et l'emplacement du projet.&lt;br&gt;</legend>
+    </image>
+    <paragraph>L'écran suivant permet d'importer des fichiers déjà créés, comme des pages d'aide (.htm) un Index ou une table des matières. Les écrans suivants changeront donc en fonction de vos choix. Dans notre exemple nous ne cocherons aucune case. Un dernier écran apparait et vous invite à terminer la création de votre projet.</paragraph>
+    <paragraph>L'interface se présente alors sous la forme suivante :</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\5.png</link>
+      <legend>L'interface de HTML Help Workshop.&lt;br&gt;</legend>
+    </image>
+    <paragraph>A gauche se situe la partie de construction de l'aide. On y trouve trois onglets :&lt;br&gt;&lt;ul&gt;&lt;br&gt;&lt;li&gt;&lt;b&gt;Project : &lt;/b&gt;Donne accès à toutes les options du projet en cours et affiche ses caractéristques&lt;/li&gt;&lt;br&gt;&lt;li&gt;&lt;b&gt;Contents : &lt;/b&gt;Permet de construire le menu de navigation de l'aide (le sommaire)&lt;/li&gt;&lt;br&gt;&lt;li&gt;&lt;b&gt;Index : &lt;/b&gt;Permet de construire un glossaire de mots clés&lt;/li&gt;&lt;br&gt;&lt;/ul&gt;&lt;br&gt;</paragraph>
+    <paragraph>À droite se trouve une zone d'édition de texte. Celle ci est malheureusement très pauvre en fonctionalités, pas de coloration syntaxique ni d'outils quelconque. Nous vous conseillons de l'utiliser seulement pour les fichiers de configuration de votre projet. L'édition des fichiers HTML est autrement plus facile avec un outils dédié.</paragraph>
+    <paragraph>Notre fichier d'aide sera composé de deux fichiers HTML qui seront chaînés ensemble avec un lien sur chaque page. Notre premier fichier sera la page d'accueil, c'est à dire la page affichée en premier lorsque l'aide est chargée. Copiez le code source suivant (les images sont disponibles en bas de cette page) :</paragraph>
+    <code syntax="None">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;html&gt;
+    &lt;br&gt;
+    &lt;head&gt;
+    &lt;br&gt;
+        &lt;title&gt;
+            Intro
+        &lt;/title&gt;
+    &lt;br&gt;
+    &lt;/head&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;body&gt;
+    &lt;br&gt;
+    &lt;p&gt;
+    &lt;br&gt;
+    	Ceci est un fichier d'aide d'exemple. C'est en fait une collection de fichiers HTML classiques, 
+	exactement comme un site web.
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;
+    Vous pouvez mettre des images :
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;
+    &lt;img src="images/nain.png" width="245" height="290" alt="" border="0"&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;
+    	Vous pouvez utiliser des liens, &lt;a href="http://www.programmationworld.com"&gt;Internet
+	&lt;/a&gt; ou en &lt;a href="chap2.htm"&gt;local&lt;/a&gt; pour chaîner vos pages d'aide.
+    &lt;br&gt;
+    &lt;/p&gt;
+    &lt;br&gt;
+    &lt;/body&gt;
+    &lt;br&gt;
+    &lt;/html&gt;</code>
+    <paragraph>Le deuxième fichier contient le code suivant :</paragraph>
+    <code syntax="None">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;html&gt;
+    &lt;br&gt;
+    &lt;head&gt;
+    &lt;br&gt;
+        &lt;title&gt;Chapitre 2&lt;/title&gt;
+    &lt;br&gt;
+    &lt;/head&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;body&gt;
+    &lt;br&gt;
+    &lt;p&gt;
+    &lt;br&gt;
+    Et hop une deuxième page !
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;
+    Et une autre image : 
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;
+	&lt;a href="http://www.penofchaos.com/warham/donjon.htm"&gt;
+	&lt;img src="images/donjon-ban.jpg" width="400" height="60" alt="" border="0"&gt;
+	&lt;/a&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;br&gt;
+    Retour à la précédente page &lt;a href="intro.htm"&gt;ici&lt;/a&gt;.&lt;br&gt;&lt;/p&gt;
+    &lt;br&gt;
+    &lt;/body&gt;
+    &lt;br&gt;
+    &lt;/html&gt;</code>
+    <paragraph>Nous vous conseillons de bien organiser votre répertoire de projet, sous peine de ne plus vous y retrouver. Il s'agit d'avoir la même rigueur que dans la conception d'un site Web. C'est exactement le même principe. Voici à titre d'exemple l'arbre de notre projet (disponible en téléchargement en bas de cette page) : </paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\6.png</link>
+      <legend>&lt;br&gt;</legend>
+    </image>
+    <paragraph>Nous allons ajouter nos deux fichiers au projet. Pour cela, dans l'onglet &lt;b&gt;Project&lt;/b&gt;, cliquez sur le bouton de gauche intitulé "Add/Remove topic files" puis sélectionnez les deux fichiers, intro.htm et chap2.htm.</paragraph>
+    <paragraph>Nous allons maintenant construire notre sommaire. Cliquez sur l'onglet &lt;b&gt;Contents&lt;/b&gt; puis choisissez "Create a new contents file" dans la boite de dialogue qui s'ouvre. Les boutons de gauche vous permettent de construire deux types d'élément :&lt;br&gt;&lt;ul&gt;&lt;br&gt;&lt;li&gt;&lt;b&gt;Insert a heading : &lt;/b&gt;c'est un noeud de l'arbre du sommaire, qui regroupe plusieurs autre éléments enfants (d'autres heading ou pages). Il faut double cliquer pour étendre l'arborescence. Il est possible d'y associer une page HTML mais ce n'est pas obligatoire.&lt;/li&gt;&lt;br&gt;&lt;li&gt;&lt;b&gt;Insert a page : &lt;/b&gt;c'est une page de l'aide proprement dite. Là, vous êtes obligé d'y associer une page HTML.&lt;/li&gt;&lt;br&gt;&lt;/ul&gt;</paragraph>
+    <paragraph>Ajoutons une page. Cliquez sur l'icône correspondante afin de faire apparaître une boîte de dialogue, que vous complèterez comme la capture suivante :</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\7.png</link>
+      <legend>L'ajout d'un élément est très intuitif.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Donnez un nom à l'élément, puis cliquez sur "Add...". Une deuxième fenêtre apparaît où vous pourrez spécifier la page HTML associée à l'élément du menu. Vous remarquerez que les nos pages apparaissent dans la liste, car nous les avons ajouté au projet. Nous vous conseillons de toujours ajoutez vos pages au projet, pour plus de facilité d'édition et pour éviter les erreurs.&lt;br&gt;&lt;br&gt;&lt;br&gt;Manipulez ces éléments de façon à obtenir un sommaire similaire à la capture d'écran du début de l'article. Les flèches servent à monter ou à descendre un élement, ou à les écarter à gauche et à droite pour décider de leur appartenance.</paragraph>
+    <note title="Astuce" img="http://www.programmationworld.com/site/images/advice.gif">L'onglet "Advanced"  permet de régler quelques options évoluées. Vous pouvez par exemple modifier l'icône de l'élément en cours.</note>
+    <paragraph>Notre premier fichier est maintenant terminé. Retournez sur l'onglet de &lt;b&gt;Projet&lt;/b&gt;. Il reste à précisez la page d'accueil. Cliquez sur le premier bouton intitulé "Change project options" puis sélectionnez la page qu'il faut dans le menu "Default file".</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\8.png</link>
+      <legend>Un résumé de notre projet et sa fenêtre de configuration.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Enfin, cliquez sur le dernier bouton de gauche intitulé "Save all files and compile". HTML Help Workshop va alors compiler vos fichier dans un seul fichier avec l'extension &lt;b&gt;.chm&lt;/b&gt;. Après la compilation, un fichier de statistique est chargé qui peut contenir des messages d'erreurs si un problème s'est déroulé durant la compilation</paragraph>
+  </section>
+  <section name="Construction d'un Index" title="Construction d'un Index">
+    <paragraph>Un index regroupera les mots clés les plus importants de votre logiciel. C'est un moyen extrêmement pratique pour l'utilisateur pour rechercher l'aide sur un sujet précis. Malheureusement, vous devrez construire de vous même cette liste de mots, ce qui peut se révéler assez fastidieux. Chaque mot se verra associé une ou plusieurs pages de votre aide. Généralement, les entrées de l'index doivent être brêves, pas plus de deux ou trois mots. Il faut également veiller à ne prendre qu'une seule ligne. Les mots ont surtout besoin d'être très généraux car il est possible de préciser la signification avec d'autres fenêtres de choix.</paragraph>
+    <paragraph>Pour construire un Index, cliquez sur l'onglet &lt;b&gt;Index&lt;/b&gt; (eh oui !:) et créez un nouveau fichier à placer dans le répertoire de votre projet. L'utilisation de l'index est similaire à l'onglet &lt;b&gt;Contents&lt;/b&gt;, il suffit d'ajouter des éléments et de les ordonner comme vous le souhaitez. Il y a d'ailleurs un bouton pour ranger automatiquement les mots dans l'ordre alphabétique. Voici un exemple d'index avec notre fichier d'exemple :</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\12.png</link>
+      <legend>L'index permet de trouver une page grâce à des mots clés.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Pour réaliser un double choix comme dans la capture d'écran ci-dessus, il suffit d'associer plusieurs pages à un mot clé. Le logiciel se charge d'afficher automatiquement la fenêtre de choix.</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\11.png</link>
+      <legend>Vous pouvez associer plusieurs pages à un mot clé.&lt;br&gt;</legend>
+    </image>
+  </section>
+  <section name="Paramètres avancés" title="Paramètres avancés">
+    <paragraph>&lt;font size="5" color="#0000FF"&gt;Construisez une chartre graphique&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Il s'agit maintenant de rendre l'aide plus professionnelle et plus pratique à construire. La première chose à faire est d'utiliser un fichier CSS qui regroupera les styles graphiques de votre aide. Allez voir les cours de HTML sur ce même site pour en apprendre plus à ce sujet. Il convient ensuite de se construire une chartre graphique à respecter pour toutes les pages. Pour que l'utilisateur se retrouve facilement, il est pratique de placer des flèches de navigation en bas et/ou en haut de la page. Vous pouvez également identifier chaque page avec un lien, un titre etc. Cela peut donner une page de la forme suivante :</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\9.png</link>
+      <legend>Construisez une chartre graphique.&lt;br&gt;</legend>
+    </image>
+    <paragraph>&lt;font size="5" color="#0000FF"&gt;Utiliser des modèles&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Gardez un modèle de votre chartre graphique sous forme de fichier HTML. Les *bons* éditeurs HTML possèdent souvent une fonctionalité intégrée, appelée "template" (modèle) qui permet de sauvegarder un squelette type de votre page. Vous gagnez ainsi en productivité.</paragraph>
+    <paragraph>&lt;font size="5" color="#0000FF"&gt;Modifier la barre d'outils&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Pour cela nous allons créer une nouvelle fenêtre. Celle nouvelle fenêtre va remplacer celle par défaut (car nous en n'avons précisé aucune jusqu'à maintenant) et nous allons pouvoir la personaliser. Sur l'onglet &lt;b&gt;Project&lt;/b&gt; cliquez sur le bouton "Add/Modify window definitions". Créez une nouvelle fenêtre nomée "Principal" par exemple. Vous obtenez alors une fenêtre de configuration :&lt;br&gt;</paragraph>
+    <paragraph>Rajouter un onglet Recherche et Favoris</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\10.png</link>
+      <legend>Paramétrez l'interface de votre aide.&lt;br&gt;</legend>
+    </image>
+    <paragraph>L'onglet &lt;b&gt;Buttons&lt;/b&gt; vous permet de configurer les boutons à afficher dans la barre d'outils. L'onglet &lt;b&gt;Files&lt;/b&gt; permet de préciser les fichiers utilisés par le projet et la barre d'outils. L'onglet &lt;b&gt;Navigation Pane&lt;/b&gt; permet d'ajouter deux onglet à votre aide : un onglet de recherche et un onglet de favoris. Voilà pour les onglets les plus importants, nous vous invitons à utiliser l'aide du logiciel pour découvrir les autres fonctionalités.</paragraph>
+    <paragraph>En ce qui concerne la recherche, il est possible de filter les mots en éléminant les mots les plus courants. Pour cela, HTML Help Workshop fait appel à une &lt;b&gt;stop-list&lt;/b&gt;, un simple fichier texte qui regoupe les mots de liaison d'une langue. Vous pouvez télécharger une version anglaise (disponible dans le fichier d'aide du logiciel) et une version française. Pour appliquer une stop-list, copiez un des fichiers précédent dans le répertoire de votre projet, cliquez sur le bouton "Change project options" sur l'onglet "Project" puis allez dans l'onglet "Files". La dernière option intitulée "Full text search stop list file" vous permet de préciser l'emplacement de votre stop-list (l'extension est .stp).</paragraph>
+    <paragraph>&lt;font size="5" color="#0000FF"&gt;Décompiler une aide&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Il est possible de décompiler n'importe quel fichier .chm grâce à HTML Help Workshop. Pour cela, allez dans le menu File, cliquez sur "decompil" puis sélectionnez le fichier d'aide à décompiler. Vous verrez apparaître tous les fichiers HTML en plus des fichiers du sommaire ou d'index.</paragraph>
+  </section>
+  <section name="Lier l'aide et votre logiciel" title="Lier l'aide et votre logiciel">
+    <paragraph>Notre aide est maintenant terminée. Il reste encore une chose afin de la rendre totalement interactive : pouvoir la faire communiquer avec votre logiciel. Ainsi, vous pourrez ajouter des boutons d'appel d'aide dans les fenêtres d'option de votre application.</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\13.png</link>
+      <legend>Le bouton "Help" permet d'appeler la page d'aide correspondante.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Il va falloir créer au moins un fichier, appelé fichier "Map". Ce fichier texte aura pour but de mettre en correspondance une page ou un chapitre avec un numéro. Ce numéro sera ensuite intégré à l'application pour finaliser le lien. Nous allons créer un deuxième fichier d'alias, qui nous donnera la possiblité de donner un nom à la page. L'édition et la modification se verra facilité. Ces deux fichiers auront pour extension .h.</paragraph>
+    <paragraph>Fichier Alias.h.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Chaque ligne comporte un nouvel alias. La syntaxe est la suivante :&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;NomAlias=/chemin/fichier.htm ; commentaire&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Voici le fichier Alias.h pour notre aide :</paragraph>
+    <code syntax="None">Accueil=html\intro.htm		; Page accueil
+Pub=html\chap2.htm		; Pub pour Naheulbeuk !</code>
+    <paragraph>Fichier Map.h.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Chaque ligne comporte un nouvel élément. La syntaxe est la suivante :&lt;br&gt;&lt;br&gt;&lt;br&gt;#define NomAlias nombre&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Voici le fichier Alias.h pour notre aide :</paragraph>
+    <code syntax="None">#define	Accueil	1000
+#define	Pub	2000</code>
+    <note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif">En prévision d'ajouts ultérieurs, il est important de hiérarchiser vos nombres. Pour un grand chapitre, commencez par 1000 puis augmentez en changeant de dizaine à chaque nouveau sous-chapitre. Le chapitre suivant commencera à 2000 puis 3000 etc. Dans notre exemple, si nous rajoutons une sous-page à accueil, avec par exemple les nouveautés de notre logiciel, nous mettrons le nombre 1100.</note>
+    <paragraph>Retournez dans l'onglet "Project" et cliquez sur le bouton intitulé "HtmlHelp API Information". Dans les deux onglets "Map" et "Alias" chargez les deux fichiers que nous avons créés.</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\14.png</link>
+      <legend>Chargez les fichiers Map et Alias dans le projet.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Voilà, notre aide est terminée. Voyons maintenant comment appeler l'aide avec Visual Basic. Créez un nouveau projet puis allez dans les propriétés de ce projet pour spécifier le chemin de votre aide (le fichier compilé au format CHM).</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\15.png</link>
+      <legend>Dans Visual Basic 6, spécifiez l'aide attachée à votre projet.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Voici notre Form d'exemple :</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\16.png</link>
+      <legend>Nous allons charger l'aide lorsque l'utilisateur appuie sur la touche F1.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Puis dans les propriétés du bouton (ou de tout autre élément), nous entrons le numéro associé à la page que nous voulons voir apparaître :</paragraph>
+    <image>
+      <link type="img">G:\Documents\Cours Progworld\chm\images\17.png</link>
+      <legend>&lt;br&gt;</legend>
+    </image>
+    <paragraph>Et voilà, l'aide est chargée et se positionne immédiatement à l'endroit voulu. Reste appeler l'aide lorsque l'on appuie sur le bouton "Aide". Là c'est un peu plus compliqué car il faut passer par l'API Windows. Déclarez le code suivant tout en haut de votre code source Visual Basic :</paragraph>
+    <code syntax="None">Private Declare Function HtmlHelp Lib "hhctrl.ocx" Alias "HtmlHelpA" (ByVal hwndCaller As Long, ByVal pszFile As String, _
+                                                        ByVal uCommand As Long, ByVal dwData As Long) As Long
+Private Const HH_DISPLAY_TOPIC = &amp;H0
+Private Const HH_HELP_CONTEXT = &amp;HF</code>
+    <paragraph>Puis, double cliquez sur le bouton de la Form pour se positionner dans la procédure associée à l'évènement. Copiez le code ci-dessous :</paragraph>
+    <code syntax="None">Private Sub Command1_Click()
+	Dim nRet As Long
+	nRet = HtmlHelp(Me.hWnd, App.HelpFile, HH_HELP_CONTEXT, 2000)
+End Sub</code>
+    <paragraph>HH_HELP_CONTEXT est une constante, qui correspond à un message précis envoyé à l'aide. Il en existe beaucoup d'autres. Nous vous invitons à consultez la MSDN à ce sujet mais également dans le sous répertoire &lt;b&gt;include&lt;/b&gt; du répertoire d'installation de HTML Help Workshop. Vous y trouverez le fichier htmlhelp.h qui contient toutes ces informations.</paragraph>
+  </section>
+  <section name="Téléchargements" title="Téléchargements">
+    <paragraph>&lt;br&gt;&lt;a href="downloads/htmlhelp.exe"&gt;HTML Help Workshop&lt;/a&gt; : le logiciel pour compiler/décompiler les fichiers d'aide au format CHM + l'aide en ligne&lt;br&gt;&lt;a href="downloads/CallCHM.zip"&gt;CallCHM.zip&lt;/a&gt; : Exemple de l'appel de l'aide avec Visual Basic 6&lt;br&gt;&lt;a href="downloads/exemple.zip"&gt;exemple.zip&lt;/a&gt; : un exemple simple de fichier CHM&lt;br&gt;&lt;a href="downloads/exemple_avance.zip"&gt;exemple_avance.zip&lt;/a&gt; : un exemple doté de fonctionalités avancées&lt;br&gt;&lt;a href="downloads/stoplist_fr.stp"&gt;stoplist_fr.stp&lt;/a&gt; : fichier stop-list en français&lt;br&gt;&lt;a href="downloads/stoplist_en.stp"&gt;stoplist_en.stp&lt;/a&gt; : fichier stop-list en anglais&lt;br&gt;</paragraph>
+  </section>
+</document>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Technologie des composants</title><keywords>CMOS TTL composant technologie volt ampère</keywords><description>Technologie des composants</description><links><link type="prev"></link><link type="index"></link><link type="next"></link></links><introduction>Le débutant en électronique est souvent perdu entre les centaines de cigles, dénomination et technologie des composants. Dans ce domaine, la seule 
+chose qui compte vraiment est l'expérience. Procédons à un petit tour de ce côté, en espérant que cela vous aidera dans le choix de vos composants.</introduction></page><section name="section 1" title="Les technologies des portes"><paragraph name="paragraph">Les composants sont fabriqués de technologie différentes. Rappelons que l'élément de base d'un composant est le transistor. Un transistor est le plus 
+souvant utilisé en commutation, c'est à dire comme un interrupteur. (il laisse ou non passer le courant) Par exemple, la mode actuelle est de comparer 
+la puissance des puces graphiques ou des proceseur avec le nombre de composants dont ils sont composés.&lt;br&gt;
+&lt;br&gt;
+Rappelons également que les niveaux logiques sont les suivants :&lt;br&gt;
+un 1 logique correspond à la tension d'alimentation du circuit (Vcc)
+un 0 logique correspond à la tension de référence du circuit (0V, Gnd le plus souvent)&lt;br&gt;
+&lt;br&gt;
+Nous allons prendre des exemples plus simples pour illustrer notre cours : prenons par exemple les portes logiques. Nous distingons plusieurs grandes familles :
+&lt;br&gt;
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Famille TTL&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+Transistor-Transistor Logic : à base de transistors bipolaires. Les tensions d'alimentation et de fonctionnement sont assez strictes et les transistors 
+fonctionnent en commutation (tout ou rien). On distingue plusieurs modèles normalisés :
+&lt;ul&gt;
+&lt;li&gt;LS : Low power Schottky. Cette série faible consommation utilise des diodes Shottky (diodes rapides) pour la commutation&lt;/li&gt;
+&lt;li&gt;AS : Advanced Schottky. (plus rapide)&lt;/li&gt;
+&lt;li&gt;ALS : Advanced Low power Schottky. Combine les avantages du LS et du AS.&lt;/li&gt;
+&lt;li&gt;F : Fast&lt;/li&gt;
+&lt;/ul&gt;
+
+L'avantage de cette famille est sa grande rapidité, due à la technologie bipolaire.</paragraph><code syntax="None" name="code">Caractéristiques :
+Alimentation :
+4,5 V &lt; Vcc &lt; 5,5 V
+Tensions :
+Entrées 0 &lt; Vil &lt; 0,8 V
+Vcc &gt; Vih &gt; 2,4 V
+Sorties Vol &lt; 0,8 V
+Voh &gt; 2,4 V
+Courants :
+Entrées Iil &lt; 1,6 mA
+Iih &lt; 40 µA
+Sorties Ioh &lt; 1,2 mA
+Iol &lt; 24 mA</code><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Famille CMOS&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+Metal Oxyde Semiconductor : à base de transistors à effet de champ
+&lt;ul&gt;
+&lt;li&gt;série des 4000 : tension de fonctionnement entre 5V et 18V&lt;/li&gt;
+&lt;li&gt;HC : High Speed C-MOS, 2 à 6V&lt;/li&gt;
+&lt;li&gt;HCT : le T signifie TTL, c'est à dire que les niveaux de tension sont compatibles avec la technologie TTL&lt;/li&gt;
+&lt;li&gt;AC/ACT&lt;/li&gt;
+&lt;li&gt;LVC/ALVC : LV signifie Low Voltage, l'alimentation est comprise entre 2,7V et 3,6V&lt;/li&gt;
+&lt;/ul&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;La famille CMOS est la famille sans doute la plus utilisée aujourd'hui car elle possède maintenant pratiquement que des qualités. Les entrées des composants 
+CMOS possèdent une grande impédance d'entrée. Les portes CMOS absorberont donc un faible courant ce qui est toujours avantageux. Néanmoins, leur principal 
+défaut est de posséder une capacité parasite en entrée. Cette capacité parasite varie en fonction de la fréquence de fonctionnement. Plus on augmente la fréquence, 
+plus il faut charger et décharger la capacité d'entrée : cela provoque un échauffement. Cette technologie est célèbre pour cela. Prenons par exemple les processeurs : 
+ceux-ci étant construits dans cette technologie, l'augmentation de la fréquence de fonctionnement oblige les constructeurs à recourir à des moyens de refroidissement de 
+plus en plus imposants. Une solution consiste à abaisser la tension de fonctionnement : la puissance dissipée en sera d'autant plus diminuée. De plus, les composants sont aujourd'hui 
+très fortement intégrés, ce qui signifie que les transistors sont en plus grand nombre pour une même surface : l'échauffement est donc particulièrement concentré.&lt;br&gt;
+&lt;br&gt;
+La famille C-MOS est aujourd'hui ce qu'il y a de plus performant, surtout avec les familles HC et HCT qui dépassent en rapidité la famille TTL. Ces portes n'absorbent quasiment aucun courant 
+(la technologie MOS fonctionne par niveaux de tension) et la plage de voltage d'alimentation est assez grande ce qui laisse de bonnes possibilités d'intégration. Qui plus est, la 
+technologie MOS est particulièrement bien immunisée au bruit ce qui est un atout supplémentaire extrêmemnt intéressant.
+&lt;br&gt;
+&lt;br&gt;</paragraph><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Famille ECL&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+Emitter Coupled Logic, famille spécifique pour les grandes vitesses à base de transisors bipolaires. Ces transistor ne fonctionnent pas en saturé-bloqué 
+à l'instar de la famille TTL mais dans leur zone linéaire.
+&lt;ul&gt;
+&lt;li&gt;10k : bipolaires non commutés en régime linéaire&lt;/li&gt;
+&lt;li&gt;100k : fonctionnement autour du point de repos&lt;/li&gt;
+&lt;/ul&gt;
+
+L'alimentation de ces portes est comprise entre -5,2V et -4,2V.</paragraph><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Famille BICMOS&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+Composite de CMOS et TTL.
+&lt;ul&gt;
+&lt;li&gt;BC (alimentation 5V)&lt;/li&gt;
+&lt;li&gt;BCT (alimentation 5V)&lt;/li&gt;
+&lt;li&gt;LVT&lt;/li&gt;
+&lt;/ul&gt;</paragraph></section><section name="section 2" title="Les caractéristiques des portes"><paragraph name="paragraph">Les caractéristiques sont fournies dans toute documentation constructeur. Elles aident le concepteur à choisir le composant le plus adapté à son 
+application. Il est également important de bien comprendre ce que signifient toutes les indications contenues dans les datasheets. Nous verrons d'ailleurs 
+qu'il faut garder un oeil critique sur les valeurs annoncées par les consctruteurs : elles sont tantôt optimistes, tantôt pessimiste selon ce qui les arrange.
+&lt;br&gt;
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Gammes de températures&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+On distingue principalement trois gammes de températures :
+&lt;ul&gt;
+&lt;li&gt;Gamme civile : 0°C &lt; T°C &lt; 70°C&lt;/li&gt;
+&lt;li&gt;Gamme industrielle : -40°C &lt; T°C &lt; 85°C&lt;/li&gt;
+&lt;li&gt;Gamme militaire : -55°C &lt; T°C &lt; 125°C&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+Bien sûr, les prix des composants grimpent en fonction de la qualité du circuit, autant que leur facilité d'approvisionnement.
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Temps de propagation&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+Le temps de propagation est le temps que l'information met à passer à travers un composant. Plus l'information doit passer de transistors, plus le temps 
+de propagation sera long. (les retards successifs s'accumulent) Prenons par exemple une porte NOT :</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\not_gate.jpg</link><legend>Une porte NOT classique, une entrée et une sortie.</legend></image><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\propagation.gif</link><legend>La représentation des temps de propagation.</legend></image><paragraph name="paragraph">Sur le chronogramme ci-dessus, nous avons indiqué deux temps de propagation, tpHL et TpLH, soit respectivement le temps de propagation High-&gt;Low 
+et le temps de propagation Low-&gt;High. Dans la plupart des cas, nous avons environ tpHL=tpLH pour simplifier. Ce genre de chronogramme est courant 
+dans les documentations constructeurs et peut dérouter certains débutants en électronique. En fait, quelque soit la technologie, il y a toujours un temps 
+de propagation, ausi infime soit il. Les chronogrammes ci-dessus sont donc un zoom très important  sur les zones de changement de niveau. À l'aide d'un 
+oscilloscope, nous pouvons facilement observer ce phénomène : avec une base de temps assez grande, le front montant apparaît totalement droit alors 
+qu'avec une base de temps plus petite le front montant apparaît sous la forme d'une pente, exactement comme sur les chronogrammes ci-dessus.&lt;br&gt;
+&lt;br&gt;
+Voyons maintenant la valeur de ces temps pour quelques technologie, à titre d'exemple :
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;table border="1" cellspacing="1" width="30%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;&lt;td&gt;Technologie&lt;/td&gt;
+&lt;td&gt;ALS&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;HC&lt;/td&gt;
+&lt;td&gt;HCT&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;tp&lt;/td&gt;
+&lt;td&gt;4ns&lt;/td&gt;
+&lt;td&gt;2ns&lt;/td&gt;
+&lt;td&gt;9ns&lt;/td&gt;
+&lt;td&gt;9ns&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Prenons un exemple. Soit un schéma électrique suivant :</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\propaschem.gif</link><legend></legend></image><paragraph name="paragraph">Essayons d'estimer de la fréquence maximale de ce montage basé sur des composants logiques de la famille 74LS. (temps de propagation tp=4ns)&lt;br&gt;
+&lt;br&gt;
+Comme nous l'avons dit ci-dessus, les temps de propagation s'ajoutent. Il faut donc prendre le trajet le plus long, c'est à dire le trajet qui contient le 
+plus de portes, afin de connaître la vitesse maximale admissible par ce montage. Nous voyons que le trajet le plus long contient 5 portes, soit un 
+temps de propagation maximal de t=20ns. On veut connaitre une fréquence maximale : il faut donc que la demie période soit supérieure au temps 
+de propagation maximal pour que l'information ne se perde pas. (il ne faut pas de chevauchement entre le temps de montée et le temps de descente du 
+signal) Nous avons donc :&lt;br&gt;
+&lt;br&gt;
+demie-période &gt; 20ns&lt;br&gt;
+T/2 &gt; 20ns&lt;br&gt;
+&lt;b&gt;f &lt; 25MHz&lt;/b&gt;
+</paragraph><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Courant d'entrée d'une porte&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+Toute porte consomme de l'énergie, et donc du courant, même s'il est très faible dans le cas de certaines technologie comme le CMOS. Par 
+convention, le courant rentre dans le circuit.</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\courant_porte.gif</link><legend>Par convention, le courant rentre dans le circuit.</legend></image><paragraph name="paragraph">En effet, le circuit électronique d'entrée possède une impédance propre. Cette impédance impose le courant d'entrée.&lt;br&gt;
+On a donc : &lt;br&gt;
+entrée au niveau haut "H" pour I&lt;sub&gt;e&lt;/sub&gt;&gt;0 (appelé dans les documentations I&lt;sub&gt;IH&lt;/sub&gt; (I Input High)&lt;br&gt;
+entrée au niveau bas "L" pour I&lt;sub&gt;e&lt;/sub&gt;&lt;0 (appelé dans les documentations I&lt;sub&gt;IL&lt;/sub&gt; (I Input Low)&lt;br&gt;
+&lt;br&gt;
+
+A titre d'exemple :&lt;br&gt;
+&lt;br&gt;
+
+&lt;table border="1" cellspacing="1" width="30%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+&lt;td rowspan="2"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td colspan="2"&gt;TTL&lt;/td&gt;
+&lt;td&gt;CMOS&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ALS&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I&lt;sub&gt;IH&lt;/sub&gt;&lt;/td&gt;
+&lt;td colspan="2"&gt;20µA&lt;/td&gt;
+&lt;td&gt;quelques nA&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I&lt;sub&gt;IL&lt;/sub&gt;&lt;/td&gt;
+&lt;td&gt;-0,2mA&lt;/td&gt;
+&lt;td&gt;-0,6mA&lt;/td&gt;
+&lt;td&gt;-quelques nA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Courant de sortie d'une porte&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+En ce qui concerne le sens du courant de sortie, c'est un peu plus différent.</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\courant_porte_sortie.gif</link><legend></legend></image><paragraph name="paragraph">Sortie H : Is&lt;0, le courant est fourni par la porte&lt;br&gt;
+Sortie L : Is&gt;0, le courant est absorbé par la porte&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;u&gt;Exemple :&lt;/u&gt; sur le schéma suivant, calculer Is pour S=1 et S=0. Nota : utiliser les valeurs de courants d'entrées donnés ci dessus.</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\exo_courant.gif</link><legend></legend></image><paragraph name="paragraph">&lt;table border="0" align="center"&gt;
+&lt;tr&gt;
+&lt;td valign="top" align="left"&gt;
+&lt;b&gt;S=1 :&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+Ie = Iih&lt;br&gt;
+Ie' = Iih'&lt;br&gt;
+&lt;br&gt;
+Is = -(Ie+Ie')&lt;br&gt;
+Is = -40µA
+&lt;/td&gt;
+
+&lt;td&gt;
+&lt;b&gt;S=0 :&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+Ie = IiL&lt;br&gt;
+Ie' = IiL'&lt;br&gt;
+&lt;br&gt;
+Is = -(Ie+Ie')&lt;br&gt;
+Is = -(-0,2µA + (-0,6mA))&lt;br&gt;
+Is = -0,8µA
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Sortance d'une porte&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+La sortance d'une porte correspond au nombre de portes d'une même famille que l'on peut mettre en sortie d'une porte de cette famille. Cette 
+caractéristique est aujourdh'ui un peu désuète car les circuits se mixent sans problèmes. Les courants fournis par les portes sont maintenant 
+suffisants.</paragraph><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Marge de bruit&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+Une porte logique possède deux états binaire : 0 ou 1. La porte fait la différence entre un "0" et un "1" selon le voltage présent à sa borne d'entrée. 
+Par exemple, pour la logique TTL, un 0V sera vu comme un "0" et un 5V sera vu comme un "1". Bien sûr, cela est la théorie. En pratique, le 0V n'est 
+jamais parfait, ni même le 5V. À partir de là, il faut bien se fixer des bornes hautes et basses qui délimiteront l'état haut de l'état bas.</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\marge_bruit.gif</link><legend></legend></image><paragraph name="paragraph">&lt;br&gt;
+Les documentations constructeurs donnent pour chaque composant ces caractéristiques hautes et basses.&lt;br&gt;
+&lt;br&gt;
+À l'état haut : V&lt;sub&gt;IH&lt;/sub&gt; &lt; V&lt;sub&gt;e&lt;/sub&gt; &lt; V&lt;sub&gt;cc&lt;/sub&gt;&lt;br&gt;
+À l'état bas : 0 &lt; V&lt;sub&gt;e&lt;/sub&gt; &lt; V&lt;sub&gt;IL&lt;/sub&gt;&lt;br&gt;
+&lt;br&gt;
+Voici les valeurs typiques pour les grandes familles (en considérant que les CMOS sont alimentés en 5V) :&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" width="30%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+&lt;td rowspan="2"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td rowspan="2"&gt;TTL&lt;/td&gt;
+&lt;td colspan="2"&gt;CMOS&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HC&lt;/td&gt;
+&lt;td&gt;HCT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;V&lt;sub&gt;IH&lt;/sub&gt;&lt;/td&gt;
+&lt;td&gt;2V&lt;/td&gt;
+&lt;td&gt;3,2V&lt;/td&gt;
+&lt;td&gt;2V&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;V&lt;sub&gt;IL&lt;/sub&gt;&lt;/td&gt;
+&lt;td&gt;0,8V&lt;/td&gt;
+&lt;td&gt;1,1V&lt;/td&gt;
+&lt;td&gt;0,8V&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+</paragraph><paragraph name="paragraph">De même que pour les entrées, les sorties ne possèdent pas de tension parfaite. (5V ou 0V dans le cas de la logique TTL) Les constructeurs 
+fournissent des valeurs minimales et maximales garanties, pour une certaine impédance de charge. En effet, c'est toujours la charge qui impose le 
+courant, et donc la tension de sortie. Celle ci diminuera si le courant augmente par exemple. Les marges données par le constructeurs sont 
+V&lt;sub&gt;OL&lt;/sub&gt; et V&lt;sub&gt;OH&lt;/sub&gt;, respectivement la tension maximale à la sortie lorsque la sortie est à "0" et la tension maximale de la sortie 
+lorsque l'état est au niveau "1".&lt;br&gt;
+On regroupe les caractéristiques des portes dans un graphique :</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\immunite.gif</link><legend></legend></image><paragraph name="paragraph">La différence entre les limites d'entrées et de sorties est appelée marge de bruit (ou immunité).&lt;br&gt;
+&lt;br&gt;
+Marge de bruit à l'état haut : V&lt;sub&gt;OH&lt;/sub&gt; - V&lt;sub&gt;IH&lt;/sub&gt;&lt;br&gt;
+Marge de bruit à l'état bas : V&lt;sub&gt;IL&lt;/sub&gt; - V&lt;sub&gt;OL&lt;/sub&gt;&lt;br&gt;
+&lt;br&gt;
+Nous en avons terminé avec les principales caractéristiques des portes. Ces quelques informations vous guideront lors de la lecture des documentations 
+constructeurs.</paragraph></section><section name="section 3" title="Les broches d'entrées/sorties"><paragraph name="paragraph">Les composants logiques possèdent plusieurs types de technologie d'entrées/sorties. La physique des ports d'entrées/sorties est très importante 
+à connaître afin de ne pas interconnecter n'importe quels composants ensembles. Dans le cas des microcontrôleurs par exemple, 
+les documentations constructeurs fournissent tous les détails à propos des technologies utilisées par les ports. On rencontre alors des termes 
+comme "collecteur ouvert" ou "résistance de tirage".</paragraph><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Les sorties à collecteur ouvert&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+Une broche de sortie se présente habituellement sous la forme suivante :</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\open_collector.gif</link><legend>Un port "classique" 0-Vcc à gauche, et un port à collecteur ouvert à droite.</legend></image><paragraph name="paragraph">La sortie d'un port classique possède deux états : un 1 (5V) et un 0 (0V). Sans regarder les technologies, une broche est en quelque sorte un 
+transistor. Un transistor possède trois broches : la base, l'émetteur et le collecteur. La base sert à recevoir la commande (en courant ou en tension) qui 
+va bloquer ou saturer le transistor : le fonctionnement est en tout ou rien. (ou commutation) Dans le cas d'un port classique, une résistance est 
+incluse entre l'alimentation et le collecteur lors de la fabrication du circuit. Cette circuiterie n'est pas visible, elle est interne au composant. Lorsque le 
+transistor est saturé, la sortie S est à la masse. Lorsque le transistor est bloqué, la sortie S est à Vcc. N'oublions pas qu'un transistor en commutation 
+peut être vu comme un interrupteur commandé. La résistance est appelée &lt;b&gt;résistance de tirage&lt;/b&gt;, car elle "tire" la sortie S à Vcc lorsque le 
+transistor est bloqué. En anglais, on distingue :&lt;br&gt;
+&lt;br&gt;
+La résistance de pull-up : résistance de tirage au +Vcc&lt;br&gt;
+La résistance de pull-down : résistance de tirage au -Vcc, ou Gnd dans la plupart des cas.</paragraph><paragraph name="paragraph">Dans le schéma de droite, nous avons représenté le principe d'une broche à collecteur ouvert. Lorsque le transistor est saturé, la sortie S est tirée à la masse 
+exactement comme dans le schéma précédent. Lorsque le transistor est bloqué (ouvert), la sortie S est alors "en l'air". Son niveau n'est donc pas défini.</paragraph><paragraph name="paragraph">&lt;b&gt;Avantages du collecteur ouvert:&lt;/b&gt; 
+&lt;ul&gt;
+&lt;li&gt;Une résistance de tirage peut être rajoutée à l'extérieure du circuit. La tension de tirage pourra donc être différente de la tension d'alimentation 
+su circuit. (Vcc)&lt;/li&gt;
+&lt;li&gt;Les broches peuvent être interconnectées sans risque de court-circuit, ce qui laisse la possibilité de créer des bus de données. (à l'instar du bus I2C)&lt;/li&gt;
+&lt;li&gt;La caractéristique précédente permet également de créer des fonctions logiques entre les broches, et créer ainsi des priorités.&lt;/li&gt;
+&lt;/ul&gt;</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\res_externe.gif</link><legend>Une résistance de pull-up en sortie transforme un collecteur ouvert en port classique.</legend></image><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\et_cable.gif</link><legend>Une série de portes à collecteur ouvert peut former un ET cablé.</legend></image></section><section name="section 4" title="Le trigger de Schmitt"><paragraph name="paragraph">Le trigger de schmitt est une technologie un peu spéciale que l'on retrouve de temps en temps dans les portes logiques et même dans des ports de 
+certains microcontrôleurs. Le trigger de schmitt est en fait un comparateur à hystérésis. Ce type de porte sert essentiellement d'anti rebond. Un rebond 
+se caractérise par une instabilité de la tension : celle ci, au lieu de changer de niveau d'un seul trait (0 à 5V par exemple), a tendance à redescendre et 
+à remonter plusieurs fois. Les signaux d'entrée célèbres pour leurs rebonds sont les interrupteurs manuels. A tous les coups, les signal issus de ce type de 
+dispositif aura des rebonds.</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\schmitt_gate.gif</link><legend>La porte logique trigger de Schmitt. (avec ou sans inverseur)</legend></image><paragraph name="paragraph">Enfin, pour illustrer le principe de l'hystérésis, voici un chronogramme :</paragraph><image name="image"><link type="img">D:\Documents\Cours Progworld\systemesnum\images\schmitt_chrono.gif</link><legend></legend></image></section></document>

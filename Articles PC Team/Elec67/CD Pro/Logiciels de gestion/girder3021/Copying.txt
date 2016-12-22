@@ -1,0 +1,36 @@
+                      Copyright License Girder
+                             May 2000
+			  R.E.M.W.Bessems
+                   <R.E.M.W.Bessems@stud.tue.nl>
+
+
+The program below refers to Girder and any file
+that is a part of Girder, in any version. 
+Each Licensee is addressed as "you".
+
+
+License terms:
+
+1. You may use the program free of charge for personal use.
+2. If you want to use Girder commercially you must contact R.E.M.W.Bessems
+   for licensing costs
+3. You may not sell the program.
+4. You may not make money from the program.
+5. Any additions you make in the form of translations or plugins belong
+   to you, so does the copyright, unless otherwise agreed with R.E.M.W.Bessems.
+6. You are not allow to redistribute Girder without permission of R.E.M.W.Bessems
+7. As of version 3.0.21 this permission has to be a written permission.
+
+This program comes with no warranty
+
+A. Because the program is licensed free of charge there is no warranty
+for the program, to the extent permitted by applicable law. The program
+is provided "as is" without warranty of any kind, either expressed or 
+implied, including, but not limited to, the implied warranties of 
+merchantability and fitness for a particular purpose. The enterie
+risk as to the quality and performance of the program it with you.
+
+B. In no event is R.E.M.W.Bessems, or any other party who 
+redistributed the program liable to you for the damages that may
+arise.
+

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name></name><email></email><web-site></web-site></author><page name="page"><title>Codage des données</title><keywords>mantisse résolution binaire hexadécimal</keywords><description>Codage des données</description><links><link type="prev"></link><link type="index">E:\Documents\Cours Progworld\systemesnum\index.htm</link><link type="next">E:\Documents\Cours Progworld\systemesnum\cours2.htm</link></links><introduction>Il existe un certain nombre de standards et de règles pour représenter des données en mémoire. Il convient de les 
+respecter pour que l'information soit valide et cohérente. C'est la base de toute forme d'électronique, de dialogue, de stockage et de 
+représentation des données. Vous verrez ici toutes les propriétés étonnantes et la puissance de ce système. 
+Commençons sans plus tarder par quelques bases importantes.
+</introduction></page><section name="section 1" title="Le binaire"><paragraph name="paragraph">Désireux d'automatiser certaines taches ingrates ou trop compliquées (les calculs à l'époque), les scientifiques ont créé un standard pour représenter les nombres en électronique. Le système binaire a été utilisé : comme son nom l'indique, il comporte deux états possibles : 0 ou 1. A ces chiffres, on associe une référence de tension afin de représenter ces états avec des composants électroniques. Ainsi, dans la plupart des cas, 0 correspond à une tension de 0V et 1 à une tension de 5V.</paragraph><paragraph name="paragraph">Le binaire n'a rien d'une invention, il s'agit d'une base de comptage. La base la plus courante est la base dix (les chiffres vont de 0 à 9). Le numéro de base correspond au nombre de chiffres avant de passer au poids suivant. Cette notion de poids est très importante : le poids d'un nombre correspond à sa place dans l'écriture. Par exemple, dans le nombre suivant : </paragraph><code syntax="None" name="code">3765
+
+3 est le digit de poids le plus fort et 5 celui de poids le plus faible. 
+</code><paragraph name="paragraph">Ainsi, comme vous l'avez appris dans votre enfance, un nombre décimal est formé par une somme de multiplications. L'exemple ci dessus peut se décomposer comme cela : </paragraph><code syntax="None" name="code">3765 = 3*1000 + 7*100 + 6*10 + 5
+
+Soit, en utilisant des puissances :
+
+3765 = 3*10^3 + 7*10^2 + 6*10^1 + 5*10^0 </code><paragraph name="paragraph">Cet exemple utilise une base bien connue, le base 10. Le binaire, la base 2, se forme exactement de la même manière. Bien évidemment, on ne peut utiliser que des 1 ou des 0.
+L'écriture standard est appelée le binaire naturel. Il existe d'autres écritures comme le binaire réléchi par exemple. Le binaire naturel se code de la façon suivante, avec le poids fort à gauche et le poids faible à droite (comme pour toutes les bases en fait). </paragraph><paragraph name="paragraph">a&lt;sub&gt;i&lt;/sub&gt; ... a&lt;sub&gt;3&lt;/sub&gt; a&lt;sub&gt;2&lt;/sub&gt; a&lt;sub&gt;1&lt;/sub&gt; a&lt;sub&gt;0&lt;/sub&gt;&lt;br&gt;
+&lt;br&gt;
+a est une variable qui prend la valeur "0" ou "1". L'indice représente le poids de a.</paragraph><paragraph name="paragraph">"ai" est appelé BIT, qui signifie "Binary digIT", et vaut donc 0 ou 1. La taille d'un nombre binaire est exprimé en bit. Ainsi, on peut former un nombre de n'importe quelle taille, 1 bit, 2 bits, 3 bits etc. Il existe des tailles normalisées : 4 bits, 8 bits, 16 bits, 32 bits etc. On nomme ainsi par mot le regroupement de bits. L'octet (8 bits) est le mot le plus répendu ; par exemple la GameBoy ou l'Amstrad contiennent des processeurs dits 8 bits. Le bit de poids fort est appelé MSB (Most Significant Bit) et le bit de poids faible LSB (Least Significant Bit).</paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+&lt;td&gt;Poids&lt;/td&gt;
+&lt;td&gt;2&lt;sup&gt;7&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;6&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;5&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;4&lt;/sup&gt;&lt;/td&gt;
+	&lt;td&gt;2&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;0&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;Valeur&lt;/td&gt;&lt;td&gt;128&lt;/td&gt;&lt;td&gt;64&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;
+	&lt;td&gt;8&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;Nombre&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;
+	&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+	&lt;br&gt;
+	Le nombre écrit ci-dessus est donc égal à :&lt;br&gt;
+	0*2^7 + 1*2^6 + 1*2^5 + 0*2^4 + 1*2^3 + 0*2^2 + 0*2^1 + 1*2^0 = 0*128 + 1*64 + 1*32 + 0*16 + 1*8 + 0*4 + 0*2 + 1*1 = &lt;b&gt;105&lt;/b&gt;</paragraph><paragraph name="paragraph">None?Voilà, et c'est la même méthode pour toutes les bases. Ici, avec 8 bits, nous pouvons coder jusqu'à 255, soit 2^8 - 1. D'une manière générale, la résolution d'un nombre binaire est :
+sur n bits : 0 &lt; x &lt; 2n - 1 </paragraph></section><section name="section 2" title="Les bases"><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;L'hexadécimal et l'octal &lt;/font&gt;&lt;br&gt;&lt;br&gt;
+
+Le système hexadécimal est une forme d'écriture des nombres dans la base 16. L'hexadécimal possède les mêmes propriétés des autres bases. 
+Il contient 16 chiffres, de 0 à 9 et les 6 premières lettres de l'alphabet.&lt;br&gt;
+L'octal voit ses nombres codés en base 8, c'est à dire que seuls les digits de 0 à 7 sont utilisés pour représenter un nombre. Ce codage est 
+peu répendu car il est plus difficile "d'appréhender" la valeur d'un nombre écrit en octal. Voici un début de correspondance entre ces bases :</paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+	&lt;tr&gt;&lt;td&gt;Décimal&lt;br&gt;Base 10&lt;/td&gt;&lt;td&gt;Hexadécimal&lt;br&gt;Base 16&lt;/td&gt;&lt;td&gt;Binaire&lt;br&gt;base 2&lt;/td&gt;&lt;td&gt;Octal&lt;br&gt;Base 8&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0000&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0001&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;0010&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;0011&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;0100&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;0101&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;0110&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;0111&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;1000&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;1001&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;1010&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;1011&lt;/td&gt;&lt;td&gt;13&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;&lt;td&gt;1100&lt;/td&gt;&lt;td&gt;14&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;13&lt;/td&gt;&lt;td&gt;D&lt;/td&gt;&lt;td&gt;1101&lt;/td&gt;&lt;td&gt;15&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;E&lt;/td&gt;&lt;td&gt;1110&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;15&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;1111&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;10000&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;
+	&lt;/table&gt;</paragraph><paragraph name="paragraph">Très vite on a utilisé cette forme d'écriture pour quantifier la mémoire des PC. Celle-ci a augmenté très rapidement et c'est nettement 
+plus simple et compréhensible d'écrire : A à la place de 1010 ; un caractère au lieu de 4 !</paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Passage d'une base à l'autre &lt;/font&gt;&lt;br&gt;&lt;br&gt;
+
+Eh oui, la calculatrice de Windows est bien pratique mais il est intéressant de savoir comment passer d'une base à l'autre "à la main".
+Bon, pour passer du binaire à la base décimale, il faut procéder comme ci-dessus, en ajoutant les bits des puissances de 2. L'inverse est cependant 
+un peu plus dur. Prenons un exemple : 431. On peut déjà voir que ce nombre ne tiendra pas sur 8 bits (255 maxi) mais sera codé sur 9 bits 
+(511 maxi). Pour transfomer ce nombre en binaire, il suffit de diviser successivement le quotient par 2 (binaire = base 2). S'il y a un reste, on 
+note 1, sinon on notera 0. Notre exemple donne donc : </paragraph><image name="image"><link type="img">images\conv_bin_dec.jpg</link><legend>Ainsi, (431)&lt;sub&gt;10&lt;/sub&gt; = (110101111)&lt;sub&gt;2&lt;/sub&gt;</legend></image><paragraph name="paragraph">La conversion du binaire à l'hexadécimal est extrêmement simple : il suffit de regrouper le nombre binaire en paquets de 4 bits en commençant 
+par le bit de poids faible (sinon ça n'a aucun sens). Après il ne reste qu'à traduire chaque paquet de 4 bits par son équivalent en hexadécimal.&lt;br&gt;
+
+Pour différencier un écriture hexa d'une écriture décimale, on utilise une identification par un signe que l'on place devant le nombre. Le plus 
+souvent c'est 0x, dans le C par exemple mais il y a aussi &amp;H en Visual basic, h ou $ en assembleur etc... Nous garderons ici la notation 0x qui est 
+la plus répendue. On peut aussi écrire (D6)16 mais c'est assez lourd. Cela peut paraître anodin mais, par exemple, 1001011 ne vaut pas le même en 
+binaire et en hexadécimal ! </paragraph><code syntax="None" name="code">Quelques exemples :
+
+01100111
+on regroupe par 4 :
+0110 0111
+on traduit : 0x67
+
+011010100010001110
+on regroupe par 4 :
+01 1010 1000 1000 1110
+on traduit : 0x1A88E </code><paragraph name="paragraph">Remarquez que le dernier regroupement n'a que deux bits : cela est normal, vous pouvez rajouter autant de 0 que vous voulez après le MSB, 
+comme dans toute les bases. En effet, si vous prenez le nombre décimal 47, vous pouvez parfaitement l'écrire 00047, c'est pareil. Cependant, 
+comme nous le verrons plus loin, les zéros après le MSB peuvent avoir une très grande importance dans le cas du binaire signé. </paragraph></section><section name="section 3" title="Le codage binaire signé"><paragraph name="paragraph">L'ennui avec le binaire tel que nous l'avons défini plus haut est qu'il est impossible de coder des nombres négatifs. Mais heureusement, il existe 
+une norme pour arranger tout ça. On va ainsi définir que les nombres positifs sont les nombres binaires commençant par un 0 (le bit de poids 
+fort) et les nombres négatifs sont les nombres binaires terminant par un 1 (le bit de poids faible).
+
+Prenons un nombre A et procédons à l'opération suivante : </paragraph><image name="image"><link type="img">images\calcul1.gif</link><legend></legend></image><paragraph name="paragraph">On additionne A avec son complément et 1. Nous voyons que, pour une taille fixée (ici 8 bits) le résultat est 0. Le 1 supplémentaire est 
+appelé retenue (carry en anglais), il ne nous intéresse pas ici car nous avons réalisé une addition de deux nombres de 8 bits, donc le résultat est 
+sur 8 bits.&lt;br&gt;
+On en conclu alors que (en fixant le taille des nombres) :&lt;br&gt;
+&lt;br&gt;
+A + /A + 1 = 0&lt;br&gt;
+&lt;br&gt;
+Et d'autre part nous avons :&lt;br&gt;
+&lt;br&gt;
+A - A = 0&lt;br&gt;
+&lt;br&gt;
+Dès lors, on définit tout nombre négatif par :&lt;br&gt;
+&lt;br&gt;
+- A = /A + 1&lt;br&gt;
+&lt;br&gt;
+Cette égalité s'appelle le complément à deux de A. Le complément à 1 de A est /A, on rajoute 1 ce qui donne le complément à deux.
+Note : Le complément à deux de 0000 0000 est 0000 0000 (zéro n'est ni négatif, ni positif)
+Voici la grille de tous les nombres binaires signés sur 4 bits. </paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+	&lt;tr&gt;&lt;td&gt;-8&lt;/td&gt;&lt;td&gt;1000&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-7&lt;/td&gt;&lt;td&gt;1001&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-6&lt;/td&gt;&lt;td&gt;1010&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-5&lt;/td&gt;&lt;td&gt;1011&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-4&lt;/td&gt;&lt;td&gt;1100&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-3&lt;/td&gt;&lt;td&gt;1101&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-2&lt;/td&gt;&lt;td&gt;1110&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-1&lt;/td&gt;&lt;td&gt;1111&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0000&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0001&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;0010&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;0011&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;0100&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;0101&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;0110&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;0111&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Un nombre binaire  A signé sur n bits a donc la résolution suivante :&lt;br&gt;
+- 2&lt;sup&gt;n-1&lt;/sup&gt;&amp;lt; A &amp;lt; 2&lt;sup&gt;n-1&lt;/sup&gt; - 1&lt;br&gt;
+&lt;br&gt;
+Prenons un exemple : imaginons que l'on code un nombre sur 1 octet (soit 8 bits) en non signé (pas de nombres négatifs). La résolution 
+est donc 0 ... 255. Maintenant, on garde la même résolution (1 octet) mais on veut y représenter des nombres négatifs. pour garder une 
+symétrie la résolution va passer de -128 à 127 ce qui fait bien 128+127=256 nombres différents. La démonstration ci-dessus montre que :&lt;br&gt;
+&lt;br&gt;
+-A= /A + 1&lt;br&gt;
+&lt;br&gt;
+Exemple : comment coder -5 ? Il faut tout d'abord déterminer la résolution ! -5 ne peut pas tenir sur 3 bits (-4 minimum), donc la résolution 
+de -5 est sur 4 bits (dans ce cas on a -8 minimum). On procède comme cela : &lt;br&gt;
+&lt;br&gt;
+1) on code +5 : 0101&lt;br&gt;
+2) on prend /A (le complément) : 1010&lt;br&gt;
+3) on ajoute 1 à ce complément : 1010+1 = 1011&lt;br&gt;
+&lt;br&gt;
+C'est fini ! </paragraph></section><section name="section 4" title="Le codage des nombres réels"><paragraph name="paragraph">Nous avons vu jusqu'à maintenant le codage des nombres entiers. Le codage des nombres à virgule est assez différent et dépend en plus 
+du système sur lequel on se trouve. Comment vous l'avez sûrement déjà entendu, on parle souvent de format à virgule fixe ou à virgule flottante. </paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Représentation en virgule fixe &lt;/font&gt;&lt;br&gt;&lt;br&gt;
+
+Dans cette représentation, la place de la virgule dans un mot est déterminée. La partie entière se code comme à l'accoutumé 
+avec les puissances de 2 mais la partie fractionnaire se code avec les puissances de 2 négatives. L'exemple suivant code un nombre en 
+virgule fixe sur 8 bits dont 3 pour la partie fractionnaire : </paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+	&lt;tr&gt;&lt;td&gt;Bit&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td rowspan="2"&gt;poids&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;4&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
+			&lt;td&gt;2&lt;sup&gt;0&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;-1&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;-2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2&lt;sup&gt;-3&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0,5&lt;/td&gt;&lt;td&gt;0,25&lt;/td&gt;&lt;td&gt;0,125&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Quelques exemples pour clarifier tout ça :</paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+	&lt;tr&gt;&lt;td&gt;+15,875&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;7F&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;+7,625&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;3D&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;+0,125&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;01&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;00&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-0,125&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;FF&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-15,875&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;81&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-16&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;80&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Cette méthode est simple mais limitée. Dès lors elle n'est pas adaptée aux calculs scientifiques. Au passage, c'est pour cela que la puissance 
+des processeurs en virgule flottante est importante ; il y a beaucoup de calculs dans les jeux en 3D actuels (Quake ? :) et cette méthode 
+n'est pas du tout adaptée. En effet :&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;La précision absolue est constante (0,125 dans notre exemple) donc la précision relative est variable.&lt;/li&gt;
+&lt;li&gt;L'amplitude des nombres représentables est limitée [-16 ... 15,875] dans notre exemple.&lt;/li&gt;
+&lt;ul&gt;&lt;br&gt;</paragraph><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Représentation en virgule flottante&lt;/font&gt;&lt;br&gt;&lt;br&gt;
+
+On part du principe suivant : une même valeur peut s'écrire de multiples façons. Par exemple :&lt;br&gt;&lt;br&gt;
+
+1997 = 199,7*10 = 19,97*102 = 1,997*103 = 0,1997*104 = ...&lt;br&gt;
+&lt;br&gt;
+D'une manière générale, tout nombre décimal peut se mettre sous la forme :&lt;br&gt;
+&lt;br&gt;
+
+&lt;div align="center"&gt;&lt;font size="4"&gt;&lt;b&gt;sM*B&lt;sup&gt;E&lt;/sup&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;
+
+Avec :&lt;br&gt;&lt;br&gt;
+	&lt;b&gt;s&lt;/b&gt; = signe de la Mantisse&lt;br&gt;
+	&lt;b&gt;M&lt;/b&gt; = Mantisse&lt;br&gt;
+	&lt;b&gt;B&lt;/b&gt; = Base&lt;br&gt;
+	&lt;b&gt;&lt;sup&gt;E&lt;/sup&gt;&lt;/b&gt; = Exposant&lt;br&gt;&lt;br&gt;
+	
+	la mantisse est dite normalisée si :&lt;br&gt;&lt;br&gt;
+	&lt;div align="center"&gt;&lt;b&gt;1 &amp;lt;= mantisse normalisée &amp;lt; Base&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;
+	
+	Exemple en base 10 :</paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;b&gt;Valeur&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Représentation normalisée&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;-0,002458&lt;/td&gt;&lt;td&gt;-2,458*10&lt;sup&gt;-3&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;12564,78&lt;/td&gt;&lt;td&gt;1,256478*10&lt;sup&gt;4&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">La base étant implicite, il reste à coder le signe, la mantisse normalisée et l'exposant. Plusieurs représentations existent dont le format 
+standard IEEE 754 P simple précision (32 bits) utilisé sur de nombreux processeurs arithmétiques. Voici comment est répartie 
+l'information sur ces 32 bits : 
+</paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;b&gt;Bit&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;31&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;30&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;...&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;23&lt;/b&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;b&gt;22&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;...&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;0&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;Contenu&lt;/td&gt;&lt;td&gt;s&lt;br&gt;(+=0,-=1)&lt;/td&gt;&lt;td&gt;E = E + 127&lt;/td&gt;&lt;td&gt;F = partie fractionnaire de la mantisse normalisée&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">L'exposant est codé en exédent 127 (8bits). La résolution maximale sera donc : 
+</paragraph><paragraph name="paragraph">&lt;table border="1" cellspacing="1" width="28%" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;b&gt;E&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;E + 127&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;+ 128&lt;/td&gt;&lt;td&gt;FF&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;7F&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;- 127&lt;/td&gt;&lt;td&gt;00&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Attention, préparez les aspirines ça va commencer. Voici un exemple de codage complet :&lt;br&gt;&lt;br&gt;
+	
+On prend X = 15,71875&lt;br&gt;
+1) Conversion en binaire : X = 1111,10111
+2) Normalisation de la mantisse : X = 1,11110111*2&lt;sup&gt;3&lt;/sup&gt;
+3) Codage de l'exposant : 3 + 127 = 130 = 0x82
+&lt;br&gt;&lt;br&gt;
+
+D'où le résultat : X = &lt;font color="#E22000"&gt;0&lt;/font&gt;&lt;font color="#0000FF"&gt;100 0001 0&lt;/font&gt;
+&lt;font color="#008000"&gt;111 1011 1000 0000 0000 0000&lt;/font&gt; = 0x417B8000&lt;br&gt;
+
+En rouge : le signe&lt;br&gt;
+En bleu : l'exposant&lt;br&gt;
+En vert : la mantisse&lt;br&gt;
+&lt;br&gt;
+On procède à l'opération inverse avec un autre exemple :&lt;br&gt;&lt;br&gt;
+
+Soit Y = 0xC048C000&lt;br&gt;&lt;br&gt;
+
+On écrit le nombre en bianire pour en extraire les composantes :&lt;br&gt;&lt;br&gt;
+Y = &lt;font color="#E22000"&gt;1&lt;/font&gt;&lt;font color="#0000FF"&gt;100 0000 0&lt;/font&gt;
+&lt;font color="#008000"&gt;100 1000 1100 0000 0000 0000&lt;/font&gt;&lt;br&gt;&lt;br&gt;
+	
+Dès lors, on obtient :&lt;br&gt;&lt;br&gt;
+s=1 ; E + 127 = 1000 0000 = 128 d'où E=1&lt;br&gt;
+M=1,1001 0001 1000 0000 0000 000&lt;br&gt;&lt;br&gt;
+
+
+D'où :&lt;br&gt;&lt;br&gt;
+	
+Y = -1,1001 0001 1 * 2&lt;sup&gt;1&lt;/sup&gt; = -11,00100011 = - (3 + 2&lt;sup&gt;-3&lt;/sup&gt; + 2&lt;sup&gt;-7&lt;/sup&gt; + 2&lt;sup&gt;-8&lt;/sup&gt;) = -3,13671875&lt;br&gt;&lt;br&gt;
+	
+D'une manière générale :&lt;br&gt;&lt;br&gt;
+	
+&lt;div align="center"&gt;&lt;font size="4"&gt;&lt;b&gt;Y = (-1)&lt;sup&gt;s&lt;/sup&gt; * 1,F * 2&lt;sup&gt;E-127&lt;/sup&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;
+	
+Propriétés de cette représentation :&lt;br&gt;&lt;br&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Amplitude des nombres représentables : 1,0*2&lt;sup&gt;-127&lt;/sup&gt; &amp;lt;= |X| &amp;lt; 1,11111111111111111111111*2&lt;sup&gt;+128&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Précision disponible : précision relative dX/X=2&lt;sup&gt;-24&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Permet de comparer 2 réels de même signe comme des entiers non signés&lt;/li&gt;
+&lt;/ul&gt;
+</paragraph></section><section name="section 5" title="Les autres codages"><paragraph name="paragraph">&lt;font size="5" color="#0000FF"&gt;Le codage DCBN &lt;/font&gt;&lt;br&gt;&lt;br&gt;
+
+Cela signifie Décimal Codé Binaire Naturel, ou code pondéré décimal. Peu de chose à dire, c'est simplement une forme d'écriture. 
+Elle est très utilisée par exemple dans les systèmes à base d'afficheurs 7 segments. Chaque digit décimal est codé individuellement en 
+binaire. Seules les combinaisons de 0000 à 1001 sont utilisées. Juste un exemple pour comprendre l'écriture : </paragraph><code syntax="None" name="code">Le nombre 1984 s'écrit en binaire :
+
+0001 1001 1000 0100
+
+Chaque regroupement de 4 bits correspond, dans l'ordre, à un chiffre dont est composé le nombre. </code><paragraph name="paragraph">On peut choisir une autre pondération, comme le code AIKEN 2421 :&lt;br&gt;
+&lt;br&gt;
+Exemple : 1997 = 0001 1111 1111 1101 </paragraph></section><section name="section 6" title="Les opérations"><paragraph name="paragraph">Voilà de quoi vous faire travailler les méninges ;). Si on a l'habitude d'effectuer de tête les opérations simples en décimal, il nous est plus 
+difficile d'effectuer les mêmes opérations dans les bases 16 et 2. Pourtant, les opérations obéissent exactement aux mêmes lois et aux 
+mêmes propriétés. Le seul problème vient de la capacité, notion que l'on retrouve dans nos calculatrices. Il vous est déjà arrivé d'écrire une 
+opération, du type 112313548 * 23134548 et de vous retrouver avec un beau OL (Out of Limit) sur l'écran. Cela vient du fait que le résultat ne 
+tient pas sur la zone mémoire allouée pour stocker le résultat. Si cette mémoire a 8 bits, le nombre maximal qu'elle peut contenir est 255 (nombre 
+non signé). Allez, hop quelques exemples (TOUS les nombres sont codés en binaire signé, et donc le résultat de même) : </paragraph><code syntax="None" name="code">
+
+
+
+1010 0110 -90
++ 1100 1101 -51
+-------------- -------
+1 0111 0011 -141
+
+</code><paragraph name="paragraph">Voici un exemple où tout se passe bien :</paragraph><image name="image"><link type="img">images\calcul2.gif</link><legend></legend></image><paragraph name="paragraph">Un exemple de dépassement de capacité (overflow) :</paragraph><image name="image"><link type="img">images\calcul3.gif</link><legend></legend></image><paragraph name="paragraph">Là il y a un problème, le MSB est 1, ce qui signifie que le nombre est négatif (-72). Hors, le résultat d'une &lt;br&gt;
+addition de deux nombres positifs ne peut pas être négatif.&lt;br&gt;
+&lt;br&gt;
+Voici un exemple où il y a une retenue (illustration de l'importance de la résolution) :</paragraph><image name="image"><link type="img">images\calcul4.gif</link><legend></legend></image><paragraph name="paragraph">Le résultat est exact, si l'on tient pas compte de la retenue, c'est à dire du 9ième bit (calculs sur 8 bits, donc &lt;br&gt;
+résultat sur 8 bits).&lt;br&gt;
+&lt;br&gt;
+Une dernier exemple montrant un autre problème :
+</paragraph><image name="image"><link type="img">images\calcul5.gif</link><legend></legend></image><paragraph name="paragraph">Nous avons ici une retenue que nous laissons de côté compte tenu de la résolution. Cependant, le nombre sur 8 &lt;br&gt;
+bits est positif (il commence par un zéro) ce qui est impossible car l'addition de deux nombres négatifs donne &lt;br&gt;
+forcément un nombre négatif : il y a dépassement de capacité.&lt;br&gt;
+&lt;br&gt;
+Finalement, nous pouvons tirer la loi suivante : </paragraph><code syntax="None" name="code">Si on a :
+
+nombre positif + nombre positif = nombre négatif
+
+ou
+
+nombre négatif + nombre négatif = nombre positif
+
+Alors il y a dépassement de capacité. 
+</code><paragraph name="paragraph">Un dernier point concernant les calculs avec les nombres hexadécimaux. Encore une fois, pensez à effectuer la même méthode que pour 
+les nombres décimaux (la retenue s'additionne aux digits suivants et la base à ajouter est 16, lorsque le nombre à soustraire est plus grand). </paragraph><paragraph name="paragraph">Une addition :</paragraph><image name="image"><link type="img">images\calcul6.gif</link><legend></legend></image><paragraph name="paragraph">Une soustraction :</paragraph><image name="image"><link type="img">images\calcul7.gif</link><legend></legend></image></section></document>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name></name><email></email><web-site></web-site></author><page name="page"><title>Mémo d'électronique</title><keywords>schémas électronique composants brochage</keywords><description>Mémento d'électronique</description><links><link type="prev"></link><link type="index">E:\Cours Progworld\progelectronique\index.htm</link><link type="next">E:\Cours Progworld\progelectronique\annexe2.htm</link></links><introduction>Vous trouverez ici quelques tableaux, schémas et autres 
+documents à avoir sous la main quand on bricole :) Cette 
+rubrique s'agrandira selon les mails que je reçois et en fonctions 
+des difficultées que vous me ferez part. N'hésitez donc pas à me contacter 
+&lt;a href="mailto:arabine@programmationworld.com?subject=ProgWorld : électronique"&gt;ici&lt;/a&gt;
+pour avoir des précisions sur un composant particulier, un outils ou tout autre 
+matériel électronique.</introduction></page><section name="acheter composants" title="Où acheter ses composants ?"><paragraph name="paragraph">Je vous ai sélectionné trois boutiques de vente de composants 
+en ligne. Elles sont toutes les trois très sérieuses et possèdent 
+un catalogue suffisant pour l'électronicien amateur. Tous les 
+composants utilisés dans les cours de ce site sont disponibles 
+chez l'un ou l'autre fournisseur. Cliquez sur leur logo pour arriver directement sur leur site :)&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;&lt;a href="http://www.radiospares.fr" target="_blank"&gt;&lt;img src="images/rslogo.gif"&gt;&lt;/a&gt;&lt;/td&gt;
+       &lt;td&gt;Radiospares.fr est le plus grand distributeur français de composants et d'outillage en tous genres. Son 
+catalogue est incomparable et, malgré les apparences, il n'est pas réservé aux seules entreprises. Le particulier 
+peut acheter en ligne, sous réserve d'un minimum de 100F d'achats. N'hésitez pas à consulter ce site si vous cherchez 
+une documentation pdf sur un composant. Enfin le meilleur pour terminer, votre commande vous sera 
+livrée le lendemain dans voter boite au lettre et ce, sans aucun frais de ports.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td&gt;&lt;a href="http://www.selectronic.fr" target="_blank"&gt;&lt;img src="images/logoselec.gif"&gt;&lt;/a&gt;&lt;/td&gt;
+   &lt;td&gt;Un autre grand nom de la vente VPC, Selectronic possède également quelques magasins , notemment un à 
+Paris. Il est vivement conseillé de commander son catalogue très bien fournit pour le "hobbie-iste" électronicien. A noter 
+qu'il offre de nombreux kits prêts à monter dans divers domaines tels que le son, les alimentations, ou la robotique.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td&gt;&lt;a href="http://www.conrad.fr" target="_blank"&gt;&lt;img src="images/cclogo_fr.jpg"&gt;&lt;/a&gt;&lt;/td&gt;
+   &lt;td&gt;Dans le même esprit que Selectronic, Conrad dispose d'un catalogue très complet et vous permettra de trouver ce 
+que vous cherchez dans tous les domaines. Le site de Conrad est un modèle du genre et il est vraiment très pratique 
+de chercher un composant quelconque, le tout agrémenté de nombreuses photos. Enfin, le portail est très complet et vous 
+donnera accès à des dizaines de services (glossaire, mailing-list, forum...)&lt;/tr&gt;
+&lt;/table&gt;
+</paragraph></section><section name="code couleur résistances" title="Code de couleurs des résistances"><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\resistance.jpg</link><legend>Une résistance classique 1/4W, avec ses trois bagues pour la valeur et sa bague Or pour la précision.</legend></image><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\resistor.gif</link><legend></legend></image><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\resistances_schem.gif</link><legend>Les deux représentations possibles.</legend></image><paragraph name="paragraph">&lt;table border="1" align=center&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Couleur&lt;/td&gt;
+        &lt;td align="center"&gt;Bagues 1 et 2 &lt;/td&gt;
+        &lt;td&gt;Multiplicateur (bague 3)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#000000"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;0&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#800000"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;1&lt;/td&gt;
+        &lt;td&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#FF0000"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;2&lt;/td&gt;
+        &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#FF8040"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;3&lt;/td&gt;
+        &lt;td&gt;1 000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#FFFF00"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;4&lt;/td&gt;
+        &lt;td&gt;10 000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#008000"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;5&lt;/td&gt;
+        &lt;td&gt;100 000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#0000FF"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;6&lt;/td&gt;
+        &lt;td&gt;1 000 000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#800080"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;7&lt;/td&gt;
+        &lt;td&gt;10 000 000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#808080"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;8&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#FFFFFF"&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td align="center"&gt;9&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">L'unité de la résistance est l'Ohm. Un exemple : une résistance 
+avec les bagues :  marron - noir - rouge sera égale à :&lt;br&gt;
+marron : 1&lt;br&gt;
+noir : 0&lt;br&gt;
+multiplicateur rouge : 100&lt;br&gt;
+Soit au final, 10 * 100 = 1000 Ohms, ou encore 1K Ohms.</paragraph></section><section name="composants passifs" title="Les composants passifs"><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Le potentiomètre&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt; Appelé aussi résistance variable (à tord), la valeur d'un potentiomètre est  indiqué sur le composant lui 
+même. Il existe également des  réhostats (résistances variables de puissance) et des trimmers 
+(potentiomètres très précis) où il faut généralement une vingtaine de tours pour arriver au bout. Voici 
+quelques images, mais sachez qu'il existe énormément de versions donc les photos ne sont pas forcément 
+toutes valables, c'est juste pour vous donner une idée.</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\potar.gif</link><legend>Voilà un bien beau potentiomètre :)</legend></image><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\potar.jpg</link><legend>Un potentiomètre horizontal.</legend></image><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\potar_droit.jpg</link><legend>Un potentiomètre vertical.</legend></image><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\trimmer.jpg</link><legend>Un trimmer (potentiomètre de précision)</legend></image><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;le condensateur&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+Le condensateur est un composant pas forcément très facile à choisir et beaucoup de débutants peuvent 
+être perdus devant la quantité astronomique de références dans les catalogues. Néanmoins, il n'est pas question 
+de lister tous les condensateurs existants, mais de vous faire voir les grandes familles et les versions couremment 
+utilisées.&lt;br&gt;
+&lt;br&gt;
+L'unité du condensateur est le Farad (F). Son ordre de grandeur est très faible ; en effet, un condensateur de 1 Farad 
+possède une grosse charges tandis que les valeurs courantes tournent autour du micro (µF). Nous n'allons pas apprendre 
+à quoi il sert car vous trouverez sur Internet de nombreux sites expliquants son fonctionnement en large et en travers. Les 
+applications les plus courantes sont le découplage, la réserve d'énergie, le lissage d'alimentation et est utilisé dans de nombreux 
+montages analogiques pour effectuer des filtres et autres fonctions mathématiques.&lt;br&gt;
+&lt;br&gt;
+On peut regrouper les condensateurs dans ces catégories :&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;Céramique et mica
+&lt;li&gt;Condensateurs film plastique : plyester, polycarbonate, polypropylène, polystyrène.
+&lt;li&gt;Chimique : polarisé et non polarisés, sauvegarde de mémoire, tantale
+&lt;li&gt;Autres : condensateurs antiparasitage, pour les moteurs, ajustables ...
+&lt;/ul&gt;</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\condos.gif</link><legend>Un condensateur non polarisé à gauche... et un polarisé à droite !</legend></image><paragraph name="paragraph">&lt;br&gt;
+Voici un tableau du marquage normalisé des condensateurs.&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+  &lt;td&gt;Marquage&lt;/td&gt;
+  &lt;td&gt;Capacité&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;p33&lt;/td&gt;
+  &lt;td&gt;0,33pF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;3p3 ou 339&lt;/td&gt;
+  &lt;td&gt;3,3pF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;33p ou 330&lt;/td&gt;
+  &lt;td&gt;33pF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;330p ou 331 ou n33&lt;/td&gt;
+  &lt;td&gt;330pF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;3n3 ou 332&lt;/td&gt;
+  &lt;td&gt;3,3nF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;33n ou 333&lt;/td&gt;
+  &lt;td&gt;33nF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;330n ou 334 ou µ330&lt;/td&gt;
+  &lt;td&gt;330nF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;3µ3 ou 335&lt;/td&gt;
+  &lt;td&gt;3,3µF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;33µ&lt;/td&gt;
+  &lt;td&gt;33µF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\condo_chimique.gif</link><legend>Un exemple de condensateur chimique polarisé.</legend></image><paragraph name="paragraph">La broche négative est indiquée par la barre noire à gauche. Les valeurs vont de 1µF à plus de 2000µF environ. Sert pour le lissage de tension ou comme réserve d'énergie.</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\condo_ceramique.jpg</link><legend>Un exemple de condensateurs céramiques.</legend></image><paragraph name="paragraph">Ils possèdent des valeurs allant de 1pF à plus de 330pF. Ils sont très stables et sont recommandés dans les montages à filtres, raisonnance ou pour du découplage à haute fréquence.</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\condo_tentale.jpg</link><legend>Les condensateurs tentale goutte.</legend></image><paragraph name="paragraph">Ils sont polarisés et possèdent une grande capacité pour un volume réduit. Ils sont surtout utilisés dans l'électronique embarqué.</paragraph><image name="image"><link type="img">E:\Cours Progworld\progelectronique\images\condo_polyester.jpg</link><legend>Les condensateurs polyester.</legend></image><paragraph name="paragraph">Ils ne sont pas polarisés et servent surtout pour le découplage. Ils sont couramment utilisés pour découplés les ciruits intégrés par exemple (100nF).</paragraph></section><section name="section 4" title="Les connecteurs et supports pour circuits imprimés"><paragraph name="paragraph">Bien qu'il soit possible de souder les composants directement sur les platines, 
+il est quand même conseillé de souder d'abord un support. Le 
+principal avantage est de pouvoir de changer facilement les 
+composant en cas de panne. Quant aux connecteur, la pagaille 
+est de règle. Chaque constructeur va à sa guise et presque 
+aucun standard n'existe.&lt;br&gt;
+Voici quelques exemples très courant :&lt;br&gt;
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Les connecteurs&lt;/font&gt;
+&lt;br&gt;</paragraph><paragraph name="paragraph">&lt;table border="0" align=center&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;img src="prog_avancee\progelectronique\images\he14_simple.jpg" border="0"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;img src="prog_avancee\progelectronique\images\he14_double.jpg" border="0"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align="center"&gt;&lt;b&gt;&lt;u&gt;Pratique avec les jumpers...&lt;/u&gt;&lt;/b&gt;&lt;/td&gt;
+        &lt;td align="center"&gt;&lt;b&gt;&lt;u&gt;... ou en tant que connecteur !&lt;/u&gt;&lt;/b&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Les picots au format HE14 sont généralement conditionnés en 
+barette. L'espacement entre chaque picot est au standard de 
+2,54 cm. Sûrement le connecteur le plus utilisé dans les montages 
+électronique. Les HE14 peuvent être utilisés avec des jumpers 
+(pour faire un choix d'adresse, de voltage...), ou avec des connecteurs 
+type HE10 femelles (voir plus bas). Bref, à avoir absolument dans sa 
+réserve !&lt;br&gt;
+Les deux connecteurs ci-dessus existent en version coudée.</paragraph><paragraph name="paragraph">&lt;table border="0" align=center&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;img src="prog_avancee\progelectronique\images\jumper_languette.jpg" border="0"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;img src="prog_avancee\progelectronique\images\jumper.jpg" border="0"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align="center"&gt;&lt;b&gt;&lt;u&gt;Strap Avec languette...&lt;/u&gt;&lt;/b&gt;&lt;/td&gt;
+        &lt;td align="center"&gt;&lt;b&gt;&lt;u&gt;... ou sans (aïe les ongles :)&lt;/u&gt;&lt;/b&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Voilà les jumpers, strap ou cavaliers, utilisés avec les HE14 ci-dessus. On en trouve là aussi 
+un peu partout, comme sur les cartes mères.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\he10.jpg</link><legend>Connecteur HE10.</legend></image><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\he10_ailettes.jpg</link><legend>La même chose avec des ailettes de fixation.</legend></image><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\he10_femelle_nappe.jpg</link><legend>Le connecteur dual femelle à sertir avec une nappe.</legend></image><paragraph name="paragraph">Les connecteurs ci-dessus sont aussi assez courants. Ils ont 
+l'avantage d'être fiables et de bien tenir une fois fixés. Cette 
+technique est treè utilisés pour connecter les circuits imprimés entre 
+eux. Enfin, notons que ces connecteurs existent aussi en version 
+coudée.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\subd.jpg</link><legend>Le connecteur SUBD.</legend></image><paragraph name="paragraph">Inutile de présenter ce connecteur. On en trouve évidemment 
+sur toutes les cartes mères de PC. La principale utilisation de ce connecteur 
+est justement d'interfacer les cartes électroniques au PC via une 
+communication RS232 ou parallèle. Existe en mâle ou femelle, à 
+9, 15, 25 broches ...&lt;br&gt;
+A noter les deux harpons de fixation, très utiles pour renforcer 
+le connecteur en cas de contraintes mécaniques répétées. Les 
+deux trous filtés sont utiles pour recevoir les vis de fixation présentes sur 
+certains câbles.</paragraph><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Les supports&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+Voici les principaux supports que vous rencontrerez. Le premier, 
+le DIP, est vraiment LE grand stantard. Il existe des versions de 
+meilleur qualité, avec des trous ronds, appelé Tulipe.&lt;br&gt;
+Le connecteur PLCC est utilisé pour les processeurs. 
+Le nombre qui suit donne le nombre de connecteur. Par 
+exemple, PLCC 44.&lt;br&gt;
+Enfin, le ZIF (Zéro Insertion Force - à force d'insertion nulle -) est 
+très pratique sur les circuits imprimés de programmateurs de composants. 
+En contrepartie, il s'avère relativement cher (dans les 100F).</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\dip_standard2.jpg</link><legend>Un support DIP très standard.</legend></image><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\plcc.jpg</link><legend>Un support PLCC.</legend></image><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\zif.jpg</link><legend>Enfin, un connecteur ZIF pour mettre/oter les composants sans risque.</legend></image></section></document>

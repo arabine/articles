@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-16">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Anthony Rabine">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <title>Interfacer un clavier matriciel</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">Interfacer un clavier matriciel<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notre application ducours pr&eacute;c&eacute;dent
+            &eacute;tait consacr&eacute;e &agrave; l'affichage. Nous allons compl&eacute;ter notre
+            syst&egrave;me avec un clavier qui jouera le r&ocirc;le d'interface avec l'utilisateur et rendra
+            ainsi l'application plus interactive. L'&eacute;cran LCD ne nous a pas laiss&eacute; beaucoup de
+            broches disponibles sur le port parall&egrave;le. Mais heureusement, quelques astuces vont nous
+            permettre de contourner ce probl&egrave;me. Le bus de donn&eacute;es est pris, ainsi que deux
+            broches de contr&ocirc;le. Cela nous laisse donc sept broches dont cinq en entr&eacute;es et deux
+            en entr&eacute;es/sorties. L'inventaire est termin&eacute;, passons maintenant &agrave; ce qui
+            nous int&eacute;resse &agrave; savoir la gestion d'un clavier. Il se pr&eacute;sente sous la
+            forme d'un pav&eacute; num&eacute;rique &agrave; 12 touches, semblable &agrave; ce qui existe sur
+            les t&eacute;l&eacute;phones. On y trouve donc les chiffres de 0 &agrave; 9, ainsi que les
+            caract&egrave;res sp&eacute;ciaux * et #.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Les deux types de clavier</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Plagions un peu ...</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">Mise en oeuvre</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">La programmation</a>
+          </div>
+
+          <div style="margin-left:1em">
+            5. <a href="#_topic_5">Le syst&egrave;me complet</a>
+          </div>
+
+          <div style="margin-left:1em">
+            6. <a href="#_topic_6">T&eacute;l&eacute;chargements</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Les deux types de clavier</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le clavier que nous allons utiliser est en
+            plastique (voir l'illustration) et ne co&ucirc;te qu'une dizaine de francs. Il mesure 6 cm sur 5
+            environ et poss&egrave;de 12 touches. Les claviers &agrave; 16 touches dits
+            "alphanum&eacute;riques" poss&egrave;dent en plus les lettres A &agrave; F pour coder des nombres
+            hexad&eacute;cimaux. Ces claviers supportent g&eacute;n&eacute;ralement pr&egrave;s de 300mA sous
+            24V et ont une dur&eacute;e de vie sup&eacute;rieure &agrave; 107 manoeuvres. Il existe deux
+            technologies de fabrication du circuit &eacute;lectrique ; on parle alors de clavier &agrave;
+            matrice et de clavier &agrave; point commun. Les deux versions poss&egrave;dent des avantages et
+            des inconv&eacute;nients. Un clavier &agrave; point commun est tr&egrave;s facile &agrave; mettre
+            en oeuvre et &agrave; traiter mais poss&egrave;de 13 sorties (12 pour chaque touche plus le point
+            commun). Un clavier matriciel n'a que 7 sorties (pour 12 touches) mais sera plus difficile
+            &agrave; g&eacute;rer. Nous avons opt&eacute; pour la deuxi&egrave;me version, vu qu'il ne nous
+            reste que peu de broches disponibles sur le port parall&egrave;le. Nous n'aurons encore une fois
+            que peu de composants additionnels car la scrutation des touches sera enti&egrave;rement
+            logicielle.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours3/clavier.jpg"><br>
+        <b><u>Voici les deux claviers &agrave; deux et seize touches.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Plagions un peu ...</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bien s&ucirc;r, il existe quelques circuits qui
+            pourraient nous &eacute;pargner bien des lignes de codes. Malheureusement ce type de circuits,
+            comme le 74C922, co&ucirc;te assez cher, 80 F environ. Nous allons donc contourner le
+            probl&egrave;me en r&eacute;alisant la plupart des fonctions int&eacute;gr&eacute;es dans ce
+            composant &agrave; l'aide d'un peu de programmation. Le 74C922, dont la documentation technique
+            est fournie sur le CD Pro, est tr&egrave;s pratique pour encoder des claviers car il contient
+            toute la logique n&eacute;cessaire : des r&eacute;sistances de tirage, une horloge interne, un
+            registre de sortie m&eacute;morisant la derni&egrave;re touche activ&eacute;e, un syst&egrave;me
+            anti-rebonds, un signal annon&ccedil;ant qu'une touche a &eacute;t&eacute; appuy&eacute;e... il
+            suffit de connecter le clavier et le tour est jou&eacute;. Regardons d'un peu plus pr&egrave;s
+            l'int&eacute;rieur du 74C922 : le sch&eacute;ma fonctionnel ci-contre nous montre la voie
+            &agrave; suivre. Une r&eacute;sistance de tirage au +5V (r&eacute;sistance dite de "pull-up") est
+            connect&eacute;e sur chaque ligne du clavier. Quand aucune touche n'est appuy&eacute;e, le
+            potentiel est au 5V. Les colonnes sont connect&eacute;es &agrave; une horloge via un
+            d&eacute;codeur 2 vers 4, dont les sorties actives sont au niveau bas. Cela est tr&egrave;s
+            int&eacute;ressant : l'horloge sert en fait de compteur, qui permet de scruter les colonnes les
+            unes apr&egrave;s les autres. Il suffit d'appliquer tour &agrave; tour un 0V sur une colonne et,
+            lorsqu'une touche est press&eacute;e, le 0V se retrouve sur la ligne correspondante. La logique
+            externe d&eacute;termine en fonction de tous ces param&egrave;tres la touche qui a
+            &eacute;t&eacute; appuy&eacute;e.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours3/encodeur.jpg"><br>
+        <b><u>L'encodeur de clavier 74C922, une solution simple mais on&eacute;reuse.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>Mise en oeuvre</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le sch&eacute;ma ci-contre montre
+            l'interfa&ccedil;age du clavier au port parall&egrave;le ; il n'y a que tr&egrave;s peu de
+            composants additionnels. Nous avons le r&eacute;seau de r&eacute;sistances (entre 4.7k Ohms et
+            10k Ohms), et le circuit logique 74HCT139, un d&eacute;codeur 2 vers 4 qui nous permettra
+            d'&eacute;tendre le syst&egrave;me &agrave; un clavier de 16 touches. En plus de r&eacute;duire
+            le nombre de fils partant du port parall&egrave;le le 74HCT139 a l'avantage de poss&eacute;der
+            des sorties actives au niveau bas. Cette propri&eacute;t&eacute; est tr&egrave;s
+            int&eacute;ressante pour notre application car nous souhaitons scruter les colonnes une par une
+            (la colonne &agrave; tester sera alors &agrave; 0V tandis que les autres seront au potentiel de
+            5V). Au niveau de la r&eacute;alisation, le mieux est de compl&eacute;ter la plaquette &agrave;
+            trous ou &agrave; bandes cuivr&eacute;es du mois dernier, et d'utiliser la m&ecirc;me source
+            d'alimentation &agrave; base de 7805. Comme nous le voyons, tout cela reste tr&egrave;s simple.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours3/schema.jpg"><br>
+        <b><u>Le c&acirc;blage entre l'&eacute;cran et le port parall&egrave;le.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>La programmation</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous allons utiliser ici uniquement Visual Basic
+            car comme son nom l'indique ce langage est un peu plus visuel que le C. Cependant, il est tout
+            &agrave; fait possible de r&eacute;aliser la programmation dans un autre langage qui
+            poss&egrave;de des fonctions permettant la gestion du port parall&egrave;le (C, Basic, Pascal
+            etc.). D&egrave;s lors, il suffit de reprendre les sources ci-dessous et de traduire les
+            algorithmes. Nous rappelons que les fichiers .frm ainsi que les fichiers .bas sont lisibles
+            &agrave; partir de n'importe quel &eacute;diteur de texte. Nous retrouvons ici la Dll InpOut.dll
+            que nous avons d&eacute;j&agrave; utilis&eacute;e les mois pr&eacute;c&eacute;dents. Elle doit se
+            placer dans le r&eacute;pertoire o&ugrave; se situe le programme ou dans le r&eacute;pertoire
+            Windows. Deux fonctions sont d&eacute;clar&eacute;es dans un module et servent &agrave;
+            &eacute;crire et &agrave; lire dans les registres du port parall&egrave;le.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours3/brochage.jpg"><br>
+        <b><u>Le c&acirc;blage &eacute;lectrique d'un clavier matriciel.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ceci &eacute;tant dit, int&eacute;ressons nous
+            plus particuli&egrave;rement &agrave; la fonction principale du programme. Comme nous l'avons
+            mentionn&eacute; plus haut, le but est de scruter le clavier. Pour cela, nous allons prendre le
+            contr&ocirc;le "Timer" et le configurer pour qu'il s'ex&eacute;cute toutes les 100 ms. Cette
+            valeur est purement arbitraire, il faut simplement prendre une valeur suffisamment petite devant
+            le temps de la pression d'un bouton. Bien qu'il soit possible de descendre plus bas pour
+            am&eacute;liorer les performances, il est d&eacute;conseill&eacute; de descendre en dessous de
+            100 ms en Visual Basic car ce langage n'est pas tr&egrave;s rigoureux au niveau de la gestion du
+            temps. Donc, toutes les 100 ms, le programme ex&eacute;cutera les instructions contenues dans
+            cette fonction. Voici ce que &ccedil;a donne, pour un clavier &agrave; douze touches :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#0000FF"><b>Private</b></font> <font color=
+"#0000FF"><b>Sub</b></font> Timer1_Timer()
+    <font color="#009900"><i>' On scanne les touches</i></font>
+    
+    Flag = <font color="#650099"><b>False</b></font> <font color=
+"#009900"><i>' D&eacute;tecte si une touche a &eacute;t&eacute; appuy&eacute;e</i></font>
+        
+    <font color="#009900"><i>' Premi&egrave;re colonne &agrave; 0V</i></font>
+    Out Control, Inp(Control) <font color="#FFC800"><b>Or</b></font> &amp;H2
+    Out Control, Inp(Control) <font color="#FFC800"><b>And</b></font> &amp;HFB
+        
+    Touches = (Inp(Status)) <font color="#009900"><i>' On lit l'&eacute;tat des touches</i></font>
+
+    <font color="#0000FF"><b>Select</b></font> <font color="#0000FF"><b>Case</b></font> Touches <font color=
+"#009900"><i>' Et on affiche celle correspondante</i></font>
+    
+    <font color="#0000FF"><b>Case</b></font> 56
+        Image1(2) = Image3(2)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 248
+        Image1(5) = Image3(5)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 88
+        Image1(8) = Image3(8)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 104
+        Image1(11) = Image3(11)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> <font color="#0000FF"><b>Else</b></font>
+        <font color="#0000FF"><b>Call</b></font> RAZ_Touches
+    <font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>Select</b></font>
+    
+    <font color="#0000FF"><b>If</b></font> Flag = <font color="#650099"><b>False</b></font> <font color=
+"#0000FF"><b>Then</b></font> <font color=
+"#009900"><i>' On a rien d&eacute;tect&eacute;, on continue de scanner...</i></font>
+    
+    <font color="#009900"><i>' Deuxi&egrave;me colonne &agrave; 0V</i></font>
+    Out Control, Inp(Control) <font color="#FFC800"><b>And</b></font> &amp;HFD
+    Out Control, Inp(Control) <font color="#FFC800"><b>And</b></font> &amp;HFB
+    
+     Touches = (Inp(Status))
+
+    <font color="#0000FF"><b>Select</b></font> <font color="#0000FF"><b>Case</b></font> Touches
+    
+    <font color="#0000FF"><b>Case</b></font> 56
+        Image1(1) = Image3(1)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 248
+        Image1(4) = Image3(4)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 88
+        Image1(7) = Image3(7)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 104
+        Image1(10) = Image3(10)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> <font color="#0000FF"><b>Else</b></font>
+        <font color="#0000FF"><b>Call</b></font> RAZ_Touches
+    <font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>Select</b></font>
+    
+    <font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>If</b></font>
+    
+    <font color="#0000FF"><b>If</b></font> Flag = <font color="#650099"><b>False</b></font> <font color=
+"#0000FF"><b>Then</b></font> <font color=
+"#009900"><i>' On a rien d&eacute;tect&eacute;, on continue &agrave; scanner...</i></font>
+    
+    <font color="#009900"><i>' Troisi&egrave;me colonne &agrave; 0V</i></font>
+     Out Control, Inp(Control) <font color="#FFC800"><b>Or</b></font> &amp;H6
+
+     Touches = (Inp(Status))
+
+    <font color="#0000FF"><b>Select</b></font> <font color="#0000FF"><b>Case</b></font> Touches
+    
+    <font color="#0000FF"><b>Case</b></font> 56
+        Image1(0) = Image3(0)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 248
+        Image1(3) = Image3(3)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 88
+        Image1(6) = Image3(6)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> 104
+        Image1(9) = Image3(9)
+        Flag = <font color="#650099"><b>True</b></font>
+    <font color="#0000FF"><b>Case</b></font> <font color="#0000FF"><b>Else</b></font>
+        <font color="#0000FF"><b>Call</b></font> RAZ_Touches
+    <font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>Select</b></font>
+    
+    <font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>If</b></font>
+  
+<font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>Sub</b></font></font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le traitement est en fait le d&eacute;codage de
+            l'information lue dans le registre d'Etat, en fonction des quatre bits d'entr&eacute;es. Les
+            sources sont suffisamment simples et comment&eacute;es pour enlever toute ambigu&iuml;t&eacute;.
+            Le reste du programme est aussi facile &agrave; comprendre.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours3/prog.jpg"><br>
+        <b><u>Notre application en pleine action.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_5"></a>Le syst&egrave;me complet</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous poss&eacute;dons maintenant un ensemble
+            complet d'interface utilisateur. A vous d'imaginer les applications, comme le contr&ocirc;le
+            d'acc&egrave;s ou comme interface dans un syst&egrave;me plus complexe. Le programme final
+            g&eacute;rant l'&eacute;cran LCD et le clavier se trouve en t&eacute;l&eacute;chargement
+            ci-dessous. C'est en fait le rassemblement des programmes du cours pr&eacute;c&eacute;dent et de
+            celui-ci. Nous avons imagin&eacute; un petit syst&egrave;me invitant l'utilisateur &agrave;
+            entrer un code de 4 chiffres s'affichant sur l'&eacute;cran LCD. L'ordinateur compare ensuite le
+            code saisi avec un code en m&eacute;moire et affiche le r&eacute;sultat. Il est &eacute;galement
+            possible de reprendre les algorithmes afin d'utiliser ce syst&egrave;me dans n'importe quelle
+            &eacute;lectronique embarqu&eacute;e.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_6"></a>T&eacute;l&eacute;chargements</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <ul>
+              <li><a href="downloads/cours3/teamcontrol.zip">teamcontrol.zip</a></li>
+
+              <li><a href="downloads/cours3/teamkeypad.zip">teamkeypad.zip</a></li>
+
+              <li><a href="downloads/cours3/74c922.pdf">74c922.pdf</a> : la documentation du d&eacute;codeur
+              de clavier</li>
+
+              <li><a href="downloads/cours3/74hct139.pdf">74hct139.pdf</a> : le double d&eacute;codeur 2 vers
+              4</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ <a href="cours2.htm">Pr&eacute;c&eacute;dent</a> | <a href=
+          "index.htm">Index</a> | <a href="cours4.htm">Suivant</a> ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Anthony Rabine<br>
+        <a href="mailto:arabine@programmationworld.com">arabine@programmationworld.com</a><br>
+        <a href="http://www.programmationworld.com">http://www.programmationworld.com</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

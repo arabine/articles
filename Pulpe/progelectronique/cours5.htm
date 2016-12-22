@@ -1,0 +1,197 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-16">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="generator" content="NeoEZ (C)2001 Romain Guy"><meta name="author" content="Anthony Rabine"><meta name="keywords" content=""><meta name="description" content=""><title>Un hyperterminal en Visual Basic</title><link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel="stylesheet"></head><body bgcolor="#ffffff"><table class="main" width="99%"><tr><td class="titleprincipal">Un hyperterminal en Visual Basic<br></td></tr><tr><td><br><br><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int&eacute;ressons nous &agrave; la programmation de A &agrave; Z d'un 
+hyperterminal en Visual Basic. Cela va nous permettre de mettre 
+en oeuvre le port s&eacute;rie ainsi que sa gestion dans ce langage.
+ L'hyperterminal existe en standard dans l'installation de 
+windows et permet, entres autres, de contr&ocirc;ler enti&egrave;rement un 
+modem RTC branch&eacute; sur un port COM. Voil&agrave; qui devient 
+int&eacute;ressant, car nous allons voir en plus quelques notions 
+sur les modems. Donc deux cours en un !</div></td></tr><tr><td><br><br></td></tr><tr><td><u><h4>Sommaire</h4></u><div style="margin-left:1em">1. <a href="#_topic_1">Le contr&ocirc;le MS Comm</a></div><div style="margin-left:1em">2. <a href="#_topic_2">Les modems RTC</a></div><div style="margin-left:1em">3. <a href="#_topic_3">Programmation</a></div><div style="margin-left:1em">4. <a href="#_topic_4">T&eacute;l&eacute;chargements</a></div></td></tr><tr><td><br><br></td></tr><tr><td class="title"><a name="_topic_1"></a>Le contr&ocirc;le MS Comm</td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce contr&ocirc;le est fourni en standard dans la suite Visual Studio. 
+Cet objet vous permet d'acc&eacute;der aux ports COM de fa&ccedil;on 
+tr&egrave;s intuitive et tr&egrave;s compl&egrave;te. Il existe beaucoup d'options 
+et d'&eacute;v&egrave;nements associ&eacute;s, comme le fonctionnement en 
+interruption si vous utilisez intensivement ce contr&ocirc;le dans votre 
+application.<br>
+<br>
+Cr&eacute;ons un nouveau projet que l'on nommera 
+<b>PGW_Terminal</b>. Ajouter ensuite autant de contr&ocirc;les 
+MS Comm que vous poss&eacute;dez de ports s&eacute;ries. Ainsi, chaque 
+contr&ocirc;le se verra g&eacute;rer un port individuellement ce qui permet 
+d'avoir autant de configurations possibles. Pour plus de claret&eacute;, 
+nous allons renommer les contr&ocirc;les en <b>COM1</b> et <b>COM2</b>. Notez 
+que ces contr&ocirc;les sont invisibles pendant l'ex&eacute;cution de votre 
+programme, &agrave; l'instar du contr&ocirc;le <b>Timer</b>.</div></td></tr><tr><td><br><br></td></tr><tr><td align="center"><img src="images/cours5/mscomm.jpg"><br><b><u>Ajoutez le contr&ocirc;le MS Comm dans votre projet.</u></b></td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entrons dans les propri&eacute;t&eacute;s de ce contr&ocirc;le. La capture ci-dessous 
+nous montre quels sont les param&egrave;tres que l'on peut r&eacute;gler. Le 
+premier onglet nous suffit, les deux autres seront utiles pour des 
+applications plus &eacute;volu&eacute;es hors de propos dans ce cours. Donc, 
+nous voyons que nous sommes capable de changer tous les 
+param&egrave;tres que l'on a vu dans le cours pr&eacute;c&eacute;dent :<br>
+<br>
+<ul>
+<li><b>CommPort</b> : correspond au num&eacute;ro du port 
+s&eacute;rie que vous d&eacute;sirez contr&ocirc;ler
+<li><b>Settings</b> : contient 4 &eacute;l&eacute;ments pour configurer la 
+trame de communication (voir le cours pr&eacute;c&eacute;dent)
+<li><b>Handshaking</b> : correspond au protocole utilis&eacute; pour le 
+contr&ocirc;le du flux. Il peut &ecirc;tre soit logiciel (Xon/Xoff) soit mat&eacute;riel 
+(RTS), ou soit sans aucun contr&ocirc;le de flux.
+</ul><br>
+<br>
+Tous ces param&egrave;tres seront d&eacute;finis lors de l'initialisation de la 
+Form, donc laissez tomber cette fen&ecirc;tre pour le moment :-)
+</div></td></tr><tr><td><br><br></td></tr><tr><td align="center"><img src="images/cours5/com2param.jpg"><br><b><u>Les propri&eacute;t&eacute;s d'un contr&ocirc;le MS Comm.</u></b></td></tr><tr><td><br><br></td></tr><tr><td class="title"><a name="_topic_2"></a>Les modems RTC</td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Un modem est constitu&eacute; de plusieurs &eacute;l&eacute;ments : il comprend 
+par exemple un DSP contenant le soft du modem (V.90 etc.), une 
+interface pour la ligne t&eacute;l&eacute;phonique appel&eacute;e DAA, des convertisseurs 
+analogiques/num&eacute;riques et num&eacute;riques/analogiques et encore 
+d'autres p&eacute;riph&eacute;riques. Beaucoup de param&egrave;tres peuvent &ecirc;tre 
+configur&eacute;s dans le modem, c'est ce font les logiciels fournis avec 
+les modems. Il existe une m&eacute;thode de dialogue entre le terminal, 
+souvent repr&eacute;sent&eacute; par un PC, et le modem. Il s'appuie sur le 
+protocole RS232C, et se nomme les Commandes AT. Ces commandes 
+ne sont pas normali&eacute;es mais les constructeurs de modem se basent 
+g&eacute;n&eacute;ralement sur les m&ecirc;mes mots cl&eacute;s. Les commandes AT ont 
+&eacute;t&eacute; invent&eacute;es par le constructeur Hayes et depuis elles sont devenues 
+un standard en somme. Les commandes AT sont envoy&eacute;es au 
+modem lettre par lettre en format ASCII en suivant quelques r&egrave;gles 
+particuli&egrave;res :<br>
+<br>
+<ul>
+<li>A quelques exeptions pr&egrave;s, toutes les commandes commencent par 
+les deux caract&egrave;res <b>AT</b> pour <i>Attention</i> et se terminent 
+par la touche (et donc le code ASCII correspondant) <b>Enter</b>. Les 
+deux exeptions sont <b>+++</b> et <b>/</b>.
+<li>Plusieurs commandes peuvent &ecirc;tre &eacute;crites sur une seule ligne, sans 
+toutefois d&eacute;passer 40 caract&egrave;res.
+<li>Tous les espaces sont ignor&eacute;s par le modem.
+<li>Toutes les commandes sont ex&eacute;cut&eacute;es imm&eacute;diatement apr&egrave;s avoir 
+appuy&eacute; sur la touche Enter sans pouvoir les annuler.
+<li>Le modem retourne le message <b>OK</b> si la commande envoy&eacute;e 
+est valide, c'est-&agrave;-dire comprise par le modem. Le modem renvoie le 
+message <b>ERROR</b> en cas de commande non valide.
+<li>La commande envoy&eacute;e doit &ecirc;tre dans la m&ecirc;me casse (tout en 
+majuscules ou tout en minuscules).
+</ul><br>
+<br>
+Voil&agrave;, ces quelques r&egrave;gles seront int&eacute;gr&eacute;es dans notre logiciel bien 
+s&ucirc;r :-). Une documentation sur les commandes AT est disponible 
+ci-dessous. Elle n'est, comme nous l'avons dit plus haut, pas valable 
+pour tous les modems mais la majeur partie des commandes fonctionne.
+ Prenons quelques exemples :<br>
+<br>
+<b>ATZ</b> : reset g&eacute;n&eacute;ral du modem<br>
+<b>ATDT##########</b> : lance la num&eacute;rotation (les # sont les 
+chiffres du num&eacute;ro)<br>
+<b>ATI</b> : renvoie la version du firmware
+<br><br>
+Nous pourrions aller beaucoup plus loin en parlant des registres 
+par exemple mais je vous renvoie &agrave; toute la documentation que vous 
+trouverez en bas de cette page et sur Internet.</div></td></tr><tr><td><br><br></td></tr><tr><td class="title"><a name="_topic_3"></a>Programmation</td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commen&ccedil;ons par r&eacute;aliser l'interface de notre application. Dans 
+une form, placez les contr&ocirc;les suivants :<br>
+<br>
+<ul>
+<li>2 boutons radio pour choisir le port COM (RadioCOM1 et RadioCOM2)
+<li>2 zones de textes pour &eacute;crire les commandes &agrave; envoyer et lire la 
+r&eacute;ponse du modem (TextReponse et TextCommande)
+<li>2 contr&ocirc;les MS Comm (COM1 et COM2)
+<li>1 picture box pour le logo de Progworld mais &ccedil;a c'est optionnel hein :o)
+</ul><br>
+<br>
+</div></td></tr><tr><td><br><br></td></tr><tr><td align="center"><img src="images/cours5/formmain.jpg"><br><b><u>Hop, voil&agrave; une petite interface bien fonctionnelle.</u></b></td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avec les quelques &eacute;l&eacute;ments sur les modems que nous avons 
+&eacute;crits ci-dessous nous allons brider notre interface. On va par 
+exemple limiter le TextCommande &agrave; 40 caract&egrave;res et param&eacute;trer 
+le TextReponse en multilignes avec un ascenseur vertical<br>
+<br>
+Commen&ccedil;ons le code proprement dit. Le port s&eacute;rie a besoin d'&ecirc;tre 
+ouvert pour servir. L'ouverture du port conciste &agrave; le param&eacute;trer 
+et &agrave; regarder si le port n'est pas occup&eacute; par un autre p&eacute;riph&eacute;rique.
+C'est ce que nous allons faire, en prenant le COM2 comme port par 
+d&eacute;faut. Si ce port est d&eacute;j&agrave; ouvert, on affiche un message d'erreur 
+et l'utilisateur n'aura qu'&agrave; choisir le premier port.<br>
+<br>
+Double-cliquez sur le Form et ajoutez le code suivant :
+</div></td></tr><tr><td><br><br></td></tr><tr><td class="source"><pre><font color="#000000"><font color="#0000FF"><b>Private</b></font> <font color="#0000FF"><b>Sub</b></font> Form_Load()
+
+MainForm.Width = 5145
+
+Timer1.Interval = 2000 <font color="#009900"><i>' Temps du chien de garde</i></font>
+WatchDog = 0
+
+<font color="#009900"><i>'COM2 par d&eacute;faut</i></font>
+COM2.CommPort = 2
+
+<font color="#009900"><i>' 57600 bauds, 8 bits, sans parit&eacute;, un bit de stop</i></font>
+COM2.Settings = <font color="#9999FF">"57600,N,8,1"</font> 
+
+COM2.InputLen = 0
+COM2.PortOpen = <font color="#650099"><b>True</b></font>
+RadioCOM2.Value = <font color="#650099"><b>True</b></font>
+
+<font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>Sub</b></font></font></pre></td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le contr&ocirc;le MSCOM nous simplifie bigrement les choses ; l'initialisation est transparente et ne fait pas 
+appel aux registres ce qui est salvateur vu la complexit&eacute; (le bordel ?) de l'UART sur PC.<br>
+<br>
+Maintenant, le programme est presque fini : il ne reste plus qu'&agrave; envoyer notre chaine de caract&egrave;res au 
+modem puis de lire la r&eacute;ponse envoy&eacute;e par celui-ci. Encore une fois, inutile de cr&eacute;er des fonctions haut 
+niveau comme c'&eacute;tait le cas en C dans le chapitre pr&eacute;c&eacute;dent. Le contr&ocirc;le poss&egrave;de les deux fonctions 
+suivantes pour respectivement envoyer et recevoir une chaine de caract&egrave;re :</div></td></tr><tr><td><br><br></td></tr><tr><td class="source"><pre><font color="#000000"><font color="#0000FF"><b>Dim</b></font> Buffer as <font color="#FF0000">String</font>
+
+COM1.Output = <font color="#9999FF">"Hop on envoie un chaine de caract&egrave;res..."</font>
+<font color="#009900"><i>' ... et on lit le buffer de r&eacute;ception ...</i></font>
+Buffer = COM2.Input</font></pre></td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce que nous allons faire maintenant est d'envoyer la chaine de caract&egrave;res tap&eacute;e dans le contr&ocirc;le TextBox puis 
+de lire imm&eacute;diatement la r&eacute;ponse du modem. On cr&eacute;e pour cela une fonction qui a comme param&egrave;tre d'entr&eacute;e 
+la chaine de caract&egrave;res &agrave; envoyer et retourne la r&eacute;ponse du modem.</div></td></tr><tr><td><br><br></td></tr><tr><td class="source"><pre><font color="#000000"><font color="#0000FF"><b>Function</b></font> SendCommand(Commande <font color="#0000FF"><b>As</b></font> <font color="#FF0000">String</font>) <font color="#0000FF"><b>As</b></font> <font color="#FF0000">String</font>
+
+<font color="#0000FF"><b>Dim</b></font> Buffer <font color="#0000FF"><b>As</b></font> <font color="#FF0000">String</font>
+<font color="#0000FF"><b>Dim</b></font> Rep_ok <font color="#0000FF"><b>As</b></font> <font color="#FF0000">Integer</font>
+<font color="#0000FF"><b>Dim</b></font> Rep_error <font color="#0000FF"><b>As</b></font> <font color="#FF0000">Integer</font>
+<font color="#0000FF"><b>Dim</b></font> cport <font color="#0000FF"><b>As</b></font> <font color="#FF0000">Integer</font>
+
+<font color="#009900"><i>'On envoie la commande ...</i></font>
+
+COM2.Output = Commande &amp; Chr(13)
+
+<font color="#009900"><i>' On lit la r&eacute;ponse du modem</i></font>
+
+<font color="#0000FF"><b>Do</b></font>
+    DoEvents
+        Buffer = Buffer &amp; COM2.Input
+    Rep_ok = InStr(Buffer, <font color="#9999FF">"OK"</font> &amp; vbCrLf)
+    Rep_error = InStr(Buffer, <font color="#9999FF">"ERROR"</font> &amp; vbCrLf)
+<font color="#0000FF"><b>Loop</b></font> <font color="#0000FF"><b>Until</b></font> Rep_error <font color="#FFC800"><b>Or</b></font> Rep_ok
+    
+SendCommand = Buffer
+
+<font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>Function</b></font>
+
+        
+</font></pre></td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rien de plus simple ! Dans un premier temps on envoie la cha&icirc;ne de caract&egrave;res via la fonction ad&eacute;quate, sans 
+oublier de terminer par un Carriage Return (ASCII 13).
+Puis, une boucle se charge de stocker tous les caract&egrave;res re&ccedil;us par le modem. On sait que 
+celui-ci termine tous ses messages par la chaine "OK<cr><lf>" ou "ERROR<cr><lf>" (enfin &ccedil;a d&eacute;pend des modems 
+mais la plupart du temps &ccedil;a fonctionne.<br>
+<br>
+Notez le <b>DoEvents</b> pour &eacute;viter de planter le programme. Consultez les sources de ce programmes disponibles 
+en t&eacute;l&eacute;chargement ci-dessous. La fonction  SendCommand() est l&eacute;g&egrave;rement am&eacute;lior&eacute;e pour &eacute;viter de planter 
+le programme en cas de r&eacute;ponse non valide du modem.<br>
+<br>
+Voil&agrave; un hyperterminal, certes simplifi&eacute; mais qui peut sans mal &ecirc;tre am&eacute;lior&eacute; pour vos besoins. Ce programme n'a 
+pas &eacute;norm&eacute;ment d'int&eacute;r&ecirc;ts en lui m&ecirc;me mais permet de se familiariser avec le contr&ocirc;le MSCOM, le port s&eacute;rie et 
+les commandes des modems.</div></td></tr><tr><td><br><br></td></tr><tr><td align="center"><img src="images/cours5/final.jpg"><br><b><u>Notre programme final en action.</u></b></td></tr><tr><td><br><br></td></tr><tr><td class="title"><a name="_topic_4"></a>T&eacute;l&eacute;chargements</td></tr><tr><td><br><br></td></tr><tr><td><div style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul>
+<li><a href="downloads/cours5/progworld_terminal.zip">progworld_terminal.zip</a> : le programme complet pr&eacute;sent&eacute; 
+dans ce cours accompagn&eacute; de ses sources. (48,7 Ko)
+<li><a href="downloads/cours5/at_command_set.pdf">at_command_set.pdf</a> : un exemple de commandes AT pour 
+un modem compatible Hayes. (453 Ko)
+</ul></div></td></tr><tr><td><br><br></td></tr><tr><td><p align="center">
+                [ <a href="cours4.htm">
+			            Pr&eacute;c&eacute;dent</a>
+			        | <a href="index.htm">
+			          Index</a>
+			        | 
+    			        Suivant
+			         ]
+              </p></td></tr><tr><td align="center"><font color="#9999FF" size="-3"><br><br>
+                par Anthony Rabine<br><a href="mailto:arabine@programmationworld.com">arabine@programmationworld.com</a><br><a href="http://www.programmationworld.com">http://www.programmationworld.com</a><br>
+                Derni&egrave;re mise &agrave; jour:
+                <script language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                </script></font></td></tr></table></body></html>

@@ -1,0 +1,568 @@
+&File
+&Filer
+&New
+&Ny
+&Open...
+&Åben...
+&Save
+&Gem
+&Edit
+&Rediger
+&Copy
+&Kopier
+&Paste
+&Indsæt
+&Add Command
+&Tilføj Kommando
+&Delete
+&Slet
+&Test Command
+&Test Kommando
+&Reset All States
+&Nulstil Alle Indstillinger
+&Help
+&Hjælp
+&About
+&Om
+&Disable Input Device(s)
+&Stop fjernstyringsenhed(er)
+&Enable Input Device(s)
+&Start fjernstyringsenhed(er)
+Apply
+Anvend
+APM Event Generator
+APM Begivenhedsgenerator
+APM Event Plugin 1.0 for Girder 3.0
+APM Beginhedsplugin 1.0 for Girder 3.0
+Add &MultiGroup
+Tilføj &MultiGruppe
+Add &Group
+Tilføj &Gruppe
+Antirepeat wait time [ms]
+Ventetid [millisekunder]
+Accelerate
+Accellerér
+Alt
+Alt
+Autoload file does not exist.
+Autoindlæsfil eksisterer ikke
+Auto Enable Input device
+Tilslut fjernstyringsenheder automatisk
+Auto Load
+Indlæs automatisk
+Auto execute on startup
+Start automatisk under opstart
+Available plugins
+Tilgængelige plugins
+Action Plugins
+Aktivitetsplugins
+Antirepeat active
+Ventetid aktiv
+About
+Om
+Allowed Clients
+Tilladte klienter
+Address
+Adresse
+Address edit
+Adresse rediger
+Add
+Tilføj
+Browse
+Gennemse
+Begin state
+Begynd indstilling
+Baud Rate
+Port Hastighed
+Cancel
+Annuller
+Comport
+Serielport
+Captured IR code.
+Modtaget IR signal.
+Cannot load plugin.
+Kan ikke starte plugin.
+Cannot save datafile.
+Can ikke gemme datafil.
+Cannot load datafile.
+Kan ikke hente datafil.
+Could not enable IR device.
+Kunne ikke starte fjernstyringsenhed.
+Contents
+Indhold
+Capture Window
+Modtagevindue
+Contact and Copyright information
+Kontakt og Copyright information
+Clicked
+Klikket
+Close
+Luk
+Command
+Kommando
+Capture
+Modtage
+Control
+Kontrol
+Cannot find window
+Kan ikke finde vindue
+Child Name
+Undernavn
+Child Class
+Underklasse
+Checking the Settings
+Tjekker Indstillingerne
+Class Name
+Klassenavn
+Clear List
+Rens liste
+Cannot enable 
+Kan ikke etablere indstilling
+Cannot play wavfile.
+Kan ikke afspille lydfil.
+Cannot Shutdown windows.
+Kan ikke lukke Windows.
+Clicked sent.
+Klikket sendt.
+Close sent.
+Lukket sendt.
+Command State
+Kommandotilstand
+Current State
+Nuværende tilstand
+Cannot find group
+Kan ikke finde gruppe
+Cannot find icon
+Kan ikke finde ikon
+Cannot Find Softplugin.
+Kan ikke finde Softwareplugin.
+Could not enable input device(s).
+Kunne ikke starte fjernstyringsenhed(er).
+Command executed
+Kommando eksekveret
+Command ID
+Kommando-ID
+Change the Target Settings of the follwing command ?
+Rediger Udførelsesindstillingerne for den følgende kommando?
+Cannot import group.
+Kan ikke importere gruppe
+Cannot export group.
+Kan ikke eksportere gruppe.
+Default
+Standard
+Double Clicked
+Dobbeltklikket
+Don't send the IR commands when Girder is the Foreground window
+Undlad at sende IR-signalet når Girder er i forgrunden
+Display Splashscreen
+Vis Opstartsskærm
+Description
+Beskrivelse
+Delete
+Slet
+Example plugin for Girder 3.0
+Eksempelplugin for Girder 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Eksekverbar (*.exe)|*.EXE|Lydfiler (*.wav)|*.WAV
+E&xit
+&Afslut
+Enabled
+Startet
+Execute
+Eksekvér
+Executable
+Eksekverbar
+Error: Cannot set volume
+Fejl: Kan ikke indstille lydstyrke
+Execute on all states except 1
+Eksekvér på alle indstillinger undtaget 1
+Error: Cannot execute command.
+Fejl: Kan ikke eksekvere kommando.
+Export Group...
+Eksporter Gruppe...
+Fast UIR Init
+Hurtig UIR Initialisering
+Fast
+Hurtig
+File
+Fil
+Filename
+Filnavn
+Find
+Søg
+GNU General Public License
+GNU General Public License
+Girder files (*.gir)|*.GIR
+Girder filer (*.gir)|*.GIR
+Group Enable
+Tilslut gruppe
+Group Disable
+Frakobl gruppe
+Girder Standby Toggle
+Girder Standby Omskifter
+General
+Generelt
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder vil  forsøge at fylde udførselsindstillingerne baseret på informationen her. Dette kan medføre i lidt manuelt indstilling
+Group Enabled
+Gruppe Tilsluttet
+Group Disabled
+Gruppe Frakoblet
+Girder Standby
+Girder Standby
+Girder Active
+Girder Aktiv
+Girder Homepage: Http://www.stack.nl/~stilgar
+Girder Hjemmeside: http://www.stack.nl/~stilgar
+Goto
+Gå til
+Hibernate
+Dvale
+Howto
+Hvordan
+Hide
+Skjul
+Hide on startup
+Skjul ved opstart
+Hardware Plugins
+Hardware Plugins
+Handle
+Behandle
+Hide sent.
+Skjul sendt.
+Host IP
+Host IP
+Host Port
+Host Port
+IRSpeed
+IR Hastighed
+I Was here
+Jeg var her
+I Was Here
+Jeg var her
+IR Device Enabled.
+IR Enhed tilsluttet
+Icon files (*.ico)|*.ICO
+Ikonfiler (*.ico)|*.ICO
+Icon
+Ikon
+Input Device
+Fjernstyringsenhed
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+Girder-teamet søger efter folk som vil oversætte Girder til andre sprog. Det er meget nemt - selv jeg kan finde ud af det - og din hjælp vil sikkert bringe lykke til mange folk :-). Se på hjemmesiden hvilke sprog, der allerede er oversat. Allervigtigst: Dit navn vil blive skrevet i Tak-sektionen af Girder hjælpfilen! (På dansk af Anders Jorsal - www.net4all.dk)
+Initializing the Input Device(s)
+Initialiserer fjernstyringsenhed(er)
+Input Device Enabled.
+Fjernstyringsenhed er tilsluttet.
+Input Device Disabled.
+Fjernstyringsenhed er frakoblet.
+IrDA Settings
+IrDA Indstillinger
+Import Group...
+Importer Gruppe...
+Keep focus
+Behold fokus
+Key sent
+Tast sendt
+Keyboard
+Tastatur
+Learn IR
+Modtag signal
+LogOff
+Log Af
+LParam
+LParam
+Launch Girder on windows startup
+Start Girder ved Windows opstart
+Language
+Sprog
+Main Window
+Hovedvindue
+Monitor On
+Tænd skærm
+Monitor Off
+Sluk skærm
+Maximize
+Maksimér
+Minimize
+Minimér
+Minimize Girder
+Minimer Girder
+Mouse
+Mus
+Mouse Up
+Mus Op
+Mouse Down
+Mus Ned
+Mouse Left
+Mus Venstre
+Mouse Right
+Mus Højre
+Mouse Left Click
+Mus Venstreklik
+Mouse Left Doubleclick
+Mus Venstre Dobbeltklik
+Mouse Right Click
+Mus Højreklik
+Match invisble Tasks
+Tilpas til skjulte job
+Minimized
+Minimeret
+Maximum number of ClientAddresses reached cannot add.
+Maksimum antal af Klientadresser nået, kan ikke tilføje
+Mouse Right Doubleclick
+Mus Højre Dobbeltklik
+Mouse Middle click
+Mus Midtertastklik
+Mouse Middle Doubleclick
+Mus Midtertastklik
+Mouse Up Right
+Mus Op Højre
+Mouse Up Left
+Mus Op Venstre
+Mouse Down Right
+Mus Ned Højre
+Mouse Down Left
+Mus Ned Venstre
+Mouse Wheel Up
+Musehjul op (wheelmouse)
+Mouse Wheel Down
+Musescrollhjul Ned
+New
+Ny
+Not found.
+Ikke fundet.
+Name
+Navn
+None
+Ingen
+Ok
+Ok
+O.S.
+O.S.
+Only send to first match
+Send kun til første træffer
+OSD
+OSD
+Play Wav
+Afspil lyd
+Poweroff
+Luk ned
+Path to Hardware plugins
+Sti til Hardwareplugins
+Path to Action plugins
+Sti til Aktivitetsplugins
+Process ID
+Proces ID
+Parent
+Hoved
+Plugins
+Plugins
+Port
+Port
+Password
+Adgangskode
+Question
+Spørgsmål
+Reboot
+Genstart
+Register Filetype
+Registrer Filtype
+Running Tasks/Windows
+Kørende job/vinduer
+Refresh
+Opdater
+Ready.
+Klar.
+Rename
+Omdøb
+Repeat Tolerance
+Gentagetolerance
+Recognition Tolerance
+Genkendelsestolerance
+Skip UIR init check
+Spring over UIR start tjeck
+Strip Zeros from UIR string
+Fjern nuller fra UIR signal
+Slow
+Langsom
+Suspend Mode
+Dvale tilstand
+Suspend to Ram
+Dvale til Ram
+Select destination.
+Vælg destination.
+Save &as...
+Gem &som...
+Se&ttings...
+In&dstillinger...
+Settings Window
+Indstillingsvidue
+State Window
+Tilstandsvindue
+State
+Tilstand
+Show
+Vis
+Set Focus
+Indstil fokus
+Screen Saver
+Pauseskærm
+Shutdown
+Luk ned
+Step Size
+Hop Størrelse
+Startup Options
+Opstarts indstillinger
+SysCommand
+Systemkommando
+Set On-Trayicon
+Sæt proceslinieikon til
+Set Off-Trayicon
+Sæt proceslinieikon fra
+Set Active-Trayicon
+Sæt Aktivt Proceslinieikon
+Set Standby-Trayicon
+Sæt Standby proceslinieikon
+Step
+Hop
+Shift
+Skift
+Special Key
+Speciel tast
+Sentence
+Sætning
+Settings
+Indstillinger
+Save datafile on shutdown/poweroff/logoff
+Gem datafil ved nedlukning/afslutning/log af
+Scale Main Form
+Skalér hovedvindue
+State.
+Tilstand.
+Selected Task's Childobjects
+Udvalgte Jobs Underobjekter
+Send to foreground task
+Send til forgrundsjob
+Substring matching
+Substreng stemmer
+Start Capture
+Start modtagelse
+Stop Capture
+Stop modtagelse
+System Wide Capturing
+System Wide Capturing
+SmartFill
+Smartudfyldning
+Show sent.
+Vis sendte.
+State Count
+Talte tilstande
+See file Copying.txt for license details
+Se filen Copying.txt for licensbeskrivelse
+String
+Streng
+Set Group Targets
+Sæt Gruppe destinationer
+Show Girder
+Vis Girder
+Text
+Tekst
+This plugin sends a WM_SETTEXT message to the targets.
+This plugin sends a WM_SETTEXT message to the targets.
+The file has changed, save ?
+Filen er ændret, gem ?
+Target Window
+Destinationsvindue
+Target
+Destination
+Traybar mode
+Procellinietilstand
+The New input device gets activated when you press the apply button.
+Den nye fjernstyringsenhed bliver aktiveret når du trykker anvendknappen helt ned :-)
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+Dette er ikke en Girder 3.0 datafil, skal jeg prøve at importere fra 2.x ? Hvis du gemte denne fil kan Girder 2.x ikke åbne denne fil mere.
+Target Selector
+Destinationsvælger
+Test Event
+Test Begivenhed
+Type
+Type
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Oversættelse er lavet af Anders Jorsal <anders@jorsal.dk><http://anders.jorsal.dk>
+TCP/IP Server Settings
+TCP/IP Server Indstillinger
+TCP/IP Client
+TCP/IP Klient
+Talking Clock
+Talende Ur
+Timer
+Nedtæller
+Timer plugin for Girder 3.0
+Nedtællingsplugin for Girder 3.0
+This plugin executes a command after a preset timeout.
+Dette plugin eksekverer en kommando efter et indstillet tidsudløb.
+This is not a Girder 3.0 ExportFile.
+Dette er ikke en Girder 3.0 EksportFil.
+UIR/IRman Settings
+UIR/IRman Indstillinger
+Unregister Filetype
+Afregistrer Filtype
+User Interface
+Brugerflade
+Volume Window
+Lydstyrkevindue
+Volume Change
+Lydstyrkeændring
+Volume Right Change
+Lydstyrke højre skift
+Volume Left Change
+Lydstyrke venstre skift
+Volume Balance Change
+Lydstyrke Balance skift
+Volume Mute Toggle
+Lydstyrke afbryd skift
+Volume ID
+Lydstyrke ID
+Volume
+Lydstyrke
+Version
+Version
+Volume Settings
+Lydstyrke indstillinger
+Volume Left
+Lydstyrke Venstre
+Volume Right
+Lydstyrke højre
+Volume Mute
+Lydstyrke afbryd
+Waiting for IR Code.
+Venter på IR Signal... (programmet er sponsoreret af www.net4all.dk)
+Window
+Vindue
+Wait
+Vent
+Wait for Window
+Vent på Vindue
+WParam
+WParam
+Window Name
+Vinduenavn
+Window Class
+Vindueklasse
+Wparam
+Wparam
+Wavfile played.
+Lydfil afspillet.
+Windows is shutting down.
+Windows lukker ned.
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Lydfiler (*.wav)|*.WAV|Eksekverbare (*.exe)|*.EXE
+X/Timeout [ms]
+X/Timeout [ms]
+Y
+Y
+command sent.
+kommando sendt.
+sys command sent.
+sys kommando sendt.

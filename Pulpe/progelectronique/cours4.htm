@@ -1,0 +1,2048 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-16">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Werner BEROUX">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <title>Le port s&eacute;rie</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">Le port s&eacute;rie<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apr&egrave;s le port parall&egrave;le, voyons
+            comment fonctionne un autre grand ancien : le port s&eacute;rie. M&ecirc;me s'il est aujourd'hui
+            de moins en moins utilis&eacute;, il reste encore un standard, notamment dans l'industrie.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Brochage et performances</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Le protocole RS232C</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">Les registres de configuration</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">La programmation du port s&eacute;rie</a>
+          </div>
+
+          <div style="margin-left:1em">
+            5. <a href="#_topic_5">T&eacute;l&eacute;chargements</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Brochage et performances</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque ordinateur poss&egrave;de deux ports
+            s&eacute;rie. Ils prennent la forme de deux connecteurs m&acirc;les &agrave; 9 broches (pour les
+            PC un peu plus anciens, un des deux poss&egrave;de 25 broches), nomm&eacute;s en standard COM1 et
+            COM2. Le sch&eacute;ma ci-contre montre le brochage. A l'origine, le port s&eacute;rie
+            &eacute;tait destin&eacute; &agrave; &ecirc;tre connect&eacute; &agrave; un modem, c'est de
+            l&agrave; que le nom des broches sont tir&eacute;s. En effet, seulement trois broches sont
+            n&eacute;cessaires pour communiquer avec un p&eacute;riph&eacute;rique (TxD, RxD et la masse),
+            les autres broches n'&eacute;tant que des signaux de contr&ocirc;le et d'&eacute;tat. Le port
+            s&eacute;rie est tr&egrave;s bien prot&eacute;g&eacute; contre les courts-circuits (avec une
+            intensit&eacute; de 20mA) et les broches sont limit&eacute;es en courant. Ainsi, il est tout
+            &agrave; fait possible d'alimenter un petit montage &eacute;lectronique (par exemple les souris
+            s&eacute;ries sont aliment&eacute;es par la ligne RTS) mais il est quand m&ecirc;me
+            pr&eacute;f&eacute;rable d'avoir recourt &agrave; une alimentation externe.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        <b><u>Prise DB9 m&acirc;le vue de devant.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Broche</td>
+
+                <td>Nom</td>
+
+                <td>Signification</td>
+
+                <td>Sens</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>DCD</td>
+
+                <td>Data Carrier Detect</td>
+
+                <td>Entr&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+
+                <td>RxD</td>
+
+                <td>Receive Data</td>
+
+                <td>Entr&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+
+                <td>TxD</td>
+
+                <td>Transmit Data</td>
+
+                <td>Sortie</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+
+                <td>DTR</td>
+
+                <td>Data Terminal Ready</td>
+
+                <td>Sortie</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+
+                <td>GND</td>
+
+                <td>masse</td>
+
+                <td align="center">-</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+
+                <td>DSR</td>
+
+                <td>Data Set Ready</td>
+
+                <td>Entr&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+
+                <td>RTS</td>
+
+                <td>Request To Send</td>
+
+                <td>Sortie</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+
+                <td>CTS</td>
+
+                <td>Clear To Send</td>
+
+                <td>Entr&eacute;e</td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+
+                <td>RI</td>
+
+                <td>Ring Indicator</td>
+
+                <td>Entr&eacute;e</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avec le port parall&egrave;le, tous les signaux
+            sont transmis les uns &agrave; c&ocirc;t&eacute; des autres dans un c&acirc;ble qui prend bien
+            souvent l'allure d'une nappe. Ce proc&eacute;d&eacute; est rapide mais on remarque que la mise en
+            parall&egrave;le de fils tr&egrave;s proches induit entre eux un couplage par capacit&eacute;.
+            Pour r&eacute;duire cet effet, il est possible d'intercaler des fils reli&eacute;s &agrave; la
+            masse entre les fils acheminant les signaux. De plus, un c&acirc;ble repr&eacute;sente une charge
+            non n&eacute;gligeable et il est bien souvent utile d'avoir recours &agrave; des circuits buffers
+            pour fournir plus de puissance. Ainsi, sur des grandes longueurs, la tension peut chuter au point
+            de ne plus correspondre &agrave; la logique TTL (0-5V). Le port s&eacute;rie tire l&agrave; son
+            &eacute;pingle du jeu : dans le protocole de communication RS232C, les donn&eacute;es sont
+            transmises en s&eacute;rie (donc sur un seul fil) avec un calibre de tension plus
+            &eacute;lev&eacute; (-12V/+12V).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Le protocole RS232C</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C'est par cette norme qu'il vous est possible de
+            relier deux ordinateurs ensemble (la connexion directe par c&acirc;ble sous Windows), ou encore
+            de communiquer avec un modem, imprimante etc. Ce protocole est dit full duplex car il peut
+            transmettre des donn&eacute;es et en recevoir en m&ecirc;me temps, via les lignes RxD et TxD. Il
+            est tout &agrave; fait possible de n'utiliser que ces deux bornes en plus de la masse (pour la
+            r&eacute;f&eacute;rence), en veillant bien s&ucirc;r &agrave; relier la borne TxD du premier
+            ordinateur &agrave; la broche RxD du second et vice versa. Le contr&ocirc;le du flux de
+            donn&eacute;es sera alors totalement logiciel car les bornes annexes du port ne sont pas
+            utilis&eacute;es. Le mode de communication dit Xon/Xoff est tr&egrave;s r&eacute;pandu (avec les
+            imprimantes s&eacute;ries par exemple) et permet de contr&ocirc;ler l'&eacute;coulement des
+            donn&eacute;es en fixant dans la m&eacute;moire deux limites, haute et basse.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        <b><u>Un exemple de c&acirc;blage et son chronogramme.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Le sch&eacute;ma ci-dessus montre un
+            c&acirc;blage compatible avec la fonction connexion directe par c&acirc;ble
+            int&eacute;gr&eacute;e &agrave; Windows. Pour ce qui est du protocole proprement dit, un exemple
+            de chronogramme possible est pr&eacute;sent&eacute; ci-contre. On envoie l'octet "10001011" en
+            commen&ccedil;ant par le bit de poids faible, sachant que le protocole RS232 peut communiquer un
+            mot compris entre 5 et 8 bits. Viennent ensuite se greffer plusieurs autres bits : le ou les
+            bit(s) de stop (logique 1), l'&eacute;ventuel bit de parit&eacute; (parit&eacute; paire ou
+            impaire, non repr&eacute;sent&eacute; sur le chronogramme) et enfin le bit de start (logique 0).
+            Ce dernier est n&eacute;cessaire afin de synchroniser les horloges des deux organes communicants.
+            En effet, il n'y a aucun signal d'horloge pour cadencer la transmission, il faut donc que chaque
+            entit&eacute; ait &eacute;t&eacute; configur&eacute;e avec la m&ecirc;me horloge de
+            r&eacute;f&eacute;rence (le fameux baud). Il est possible de configurer tous ces
+            param&egrave;tres sous Windows en allant dans les propri&eacute;t&eacute;s du port s&eacute;rie.
+            Si vous souhaitez connecter deux PC ensemble, il faut que ces donn&eacute;es soient identiques
+            sur les deux ordinateurs.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        <b><u>Les propri&eacute;t&eacute;s du COM1 vous montrent l'adresse de base (3F8).</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        <b><u>Vous pouvez param&eacute;trer enti&egrave;rement le protocole de communication.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>Les registres de configuration</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tout comme le port parall&egrave;le, le port
+            s&eacute;rie poss&egrave;de un certain nombre de registres. Ces registres sont situ&eacute;s dans
+            un composant nomm&eacute; UART (Universal Asynchronous Receiver / Transmitter), qui g&egrave;re
+            totalement le port s&eacute;rie et se situe sur votre carte m&egrave;re. Vous trouverez la
+            documentation compl&egrave;te de l'UART 16550 en t&eacute;l&eacute;chargement ci-dessous. Le port
+            s&eacute;rie est une vieille technologie, et &agrave; l'&eacute;poque la m&eacute;moire
+            &eacute;tait rare et le moindre petit gain &eacute;tait appr&eacute;ci&eacute;. Les concepteurs
+            du port s&eacute;rie ont donc trouv&eacute;s de nombreuses astuces pour utiliser un m&ecirc;me
+            registre pour plusieurs choses. C'est malin mais cela rend le port s&eacute;rie assez complexe
+            &agrave; configurer. Chaque port s&eacute;rie poss&egrave;de une adresse de base (voir ci-dessus
+            pour savoir comment la trouver) qui est g&eacute;n&eacute;ralement 0x3F8 pour le COM1 et 0x2F8
+            pour le COM2 (voir les captures ci-dessus). Les registres sont, comme &agrave;
+            l'accoutum&eacute;e, accessibles via un offset par rapport &agrave; cette adresse de base, ce qui
+            est repr&eacute;sent&eacute; dans le tableau ci-dessous.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Adresse de base</td>
+
+                <td>DLAB</td>
+
+                <td>Lecture/Ecriture</td>
+
+                <td>Abr&eacute;viation</td>
+
+                <td>Nom du registre</td>
+              </tr>
+
+              <tr>
+                <td>+0</td>
+
+                <td>0</td>
+
+                <td>Ecriture</td>
+
+                <td>TxD</td>
+
+                <td>Tampon de transmission</td>
+              </tr>
+
+              <tr>
+                <td>+0</td>
+
+                <td>0</td>
+
+                <td>Lecture</td>
+
+                <td>RxD</td>
+
+                <td>Tampon de r&eacute;ception</td>
+              </tr>
+
+              <tr>
+                <td>+0</td>
+
+                <td>1</td>
+
+                <td>Lecture/Ecriture</td>
+
+                <td>DLLB</td>
+
+                <td>Divisor Latch Low Byte</td>
+              </tr>
+
+              <tr>
+                <td>+1</td>
+
+                <td>0</td>
+
+                <td>Lecture/Ecriture</td>
+
+                <td>IER</td>
+
+                <td>Interrupt Enable Register</td>
+              </tr>
+
+              <tr>
+                <td>+1</td>
+
+                <td>1</td>
+
+                <td>Lecture/Ecriture</td>
+
+                <td>DLHB</td>
+
+                <td>Divisor Latch High Byte</td>
+              </tr>
+
+              <tr>
+                <td>+2</td>
+
+                <td>-</td>
+
+                <td>Lecture</td>
+
+                <td>IIR</td>
+
+                <td>Interrupt Identification Register</td>
+              </tr>
+
+              <tr>
+                <td>+2</td>
+
+                <td>-</td>
+
+                <td>Ecriture</td>
+
+                <td>FCR</td>
+
+                <td>FIFO Control Register</td>
+              </tr>
+
+              <tr>
+                <td>+3</td>
+
+                <td>-</td>
+
+                <td>Lecture/Ecriture</td>
+
+                <td>LCR</td>
+
+                <td>Line Control Register</td>
+              </tr>
+
+              <tr>
+                <td>+4</td>
+
+                <td>-</td>
+
+                <td>Lecture/Ecriture</td>
+
+                <td>MCR</td>
+
+                <td>Modem Control Register</td>
+              </tr>
+
+              <tr>
+                <td>+5</td>
+
+                <td>-</td>
+
+                <td>Lecture</td>
+
+                <td>LSR</td>
+
+                <td>Line Status Register</td>
+              </tr>
+
+              <tr>
+                <td>+6</td>
+
+                <td>-</td>
+
+                <td>Lecture</td>
+
+                <td>MSR</td>
+
+                <td>Modem Status Register</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voyons tous ces registres en d&eacute;tail.<br>
+            <br>
+            <font size="5" color="#0000FF">Le buffer d'&eacute;mission et de r&eacute;ception</font><br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce registre contient les donn&eacute;es &agrave;
+            tansmettre/recevoir. Le fonctionnement est simple : quand on lit ce qu'il y a dedans c'est qu'on
+            attend une donn&eacute;e, et inversement dans le cas d'une &eacute;criture. Il est accessible
+            &agrave; l'adresse de base et est de 8 bits au maximum. Notez que DLAB (Divisor Latch Access
+            Bit), un bit que nous verrons plus tard, doit &ecirc;tre &agrave; 0.<br>
+            <br>
+            <font size="5" color="#0000FF">Divisor Latch Low/High Byte</font><br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous allons traiter ces deux registres ensemble.
+            Ils sont accessibles lorsque DLAB est &agrave; 1 dans deux adresses diff&eacute;rentes (adresse
+            de base et adresse de base+1). Ces deux registres servent &agrave; param&eacute;trer la vitesse
+            de transmission. L'UART poss&egrave;de une fr&eacute;quence de fonctionnement propre, qui est
+            fix&eacute;e gr&acirc;ce &agrave; un oscillateur de 1,8432 MHz. Cette fr&eacute;quence est alors
+            divis&eacute;e par 16, ce qui donne 115200 Hz : la fr&eacute;quence de base. Nous allons en fait
+            entrer la valeur de divion de cette fr&eacute;quence pour sp&eacute;cifier la vitesse de
+            transmission voulue.<br>
+            <br>
+            <u>Exemple :</u> Nous voulons une transmission &agrave; 9600 bauds. Nous devons donc diviser la
+            fr&eacute;quence de base par : 115 200 / 9600 = 12. Ce facteur de division est &agrave;
+            &eacute;crire dans les deux registres en hexad&eacute;cimal, soit <b>C</b> pour notre exemple.
+            Celui-ci tient sur 8 bits, il suffit alors de charger les registres avec les valeurs suivantes
+            :<br>
+            Divisor Latch Low Byte = 0x0C Divisor Latch High Byte = 0x00
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pour vous aidez, nous avons regroup&eacute; ces
+            valeurs de division dans le tableau ci-dessous :<br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC" width="60%">
+              <tr>
+                <td>Vitesse voulue (bauds)</td>
+
+                <td>Divisor Latch High Byte (hexad&eacute;cimal)</td>
+
+                <td>Divisor Latch Low Byte (hexad&eacute;cimal)</td>
+              </tr>
+
+              <tr>
+                <td>50</td>
+
+                <td>0x09</td>
+
+                <td>0x00</td>
+              </tr>
+
+              <tr>
+                <td>75</td>
+
+                <td>0x06</td>
+
+                <td>0x00</td>
+              </tr>
+
+              <tr>
+                <td>110</td>
+
+                <td>0x04</td>
+
+                <td>0x17</td>
+              </tr>
+
+              <tr>
+                <td>150</td>
+
+                <td>0x03</td>
+
+                <td>0x00</td>
+              </tr>
+
+              <tr>
+                <td>300</td>
+
+                <td>0x01</td>
+
+                <td>0x80</td>
+              </tr>
+
+              <tr>
+                <td>600</td>
+
+                <td>0x00</td>
+
+                <td>0xC0</td>
+              </tr>
+
+              <tr>
+                <td>1 200</td>
+
+                <td>0x00</td>
+
+                <td>0x60</td>
+              </tr>
+
+              <tr>
+                <td>2 400</td>
+
+                <td>0x00</td>
+
+                <td>0x30</td>
+              </tr>
+
+              <tr>
+                <td>3 600</td>
+
+                <td>0x00</td>
+
+                <td>0x20</td>
+              </tr>
+
+              <tr>
+                <td>4 800</td>
+
+                <td>0x00</td>
+
+                <td>0x18</td>
+              </tr>
+
+              <tr>
+                <td>7 200</td>
+
+                <td>0x00</td>
+
+                <td>0x10</td>
+              </tr>
+
+              <tr>
+                <td>9 600</td>
+
+                <td>0x00</td>
+
+                <td>0x0C</td>
+              </tr>
+
+              <tr>
+                <td>19 200</td>
+
+                <td>0x00</td>
+
+                <td>0x06</td>
+              </tr>
+
+              <tr>
+                <td>38 400</td>
+
+                <td>0x00</td>
+
+                <td>0x03</td>
+              </tr>
+
+              <tr>
+                <td>57 600</td>
+
+                <td>0x00</td>
+
+                <td>0x02</td>
+              </tr>
+
+              <tr>
+                <td>115 200</td>
+
+                <td>0x00</td>
+
+                <td>0x01</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Interrupt Identification Register</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>Signification</td>
+
+                <td>-</td>
+
+                <td>-</td>
+
+                <td>Enables Low Power Mode (16750)</td>
+
+                <td>Enables Sleep Mode (16750)</td>
+
+                <td>Enable Modem Status Interrupt</td>
+
+                <td>Enable Receiver Line Status Interrupt</td>
+
+                <td>Enable Transmitter Holding Register Empty Interrupt</td>
+
+                <td>Enable Received Data Available Interrupt</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce registre permet de fixer les interruptions
+            &agrave; des &eacute;v&egrave;nements pr&eacute;cis. Par exemple, les deux premiers bits servent
+            &agrave; r&eacute;guler la communication s&eacute;rie en provoquant une interruption lorsque le
+            buffer de transmission est vide ou qu'une donn&eacute;e est pr&eacute;sente dans le buffer de
+            r&eacute;ception.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Interrupt Enable Register</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>Signification</td>
+
+                <td colspan="2">FIFO</td>
+
+                <td>64 Byte Fifo Enabled (16750 only)</td>
+
+                <td>-</td>
+
+                <td>16550 Time-out Interrupt Pending</td>
+
+                <td colspan="2">Interrupt Select</td>
+
+                <td>Interrupt Pending</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce registre en lecture seule indique la source de
+            l'interruption. L'&eacute;tat du premier bit montre si une interruption a &eacute;t&eacute;
+            d&eacute;clench&eacute;e. Les autres bits pr&eacute;cisent quelle est l'interruption.<br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center">
+              <tr>
+                <td>bit 7</td>
+
+                <td>bit 6</td>
+
+                <td>Signification</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>No FIFO</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>FIFO Enabled but Unusable</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>FIFO Enabled</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center">
+              <tr>
+                <td>bit 2</td>
+
+                <td>bit 1</td>
+
+                <td>Signification</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>Modem Status Interrupt</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>Transmitter Holding Register Empty Interrupt</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>Received Data Available Interrupt</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>Receiver Line Status Interrupt</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">FIFO Control Register</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>Signification</td>
+
+                <td colspan="2">Interrupt Trigger Level</td>
+
+                <td>Enable 64 Byte FIFO (16750 only)</td>
+
+                <td>-</td>
+
+                <td>DMA Mode Select</td>
+
+                <td>Clear Transmit FIFO</td>
+
+                <td>Clear Receive FIFO</td>
+
+                <td>Enable FIFO's</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce registre est en &eacute;criture seule. Il
+            permet de g&eacute;rer les buffer d'&eacute;mission et de r&eacute;ception.<br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center">
+              <tr>
+                <td>bit 7</td>
+
+                <td>bit 6</td>
+
+                <td>Interrupt Trigger Level</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1 Byte</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>4 Bytes</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>8 Bytes</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>14 Bytes</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Line Control Register</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>Signification</td>
+
+                <td>DLAB</td>
+
+                <td>Set Break Enable</td>
+
+                <td colspan="3">Parity Select</td>
+
+                <td>Length of Stop Bit</td>
+
+                <td colspan="2">Word Length</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            Le bit 7 est le fameux DLAB qui, lorsqu'il est &agrave; 1, donne acc&egrave;s aux deux registres
+            pour d&eacute;terminer la vistesse de transmission (voir le tableau plus haut).<br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center">
+              <tr>
+                <td>bit 5</td>
+
+                <td>bit 4</td>
+
+                <td>bit 3</td>
+
+                <td>Parity Select</td>
+              </tr>
+
+              <tr>
+                <td>X</td>
+
+                <td>X</td>
+
+                <td>0</td>
+
+                <td>No Parity</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>Odd Parity</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>Even Parity</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>High Parity (Sticky)</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>Low Parity (Sticky)</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            <u><b>Length of Stop Bit (bit 2) :</b></u><br>
+            0 : One Stop Bit<br>
+            1 : 2 Stop bits for words of length 6,7 or 8 bits or 1.5 Stop Bits for Word lengths of 5
+            bits.<br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center">
+              <tr>
+                <td>bit 1</td>
+
+                <td>bit 0</td>
+
+                <td>Word Length</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>0</td>
+
+                <td>5 Bits</td>
+              </tr>
+
+              <tr>
+                <td>0</td>
+
+                <td>1</td>
+
+                <td>6 Bits</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>0</td>
+
+                <td>7 Bits</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>1</td>
+
+                <td>8 Bits</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Modem Control Register</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>Signification</td>
+
+                <td>-</td>
+
+                <td>-</td>
+
+                <td>Autoflow Control Enabled (16750 only)</td>
+
+                <td>LoopBack Mode</td>
+
+                <td>Aux Output 2</td>
+
+                <td>Aux Output 1</td>
+
+                <td>Force Request To Send</td>
+
+                <td>Force Data Terminal Ready</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce registre permet notamment d'acc&eacute;der aux
+            broches RTS (bit 1) et DTR (bit 0). Le bit 4 est int&eacute;ressant car il permet de boucler les
+            broches de contr&ocirc;le vers les broches de status, ainsi que le buffer d'&eacute;mission vers
+            le buffer de r&eacute;ception. Utile pour tester des op&eacute;rations de transmission avec un
+            seul composant (ou d'un seul PC).
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Line Status Register</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>Signification</td>
+
+                <td>Error in Received FIFO</td>
+
+                <td>Empty Data Holding Registers</td>
+
+                <td>Empty Transmitter Holding Register</td>
+
+                <td>Break Interrupt</td>
+
+                <td>Framing Error</td>
+
+                <td>Parity Error</td>
+
+                <td>Overrun Error</td>
+
+                <td>Data Ready</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce registre est important car c'est gr&acirc;ce
+            &agrave; lui que l'on pourra g&eacute;rer les communications s&eacute;ries. Ce registre
+            d'&eacute;tat en lecture seule permet par exemple de tester si les buffers d'&eacute;mission et
+            de r&eacute;ception sont vides afin de placer ou d'attendre une nouvelle donn&eacute;e. Le bit 0
+            est mis &agrave; 1 lorsqu'une nouvelle donn&eacute;e est pr&eacute;sente dans le buffer de
+            r&eacute;ception. Les autres bits sont assez explicites et permettent de d&eacute;tecter les
+            erreurs de transmission.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Modem Status Register</font><br>
+            <br>
+            <br>
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Bit</td>
+
+                <td>7</td>
+
+                <td>6</td>
+
+                <td>5</td>
+
+                <td>4</td>
+
+                <td>3</td>
+
+                <td>2</td>
+
+                <td>1</td>
+
+                <td>0</td>
+              </tr>
+
+              <tr>
+                <td>Signification</td>
+
+                <td>Data Carrier Detect</td>
+
+                <td>Ring Indicator</td>
+
+                <td>Data Set Ready</td>
+
+                <td>Clear To Send</td>
+
+                <td>Delta Data Carrier Detect</td>
+
+                <td>Trailing Edge Ring Indicator</td>
+
+                <td>Delta Data Set Ready</td>
+
+                <td>Delta Clear to Send</td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce registre est int&eacute;ressant car il permet
+            de voir l'&eacute;tat des 4 broches d'entr&eacute;es du port s&eacute;rie (bits 7 &agrave; 4). Le
+            mot "Delta" signifie que les bits correspondants testent s'il y a eu un changement dans
+            l'&eacute;tat des lignes. Enfin, le bit 2 peut &ecirc;tre int&eacute;ressant car il
+            d&eacute;tecte un front montant sur la ligne RI.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>La programmation du port s&eacute;rie</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/rmq.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Remarque<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">Attention, le logiciel et les codes pr&eacute;sent&eacute;s
+              ci-dessous g&egrave;rent le port s&eacute;rie par acc&egrave;s direct aux adresses. Ces sources
+              ne fonctionneront donc pas sous Windows NT qui interdit les appels directs pour des raisons de
+              s&eacute;curit&eacute;. Pour cela, il faut passer par des drivers sp&eacute;cifiques ou
+              utiliser le contr&ocirc;le MSCOM en VB, dont l'utilisation est d&eacute;crite dans le cours
+              suivant.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Utilisation des broches</font><br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comme nous l'avons vu pr&eacute;c&eacute;demment,
+            nous avons la possibilit&eacute; de g&eacute;rer enti&egrave;rement le port s&eacute;rie et ceci
+            &agrave; l'aide de nombreux langages. Le C fournit en standard les fonctions outportb() et
+            inportb() (ou inp et outp dans le compilateur de Microsoft) par l'interm&eacute;diaire des
+            librairies conio.h ou pc.h suivant les compilateurs. Pour Visual Basic, il suffit d'inclure la
+            dll Outpout.dll dans un projet pour b&eacute;n&eacute;ficier de ces fonctions dans ce langage
+            (t&eacute;l&eacute;chargez le logiciel ci-dessous pour acoir cette dll). Commen&ccedil;ons sans
+            plus tarder notre premi&egrave;re exp&eacute;rience. On r&eacute;alise le petit c&acirc;blage en
+            suivant le sch&eacute;ma ci-dessous ; il consiste en une LED que l'on placera o&ugrave; l'on
+            souhaite visualiser l'&eacute;tat d'une sortie et un bouclage entre une sortie et une
+            entr&eacute;e. L'absence de r&eacute;sistance de limitation peut para&icirc;tre d'un premier
+            abord dangereux mais celle-ci est inutile car comme nous l'avons dit plus haut, le port
+            s&eacute;rie limite les broches de sorties en courant (20mA environ) ; point de danger donc, et
+            un courant suffisant pour allumer la LED. D&eacute;marrons ensuite le programme
+            TestS&eacute;rie.exe qui est une v&eacute;ritable tour de contr&ocirc;le pour notre port
+            s&eacute;rie. Le contenu de tous les registres est affich&eacute; en permanence, et, par
+            l'interm&eacute;diaire de quelques masquages sur le registre MSR, nous en d&eacute;duisons
+            l'&eacute;tat des broches de sortie. Quant aux broches d'entr&eacute;es, il est possible de fixer
+            leur potentiel en cochant simplement la case correspondante. Voici en exemple la proc&eacute;dure
+            permettant de mettre &agrave; '1' et &agrave; '0' la broche RTS (7) :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#0000FF"><b>If</b></font> RTS.Value = 1 <font color=
+"#0000FF"><b>Then</b></font>
+        Out MCR, Inp(MCR) <font color="#FFC800"><b>Or</b></font> &amp;H2
+    <font color="#0000FF"><b>Else</b></font>
+        Out MCR, Inp(MCR) <font color="#FFC800"><b>And</b></font> &amp;HFD
+<font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>If</b></font></font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        <b><u>Un montage simple pour comprendre le port s&eacute;rie.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evidemment, nous partons du principe que MCR a
+            &eacute;t&eacute; initialis&eacute; &agrave; la bonne adresse. Pour plus de d&eacute;tails,
+            n'h&eacute;isitez pas &agrave; t&eacute;l&eacute;charger le programme complet pour lire ses
+            sources.<br>
+            Tout le programme est sur la m&ecirc;me logique de masquage, toujours pour &eacute;viter de
+            changer les autres bits du registre. Pour ceux qui ne programment pas en Visual Basic, sachez que
+            vous pouvez &eacute;diter le .frm pour en reprendre les algorithmes. Le Visual Basic est
+            suffisamment clair pour en recopier le principe sans trop de peine. Dans tous les cas,
+            n'h&eacute;sitez pas &agrave; r&eacute;aliser le maximum de manipulations afin de bien comprendre
+            le fonctionnement du port.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        <b><u>Notre programme pour tester le port s&eacute;rie.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Communication en RS232</font><br>
+            <br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous allons voir maintenant comment g&eacute;rer
+            une communication RS-232 entre deux PC, ou un PC avec un terminal. N'oubliez pas que lorsque deux
+            entit&eacute;s veulent communiquer par RS-232, il est n&eacute;cessaire qu'elles aient les
+            m&ecirc;mes param&egrave;tres. Rappelons les :<br>
+            <br>
+
+            <ul>
+              <li>Vitesse de transmission en bauds</li>
+
+              <li>Taille de la donn&eacute;e (entre 5 et 8 bits)</li>
+
+              <li>Nombre de bits de stop</li>
+
+              <li>Test de parit&eacute;</li>
+            </ul>
+            <br>
+            Nous allons &eacute;crire une fonction pour chaque action, ce qui simplifiera la conception du
+            programme principal. D&egrave;s lors, il suffira de les placer dans un header (fichier avec
+            l'extension .h) &agrave; inclure dans vos r&eacute;alisations. Nous allons partir du principe que
+            les deux entit&eacute;s sont connect&eacute;es sur le COM2. Bien s&ucirc;r, le code est le
+            m&ecirc;me pour les autres ports, il y a juste l'adresse de base &agrave; changer ; avec les
+            #define du C, cela se fait en deux coups de cuilli&egrave;re &agrave; pot :o)<br>
+            <br>
+            Hop, au boulot. Commen&ccedil;ons par &eacute;crire la fonction <i>void</i> <b>Init_COM2(</b>
+            <i>void</i> <b>)</b> qui initialisera le port avec tous les param&egrave;tres list&eacute;s
+            ci-dessus. Nous allons &eacute;crire en m&ecirc;me temps les #define qui seront &eacute;galement
+            valables pour les autres fonctions.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#FF9900">#include &lt;stdio.h&gt;</font>
+<font color="#FF9900">#include &lt;conio.h&gt;</font>
+<font color="#FF9900">#include &lt;dos.h&gt;</font>
+<font color="#009900"><i>/* dos.h est la librairie contenant les prototypes des 
+  fonctions inportb et outportb (sous Borland)
+  A changer selon le compilateur :
+  pc.h pour DJGPP
+  conio.h avec VC++ - inp() et outp() -
+  asm/io.h sous Linux */</i></font>
+
+<font color="#009900"><i>// changer ici l'adresse des ports</i></font>
+<font color="#009900"><i>// dans la majorit&eacute; des cas, laisser par d&eacute;faut</i></font>
+<font color="#FF9900">#define COM1 0x3F8</font>
+<font color="#FF9900">#define COM2 0x2F8</font>
+<font color="#FF9900">#define COM3 0x3E8</font>
+<font color="#FF9900">#define COM4 0x2E8</font>
+
+<font color="#009900"><i>// on d&eacute;fini ici le port courant</i></font>
+<font color="#009900"><i>// il y a juste ce param&egrave;tre &agrave; changer</i></font>
+<font color="#FF9900">#define COMx COM2</font>
+
+<font color="#009900"><i>/* Adresses des registres
+  Pour plus de modularit&eacute;, on fait 
+  un offset par rapport &agrave; l'adresse de base */</i></font>
+<font color="#FF9900">#define TxD COMx</font>
+<font color="#FF9900">#define RxD COMx</font>
+<font color="#FF9900">#define DLLB COMx</font>
+<font color="#FF9900">#define IER (COMx+1)</font>
+<font color="#FF9900">#define DLHB (COMx+1)</font>
+<font color="#FF9900">#define IIR (COMx+2)</font>
+<font color="#FF9900">#define FCR (COMx+2)</font>
+<font color="#FF9900">#define LCR (COMx+3)</font>
+<font color="#FF9900">#define MCR (COMx+4)</font>
+<font color="#FF9900">#define LSR (COMx+5)</font>
+<font color="#FF9900">#define MSR (COMx+6)</font>
+
+
+<font color="#FF0000">void</font> Init_COM2(<font color="#FF0000">void</font>)
+{
+outportb(LCR,0x80); <font color="#009900"><i>// DLAB = 1</i></font>
+             
+<font color="#009900"><i>// 9600 bauds</i></font>
+outportb(DLLB,0x0C); <font color="#009900"><i>// Vitesse adresse basse</i></font>
+outportb(DLHB,0x00); <font color="#009900"><i>// Vitesse adresse haute</i></font>
+  
+outportb(LCR,0x07); 
+<font color="#009900"><i>/* DLAB = 0
+  Pas de parit&eacute;
+  8 bits de donn&eacute;es
+  2 bits de stop */</i></font>
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pensez bien &agrave; configurer les deux
+            entit&eacute;s avec les m&ecirc;mes param&egrave;tres, car beaucoup de probl&egrave;mes viennent
+            de l&agrave;. Ecrivons maintenant la fonction <i>void</i> <b>Emet_Car(</b> <i>char Caractere</i>
+            <b>)</b> qui, comme son nom le laisse penser, va envoyer un caract&egrave;re avec le protocole
+            XON/XOFF. Mais qu'est ce que c'est que &ccedil;a me direz-vous ? Et bien c'est le protocole le
+            plus simple (utilis&eacute; dans les vieilles imprimantes s&eacute;ries par exemple) qui permet
+            de ne pas remplir le buffer de r&eacute;ception en cas de vitesse de transmission trop rapide.
+            Mettons que l'on ait la configuration suivante, un ordinateur reli&eacute; &agrave; une
+            imprimante par liaison s&eacute;rie :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src=""><br>
+        <b><u>Le principe du protocole Xon/Xoff.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vous voyez que dans l'illustration ci-dessus, la
+            m&eacute;moire de l'imprimante est limit&eacute;e. Si l'ordinateur envoie trop d'informations et
+            remplit la m&eacute;moire de l'imprimante jusqu'&agrave; la saturer, les donn&eacute;es seront
+            corrompues. Avec le protocole Xon/Xoff il existe deux seuils haut (Xoff) et bas (Xon) qui
+            indiquent &agrave; l'envoyeur l'&eacute;tat de la m&eacute;moire. Lorsque le seuil haut est
+            franchi, l'imprimante envoie le code correspondant &agrave; Xoff (0x13). Le m&ecirc;me
+            ph&eacute;nom&egrave;ne se produit avec Xon (0x11). Ainsi, avant d'envoyer une donn&eacute;e, il
+            faut v&eacute;rifier qu'il reste de la place dans la m&eacute;moire. Voici comment agir :<br>
+            <br>
+
+            <ul>
+              <li>lecture de 0x13 (Xoff) : on stoppe l'envoie des donn&eacute;es et on attend le code
+              Xon.</li>
+
+              <li>lecture de 0x11 (Xon) : la m&eacute;moire est bient&ocirc;t vide, on recommence l'envoie
+              des donn&eacute;es tout en testant si le code Xoff n'arrive pas.</li>
+            </ul>
+            <br>
+            <br>
+            Voici l'algorithme ob&eacute;issant &agrave; ce protocole :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#FF0000">void</font> Emet_Car(<font color=
+"#FF0000">char</font> Caractere) <font color=
+"#009900"><i>// le caract&egrave;re sur 8 bits est pass&eacute; en param&egrave;tre</i></font>
+{
+  <font color="#0000FF"><b>while</b></font>((inportb(LSR)&amp;0x40)!=0x40); <font color=
+"#009900"><i>//on teste si le buffer de transmission est vide</i></font>
+    <font color="#0000FF"><b>if</b></font>(inportb(RxD)==0x13) <font color=
+"#009900"><i>//le buffer du r&eacute;cepteur est-il plein ?</i></font>
+      <font color="#0000FF"><b>while</b></font>((inportb(RxD))!=0x11); <font color=
+"#009900"><i>//attente de Xon</i></font>
+  outportb(TxD,Caractere); <font color=
+"#009900"><i>//h&ocirc;pla, on envoie le caract&egrave;re :o)</i></font>
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La premi&egrave;re chose &agrave; faire est de
+            tester si l'ordinateur a fini d'envoyer le pr&eacute;c&eacute;dent caract&egrave;re. Il suffit de
+            tester le bit 6 du registre LSR qui se nomme "Empty Data Holding Registers" ; ce bit est &agrave;
+            1 lorsque TxD est vide.<br>
+            <br>
+            Voyons maintenant la fonction de r&eacute;ception <i>char</i> <b>Recep_Car(</b> <i>void</i>
+            <b>)</b>. Celle-ci renvoie le contenu du buffer de r&eacute;ception, d&egrave;s que celui ci
+            contient une nouvelle donn&eacute;e. Cela se r&eacute;alise en testant le bit 0 du registre LSR.
+            Rien de bien compliqu&eacute;.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#FF0000">char</font> Recep_Car(<font color="#FF0000">void</font>)
+{
+<font color="#0000FF"><b>while</b></font>((inportb(LSR)&amp;0x01)!=0x01); <font color=
+"#009900"><i>//On teste si une nouvelle donn&eacute;e est arriv&eacute;e</i></font>
+<font color="#0000FF"><b>return</b></font>(inportb(RxD)); <font color=
+"#009900"><i>// On la lit et on la renvoie en param&egrave;tre de sortie</i></font>
+}</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voil&agrave;, nous voici dot&eacute;s de trois
+            fonctions qui nous permettront de communiquer facilement entre deux entit&eacute;s. Bien
+            s&ucirc;r, il est possible de sphistiquer ces fonctions pour les rendre encore plus modulaires.
+            Par exemple, il serait pratique d'am&eacute;liorer la fonction d'initialisation en fabriquant une
+            fonction du style :<br>
+
+            <div align="center">
+              <b>OpenCOM("COM2",9600,'N',8,1);</b>
+            </div>
+            <br>
+            <br>
+            G&eacute;n&eacute;ralement, les conventions sont les suivantes :<br>
+
+            <ul>
+              <li>COM2 : num&eacute;ro du port</li>
+
+              <li>9600 : vitesse de transmission en bauds</li>
+
+              <li>N : pas de parit&eacute; N=None, paire E=Even, impaire O=Odd, toujours &agrave; 1 M=Mark,
+              toujours &agrave; 0 S=Space</li>
+
+              <li>8 : taille de la donn&eacute;e (entre 5 et 8)</li>
+
+              <li>1 : nombre de bits de stop (1 ou 1,5 ou 2)</li>
+            </ul>
+            <br>
+            <br>
+            Voici par exemple un programme complet qui transmet un fichier ASCII par RS-232. Notez les
+            fonctions de plus haut niveau qui utilisent les fonctions de base Emet_Car et Recep_Car.<br>
+            <br>
+            Vous pouvez t&eacute;l&eacute;charger l'ex&eacute;cutable <a href=
+            "downloads/cours4/rs232.zip">ici (50 ko)</a>.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#009900"><i>// Compil&eacute; avec DJGPP</i></font>
+
+<font color="#FF9900">#include &lt;stdio.h&gt;</font>
+<font color="#FF9900">#include &lt;conio.h&gt;</font>
+<font color="#FF9900">#include &lt;pc.h&gt;</font>
+
+<font color="#FF9900">#define COM1 0x3F8</font>
+<font color="#FF9900">#define COM2 0x2F8</font>
+<font color="#FF9900">#define COM3 0x3E8</font>
+<font color="#FF9900">#define COM4 0x2E8</font>
+
+<font color="#FF9900">#define COMx COM2</font>
+
+<font color="#FF9900">#define TxD COMx</font>
+<font color="#FF9900">#define RxD COMx</font>
+<font color="#FF9900">#define DLLB COMx</font>
+<font color="#FF9900">#define IER (COMx+1)</font>
+<font color="#FF9900">#define DLHB (COMx+1)</font>
+<font color="#FF9900">#define IIR (COMx+2)</font>
+<font color="#FF9900">#define FCR (COMx+2)</font>
+<font color="#FF9900">#define LCR (COMx+3)</font>
+<font color="#FF9900">#define MCR (COMx+4)</font>
+<font color="#FF9900">#define LSR (COMx+5)</font>
+<font color="#FF9900">#define MSR (COMx+6)</font>
+
+<font color="#FF0000">void</font> Init_COM2(<font color="#FF0000">void</font>)
+{
+  outportb(LCR,0x80);
+  outportb(DLLB,0x06); <font color="#009900"><i>// 19200 bauds</i></font>
+  outportb(DLHB,0x00);
+  outportb(LCR,0x07); <font color="#009900"><i>// pas de parit&eacute;, 2 bits de stop</i></font>
+}
+
+<font color="#FF0000">void</font> Emet_Car(<font color="#FF0000">char</font> Caractere)
+{
+  <font color="#0000FF"><b>while</b></font>((inportb(LSR)&amp;0x40)!=0x40); 
+    <font color="#0000FF"><b>if</b></font>(inportb(RxD)==0x13)
+      <font color="#0000FF"><b>while</b></font>((inportb(RxD))!=0x11);
+  outportb(TxD,Caractere);
+}
+
+<font color="#FF0000">char</font> Recep_Car(<font color="#FF0000">void</font>)
+{
+  <font color="#0000FF"><b>while</b></font>((inportb(LSR)&amp;0x01)!=0x01);
+  <font color="#0000FF"><b>return</b></font>(inportb(RxD));
+}
+
+<font color="#FF0000">void</font> Emet_string(<font color="#FF0000">char</font> *Phrase)
+{
+  <font color="#FF0000">unsigned</font> <font color="#FF0000">int</font> i=0;
+  <font color="#0000FF"><b>while</b></font>(Phrase[i]!=<font color="#9999FF">'\0'</font>)
+  {
+    Emet_Car(Phrase[i]);
+    i++;
+  }
+}
+
+<font color="#FF0000">void</font> Recep_string(<font color="#FF0000">char</font> *Phrase)
+{
+  <font color="#FF0000">char</font> i,j=0;
+  <font color="#0000FF"><b>while</b></font>(i!=<font color="#9999FF">'\r'</font>)
+  {
+    i=Recep_Car();
+    Phrase[j]=i;
+    j++;
+  }
+  Phrase[j]=<font color="#9999FF">'\0'</font>; <font color=
+"#009900"><i>// on termine la chaine de caract&egrave;res</i></font>
+}
+
+<font color="#FF0000">int</font> main(<font color="#FF0000">void</font>)
+{
+  <font color="#FF0000">char</font> *buf;
+  FILE *fichier;
+  <font color="#FF0000">unsigned</font> <font color="#FF0000">int</font> Taille;
+  Init_COM2();
+  clrscr();
+  fichier=fopen(<font color="#9999FF">"fichier.txt"</font>,"r");
+  Taille=filelength(fichier);
+  fread(buf, Taille, 1, fichier);
+  buf[Taille]=<font color="#9999FF">'\0'</font>;
+  printf(<font color="#9999FF">"\nJ'envoie le fichier...\n"</font>);
+  Emet_string(buf);
+  printf(<font color="#9999FF">"Ok, fini."</font>);
+  fclose(fichier);
+  <font color="#0000FF"><b>return</b></font>(0);
+}
+</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <table border="0" width="70%" cellborder="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="notetitle" width="32"><img src=
+              "http://www.programmationworld.com/site/images/rmq.gif"></td>
+
+              <td class="notetitle" valign="middle">&nbsp;&nbsp;Remarque<br>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note" colspan="2">Ces fonctions fonctionnent vraiment tr&egrave;s bien mais ne sont
+              pas tr&egrave;s adapt&eacute;es au multit&acirc;ches. Les boucles d'attentes sont bien
+              pratiques mais soufrent de leur lourdeur. Il existe heureusement le moyen de communiquer par
+              interruptions, en cas de r&eacute;ception d'une nouvelle donn&eacute;e par exemple. Nous vous
+              laissons le soin de d&eacute;velopper cela, et n'h&eacute;sitez pas &agrave; nous faire part de
+              vos r&eacute;alisations pour les mettre sur ce site.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_5"></a>T&eacute;l&eacute;chargements</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <ul>
+              <li><a href="downloads/cours4/testserie.zip">testserie.zip</a> : le programme VB
+              pr&eacute;sent&eacute; ci-dessus, avec ses sources et la dll INPOUT32.DLL (25,8 Ko)</li>
+
+              <li><a href="downloads/cours4/pc16550d.pdf">pc16550d.pdf</a> : le datasheet complet sur l'UART
+              (344 Ko)</li>
+
+              <li><a href="downloads/cours4/sercable.pdf">sercable.pdf</a> : quelques sch&eacute;mas pour
+              faire vos propres c&acirc;bles (Null-Modem, loopback, PC to Modem, etc.) (238 Ko)</li>
+
+              <li><a href="downloads/cours4/rs232.zip">rs232.zip</a> : l'ex&eacute;cutable du dernier source,
+              concernant l'envoi d'un fichier entre deux PC (50 ko).</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ Pr&eacute;c&eacute;dent | Index | Suivant ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Werner BEROUX<br>
+        <a href="mailto:WernerBEROUX@aol.com">WernerBEROUX@aol.com</a><br>
+        <a href="www.alc-wbc.com">www.alc-wbc.com</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

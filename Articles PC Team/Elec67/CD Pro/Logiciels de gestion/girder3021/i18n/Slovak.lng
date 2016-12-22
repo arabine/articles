@@ -1,0 +1,524 @@
+&File
+&Súbor
+&New
+&Novı
+&Save
+&Ulo
+&Edit
+&Editova
+&Help
+&Pomoc
+&About
+&O programe
+&Open...
+&Otvori...
+&Copy
+&Kopírova
+&Paste
+&Vloi
+&Add Command
+&Prida príkaz
+&Delete
+&Zmaza
+&Test Command
+&Test Príkazu
+&Reset All States
+&Reset všektıch stavov
+&Disable Input Device(s)
+&Vypnutie vstupného zariadenia (í)
+&Enable Input Device(s)
+&Zapnutie vstupného zariadenia (í)
+Antirepeat wait time [ms]
+Ïalší príkaz a za [ms]
+Apply
+Poui
+Alt
+Alt 
+Autoload file does not exist.
+Automaticky otváranı súbor neexistuje.
+Auto Load
+Automatické Otvorenie 
+APM Event Generator
+APM Generátor udalostí
+APM Event Plugin 1.0 for Girder 3.0
+APM Event Plugin 1.0 pre Girder 3.0
+Add &MultiGroup
+P&ridaj Viacnásobnú skupinu
+Add &Group
+Pridaj &Skupinu
+Accelerate
+Zrıch¾ovanie
+Auto Enable Input device
+Automatická inizializácia Vstupného zariadenia
+Auto execute on startup
+Automatické spustenie pri štarte
+Available plugins
+Dostupné pluginy:
+Action Plugins
+Softverové Pluginy
+Antirepeat active
+Opakovanie príkazu zakázané
+About
+O programe
+Allowed Clients
+Allowed Clients
+Address
+Address
+Address edit
+Address edit
+Add
+Add
+Browse
+Cesta
+Begin state
+Zaèiatoènı stav
+Captured IR code.
+Riadiaci kód zachytenı.
+Control
+Ctrl
+Cancel
+Storno
+Capture Window
+Okno Zachytávanie
+Comport
+Sériovı port
+Command State
+Stav príkazu
+Current State
+Aktuálny stav
+Child Name
+Child Name 
+Child Class
+Child Class 
+Checking the Settings
+Kontrola nastavení
+Class Name
+Class Name 
+Clear List
+Vyma List
+Clicked sent.
+Klik odoslanı.
+Close sent.
+Zatvor odoslané.
+Cannot find window
+Okno nie je moné nájs
+Cannot Shutdown windows.
+Windows nie je moné ukonèi.
+Cannot play wavfile.
+WAV súbor nie je moné prehra.
+Cannot find icon
+Ikonu nie je moné nájs
+Cannot load plugin.
+Plugin nie je moné nahra.
+Cannot save datafile.
+Dátovı súbor nie je moné uloi.
+Cannot load datafile.
+Dátovı súbor nie je moné nahra.
+Contact and Copyright information
+Kontakt a licenèné info
+Contents
+Obsah
+Could not enable IR device.
+UIR nie je moné zapnú.
+Clicked
+Klik
+Close
+Zatvori
+Command
+Príkaz
+Capture
+Zachytávanie
+Cannot find group
+Skupinu nie je moné nájs
+Cannot Find Softplugin.
+Softverovı plugin nie je moné nájs.
+Cannot enable 
+Nemôem zapnú
+Could not enable input device(s).
+Vstupné zariadenie(a) nie je moné zapnú.
+Command executed
+Command executed
+Command ID
+Command ID
+Don't send the IR commands when Girder is the Foreground window
+Neposielaj IR príkazy pokia¾ je GIRDER v aktívnom okne.
+Display Splashscreen
+Zobraz štartovacie okno
+Default
+Predvolené 
+Double Clicked
+Dvoj-klik
+Description
+Popis
+Delete
+Delete
+E&xit
+K&oniec
+Enabled
+Zapnutı
+Execute
+Spusti
+Execute on all states except 1
+Spusti vo všetkıch stavoch okrem 1
+Executable
+Spustené
+Error: Cannot set volume
+Chyba: Hlasitos nie je moné nastavi
+Example plugin for Girder 3.0
+Ukákovı plugin pre Girder 3.0
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+Spustite¾né súbory(*.exe)|*.EXE|Wav súbory (*.wav)|*.WAV
+Error: Cannot execute command.
+Error: Cannot execute command.
+Fast
+Rıchlo
+Filename
+Meno súboru
+Find
+H¾adaj
+Fast UIR Init
+Rıchla inicializácia UIR
+File
+Súbor
+General
+Hlavné
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+Girder sa pokúsi zachyti základné nastavenia cie¾ového okna. Je moné, e bude potrebné ich ruène upravi.
+Group Enable
+Zapni Skupinu
+Group Disable
+Vypni Skupinu
+GNU General Public License
+GNU Hlavná Verejná Licencia
+Girder files (*.gir)|*.GIR
+Girder súbory (*.gir)|*.GIR
+Girder Standby Toggle
+Girder do pohotovostného stavu
+Group Enabled
+Skupina zapnutá
+Group Disabled
+Skupina vypnutá
+Girder Standby
+Girder je v pohotovostnom stave
+Girder Active
+Girder je aktívny
+Girder Homepage: Http://www.stack.nl/~stilgar
+Domovská stránka: Http://www.stack.nl/~stilgar
+Hide on startup
+Skry pri štarte
+Handle
+Handle 
+Hide sent.
+Skry odoslané.
+Hibernate
+Hybernova
+Hide
+Skry
+Howto
+Ako na...
+Hardware Plugins
+Hardverové Pluginy
+Host IP
+Host IP
+Host Port
+Host Port
+IRSpeed
+Rıchlos IR
+I Was here
+Bol som tu
+I Was Here
+Bol som tu
+IR Device Enabled.
+Vstupné zariadenie zapnuté.
+Icon
+Ikona
+Input Device
+Vstupné zariadenie
+Icon files (*.ico)|*.ICO
+Súbory ikon (*.ico)|*.ICO
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+H¾adám ¾udí ktorí by preloili GIRDER do inıch jazykov. Nie je to zloité a pomôe to mnohım ¾uïom. Dôleité: Vaše meno bude zobrazené v help súbore GIRDERu!
+Initializing the Input Device(s)
+Inicalizácia vstupnıch zariadení
+Input Device Enabled.
+Vstupné zariadenie Zapnuté.
+Input Device Disabled.
+Vstupné zariadenie Vypnuté.
+Keep focus
+Ponechaj aktívne
+Key sent
+Klávesa odoslaná
+Keyboard
+Klávesnica
+Learn IR
+Uèenie IR
+Launch Girder on windows startup
+Spusti Girder pri štarte Windows
+Language
+Jazyk
+LParam
+LParam 
+LogOff
+Odhlásenie
+Main Window
+Hlavné okno
+Match invisble Tasks
+Zdrui skryté úlohy
+Monitor On
+Zapni Monitor
+Monitor Off
+Vypni Monitor
+Minimize Girder
+Minimalizuj Girder
+Mouse
+Myš
+Mouse Up
+Myš Hore
+Mouse Down
+Myš Dole
+Mouse Left
+Myš V¾avo
+Mouse Right
+Myš Vpravo
+Mouse Left Click
+Myš L-klik
+Mouse Left Doubleclick
+Myš L-dvojklik
+Mouse Right Click
+Myš R-klik
+Maximize
+Maximalizuj
+Minimize
+Minimalizuj
+Minimized
+Girder minimalizovanı
+Maximum number of ClientAddresses reached cannot add.
+Maximum number of ClientAddresses reached cannot add.
+Not found.
+Nenájdenı.
+Name
+Meno
+New
+Novı
+None
+None
+Ok
+Ok 
+Only send to first match
+Odošli iba prvı krát
+O.S.
+Oper.Sys.
+OSD
+OSD
+Process ID
+Process ID 
+Parent
+Parent 
+Play Wav
+Prehraj Wav súbor
+Poweroff
+Vypnutie poèítaèa
+Path to Hardware plugins
+Cesta Hardverovıch pluginov:
+Path to Action plugins
+Cesta softverovıch pluginov
+Plugins
+Pluginy
+Port
+Port
+Password
+Password
+Question
+Question
+Register Filetype
+Registruj typ súboru
+Running Tasks/Windows
+Beiace Úlohy / Okná
+Refresh
+Obnov
+Ready.
+Pripravenı.
+Reboot
+Reštart
+Rename
+Rename
+Settings
+Nastavenia
+Settings Window
+Okno Nastavenia
+State
+Stav
+Shift
+Shift 
+Special Key
+Špec. klávesy
+Save datafile on shutdown/poweroff/logoff
+Ulo dátovı súbor pri zatvorení/vypnutí
+Slow
+Pomaly
+State Count
+Poèet Stavov
+Selected Task's Childobjects
+Vybrané Úlohy - Childobjects
+Send to foreground task
+Pošli na aktívnu aplikáciu
+Substring matching
+Zapoèítanie èasti reazca (textu)
+Start Capture
+Štart
+Stop Capture
+Koniec
+System Wide Capturing
+Systémové zachytávanie
+SmartFill
+Rozšírené zachytávanie
+State Window
+Okno Stav
+Show sent.
+Zobraz odoslané.
+Step Size
+Ve¾kos kroku
+Skip UIR init check
+Vynechaj inicializáciu UIR
+Strip Zeros from UIR string
+Odstráò prebytoèné nuly z reazca UIR
+Suspend Mode
+Suspend Mód
+Suspend to Ram
+Suspend do Ram pamäte
+Select destination.
+Vyber cie¾.
+Save &as...
+Ulo &ako...
+Se&ttings...
+Na&stavenia...
+Show
+Zobrazi
+Set Focus
+Nastav okno ako aktívne
+Screen Saver
+Šetriè obrazovky
+Shutdown
+Vypnutie Windows
+Startup Options
+Monosti
+SysCommand
+Systémovı Príkaz
+Set On-Trayicon
+Nastav ikonu - Zapnutı GIRDER
+Set Off-Trayicon
+Nastav ikonu - Vypnutı GIRDER
+Set Active-Trayicon
+Nastav ikonu - Aktívny GIRDER
+Step
+Krok
+Sentence
+Text / Makro
+Scale Main Form
+Zväcšenie hlavného okna
+Set Standby-Trayicon
+Nastav ikonu - Girder v pohot.stave
+State.
+Stav.
+See file Copying.txt for license details
+Pozri v Copying.txt na licenèné detaily 
+String
+String
+Target Window
+Okno Cie¾
+The file has changed, save ?
+Súbor bol zmenenı, uloi ?
+Type
+Typ
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+Preloil Miroslav Hlina <miroslav.hlina@ovp.sk>
+Traybar mode
+Traybar mód
+Target Selector
+Vıber cie¾ového okna
+Test Event
+Test Odchytenia
+Text
+Text 
+This plugin sends a WM_SETTEXT message to the targets.
+Tento plugin pošle WM_SETTEXT správu do cie¾ového okna.
+Target
+Cie¾
+The New input device gets activated when you press the apply button.
+Nové vstupné zariadenie bude aktívne po stlaèení tlaèidla Poui.
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+Toto nie je dátovı súbor Girder 3.0, mám ho skúsi importova ako 2.x ? Ak uloíte tento súbor, Girder 2.x ho u nebude schopnı otvori!
+TCP/IP Server Settings
+TCP/IP Server Settings
+TCP/IP Client
+TCP/IP Client
+Talking Clock
+Talking Clock
+Timer
+Timer
+Timer plugin for Girder 3.0
+Timer plugin for Girder 3.0
+This plugin executes a command after a preset timeout.
+This plugin executes a command after a preset timeout.
+Unregister Filetype
+Odregistruj typ súboru
+User Interface
+Uívate¾ské nastavenia
+UIR/IRman Settings
+Nastavenie UIR/IR 
+Volume Settings
+Nastavenie hlasitosti
+Version
+Verzia
+Volume Window
+Okno Hlasitos
+Volume Change
+Zmena Hlasitosti
+Volume Right Change
+Hlasitos Pravı kanál
+Volume Left Change
+Hlasitos ¼avı kanál
+Volume Balance Change
+Stereováha
+Volume Mute Toggle
+Umlèanie
+Volume ID
+Volume ID
+Volume
+Hlasitos
+Volume Left
+Volume Left
+Volume Right
+Volume Right
+Volume Mute
+Volume Mute
+Waiting for IR Code.
+Èakám na IR kód.
+Wait
+Èakaj
+Window Name
+Názov okna
+Window Class
+Window Class 
+Wparam
+Wparam 
+Windows is shutting down.
+Windows sa vypína.
+Wavfile played.
+WAV súbor prehratı.
+Window
+Okno
+Wait for Window
+Èakaj na cie¾ové okno
+WParam
+WParam 
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+X/Timeout [ms]
+X / Èas [ms]
+Y
+Y 
+command sent.
+príkaz odoslanı.
+sys command sent.
+systémovı príkaz odoslanı.

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Une télécommande infrarouge pour Winamp</title><keywords>télécommande infrarouge winamp rc5</keywords><description>Une télécommande infrarouge pour Winamp</description><links><link type="prev">E:\Documents\Cours Progworld\progelectronique\cours8.htm</link><link type="index">E:\Documents\Cours Progworld\progelectronique\index.htm</link><link type="next"></link></links><introduction>Avec format MP3, l'ordinateur est devenu une véritable machine à musique. Cependant, il lui manque encore une télécommande pour être totalement fonctionnel. Quoi de mieux pour mettre en pratique nos connaissances sur le port série.</introduction></page><section name="section 1" title="Introduction"><paragraph name="paragraph">Le module présenté ici se présente sius la forme d'un petit cirtcuit à brancher sur le port série de l'ordinateur. Ce module est doté d'un récepteur 
+infrarouge et est donc capable de capter n'importe quel signal en provenance d'une source infrarouge. La grande force de ce montage est qu'il 
+est parfaitement compatible avec la très grande majorité des télécommandes du commerce. En effet, le protocole utilisé est le RC5, inventé par 
+Philips puis repris par la plupart des constructeurs. Pour utiliser ce montage, vous pouvez donc utiliser la télécommande d'une télévision, d'une 
+chaîne HI-FI ou, plus pratique, de la télécommande d'un appareil qui ne sert plus. Le mieux est d'acheter une télécommande universelle, afin de changer 
+la référence en cas de conflit entre les appareils.&lt;br&gt;
+&lt;br&gt;
+Cependant, le seul module ne suffit pas à télécommander des applications. Ainsi, plusieurs logiciels compatibles avec ce module existent sur Internet. 
+Ils servent à capturer les informations envoyées par le capteur et à agir en conséquence. Il est ainsi possible de ocntrôler entièrement 
+l'ordinateur, pour peut que l'on ait bien configuré l'ensemble. Nous nous bornerons ici à présenter le logiciel le plus intéressant qui prend la forme 
+d'un plug-in pour Winamp. </paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\winamp.jpg</link><legend>Quel bonheur de télécommander Winamp !</legend></image><paragraph name="paragraph">Le montage présenté ici peut très bien se réaliser sur une plaquette d'essai, ou plaquette à trous disponibles aux adresses habituelles. Nous 
+l'avons réaliser sur ciruit imprimé pour plus de solidité et pour avoir un résultat propre.&lt;br&gt;
+Enfin, rendons à César ce qui est à César : le module de réception présenté ici provient du site internet suivant :&lt;br&gt;
+&lt;br&gt;
+&lt;a href="http://www.geocities.com/SiliconValley/Sector/3863/uir/"&gt;http://www.geocities.com/SiliconValley/Sector/3863/uir/&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+Le but de ce cours est donc de vous présenter la réalisation d'un petit projet de A à Z, le tout avec un regard critique et, nous l'espérons, 
+avec énormément d'informations techniques.</paragraph></section><section name="section 2" title="Principe"><paragraph name="paragraph">Le principe est vraiment tout simple et diablement efficace. Le module 
+se branche sur le port série de l'ordinateur et, à l'aide d'un petit récepteur 
+infrarouge, il capte toutes les émissions infrarouge. Un logiciel se charge alors 
+d'exploiter les informations que le module lui envoie. Plusieurs logiciels sont 
+d'ailleurs compatibles avec ce module. Et vous pouvez même programmer votre 
+propre interface car les informations reçues sont vraiment très simples à exploiter. 
+Nous nous limiterons ici à un plug-in Open Source pour Winamp, car c'est une pure merveille 
+de programmation. Néanmoins, il existe d'autres logiciels qui vous permettront de simuler 
+tous les évènements de Windows via une simple télécommande.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\principe.jpg</link><legend>Un principe simple mais très efficace.</legend></image></section><section name="section 3" title="Le protocole RC5"><paragraph name="paragraph">Le protocole RC5 a été mis au point par Philips. Il s'agit d'un protocole de communication par infrarouge, 
+utilisé dans la plupart des appareil HI-FI comme les télévisions, magnétoscopes, chaînes, platines DVD etc. Nous 
+appuyons bien sur le mot "plupart" car ce protocole n'est pas une norme et n'est donc pas légion sur toutes les 
+télécommandes, en particulier celles de marque Sony. Néanmoins, vous trouverez sûrement des télécommandes fonctionnant 
+très bien avec le module ci-dessous sans pour autant utiliser le protocole RC5 dans ses plus strictes limitations.&lt;br&gt;
+&lt;br&gt;
+La trame envoyée par une télécommande est encodée avec une porteuse à 36KHz afin d'économiser de l'énergie (eh oui, les 
+télécommandes fonctionnent sur piles). Nous allons procéder à un petit test afin de mettre en évidence cette trame. Pour cela, nous allons 
+utiliser un récepteur-démodulateur infrarouge. Un récepteur infrarouge simple n'est pas suffisant car, comme nous l'avons dit précédemment, le 
+signal utile est modulé à 36KHz. Un récepeteur-démodulateur possède un démodulateur intégré, des filtres pour les éventuels bruits et nous délivre 
+en sortie la trame qui nous intéresse. Le composant que nous allons utiliser est le TSOP1736, 36 représentant la fréquence de démodulation du 
+composant (c'est à dire la fréquence centrale du filtre). Il existe d'autres modèles, comme le TSOP1738, TSOP1740 avec les férequences de démodulation 
+respectives de 38 et 40KHz. Il existe bien d'autres modules, notamment ceux de Siemens (SFH505A et cie).
+Réalisons le montage suivant :</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\test_ir.jpg</link><legend>La sortie OUT fournit directement la trame en logique TTL.</legend></image><paragraph name="paragraph">Branchons un oscilloscope directement sur la sortie OUT du TSOP1736. Ce module est très pratique car il délivre un 
+signal TTL (0-5V) ce qui permet de l'interfacer directement avec un microcontrôleur ou tout autre port. Au repos, c'est 
+à dire en l'absence de tout signal infrarouge ambiant, la sortie est au 5V. Cela donne le suignal suivant :</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\no_ir.jpg</link><legend>Sans signal infrarouge, la sortie du module est à 5V.</legend></image><paragraph name="paragraph">Prenons maintenant une télécommande de TV ou de chaîne HI-FI, n'importe télécommande fera l'affaire et 
+appuyons sur une touche en direction du module. Nous observons ce signal :</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\trame_ir.jpg</link><legend>Un exemple de trame envoyée par une télécommande standard.</legend></image><paragraph name="paragraph">Plusieurs remarques concernant ce signal :
+&lt;ul&gt;
+&lt;li&gt;D'une part, notez que selon le bouton appuyé, la trame aura un aspect différent. Cela est normal car chaque bouton de la télécommande 
+possède un code unique, qui est codé dans cette trame.
+&lt;li&gt;N'hésitez pas à effectuer de nombreux tests de distance et d'orientation : vous verrez que le module est très performant et capte à bonne 
+distance.
+&lt;li&gt;Enfin, pour plus de performance, il vaut mieux placer un condensateur d'assez grosse capacité sur l'alimentation (entre la masse et Vs) car le 
+module peut demander des brèves pointes de courant. Un condensateur de 47uF fera donc une parfaite petite réserve d'énergie.
+&lt;/ul&gt;</paragraph><paragraph name="paragraph">Parlons maintenant un peu plus de la trame proprement dite. Cette trame est constituée de 14 bits. Les deux premiers bits servent de "start bit" pour 
+synchroniser le récepteur et pour régler le gain du module. Ils ne sont pas significatifs et sont représentés par les "S" dans le dessin ci-dessous. 
+Le bit suivant est appelé le bit de répétition et est valide lorsque l'on garde le bouton de la télécommande appuyé. C'est utile pour accélérer le traitement 
+de l'information. Suivent 5 bits d'adresse [A0..A5] qui représente l'adresse fixe d'un récepteur. L'adresse est codé sur 5 bits, cela laisse donc la 
+possibilité de contrôler jusqu'à 32 appareils différents dans la même pièce (!!). Grâce à la présence de cette adresse, il est possible de contrôler 
+totalement un appareil sans influer sur le comportement des autres. Enfin, on trouve les 6 bits de données qui corespondent au code associé à un bouton. 
+Bien entendu, ce code est constant pour une télécommande mais n'aura pas forcément la même signification entre plusieurs télécommandes. Ceci dit, 
+les constructeurs mettent souvent les mêmes codes pour les mêmes boutons dans un soucis de standardisation.</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\trame.gif</link><legend>La trame envoyée par une télécommande.</legend></image><paragraph name="paragraph">Vous vous êtes sûrement posé la question suivante : comment faire pour lire la trame alors que nous ne possédons qu'un seul fils transportant les données ? La 
+réponse est simple : la trame transporte en même temps les données ET l'horloge de cadencement. Pour y arriver, les valeurs binaires ne sont pas 
+codées selon leur niveau logique (1---&gt; 5V et 0---&gt; 0V) mais grâce à une transition. Ainsi, un '1' est codé par une transition du niveau bas vers le niveau haut 
+et un zéro par une transition de niveau haut vers un biveau bas. Voici deux illustrations pour comprendre cela :</paragraph><image name="image"><link type="img">E:\Documents\Cours Progworld\progelectronique\images\biphase.gif</link><legend>Le codage des '0' et des '1' dans la trame.</legend></image></section><section name="section 4" title="Programmation Etape 1 : communication par RS232"><paragraph name="paragraph">Notre module va communiquer avec le PC via le port série et le protocole RS232. Tôt ou tard, nous devrons bien développer ce protocole et le 
+mieux est de le développer en premier. En effet, cela permettra de tester facilement le décodage du signal RC5. Le coeur du module est un 
+microcontrôleur de la famille PIC, le 16F84A, dans sa version à 20MHz. Notez qu'avec quelques modifications, le code source fonctionnera sans 
+problème sur un autre processeur comme le 12C509 (plus petit et beaucoup moins cher). Attention, ce cours n'a pas la prétention de vous apprendre 
+le langage assembleur pour PIC, nous considérons que le processeur et le langage sont connus.
+
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Routine d'attente&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+
+La communication en RS232 impose un temps de référence précis. C'est le fameux "Baudrate". En règle générale, un baud vaut un hertz. Donc, un signal 
+à 9600 bauds sera à 9600Hz ; cela donne une période de 104,2µs environ. Pour rendre le code le plus portable possible, nous n'allons pas faire appel 
+à une fonctionalité du microcontrôleur (un timer par exemple) mais à une simple boucle d'attente. En contre partie, cette boucle sera dépendante 
+du microcontrôleur et donc du quartz. Mais cela est un détail car est il aisé de modifier ce temps.
+
+
+
+</paragraph></section></document>

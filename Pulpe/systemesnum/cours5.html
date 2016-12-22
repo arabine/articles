@@ -1,0 +1,1022 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Anthony Rabine">
+    <meta name="keywords" content="CMOS TTL composant technologie volt amp&egrave;re">
+    <meta name="description" content="Technologie des composants">
+
+    <title>Technologie des composants</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">Technologie des composants<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le d&eacute;butant en &eacute;lectronique est
+            souvent perdu entre les centaines de cigles, d&eacute;nomination et technologie des composants.
+            Dans ce domaine, la seule chose qui compte vraiment est l'exp&eacute;rience. Proc&eacute;dons
+            &agrave; un petit tour de ce c&ocirc;t&eacute;, en esp&eacute;rant que cela vous aidera dans le
+            choix de vos composants.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Les technologies des portes</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Les caract&eacute;ristiques des portes</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">Les broches d'entr&eacute;es/sorties</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">Le trigger de Schmitt</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Les technologies des portes</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les composants sont fabriqu&eacute;s de
+            technologie diff&eacute;rentes. Rappelons que l'&eacute;l&eacute;ment de base d'un composant est
+            le transistor. Un transistor est le plus souvant utilis&eacute; en commutation, c'est &agrave;
+            dire comme un interrupteur. (il laisse ou non passer le courant) Par exemple, la mode actuelle
+            est de comparer la puissance des puces graphiques ou des proceseur avec le nombre de composants
+            dont ils sont compos&eacute;s.<br>
+            <br>
+            Rappelons &eacute;galement que les niveaux logiques sont les suivants :<br>
+            un 1 logique correspond &agrave; la tension d'alimentation du circuit (Vcc) un 0 logique
+            correspond &agrave; la tension de r&eacute;f&eacute;rence du circuit (0V, Gnd le plus
+            souvent)<br>
+            <br>
+            Nous allons prendre des exemples plus simples pour illustrer notre cours : prenons par exemple
+            les portes logiques. Nous distingons plusieurs grandes familles :<br>
+            <br>
+            <font size="5" color="#0000FF">Famille TTL</font><br>
+            <br>
+            Transistor-Transistor Logic : &agrave; base de transistors bipolaires. Les tensions
+            d'alimentation et de fonctionnement sont assez strictes et les transistors fonctionnent en
+            commutation (tout ou rien). On distingue plusieurs mod&egrave;les normalis&eacute;s : 
+
+            <ul>
+              <li>LS : Low power Schottky. Cette s&eacute;rie faible consommation utilise des diodes Shottky
+              (diodes rapides) pour la commutation</li>
+
+              <li>AS : Advanced Schottky. (plus rapide)</li>
+
+              <li>ALS : Advanced Low power Schottky. Combine les avantages du LS et du AS.</li>
+
+              <li>F : Fast</li>
+            </ul>
+            L'avantage de cette famille est sa grande rapidit&eacute;, due &agrave; la technologie bipolaire.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+Caract&eacute;ristiques :
+Alimentation :
+4,5 V &lt; Vcc &lt; 5,5 V
+Tensions :
+Entr&eacute;es 0 &lt; Vil &lt; 0,8 V
+Vcc &gt; Vih &gt; 2,4 V
+Sorties Vol &lt; 0,8 V
+Voh &gt; 2,4 V
+Courants :
+Entr&eacute;es Iil &lt; 1,6 mA
+Iih &lt; 40 &micro;A
+Sorties Ioh &lt; 1,2 mA
+Iol &lt; 24 mA
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Famille CMOS</font><br>
+            <br>
+            Metal Oxyde Semiconductor : &agrave; base de transistors &agrave; effet de champ 
+
+            <ul>
+              <li>s&eacute;rie des 4000 : tension de fonctionnement entre 5V et 18V</li>
+
+              <li>HC : High Speed C-MOS, 2 &agrave; 6V</li>
+
+              <li>HCT : le T signifie TTL, c'est &agrave; dire que les niveaux de tension sont compatibles
+              avec la technologie TTL</li>
+
+              <li>AC/ACT</li>
+
+              <li>LVC/ALVC : LV signifie Low Voltage, l'alimentation est comprise entre 2,7V et 3,6V</li>
+            </ul>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La famille CMOS est la famille sans doute la plus
+            utilis&eacute;e aujourd'hui car elle poss&egrave;de maintenant pratiquement que des
+            qualit&eacute;s. Les entr&eacute;es des composants CMOS poss&egrave;dent une grande
+            imp&eacute;dance d'entr&eacute;e. Les portes CMOS absorberont donc un faible courant ce qui est
+            toujours avantageux. N&eacute;anmoins, leur principal d&eacute;faut est de poss&eacute;der une
+            capacit&eacute; parasite en entr&eacute;e. Cette capacit&eacute; parasite varie en fonction de la
+            fr&eacute;quence de fonctionnement. Plus on augmente la fr&eacute;quence, plus il faut charger et
+            d&eacute;charger la capacit&eacute; d'entr&eacute;e : cela provoque un &eacute;chauffement. Cette
+            technologie est c&eacute;l&egrave;bre pour cela. Prenons par exemple les processeurs : ceux-ci
+            &eacute;tant construits dans cette technologie, l'augmentation de la fr&eacute;quence de
+            fonctionnement oblige les constructeurs &agrave; recourir &agrave; des moyens de refroidissement
+            de plus en plus imposants. Une solution consiste &agrave; abaisser la tension de fonctionnement :
+            la puissance dissip&eacute;e en sera d'autant plus diminu&eacute;e. De plus, les composants sont
+            aujourd'hui tr&egrave;s fortement int&eacute;gr&eacute;s, ce qui signifie que les transistors
+            sont en plus grand nombre pour une m&ecirc;me surface : l'&eacute;chauffement est donc
+            particuli&egrave;rement concentr&eacute;.<br>
+            <br>
+            La famille C-MOS est aujourd'hui ce qu'il y a de plus performant, surtout avec les familles HC et
+            HCT qui d&eacute;passent en rapidit&eacute; la famille TTL. Ces portes n'absorbent quasiment
+            aucun courant (la technologie MOS fonctionne par niveaux de tension) et la plage de voltage
+            d'alimentation est assez grande ce qui laisse de bonnes possibilit&eacute;s d'int&eacute;gration.
+            Qui plus est, la technologie MOS est particuli&egrave;rement bien immunis&eacute;e au bruit ce
+            qui est un atout suppl&eacute;mentaire extr&ecirc;memnt int&eacute;ressant.<br>
+            <br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Famille ECL</font><br>
+            <br>
+            Emitter Coupled Logic, famille sp&eacute;cifique pour les grandes vitesses &agrave; base de
+            transisors bipolaires. Ces transistor ne fonctionnent pas en satur&eacute;-bloqu&eacute; &agrave;
+            l'instar de la famille TTL mais dans leur zone lin&eacute;aire. 
+
+            <ul>
+              <li>10k : bipolaires non commut&eacute;s en r&eacute;gime lin&eacute;aire</li>
+
+              <li>100k : fonctionnement autour du point de repos</li>
+            </ul>
+            L'alimentation de ces portes est comprise entre -5,2V et -4,2V.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Famille BICMOS</font><br>
+            <br>
+            Composite de CMOS et TTL. 
+
+            <ul>
+              <li>BC (alimentation 5V)</li>
+
+              <li>BCT (alimentation 5V)</li>
+
+              <li>LVT</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Les caract&eacute;ristiques des portes</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les caract&eacute;ristiques sont fournies dans
+            toute documentation constructeur. Elles aident le concepteur &agrave; choisir le composant le
+            plus adapt&eacute; &agrave; son application. Il est &eacute;galement important de bien comprendre
+            ce que signifient toutes les indications contenues dans les datasheets. Nous verrons d'ailleurs
+            qu'il faut garder un oeil critique sur les valeurs annonc&eacute;es par les consctruteurs : elles
+            sont tant&ocirc;t optimistes, tant&ocirc;t pessimiste selon ce qui les arrange.<br>
+            <br>
+            <font size="5" color="#0000FF">Gammes de temp&eacute;ratures</font><br>
+            <br>
+            On distingue principalement trois gammes de temp&eacute;ratures : 
+
+            <ul>
+              <li>Gamme civile : 0&deg;C &lt; T&deg;C &lt; 70&deg;C</li>
+
+              <li>Gamme industrielle : -40&deg;C &lt; T&deg;C &lt; 85&deg;C</li>
+
+              <li>Gamme militaire : -55&deg;C &lt; T&deg;C &lt; 125&deg;C</li>
+            </ul>
+            <br>
+            Bien s&ucirc;r, les prix des composants grimpent en fonction de la qualit&eacute; du circuit,
+            autant que leur facilit&eacute; d'approvisionnement.<br>
+            <br>
+            <font size="5" color="#0000FF">Temps de propagation</font><br>
+            <br>
+             Le temps de propagation est le temps que l'information met &agrave; passer &agrave; travers un
+            composant. Plus l'information doit passer de transistors, plus le temps de propagation sera long.
+            (les retards successifs s'accumulent) Prenons par exemple une porte NOT :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/not_gate.jpg"><br>
+        <b><u>Une porte NOT classique, une entr&eacute;e et une sortie.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/propagation.gif"><br>
+        <b><u>La repr&eacute;sentation des temps de propagation.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sur le chronogramme ci-dessus, nous avons
+            indiqu&eacute; deux temps de propagation, tpHL et TpLH, soit respectivement le temps de
+            propagation High-&gt;Low et le temps de propagation Low-&gt;High. Dans la plupart des cas, nous
+            avons environ tpHL=tpLH pour simplifier. Ce genre de chronogramme est courant dans les
+            documentations constructeurs et peut d&eacute;router certains d&eacute;butants en
+            &eacute;lectronique. En fait, quelque soit la technologie, il y a toujours un temps de
+            propagation, ausi infime soit il. Les chronogrammes ci-dessus sont donc un zoom tr&egrave;s
+            important sur les zones de changement de niveau. &Agrave; l'aide d'un oscilloscope, nous pouvons
+            facilement observer ce ph&eacute;nom&egrave;ne : avec une base de temps assez grande, le front
+            montant appara&icirc;t totalement droit alors qu'avec une base de temps plus petite le front
+            montant appara&icirc;t sous la forme d'une pente, exactement comme sur les chronogrammes
+            ci-dessus.<br>
+            <br>
+            Voyons maintenant la valeur de ces temps pour quelques technologie, &agrave; titre d'exemple
+            :<br>
+            <br>
+             
+
+            <table border="1" cellspacing="1" width="30%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Technologie</td>
+
+                <td>ALS</td>
+
+                <td>F</td>
+
+                <td>HC</td>
+
+                <td>HCT</td>
+              </tr>
+
+              <tr>
+                <td>tp</td>
+
+                <td>4ns</td>
+
+                <td>2ns</td>
+
+                <td>9ns</td>
+
+                <td>9ns</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prenons un exemple. Soit un sch&eacute;ma
+            &eacute;lectrique suivant :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/propaschem.gif"><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Essayons d'estimer de la fr&eacute;quence
+            maximale de ce montage bas&eacute; sur des composants logiques de la famille 74LS. (temps de
+            propagation tp=4ns)<br>
+            <br>
+            Comme nous l'avons dit ci-dessus, les temps de propagation s'ajoutent. Il faut donc prendre le
+            trajet le plus long, c'est &agrave; dire le trajet qui contient le plus de portes, afin de
+            conna&icirc;tre la vitesse maximale admissible par ce montage. Nous voyons que le trajet le plus
+            long contient 5 portes, soit un temps de propagation maximal de t=20ns. On veut connaitre une
+            fr&eacute;quence maximale : il faut donc que la demie p&eacute;riode soit sup&eacute;rieure au
+            temps de propagation maximal pour que l'information ne se perde pas. (il ne faut pas de
+            chevauchement entre le temps de mont&eacute;e et le temps de descente du signal) Nous avons donc
+            :<br>
+            <br>
+            demie-p&eacute;riode &gt; 20ns<br>
+            T/2 &gt; 20ns<br>
+            <b>f &lt; 25MHz</b>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Courant d'entr&eacute;e d'une porte</font><br>
+            <br>
+            Toute porte consomme de l'&eacute;nergie, et donc du courant, m&ecirc;me s'il est tr&egrave;s
+            faible dans le cas de certaines technologie comme le CMOS. Par convention, le courant rentre dans
+            le circuit.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/courant_porte.gif"><br>
+        <b><u>Par convention, le courant rentre dans le circuit.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En effet, le circuit &eacute;lectronique
+            d'entr&eacute;e poss&egrave;de une imp&eacute;dance propre. Cette imp&eacute;dance impose le
+            courant d'entr&eacute;e.<br>
+            On a donc :<br>
+            entr&eacute;e au niveau haut "H" pour I<sub>e</sub>&gt;0 (appel&eacute; dans les documentations
+            I<sub>IH</sub> (I Input High)<br>
+            entr&eacute;e au niveau bas "L" pour I<sub>e</sub>&lt;0 (appel&eacute; dans les documentations
+            I<sub>IL</sub> (I Input Low)<br>
+            <br>
+             A titre d'exemple :<br>
+            <br>
+             
+
+            <table border="1" cellspacing="1" width="30%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td rowspan="2">&nbsp;</td>
+
+                <td colspan="2">TTL</td>
+
+                <td>CMOS</td>
+              </tr>
+
+              <tr>
+                <td>ALS</td>
+
+                <td>F</td>
+
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr>
+                <td>I<sub>IH</sub></td>
+
+                <td colspan="2">20&micro;A</td>
+
+                <td>quelques nA</td>
+              </tr>
+
+              <tr>
+                <td>I<sub>IL</sub></td>
+
+                <td>-0,2mA</td>
+
+                <td>-0,6mA</td>
+
+                <td>-quelques nA</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Courant de sortie d'une porte</font><br>
+            <br>
+            En ce qui concerne le sens du courant de sortie, c'est un peu plus diff&eacute;rent.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/courant_porte_sortie.gif"><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sortie H : Is&lt;0, le courant est fourni par la
+            porte<br>
+            Sortie L : Is&gt;0, le courant est absorb&eacute; par la porte<br>
+            <br>
+            <br>
+            <u>Exemple :</u> sur le sch&eacute;ma suivant, calculer Is pour S=1 et S=0. Nota : utiliser les
+            valeurs de courants d'entr&eacute;es donn&eacute;s ci dessus.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/exo_courant.gif"><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="0" align="center">
+              <tr>
+                <td valign="top" align="left"><b>S=1 :</b><br>
+                <br>
+                 Ie = Iih<br>
+                Ie' = Iih'<br>
+                <br>
+                Is = -(Ie+Ie')<br>
+                Is = -40&micro;A</td>
+
+                <td><b>S=0 :</b><br>
+                <br>
+                 Ie = IiL<br>
+                Ie' = IiL'<br>
+                <br>
+                Is = -(Ie+Ie')<br>
+                Is = -(-0,2&micro;A + (-0,6mA))<br>
+                Is = -0,8&micro;A</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Sortance d'une porte</font><br>
+            <br>
+            La sortance d'une porte correspond au nombre de portes d'une m&ecirc;me famille que l'on peut
+            mettre en sortie d'une porte de cette famille. Cette caract&eacute;ristique est aujourdh'ui un
+            peu d&eacute;su&egrave;te car les circuits se mixent sans probl&egrave;mes. Les courants fournis
+            par les portes sont maintenant suffisants.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Marge de bruit</font><br>
+            <br>
+            Une porte logique poss&egrave;de deux &eacute;tats binaire : 0 ou 1. La porte fait la
+            diff&eacute;rence entre un "0" et un "1" selon le voltage pr&eacute;sent &agrave; sa borne
+            d'entr&eacute;e. Par exemple, pour la logique TTL, un 0V sera vu comme un "0" et un 5V sera vu
+            comme un "1". Bien s&ucirc;r, cela est la th&eacute;orie. En pratique, le 0V n'est jamais
+            parfait, ni m&ecirc;me le 5V. &Agrave; partir de l&agrave;, il faut bien se fixer des bornes
+            hautes et basses qui d&eacute;limiteront l'&eacute;tat haut de l'&eacute;tat bas.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/marge_bruit.gif"><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            Les documentations constructeurs donnent pour chaque composant ces caract&eacute;ristiques hautes
+            et basses.<br>
+            <br>
+            &Agrave; l'&eacute;tat haut : V<sub>IH</sub> &lt; V<sub>e</sub> &lt; V<sub>cc</sub><br>
+            &Agrave; l'&eacute;tat bas : 0 &lt; V<sub>e</sub> &lt; V<sub>IL</sub><br>
+            <br>
+            Voici les valeurs typiques pour les grandes familles (en consid&eacute;rant que les CMOS sont
+            aliment&eacute;s en 5V) :<br>
+            <br>
+
+            <table border="1" cellspacing="1" width="30%" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td rowspan="2">&nbsp;</td>
+
+                <td rowspan="2">TTL</td>
+
+                <td colspan="2">CMOS</td>
+              </tr>
+
+              <tr>
+                <td>HC</td>
+
+                <td>HCT</td>
+              </tr>
+
+              <tr>
+                <td>V<sub>IH</sub></td>
+
+                <td>2V</td>
+
+                <td>3,2V</td>
+
+                <td>2V</td>
+              </tr>
+
+              <tr>
+                <td>V<sub>IL</sub></td>
+
+                <td>0,8V</td>
+
+                <td>1,1V</td>
+
+                <td>0,8V</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;De m&ecirc;me que pour les entr&eacute;es, les
+            sorties ne poss&egrave;dent pas de tension parfaite. (5V ou 0V dans le cas de la logique TTL) Les
+            constructeurs fournissent des valeurs minimales et maximales garanties, pour une certaine
+            imp&eacute;dance de charge. En effet, c'est toujours la charge qui impose le courant, et donc la
+            tension de sortie. Celle ci diminuera si le courant augmente par exemple. Les marges
+            donn&eacute;es par le constructeurs sont V<sub>OL</sub> et V<sub>OH</sub>, respectivement la
+            tension maximale &agrave; la sortie lorsque la sortie est &agrave; "0" et la tension maximale de
+            la sortie lorsque l'&eacute;tat est au niveau "1".<br>
+            On regroupe les caract&eacute;ristiques des portes dans un graphique :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/immunite.gif"><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La diff&eacute;rence entre les limites
+            d'entr&eacute;es et de sorties est appel&eacute;e marge de bruit (ou immunit&eacute;).<br>
+            <br>
+            Marge de bruit &agrave; l'&eacute;tat haut : V<sub>OH</sub> - V<sub>IH</sub><br>
+            Marge de bruit &agrave; l'&eacute;tat bas : V<sub>IL</sub> - V<sub>OL</sub><br>
+            <br>
+            Nous en avons termin&eacute; avec les principales caract&eacute;ristiques des portes. Ces
+            quelques informations vous guideront lors de la lecture des documentations constructeurs.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>Les broches d'entr&eacute;es/sorties</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les composants logiques poss&egrave;dent
+            plusieurs types de technologie d'entr&eacute;es/sorties. La physique des ports
+            d'entr&eacute;es/sorties est tr&egrave;s importante &agrave; conna&icirc;tre afin de ne pas
+            interconnecter n'importe quels composants ensembles. Dans le cas des microcontr&ocirc;leurs par
+            exemple, les documentations constructeurs fournissent tous les d&eacute;tails &agrave; propos des
+            technologies utilis&eacute;es par les ports. On rencontre alors des termes comme "collecteur
+            ouvert" ou "r&eacute;sistance de tirage".
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <font size="5" color="#0000FF">Les sorties &agrave; collecteur ouvert</font><br>
+            <br>
+            Une broche de sortie se pr&eacute;sente habituellement sous la forme suivante :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/open_collector.gif"><br>
+        <b><u>Un port "classique" 0-Vcc &agrave; gauche, et un port &agrave; collecteur ouvert &agrave;
+        droite.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La sortie d'un port classique poss&egrave;de deux
+            &eacute;tats : un 1 (5V) et un 0 (0V). Sans regarder les technologies, une broche est en quelque
+            sorte un transistor. Un transistor poss&egrave;de trois broches : la base, l'&eacute;metteur et
+            le collecteur. La base sert &agrave; recevoir la commande (en courant ou en tension) qui va
+            bloquer ou saturer le transistor : le fonctionnement est en tout ou rien. (ou commutation) Dans
+            le cas d'un port classique, une r&eacute;sistance est incluse entre l'alimentation et le
+            collecteur lors de la fabrication du circuit. Cette circuiterie n'est pas visible, elle est
+            interne au composant. Lorsque le transistor est satur&eacute;, la sortie S est &agrave; la masse.
+            Lorsque le transistor est bloqu&eacute;, la sortie S est &agrave; Vcc. N'oublions pas qu'un
+            transistor en commutation peut &ecirc;tre vu comme un interrupteur command&eacute;. La
+            r&eacute;sistance est appel&eacute;e <b>r&eacute;sistance de tirage</b>, car elle "tire" la
+            sortie S &agrave; Vcc lorsque le transistor est bloqu&eacute;. En anglais, on distingue :<br>
+            <br>
+            La r&eacute;sistance de pull-up : r&eacute;sistance de tirage au +Vcc<br>
+            La r&eacute;sistance de pull-down : r&eacute;sistance de tirage au -Vcc, ou Gnd dans la plupart
+            des cas.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dans le sch&eacute;ma de droite, nous avons
+            repr&eacute;sent&eacute; le principe d'une broche &agrave; collecteur ouvert. Lorsque le
+            transistor est satur&eacute;, la sortie S est tir&eacute;e &agrave; la masse exactement comme
+            dans le sch&eacute;ma pr&eacute;c&eacute;dent. Lorsque le transistor est bloqu&eacute; (ouvert),
+            la sortie S est alors "en l'air". Son niveau n'est donc pas d&eacute;fini.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Avantages du collecteur ouvert:</b> 
+
+            <ul>
+              <li>Une r&eacute;sistance de tirage peut &ecirc;tre rajout&eacute;e &agrave;
+              l'ext&eacute;rieure du circuit. La tension de tirage pourra donc &ecirc;tre diff&eacute;rente
+              de la tension d'alimentation su circuit. (Vcc)</li>
+
+              <li>Les broches peuvent &ecirc;tre interconnect&eacute;es sans risque de court-circuit, ce qui
+              laisse la possibilit&eacute; de cr&eacute;er des bus de donn&eacute;es. (&agrave; l'instar du
+              bus I2C)</li>
+
+              <li>La caract&eacute;ristique pr&eacute;c&eacute;dente permet &eacute;galement de cr&eacute;er
+              des fonctions logiques entre les broches, et cr&eacute;er ainsi des priorit&eacute;s.</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/res_externe.gif"><br>
+        <b><u>Une r&eacute;sistance de pull-up en sortie transforme un collecteur ouvert en port
+        classique.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/et_cable.gif"><br>
+        <b><u>Une s&eacute;rie de portes &agrave; collecteur ouvert peut former un ET
+        cabl&eacute;.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>Le trigger de Schmitt</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le trigger de schmitt est une technologie un peu
+            sp&eacute;ciale que l'on retrouve de temps en temps dans les portes logiques et m&ecirc;me dans
+            des ports de certains microcontr&ocirc;leurs. Le trigger de schmitt est en fait un comparateur
+            &agrave; hyst&eacute;r&eacute;sis. Ce type de porte sert essentiellement d'anti rebond. Un rebond
+            se caract&eacute;rise par une instabilit&eacute; de la tension : celle ci, au lieu de changer de
+            niveau d'un seul trait (0 &agrave; 5V par exemple), a tendance &agrave; redescendre et &agrave;
+            remonter plusieurs fois. Les signaux d'entr&eacute;e c&eacute;l&egrave;bres pour leurs rebonds
+            sont les interrupteurs manuels. A tous les coups, les signal issus de ce type de dispositif aura
+            des rebonds.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/schmitt_gate.gif"><br>
+        <b><u>La porte logique trigger de Schmitt. (avec ou sans inverseur)</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enfin, pour illustrer le principe de
+            l'hyst&eacute;r&eacute;sis, voici un chronogramme :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/schmitt_chrono.gif"><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ Pr&eacute;c&eacute;dent | Index | Suivant ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Anthony Rabine<br>
+        <a href="mailto:arabine@programmationworld.com">arabine@programmationworld.com</a><br>
+        <a href="http://www.programmationworld.com">http://www.programmationworld.com</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document type="Cours">
+  <author>
+    <name>Benjamin DELIEGE</name>
+    <email>bdeliege@swing.be</email>
+    <web-site>http://www.roboticus.be.tf</web-site>
+  </author>
+  <page>
+    <title>Le port parallèle en entrée </title>
+    <introduction>Un premier cours sur le port parallèle a montré les capacités de ce périphérique et sa simplicité d'utilisation. Cette partie aura pour but d'expliquer le fonctionnement des entrées du port parallèle afin de construire en toute sécurité des montages fonctionnels.</introduction>
+  </page>
+  <section title="Introduction aux entrées">
+    <paragraph>Si le port parallèle permet d'envoyer des données à un montage comme le port parallèle permet aussi d'en recevoir via ses registres "Etat" et "Contrôle". Cela permet bien évidemment de créer une communication complète entre votre montage et l'ordinateur. Ainsi, l'ordinateur peut transmettre et recevoir des informations de l'extérieur.</paragraph>
+    <paragraph>Le tout est à présent de transmettre les données sans risquer de détruire la carte mère du pc (la première inquiétude de l'électronicien amateur). Le niveau haut ou bas d'une entrée du port parallèle est défini par la connexion entre l'entrée et la masse du port. Ainsi, si la broche est connectée à la masse, son niveau vaudra 0 tandis qu'elle vaudra 1 dans le cas contraire. Il est évident qu'il serait plus facile de pouvoir simplement mettre une tension sur la broche pour marquer le niveau haut et mettre une tension égale à 0 pour le niveau bas. Il suffirait juste de connecter l'une des sorties d'un circuit intégré pour transmettre à l'ordinateur la valeur. Mais ça ne fonctionne pas aussi facilement ! Ce serait trop dangereux, et c'est le meilleur moyen de griller la carte mère. Il est évident que si on venait à appliquer une tension trop élevée, la carte mère grillerait sur le champs et ce n'est pas notre but!</paragraph>
+  </section>
+  <section title="La gestion des entrées">
+    <paragraph>Pour conserver cette idée simple, où il suffit de connecter la sortie d'un montage électronique à l'entrée du port parallèle pour pouvoir communiquer, il faut un intermédiaire qui connectera ou non la broche du port parallèle avec la masse suivant la donnée envoyée par le montage (1=tension (ex:5V), 0=tension null (0V)). Une technique pas chère et fiable utlise un composant classique : le transistor. Ce petit composant créé en 1947 dans les laboratoires BELL, est un interrupteur électronique. Pour rappel, le transistor est constitué de trois couches de silicium de type "P" ou "N". Une couche de type "P" ou "N" est prise en sandwich entre les deux autres couches de type opposé à la première. La couche centrale est appelée "base" et les deux autres "collecteur" et "émetteur". Les transistors se présentent de la manière suivante :</paragraph>
+    <image>
+      <link type="img">E:\Documents\Articles\Cours Progworld\progelectronique\images\cours10_1.jpg</link>
+      <legend>Schéma électronique des deux principaux types de transistors bipolaires.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Si on applique une tension entre le collecteur et l'émetteur, il ne circule aucun courant, mais si on vient à faire passer un courant par la base, nous verrons la présence d'un courant sur l'émetteur. Le schéma ci-dessous montre le branchement du transitor comme interface d'entrée :&lt;br&gt;</paragraph>
+    <paragraph>&lt;ul&gt;&lt;li&gt; Une entrée du port parallèle au collecteur&lt;/li&gt;&lt;li&gt; La sortie du montage, via une résistance pour ne pas endommager la jonction, à la base du transistor&lt;/li&gt;&lt;li&gt; La masse à l'émetteur&lt;/li&gt;&lt;/ul&gt;</paragraph>
+    <paragraph>Nous pouvons maintenant changer facilement l'état de l'entrée du port et la faire passer au niveau 1 ou 0 en fonction de la sortie du montage et sans risquer d'abîmer la carte mère.</paragraph>
+    <image>
+      <link type="img">E:\Documents\Articles\Cours Progworld\progelectronique\images\cours10_2.jpg</link>
+      <legend>Schéma simple pour contrôler une entrée.&lt;br&gt;</legend>
+    </image>
+    <paragraph>Nous remarquons que si la base du transistor passe à l'état haut alors le circuit se ferme et l'entrée « /Ack » (broche 10) du port parallèle est connectée à la masse (état bas) dans le cas contraire, l'entrée reste à l'état haut. Ce mécanisme est possible grâce à la résistance de tirage interne au port parallèle (voir les cours de systèmes numériques pour plus de détails). Un transistor NPN comme le BC547 est très répandu et peu coûteux et est idéal pour ce type d'usage. Pour une sortie de montage en 5V, on peut utiliser une résistance variant entre 470 ohms et 1 kohms. Une résistance plus grande aurait pour conséquence de limiter le courant dans la base du transistor, et donc de ne pas pouvoir faire commuter le transistor. Une autre solution serait d'utiliser des transistors à technologie MOS. Ceux-ci ont la particularité de pouvoir se commander en tension, et non en courant comme les transistors bipolaires. On évite ainsi d'utiliser une résistance.</paragraph>
+  </section>
+  <section title="La lecture depuis un programme">
+    <paragraph>Un programme d'exemple pour lire les 3 registres du port parallèle est donné dans le premier cours sur ce sujet. Nous remarquons que les données reçues sont des valeurs numériques et comme le port parallèle est codé en 8 bit, ces valeurs numériques varient entre 0 et 255.  Pour connaître l'état de chaque entrée séparément nous devons convertir ces valeurs. Pour rappel :</paragraph>
+    <paragraph>&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;&lt;br&gt;&lt;tr&gt;&lt;td&gt;Bit&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Données(lecture/écriture)  0x378&lt;/td&gt;&lt;td&gt;D7&lt;/td&gt;&lt;td&gt;D6&lt;/td&gt;&lt;td&gt;D5&lt;/td&gt;&lt;td&gt;D4&lt;/td&gt;&lt;td&gt;D3&lt;/td&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;D0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Etat(lecture)0x379&lt;/td&gt;&lt;td&gt;BUSY&lt;/td&gt;&lt;td&gt;/ACK&lt;/td&gt;&lt;td&gt;PE&lt;/td&gt;&lt;td&gt;SELECT&lt;/td&gt;&lt;td&gt;/ERROR&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Contrôle(lecture/écriture ) 0x37A&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;BIDCONTROL&lt;/td&gt;&lt;td&gt;IRQENABLE&lt;/td&gt;&lt;td&gt;/SELECTIN&lt;/td&gt;&lt;td&gt;/INIT&lt;/td&gt;&lt;td&gt;/AUTOFEED&lt;/td&gt;&lt;td&gt;/STROBE&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;</paragraph>
+    <paragraph>Quand la Bit 7 du registre "Etat" (base + 1 soit 0x379 le plus souvent) «Busy» (broche 11) passe à l'état haut, alors la valeur du registre se voit incrémentée de 2^7 soit 128. Quand «/ACK» (broche 10) passe à l'état haut, l'incrémentation est de 2^6 soit 64. Si les bits 0 à 6 sont à l'état haut et la bit 7 à l'état bas, la valeur du registre sera de 127, ainsi, on sait que si la valeur du registre est strictement supérieur à 127, cela signifie que le bit 7 est à l'état haut. Voici un petit programme d'exemple pour connaître la valeur de chaque broche du registre "Etat" :</paragraph>
+    <code syntax="None">#include &lt;pc.h&gt;
+
+void main(void)
+{
+   int valeur ;
+
+   valeur = inportb(0x379);  // on lit le registre "Etat"
+
+  if (valeur&gt;127) {  //si valeur est supérieure à 127, c'est que Busy est obligatoirement à l'état haut
+	printf (« Busy est à l'état haut ») ;   
+	valeur = valeur-128 ;}
+
+  if (valeur&gt;63) {  // /ack . 
+	printf (« Ack est à l'état haut ») ;   
+	valeur = valeur-64 ;}
+
+  if (valeur&gt;31) {  // PE . 
+	printf (« PE est à l'état haut ») ;   
+	valeur = valeur-32 ;}
+
+  if (valeur&gt;15) {  // Select .
+	printf (« Select est à l'état haut ») ;   
+	valeur = valeur-16 ;}
+
+  if (valeur&gt;7) {  // /Error .
+	printf (« Error est à l'état haut ») ;   
+	valeur = valeur-8 ;}
+}
+</code>
+    <paragraph>Si vous ne comprenez toujours pas comment ça marche, c'est très simple. Prenons une valeur par exemple 72. 72 est inférieur a 127, donc "busy" est à l'état bas, par contre il est supérieur a 63, donc "/ack" est l'état haut. 72-64 = 8 : 8 est supérieur à 7 donc /Error est à l'état haut. Le nombre 72 est formé par l'état haut de "/Ack" et "/Error" ainsi que l'état bas de toutes les autres broches.</paragraph>
+    <note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif">Si vous avez bien fait attention aux cours, vous vous souvenez que "Busy" est une entrée inversée. Cela signifie qu'elle est à l'état 1 quand elle est au niveau zéro (à la masse) ! Donc si votre port parallèle n'est connecté à rien (qu'il est dans le vide), la valeur renvoyée sera toujours strictement inférieure à 128.</note>
+    <paragraph>
+    </paragraph>
+  </section>
+</document>

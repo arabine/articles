@@ -1,0 +1,932 @@
+<document>
+	<author><name>Werner BEROUX</name><email>WernerBEROUX@aol.com</email><web-site>www.alc-wbc.com</web-site></author><page name="page"><title>Le port série</title><keywords></keywords><description></description><links><link type="prev">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\cours3.htm</link><link type="index">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\index.htm</link><link type="next">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\cours5.htm</link></links><introduction>Après le port parallèle, voyons comment fonctionne un autre grand ancien : le port série. Même s'il est 
+aujourd'hui de moins en moins utilisé, il reste encore un standard, notamment dans l'industrie. 
+</introduction></page><section name="section 1" title="Brochage et performances"><paragraph name="paragraph">Chaque ordinateur possède deux ports série. Ils prennent la forme de deux connecteurs mâles à 9 broches (pour 
+les PC un peu plus anciens, un des deux possède 25 broches), nommés en standard COM1 et COM2. Le schéma 
+ci-contre montre le brochage. A l'origine, le port série était destiné à être connecté à un modem, c'est de là 
+que le nom des broches sont tirés. En effet, seulement trois broches sont nécessaires pour communiquer avec 
+un périphérique (TxD, RxD et la masse), les autres broches n'étant que des signaux de contrôle et d'état. Le 
+port série est très bien protégé contre les courts-circuits (avec une intensité de 20mA) et les broches sont 
+limitées en courant. Ainsi, il est tout à fait possible d'alimenter un petit montage électronique (par exemple les 
+souris séries sont alimentées par la ligne RTS) mais il est quand même préférable d'avoir recourt à une 
+alimentation externe.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours4\brochage.jpg</link><legend>Prise DB9 mâle vue de devant.</legend></image><paragraph name="brochage">&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Broche&lt;/td&gt;
+                &lt;td&gt;Nom&lt;/td&gt;
+                &lt;td&gt;Signification&lt;/td&gt;
+                &lt;td&gt;Sens&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;DCD&lt;/td&gt;
+                &lt;td&gt;Data Carrier Detect&lt;/td&gt;
+                &lt;td&gt;Entr&amp;eacute;e&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;RxD&lt;/td&gt;
+                &lt;td&gt;Receive Data&lt;/td&gt;
+                &lt;td&gt;Entr&amp;eacute;e&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;TxD&lt;/td&gt;
+                &lt;td&gt;Transmit Data&lt;/td&gt;
+                &lt;td&gt;Sortie&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;4&lt;/td&gt;
+                &lt;td&gt;DTR&lt;/td&gt;
+                &lt;td&gt;Data Terminal Ready&lt;/td&gt;
+                &lt;td&gt;Sortie&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;5&lt;/td&gt;
+                &lt;td&gt;GND&lt;/td&gt;
+                &lt;td&gt;masse&lt;/td&gt;
+                &lt;td align="center"&gt;-&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;6&lt;/td&gt;
+                &lt;td&gt;DSR&lt;/td&gt;
+                &lt;td&gt;Data Set Ready&lt;/td&gt;
+                &lt;td&gt;Entr&amp;eacute;e&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;7&lt;/td&gt;
+                &lt;td&gt;RTS&lt;/td&gt;
+                &lt;td&gt;Request To Send&lt;/td&gt;
+                &lt;td&gt;Sortie&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;8&lt;/td&gt;
+                &lt;td&gt;CTS&lt;/td&gt;
+                &lt;td&gt;Clear To Send&lt;/td&gt;
+                &lt;td&gt;Entr&amp;eacute;e&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;9&lt;/td&gt;
+                &lt;td&gt;RI&lt;/td&gt;
+                &lt;td&gt;Ring Indicator&lt;/td&gt;
+                &lt;td&gt;Entr&amp;eacute;e&lt;/td&gt;
+   &lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Avec le port parallèle, tous les signaux sont transmis les uns à côté des autres dans un câble qui prend bien 
+souvent l'allure d'une nappe. Ce procédé est rapide mais on remarque que la mise en parallèle de fils très 
+proches induit entre eux un couplage par capacité. Pour réduire cet effet, il est possible d'intercaler des fils 
+reliés à la masse entre les fils acheminant les signaux. De plus, un câble représente une charge non négligeable 
+et il est bien souvent utile d'avoir recours à des circuits buffers pour fournir plus de puissance. Ainsi, sur des 
+grandes longueurs, la tension peut chuter au point de ne plus correspondre à la logique TTL (0-5V). Le port 
+série tire là son épingle du jeu : dans le protocole de communication RS232C, les données sont transmises en 
+série (donc sur un seul fil) avec un calibre de tension plus élevé (-12V/+12V).</paragraph></section><section name="section 2" title="Le protocole RS232C"><paragraph name="paragraph">C'est par cette norme qu'il vous est possible de relier deux ordinateurs 
+ensemble (la connexion directe par câble sous Windows), ou encore de 
+communiquer avec un modem, imprimante etc. Ce protocole est dit full 
+duplex car il peut transmettre des données et en recevoir en même temps,
+ via les lignes RxD et TxD. Il est tout à fait possible de n'utiliser que ces 
+deux bornes en plus de la masse (pour la référence), en veillant bien sûr à
+ relier la borne TxD du premier ordinateur à la broche RxD du second et 
+vice versa. Le contrôle du flux de données sera alors totalement logiciel 
+car les bornes annexes du port ne sont pas utilisées. Le mode de 
+communication dit Xon/Xoff est très répandu (avec les imprimantes séries
+ par exemple) et permet de contrôler l'écoulement des données en fixant 
+dans la mémoire deux limites, haute et basse.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours4\schema.jpg</link><legend>Un exemple de câblage et son chronogramme.</legend></image><paragraph name="paragraph"> Le schéma ci-dessus montre 
+un câblage compatible avec la fonction connexion directe par câble 
+intégrée à Windows. Pour ce qui est du protocole proprement dit, un 
+exemple de chronogramme possible est présenté ci-contre. On envoie
+ l'octet "10001011" en commençant par le bit de poids faible, sachant que
+ le protocole RS232 peut communiquer un mot compris entre 5 et 8 bits. 
+Viennent ensuite se greffer plusieurs autres bits : le ou les bit(s) de stop 
+(logique 1), l'éventuel bit de parité (parité paire ou impaire, non représenté 
+sur le chronogramme) et enfin le bit de start (logique 0). Ce dernier est 
+nécessaire afin de synchroniser les horloges des deux organes 
+communicants. En effet, il n'y a aucun signal d'horloge pour cadencer la
+ transmission, il faut donc que chaque entité ait été configurée avec la 
+même horloge de référence (le fameux baud). Il est possible de configurer 
+tous ces paramètres sous Windows en allant dans les propriétés du port 
+série. Si vous souhaitez connecter deux PC ensemble, il faut que ces
+ données soient identiques sur les deux ordinateurs.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours4\wincom1.jpg</link><legend>Les propriétés du COM1 vous montrent l'adresse de base (3F8).</legend></image><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours4\wincom2.jpg</link><legend>Vous pouvez paramétrer entièrement le protocole de communication.</legend></image></section><section name="section 3" title="Les registres de configuration"><paragraph name="paragraph">Tout comme le port parallèle, le port série possède un certain nombre de 
+registres. Ces registres sont situés dans un composant nommé UART (Universal 
+Asynchronous Receiver / Transmitter), qui gère totalement le
+ port série et se situe sur votre carte mère. Vous trouverez la documentation complète de l'UART 16550 en 
+téléchargement ci-dessous. Le port série est une vieille technologie, et à l'époque la mémoire était rare et le 
+moindre petit gain était apprécié. Les concepteurs du port série ont donc trouvés de nombreuses astuces pour 
+utiliser un même registre pour plusieurs choses. C'est malin mais cela rend le port série assez complexe à 
+configurer. Chaque port série possède une adresse de base (voir ci-dessus pour savoir 
+comment la trouver) qui est généralement 0x3F8 
+pour le COM1 et 0x2F8 pour le COM2 (voir les captures ci-dessus). Les 
+registres sont, comme à l'accoutumée, accessibles via un offset par rapport à cette adresse de
+ base, ce qui est représenté dans le tableau ci-dessous.</paragraph><paragraph name="registres">&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Adresse de base&lt;/td&gt;
+       &lt;td&gt;DLAB&lt;/td&gt;
+       &lt;td&gt;Lecture/Ecriture&lt;/td&gt;
+       &lt;td&gt;Abréviation&lt;/td&gt;
+       &lt;td&gt;Nom du registre&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;Ecriture&lt;/td&gt;
+       &lt;td&gt;TxD&lt;/td&gt;
+       &lt;td&gt;Tampon de transmission&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;Lecture&lt;/td&gt;
+       &lt;td&gt;RxD&lt;/td&gt;
+       &lt;td&gt;Tampon de réception&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;Lecture/Ecriture&lt;/td&gt;
+       &lt;td&gt;DLLB&lt;/td&gt;
+       &lt;td&gt;Divisor Latch Low Byte&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;Lecture/Ecriture&lt;/td&gt;
+       &lt;td&gt;IER&lt;/td&gt;
+       &lt;td&gt;Interrupt Enable Register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;Lecture/Ecriture&lt;/td&gt;
+       &lt;td&gt;DLHB&lt;/td&gt;
+       &lt;td&gt;Divisor Latch High Byte&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+2&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Lecture&lt;/td&gt;
+       &lt;td&gt;IIR&lt;/td&gt;
+       &lt;td&gt;Interrupt Identification Register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+2&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Ecriture&lt;/td&gt;
+       &lt;td&gt;FCR&lt;/td&gt;
+       &lt;td&gt;FIFO Control Register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+3&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Lecture/Ecriture&lt;/td&gt;
+       &lt;td&gt;LCR&lt;/td&gt;
+       &lt;td&gt;Line Control Register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+4&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Lecture/Ecriture&lt;/td&gt;
+       &lt;td&gt;MCR&lt;/td&gt;
+       &lt;td&gt;Modem Control Register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+5&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Lecture&lt;/td&gt;
+       &lt;td&gt;LSR&lt;/td&gt;
+       &lt;td&gt;Line Status Register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;+6&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Lecture&lt;/td&gt;
+       &lt;td&gt;MSR&lt;/td&gt;
+       &lt;td&gt;Modem Status Register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="paragraph">Voyons tous ces registres en détail.&lt;br&gt;
+&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Le buffer d'émission et de réception&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ce registre contient les données à 
+tansmettre/recevoir. Le fonctionnement est simple : quand on lit ce qu'il y a dedans c'est qu'on 
+attend une donnée, et inversement dans le cas d'une écriture. Il est accessible à l'adresse de base 
+et est de 8 bits au maximum. Notez que DLAB (Divisor Latch Access Bit), un bit que nous verrons plus tard, doit être à 0.
+&lt;br&gt;&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Divisor Latch Low/High Byte&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Nous allons traiter ces deux registres ensemble. 
+Ils sont accessibles lorsque DLAB est à 1 dans deux adresses différentes (adresse de base et adresse de 
+base+1). Ces deux registres servent à paramétrer la vitesse de transmission. L'UART possède une fréquence 
+de fonctionnement propre, qui est fixée grâce à un oscillateur de 1,8432 MHz. Cette fréquence est alors 
+divisée par 16, ce qui donne 115200 Hz : la fréquence de base. Nous allons en fait entrer la 
+valeur de divion de cette fréquence pour spécifier la vitesse de transmission voulue.&lt;br&gt;
+&lt;br&gt;
+&lt;u&gt;Exemple :&lt;/u&gt; Nous voulons une transmission à 9600 bauds. Nous devons donc diviser la fréquence de 
+base par : 115 200 / 9600 =  12. Ce facteur de division est à écrire dans les deux registres en hexadécimal, soit 
+&lt;b&gt;C&lt;/b&gt; pour notre exemple. Celui-ci tient sur 8 bits, il suffit alors de charger les registres avec les valeurs 
+suivantes :&lt;br&gt;
+Divisor Latch Low Byte = 0x0C
+Divisor Latch High Byte = 0x00</paragraph><paragraph name="facteurs de division">Pour vous aidez, nous avons regroupé ces valeurs de division dans le tableau ci-dessous :&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC" width="60%"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Vitesse voulue (bauds)&lt;/td&gt;
+       &lt;td&gt;Divisor Latch High Byte (hexadécimal)&lt;/td&gt;
+       &lt;td&gt;Divisor Latch Low Byte (hexadécimal)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;50&lt;/td&gt;
+       &lt;td&gt;0x09&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;75&lt;/td&gt;
+       &lt;td&gt;0x06&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;110&lt;/td&gt;
+       &lt;td&gt;0x04&lt;/td&gt;
+       &lt;td&gt;0x17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;150&lt;/td&gt;
+       &lt;td&gt;0x03&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;300&lt;/td&gt;
+       &lt;td&gt;0x01&lt;/td&gt;
+       &lt;td&gt;0x80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;600&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0xC0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1 200&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;2 400&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;3 600&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;4 800&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x18&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;7 200&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;9 600&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x0C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;19 200&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x06&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;38 400&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x03&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;57 600&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x02&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;115 200&lt;/td&gt;
+       &lt;td&gt;0x00&lt;/td&gt;
+       &lt;td&gt;0x01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="IIR">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Interrupt Identification Register&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Bit&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Enables Low Power Mode (16750)&lt;/td&gt;
+       &lt;td&gt;Enables Sleep Mode (16750)&lt;/td&gt;
+       &lt;td&gt;Enable Modem Status Interrupt&lt;/td&gt;
+       &lt;td&gt;Enable Receiver Line Status Interrupt&lt;/td&gt;
+       &lt;td&gt;Enable Transmitter Holding Register Empty Interrupt&lt;/td&gt;
+       &lt;td&gt;Enable Received Data Available Interrupt&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ce registre permet de fixer les interruptions à des 
+évènements précis. Par exemple, les deux premiers bits servent à réguler la communication série en 
+provoquant une interruption lorsque le buffer de transmission est vide ou qu'une donnée est présente dans 
+le buffer de réception.</paragraph><paragraph name="IER">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Interrupt Enable Register&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Bit&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+       &lt;td colspan="2"&gt;FIFO&lt;/td&gt;
+       &lt;td&gt;64 Byte Fifo Enabled (16750 only)&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;16550 Time-out Interrupt Pending&lt;/td&gt;
+       &lt;td colspan="2"&gt;Interrupt Select&lt;/td&gt;
+       &lt;td&gt;Interrupt Pending&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ce registre en lecture seule indique la source de 
+l'interruption. L'état du premier bit montre si une interruption a été déclenchée. Les autres bits précisent 
+quelle est l'interruption.&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center"&gt;
+&lt;tr&gt;
+       &lt;td&gt;bit 7&lt;/td&gt;
+       &lt;td&gt;bit 6&lt;/td&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;No FIFO&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;FIFO Enabled but Unusable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;FIFO Enabled&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center"&gt;
+&lt;tr&gt;
+       &lt;td&gt;bit 2&lt;/td&gt;
+       &lt;td&gt;bit 1&lt;/td&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;Modem Status Interrupt&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;Transmitter Holding Register Empty Interrupt&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;Received Data Available Interrupt&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;Receiver Line Status Interrupt&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="FCR">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;FIFO Control Register&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Bit&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+       &lt;td colspan="2"&gt;Interrupt Trigger Level&lt;/td&gt;
+       &lt;td&gt;Enable 64 Byte FIFO (16750 only)&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;DMA Mode Select&lt;/td&gt;
+       &lt;td&gt;Clear Transmit FIFO&lt;/td&gt;
+       &lt;td&gt;Clear Receive FIFO&lt;/td&gt;
+       &lt;td&gt;Enable FIFO's&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ce registre est en écriture seule. Il permet de gérer les 
+buffer d'émission et de réception.&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center"&gt;
+&lt;tr&gt;
+       &lt;td&gt;bit 7&lt;/td&gt;
+       &lt;td&gt;bit 6&lt;/td&gt;
+       &lt;td&gt;Interrupt Trigger Level&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1 Byte&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;4 Bytes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;8 Bytes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;14 Bytes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="LCR">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Line Control Register&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Bit&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+       &lt;td&gt;DLAB&lt;/td&gt;
+       &lt;td&gt;Set Break Enable&lt;/td&gt;
+       &lt;td colspan="3"&gt;Parity Select&lt;/td&gt;
+       &lt;td&gt;Length of Stop Bit&lt;/td&gt;
+       &lt;td colspan="2"&gt;Word Length&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+Le bit 7 est le fameux DLAB qui, lorsqu'il est à 1, donne accès aux deux registres pour déterminer la vistesse 
+de transmission (voir le tableau plus haut).&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center"&gt;
+&lt;tr&gt;
+       &lt;td&gt;bit 5&lt;/td&gt;
+       &lt;td&gt;bit 4&lt;/td&gt;
+       &lt;td&gt;bit 3&lt;/td&gt;
+       &lt;td&gt;Parity Select&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;X&lt;/td&gt;
+       &lt;td&gt;X&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;No Parity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;Odd Parity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;Even Parity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;High Parity (Sticky)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;Low Parity (Sticky)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;u&gt;&lt;b&gt;Length of Stop Bit (bit 2) :&lt;/b&gt;&lt;/u&gt;&lt;br&gt;
+0 : One Stop Bit&lt;br&gt;
+1 : 2 Stop bits for words of length 6,7 or 8 bits or 1.5 Stop Bits for Word lengths of 5 bits.&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center"&gt;
+&lt;tr&gt;
+       &lt;td&gt;bit 1&lt;/td&gt;
+       &lt;td&gt;bit 0&lt;/td&gt;
+       &lt;td&gt;Word Length&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;5 Bits&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;6 Bits&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+       &lt;td&gt;7 Bits&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;8 Bits&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</paragraph><paragraph name="MCR">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Modem Control Register&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Bit&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;-&lt;/td&gt;
+       &lt;td&gt;Autoflow Control Enabled (16750 only)&lt;/td&gt;
+       &lt;td&gt;LoopBack Mode&lt;/td&gt;
+       &lt;td&gt;Aux Output 2&lt;/td&gt;
+       &lt;td&gt;Aux Output 1&lt;/td&gt;
+       &lt;td&gt;Force Request To Send&lt;/td&gt;
+       &lt;td&gt;Force Data Terminal Ready&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ce registre permet notamment d'accéder aux broches RTS (bit 1) et DTR (bit 0). Le bit 4 est 
+intéressant car il permet de boucler les broches de contrôle vers les broches de status, ainsi que le buffer 
+d'émission vers le buffer de réception. Utile pour tester des opérations de transmission avec un seul composant 
+(ou d'un seul PC).</paragraph><paragraph name="LSR">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Line Status Register&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Bit&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+       &lt;td&gt;Error in Received FIFO&lt;/td&gt;
+       &lt;td&gt;Empty Data Holding Registers&lt;/td&gt;
+       &lt;td&gt;Empty Transmitter Holding Register&lt;/td&gt;
+       &lt;td&gt;Break Interrupt&lt;/td&gt;
+       &lt;td&gt;Framing Error&lt;/td&gt;
+       &lt;td&gt;Parity Error&lt;/td&gt;
+       &lt;td&gt;Overrun Error&lt;/td&gt;
+       &lt;td&gt;Data Ready&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ce registre est important car c'est grâce à lui que l'on 
+pourra gérer les communications séries. Ce registre d'état en lecture seule permet par exemple de tester si les 
+buffers d'émission et de réception sont vides afin de placer ou d'attendre une nouvelle donnée. Le bit 0 est mis 
+à 1 lorsqu'une nouvelle donnée est présente dans le buffer de réception. Les autres bits sont assez explicites et 
+permettent de détecter les erreurs de transmission.</paragraph><paragraph name="MSR">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Modem Status Register&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC"&gt;
+&lt;tr&gt;
+       &lt;td&gt;Bit&lt;/td&gt;
+       &lt;td&gt;7&lt;/td&gt;
+       &lt;td&gt;6&lt;/td&gt;
+       &lt;td&gt;5&lt;/td&gt;
+       &lt;td&gt;4&lt;/td&gt;
+       &lt;td&gt;3&lt;/td&gt;
+       &lt;td&gt;2&lt;/td&gt;
+       &lt;td&gt;1&lt;/td&gt;
+       &lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+       &lt;td&gt;Signification&lt;/td&gt;
+       &lt;td&gt;Data Carrier Detect&lt;/td&gt;
+       &lt;td&gt;Ring Indicator&lt;/td&gt;
+       &lt;td&gt;Data Set Ready&lt;/td&gt;
+       &lt;td&gt;Clear To Send&lt;/td&gt;
+       &lt;td&gt;Delta Data Carrier Detect&lt;/td&gt;
+       &lt;td&gt;Trailing Edge Ring Indicator&lt;/td&gt;
+       &lt;td&gt;Delta Data Set Ready&lt;/td&gt;
+       &lt;td&gt;Delta Clear to Send&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ce registre est intéressant car il permet de voir l'état des 
+4 broches d'entrées du port série (bits 7 à 4). Le mot "Delta" signifie que les bits correspondants testent s'il y a eu 
+un changement dans l'état des lignes. Enfin, le bit 2 peut être intéressant car il détecte un front montant sur la 
+ligne RI.</paragraph></section><section name="section 4" title="La programmation du port série"><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">Attention, le logiciel et les codes présentés ci-dessous gèrent le port série par accès direct aux adresses. 
+Ces sources ne fonctionneront donc pas sous Windows NT qui interdit les appels directs pour des raisons 
+de sécurité. Pour cela, il faut passer par des drivers spécifiques ou utiliser le contrôle MSCOM en VB, dont 
+l'utilisation est décrite dans le cours suivant.</note><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Utilisation des broches&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Comme nous l'avons vu précédemment, nous avons la 
+possibilité de gérer entièrement le port série et ceci à l'aide de nombreux langages. Le C fournit en standard les 
+fonctions outportb() et inportb() (ou inp et outp dans le compilateur de Microsoft) par l'intermédiaire des 
+librairies conio.h ou pc.h suivant les compilateurs. Pour Visual Basic, il suffit d'inclure la dll Outpout.dll dans un 
+projet pour bénéficier de ces fonctions dans ce langage (téléchargez le logiciel ci-dessous pour acoir cette 
+dll). Commençons sans plus tarder notre première expérience. 
+On réalise le petit câblage en suivant le schéma ci-dessous ; il consiste
+ en une LED que l'on placera où l'on souhaite visualiser l'état d'une sortie 
+et un bouclage entre une sortie et une entrée. L'absence de résistance de 
+limitation peut paraître d'un premier abord dangereux mais celle-ci est 
+inutile car comme nous l'avons dit plus haut, le port série limite les broches 
+de sorties en courant (20mA environ) ; point de danger donc, et un courant suffisant pour allumer la LED. 
+Démarrons ensuite le programme TestSérie.exe qui est une véritable tour de contrôle pour notre
+ port série. Le contenu de tous les registres est affiché en permanence, et,
+ par l'intermédiaire de quelques masquages sur le registre MSR, nous en 
+déduisons l'état des broches de sortie. Quant aux broches d'entrées, il est 
+possible de fixer leur potentiel en cochant simplement la case 
+correspondante. Voici en exemple la procédure permettant de mettre à '1' et à '0' la broche 
+RTS (7) :</paragraph><code syntax="Visual Basic 6.0" name="code">If RTS.Value = 1 Then
+        Out MCR, Inp(MCR) Or &amp;H2
+    Else
+        Out MCR, Inp(MCR) And &amp;HFD
+End If</code><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours4\schemaled.jpg</link><legend>Un montage simple pour comprendre le port série.</legend></image><paragraph name="paragraph">Evidemment, nous partons du principe que MCR a été initialisé à la bonne adresse. Pour plus de détails, n'héisitez 
+pas à télécharger le programme complet pour lire ses sources.
+&lt;br&gt;
+Tout le programme est sur la même logique de masquage, toujours pour éviter de changer les autres bits du 
+registre. Pour ceux qui ne programment pas en Visual Basic, sachez que vous pouvez éditer le .frm pour en 
+reprendre les algorithmes. Le Visual Basic est suffisamment clair pour en recopier le principe sans trop de peine. 
+Dans tous les cas, n'hésitez pas à réaliser le maximum de manipulations afin de bien comprendre le 
+fonctionnement du port.</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours4\testserie.jpg</link><legend>Notre programme pour tester le port série.</legend></image><paragraph name="paragraph">&lt;br&gt;
+&lt;font size="5" color="#0000FF"&gt;Communication en RS232&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Nous allons voir maintenant comment gérer une 
+communication RS-232 entre deux PC, ou un PC avec un terminal. N'oubliez pas que lorsque deux entités 
+veulent communiquer par RS-232, il est nécessaire qu'elles aient les mêmes paramètres. Rappelons les :&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;Vitesse de transmission en bauds
+&lt;li&gt;Taille de la donnée (entre 5 et 8 bits)
+&lt;li&gt;Nombre de bits de stop
+&lt;li&gt;Test de parité
+&lt;/ul&gt;
+&lt;br&gt;
+Nous allons écrire une fonction pour chaque action, ce qui simplifiera la conception du programme principal. Dès 
+lors, il suffira de les placer dans un header (fichier avec l'extension .h) à inclure dans vos réalisations. Nous 
+allons partir du principe que les deux entités sont connectées sur le COM2. Bien sûr, le code est le même pour 
+les autres ports, il y a juste l'adresse de base à changer ; avec les #define du C, cela se fait en deux coups 
+de cuillière à pot :o)&lt;br&gt;
+&lt;br&gt;
+Hop, au boulot. Commençons par écrire la fonction &lt;i&gt;void&lt;/i&gt; &lt;b&gt;Init_COM2(&lt;/b&gt; &lt;i&gt;void&lt;/i&gt; &lt;b&gt;)&lt;/b&gt; qui initialisera le port avec tous les 
+paramètres listés ci-dessus. Nous allons écrire en même temps les #define qui seront également valables pour les 
+autres fonctions.</paragraph><code syntax="C" name="code">#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;dos.h&gt;
+/* dos.h est la librairie contenant les prototypes des 
+  fonctions inportb et outportb (sous Borland)
+  A changer selon le compilateur :
+  pc.h pour DJGPP
+  conio.h avec VC++ - inp() et outp() -
+  asm/io.h sous Linux */
+
+// changer ici l'adresse des ports
+// dans la majorité des cas, laisser par défaut
+#define COM1 0x3F8
+#define COM2 0x2F8
+#define COM3 0x3E8
+#define COM4 0x2E8
+
+// on défini ici le port courant
+// il y a juste ce paramètre à changer
+#define COMx COM2
+
+/* Adresses des registres
+  Pour plus de modularité, on fait 
+  un offset par rapport à l'adresse de base */
+#define TxD COMx
+#define RxD COMx
+#define DLLB COMx
+#define IER (COMx+1)
+#define DLHB (COMx+1)
+#define IIR (COMx+2)
+#define FCR (COMx+2)
+#define LCR (COMx+3)
+#define MCR (COMx+4)
+#define LSR (COMx+5)
+#define MSR (COMx+6)
+
+
+void Init_COM2(void)
+{
+outportb(LCR,0x80); // DLAB = 1
+             
+// 9600 bauds
+outportb(DLLB,0x0C); // Vitesse adresse basse
+outportb(DLHB,0x00); // Vitesse adresse haute
+	
+outportb(LCR,0x07); 
+/* DLAB = 0
+  Pas de parité
+  8 bits de données
+  2 bits de stop */
+}</code><paragraph name="paragraph">Pensez bien à configurer les deux entités avec les mêmes paramètres, car beaucoup de problèmes viennent de là. 
+Ecrivons maintenant la fonction &lt;i&gt;void&lt;/i&gt; &lt;b&gt;Emet_Car(&lt;/b&gt; &lt;i&gt;char Caractere&lt;/i&gt; &lt;b&gt;)&lt;/b&gt; qui, comme son 
+nom le laisse penser, va envoyer un caractère avec le protocole XON/XOFF. Mais qu'est ce que c'est que ça me 
+direz-vous ? Et bien c'est le protocole le plus simple (utilisé dans les vieilles imprimantes séries par exemple) qui 
+permet de ne pas remplir le buffer de réception en cas de vitesse de transmission trop rapide. Mettons que l'on 
+ait la configuration suivante, un ordinateur relié à une imprimante par liaison série :</paragraph><image name="image"><link type="img">C:\Mes Docs\www.programmationworld.com\site\langages\progelectronique\images\cours4\xonxoff.jpg</link><legend>Le principe du protocole Xon/Xoff.</legend></image><paragraph name="paragraph">Vous voyez que dans l'illustration ci-dessus, la mémoire de l'imprimante est limitée. Si l'ordinateur envoie trop 
+d'informations et remplit la mémoire de l'imprimante jusqu'à la saturer, les données seront corrompues. Avec le 
+protocole Xon/Xoff il existe deux seuils haut (Xoff) et bas (Xon) qui indiquent à l'envoyeur l'état de la mémoire. 
+Lorsque le seuil haut est franchi, l'imprimante envoie le code correspondant à Xoff (0x13). Le même 
+phénomène se produit avec Xon (0x11). Ainsi, avant d'envoyer une donnée, il faut vérifier qu'il reste de la place 
+dans la mémoire. Voici comment agir :&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt; lecture de 0x13 (Xoff) : on stoppe l'envoie des données et on attend le code Xon.
+&lt;li&gt; lecture de 0x11 (Xon) : la mémoire est bientôt vide, on recommence l'envoie des données tout en testant 
+si le code Xoff n'arrive pas.
+&lt;/ul&gt;&lt;br&gt;
+&lt;br&gt;
+Voici l'algorithme obéissant à ce protocole :</paragraph><code syntax="C" name="code">void Emet_Car(char Caractere) // le caractère sur 8 bits est passé en paramètre
+{
+  while((inportb(LSR)&amp;0x40)!=0x40); //on teste si le buffer de transmission est vide
+    if(inportb(RxD)==0x13) //le buffer du récepteur est-il plein ?
+      while((inportb(RxD))!=0x11); //attente de Xon
+  outportb(TxD,Caractere); //hôpla, on envoie le caractère :o)
+}</code><paragraph name="paragraph">La première chose à faire est de tester si l'ordinateur a fini d'envoyer le précédent caractère. Il suffit de tester 
+le bit 6 du registre LSR qui se nomme "Empty Data Holding Registers" ; ce bit est à 1 lorsque TxD est vide.&lt;br&gt;
+&lt;br&gt;
+Voyons maintenant la fonction de réception &lt;i&gt;char&lt;/i&gt; &lt;b&gt;Recep_Car(&lt;/b&gt; &lt;i&gt;void&lt;/i&gt; &lt;b&gt;)&lt;/b&gt;. Celle-ci 
+renvoie le contenu du buffer de réception, dès que celui ci contient une nouvelle donnée. Cela se réalise en testant 
+le bit 0 du registre LSR. Rien de bien compliqué.</paragraph><code syntax="C" name="code">char Recep_Car(void)
+{
+while((inportb(LSR)&amp;0x01)!=0x01); //On teste si une nouvelle donnée est arrivée
+return(inportb(RxD)); // On la lit et on la renvoie en paramètre de sortie
+}</code><paragraph name="paragraph">Voilà, nous voici dotés de trois fonctions qui nous permettront de communiquer facilement entre deux entités. Bien 
+sûr, il est possible de sphistiquer ces fonctions pour les rendre encore plus modulaires. Par exemple, il serait 
+pratique d'améliorer la fonction d'initialisation en fabriquant une fonction du style :&lt;br&gt;
+&lt;div align="center"&gt;&lt;b&gt;OpenCOM("COM2",9600,'N',8,1);&lt;/b&gt;&lt;/div&gt;&lt;br&gt;
+&lt;br&gt;
+Généralement, les conventions sont les suivantes :&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;COM2 : numéro du port
+&lt;li&gt;9600 : vitesse de transmission en bauds
+&lt;li&gt;N : pas de parité N=None, paire E=Even, impaire O=Odd, toujours à 1 M=Mark, toujours à 0 S=Space
+&lt;li&gt;8 : taille de la donnée (entre 5 et 8)
+&lt;li&gt;1 : nombre de bits de stop (1 ou 1,5 ou 2)
+&lt;/ul&gt;&lt;br&gt;
+&lt;br&gt;
+Voici par exemple un programme complet qui transmet un fichier ASCII par RS-232. Notez les fonctions de plus 
+haut niveau qui utilisent les fonctions de base Emet_Car et Recep_Car.&lt;br&gt;
+&lt;br&gt;
+Vous pouvez télécharger l'exécutable &lt;a href="downloads/cours4/rs232.zip"&gt;ici (50 ko)&lt;/a&gt;.</paragraph><code syntax="C" name="code">// Compilé avec DJGPP
+
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;pc.h&gt;
+
+#define COM1 0x3F8
+#define COM2 0x2F8
+#define COM3 0x3E8
+#define COM4 0x2E8
+
+#define COMx COM2
+
+#define TxD COMx
+#define RxD COMx
+#define DLLB COMx
+#define IER (COMx+1)
+#define DLHB (COMx+1)
+#define IIR (COMx+2)
+#define FCR (COMx+2)
+#define LCR (COMx+3)
+#define MCR (COMx+4)
+#define LSR (COMx+5)
+#define MSR (COMx+6)
+
+void Init_COM2(void)
+{
+  outportb(LCR,0x80);
+  outportb(DLLB,0x06); // 19200 bauds
+  outportb(DLHB,0x00);
+  outportb(LCR,0x07); // pas de parité, 2 bits de stop
+}
+
+void Emet_Car(char Caractere)
+{
+  while((inportb(LSR)&amp;0x40)!=0x40); 
+    if(inportb(RxD)==0x13)
+      while((inportb(RxD))!=0x11);
+  outportb(TxD,Caractere);
+}
+
+char Recep_Car(void)
+{
+  while((inportb(LSR)&amp;0x01)!=0x01);
+  return(inportb(RxD));
+}
+
+void Emet_string(char *Phrase)
+{
+  unsigned int i=0;
+  while(Phrase[i]!='\0')
+  {
+    Emet_Car(Phrase[i]);
+    i++;
+  }
+}
+
+void Recep_string(char *Phrase)
+{
+  char i,j=0;
+  while(i!='\r')
+  {
+    i=Recep_Car();
+    Phrase[j]=i;
+    j++;
+  }
+  Phrase[j]='\0'; // on termine la chaine de caractères
+}
+
+int main(void)
+{
+  char *buf;
+  FILE *fichier;
+  unsigned int Taille;
+  Init_COM2();
+  clrscr();
+  fichier=fopen("fichier.txt","r");
+  Taille=filelength(fichier);
+  fread(buf, Taille, 1, fichier);
+  buf[Taille]='\0';
+  printf("\nJ'envoie le fichier...\n");
+  Emet_string(buf);
+  printf("Ok, fini.");
+  fclose(fichier);
+  return(0);
+}
+</code><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">Ces fonctions fonctionnent vraiment très bien mais ne sont pas très adaptées au multitâches. Les boucles 
+d'attentes sont bien pratiques mais soufrent de leur lourdeur. Il existe heureusement le moyen de communiquer 
+par interruptions, en cas de réception d'une nouvelle donnée par exemple. Nous vous laissons le soin de 
+développer cela, et n'hésitez pas à nous faire part de vos réalisations pour les mettre sur ce site.</note></section><section name="section 5" title="Téléchargements"><paragraph name="paragraph">&lt;ul&gt;
+&lt;li&gt;&lt;a href="downloads/cours4/testserie.zip"&gt;testserie.zip&lt;/a&gt; : le programme VB présenté ci-dessus, avec 
+ses sources et la dll INPOUT32.DLL (25,8 Ko)
+&lt;li&gt;&lt;a href="downloads/cours4/pc16550d.pdf"&gt;pc16550d.pdf&lt;/a&gt; : le datasheet complet sur l'UART (344 Ko)
+&lt;li&gt;&lt;a href="downloads/cours4/sercable.pdf"&gt;sercable.pdf&lt;/a&gt; : quelques schémas pour faire vos propres 
+câbles (Null-Modem, loopback, PC to Modem, etc.) (238 Ko)
+&lt;li&gt;&lt;a href="downloads/cours4/rs232.zip"&gt;rs232.zip&lt;/a&gt; : l'exécutable du dernier source, concernant l'envoi d'un
+fichier entre deux PC (50 ko).
+&lt;/ul&gt;</paragraph></section></document>

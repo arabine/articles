@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<author><name>Anthony Rabine</name><email>arabine@programmationworld.com</email><web-site>http://www.programmationworld.com</web-site></author><page name="page"><title>Désassembleur de code 16F84</title><keywords>désassembleur 16F84</keywords><description>Désassembleur de code 16F84</description><links><link type="prev"></link><link type="index"></link><link type="next"></link></links><introduction>Programmer un désassembleur permet de bien maîtriser l'architecture d'un processeur. En outre, cela fournit un excellent entrainement 
+à la programmation en C et à la manipulation de chaînes de caractères. Nous allons décrire dans cette annexe le désassembleur que nous avons 
+programmer. Le but étant de parvenir au même résultat que le désassembleur fournit avec l'environement de développement MPLAB.</introduction></page><section name="section 1" title="Introduction au désassembleur"><paragraph name="paragraph">Nous avons choisi une plateforme relativement simple pour programmer ce désassembleur. En effet, l'architecture RISC du PIC 16F84 simplifie 
+grandement les choses au point de vue mémoire. Ce composant appartient à la famille des microcontrôleurs : se sont des processeurs dédiés aux 
+application embarquées. La particularité de ce type de processeur est qu'il dispose de tout un tas de périphériques au sein même du boitier. Ainsi, 
+le PIC 16F84 contient de la mémoire FLASH, EEPROM, RAM ainsi que quelques fonctionalités comme des ports d'entrées sorties TTL, un timer etc. Nous 
+vous renvoyons au premier cours de cette partie dédiée aux PIC pour plus de renseignements.</paragraph><paragraph name="paragraph">Pour utiliser ce microcontrôleur, et de manière générale tout processeur, le développeur utilise des langages de plus ou moins haut niveau. On distingue 
+ainsi les langages dits &lt;b&gt;hauts niveaux&lt;/b&gt; comme le BASIC, le JAVA etc. et les langages &lt;b&gt;bas niveaux&lt;/b&gt; tels le C et l'assembleur. Le langage C est un peu 
+"bâtard" car il peut être utilisé dans l'un ou l'autre cas. Quelque soit le langage choisit, le processus constitué d'une compilation ou d'un assemblage 
+suivit d'une édition des liens conduit toujours à la génération d'un fichier appelé &lt;b&gt;fichier objet&lt;/b&gt;.</paragraph><image name="image"><link type="img">images\annexe2_principe.gif</link><legend>Par quelles étapes passer pour réaliser l'opération inverse ?</legend></image><paragraph name="paragraph">Dans notre cas, nous nous limiterons à générer du code assembleur. Générer du code C n'offre que peu d'intérêt comparé au travail à fournir. Surtout 
+que le PIC 16F84 et son assembleur sont très simples. En revanche cela peut être indispensable pour des plates formes plus complexes.</paragraph><paragraph name="paragraph">Nous partirons du code objet normalisé au format Intel Hex. Ce code objet est en format ASCII et est lisible avec n'importe quel éditeur de 
+texte. Ce format contient les données à programmer et leur emplacement mémoire. (c'est à dire où les données seront programmées dans 
+la mémoire FLASH) Il existe d'autres standards comme le S-Record de Motorora, lui aussi sous la forme d'un fichier texte codé. Dans le monde 
+de l'embarqué, il n'y a pas (toujours) d'exécutable à proprement parlé, car il n'y a pas de système d'exploitation. Le programme développé 
+par le programmeur sera le seul code contenu dans le processeur.</paragraph><paragraph name="paragraph">Le code objet au format Intel Hex est soit obtenu à partir d'un lecteur de microcontrôleur ou d'EEPROM compatible avec le PIC 16F84 ou soit 
+directement au format fichier texte. Le but étant de transformer ce code objet au format Intel Hex en un code assembleur compréhensible.</paragraph><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">Nous répétons qu'il existe un désassembleur fournit en standard dans l'environement de développement MPLAB (voir le cours 2 pour plus de 
+détails sur ce logiciel). Pour désassembler un code objet, afficher la mémoire EPROM en cliquant sur le bouton du même nom dans la barre d'outils. Aller 
+ensuite dans le menu File puis Import, Import To Memory  et choisir le fichier .hex correspondant.</note></section><section name="section 2" title="Le fichier objet Intel Hex"><paragraph name="paragraph">La première étape est de s'assurer de la validité de notre code objet, c'est à dire sa validité auprès de la norme Intel Hex.  Mais tout 
+d'abord, regardons à quoi ressemble un tel fichier. Note : Nous utiliserons le même fichier source jusqu'à la fin de ce cours. 
+Nous avons programmé ce code en langage C :</paragraph><code syntax="C" name="code">/* Programme d'initiation 
+    Fait clignoter une LED branchée sur RB0
+*/
+
+#define EVER ;;
+#include &lt;pic1684.h&gt;
+
+/* Cette variable va compter les interruptions */
+unsigned char Compteur;
+
+void main(void)
+{
+    Compteur = 0;    
+    
+    /* Bit 0 du Port B en sortie */
+    TRISB=0xFE;
+
+    /* Bit 0 du port B à zéro */
+    RB0 = 0;
+    
+    /* Réglage des paramètres du timer TMR0
+       Prescaler = 256
+       Horloge interne (quartz/4)
+       Soit une interruption par overflow tous les 0,01321 s
+       C'est à dire environ 38 interruptions de T0IE pour avoir une demi-seconde !
+       CQFD !!
+    */    
+    OPTION = 0x7;
+
+    /* On configure les interruptions 
+       Et on baisse le flag T0IF
+    */
+    INTCON = 0x20;
+    
+    /* RAZ du timer */
+    TMR0 = 0;  
+    
+    /* On autorise les interruptions */
+    GIE=1;
+    for(EVER)
+    {
+    }
+}
+
+/* Interruption générale */
+void interrupt Timer_Overflow(void)
+{
+    char i;
+    if(T0IF) /* On teste la source d'interruption */
+    {
+        T0IF=0; /* On baisse le flag */
+        Compteur++;
+        if(Compteur==38)
+        {
+            Compteur = 0;
+            i = RB0;
+            RB0 = ~i;
+            TMR0 = 0;
+        }
+    }
+
+}
+</code><paragraph name="paragraph">Ce code, une fois assemblé et linké, produit le fichier objet suivant :</paragraph><code syntax="None" name="code">:10000000830100308A0024288C00030883018F00BC
+:100010000B1D0B280C281E280B118D0A0D08263AE3
+:10002000031D132814281E288D01003006180130E6
+:100030008E000E1C06140E180610810183120F0884
+:1000400083008C0E0C0E09000D3084000F302D2023
+:100050008301F02B04068001840A0406031D2A286C
+:0200600000346A
+:1007E0008D01FE30831686008312061007308316B3
+:1007F000810020308B00831281018B17FE2B24286F
+:00000001FF
+</code><note title="Danger" img="http://www.programmationworld.com/site/images/avoid.gif" name="note">Attention, le fichier Intel Hex ne contient, comme son nom l'indique, que des valeurs exprimées en Hexadécimal.</note><paragraph name="paragraph">D'un premier abord, cela ressemble plus à du charabiat qu'à autre chose. Mais lorsque vous aurez lu cette page, un tel fichier  
+sera pour vous totalement limpide.</paragraph><paragraph name="paragraph">Il existe trois types de fichiers Intel :
+&lt;ul&gt;
+&lt;li&gt;INHX8S : Intel Split Hex Format, pour les systèmes séparés en deux ROM (Odd/Even)&lt;/li&gt;
+&lt;li&gt;INHX8M : Intel Hex Format, 8 bits standard&lt;/li&gt;
+&lt;li&gt;INHX32 : Intel Hex 32 Format, adapté aux processeurs plus puissants (16 bits et plus) dotés d'un plus grand espace mémoire&lt;/li&gt;
+&lt;/ul&gt;</paragraph><paragraph name="paragraph">Les informations contenues dans ce fichier sont disposées en ligne. Chaque ligne &lt;b&gt;doit&lt;/b&gt; commencer par un double point ':'. Il existe deux 
+types de lignes. D'une part les lignes classiques qui contiennent les données et les adresses et d'autre part la seule et unique ligne contenue dans 
+un fichier Intel hex : la ligne marquant la fin du fichier. Cette ligne est toujours identique et prend cette forme :</paragraph><code syntax="None" name="code">:00000001FF</code><paragraph name="paragraph">Nous verrons plus tard la signification des informations contenues dans cette ligne. Une ligne "normale" est toujours de la même forme :</paragraph><code syntax="None" name="code">:BBAAAATTDDDDDD...DDDDCC</code><paragraph name="paragraph">&lt;b&gt;Note :&lt;/b&gt; les points ne font pas parties du code mais signifient que le nombre de D peut être variable.&lt;br&gt;
+&lt;br&gt;
+Chaque digit correspond à un caractère dans un fichier texte. Mais ce digit est en hexadécimal, c'est à dire sur 4 bits significatifs. Un octet sera donc 
+formé par deux digits consécutifs. Attention donc lorsqu'on lira ce fichier, car dans un fichier texte chaque digit est codé sur 8 bits !!</paragraph><paragraph name="paragraph">Dans l'ordre :
+
+&lt;ul&gt;
+&lt;li&gt;BB : nombre &lt;b&gt;&lt;u&gt;d'octets&lt;/u&gt;&lt;/b&gt; contenus dans la zone données de la ligne.&lt;/li&gt;
+&lt;li&gt;AAAA : Adresse de départ où seront stockées les données. Cette adresse est à diviser par deux dans le cas du 16F84&lt;/li&gt;
+&lt;li&gt;TT : désigne le type des données. Dans le cas du PIC, 00 désigne un enregistrement de données, 01 désigne la fin du 
+fichier et 04 désigne une adresse étendue&lt;/li&gt;
+&lt;li&gt;DDD...DDDD : les données proprement dites. Dans le cas du 16F84, la longueur minimale sera de 2 octets car le 16F84 possède 
+des mnémoniques sur 14 bits&lt;/li&gt;
+&lt;li&gt;CC : c'est le checksum, c'est à dire un code pour vérifier l'intégrité des informations&lt;/li&gt;
+&lt;/ul&gt;</paragraph><paragraph name="paragraph">Prenons un exemple. Voici une ligne prise dans le code hexadécimal ci-dessus.</paragraph><code syntax="None" name="code">:100030008E000E1C06140E180610810183120F0884
+
+en séparant les zones :
+
+: 10 0030 00 8E000E1C06140E180610810183120F08 84</code><paragraph name="paragraph">On va maintenant séparer puis étudier les différentes parties.</paragraph><paragraph name="paragraph">10 : le nombre de d'octets de données. Ce nombre est exprimé en hexadécimal, ce qui donne 16 en décimal.</paragraph><paragraph name="paragraph">0030 : l'adresse de début des données. Cette adresse doit être divisée par deux pour avoir l'adresse réelle dans la mémoire FLASH du 16F84.</paragraph><paragraph name="paragraph">00 : les données sont donc bien des données à placer dans la mémoire FLASH. C'est la représentation hexadécimale de notre programme écrit en C.</paragraph><paragraph name="paragraph">8E000E1C06140E180610810183120F08 : se sont les données proprement dites. Une instruction assembleur et son opérandes sont codées sur 
+seulement deux octets, soit ici 4 digits. On a donc : &lt;br&gt;
+8E00 --&gt; une instruction assembleur&lt;br&gt;
+0E1C --&gt; une deuxième instruction, située physiquement à la suite de la précédente&lt;br&gt;
+0614 --&gt; une troisième&lt;br&gt;
+etc.&lt;br&gt;</paragraph><paragraph name="paragraph">84 : c'est le checksum. Ce code permet de vérifier la validité de la ligne. Voici comment ce nombre est calculé :&lt;br&gt;
+&lt;br&gt;
+1) Additionner tous les octets de la ligne, hormis le checksum. Le résultat trouvé est X.&lt;br&gt;
+2) Réduire ce nombre à son modulo 100 en hexadécimal, c'est à dire à son modulo 256 en décimal. Cela se traduit par soustraire cette somme par 
+256 et de procéder à cette soustraction tant que le résultat n'est pas inférieur ou égal à 256. (X - 256 - 256 - 256 etc....). Le résutat trouvé est Y.&lt;br&gt;
+3) Le résultat Y est le complément à 256 du checksum. Donc, pour trouver le checksum, il faut réaliser l'opération : 256-Y = checksum.&lt;br&gt;
+&lt;br&gt;
+Cela nous fait un très bel algorithme que l'on appliquera dans notre programme.</paragraph><paragraph name="paragraph">&lt;b&gt;&lt;u&gt;Application du calcul du checksum :&lt;/u&gt;&lt;/b&gt;&lt;br&gt;
+&lt;br&gt;
+1) On additionne toute la ligne sauf le checksum :</paragraph><code syntax="None" name="code">10 + 00 + 30 + 00 + 8E + 00 + 0E + 1C + 06 + 14 + 0E + 18 + 06 + 10 + 81 + 01 + 83 + 12 + 0F + 08 = 27C soit 636 en décimal</code><paragraph name="paragraph">On réduit au modulo 100 : </paragraph><code syntax="None" name="code">27C - 100 - 100 = 7C
+
+ou
+
+636 - 256 - 256 = 124</code><paragraph name="paragraph">On calcule alors le checksum :</paragraph><code syntax="None" name="code">Checksum = 100 - 7C = 83
+
+ou
+
+Checksum = 256 - 124 = 132</code><paragraph name="paragraph">Et voilà, on retrouve bien le checksum 84 (en hexadécimal) indiqué à la fin de la ligne.</paragraph><paragraph name="paragraph">Maintenant, nous allons voir comment sont rangés les données dans la mémoire FLASH. Attention, les octets d'un code assembleur sont inversés par 
+rapport à la représentation dans le fichier Intel Hex. Cela est dû au système de programmation de la mémoire. Le premier octet sera donc le poids 
+faible du mot de 14 bits et l'octet suivant l'octet de poids fort du mot de 14 bits.</paragraph><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">Attention, le PIC 16F84 possède une mémoire de 14 bits de large, et non pas 8 bits comme dans la plupart des mémoires classiques (EEPROM, EPROM, 
+RAM ...) Notre représentation sera donc particulière au PIC.</note><image name="image"><link type="img">images\annexe2_flash.gif</link><legend>Représentation dans la mémoire FLASH du PIC.</legend></image></section><section name="section 3" title="Validation du fichier Intel Hex"><paragraph name="paragraph">Entrons dans le vif du sujet et programmons notre désassembleur en C ANSI, que nous nomerons Readex.exe.</paragraph><paragraph name="paragraph">Comme nous l'avons dit précédemment, nous allons commencer par vérifier le fichier Intel Hex. Maintenant que nous savons comment celui-ci est 
+constitué, commençons par écrire quelques routines. On commence par ouvrir le fichier passé en paramètre :</paragraph><code syntax="C" name="code">int main(int args, char** argv)
+{
+	FILE *fp;
+	char filename[20];
+	char *fichier;
+             bool ret;
+	long int taille;
+	
+	strcpy(filename, argv[1]);
+	
+	printf("Ouverture du fichier %s\n",filename);
+	fp = fopen(filename,"r");
+	if(!fp)
+	{
+		printf("Impossible d'ouvrir le fichier %s\n",filename);
+		return 1;
+	}
+		
+	/* On range tout le fichier dans un tableau */
+	
+	taille = filesize(fp);
+	fichier = (char *) calloc( taille, sizeof(char));
+
+	if (fichier == NULL)
+	{
+               printf("Pas assez de memoire pour charger le fichier.\n");
+               return 1;
+        }
+
+	fread(fichier, sizeof(unsigned char), taille, fp);
+             ret = verifIntel(fichier,taille);
+	fclose(fp);
+	free(fichier);
+	return 0;
+}</code><paragraph name="paragraph">Ici tout reste classique, on utilise les routines habituelles d'accès aux fichiers. Nous avons maintenant un tableau contenant l'ensemble du fichier 
+Intex Hex. On va l'envoyer vers la fonction générale de vérification bool &lt;b&gt;verifIntel&lt;/b&gt;(&lt;b&gt;char&lt;/b&gt; *,&lt;b&gt;long int&lt;/b&gt;); Le retour indiquera 
+si le fichier est valide ou non.&lt;br&gt;
+&lt;br&gt;
+Examinons maintenant l'architecture globale de cette fonction.</paragraph><code syntax="C" name="code">    char *separateurs = {"\n"}
+    p = strtok(file, separateurs);
+    do
+    {
+      	if(strcmp(p,":00000001FF"))
+      	{
+      		printf("%s",p);
+      		ret = verifLigne(p);
+      		if(ret==true)
+			printf(" --&gt; ligne valide\n");
+		else
+		{
+			printf(" --&gt; ligne fausse\n");
+			return false;
+		}
+      	}
+      	else
+		isEndfile = true;
+    }
+    while((p = strtok(NULL, separateurs))!= NULL);
+
+    if(isEndfile)
+             return true;
+    else
+    {
+	printf("Pas d'indication de fin de fichier\n");
+	return false;
+    }</code><paragraph name="paragraph">Grâce à la fonction strtok(), on sépare les lignes qui commencent par le signe deux points ':'  et qui finissent par le caractère de retour à la ligne '\n'. 
+La fonction strtok() place chaque ligne dans une chaine de caractères. Cette chaîne de caractères va être envoyée à une fonction qui va avoir 
+pour rôle de valider la ligne en fonction des règles évoquées ci-dessus.</paragraph><note title="Astuce" img="http://www.programmationworld.com/site/images/advice.gif" name="note">La chaîne &lt;b&gt;:00000001FF&lt;/b&gt; est obligatoire pour la validation du fichier objet. Cependant, il n'est pas nécessaire de tester sa validité octet 
+par octet car elle est toujours identique. On utilise donc simplement la fonction standard en C strcmp() qui compare deux chaînes de caractères.</note><paragraph name="paragraph">Voici les algorithmes qui composent cette fonction.</paragraph><paragraph name="paragraph">Ce premier test parle de lui même :</paragraph><code syntax="C" name="code">	// Première vérification, et la plus simple, on regarde si
+	// la ligne commence par un deux points
+	if(ligne[0]!=':')
+		return false;</code><paragraph name="paragraph">Ensuite, nous allons séparer les éléments significatifs d'une ligne, exactement comme nous l'avons fait dans la description du fichier Intel Hex.</paragraph><code syntax="C" name="code">char *dataBits, *offset, *dataType, *checksum;
+
+dataBits = mid(ligne,1,2);
+offset = mid(ligne,3,6);
+dataType = mid(ligne,7,8);
+checksum = mid(ligne,taille-2,taille-1);</code><paragraph name="paragraph">La fonction mid() est une fonction créée de toute pièce. Les librairies standard en C n'offrent que peu de fonctions dédiées à la manipulation des 
+chaines de caractères. Il ne faut pas hésiter à se construire des fonction de "haut niveau" simplifiant la programmation. Le but de la fontion mid sert, 
+à l'instar de son homologue en Visual Basic, à choisir une partie d'une chaine de caractères. Grâce à cette fonction, on peut ainsi découper 
+la ligne comme on le souhaite. Les paramètres d'entrée sont la chaine de caractères proprement dite mais également les délimiteurs de début et 
+de fin. La fonction mid() renvoit un pointeur vers un char, et donc une chaîne de caractères. Celle-ci est terminée par le caractère \0.</paragraph><code syntax="C" name="code">/**
+ * Retourne une partie d'une chaine délimitée par deux positions
+ */
+char *mid(char *chaine, int debut, int fin)
+{
+	int taille;
+	char *buf;
+	int i;
+	
+	taille = fin-debut+1;
+	
+	if(taille&lt;=0 || taille&gt;=strlen(chaine))
+	{
+		printf("\nAppel non valide.\n");
+		return NULL;
+	}
+	
+	buf = (char *)calloc(taille+1,sizeof(char));
+	
+	for(i=0;i&lt;taille;i++)
+		buf[i] = chaine[debut+i];
+	buf[taille]='\0';	// on termine la chaine de caractères
+	return buf;
+}</code><paragraph name="paragraph">Maintenant, nous allons vérifier que le premier octet de la ligne qui contient le nombre de données est bien cohérent. Nous rappelons que les indications 
+sont en hexadécimal : nous devrons donc programmer une petite routine de conversion. En fait, elle sera séparée en deux : l'une convertira un 
+caractère ASCII en valeur hexadécimale tandis que l'autre fonction s'appuiera de cette dernière pour convertir une chaine de caractères hexadécimaux.</paragraph><code syntax="C" name="code">/**
+ * Convertit une chaine de caractères hexadécimaux en valeur entière
+ */
+unsigned long int HexToInt(char *string)
+{
+	int i,j;
+	unsigned long int val=0;
+	char a;
+	
+	j = strlen(string)-1;
+	for(i=0;i&lt;strlen(string);i++)
+	{
+		a = asciiToHex(string[i]);
+		val = val + a*pow(16,j);
+		j--;
+	}
+	return val;
+}
+
+/**
+ * Convertit un caractère ASCII en valeur hexadécimale
+ */
+char asciiToHex(char c)
+{
+	if(c&lt;58 &amp;&amp; c &gt;47)
+		return c-48;
+	else if(c&lt;71 &amp;&amp; c&gt;64)
+			return c-55;
+		else if(c&lt;103 &amp;&amp; c&gt;96)
+				return c-87;
+			else
+				return 0;
+}</code><paragraph name="paragraph">Maintenant, nous possédons les outils pour déterminer la taille du paquet de données :</paragraph><code syntax="C" name="code">unsigned long int _databits;
+_databits = HexToInt(dataBits);</code><paragraph name="paragraph">Maintenant, il est facile de tester si la taille est valide grâce à un petit calcul prenant en compte la taille de la ligne et du nombre d'éléments fixes 
+propres au format Intel Hex.</paragraph><code syntax="C" name="code">if(!(_databits==(taille-11)/2))
+	return false;</code><paragraph name="paragraph">La dernière chose à faire est de tester le checksum. Nous appliquons l'algorithme que nous avons étudié un peu plus haut. Là, aucune explication, 
+c'est de l'algo... et toujours en s'appuyant sur nos fonctions ! C'est une chose qu'il ne faut jamais oublier en C : il faut dans la mesure du possible 
+développer le plus de fonctions pour simplifier le développement. Bien entendu, ces fonctions doivent être intelligemment choisies, en évitant 
+de programmer des fonctions superflues.</paragraph><code syntax="C" name="code">// On fait la somme des octets de toute la ligne (hormis le checksum et les deux points
+for(i=1;i&lt;=taille-4;i=i+2)
+	somme += HexToInt(mid(ligne,i,i+1));
+
+// On teste le checksum...
+if(HexToInt(checksum)!=CalculateChecksum(somme))
+	return false;</code><paragraph name="paragraph">Et voilà, à partir de maintenant le fichier est validé. Vous avez sans doute remarqué que la fonction verifLigne() contient tout ce qu'il faut pour 
+commencer le désassemblage : nous possédons les adresses et les données.</paragraph></section><section name="section 4" title="Le désassemblage"><paragraph name="paragraph">Notre fonction verifLine() va être complétée pour stocker les données. Pour cela, nous allons construire une structure qui représentera la 
+structure interne du PIC 16F84. (RAM, ROM, EEPROM etc.) Pour l'instant, cette structure ne contiendra que la Flash EEPROM car nous n'avons 
+besoin que d'elle pour le moment. Nénamoins, gardons cette structure car elle se verra complétée lors d'un prochain cours.</paragraph><code syntax="C" name="code">// Représentation de la structure interne du pic
+struct proc
+{
+	// adresse , opcode
+	unsigned char flash[1024][2];
+};
+
+struct proc pic;</code><paragraph name="paragraph">Le tableau &lt;b&gt;flash&lt;/b&gt; contiendra les opcodes contenus dans le fichier Intel Hex. Un simple algorithme le remplira aux adresses voulues.</paragraph><code syntax="C" name="code">j=0;
+deb = HexToInt(offset)/2;
+fin = deb+(_databits)/2-1;
+for(i=deb;i&lt;=fin;i++)
+{
+	var = mid(ligne,9+j,10+j);
+	pic.flash[i][1] = HexToInt(var);
+	var = mid(ligne,11+j,12+j);
+	pic.flash[i][0] = HexToInt(var);
+	j=j+4;
+}</code><paragraph name="paragraph">Chaque ligne possède une adresse de départ, celle-ci est mémorisée. L'adresse de fin est calculable facilement à l'aide de la taille de la ligne. Les 
+données de chaque ligne se verront donc placées dans le tableau. Et n'oubliez pas, &lt;u&gt;&lt;b&gt;les octets des données sont inversés dans le fichier 
+Intel Hex !&lt;/b&gt;&lt;/u&gt;</paragraph><note title="Remarque" img="http://www.programmationworld.com/site/images/rmq.gif" name="note">Le programme ne vérifie pas la validitée des adresses. Cela signifie que l'algorithme écrira les données dans le tableau en écrasant les données 
+précédentes. Si le fichier Intel Hex est correct, le programme n'écrasera aucune donnée (la mémoire FLASH est vide), dans le cas contraire 
+les données peuvent se chevaucher.</note><paragraph name="paragraph">Voilà ! une première étape terminée. Voyons ce que donne le contenu du tableau : on envoie son contenu dans un fichier texte :</paragraph><code syntax="C" name="code">out=fopen("out.txt","w");
+fprintf(out, "Espace mémoire :\n");
+fprintf(out, "---------------------------\n");
+fprintf(out, "Adresse\tDonnee\tCode asm\n");
+for(i=0;i&lt;1024;i++)
+{
+	fprintf(out, "%d\t",i);
+	fprintf(out, "%2.2X",pic.flash[i][0]);
+	fprintf(out, "%2.2X\n",pic.flash[i][1]);
+}
+fclose(out);</code><image name="image"><link type="img">images\annexe2_dasm1.jpg</link><legend>Le désassembleur de MPLAB à gauche, et le notre à droite : un bon début !</legend></image><paragraph name="paragraph">Abordons maintenant le désassemblage proprement dit, c'est à dire la traduction en code assembleur. Pour cela, nous allons avoir besoin de la 
+documentation constructeur du 16F84, elle seule contient la traduction des opcodes pour chaque mnémonique. Voici la page intéressante :</paragraph><image name="image"><link type="img">images\annexe2_opcodes.gif</link><legend></legend></image><paragraph name="paragraph">Chaque mnémonique (clrf, movwf etc.) dispose d'un code &lt;b&gt;unique&lt;/b&gt; d'identification visible dans la colonne 14-bit opcode. Nous allons donc 
+regrouper par correspondance ces codes dans un tableau, avec également le masque d'identification de l'opcode et le code d'identification 
+proprement dit. Le tableau contient encore un dernier champs, mais nous y reviendrons plus tard.</paragraph><code syntax="C" name="code">unsigned char *opcodes[35][4]={
+				{"3F00","0700","addwf","1"},
+				{"3F00","0500","andwf","1"},
+				{"3F80","0180","clrf","5"},
+				{"3F80","0100","clrw","6"},
+				{"3F00","0900","comf","1"},
+				{"3F00","0300","decf","1"},
+				{"3F00","0B00","decfsz","1"},
+				{"3F00","0A00","incf","1"},
+				{"3F00","0F00","incfsz","1"},
+				{"3F00","0400","iorwf","1"},
+				{"3F00","0800","movf","1"},
+				{"3F80","0080","movwf","5"},
+				{"3F9F","0000","nop","6"},
+				{"3F00","0D00","rlf","1"},
+				{"3F00","0C00","rrf","1"},
+				{"3F00","0200","subwf","1"},
+				{"3F00","0E00","swapf","1"},
+				{"3F00","0600","xorwf","1"},
+				{"3C00","1000","bcf","2"},
+				{"3C00","1400","bsf","2"},
+				{"3C00","1800","btfsc","2"},
+				{"3C00","1C00","btfss","2"},
+				{"3E00","3E00","addlw","3"},
+				{"3F00","3900","andlw","3"},
+				{"3800","2000","call","4"},
+				{"3FFF","0064","clrwdt","6"},
+				{"3800","2800","goto","4"},
+				{"3F00","3800","iorlw","3"},
+				{"3C00","3000","movlw","3"},
+				{"3FFF","0009","retfie","6"},
+				{"3C00","3400","retlw","3"},
+				{"3FFF","0008","return","6"},
+				{"3FFF","0066","sleep","6"},
+				{"3E00","3C00","sublw","3"},
+				{"3F00","3A00","xorlw","3"}
+				};</code><paragraph name="paragraph">L'algorithme est alors simple. Pour chaque opcode de deux octets on procède de la façon suivante :&lt;br&gt;
+1) On masque la partie qui nous intéresse, c'est à dire la partie qui contient le code du mnémonique&lt;br&gt;
+2) on compare cette partie avec un code mnémonique du tableau&lt;br&gt;
+3) s'il y a correspondance, on quitte, sinon on continue de chercher dans le tableau&lt;br&gt;</paragraph><paragraph name="paragraph">L'algorithme se concrétise en C par le code suivant :</paragraph><code syntax="C" name="code">// On scan les 35 codes op pour trouver le bon
+for(i=0;i&lt;35;i++)
+{
+	if((code &amp; HexToInt(opcodes[i][0]))==HexToInt(opcodes[i][1]))
+	{
+		ok = true;
+		codeOk = i;
+	}
+}
+
+// code non trouvé, il y a une erreur quelque part...
+if(!ok)
+	return "**OPCODE ERROR**";
+
+strcat(asmcode,opcodes[codeOk][2]);
+strcat(asmcode,"\t");</code><paragraph name="paragraph">Et voilà le résultat :</paragraph><image name="image"><link type="img">images\annexe2_mnemos.gif</link><legend>Encore une étape de franchie dans notre désassemblage !</legend></image><paragraph name="paragraph">Vous pouvez comparer avec le code généré par MPLAB, c'est exactement le même. Néanmoins, c'est la partie la plus simple à générer. Les opérandes 
+sont un peu plus complexes à traduire. Heureusement que le PIC 16F84 possède un code assembleur simple. C'est là qu'intervient notre dernière 
+colonne, le type. Si nous regardons d'un peu plus près comment les opérandes sont codées au sein de l'opcode, nous remarquons qu'il existe 6 
+formes différentes :
+
+&lt;ul type="1"&gt;
+&lt;li&gt;byte-oriented file register operations b 1 bit, f 7 bits&lt;/li&gt;
+&lt;li&gt;bit-oriented file register operations b 3 bit, f 7 bits&lt;/li&gt;
+&lt;li&gt;une seule opérande de 8 bits&lt;/li&gt;
+&lt;li&gt;goto et call seulement&lt;/li&gt;
+&lt;li&gt;une seule opérande de 7 bits&lt;/li&gt;
+&lt;li&gt;pas d'opérande&lt;/li&gt;
+&lt;/ul&gt;</paragraph><paragraph name="paragraph">Vu que l'on a trouvé le bon mnémonique grâce à la boucle précédente, on est capable de trouver son type par simple lecture dans notre tableau. 
+Dès lors, une série de tests et d'opérations logiques permet de construire les opérandes. Notre algorithme est le suivant :</paragraph><code syntax="C" name="code">// ensuite, on recherche et on construit les opérandes
+if(HexToInt(opcodes[codeOk][3])==1)
+{
+	strcat(asmcode,"0x");
+	itoa(code &amp; 0x7F,buffer,16);
+	strcat(asmcode,buffer);
+	strcat(asmcode,",0x");
+	itoa((code &amp; 0x80)&gt;&gt;7,buffer,16);
+	strcat(asmcode, buffer);
+}
+else	if(HexToInt(opcodes[codeOk][3])==2)
+		{
+			strcat(asmcode,"0x");
+			itoa(code &amp; 0x7F,buffer,16);
+			strcat(asmcode,buffer);
+			strcat(asmcode,",0x");
+			itoa((code &amp; 0x380)&gt;&gt;7,buffer,16);
+			strcat(asmcode, buffer);
+		}
+		else	if(HexToInt(opcodes[codeOk][3])==3)
+				{
+					strcat(asmcode,"0x");
+					itoa(code &amp; 0xFF,buffer,16);
+					strcat(asmcode, buffer);
+				}
+				else	if(HexToInt(opcodes[codeOk][3])==4)
+						{
+							strcat(asmcode,"0x");
+							itoa(code &amp; 0x7FF,buffer,16);
+							strcat(asmcode, buffer);
+						}
+						else	if(HexToInt(opcodes[codeOk][3])==5)
+								{
+									strcat(asmcode,"0x");
+									itoa(code &amp; 0x7F,buffer,16);
+									strcat(asmcode, buffer);
+								}</code><paragraph name="paragraph">Et voilà ! notre désassembleur est terminé ! Voici ce que cela donne, en comparaison avec le travail fournit avec MPLAB :</paragraph><image name="image"><link type="img">images\annexe2_final.gif</link><legend>Notre désassembleur est terminé !</legend></image></section><section name="section 5" title="Conclusion"><paragraph name="paragraph">Voilà notre désassembleur terminé. Les perspectives sont importantes : il est possible par exemple de supporter d'autres processeurs de la 
+gamme PIC 16F84, ce qui se révèle très simple à faire. Vous pouvez également supporter d'autres pocesseurs, d'autres plate formes et pourquoi 
+pas ajouter le support des fichiers S-Record de Motorola. Il reste encore une chose à implanter, l'utilisation du champs "type de données" dans 
+le fichier Intel Hex. Enfin, il est également possible de programmer un programmateur de PIC en se basant sur Readex. Quant à nous, nous 
+programmerons un émulateur et un simulateur de PIC 16F84... dans un prochain cours !</paragraph></section><section name="section 6" title="Téléchargements"><paragraph name="paragraph">&lt;ul&gt;
+&lt;li&gt;&lt;a href="downloads/readex.zip"&gt;readex.zip&lt;/a&gt; : Les sources et l'exécutable de Readex, le désassembleur pour PIC 16F84
+&lt;li&gt;&lt;a href="downloads/intelhex.zip"&gt;intelhex.zip&lt;/a&gt; : un programme C et son fichier objet Intel Hex de test
+&lt;/ul&gt;</paragraph></section></document>

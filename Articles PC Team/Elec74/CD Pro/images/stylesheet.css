@@ -1,0 +1,40 @@
+/****************************************/
+/* style des articles de programmations */
+/****************************************/
+
+/**
+ * style des liens dans les articles
+ */
+
+a:link { text-decoration: none; color:blue; }
+a:visited { text-decoration: none; color: blue; }
+a:active { text-decoration: underline; color: red; }
+a:hover { text-decoration: underline; color: green; }
+
+/**
+ * tables
+ */
+table.main { color: black; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; text-align: justify; }
+td.title { background: #1B64BE; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF; font-size: 14pt; text-align: center; }
+td.exemple { background: #FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif; color: #0000FF; font-size: 12pt; text-align: left; }
+td.source{ background: #EEEEEE; font-family: Verdana, Arial, Helvetica, sans-serif; color: #0000FF; font-size: 12pt; text-align: left; }
+td.titleprincipal { background: #FFCC33; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FF0000; font-size: 24pt; text-align: center; }
+td.notetitle { background: #45BF45; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000; font-size: 12pt; text-align: justify; font-weight: bold; }
+td.note { background: #EEEEEE; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000; font-size: 10pt; text-align: justify; }
+
+/**
+ * codes sources
+ */
+
+.COMMENT1 { font-style: italic; color: #009900; }
+.COMMENT2 { font-style: italic; color: #009900; }
+.KEYWORD1 { font-weight: bold; color: #0000FF; }
+.KEYWORD2 { color: #FF9900; }
+.KEYWORD3 { color: #FF0000; }
+.LITERAL1 { color: #9999FF; }
+.LITERAL2 { font-weight: bold; color: #650099; }
+.OPERATOR { font-weight: bold; color: #FFC800; }
+
+/*
+ * fin du fichier
+ */

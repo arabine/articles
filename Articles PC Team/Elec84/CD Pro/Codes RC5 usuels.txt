@@ -1,0 +1,45 @@
+Quelques code usuels :
+
+
+Address:	Device:          
+0		TV1              
+1		TV2
+2		Décodeur télétexte
+5		VCR1
+6		VCR2
+7		appareil expérimental
+8		Récepteur satellite
+9		Caméra vidéo
+16		Préamplificateur audio
+17		Tuner
+18		Audio Tape
+20		CD Player
+21		Platine tourne disque
+
+
+
+Numbers:	Command:
+0...9		0...9 (channel select)
+12		Standby
+13		Silencieux (marche/arrêt)
+16		Master Volume +
+17		Master Volume -
+18		Brightness +
+19		Brightness -
+20		Couleur +
+21		Couleur -
+22		Graves +
+23		Graves -
+24		Aiguës +
+25		Aiguës -
+26		Balance droite
+27		Balance gauche
+28		Contraste +
+29		Contraste -
+32		Programme ou canal +
+33		Programme ou canal -
+50		Fast rewind
+52		Fast run forward
+53		Play
+54		Stop
+55		Recording

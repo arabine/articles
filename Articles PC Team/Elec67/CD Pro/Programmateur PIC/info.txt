@@ -1,0 +1,41 @@
+Bonjour,
+
+Voici ce que contient ce répertoire :
+
+* Schéma_programmateur.bmp : THE schéma qui vous permettra de programmer la plupart des 
+micrcontrôleurs de la famille PIC
+* icprog.zip : la dernière version de ce merveilleux utilitaire supportant le schéma ci-
+dessus (et bien d'autres)
+* icprog.sys : la driver à utiliser pour se servir de icprog sous Windows2000 
+* icprog.chm : l'aide d'icprog !
+
+Une fois le programmateur terminé, branchez le sur le port série (COM2 de préférence). Lancez alors 
+icprog et configurez le logiciel comme cela :
+
+vérifiez que les paramètres suivant du port série sont respectées :
+
+9600 Baud, no parity, 1 stop bit and no flow-control
+alimentation par les broches RTS et DTR (cocher ces deux cases)
+
+puis :
+
+1) settings -> device -> Microchip PIC et cochez la version
+2) settings -> hardware -> JDM Hardware (par défaut)
+3) command -> erase all (dans le cas du PIC16F84 seulement)
+4) file -> open puis choisir le fichier objet correspondant (extension .hex)
+5) command -> program all
+
+Une fois programmé, le logiciel lit le composant et le compare avec le fichier binaire : s'ils sont 
+égaux, la programmation est réussie. Dans le cas contraire, il faut tout vérifier !
+
+Consultez les divers sites, ça peut aider.
+
+Bon courage :)
+
+Voilà, vous avez de quoi vous occuper. S'il vous manque quelque chose ou si vous avez 
+une question, j'essayerai de vous aider dans la mesure du possible.
+
+Note : vous retrouverez tous ces logiciels (et bien plus encore) sur www.programmationworld.com.
+
+Anthony Rabine
+arabine@programmationworld.com

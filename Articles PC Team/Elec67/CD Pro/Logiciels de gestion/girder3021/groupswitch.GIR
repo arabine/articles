@@ -1,0 +1,56 @@
+Girder 3.0 DataFile
+[PowerDVD group]
+   enabled=FALSE
+   Identifier=3
+[Notepad Group]
+   enabled=FALSE
+   Identifier=1
+[Switch]
+   enabled=TRUE
+   Identifier=5
+   <PowerDVD On>
+   irstr=Class of CyberLink Universal Player
+   Device=11
+   Identifier=16
+   enabled=TRUE
+   ActionType=4
+   ActionSubType=1
+   lValue1=3
+   TopMost=TRUE
+   StateCount=1
+   StateBegin=1
+   <PowerDVD Off>
+   irstr=Class of CyberLink Universal Player
+   Device=11
+   Identifier=12
+   enabled=TRUE
+   ActionType=4
+   ActionSubType=2
+   Invert=TRUE
+   lValue1=3
+   TopMost=TRUE
+   StateCount=1
+   StateBegin=1
+   <Notepad On>
+   irstr=Notepad
+   Device=11
+   Identifier=13
+   enabled=TRUE
+   ActionType=4
+   ActionSubType=1
+   lValue1=1
+   TopMost=TRUE
+   StateCount=1
+   StateBegin=1
+   <Notepad Off>
+   irstr=Notepad
+   Device=11
+   Identifier=8
+   enabled=TRUE
+   ActionType=4
+   ActionSubType=2
+   Invert=TRUE
+   lValue1=1
+   TopMost=TRUE
+   StateCount=1
+   StateBegin=1

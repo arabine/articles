@@ -1,0 +1,97 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1036\deflangfe1036{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\ql \li0\ri0\widctlpar\faauto\adjustright\rin0\lin0\itap0 \fs20\lang1036\langfe1036\cgrid\langnp1036\langfenp1036 \snext0 Normal;}{
+\s1\ql \li0\ri0\sb240\sa60\keepn\widctlpar\faauto\adjustright\rin0\lin0\itap0 \b\f1\fs32\lang1036\langfe1036\kerning32\cgrid\langnp1036\langfenp1036 \sbasedon0 \snext0 heading 1;}{\*\cs10 \additive Default Paragraph Font;}{
+\s15\ql \li0\ri0\nowidctlpar\faauto\adjustright\rin0\lin0\itap0 \fs24\lang1036\langfe1036\cgrid\langnp1036\langfenp1036 \snext15 Standard;}}{\info{\title (((Magazine : PCteam 63)))}{\author Gimli}{\operator Belegar}{\creatim\yr2000\mo10\dy26\min12}
+{\revtim\yr2000\mo12\dy19\hr21\min18}{\version42}{\edmins844}{\nofpages2}{\nofwords1302}{\nofchars6626}{\*\company The Dwarf Company}{\nofcharsws7904}{\vern8249}}\paperw11906\paperh16838\margl1417\margr1417\margt1417\margb1417 
+\deftab708\widowctrl\ftnbj\aenddoc\hyphhotz425\noxlattoyen\expshrtn\noultrlspc\dntblnsbdb\nospaceforul\hyphcaps0\formshade\horzdoc\dghspace120\dgvspace120\dghorigin1701\dgvorigin1984\dghshow0\dgvshow3
+\jcompress\viewkind1\viewscale117\viewzk2\pgbrdrhead\pgbrdrfoot\nolnhtadjtbl \fet0\sectd \linex0\headery709\footery709\colsx709\endnhere\sectdefaultcl {\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2
+\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6
+\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang
+{\pntxtb (}{\pntxta )}}\pard\plain \s15\ql \li0\ri0\nowidctlpar\faauto\adjustright\rin0\lin0\itap0 \fs24\lang1036\langfe1036\cgrid\langnp1036\langfenp1036 {\fs20\lang1031\langfe1036\langnp1031 (((Magazine : PC Team 65)))
+\par }{\fs20 (((Rubrique: Team pratik)))
+\par (((Sous Rubrique: \'e9lectronique)))
+\par 
+\par }\pard\plain \ql \li0\ri0\widctlpar\faauto\adjustright\rin0\lin0\itap0 \fs20\lang1036\langfe1036\cgrid\langnp1036\langfenp1036 {(((titre))) Interfacer un clavier
+\par 
+\par }\pard\plain \s15\ql \li0\ri0\nowidctlpar\faauto\adjustright\rin0\lin0\itap0 \fs24\lang1036\langfe1036\cgrid\langnp1036\langfenp1036 {\fs20 (((chapo)))
+\par Notre application du mois dernier \'e9tait consacr\'e9e \'e0 l'affichage. Nous allons compl\'e9ter notre syst\'e8me avec un clavier qui jouera le r\'f4le d'interface avec l'utilisateur et rendra ainsi l'application plus interactive.
+\par 
+\par (((texte)))
+\par L'\'e9cran LCD du mois dernier ne nous a pas laiss\'e9 beaucoup de broches disponibles. Mais heureusement, quelques astuces vont nous permettre de contourner ce probl\'e8me. Le bus de donn\'e9es est pris, ainsi que deux broches de contr\'f4
+le. Cela nous laisse donc sept broches dont cinq en entr\'e9es et deux en entr\'e9es/sorties. L'inventaire est termin\'e9, passons maintenant \'e0 ce qui nous int\'e9resse \'e0 savoir la gestion d'un clavier. Il se pr\'e9sente sous la forme d'un pav\'e9
+ num\'e9rique \'e0 12 touches, semblable \'e0 ce qui existe sur les t\'e9l\'e9phones. On y trouve donc les chiffres de 0 \'e0 9, ainsi que les caract\'e8res sp\'e9ciaux * et #.
+\par 
+\par (((inter))) Les deux types de clavier
+\par Le clavier que nous allons utiliser est en plastique (voir l'illustration) et ne co\'fbte qu'une dizaine de francs. Il mesure 6 cm sur 5 environ et poss\'e8de 12 touches. Les claviers \'e0 16 touches dits "alphanum\'e9riques" poss\'e8
+dent en plus les lettres A \'e0 F pour coder des nombres hexad\'e9cimaux. Ces claviers supportent g\'e9n\'e9ralement pr\'e8s de 300mA sous 24V et ont une dur\'e9e de vie sup\'e9rieure \'e0 10}{\fs20\super 7}{\fs20  man\'9c
+uvres. Il existe deux technologies de fabrication du circuit \'e9lectrique ; on parle alors de clavier \'e0 matrice et de clavier \'e0 point commun. Les deux versions poss\'e8dent des avantages et des inconv\'e9nients. Un clavier \'e0 point commun est tr
+\'e8s facile \'e0 mettre en \'9cuvre et \'e0 traiter mais poss\'e8de 13 sorties (12 pour chaque touche plus le point commun). Un clavier matriciel n'a que 7 sorties (pour 12 touches) mais sera plus difficile \'e0 g\'e9rer. Nous avons opt\'e9 pour la deuxi
+\'e8me version, vu qu'il ne nous reste que peu de broches disponibles sur le port parall\'e8le. Nous n\rquote aurons encore une fois que peu de composants additionnels car la scrutation des touches sera enti\'e8rement logicielle.
+\par 
+\par (((image : elec1.tif : Voici les deux claviers \'e0 deux et seize touches.)))
+\par 
+\par (((inter))) Plagions un peu\'85
+\par Bien s\'fbr, il existe quelques circuits qui pourraient nous \'e9pargner bien des lignes de codes. Malheureusement ce type de circuits, comme le 74C922,  co\'fbte assez cher, 80 F environ. Nous allons donc contourner le probl\'e8me en r\'e9
+alisant la plupart des fonctions int\'e9gr\'e9es dans ce composant \'e0 l\rquote aide d\rquote un peu de programmation. Le 74C922, dont la documentation technique est fournie sur le CD Pro, est tr\'e8s pr
+atique pour encoder des claviers car il contient toute la logique n\'e9cessaire\~: des r\'e9sistances de tirage, une horloge interne, un registre de sortie m\'e9morisant la derni\'e8re touche activ\'e9e, un syst\'e8me anti-rebonds, un signal annon\'e7
+ant qu\rquote une touche a \'e9t\'e9 appuy\'e9e\'85 il suffit de connecter le clavier et le tour est jou\'e9. Regardons d\rquote un peu plus pr\'e8s l\rquote int\'e9rieur du 74C922\~: le sch\'e9ma fonctionnel ci-contre nous montre la voie \'e0
+ suivre. Une r\'e9sistance de tirage au +5V (r\'e9sistance dite de "pull-up") est connect\'e9e sur chaque ligne du clavier. Quand aucune touche n'est appuy\'e9e, le potentiel est au 5V. Les colonnes sont connect\'e9es \'e0 une horloge via un d\'e9
+codeur 2 vers 4, dont les sorties actives sont au niveau bas. Cela est tr\'e8s int\'e9ressant : l'horloge sert en fait de compteur, qui permet de scruter les colonnes les unes apr\'e8s les autres. Il suffit d'appliquer tour \'e0
+ tour un 0V sur une colonne et, lorsqu'une touche est press\'e9e, le 0V se retrouve sur la ligne correspondante. La logique externe d\'e9termine en fonction de tous ces param\'e8tres la touche qui a \'e9t\'e9 appuy\'e9e.
+\par 
+\par (((image : elec2.tif : L\rquote encodeur de clavier 74C922, une solution simple mais on\'e9reuse.)))
+\par 
+\par (((inter))) Mise en oeuvre
+\par Le sch\'e9ma ci-contre montre l'interfa\'e7age du clavier au port parall\'e8le ; il n'y a que tr\'e8s peu de composants additionnels. Nous avons le r\'e9seau de r\'e9sistances (entre 4.7k Ohms et 10k Ohms), et le circuit logique 74HCT139, un d\'e9
+codeur 2 vers 4 qui nous permettra d'\'e9tendre le syst\'e8me \'e0 un clavier de 16 touches. En plus de r\'e9duire le nombre de fils partant du port parall\'e8le le 74HCT139 a l'avantage de poss\'e9der des sorties actives au niveau bas. Cette propri\'e9t
+\'e9 est tr\'e8s int\'e9ressante pour notre application car nous souhaitons scruter les colonnes une par une (la colonne \'e0 tester sera alors \'e0 0V tandis que les autres seront au potentiel de 5V). Au niveau de la r\'e9alisation, le mieux est de compl
+\'e9ter la plaquette \'e0 trous ou \'e0 bandes cuivr\'e9es du mois dernier, et d'utiliser la m\'eame source d'alimentation \'e0 base de 7805. Comme nous le voyons, tout cela reste tr\'e8s simple.
+\par 
+\par (((inter))) La programmation
+\par Nous allons utiliser ici uniquement Visual Basic car comme son nom l'indique ce langage est un peu plus visuel que le C. Cependant, il est tout \'e0 fait possible de r\'e9aliser la programmation dans un autre langage qui poss\'e8
+de des fonctions permettant la gestion du port parall\'e8le (C, Basic, Pascal etc.). D\'e8
+s lors, il suffit de reprendre les sources VB fournies sur le CD Pro et de traduire les algorithmes. Nous rappelons que les fichiers .frm ainsi que les fichiers .bas sont lisibles \'e0 partir de n'importe quel \'e9diteur de texte. Nous
+ retrouvons ici la Dll InpOut.dll que nous avons d\'e9j\'e0 utilis\'e9e les mois pr\'e9c\'e9dents. Elle doit se placer dans le r\'e9pertoire o\'f9 se situe le programme ou dans le r\'e9pertoire Windows. Deux fonctions sont d\'e9clar\'e9
+es dans un module et servent \'e0 \'e9crire et \'e0 lire dans les registres du port parall\'e8le. Ceci \'e9tant dit, int\'e9ressons nous plus particuli\'e8rement \'e0 la fonction principale du programme. Comme nous l'avons mentionn\'e9
+ plus haut, le but est de scruter le clavier. Pour cela, nous allons prendre le contr\'f4le "Timer" et le configurer pour qu'il s'ex\'e9
+cute toutes les 100 ms. Cette valeur est purement arbitraire, il faut simplement prendre une valeur suffisamment petite devant le temps de la pression d'un bouton. Bien qu'il soit possible de descendre plus bas pour am\'e9liorer les performances, il est d
+\'e9conseill\'e9 de descendre en dessous de 100 ms en Visual Basic car ce langage n'est pas tr\'e8s rigoureux au niveau de la gestion du temps. Donc, toutes les 100 ms, le programme ex\'e9cutera les instructions contenues dans cette fonctio
+n. Il suffit alors de la compl\'e9ter en respectant l'algorithme suivant :
+\par 
+\par (((listing)))
+\par Proc\'e9dure Timer () \{
+\par }\pard \s15\ql \li0\ri0\nowidctlpar\tx284\faauto\adjustright\rin0\lin0\itap0 {\fs20 \tab Colonne 1 \'e0 0V, Colonnes 2 et 3 \'e0 5V
+\par \tab \{
+\par \tab \tab \'85
+\par \tab \tab Traitement
+\par \tab \tab \'85
+\par \tab \}
+\par \tab Colonne 2 \'e0 0V,  Colonnes 1 et 3 \'e0 5V
+\par \tab \{
+\par \tab \tab \'85
+\par \tab \tab Traitement
+\par \tab \tab \'85
+\par \tab \}
+\par \tab etc \'85
+\par }\pard \s15\ql \li0\ri0\nowidctlpar\faauto\adjustright\rin0\lin0\itap0 {\fs20 \}
+\par 
+\par (((texte)))
+\par Le traitement est en fait le d\'e9codage de l'information lue dans le registre d'Etat, en fonction des quatre bits d'entr\'e9es. Les sources sont suffisamment comment\'e9es pour enlever toute ambigu\'eft\'e9.
+\par 
+\par (((inter))) Le syst\'e8me complet
+\par Nous poss\'e9dons maintenant un ensemble complet d'interface utilisateur. A vous d'imaginer les applications, comme le contr\'f4le d'acc\'e8s ou comme interface dans un syst\'e8me plus complexe. Le programme final g\'e9rant l'\'e9
+cran LCD et le clavier se trouve sur le CD Pro, c'est en fait le rassemblement des programmes du mois dernier et ce mois-ci. Nous avons imagin\'e9 un petit syst\'e8me invitant l'utilisateur \'e0 entrer un code de 4 chiffres s'affichant sur l'\'e9cran LCD
+. L'ordinateur compare ensuite le code saisi avec un code en m\'e9moire et affiche le r\'e9sultat.
+\par Il est \'e9galement possible de reprendre les algorithmes afin d\rquote utiliser ce syst\'e8me dans n\rquote importe quelle \'e9lectronique embarqu\'e9e.
+\par Voil\'e0 notre port parall\'e8le compl\'e8tement utilis\'e9, il ne reste presque aucune broche de disponible. Cependant comme nous l'avons vu, il est facile d'en \'e9tendre les sorties \'e0 l'aide des d\'e9codeurs, comme le 74HCT138, un d\'e9
+codeur 3 vers 8. Il est possible d'apporter plusieurs am\'e9liorations \'e0 ce montage comme arranger la p\'e9riode de scrutation, ajouter un syst\'e8me anti-rebonds\'85\'e0 vos fers \'e0 souder !
+\par 
+\par (((signature)))
+\par Anthony Rabine - arabine@programmationworld.com
+\par 
+\par (((images)))
+\par elec3.tif : Le c\'e2blage \'e9lectrique d'un clavier matriciel.
+\par elec4.tif : Le c\'e2blage entre l'\'e9cran et le port parall\'e8le.
+\par elec5.tif\~: Notre application en pleine action.
+\par }}

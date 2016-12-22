@@ -1,0 +1,2175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html><head>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"><title>Utilisation de CVS</title>
+    
+    <link rel="Index" href="http://www.idealx.org/">
+    <link rel="icon" href="http://www.idealx.org/images/site_icon.png" type="image/png">
+    <link rel="Help" href="http://www.idealx.org/accessibility.fr.html">
+    <link rel="stylesheet" type="text/css" href="cvs.fr_files/layout.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="cvs.fr_files/homepage.css" media="screen">
+    <script src="cvs.fr_files/navbar.js" type="text/javascript" charset="iso-8859-1">
+		  // 
+		  
+		  // </script></head>
+
+
+  <body onload="init()">
+    <div id="headerBox"><a href="http://www.idealx.org/" accesskey="1"><img src="cvs.fr_files/logo_IDEALX.png" alt="IDEALX S.A.S" width="140" height="65"></a>
+                www.idealx.org: le site contributif d'IDEALX
+			  </div>
+    <div style="clear: both;">
+    <div id="rightmenu"><div class="menuTopItem"><a accesskey="2" href="#content"><img src="cvs.fr_files/passer_au_contenu.png" alt="Passer au contenu" width="111" height="9"></a></div><div class="menuTopItem"><a href="http://www.idealx.org/doc/cvs.en.html">
+						<img src="cvs.fr_files/english_menu.png" alt="French version" width="52" height="9">
+						</a></div><div class="menuTopItem"><a href="http://www.idealx.org/"><img src="cvs.fr_files/accueil.png" alt="Accueil" width="51" height="9"></a></div>
+  
+  
+    <div class="menuChapSelected"><a href="http://www.idealx.org/doc/index.fr.html" onclick="return toggleVisibility(0)"><img src="cvs.fr_files/menu-icon_minus.png" alt="-" width="9" height="9" class="menuIcon"></a><a href="http://www.idealx.org/doc/index.fr.html">Documentations</a><div class="menuSubChaps">
+	  <a href="http://www.idealx.org/doc/CR_etude_UML.fr.html" class="menuSubChap">Évaluation d'outils UML</a>
+
+	  <a href="http://www.idealx.org/doc/mail.fr.html" class="menuSubChap">Guide du bon usage de la messagerie électronique</a>
+
+	  <a href="http://www.idealx.org/doc/cvs.fr.html" class="menuSubChap menuSelected">Introduction à CVS</a>
+
+	  <a href="http://www.idealx.org/doc/intro_preuve_formelle.fr.html" class="menuSubChap">Introduction à la preuve formelle</a>
+	  <a href="http://www.idealx.org/doc/instant_fr.fr.html" class="menuSubChap">Instant Python</a>
+	  <a href="http://www.idealx.org/doc/xp-synthese.fr.html" class="menuSubChap">Présentation de la méthode Extreme Programming (XP)</a>
+	  <a href="http://www.idealx.org/prj/samba/index.fr.html" class="menuSubChap">Samba LDAP PDC Howto</a>
+
+	</div></div>
+    <div class="menuChap"><a href="http://www.idealx.org/prj/index.fr.html" onclick="return toggleVisibility(1)"><img src="cvs.fr_files/menu-icon_plus.png" alt="+" width="9" height="9" class="menuIcon"></a><a href="http://www.idealx.org/prj/index.fr.html">Projets</a><div class="menuSubChaps">
+	  <a href="http://idx-pki.idealx.org/" class="menuSubChap">IDX-PKI</a>
+	  <a href="http://www.idealx.org/prj/idx-tsunami/index.fr.html" class="menuSubChap">IDX-Tsunami</a>
+	  <a href="http://www.idealx.org/DocBkXML2LaTeX/" class="menuSubChap">IDX-DocBookXML2LaTeX</a>
+	  <a href="http://idx-getox.idealx.org/" class="menuSubChap">IDX-Getox</a>
+	  <a href="http://idx-dfuse.idealx.org/" class="menuSubChap">IDX-Dfuse</a>
+
+
+
+
+	  <a href="http://www.idealx.org/prj/jabber/index.fr.html" class="menuSubChap">Contributions Jabber</a>
+	  <a href="http://openbsd.idealx.org/" class="menuSubChap">Contributions OpenBSD</a>
+	  <a href="http://www.idealx.org/prj/samba/index.fr.html" class="menuSubChap">Contributions Samba</a>
+	  <a href="http://www.idealx.org/prj/webmin/index.fr.html" class="menuSubChap">Modules Webmin</a>
+	</div></div>
+    <div class="menuChap"><a href="http://www.idealx.org/dossier/index.fr.html" onclick="return toggleVisibility(2)"><img src="cvs.fr_files/menu-icon_plus.png" alt="+" width="9" height="9" class="menuIcon"></a><a href="http://www.idealx.org/dossier/index.fr.html">Dossiers</a><div class="menuSubChaps">
+	  <a href="http://www.idealx.org/dossier/oss/index.fr.html" class="menuSubChap">Open Source et Logiciel Libre </a>
+
+	</div></div>
+
+  
+</div>
+    <div id="maincontent"><a id="content"></a><h1>
+
+
+<a id="content">Utilisation de CVS
+</a></h1>
+
+<h2><a href="mailto:alain.lesne@IDEALX.com">Alain LESNÉ</a>
+et <a href="mailto:olivier.berger@IDEALX.com">Olivier BERGER</a>,
+pour IDEALX</h2>
+$Date: 2000/12/28 10:53:33 $ 
+<br>
+<em>Conçu pour faciliter le travail de développement
+en équipe, cvs conserve les révisions
+successives et facilite la collaboration de multiples intervenants
+sur un même projet. Qu'il travaille localement (sur la
+même machine) ou à distance (en réseau), chacun
+n'accède jamais qu'à une</em> copie des fichiers,
+tandis que les originaux demeurent sur le
+« référentiel » et ne sont
+modifiés qu'à travers les mécanismes
+sécurisés et
+« journalisés ») de cvs. 
+<br>
+<h2><a id="toc1"></a>1. <a href="#s1">Diffusion
+du présent document</a></h2>
+<h2><a id="toc2"></a>2.
+<a href="#s2">Première utilisation</a></h2>
+<h2><a id="toc3"></a>3.
+<a href="#s3">Intérêt de
+cvs</a></h2>
+<h2><a id="toc4"></a>4.
+<a href="#s4">cvs approfondi</a></h2>
+<h2><a id="toc5"></a>5.
+<a href="#s5">Interfaces</a></h2>
+<h2><a id="toc6"></a>6.
+<a href="#s6">Références</a></h2>
+<br>
+<h2><a id="s1"></a>1. <a href="#toc1">Diffusion du
+présent document</a></h2>
+<p>Ce document appartient à
+<a href="http://idealx.com/">IDEALX</a>. Il est librement diffusable
+dans les termes de la
+<a href="http://www.idealx.org/fr/licences/gfdl.html">Licence de
+Documentation Libre GNU</a> (
+<a href="http://www.gnu.org/copyleft/fdl.html">GNU Free
+Documentation License</a>).</p>
+<h2><a id="s2"></a>2. <a href="#toc2">Première
+utilisation</a></h2>
+<p>Afin de faciliter l'exposé de cette première
+approche, on supposera cvs déjà
+installé et configuré sur le serveur.
+Côté client, cvs ne requiert aucune
+intervention particulière, hormis la mise en place de
+variables système. La présence de l'exécutable
+cvs suffit, mais le paquetage est de toutes
+façons fourni avec les distributions de Linux courantes, ou
+les BSD libres.</p>
+<p>Du point de vue de l'utilisateur, quelles sont les commandes
+essentielles à retenir pour commencer à
+l'utiliser ?</p>
+<h2><a id="ss2.1"></a>2.1 Création d'une copie de
+travail privée d'un projet</h2>
+<p>Tout d'abord, pour créer « l'image »
+locale d'un projet (pour notre exemple, ce sera :
+/home/toto/cvs/web, alors que les sources se trouvent
+à /opt/cvs/web sur le serveur), il faut
+commencer par créer localement le répertoire dans
+lequel on souhaite faire un miroir du référentiel
+(Cf.
+<a href="#glo-r%C3%A9f%C3%A9rentiel">référentiel</a>)
+source (<em>repository</em>, également appelé
+<em>dépôt</em>). Puis en faire le répertoire
+par défaut, car cvs travaille toujours avec des
+chemins relatifs au répertoire courant.</p>
+$ mkdir ~/cvs; cd ~/cvs
+
+
+ 
+<p>Il faut maintenant renseigner quelques variables
+d'environnement, qui éviteront de passer de fastidieuses
+lignes de commande à cvs.</p>
+
+<pre>        $ export CVSROOT=toto@cvs.mon-organisation.com:/opt/cvs
+        $ export CVS_RSH=ssh
+        $ export CVSEDITOR=vim
+
+</pre>
+
+
+
+<p>La syntaxe de la commande export CVSROOT=...
+suppose qu'un shell compatible Bourne est utilisé
+(bash, zsh...). Sous csh, ou
+tcsh, il faut remplacer la commande par setenv
+CVSROOT .... Cette variable mémoire indiquera
+à cvs :</p>
+<ul>
+<li>le nom de l'utilisateur qui souhaite se connecter au
+dépôt (<em>repository</em>)
+(toto@) ;</li>
+<li>l'adresse du serveur
+(cvs.mon-organisation.com) ; 
+<em>Remarque:</em> ce nom de domaine est bien
+évidamment fictif, et devra être adapté au
+contexte de votre projet</li>
+<li>le répertoire du dépôt principal
+(:/opt/cvs).</li></ul>
+
+
+ 
+<p>La commande export CVS_RSH=ssh est ici
+nécessaire car cvs invoque rsh par
+défaut. Le passage de ce paramètre permet d'utiliser
+ssh (plus satisfaisant du point de vue de la
+sécurité) de manière transparente.</p>
+<em>Remarque:</em> nous décrivons ici une
+méthode d'accès à CVS par
+l'intermédiaire de SSH, qui n'est que l'un des protocoles
+qui peuvent être utilisés avec CVS. Une méthode
+plus courante, mais moins sécurisée, utilisée
+fréquemment sur les projets Open-Source est la
+méthode :pserver:. Ici aussi, il faudra adapter
+l'utilisation ou non de la variable d'environnement
+CVS_RSH au contexte de votre projet.
+
+
+ 
+<p>Enfin, la présence de la commande export
+CVSEDITOR=vim est facultative si le système
+possède déjà une variable système
+EDITOR. Naturellement, tout autre éditeur fera
+l'affaire, pourvu qu'il n'ajoute pas de codes intempestifs (la
+plupart des « traitements de texte » ne
+conviennent pas. Cependant, et c'est notamment le cas pour les
+mises à jour, où cvs peut faire appel
+à un éditeur pour la saisie de commentaires,
+l'absence de l'une ou l'autre variable provoque une erreur
+d'exécution.</p>
+<p>Si l'utilisateur travaille sur la machine où se trouve le
+dépôt, cela ne fait aucune différence, hormis
+la variable CVSROOT, qui n'indique alors que le chemin
+du référentiel :</p>
+
+<pre>        $ export CVSROOT=/opt/cvs
+
+</pre>
+
+
+
+<p>Maintenant que l'environnement minimal est mis en place, nous
+pouvons récupérer le projet
+« web » convoité, tel qu'il se trouve
+dans son dernier état. L'historique des modifications
+intervenues dans le projet <em>avant</em> cette copie est tout
+simplement ignoré, mais demeure consultable en invoquant
+cvs avec les options appropriées.</p>
+
+<pre>        $ cvs checkout web
+
+</pre>
+
+
+
+<p>Cette commande invite cvs à comparer les
+modifications intervenues sur les fichiers et répertoires du
+projet (dans la terminologie de cvs : un module
+(Cf. <a href="#glo-module">module</a>)) et à les
+répercuter localement. Comme il s'agit ici de la
+première mise à jour, c'est tout simplement
+l'ensemble du module qui est dupliqué localement.</p>
+<p>Par la suite, on préfèrera sans doute un affichage
+moins « verbeux », ne laissant passer que les
+informations essentielles (avec l'option -q pour
+<em>quiet</em>, tranquillité) :</p>
+
+<pre>        $ cvs -q checkout &lt;nom_du_module&gt;
+
+</pre>
+
+
+
+<p>Bien sûr, ssh demande le mot de passe de
+l'utilisateur avant de se connecter au site distant, de la
+même manière que le ferait rsh (sauf si
+un fichier ~/.rhosts, sur le serveur, autorisait la
+connexion sans mot de passe --- ce qui ne serait vraiment pas une
+bonne idée).</p>
+<p>Voilà. Un répertoire web vient
+d'être créé dans l'arborescence locale
+(~/cvs/web). On remarquera que le nom de ce
+répertoire local est identique au nom du répertoire
+sur le référentiel. Il contient, outre l'ensemble des
+fichiers sources du projet, un répertoire nommé
+CVS qu'il <em>ne faut pas</em> éditer, car il
+contient des données gérées par
+cvs (ce qui n'interdit pas aux curieux d'aller y jeter
+un oeil...).</p>
+<p>Comme il sera toujours nécessaire de passer les variables
+en paramètre, autant créer un script destiné
+à automatiser la tâche. Éditer, par exemple, un
+fichier ~/bin/cvsaccess :</p>
+
+<pre>        #! /bin/sh
+        cd ~toto/cvs | exit 4
+        export CVSROOT=toto@cvs.mon-organisation.com:/opt/cvs
+        export CVS_RSH=ssh
+        cvs checkout web
+
+</pre>
+
+
+
+<p>Ne pas oublier de lui donner les droits
+d'exécution :</p>
+
+<pre>        $ chmod u+x ~/bin/cvsaccess
+
+</pre>
+
+
+
+<p>Il suffira ensuite de taper la commande :</p>
+
+<pre>        $ ~/bin/cvsaccess
+
+</pre>
+
+
+
+<p>pour que la mise à jour soit automatiquement
+effectuée. Il convient toutefois de prendre garde à
+ce que le script charge un sous-shell, et que l'environnement du
+shell de travail de l'utilisateur n'est de ce fait pas
+modifié. Toute commande cvs entrée
+directement au clavier risque alors de ne pas produire le
+résultat escompté...</p>
+<p>On facilitera la mise en place de cet environnement en
+plaçant toutes les commandes nécessaires dans un
+fichier que l'on « sourcera » :</p>
+
+<pre>        $ source ~/bin/cvsaccess
+        $ . ~/bin/cvsaccess             # équivalent et plus concis 
+
+</pre>
+
+
+
+<p>Mais on pourra encore placer ces variables dans ~/.bashrc, par
+exemple, si l'utilisateur courant n'accède pas couramment
+à d'autres dépôts cvs.</p>
+<h2><a id="ss2.2"></a>2.2 Répercuter des
+modifications locales sur le référentiel</h2>
+<p>Lorsqu'un fichier a été modifié localement
+et que l'on se contente de lancer la commande :</p>
+
+<pre>        $ cvs checkout &lt;nom_du_projet&gt;
+
+</pre>
+
+
+
+<p>cvs le rappelle par l'affichage d'un M
+précédant le nom du fichier, mais ne met pas à
+jour cette modification sur le dépôt.</p>
+<p>Pour ce faire, il faut le demander explicitement à
+cvs :</p>
+
+<pre>        $ cvs commit &lt;fichier_modifié&gt;
+
+</pre>
+
+
+
+<p>Ou, le cas échéant :</p>
+
+<pre>        $ cvs commit
+
+</pre>
+
+
+
+<p>pour mettre à jour sur le référentiel
+l'ensemble des fichiers connus de cvs, et qui ont
+été modifiés dans l'arborescence locale (plus
+généralement, le fait de ne pas spécifier
+d'attribut après une instruction cvs implique
+que celle-ci sera exécutée récursivement.
+cvs liste alors les fichiers dont les modifications
+viennent d'être prises en compte. Il est possible de ne
+traiter que les fichiers du répertoire courant, sans
+récursion, en ajoutant l'option -l).</p>
+<p>cvs propose alors la saisie d'un message
+associé à cette mise-à-jour. Il invoque
+l'éditeur spécifié dans les variables
+CVSEDITOR ou EDITOR pour l'ensemble des
+fichiers modifiés, ce qui permet d'indiquer un commentaire
+approprié (nom de l'intervenant, objet...). Mais il est
+souvent plus commode de passer le commentaire en ligne de commande
+(option -m, pour <em>message</em>) afin
+d'éviter que l'éditeur ne soit
+systématiquement invoqué :</p>
+
+<pre>        $ cvs commit -m 'toto: optimisation de l'algo' tri.c
+
+</pre>
+
+
+
+<p>Évidemment, si le fichier a été
+édité par un autre utilisateur et que ce dernier a
+validé ses modifications sur le référentiel
+tandis qu'on l'éditait localement, il y a problème.
+cvs rapporte alors le conflit. La plupart du temps, il
+suffira d'un :</p>
+
+<pre>        $ cvs update tri.c
+
+</pre>
+
+
+
+<p>pour que cvs fusionne <em>automagiquement</em> les
+modifications dans le fichier local.</p>
+<p>Sauf si elles sont trop imbriquées ou conflictuelles,
+auquel cas cvs invitera l'utilisateur à
+intervenir pour régler manuellement les problèmes.
+Après édition du fichier (qui contient, très
+lisiblement balisées, les deux versions des sections qui
+n'ont pu être fusionnées automatiquement) il suffira
+de retaper la commande :</p>
+
+<pre>        $ cvs commit tri.c
+
+</pre>
+
+
+
+<p>pour que les modifications soient finalement validées sur
+le référentiel.</p>
+<p>Afin d'éviter ce genre de désagrément,
+mieux vaut effectuer de fréquentes mises à jour. Les
+auteurs insistent d'ailleurs sur le fait que cvs ne
+saurait se substituer à la communication entre les
+développeurs...</p>
+<h2><a id="ss2.3"></a>2.3 Ajouter ou supprimer un
+fichier</h2>
+<p>Comme on l'a déjà remarqué, si un fichier
+est édité localement, un simple checkout
+ne répercutera pas les modifications sur le serveur. Il en
+va de même pour une création ou une suppression de
+fichier. Ce comportement spontané s'avère d'ailleurs
+bien commode puisqu'il dispense, par exemple, de devoir dupliquer
+des fichiers ou une arborescence dans une autre arborescence (hors
+CVS) avant d'entreprendre une compilation. Sauf indication
+explicite, les binaires (ou tout fichier
+généré après coup, donc n'ayant pas
+fait l'objet d'un cvs add) ne seront pas
+transférés sur le dépôt du serveur.
+cvs se contentera simplement d'indiquer sur la console
+qu'il a remarqué la présence de fichiers dont il ne
+sait pas quoi faire, en faisant précéder leur nom
+d'un point d'interrogation.</p>
+<p>Ainsi, lorsque l'on souhaite inclure un nouvel
+élément dans un projet, il faut explicitement
+l'indiquer par :</p>
+
+<pre>        cvs add -m "message" &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>cvs informe alors que la prise en compte du nouveau
+fichier ne sera effective qu'après le prochain
+commit :</p>
+
+<pre>        $ cvs commit &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>De la même manière, la suppression d'un fichier ne
+sera effective qu'<em>après</em> le
+commit :</p>
+
+<pre>        $ cvs remove &lt;nom_de_fichier&gt;
+        $ cvs commit &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>Enfin, s'agissant de la prise en compte de nouveaux
+éléments dans un projet, il ne faut pas perdre de vue
+que, destiné à conserver l'historique des versions,
+cvs s'attend par défaut à enregistrer
+des fichiers texte. Pour des raisons évidentes, les binaires
+ou archives (tar...) ne sauraient être traités de la
+même façon, et c'est pourquoi il faut alors indiquer
+leur nature « non historicisable » à
+cvs :</p>
+
+<pre>        $ cvs add -kb &lt;NomFichier&gt;
+
+</pre>
+
+
+
+<p>Ainsi, on évitera le plus souvent de placer sous le
+contrôle de CVS un fichier :</p>
+<ul>
+<li>engendrable automatiquement à partir d'un autre qui s'y
+trouve déjà. Ne laisser en ce cas sous CVS que le
+fichier source et un Makefile ou un fichier textuel
+readme.txt indiquant comment le compiler;</li>
+<li>restaurable par simple récupération sur
+l'Internet (sauf s'il est rare).</li></ul>
+
+
+ 
+<p>Utiliser des noms de répertoires au singulier, sans
+caractères spéciaux (ou accents, espaces ...), et
+sans majuscules sauf si l'une de ces caractéristiques est
+vraiment discriminante. La circulation s'en trouve
+facilitée. Exemple : test et non
+tests ou Test.</p>
+<p>Ces quelques commandes de base sont d'ores et déjà
+suffisantes pour commencer à travailler avec
+cvs, dont la simplicité n'est pas le moindre
+intérêt.</p>
+<h2><a id="s3"></a>3.
+<a href="#toc3">Intérêt de cvs</a></h2>
+<h2><a id="ss3.1"></a>3.1 Qu'est-ce que
+cvs ?</h2>
+<em>Je ne peux pas imaginer programmer sans... ce
+serait comme faire du parachutisme sans parachute !</em> Brian
+Fitzpatrick.
+
+
+ 
+<p>Placé sous licence GPL, cvs se
+présente comme <em>a version control system</em>, qui permet
+d'enregistrer l'historique de fichiers sources. Mais le
+« c » peut aussi bien s'entendre comme
+<em>concurrent</em>. De fait, cvs se
+révèle particulièrement efficace pour la
+gestion de développements simultanés. Pour la petite
+histoire, c'est d'ailleurs la mention <em>Concurrent Versions
+System</em> qui figure en en-tête des pages paires de la
+documentation officielle. Sophistiqué, ce système
+constitué d'un ensemble de commandes est
+généralement considéré comme un
+« état de l'art » dans son domaine.
+Une référence.</p>
+<p>Outre le fait que les originaux sur le référentiel
+ne sont jamais affectés <em>directement</em> par les
+utilisateurs --- qui n'éditent jamais que des
+<em>copies</em> dont cvs se charge de faire la mise
+à jour après coup --- l'idée fondamentale est
+de ne conserver (dans un fichier unique) que <em>l'historique</em>
+des modifications qui ont affecté un fichier, et non ses
+multiples « incarnations » successives.
+D'où un important gain de place, pour parvenir au même
+résultat : être en mesure de retrouver une
+version particulière et localiser la première
+manifestation d'un bogue, longtemps après sa première
+apparition dans une lignée de révisions.</p>
+<p>Une autre caractéristique de cvs repose sur
+le fait de permettre à chaque développeur de
+travailler dans son propre répertoire. Que ce dernier se
+trouve sur la même machine que le référentiel
+ou en réseau, cvs se charge de fusionner le
+travail « réparti » dans un
+référentiel commun, auquel chacun peut à tout
+moment se reporter.</p>
+<h2><a id="ss3.2"></a>3.2 Les limites de
+cvs</h2>
+<p>En termes d'espace disque, on constate en général
+le triplement de volume des sources
+« utiles » d'un projet. Mais ce n'est qu'une
+indication empirique. Il va se soi que si des remaniements
+importants interviennent régulièrement dans les
+sources, l'occupation disque peut croître sensiblement.
+Moins, dans tous les cas, que s'il fallait conserver
+l'intégralité des versions successives --- et c'est
+là l'essentiel.</p>
+<p>Quant à l'inévitable mise au point sur ce que
+<em>n'est pas</em> cvs et qu'il ne faut pas attendre,
+les auteurs insistent sur sa nature essentiellement technique, qui
+certes envisage et même gère les conflits de versions
+concurrentes, mais ne peut cependant pas se substituer à
+l'indispensable communication entre les développeurs. En
+particulier, cvs ne peut en rien aider à la
+résolution de conflits relatifs à des
+<em>logiques</em> de programmation.</p>
+<p>Enfin, cvs ne gère de manière
+convaincante que le matériau textuel. Les binaires, comme
+les fichiers graphiques, peuvent être pris en compte, mais il
+faut renoncer pour eux à certaines possibilités de
+traitement offertes par cvs.</p>
+<h2><a id="ss3.3"></a>3.3 Quand « mettre
+à jour » (commit) ?</h2>
+<p>Les mises à jour par commit devraient
+être d'autant plus fréquentes qu'un projet comporte
+peu de modules mais compte beaucoup de participants.</p>
+<p>Il ne faut pas perdre de vue que cvs n'archive
+qu'un historique par fichier et non pas les fichiers
+eux-mêmes. Ainsi, en termes d'occupation disque, la
+différence entre de nombreuses mises à jour par
+commit (modifications mineures successives des
+fichiers) et une politique de mises à jour plus
+espacées (modifications plus substantielles) n'a en pratique
+que peu d'impact.</p>
+<p>Il est parfois recommandé de ne
+« commiter » que du code ayant
+été compilé --- voire testé --- avec
+succès. Le bon sens conduit en effet à
+considérer qu'il n'est peut n'être pas souhaitable que
+des éléments incomplets soient envoyés sur le
+dépôt si d'autres personnes s'attendent à ne
+trouver que du code fonctionnel. À l'inverse, il ne saurait
+être question de garantir que tout est en ordre avant de
+lancer le commit... Bref, c'est là
+évidemment une décision
+« politique », qui ne relève pas
+directement de l'usage de cvs.</p>
+<p>Mais il faut noter que la technique des
+« branches » (Cf.
+<a href="#sec-branches">branches</a>) permet de conserver
+parallèlement une version stable « de
+référence » accessible au public, et une
+version de développement (par définition instable)
+sur le même référentiel. Dans le même
+esprit, l'usage des « labels » (Cf.
+<a href="#glo-symbolic-tag">labels</a>) se révèle
+très pratique pour identifier, par exemple, la
+dernière révision compilable.</p>
+<h2><a id="sec-collisions"></a>
+<a id="ss3.4"></a>3.4 Comment se préserver des
+collisions ?</h2>
+<p>Malgré la modeste contrainte qu'imposent les
+commit fréquents, une politique de mises
+à jour rapprochées peut faire gagner beaucoup de
+temps en évitant la survenue de collisions. Si
+cvs sait en effet identifier --- voire régler
+tout seul --- les conflits de révision, cela ne dispense
+guère les utilisateurs d'agir avec prudence et bon sens.</p>
+<p>En règle générale, il est souhaitable de
+vérifier qu'on dispose bien d'une révision
+« à jour » avant de se lancer dans une
+intervention. Si la commande status répond
+Up to date, alors tout va bien. Mais si
+cvs indique qu'une mise à jour est
+nécessaire (Needs Checkout), inutile de
+tergiverser...</p>
+<p>De toutes façons, s'il n'y a pas eu de modifications
+locales depuis le dernier checkout, cette commande est
+sans doute à lancer avant toute chose. Enfin, si un autre
+utilisateur est par ailleurs intervenu sur le fichier tandis qu'on
+l'éditait, c'est le message Needs Update qui en
+informe. Cela signifie qu'un conflit existe entre la
+révision locale et celle du référentiel mais,
+encore une fois, cvs se tire
+généralement tout seul de cette situation.</p>
+<p>Les auteurs de cvs ont également
+prévu la possibilité de
+« verrouiller » un fichier pour en
+empêcher l'édition simultanée. Ce
+mécanisme n'est toutefois qu'optionnel. D'une part parce
+qu'il impose de constantes synchronisations entre les copies
+locales des utilisateurs et le référentiel, mais
+aussi parce que une bonne communication entre les intervenants
+s'avère de toute façons préférable,
+<em>a fortiori</em> si plusieurs développeurs interviennent
+sur une section de code implémentant un algorithme
+particulièrement délicat.</p>
+<p>On veillera par ailleurs à ne pas intervenir sur la mise
+en forme des lignes ou paragraphes déjà
+édités lorsque ce n'est pas indispensable, surtout si
+elle n'en modifie pas le sens où la compréhension.
+Ceci afin de ne pas rendre inutilement fastidieuse la lecture des
+<em>listings</em> produits par diff et,
+accessoirement, ménager l'espace disque sur le serveur.</p>
+<h2><a id="s4"></a>4. <a href="#toc4">cvs
+approfondi</a></h2>
+<h2><a id="ss4.1"></a>4.1 Suivi des
+révisions</h2>
+<p>Comme on l'a vu, cvs offre la possibilité de
+suivre l'évolution d'un projet et, si nécessaire, de
+rebrousser chemin. Il est, surtout, très utile de pouvoir
+remonter à la « source » d'un bogue,
+si celui-ci n'est découvert qu'après
+l'édition de plusieurs nouvelles révisions.</p>
+<p>Tout d'abord, pour lister un historique sommaire des
+révisions comprenant les dates et numéros respectifs,
+ainsi que les commentaires spécifiés lors du
+commit (option -m ou saisis depuis
+l'éditeur appelé par cvs), utiliser la
+commande :</p>
+
+<pre>        $ cvs log &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>Comme souvent, si un nom du fichier n'est pas
+précisé c'est l'ensemble des éléments
+du répertoire courant qui sera pris comme paramètre.
+Mais, même en indiquant un nom de fichier, la réponse
+de cvs peut être trop loquace si
+l'élément a connu de nombreuses modifications. Ainsi,
+il sera la plupart du temps judicieux de passer une indication
+temporelle en paramètre :</p>
+
+<pre>        $ cvs log -d "&gt;2000-4-1" &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>affichera le résumé des révisions
+postérieures au 1er avril 2000. La syntaxe autorise de
+multiples variantes. Attention toutefois à la notation
+« longue », car cvs ne semble
+pas comprendre le français. Voici quelques exemples
+« testés » :</p>
+
+<pre>        $ cvs log -d "15 days ago" cvs.sgml
+        $ cvs log -d "last month" cvs.sgml
+        $ cvs log -d yesterday cvs.sgml
+        $ cvs log -d  "20 mar 2000&lt;30 mar 2000" cvs.sgml
+
+</pre>
+
+
+
+<p>La syntaxe paraît suffisamment explicite par
+elle-même. Sans doute n'est-il pas nécessaire de
+préciser que le dernier exemple liste les révisions
+intervenues entre deux périodes. Mais même si tout
+cela s'avère relativement intuitif, il faut parfois
+« ajuster » pour obtenir le résultat
+souhaité. En dernier recours, more ou
+less peuvent rendre des services
+équivalents.</p>
+<p>Une autre option particulièrement intéressante
+permet de limiter la sortie aux interventions d'un utilisateur
+particulier :</p>
+
+<pre>        $ cvs log -wnat &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>liste uniquement les dates, numéros de révision et
+commentaires réalisés par l'utilisateur
+« nat ».</p>
+<p>Mais ces commandes ne donnent pas encore accès au
+<em>détail</em> des modifications, qui ont bien
+été enregistrées par cvs. On
+verra qu'il était néanmoins préférable
+de visualiser au préalable un historique des versions. Car
+si :</p>
+
+<pre>        $ cvs diff &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>liste les différences entre la version locale d'un
+fichier et celle qui se trouve actuellement sur le
+référentiel, il apparaît aussi utile de pouvoir
+comparer le fichier actuel avec une révision
+antérieure particulière :</p>
+
+<pre>        $ cvs diff -r 1.5 &lt;nom_de_fichier&gt;
+        $ cvs diff -r 1.5 -r 1.6 &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>voire deux révisions intermédiaires, comme dans le
+second exemple. La sortie présentée par
+cvs ressemble à celle que produit l'utilitaire
+GNU diff, et permet de visualiser ajouts, retraits et
+modifications. Il est d'ailleurs possible de stocker cette sortie
+sur disque au moyen d'un tube redirecteur, afin de traiter ensuite
+le fichier original (pour annulation de modifications, par exemple)
+avec l'utilitaire GNU diff. À noter que
+l'option -u, couramment utilisée avec
+l'utilitaire diff, est disponible avec la commande de
+cvs et produit le même type d'affichage.</p>
+<p>Une autre commande que l'on pourrait apparenter à
+diff affiche, ligne à ligne, le numéro
+de dernière révision, l'identifiant de son
+créateur/réviseur, et la date de la dernière
+modification, le tout en marge (à gauche) de
+l'information.</p>
+
+<pre>        $ cvs annotate &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>Contrairement à diff annotate
+n'opère pas à proprement parler de comparaison entre
+deux versions, mais produit une vision chronologique qui peut
+être pertinente, tant pour estimer la part de
+nouveauté/persistance d'un fichier que pour
+« rendre à César » telle ou
+telle partie....</p>
+<p>Enfin la commande status permet de visualiser
+l'état d'un fichier ou d'une collection de fichiers dans un
+même répertoire ; par exemple pour confirmer
+qu'une version locale est à jour par rapport à celle
+qui se trouve sur le référentiel. Les numéros
+de révision « locaux » et
+« distants » sont également
+indiqués.</p>
+
+<pre>        $ cvs status &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>Cette commande est utile pour vérifier si un autre
+utilisateur n'a pas modifié et validé sur le
+dépôt un fichier qu'on est en train d'éditer
+localement. Auquel cas (Needs Merge), il faut
+s'attendre a devoir peut être gérer les conflits de
+version manuellement lors du prochain commit... Le
+plus tôt sera le mieux, puisque, bien entendu, les chances
+d'une résolution « automatique » des
+conflits s'amenuisent à mesure que les divergences entre les
+deux copies s'accentuent.</p>
+<p><a id="sec-révisions"></a></p>
+<h2><a id="ss4.2"></a>4.2 Gestion et
+« publication » des révisions</h2>
+<p>Lorsque les révisions commencent à s'accumuler ---
+et c'est particulièrement le cas si les intervenants sont
+nombreux, puisqu'il est judicieux de multiplier les
+commit pour limiter les risques de collisions (Cf.
+<a href="#sec-collisions">collisions</a>) --- il peut
+s'avérer intéressant de
+« marquer » certaines versions afin de les
+repérer plus commodément. Cette opération
+consiste à attribuer un label symbolique (Cf.
+<a href="#glo-label-symbolique">label symbolique</a>) (<em>symbolic
+tag</em>), qui pourra être utilisé par la suite comme
+paramètre en lieu et place du numéro de
+révision.</p>
+<p>Cela peut être utile, par exemple, pour identifier une
+version qui a été diffusée à plus large
+échelle. Ou simplement parce qu'un mot s'avère plus
+commode à retenir qu'un nombre décimal. Mais,
+surtout, cela permet d'identifier sous un label unique une
+collection de fichiers (ou plutôt : une collection de
+révisions (Cf.
+<a href="#glo-r%C3%A9vision">révision</a>)
+particulières d'un certain nombre de fichiers). Certaines
+commandes (comme export exigent d'ailleurs le passage
+d'un label (<em>tag</em>) en paramètre, et ne fonctionnent
+pas avec un simple numéro de révision :</p>
+
+<pre>        $ cd /usr/src
+        $ cvs export -r STABLE-1_0 BeauProjet
+
+</pre>
+
+
+
+<p>Dans cet exemple, la commande export
+recréera dans /usr/src/BeauProjet l'ensemble de
+l'arborescence constitutive d'un module (Cf.
+<a href="#glo-module">module</a>), donc d'un projet (Cf.
+<a href="#glo-projet">projet</a>), expurgée des fichiers
+propres à cvs, sous une forme par
+conséquent mieux adaptée à une diffusion
+publique (ou distribution (Cf.
+<a href="#glo-distribution">distribution</a>)). Elle suppose qu'un
+label de version (Cf. <a href="#glo-release-tag">label de
+version</a>) a été préalablement
+affecté au module au moyen de la commande :</p>
+
+<pre>        $ cvs rtag 1_0-STABLE BeauProjet
+
+</pre>
+
+
+
+<p>Il est possible par ailleurs de cumuler plusieurs labels sur un
+même fichier, voire une même révision. De sorte
+que des « familles » regroupant des
+éléments portant le même identifiant symbolique
+peuvent être constituées indépendamment de leur
+numéro de révision. Signalons au passage que l'usage
+du point n'est pas autorisé dans les noms de labels,
+probablement afin d'éviter toute confusion avec les
+numéros de version. La commande :</p>
+
+<pre>        $ cvs tag Test &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>affecte le label « Test » au fichier
+indiqué en paramètre. Ainsi :</p>
+
+<pre>        $ cvs diff -r Test &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>listera les modifications intervenues sur
+l'élément entre la version courante (telle qu'elle
+apparaît sur le répertoire local de l'utilisateur) et
+la version identifiée « Test » sur le
+référentiel. Suivant le même principe, on
+pourrait envisager de « rebrousser chemin »
+vers une version donnée d'un fichier, et
+« oublier » ce qui a été
+réalisé depuis :</p>
+
+<pre>        $ cvs update -r Fonctionnel &lt;nom_de_ficher&gt;
+
+</pre>
+
+
+
+<p>pour autant, naturellement, qu'une révision ait
+été préalablement marquée
+« Fonctionnel ». Ce peut être un moyen
+commode d'expérimenter des solutions sur des
+révisions successives (mobilisant plusieurs auteurs) tout en
+conservant une possibilité de
+« repli » aisée.</p>
+<p>La méthode convient aussi pour attribuer un marqueur
+à une collection de fichiers, tels qu'ils se trouve à
+un moment donné. Il suffit de ne pas indiquer de nom de
+fichier pour que l'ensemble de l'arborescence soit
+affectée :</p>
+
+<pre>        $ cd &lt;répertoire_du_projet&gt;
+        $ cvs tag Compilation-Ok
+
+</pre>
+
+
+
+<p>De sorte que, si le besoin s'en fait sentir  :</p>
+
+<pre>        $ cd &lt;répertoire_du_projet&gt;
+        $ cvs update -r Compilation-Ok
+
+</pre>
+
+
+
+<p>permettra de revenir à un état donné du
+projet, c'est à dire recouvrer l'ensemble des fichiers qui
+le composent dans la forme où ils se trouvaient lorsque
+l'identifiant symbolique (<em>symbolic tag</em>) a
+été apposé. Attention : la commande
+tag affecte une arborescence et non un module,
+contrairement à rtag. Paradoxalement, elle est
+plus puissante. Si bien que les fichiers de plusieurs modules
+peuvent être affectés si la commande est
+exécutée depuis un répertoire parent.</p>
+<p>De même, si l'on souhaite créer le miroir local
+d'un projet à partir d'une version particulière (par
+exemple parce qu'elle est réputée stable) et non dans
+sa toute dernière révision, il suffira d'indiquer le
+label « qui va bien » lors du premier
+checkout  :</p>
+
+<pre>        $ cvs checkout -r STABLE-1_0 &lt;nom_du_projet&gt;
+
+</pre>
+
+
+
+<p>Les marqueurs symboliques (<em>symbolic tags</em>) ne doivent
+pas contenir d'espaces (même entre guillemets). Par ailleurs,
+s'ils sont parfois utilisés pour numéroter les
+distributions « publiques » des projets, il
+ne faut pas confondre avec la séquence de révision
+(numérique) qui est automatiquement
+incrémentée sur le référentiel
+après chaque commit effectif.</p>
+<p>Ces numéros de révision automatiques ne sont rien
+d'autre qu'un compteur décimal. La plupart du temps, on n'y
+prête attention que comme indication distinctive et
+chronologique. Par défaut, cvs considère
+que la version initiale porte le numéro 1.1. Il est
+toutefois possible de « forcer » un
+numéro de révision particulier, pourvu qu'il soit
+supérieur au numéro courant :</p>
+
+<pre>        $ cvs commit -r 2.0 &lt;nom_de_ficher&gt;
+
+</pre>
+
+
+
+<p>voire :</p>
+
+<pre>        $ cd &lt;répertoire_du_projet&gt;
+        $ cvs commit -r 2.0
+
+</pre>
+
+
+
+<p>pour affecter un numéro de version commun à
+l'ensemble des fichiers d'un projet, dans l'état où
+ils se trouvent sur le disque ou le répertoire courant de
+l'utilisateur. Les révisions prendront par la suite
+automatiquement les numéros 2.1, 2.2...</p>
+<p>Il ne s'agit toutefois pas de la meilleure méthode pour
+officialiser le passage d'une version à une autre. L'usage
+des labels collants (<em>sticky tags</em>), surtout à
+travers la technique des « branches » (Cf.
+<a href="#glo-branche">branches</a>) peut s'avérer plus
+efficace. Surtout, il prévient toute confusion entre
+« révision » (Cf.
+<a href="#glo-revision">révision</a>) (en anglais
+<em>revision</em>, au sens d'une simple modification d'un fichier)
+et une « version » (en anglais
+<em>release</em>, au sens de
+<a href="#glo-release">« distribution »</a>).</p>
+<p>De fait, il serait peu élégant qu'à la
+révision 2.34 corresponde une version publique
+officiellement baptisée « 2.34 »...
+qui succéderait immédiatement la 2.0. Or c'est bien
+ce qui se produirait si trente quatre interventions sur un fichier
+sont nécessaires avant de pouvoir le considérer
+à nouveau comme suffisamment satisfaisant pour être
+« publié ».</p>
+<h2><a id="ss4.3"></a>4.3 Utilisation des modules
+CVS</h2>
+<p>La plupart des commandes cvs prennent en argument
+un nom de module ou un nom de fichier (contenant un chemin
+d'accès relatif au sommet du référentiel).
+Lorsque le référentiel possède une structure
+complexe contenant plusieurs niveaux d'arborescence, il est
+préférable de définir des modules.</p>
+<p>L'administrateur du référentiel CVS peut donc
+avoir défini des modules permettant d'accéder
+directement aux fichiers d'un projet sans avoir besoin d'utiliser
+des noms de répertoires complets par rapport au sommet du
+référentiel.</p>
+<p>Pour obtenir la liste des noms de modules existants, utiliser la
+commande suivante :</p>
+
+<pre>        $ cvs checkout -c
+
+</pre>
+
+
+
+<p>Cette commande affiche la liste des modules, avec les chemins
+des répertoires correspondants dans le
+référentiel.</p>
+<p>L'administrateur CVS peut également avoir défini
+une propriété particulière (dans un format de
+son choix) pour chaque module, par exemple le nom du mainteneur de
+chaque module.</p>
+<p>Pour afficher la liste des modules triés selon la valeur
+de cette propriété particulière, on peut
+utiliser une variante de la commande "checkout -c" :</p>
+
+<pre>        $ cvs checkout -s 
+
+</pre>
+
+
+
+<p>A partir de la liste des modules renvoyée par ces deux
+commandes, l'utilisateur peut alors choisir le nom du module dont
+il veut récupérer une copie avec la commande
+checkout.</p>
+<p><a id="sec-branches"></a></p>
+<h2><a id="ss4.4"></a>4.4 Branches de
+développement</h2>
+<p>Supposons que quelques temps après qu'une version d'un
+logiciel déclarée « 1.0 » ait
+été rendue publique, un bogue soit découvert.
+Le développement s'est poursuivi depuis, mais la sortie de
+la distribution « 2.0 » officielle --- qui
+apportera de nombreuses innovations --- n'est pas encore à
+l'ordre du jour. Pourtant, la correction du défaut
+découvert dans la version 1.0 s'avère bel et bien
+nécessaire.</p>
+<p>Évidente, la solution consiste à publier une
+distribution 1.1 corrigeant le défaut constaté sur la
+1.0. La diffusion de la 2.0 pourra ainsi encore attendre,
+même si le problème est corrigé (et peut
+être n'est-elle pas concernée par le fameux bogue, si
+l'élément affecté a été
+complètement réécrit ou remplacé
+depuis).</p>
+<p>On constate qu'une « branche » s'est alors
+créée dans le cours du développement de
+l'application. L'essentiel du travail se poursuit normalement (en
+vue de la publication d'une version baptisée
+« 2.0 » dont certains fichiers peuvent
+parfaitement porter un numéro de révision bien
+supérieur sur le référentiel cvs)
+mais des interventions sont toujours nécessaires sur le
+« vieux » code.</p>
+<p>Du point de vue de cvs, il s'agit de faire en sorte
+que les corrections faites sur une branche
+« morte » (ou plutôt :
+« obsolète ») ne se répercutent
+pas indûment sur la partie en cours de développement.
+Si la version qu'il faut corriger a été
+convenablement « labellisée » lors de
+sa publication, alors la collection de fichiers peut être
+facilement identifiée, avec, le cas échéant,
+le bon numéro de révision pour chaque fichier. C'est
+à partir de ce label que l'on va effectivement créer
+la « branche », qui n'existait auparavant
+qu'à l'état virtuel :</p>
+
+<pre>        $ cvs rtag -b -r 1_0-STABLE 1_0-CORR MonProjet
+
+</pre>
+
+
+
+<p>Dans cet exemple, le label (<em>symbolic tag</em>) est
+1_0-STABLE et la branche créée est
+1_0-CORR. Ainsi, toute rectification sur un fichier
+portant le label 1_0-STABLE (<em>sic</em>, mais comme
+« tout bien portant est un malade qui
+s'ignore », un code réputé stable n'est
+jamais qu'un code dont les défauts ne sont pas encore
+apparus --- et le mérite de cvs consiste
+justement à en faciliter la maintenance) prendra à
+son tour le label 1_0-CORR qui sera transmis aux
+éventuelles générations postérieures.
+C'est pourquoi le label est dit « collant »
+(<em>sticky tag</em>).</p>
+<p>À cette occasion, les révisions de fichiers
+appartenant à une branche « fille »
+acquièrent deux décimales supplémentaires
+à leur numéro de révision. Par convention, le
+premier chiffre attribué après celui de la branche
+« mère » est pair et commence à
+2. En pratique cela ne concerne pas l'utilisateur, mais la
+connaissance de ce mécanisme devrait aider à
+comprendre le principe des « branches »
+cvs en général.</p>
+<p>Un peu d'ASCII art ?</p>
+
+<pre>                 1.4           1.2.2.2.2.2
+                  |   1.2.2.4      |
+                 1.3     |         |
+                  |   1.2.2.3  1.2.2.2.2.1  
+                  |      |    /
+                  |      |   /
+                  |   1.2.2.2
+                  |      |
+        1.2.4.1   |   1.2.2.1
+               \  |  /
+                \ | /
+                 1.2
+                  |
+                 1.1
+
+</pre>
+
+
+
+<p>Dans l'exemple ci-avant une révision (Cf.
+<a href="#glo-revision">révision</a>)
+« 1.2.2.1 » est créée à
+partir de la branche (Cf. <a href="#glo-branche">branche</a>) issue
+de la révision « 1.2 ». Puis une
+branche « concurrente » (sans descendance)
+commençant avec avec la révision
+« 1.2.4.1 ». Ensuite, la révision
+« 1.2.2.2 » donne naissance à la
+branche qui commence avec
+« 1.2.2.2.2.1 »...</p>
+<p>Toujours pas clair ? Et puis d'abord, quel rapport avec les
+distributions publiques ? Un autre exemple totalement fictif,
+cette fois sans numérotation :</p>
+
+<pre>                                 OpenBSD
+                                / 
+                               /
+                              /
+        FreeBSD           NetBSD
+               \          /
+                \        /
+                 \      /
+                  BSD4.2
+
+</pre>
+
+
+
+<p>Selon ce schéma, « tordu » pour
+l'exposition des branches cvs, <em>BSD4.2</em>
+donnerait naissance à <em>FreeBSD</em> et <em>NetBSD</em>,
+tandis que ce dernier serait à son tour à l'origine
+d'<em>OpenBSD</em>.</p>
+<p>Hérésie historique mise à part, les labels
+collants (<em>sticky tags</em>) de l'ensemble des
+éléments sources qui composent les systèmes
+BSD pourraient se présenter de cette façon. Supposons
+maintenant qu'il soit amusant de supprimer toute
+référence au label « NetBSD »
+dans la branche « OpenBSD » :</p>
+
+<pre>        $ cvs update -A
+
+</pre>
+
+
+
+<p>ôterait <em>tous</em> les marqueurs collants, ainsi que
+d'éventuelles options de date, mais le mode de
+numérotation des révisions ne serait pas
+modifié pour autant. Toutefois il aurait été
+plus commode, pour qui souhaiterait s'investir dans NetBSD de
+pouvoir récupérer une copie de l'état de ce
+projet en spécifiant le label :</p>
+
+<pre>        $ cd &lt;répertoire_quelconque&gt;
+        $ cvs checkout -r NetBSD
+
+</pre>
+
+
+
+<p>S'il s'avère nécessaire d'intervenir sur une
+version antérieure d'un projet, la collection des
+révisions de fichiers qui le constituaient lorsque le label
+de version (Cf. <a href="#glo-release-tag">label de version</a>)
+(en anglais <em>release label</em>) a été
+mémorisé peut donc être
+« rappelée » de cette façon ---
+le cas échéant dans un répertoire local
+distinct de celui la dernière version.</p>
+<p>Si la branche n'a pas encore été
+créée, il est même possible de le faire
+à partir de la copie de travail, en indiquant
+simplement :</p>
+
+<pre>        $ cvs tag -b 1_0-CORR
+
+</pre>
+
+
+
+<p>Encore plus fort : si un problème affectant le
+fichier tri.c est corrigé dans la
+révision « 1.4.2.1 », qui se situe
+dans une branche nommée « 1_0-CORR »,
+mais perdure dans la branche principale, alors que
+tri.c en est maintenant à la révision
+« 1.13 », il est parfaitement possible
+d'envisager une fusion (en anglais <em>merge</em>) entre le fichier
+corrigé (maintenant « 1.4.2.2 ») de la
+branche secondaire et sa version actuelle
+(« 1.13 ») dans la branche
+principale :</p>
+
+<pre>        $ cvs update -j 1.0-CORR tri.c 
+
+</pre>
+
+
+
+<p>Ce qui présuppose, naturellement, que la version de
+travail courante soit la branche principale, et non pas la branche
+« 1_0-CORR ». Selon le même principe,
+il est possible d'envisager la fusion d'une branche
+complète. Avec des risques de conflits accrus, mais dont la
+gestion peut s'avérer quand même moins contrainte et
+plus sûre que la re-saisie manuelle...</p>
+<p>Toutes les possibilités du <em>branching</em> n'ont pas
+été ici exposées. Pour plus de détails,
+et pour la mise en oeuvre effective de ces puissantes fonctions, la
+consultation du manuel s'impose. Qu'on retienne au moins la
+puissance, et la richesse de cvs, qu'on ne
+soupçonnerait pas nécessairement sous ses allures un
+peu frustes de scripts évolués.</p>
+<h2><a id="ss4.5"></a>4.5 cvs
+côté « serveur »</h2>
+<p>Afin de mieux comprendre le fonctionnement de cvs
+un petit détour côté
+« serveur » s'impose. Créer son propre
+référentiel (<em>repository</em>) est très
+simple :</p>
+
+<pre>        $ mkdir &lt;où_on_veut&gt;/cvs
+        $ export CVSROOT="&lt;où_on_veut&gt;/cvs"
+        $ cd &lt;où_on_veut&gt;/cvs; cvs init
+
+</pre>
+
+
+
+<p>Cette série de commandes :</p>
+<ul>
+<li>crée le répertoire racine du
+référentiel ;</li>
+<li>initialise l'environnement ;</li>
+<li>puis le dépôt proprement dit.</li></ul>
+
+
+ 
+<p>Avec cvs init, une collection de fichiers est
+créée en même temps qu'un répertoire
+CVSROOT. La plupart sont éditables --- et
+auto-documentés --- mais il n'est nullement
+nécessaire d'intervenir pour obtenir un fonctionnement
+satisfaisant.</p>
+<p>Le détail des opérations en vue d'ajuster les
+« droits » (lecture et écriture) ne
+relève pas d'un exposé sur l'utilisation de
+cvs, mais il ne faut pas oublier que
+l'exécutable tourne par défaut avec les droits de
+l'utilisateur courant. <em>A priori</em>, le recours à la
+gestion de « groupes » d'utilisateurs
+paraît plus que souhaitable.</p>
+<p>Pour créer un module à la racine de ce
+référentiel, le plus simple est d'importer dans le
+dépôt une arborescence existant déjà par
+ailleurs. À condition que la variable d'environnement
+CVSROOT aie été correctement
+initialisée, il suffit de se placer dans le
+répertoire qui contient les sources, puis d'exécuter
+la commande d'importation en précisant le nom du projet
+(ici : « projet-XYZ »), son origine (Cf.
+<a href="#glo-origine">origine</a>) « Toto »,
+ainsi qu'un label de version
+« initial » :</p>
+
+<pre>        $ cd ~/mon-projet
+        $ cvs import -m "Initialisation du projet" projet-XYZ Toto initial
+
+</pre>
+
+
+
+<p>Un répertoire projet-XYZ est
+créé à la racine du référentiel.
+Comme le nom de projet ne précise pas un chemin de
+répertoire, un répertoire correspondant vient
+d'être créé. Mais on aurait pu tout aussi bien
+importer de la même manière un répertoire
+à l'intérieur d'un module (Cf.
+<a href="#glo-module">module</a>) existant déjà dans
+le référentiel. Soit pour créer un nouveau
+sous-module, soit simplement pour ajouter d'une passe toute une
+arborescence à un module existant. Ainsi, la commande
+import peut se substituer avantageusement à
+add pour ajouter tout un répertoire dans les
+sources d'un projet (Cf. <a href="#glo-projet">projet</a>)
+donné.</p>
+
+<pre>        $ cd ~/répertoire_source
+        $ cvs import -m "Initialisation du projet" \
+                projets/projet-XYZ/ajout Toto initial
+
+</pre>
+
+
+
+<p>Ces mêmes procédures peuvent être mises en
+oeuvre pour créer un module aussi bien « en
+local » que sur un serveur distant. Il suffit d'avoir
+les droits idoines. Ne pas oublier non plus de renseigner, le cas
+échéant, la variable CVS_RSH. On peut
+d'ailleurs remarquer qu'à part la commande
+init, toutes s'exécutent de façon
+transparente, que le référentiel soit local ou
+distant.</p>
+<p>Une branche d'import spécifique est créée,
+portant le nom du label d'origine (Cf.
+<a href="#glo-origine">origine</a>), destinée à
+recevoir éventuellement sur une même branche des
+imports successifs de versions externes du même projet. Cette
+branche particulière ne servira pas à tracer des
+modifications locales, mais plutôt à suivre les
+évolutions des différents éléments
+importés entre deux versions externes.</p>
+<p>Les labels de version spécifiés à l'import
+doivent si possible correspondre avec la nomenclature externe des
+projets importés.</p>
+<p>Ceci est particulièrement utile pour la gestion de
+sous-modules ou bibliothèques d'origine externe, qui sont
+intégrés dans le projet, en différentes
+versions successives, et sans qu'on contribue localement à
+leur développement.</p>
+<h2><a id="ss4.6"></a>4.6 Astuces diverses</h2>
+<h3>Réservation temporaire</h3>
+<p>On souhaiterait parfois pouvoir empêcher temporairement la
+modification d'un fichier par un tiers. À la condition de
+n'utiliser cette fonctionnalité qu'à bon escient (ce
+qui implique que les autres utilisateurs soient prévenus ou
+aient au moins connaissance du procédé), c'est
+envisageable. Les commandes :</p>
+
+<pre>        $ cvs watch on &lt;fichier&gt;
+        $ cvs edit &lt;fichier&gt;
+
+</pre>
+
+
+
+<p>« réserveront » l'édition du
+fichier à l'utilisateur courant. Le mécanisme est le
+suivant : lors de leur prochain accès au
+référentiel, tous les autres utilisateurs verront les
+attributs de leur copie locale passer en « lecture
+seule ». (Mais il faut savoir que l'administrateur du
+dépôt peut désactiver cette option, qui n'est
+donc pas toujours disponible pour tout un chacun.) S'ils tentent
+d'intervenir sur le fichier, leur éditeur doit normalement
+indiquer que la sauvegarde des modifications ne sera pas
+possible.</p>
+<p>Bien sûr, si un utilisateur commence à
+éditer le fichier sans avoir au préalable
+vérifié son statut ou simplement accédé
+au projet sur le référentiel, il ne s'apercevra du
+« verrouillage » qu'au moment du
+commit --- ce qui n'est certes pas très
+agréable. À moins de créer une
+« branche » à la volée --- ce
+qui ne serait pas une bonne idée --- il va falloir attendre
+que l'autre utilisateur « rende les droits »,
+puis tenter une fusion automatique (par update) des
+deux versions... pour peut être ensuite devoir finalement se
+résoudre à l'effectuer « à la
+main ».</p>
+<p>Attention : status n'indique (malheureusement)
+pas s'il existe un verrou de ce type sur un fichier. Pour
+éviter ce genre de désagrément, il faut taper
+explicitement :</p>
+
+<pre>        $ cvs editors
+
+</pre>
+
+
+
+<p>qui permet de vérifier si des fichiers sont ou non
+actuellement verrouillés pour édition et indique si
+nécessaire le nom de l'utilisateur, le nom de la machine
+où se trouve la copie
+« verrouillée », ainsi que l'heure et
+la date à laquelle cette action a été
+entreprise. Le cas échéant, il conviendra d'attendre
+que l'utilisateur temporairement
+« privilégié » ait
+terminé d'éditer le fichier puis ait validé
+ses modifications sur le référentiel (<em>via</em>
+commit). Le « verrou »
+d'édition est alors automatiquement ôté (pas de
+risque d'oubli ou d'abus involontaire, sauf à
+« réserver » l'édition et trop
+tarder à la valider).</p>
+<p>Si l'on change d'avis parce que finalement la correction ne
+s'avère pas nécessaire,</p>
+
+<pre>        $ cvs unedit &lt;fichier&gt;
+
+</pre>
+
+
+
+<p>inversera la commande de verrouillage, et rendra à tous
+les intervenants la possibilité d'éditer le fichier.
+Attention toutefois aux permissions locales : il semble
+qu'elles ne soient pas toujours correctement mises à
+jour ; de sorte que si un fichier local demeure en
+« lecture seule », il ne sera pas superflu de
+vérifier (editors) s'il est effectivement
+« réservé » par un autre
+utilisateur... puis, s'il y a eu défaillance du
+mécanisme de déverrouillage automatique, remettre
+manuellement les droits « qui vont
+bien ».</p>
+<h3>Recevoir des alertes</h3>
+<p>Pour les projets à moyen et long cours, on peut
+raisonnablement souhaiter que chaque intervenant puisse recevoir
+une « alerte » par courrier
+électronique pour l'informer qu'une modification vient
+d'être faite sur un fichier qui n'avait plus
+évolué depuis longtemps. Pour l'administrateur du
+référentiel, la manière d'opérer est
+simple : il suffit de dé-commenter la ligne :</p>
+
+<pre>        $ ALL mail %s -s "CVS notification"
+
+</pre>
+
+
+
+<p>dans le fichier CVSROOT/notify. De sorte que toute
+intervention sur un fichier du référentiel (par
+edit, unedit ou commit)
+provoquera l'envoi d'un mail indiquant le nom du fichier, le nom de
+l'intervenant, ainsi que le commentaire qui a été
+ajouté lors du commit à tous les
+utilisateurs qui en ont fait la demande par :</p>
+
+<pre>        $ cvs watch add
+
+</pre>
+
+
+
+<p>L'auteur de la modification ne reçoit pas de message,
+mais comme ce mécanisme peut toutefois s'avérer assez
+rapidement fastidieux, il est possible d'indiquer des restrictions
+supplémentaires :</p>
+<ul>
+<li>par fichier (cvs watch add
+&lt;nom_de_fichier&gt;) ;</li>
+<li>ou par type d'action (cvs watch add -a
+edit).</li></ul>
+
+
+ 
+<p>Voire d'annuler toute réception de messages :</p>
+
+<pre>        $ cvs watch remove
+
+</pre>
+
+
+
+<h3>Suppression d'un répertoire</h3>
+<p>La commande remove n'opère que sur les
+fichiers. Pour supprimer un répertoire, l'opération
+est un peu plus complexe, et doit être réalisée
+au moins en trois temps :</p>
+<ul>
+<li>suppression du répertoire local ;</li>
+<li>suppression du répertoire sur le
+référentiel ;</li>
+<li>suppression du répertoire dans les copies des
+utilisateurs.</li></ul>
+
+
+ 
+
+<pre>        $ rm &lt;répertoire&gt;
+        $ cvs release -d &lt;répertoire&gt;
+        $ cvs update -P
+
+</pre>
+
+
+
+<p>La commande release indique que le
+répertoire n'est plus utilisé tandis que l'option
+-d le supprime effectivement du
+référentiel. Toutefois, le répertoire
+demeurera sur les copies locales des utilisateurs, tant que la
+seconde commande n'aura pas été effectuée.</p>
+<h3>Renommer un fichier</h3>
+<p>De la même façon, il n'existe pas de commande
+explicitement destinée à renommer ou déplacer
+un fichier. Il est toutefois possible de compenser cette absence,
+en supprimant puis recréant un élément sur le
+dépôt, après en avoir préalablement
+renommée la copie locale. Malheureusement, l'historique du
+fichier n'est pas conservé. Il convient donc de recourir
+à cet expédient avec précaution.</p>
+
+<pre>        $ mv &lt;ancien_nom&gt; &lt;nouveau_nom&gt;
+        $ cvs remove &lt;ancien_nom&gt;
+        $ cvs add &lt;nouveau_nom&gt;
+        $ cvs commit -m "&lt;ancien_nom&gt; renomme en &lt;nouveau_nom&gt;" &lt;ancien_nom&gt; &lt;nouveau_nom&gt;
+
+</pre>
+
+
+
+<h3>Restauration d'un fichier effacé</h3>
+<p>Lorsqu'un fichier a été supprimé par la
+commande delete, cvs en conserve bien
+sûr la trace et l'historique. C'est la raison pour laquelle
+il est toujours possible de « ressusciter »
+un élément longtemps après sa
+destruction ; et cela même si l'on ne dispose pas d'une
+commande explicitement destinée à cet effet.</p>
+<p>Le « truc » consiste à rappeler
+d'abord localement une révision antérieure à
+la suppression, au moyen de la commande update. On
+souhaitera probablement récupérer
+l'avant-dernière version (la dernière étant
+exclue, puisqu'elle n'est qu'un
+« fantôme », apparu <em>post
+mortem</em>. Mais, si l'on souhaite
+« remonter » plus avant, cvs log
+&lt;fichier_effacé&gt; fonctionne, et permet
+d'identifier la version que l'on souhaite ramener à
+l'existence :</p>
+
+<pre>        $ cvs update -r 1.13 &lt;fichier_effacé&gt;
+
+</pre>
+
+
+
+<p>puis de réinjecter officiellement ce fichier dans le
+référentiel :</p>
+
+<pre>        $ cvs add &lt;fichier_ressuscité&gt;
+        $ cvs commit -m "restauration du fichier effacé" &lt;fichier_ressuscité&gt;
+
+</pre>
+
+
+
+<p>Cependant il peut arriver qu'un autre fichier portant le
+même nom mais exerçant une fonction différente
+a remplacé l'élément effacé. Afin
+d'éviter que la restauration de l'ancien n'écrase le
+plus récent, on utilisera l'option -p, qui
+permet de créer un « tube » (en
+anglais : <em>pipe</em>) vers la sortie standard, pour
+rediriger cette dernière vers le fichier de son
+choix :</p>
+
+<pre>        $ cvs update -r 1.1 ancien_nom -p &gt; nouveau_nom
+
+</pre>
+
+
+
+<h3>Mots clés de substitution</h3>
+<p>On aura sans doute déjà remarqué la
+présence de lignes telles que :</p>
+
+<pre>        $Id: cvs.sgml,v 1.69 2000/12/28 10:53:33 oberger Exp $
+
+</pre>
+
+
+
+<p>dans les fichiers sources, voire dans les documentations ou les
+pieds de pages HTML. cvs permet en effet d'indiquer
+quelques mots clés qui seront automatiquement
+« développés » lors de la
+sauvegarde du fichier sur le dépôt.</p>
+<p>Ainsi, pour obtenir la ligne ci-dessus, l'auteur du document a
+seulement placé la ligne suivante dans son fichier, avant le
+commit:</p>
+$Id$
+
+
+ 
+<p>Lorsque le fichier géré par cvs est
+un fichier source dans un langage particulier, les mots-clés
+de substitution doivent souvent être placés dans des
+zones du fichier où ils ne perturberont pas les compilateurs
+ou les interpréteurs : entre commentaires, dans des
+chaînes de caractères, ...</p>
+<p>Différents mots-clés peuvent être
+utilisés ainsi. Nous détaillerons l'emploi des deux
+principaux mots-clés utilisés :</p>
+<ul>
+<li>$Id$, qui identifie l'état d'un document en
+une ligne,</li>
+<li>$Log$; qui insère dans le document un
+résumé des modifications qu'il a subies.</li></ul>
+
+
+ 
+<h3>$Id$</h3>
+<p>Le mot clé le plus couramment utilisé est
+$Id$, dont
+« l'expansion » indique :</p>
+<ul>
+<li>le nom du fichier (tel qu'il se présente sur le
+référentiel --- d'où la présence du
+<em>,v</em> additionnel) ;</li>
+<li>le numéro de révision ;</li>
+<li>la date et l'heure du dernier enregistrement (en temps
+universel coordonné, par conséquent avec une ou deux
+heures de moins que l'heure française) ;</li>
+<li>l'auteur (ou, plus exactement, l'identifiant (<em>login</em>)
+cvs du dernier utilisateur qui a modifié le
+fichier ;</li>
+<li>l'état assigné à la révision
+courante, par défaut Exp (pour
+« expérimental »), mais aussi
+Stab (pour « stable »),
+Rel (pour <em>released</em>,
+« publié », voire toute autre
+expression)  ;</li>
+<li>enfin, le cas échéant, l'identifiant de
+l'utilisateur qui a « verrouillé » la
+révision.</li></ul>
+
+
+ 
+<p>Chacune de ces substitutions est disponible individuellement
+($Author$, $Date$,
+$Revision$...) et peut être
+insérée à n'importe quel endroit du fichier
+--- bien qu'on les place généralement en tête,
+pour des raisons évidentes de lisibilité.</p>
+<p>Il peut être particulièrement utile de rendre
+visible dans un programme, ou dans un document compilé, le
+résultat des substitutions de ces mots-clés, afin de
+pouvoir tracer le fichier source à l'origine du programme ou
+du document manipulé par l'utilisateur final. Si le fichier
+source a évolué par la suite, on peut ainsi
+identifier exactement, de façon sûre, dans quelle
+révision se situe une anomalie, par exemple.</p>
+<h3>$Log$</h3>
+<p>Bien qu'on puisse, pour tout fichier géré par
+cvs, retrouver l'historique des changements qui lui
+ont été apportés, en examinant les
+commentaires saisis par les auteurs des modifications, avec la
+commande log, il peut être utile
+d'insérer automatiquement l'ensemble de ces commentaires
+à l'intérieur même du fichier.</p>
+<p>Ceci permet d'accéder rapidement, en cours de
+modification d'un fichier, à l'historique des modifications
+précédentes, sans avoir à quitter un
+éditeur de fichiers pour lancer une commande CVS.</p>
+<p>Le mot-clé $Log$, placé de
+préférence en fin de fichier, permet d'ajouter, de
+façon automatique, lors de chaque commit, le commentaire
+saisi par l'auteur du commit, en tête d'une série
+constituant l'historique des commentaires.</p>
+<p>A la création du fichier, on placera ainsi, à la
+fin du fichier, une ligne de la forme :</p>
+# $Log$
+
+
+ 
+<p>pour un script shell ou un Makefile.</p>
+<p>En effet, le processus de substitution de cvs
+duplique les caractères (de commentaires) placés
+avant de mot-clé $Log$ au début de
+chaque ligne substituée, de la façon suivante :</p>
+# $Log: cvs.sgml,v $
+# Revision 1.2 2000/08/23 09:21:33 mikl
+# Correction d'une typo dans le makefile.
+#
+# Revision 1.1 2000/08/01 10:55:30 oberger
+# Version initiale
+#
+
+
+ 
+<p>Pour un fichier HTML, SGML, ou XML, on utilisera plutôt
+:</p>
+&lt;!&amp;dash;&amp;dash;
+$Log$
+&amp;dash;&amp;dash;&gt;
+
+
+ 
+<p>en fin de fichier, afin que la substitution respecte la syntaxe
+des commentaires du langage, et que le document reste bien
+formé.</p>
+<h3>Remarques</h3>
+<p>À noter enfin, qu'il est possible d'annihiler
+temporairement la mise à jour des mots clés lors
+d'une sauvegarde sur le référentiel :</p>
+
+<pre>        $ cvs update -ko &lt;nom de fichier&gt;
+
+</pre>
+
+
+
+<p>Lorsqu'on recourt à ces mots clés de substitution,
+il faut veiller à « fermer » les
+documents en cours d'édition, car la copie locale est
+immédiatement affectée par
+l'« expansion » ou la mise à jour des
+balises. Un logiciel éditeur peut donc légitiment
+s'inquiéter de ce que le fichier en cours de traitement
+vient d'être modifié par ailleurs... Certes,
+« l'écrasement » de la version qui
+vient d'être sauvegardée par la version en cours
+d'édition n'est guère important (normalement seule
+l'expansion des mots clés a pu changer) mais cela est de
+toutes façons source de confusions pour l'utilisateur, qui
+peut, lorsque l'événement se produit,
+légitimement s'interroger sur ce qu'il a effectivement
+validé sur le référentiel.</p>
+<h3>Configurer le comportement par défaut de certaines
+commandes cvs</h3>
+<p>Certaines commandes sont systématiquement
+employées avec les mêmes options. Ainsi qu'on le
+ferait en créant un alias pour le shell courant (mais avec
+une syntaxe simplifiée), ces options peuvent être
+mémorisées dans un fichier
+~/.cvsrc :</p>
+
+<pre>        diff -u
+        cvs -z3
+
+</pre>
+
+
+
+<p>ces deux lignes d'exemple, produisent respectivement un format
+« unifié » par défaut avec la
+commande diff, ou forcent le niveau de compression
+3 lors de chaque transfert de données (utile si
+la liaison s'effectue par modem).</p>
+<h3>Ignorer certains fichiers avec .cvsignore</h3>
+<p>Bien qu'un fichier ne puisse s'ajouter spontanément au
+référentiel, ce qui autorise, encore une fois de
+compiler sans avoir à se préoccuper de faire une
+nouvelle copie des sources, la présence de ces fichiers
+« fantômes » produit un certain
+« bruit » dans les affichages de
+cvs (noms de fichiers précédés
+d'un point d'interrogation qui apparaissent lors d'un
+checkout même avec l'option
+-q).</p>
+<p>Par défaut, cvs ignore déjà un
+certain nombre de fichiers portant des extensions comme
+.old, .bak ou .obj... Il est
+possible d'en ajouter d'autres dans un fichier
+.cvsignore placé à la racine de son
+répertoire personnel (voire dans une variable système
+CVSIGNORE) ou bien, afin de contrôler les
+exclusions plus finement, dans les répertoires où se
+trouvent les fichiers concernés.</p>
+
+<pre>        $ cat ~/.cvsignore
+        *.htm?
+        *.ps
+        *.log
+        *.tex
+        *.out
+
+</pre>
+
+
+
+<p>Inversement, l'ajout d'un ! (point d'exclamation)
+à gauche d'un motif permettra de prendre exceptionnellement
+en considération un type de fichier normalement
+ignoré par cvs.</p>
+<h3>Commandes « administratives »</h3>
+<p>On aura remarqué que l'expansion du mot clé $Id$,
+outre les informations présentées dans la section
+précédente, traduit généralement
+l'état du fichier par la chaîne par défaut
+« Exp » (pour
+« expérimental »). Il ne s'agit pas
+d'un « label » mais d'un indicateur
+d'état (<em>state</em>) modifiable par la commande
+admin. Par exemple :</p>
+
+<pre>        $ cvs admin -sStable &lt;nom_de_module&gt;
+
+</pre>
+
+
+
+<p>appliquera l'indicateur « Stable » aux
+révisions courantes de l'ensemble des fichiers qui composent
+ce module. Il est aussi possible de n'affecter qu'un seul fichier,
+voire une révision particulière :</p>
+
+<pre>        $ cvs admin -sStable:1.10 &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>L'intérêt de cette possibilité, qui semble
+faire double emploi avec les labels peut paraître
+ésotérique, sinon douteux. Elle permet toutefois de
+connaître immédiatement le
+« statut » d'un fichier lors de son
+édition (pour peu que le mot clé $Id$ y figure).</p>
+<p>On remarquera encore une option permettant de modifier ou
+ajouter un commentaire <em>a posteriori</em> à une
+révision particulière d'un fichier ou d'une
+collection :</p>
+
+<pre>        $ cvs admin -S1.10:"Nouveau commentaire" &lt;nom_de_fichier&gt;
+
+</pre>
+
+
+
+<p>Signalons enfin la possibilité de déverrouiller
+une révision d'un fichier (où la dernière, si
+aucun numéro de révision n'est pas passé en
+paramètre) :</p>
+
+<pre>        $ cvs admin -u1.10 &lt;fichier&gt;
+
+</pre>
+
+
+
+<p>Cette commande peut s'avérer nécessaire lorsqu'un
+élément a été préalablement
+verrouillé par cvs admin -l &lt;fichier&gt;.
+Toutefois, il est préférable de recourir au
+mécanisme de réservation via watch et
+edit, plutôt qu'au « verrouillage
+strict ».</p>
+<h3>Commandes abrégées</h3>
+<p>Enfin, lorsque le comportement des principales instructions de
+cvs sont devenues familières, il peut
+être agréable de savoir que la plupart disposent d'un
+mode abrégé :</p>
+
+<pre>        $ cvs --help-synonyms
+
+</pre>
+
+
+
+<p>en produit la liste à jour (dépendante de la
+version de cvs). Sans oublier que :</p>
+
+<pre>        $ cvs --help-commands
+
+</pre>
+
+
+
+<p>rappelle l'action de chacune en une ligne. Attention, la page de
+manuel officielle de cvs(1) ignore certaines commandes
+« avancées ». Paradoxalement, et
+à condition d'en connaître déjà
+l'utilité, on obtient souvent plus d'informations (en
+particulier sur les options disponibles) en tapant :</p>
+
+<pre>        $ $ cvs -H &lt;nom_d'_une commande&gt;
+
+</pre>
+
+
+
+<h2><a id="s5"></a>5. <a href="#toc5">Interfaces</a></h2>
+<h2><a id="ss5.1"></a>5.1 TkCvs</h2>
+<p>TkCvs permet de disposer d'une interface graphique
+de navigation dans le dépôt (visualisation et
+opérations globales sur les modules), dans un
+répertoire contenant une copie de travail d'un projet
+(gestion des fichiers), et dans l'historique des révisions
+d'un fichier (visualisation d'arborescence).</p>
+<p>Ne pas utiliser en même temps une version de
+TkCvs dans /usr et une autre dans
+/usr/local (au risque de créer des conflits
+entre fichiers sources tcl).</p>
+<p>Utiliser la version la plus à jour (V6.3 à l'heure
+actuelle) de tkcvs.</p>
+<p>Il est nécessaire de procéder à une
+configuration spécifique en cas d'utilisation de
+cvs par dessus ssh afin de supprimer
+l'apparition de messages de ssh dans les
+résultats des commandes cvs
+interprétés par TkCvs :</p>
+<ul>
+<li>changer la valeur de la variable CVS_RSH pour
+pointer sur un shell qui définit l'option -x de
+ssh pour supprimer l'affichage éventuel d'un message
+d'avertissement sur le forwarding X de ssh;</li>
+<li>définir un script shell exécutable dans le
+répertoire personnel, par exemple : ~/monssh,
+contenant ceci : 
+
+<pre>        #! /bin/sh
+        ssh -x $*
+
+</pre></li>
+<li>définir alors la variable CVS_RSH : 
+
+<pre>        export CVS_RSH=~/monssh
+
+</pre></li>
+<li>configurer le répertoire personnel de configuration de
+ssh sur les machines afin de ne pas avoir besoin de
+saisir le mot de passe ssh systématiquement
+lors des commandes CVS : sur la machine sur laquelle
+on va exécuter TkCvs :
+ssh-keygen ;</li>
+<li>copier le contenu de ~/.ssh/identity.pub de la
+machine locale vers la machine distante sur laquelle se trouve le
+dépôt CVS, dans
+~/.ssh/authorized_keys.</li></ul>
+
+
+ 
+<h2><a id="s6"></a>6.
+<a href="#toc6">Références</a></h2>
+<h2><a id="ss6.1"></a>6.1 Glossaire</h2>
+<p>Le petit recueil ci-dessous vise à expliciter certains
+termes employés dans la présente documentation, et
+lever les ambiguïtés qui pourraient naître de la
+traduction depuis l'anglais. Il est toutefois probable que,
+s'agissant des concepts sous-jacents, la lecture de ce lexique ne
+puisse pas se substituer à celle de la documentation
+proprement dite, voire à
+« l'expérimentation ».</p>
+<ul>
+
+<p><a id="glo-branche"></a> <a id="glo-branch"></a></p>
+<li><strong>Branche.</strong></li>
+
+<p>(En anglais : <em>branch</em>) Dans la terminologie de
+cvs, une « branche » correspond
+à un « lignage » de versions.
+Généralement, une nouvelle
+« branche » est créée lorsqu'il
+est nécessaire d'intervenir sur une version
+antérieure ayant déjà été
+diffusée. Tandis que la version d'un projet en cours de
+développement portera par exemple un numéro de
+publication officiel correspondant à
+« STABLE-2_0 », une révision modifiant
+la version « STABLE-1_0 » sera
+identifiée sous le label
+« STABLE-1_1 ». Ainsi, cette version et ses
+(éventuelles) révisions futures constituent une
+« branche » distincte de la branche
+principale dont le développement se poursuit par
+ailleurs.</p>
+<p><a id="glo-distribution"></a>
+<a id="glo-release"></a></p>
+<li><strong>Distribution.</strong></li>
+
+<p>(En anglais : <em>release</em>) On emploiera de
+préférence ce terme pour désigner une version
+« publique » d'un ensemble de fichiers, afin
+d'éviter toute confusion avec le terme <em>revision</em>,
+qui correspond au numéro propre à chaque fichier,
+incrémenté automatiquement sur le
+référentiel après chaque modification du
+fichier.</p>
+<p><a id="glo-label-symbolique"></a>
+<a id="glo-symbolic-tag"></a></p>
+<li><strong>Label symbolique.</strong></li>
+
+<p>(En anglais : <em>symbolic tag</em>) Attribué par la
+commande du même nom (tag), un label symbolique
+permet de référencer un fichier ou une collection de
+fichiers sous une étiquette commune alors que chacun de ses
+éléments porte probablement un numéro de
+révision différent. Aussi, un fichier perd ce label
+symbolique dès lors qu'il a été
+modifié, le label demeurant attaché à un
+numéro de révision donné. Néanmoins, il
+existe une catégorie particulière, appelée
+« labels collants » (<em>sticky tags</em>),
+dont héritent les avatars successifs d'un
+élément, en particulier s'ils appartiennent à
+une branche identifiée.</p>
+<p><a id="glo-label-de-version"></a>
+<a id="glo-release-tag"></a></p>
+<li><strong>Label de version.</strong></li>
+
+<p>(En anglais : <em>release-tag</em>) De la même
+manière qu'un « label symbolique »
+s'applique à un fichier ou une collection de fichiers, un
+« label de version » permet de
+référencer un module donc l'ensemble des fichiers qui
+le composent à un stade de développement
+donné. Ce label est attribué au moyen de la commande
+rtag.</p>
+<p><a id="glo-module"></a></p>
+<li><strong>Module.</strong></li>
+
+<p>(En anglais : <em>module</em>) En réalité,
+les « modules » cvs ne sont rien
+d'autre que des répertoires sur le
+référentiel. Le terme <em>module</em> permet donc de
+désigner des unités cohérentes (<em>a
+priori</em> des arborescences/) situées sur le
+référentiel, et correspondant
+généralement à des projets. De fait, on
+parlera de « module » à propos de
+l'entité invoquée dans une commande
+checkout, se trouvant à la racine du
+référentiel (ex. : cvs co
+MonProjet), tandis qu'on parlera de
+« répertoire » s'il est fait
+explicitement mention d'une arborescence dans la commande
+(ex. : cvs co projets/MonProjet). De toutes
+façons, un nom de module correspond forcément
+à un nom de répertoire. L'association entre nom de
+module et nom de répertoire est configurée par
+l'administrateur CVS au moyen du fichier CVSROOT/modules.</p>
+<p><a id="glo-origine"></a> <a id="glo-vendor"></a></p>
+<li><strong>Origine.</strong></li>
+
+<p>(En anglais : <em>vendor</em>) Fait référence
+à la personne ou l'entité qui
+« possède » la paternité d'un
+module externe ou d'une version particulière importée
+dans le référentiel. Un <em>label d'origine</em> (en
+anglais : <em>vendor tag</em>) correspond au label
+« de base » initialement attribué
+à une branche d'import d'un module ou un fichier. Il permet
+d'en identifier la « source ».</p>
+<p><a id="glo-projet"></a> <a id="glo-project"></a></p>
+<li><strong>Projet.</strong></li>
+
+<p>(En anglais : <em>project</em>) Le mot ne désigne
+rien de spécifique à cvs. Il ne s'agit
+de rien d'autre qu'une unité de travail en cours de
+réalisation, dont le nom peut correspondre à un
+module (donc une arborescence ou un simple
+répertoire) sur le référentiel.</p>
+<p><a id="glo-référentiel"></a> <a id="glo-repository"></a></p>
+<li><strong>Référentiel.</strong></li>
+
+<p>(En anglais : <em>repository</em>) Ce terme désigne
+en premier lieu le répertoire racine où se trouvent
+l'ensemble des modules sur le « serveur »
+cvs (correspond à la valeur du
+CVSROOT de la variable système qui doit
+être initialisée sur les
+« clients ».) Par extension,
+<em>référentiel</em> est également
+employé pour désigner l'ensemble des sources d'un
+module particulier sur le serveur, par opposition à la copie
+des sources situées sur le répertoire local d'un
+client. C'est alors plutôt la notion de
+« support » qui est envisagée.
+Parfois, en français c'est le terme
+« dépôt » qui est employé
+à la place de
+« référentiel ». Mais l'usage
+de l'un ou l'autre terme est purement conventionnel.</p>
+<p><a id="glo-révision"></a>
+<a id="glo-revision"></a></p>
+<li><strong>Révision.</strong></li>
+
+<p>(En anglais : <em>revision</em>) Les
+« révisions » successives d'un fichier
+correspondent aux enregistrements des modifications telles qu'elles
+sont répercutées sur le référentiel.
+Les numéros de révision sont
+incrémentés automatiquement, et permettent notamment
+la comparaison ou le rappel des états successifs d'un
+fichier. Ne pas les confondre avec les <em>labels</em>, qui sont
+attribués « manuellement » à
+des révisions particulières de fichiers ou à
+la collection complète qui compose un module.</p></ul>
+
+
+ 
+<h2><a id="sec-reférences"></a>
+<a id="ss6.2"></a>6.2 Documentation en ligne</h2>
+<p>En dehors de la documentation diffusée avec les sources
+et les versions binaires, le site de référence pour
+approfondir CVS est 
+<a href="http://www.cvshome.org/">http://www.cvshome.org</a>. On
+consultera aussi avec profit
+<a href="http://www.loria.fr/%7Emolli/cvs-index.html">http://www.loria.fr/~molli/cvs-index.html</a>.</p>
+<p>Une excellente introduction
+(« Mini-HOWTO ») en français
+rédigée par Antoine Marin est disponible à
+<a href="http://www.loria.fr/%7Emolli/cvs/HowToCVS.ps">http://www.loria.fr/~molli/cvs/HowToCVS.ps</a>,
+sur le site géré par Pascal Molli.</p>
+<p>Une autre introduction en français rédigée
+par Stéphane Bortzmeyer et traitant conjointement des
+aspects <em>serveur</em> et <em>client</em> se trouve encore
+à
+<a href="http://www.freenix.org/curiosite/cvs.html">http://www.freenix.org/curiosite/cvs.html</a>.</p>
+<p>En anglais, on lira un livre très riche
+rédigé par Karl Fogel, dont les principaux chapitres,
+placé sous GFDL (GNU Free Documentation Licence) sont
+disponible en ligne à
+<a href="http://cvsbook.red-bean.com/cvsbook.html">http://cvsbook.red-bean.com/cvsbook.html</a>
+Attention : ce fichier jauge plusieurs centaines de Ko ...</p>
+<p>
+<a href="http://www.gnu.org/manual/cvs/">http://www.gnu.org/manual/cvs/</a>
+propose le manuel réalisé par la FSF.</p>
+<p>Un CVS-RCS-HOWTO écrit pour le <em>Linux Documentation
+Project</em> est disponible en ligne et inclus dans les
+distributions récentes. Outre un comparatif des
+avantages/désavantages des deux systèmes de gestion
+et de contrôle de sources (RCS est à la fois plus
+ancien et moins sophistiqué), il propose des scripts
+« clé en main » censés
+faciliter l'usage des principales commandes. Une version HTML se
+trouve à
+<a href="http://sunsite.unc.edu/LDP/HOWTO/CVS-RCS-HOWTO.html">http://sunsite.unc.edu/LDP/HOWTO/CVS-RCS-HOWTO.html</a></p>
+<p>Enfin des tutoriaux spécialisés sont aussi
+disponibles sur les sites offrant la possibilité de
+télécharger des sources via <em>cvs anonymous</em>,
+voire de participer au développement d'un projet.</p>
+</div>
+    <div id="footer">
+          Copyright ©<a href="http://www.idealx.com/"> IDEALX S.A.S</a> 2003 - All rights reserved -
+		  <a href="http://www.idealx.com/search.fr.html" accesskey="3">Rechercher</a>  -
+			  <a href="http://www.idealx.org/accessibility.fr.html">Raccourcis clavier et accessibilité</a>  - <a href="#content">Revenir en début de document</a><br><a href="http://validator.w3.org/check/referer" title="Markup validation for this page"><img src="cvs.fr_files/w3_xhtml11.png" alt="Standard-compliant XHTML" width="80" height="15"></a><a href="http://jigsaw.w3.org/css-validator/check/referer" title="Style Sheet validation for this page"><img src="cvs.fr_files/w3_css2.png" alt="Standard-compliant CSS 2" width="80" height="15"></a></div>
+  </div></body></html>

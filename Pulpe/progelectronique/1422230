@@ -1,0 +1,815 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML><HEAD><TITLE>Slashdot | IBM Buys Rational Software</TITLE><LINK REL="top"       HREF="//slashdot.org/" TITLE="News for nerds, stuff that matters">
+<LINK REL="search"    HREF="//slashdot.org/search.pl" TITLE="Search Slashdot">
+
+<LINK REL="parent"    HREF="//developers.slashdot.org/" TITLE="Developers">
+
+<LINK REL="prev"      HREF="//slashdot.org/article.pl?sid=02/12/08/1356204" TITLE="Ultima 7 in Windows?">
+<LINK REL="author"    HREF="//slashdot.org/search.pl?op=stories&amp;author=36799">
+<LINK REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+</HEAD>
+<BODY BGCOLOR="#000000"
+	TEXT="#000000"
+	LINK="#336699" VLINK="#000000"
+	TOPMARGIN="0" LEFTMARGIN="0"
+	MARGINWIDTH="0" MARGINHEIGHT="0">
+
+<!-- begin OSDN Navbar -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#999999">
+<FORM ACTION="http://www.osdn.com/osdnsearch.pl" METHOD="GET">
+<tr><td><FONT
+size="-1">&nbsp;<a href="http://www.osdn.com" title="click to visit OSDN.com!"><B><FONT
+ color="#006699">OSDN</FONT></B></A>
+| <a href="http://www.osdn.com/gallery.pl">Our Network</a>
+| <a href="http://devchannel.org/">DevChannel</a>
+| <a href="http://www.osdn.com/newsletters/">Newsletters</a>
+| <a href="http://www.osdn.com/advertise/">Advertise</a>
+| <a href="http://www.thinkgeek.com/">Shop</a></FONT></td>
+<td align="right" valign="middle"><FONT size="-1">&nbsp; 
+<select name="site" class="osdn-search">
+<option value="Slashdot" SELECTED>Slashdot</option>
+<option value=""> ----------- </option>
+<option value="all"> All OSDN Sites </option>
+<option value="Freshmeat">freshmeat</option>
+<option value="DevChannel">DevChannel</option>
+<option value="Linux.com">Linux.com</option>
+<option value="LinuxGram">LinuxGram</option>
+<option value="NewsForge">NewsForge</option>
+<option value="OSDN">OSDN.com</option>
+<option value="OSDN PriceCompare">OSDN PriceCompare</option>
+<option value="Slashcode">Slashcode</option>
+<option value="SourceForge.net">SourceForge.net</option>
+</select><input type="text" name="query" size="12" class="osdn-search">
+<INPUT type=submit value="Search">&nbsp;</FONT></TD>
+<td nowrap width="20" align="right" valign="middle"><FONT
+size="-1"><A HREF="//slashdot.org/users.pl?op=savemiscopts&amp;opt_osdn_navbar=0"><B>X</B></A>&nbsp;</FONT></td>
+</tr>
+</FORM>
+</table>
+<!-- end OSDN Navbar -->
+
+
+<!-- advertisement code. -->
+<CENTER>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD WIDTH=1><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+now = new Date();
+tail = now.getTime();
+document.write("<IMG SRC='http://images2.slashdot.org/Slashdot/pc.gif?article,");
+document.write(tail);
+document.write("' WIDTH=1 HEIGHT=1 BORDER=0><BR>");
+//-->
+</SCRIPT>
+<NOSCRIPT>
+<IMG SRC="http://images2.slashdot.org/Slashdot/pc.gif?article,103936343" WIDTH=1 HEIGHT=1 BORDER=0><BR>
+</NOSCRIPT></TD></TR></TABLE>
+
+</CENTER>
+<!-- end ad code -->
+
+
+<TABLE CELLPADDING=5 WIDTH="100%"><TR><TD>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="99%" ALIGN="CENTER" BGCOLOR="#FFFFFF">
+	<TR VALIGN="MIDDLE">
+		<TD VALIGN="TOP" ALIGN="LEFT"><A HREF="//slashdot.org"><IMG SRC="//images.slashdot.org/title.gif" WIDTH="275" HEIGHT="72" ALT="Welcome to Slashdot" TITLE="Welcome to Slashdot" BORDER="0"></A></TD>
+			
+				<TD><A HREF="//slashdot.org/search.pl?topic=127"><IMG
+                SRC="//images.slashdot.org/topics/topicgames.gif"
+                WIDTH="68" HEIGHT="77"
+                BORDER="0" ALT="Games"></A>
+</TD><TD><A HREF="//slashdot.org/search.pl?topic=154"><IMG
+                SRC="//images.slashdot.org/topics/topicmozilla.gif"
+                WIDTH="80" HEIGHT="64"
+                BORDER="0" ALT="Mozilla"></A>
+</TD><TD><A HREF="//slashdot.org/search.pl?topic=90"><IMG
+                SRC="//images.slashdot.org/topics/topicdebian.gif"
+                WIDTH="54" HEIGHT="63"
+                BORDER="0" ALT="Debian"></A>
+</TD><TD><A HREF="//slashdot.org/search.pl?topic=172"><IMG
+                SRC="//images.slashdot.org/topics/topicsecurity.gif"
+                WIDTH="59" HEIGHT="78"
+                BORDER="0" ALT="Security"></A>
+</TD><TD><A HREF="//slashdot.org/search.pl?topic=123"><IMG
+                SRC="//images.slashdot.org/topics/topicdoj.gif"
+                WIDTH="50" HEIGHT="79"
+                BORDER="0" ALT="The Courts"></A>
+</TD>
+			
+	</TR></TABLE>
+<TABLE WIDTH="99%" ALIGN="CENTER" CELLPADDING="0" CELLSPACING="0" BORDER="0" BGCOLOR="#FFFFFF">
+	<TR><TD VALIGN="TOP" ROWSPAN="5">
+
+<NOBR><FONT size=2><B>
+&nbsp;<A HREF="//slashdot.org/faq/">faq</A> <BR>
+&nbsp;<A HREF="//slashdot.org/code.shtml">code</A> <BR>
+&nbsp;<A HREF="//slashdot.org/awards.shtml">awards</A> <BR>
+&nbsp;<A HREF="//slashdot.org/journal.pl">journals</A> <BR>
+&nbsp;<A HREF="//slashdot.org/subscribe.pl">subscribe</A> <BR>
+&nbsp;<A HREF="//slashdot.org/search.pl">older stuff</A> <BR>
+&nbsp;<A HREF="http://cmdrtaco.net">rob's page</A> <BR>
+&nbsp;<A HREF="//slashdot.org/users.pl?op=edithome">preferences</A> <BR>
+&nbsp;<A HREF="//slashdot.org/submit.pl">submit story</A> <BR>
+&nbsp;<A HREF="http://www.osdn.com/advertise/">advertising</A> <BR>
+&nbsp;<A HREF="//slashdot.org/supporters.shtml">supporters</A> <BR>
+&nbsp;<A HREF="//slashdot.org/pollBooth.pl">past polls</A> <BR>
+&nbsp;<A HREF="//slashdot.org/topics.shtml">topics</A> <BR>
+&nbsp;<A HREF="//slashdot.org/about.shtml">about</A> <BR>
+&nbsp;<A HREF="http://sourceforge.net/tracker/?func=add&amp;group_id=4421&amp;atid=104421">bugs</A><BR>
+&nbsp;<A HREF="http://seeker.dice.com/seeker.epl?rel_code=31&amp;op=1">jobs</A> <BR>
+&nbsp;<A HREF="//slashdot.org/hof.shtml">hof</A>
+
+</B></FONT></NOBR>
+<P>
+
+<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="LEFT" BGCOLOR="#CCCCCC">
+
+<TR>
+  		<TD>
+			<FONT size=2 color="#000000"><B>Sections</B></FONT>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<TABLE border=0 cellspacing=1 cellpadding=1 bgcolor="#FFFFFF" width="100%">
+				<TR>
+					<TD>
+						<FONT SIZE=2>
+
+
+<B><A
+HREF="//slashdot.org/apache/">apache</A></B><BR>Dec 2<BR><BR><B><A
+HREF="//slashdot.org/apple/">apple</A></B><BR>Dec 7<BR>(2 recent)<BR><BR><B><A
+HREF="//slashdot.org/askslashdot/">askslashdot</A></B><BR>Dec 5<BR><BR><B><A
+HREF="//slashdot.org/books/">books</A></B><BR>Dec 6<BR>(1 recent)<BR><BR><B><A
+HREF="//slashdot.org/bsd/">bsd</A></B><BR>Dec 5<BR><BR><B><A
+HREF="//slashdot.org/developers/">developers</A></B><BR>Dec 8<BR>(4 recent)<BR><BR><B><A
+HREF="//slashdot.org/features/">features</A></B><BR>Dec 7<BR>(1 recent)<BR><BR><B><A
+HREF="//slashdot.org/interviews/">interviews</A></B><BR>Dec 8<BR>(1 recent)<BR><BR><B><A
+HREF="//slashdot.org/radio/">radio</A></B><BR>Jun 29<BR><BR><B><A
+HREF="//slashdot.org/science/">science</A></B><BR>Dec 8<BR>(12 recent)<BR><BR><B><A
+HREF="//slashdot.org/yro/">yro</A></B><BR>Dec 8<BR>(6 recent)<BR>
+
+						</FONT>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+
+	</TD><TD VALIGN="TOP" ALIGN="LEFT"><FONT COLOR="#000000"><TABLE WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0"><TR><TD
+	VALIGN="TOP" BGCOLOR="#336699"><IMG
+	SRC="//images.slashdot.org/slc.gif" WIDTH="13" HEIGHT="16" ALT="" ALIGN="TOP"><FONT
+	FACE="arial,helvetica" SIZE="4" COLOR="#FFFFFF"><B>IBM Buys Rational Software</B></FONT></TD>
+</TR></TABLE><A
+	HREF="//slashdot.org/search.pl?topic=136"><IMG
+	SRC="//images.slashdot.org/topics/topicibm.gif"
+	WIDTH="87" HEIGHT="35" BORDER="0"
+	ALIGN="RIGHT" HSPACE="20" VSPACE="10"
+	ALT="IBM"
+	TITLE="IBM"></A><B>Posted by
+	<A HREF="http://www.monkey.org/~timothy/">timothy</A>
+	on Sunday December 08, @10:21AM</B><BR>
+	<FONT SIZE="2"><B>from the renaming-it-whimsical dept.</B></FONT><BR
+>An anonymous reader writes <i>"Rational Software is going to be taken over by IBM. More  <A HREF="http://www.rational.com/">info on Rational's website</a>. RIP Rational. This is what rational is sending it's customers:
+To our valued customers:
+We are delighted to tell you that IBM and Rational Software have announced a definitive agreement for IBM to purchase Rational.  This is a very exciting time for both companies and builds on the extensive business relationship IBM and Rational have had for over 20 years.  Most importantly, it will provide significant benefits to you."</i>  Other readers submit links to the story in <a href="http://www.informationweek.com/news/IWK20021206S0008"> InformationWeek</a> <a href="http://www.bayarea.com/mld/mercurynews/business/4687927.htm">and the Mercury News</a>.
+
+
+<P><SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+now = new Date();
+tail = now.getTime();
+AltText = "\"Click here\"";
+document.write("<A HREF='http://images.slashdot.org/cgi-bin/adlog.pl?article,linu0010en' TARGET=_top>");
+document.write("<IMG SRC='http://images.slashdot.org/banner/linu0010en.gif?");
+document.write(tail);
+document.write("' ALIGN=RIGHT WIDTH=336 HEIGHT=280 BORDER=0 ALT=");
+document.write(AltText);
+document.write(" VSPACE=10></A>");
+//-->
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://images.slashdot.org/cgi-bin/adlog.pl?article,linu0010en" TARGET=_top><IMG SRC="http://images.slashdot.org/banner/linu0010en.gif?103936343" ALIGN=RIGHT WIDTH=336 HEIGHT=280 BORDER=0 ALT="Click here" VSPACE=10></A>
+</NOSCRIPT>
+
+
+<P>&nbsp;</TD><TD>&nbsp;</TD><TD VALIGN="TOP">
+
+
+<CENTER>
+
+
+	<TABLE WIDTH="200" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<TR VALIGN="TOP" BGCOLOR="#336699">
+			<TD><FONT FACE="arial,helvetica" SIZE="4" COLOR="#FFFFFF"><B>Slashdot Login</B></FONT></TD>
+		</TR>
+		<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="2" COLOR="#000000">
+
+<FORM ACTION="/users.pl" METHOD="POST">
+<B>Nickname:</B><BR>
+<INPUT TYPE="TEXT" NAME="unickname" SIZE="20" VALUE=""><BR>
+<B>Password:</B><BR>
+<INPUT TYPE="HIDDEN" NAME="returnto" VALUE="//slashdot.org/article.pl?sid=02/12/08/1422230">
+<INPUT TYPE="HIDDEN" NAME="op" VALUE="userlogin">
+<INPUT TYPE="PASSWORD" NAME="upasswd" SIZE="20"><BR>
+<INPUT TYPE="SUBMIT" NAME="userlogin" VALUE="Log in">
+</FORM>
+
+<P>[ <B><A HREF="/users.pl?op=newuserform">Create a new account</A></B> ]
+
+</FONT>
+			</TD></TR></TABLE>
+
+</CENTER>
+<P>
+
+<CENTER>
+
+
+	<TABLE WIDTH="200" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<TR VALIGN="TOP" BGCOLOR="#336699">
+			<TD><FONT FACE="arial,helvetica" SIZE="4" COLOR="#FFFFFF"><B>Related Links</B></FONT></TD>
+		</TR>
+		<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="2" COLOR="#000000">
+
+&middot; <A HREF="http://osdn.pricegrabber.com/home_catpage.php/catzero=1/">Compare the best prices on: Computers/Computer systems</A><BR>
+&middot; <A HREF="http://www.rational.com/">info on Rational's website</A><BR>
+&middot; <A href="http://www.informationweek.com/news/IWK20021206S0008"> InformationWeek</A><BR>
+&middot; <A href="http://www.bayarea.com/mld/mercurynews/business/4687927.htm">and the Mercury News</A><BR>
+&middot; <A HREF="//slashdot.org/search.pl?topic=136">More on IBM</A><BR>
+&middot; <A HREF="//slashdot.org/search.pl?op=stories&amp;author=36799">Also by timothy</A>
+
+</FONT>
+			</TD></TR></TABLE>
+
+</CENTER>
+<P><CENTER>
+
+
+	<TABLE WIDTH="200" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<TR VALIGN="TOP" BGCOLOR="#336699">
+			<TD><FONT FACE="arial,helvetica" SIZE="4" COLOR="#FFFFFF"><B>Developers</B></FONT></TD>
+		</TR>
+		<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="2" COLOR="#000000">
+
+&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/08/023207">Debian-Installer Alpha Released</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/07/1715229">2.4.20 ext3 Data Corrupting Bug Fixed</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/07/1427232">Interview with Ken Arnold on Design</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/06/1812216">SmartEiffel 1.0 Released</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/05/1634207">Usability and Open Source Software</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/05/1246247">The Poetry Of Programming</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/05/0410257">Mozilla/QT needs developers!</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/04/2138200">Secure Interaction Design</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/04/1756222">Thinking In Java 3rd Edition Available Online</A><BR>&middot; <A HREF="http://developers.slashdot.org/article.pl?sid=02/12/04/1717238">The PPK Tiny Programming Results</A><BR>
+
+</FONT>
+			</TD></TR></TABLE>
+
+</CENTER>
+<P>
+
+
+
+
+</TD></TR>
+<TR><TD COLSPAN="3">
+
+
+ &lt;&nbsp; <A HREF="//slashdot.org/article.pl?sid=02/12/08/1356204&amp;mode=thread&amp;tid=127">Ultima 7 in Windows?</A>
+
+</TD></TR>
+<TR><TD COLSPAN="3"><TABLE WIDTH="100%" BORDER="0" CELLSPACING="1" CELLPADDING="2">
+
+	<TR><TD BGCOLOR="#336699" ALIGN="CENTER">
+		<FONT SIZE="2" COLOR="#FFFFFF">
+
+		<A HREF="//slashdot.org/article.pl?sid=02/12/08/1422230"><FONT COLOR="#FFFFFF">IBM Buys Rational Software</FONT></A>
+
+
+	|
+
+
+		<A HREF="//slashdot.org/users.pl">
+			<FONT COLOR="#FFFFFF">Log in/Create an Account</FONT>
+		</A>
+
+
+		| <A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=0"><FONT COLOR="#FFFFFF">Top</FONT></A>
+
+
+
+
+
+		| <B>48</B> comments
+
+
+
+
+
+
+		| <A HREF="//slashdot.org/search.pl?op=comments&amp;sid=47216">
+<FONT COLOR="#FFFFFF">Search Discussion</FONT></A></FONT>
+	</TD></TR>
+
+	<TR><TD BGCOLOR="#E0E0E0" ALIGN="CENTER">
+		<FORM ACTION="//slashdot.org/comments.pl">
+		<FONT SIZE="2">
+		<INPUT TYPE="HIDDEN" NAME="sid" VALUE="47216">
+		<INPUT TYPE="HIDDEN" NAME="cid" VALUE="0">
+		<INPUT TYPE="HIDDEN" NAME="pid" VALUE="0">
+		<INPUT TYPE="HIDDEN" NAME="startat" VALUE="">
+
+		Threshold: <SELECT NAME="threshold">
+	<OPTION VALUE="-1">-1: 48 comments</OPTION>
+	<OPTION VALUE="0">0: 44 comments</OPTION>
+	<OPTION VALUE="1" SELECTED>1: 30 comments</OPTION>
+	<OPTION VALUE="2">2: 19 comments</OPTION>
+	<OPTION VALUE="3">3: 8 comments</OPTION>
+	<OPTION VALUE="4">4: 4 comments</OPTION>
+	<OPTION VALUE="5">5: 0 comments</OPTION>
+</SELECT><SELECT NAME="mode">
+	<OPTION VALUE="flat">Flat</OPTION>
+	<OPTION VALUE="nested">Nested</OPTION>
+	<OPTION VALUE="nocomment">No Comments</OPTION>
+	<OPTION VALUE="thread" SELECTED>Threaded</OPTION>
+</SELECT><SELECT NAME="commentsort">
+	<OPTION VALUE="0" SELECTED>Oldest First</OPTION>
+	<OPTION VALUE="1">Newest First</OPTION>
+	<OPTION VALUE="3">Highest Scores First</OPTION>
+	<OPTION VALUE="4">Oldest First (Ignore Threads)</OPTION>
+	<OPTION VALUE="5">Newest First (Ignore Threads)</OPTION>
+</SELECT>
+
+	
+
+		<INPUT TYPE="submit" NAME="op" VALUE="Change">
+		
+			<INPUT TYPE="submit" NAME="op" VALUE="Reply">
+		
+		</FONT>
+		</FORM>
+	</TD></TR>
+	<TR><TD BGCOLOR="#336699" ALIGN="CENTER">
+		<FONT COLOR="#FFFFFF" SIZE="1">
+<B>The Fine Print:</B>
+The following comments are owned by whoever posted them.
+We are not responsible for them in any way.
+</FONT></TD></TR><TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837550"><B>Rational is a powerfull tool</B></A> (Score:2, Funny)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~stonebeat.org">stonebeat.org (562495)</A> 
+				on Sunday December 08, @10:23AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837550">#4837550</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://docbook.sc-icc.org/">http://docbook.sc-icc.org/</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				but very expensive. I hope IBM sells the licenses for cheaper.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837550">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837552"><B>IBM saved Rational, really</B></A> (Score:4, Informative)
+				</FONT>
+				<BR>by Anonymous Coward 
+				on Sunday December 08, @10:24AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837552">#4837552</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				After record losses this past quarter and a stock plunge from 70 dollars to 4 in the past year, Rational was on its way out. I'm not sure how much of Rational IBM is really planning on keeping around or whether they simply bought them for their software they wanted and planned on burying the rest of the company, but here's hoping they don't all get canned. I've been using ClearCase on Solaris for years, and it's really an excellent product.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837552">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837558"><B>Open Source?</B></A> (Score:3, Insightful)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~AirLace">AirLace (86148)</A> 
+				on Sunday December 08, @10:26AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837558">#4837558</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				It seems it's about time for IBM to demonstrate their loyalty to Free Software and Open Source by open sourcing Rational Rose -- the free software world is severely lacking in UML diagramming tools. So, what do you say IBM?
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837558">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+<TR><TD><UL><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837558#4837569">Re:Open Source?</A> by Binarybrain <FONT SIZE="-1">(Score:1)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:30AM </FONT>
+</LI><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837558#4837584">Re:Open Source?</A> by Anonymous Coward <FONT SIZE="-1">(Score:3)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:37AM </FONT>
+</LI><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837558#4837589">Re:Open Source?</A> by msgmonkey <FONT SIZE="-1">(Score:1)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:39AM </FONT>
+<UL><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837589#4837618">Re:Open Source?</A> by rindeee <FONT SIZE="-1">(Score:1)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:43AM </FONT>
+</LI></UL></LI><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837558#4837611">Re:Open Source?</A> by sql*kitten <FONT SIZE="-1">(Score:2)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:42AM </FONT>
+</LI><TABLE>			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837619"><B>Their "loyalty" to Open Source?</B></A> (Score:4, Insightful)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~Augusto">Augusto (12068)</A> 
+				on Sunday December 08, @10:43AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837619">#4837619</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://slashdot.org/">http://slashdot.org/</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				What is this some type of cult now?<BR><BR>Instead of coming up with weird 'royalty' reasons, come up with good <b>business</b> reasons for IBM to open source this product.<BR><BR>Hey, I'd love if they do that, and you could argue that there could be some benefits financially to IBM. However, from IBM's perspective, I don't see this is a great move, or something you do right off you buy a company.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837619">Reply to This</A>
+ | <A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;cid=4837558">Parent</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+</TABLE><UL><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837619#4837651">Their loyalty to Open Source stops at the desktop</A> by TheMidget <FONT SIZE="-1">(Score:1)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:52AM </FONT>
+</LI></UL><LI><FONT SIZE="2"><B><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=-1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837558">1 reply</A>
+ beneath your current threshold.</B></FONT></UL></TD></TR>			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837563"><B>Rational and XML</B></A> (Score:2, Interesting)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~stonebeat.org">stonebeat.org (562495)</A> 
+				on Sunday December 08, @10:27AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837563">#4837563</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://docbook.sc-icc.org/">http://docbook.sc-icc.org/</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				I used to use Rational about 3 years back. Has any progress been made on Rational diagrams being stored as XML? It would be nice if all the Rational files would be in XML, and then use some kind of SVG browser to look at the diagrams, and make small changes directly from a web browser.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837563">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837565"><B>Can CMVC or TeamConnection return from the dead?</B></A> (Score:4, Informative)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~deragon">deragon (112986)</A> 
+				on Sunday December 08, @10:28AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837565">#4837565</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://www.deragon.biz/">http://www.deragon.biz/</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				Best configuration management software I ever used was CMVC from IBM.  It was then replaced by TeamConnection and then canned because IBM made an agreeement with Rational to promote their ClearCase product, which everyone I know who had use CMVC found ClearCase to be inferior.<BR><BR>Now that Rational is being bought, IBM, can you make CMVC/Team Connection open source?  God I would like to work again with CVMC...
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837565">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+<TR><TD><UL><LI><FONT SIZE="2"><B><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=-1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837565">3 replies</A>
+ beneath your current threshold.</B></FONT></UL></TD></TR>			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837580"><B>What do they do?</B></A> (Score:1)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~Cosworth">Cosworth (21974)</A> 
+				on Sunday December 08, @10:36AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837580">#4837580</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				It would be nice if the editors would pick a submission that told us who Rational Software is and what they do.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837580">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+<TR><TD><UL><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837580#4837631">Re:What do they do?</A> by Queuetue <FONT SIZE="-1">(Score:2)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:46AM </FONT>
+</LI><LI><FONT SIZE="2"><B><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=-1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837580">1 reply</A>
+ beneath your current threshold.</B></FONT></UL></TD></TR>			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837582"><B>I hope they don't gut it....</B></A> (Score:2, Insightful)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~Hirofyre">Hirofyre (612929)</A> 
+				on Sunday December 08, @10:37AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837582">#4837582</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				I hope IBM's intention is to keep Rational evolving UML/RUP and not to strip out Clear Case, Req Pro, and Rose.  A lot of the time, this is what happens when a big company buys a company like that, and it would be a real shame if this happened to Rational.  Personally, I think UML and RUP continue to gain mindshare when it comes to Software Engineering Methodology. <br>
+  Grady Booch recently spoke at our company, and his enthusiasm was infectious!  It is obvious that he and the other Rational Fellows have a pretty good vision of where UML and RUP should go, and it would be a real shame if that was lost.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837582">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837594"><B>Thank G-d!!!</B></A> (Score:2)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~Apreche">Apreche (239272)</A> 
+				on Sunday December 08, @10:39AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837594">#4837594</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://slashdot.org/~apreche/journal/">http://slashdot.org/~apreche/journal/</A> | Last Journal: <A HREF="//slashdot.org/~Apreche/journal/">Tuesday November 19, @06:49PM</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				Rational Rose is the shittiest piece of software I have ever had to use.  We have to use it in some CS and SE classes to draw UML diagrams and it is total crap.  Not only that but the program costs like thousands of dollars from what I hear.<BR>By judging the one piece of software they make that I have used I can tell you that Rational was not a very good company. Hopefully IBM will fix them so another CS student need not suffer.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837594">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+<TR><TD><UL><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837594#4837642">Re:Thank G-d!!!</A> by sql*kitten <FONT SIZE="-1">(Score:3)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:49AM </FONT>
+</LI><LI><FONT SIZE="2"><B><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=-1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837594">3 replies</A>
+ beneath your current threshold.</B></FONT></UL></TD></TR>			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837602"><B>Valgrind</B></A> (Score:4, Informative)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~Bullschmidt">Bullschmidt (69408)</A> 
+				on Sunday December 08, @10:40AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837602">#4837602</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				Anyone looking for similar functionality in an open source package may want to check out Valgrind.  It is "an open-source memory debugger for x86-GNU/Linux".  I've used it for a short while and its great.<BR><BR>Valgrind:<BR>http://developer.kde.org/~sewardj/<BR>
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837602">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+<TR><TD><UL><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837602#4837614">Re:Valgrind</A> by Bullschmidt <FONT SIZE="-1">(Score:2)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:43AM </FONT>
+</LI></UL></TD></TR>			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837607"><B>Rational Rose</B></A> (Score:3, Insightful)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~Reality%20Master%20101">Reality Master 101 (179095)</A>  &lt;<A HREF="mailto:RealityMaster101NO%40SPAMhotmail.com">RealityMaster101NO@SPAMhotmail.com</A>&gt;
+				on Sunday December 08, @10:41AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837607">#4837607</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://slashdot.org/">http://slashdot.org/</A> | Last Journal: <A HREF="//slashdot.org/~Reality%20Master%20101/journal/">Monday November 18, @04:28PM</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				<p>I don't have all that much to add, except -- God, Rational Rose was one of the buggiest, worst-designed pieces of software I've ever used. The one time I had to use it I prayed that someone over there would buy a copy of Visio to learn how a diagramming tool SHOULD be designed.</p>
+
+<p>I always found it hysterically ironic that a tool that was touted by its makers as the ultimate way to develop software demonstrated so poorly its own usefulness.</p>
+
+<p>Maybe after buying it IBM will run it into the ground ala Lotus. We can only hope.</p>
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837607">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+<TR><TD><UL><LI><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837607#4837652">Re:Rational Rose</A> by sql*kitten <FONT SIZE="-1">(Score:2)</FONT>  <FONT SIZE="-1">Sunday December 08, @10:52AM </FONT>
+</LI><LI><FONT SIZE="2"><B><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=-1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837607">2 replies</A>
+ beneath your current threshold.</B></FONT></UL></TD></TR>			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837628"><B>Manchild: timothy</B></A> (Score:1)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~moorg">moorg (537751)</A> 
+				on Sunday December 08, @10:45AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837628">#4837628</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				Not troll but off topic:
+<br> <br>
+timothy has posted 15 of the last 16 stories...
+<br> <br>
+<A HREF="http://developers.slashdot.org/article.pl?sid=02/12/08/1422230&amp;mode=thread&amp;tid=136">IBM Buys Rational Software</A> [slashdot.org] <br>
+<A HREF="http://slashdot.org/article.pl?sid=02/12/08/1356204&amp;mode=thread&amp;tid=127">Ultima 7 in Windows?</A> [slashdot.org] <br>
+<A HREF="http://slashdot.org/article.pl?sid=02/12/08/1348212&amp;mode=thread&amp;tid=154">Phoenix 0.5 Has Arrived</A> [slashdot.org] <br>
+<A HREF="http://developers.slashdot.org/article.pl?sid=02/12/08/023207&amp;mode=thread&amp;tid=90">Debian-Installer Alpha Released</A> [slashdot.org] <br>
+<A HREF="http://yro.slashdot.org/article.pl?sid=02/12/08/0156246&amp;mode=thread&amp;tid=172">Because Only Terrorists Use 802.11</A> [slashdot.org] <br>
+<A HREF="http://yro.slashdot.org/article.pl?sid=02/12/08/0117204&amp;mode=thread&amp;tid=123">Adobe Finds No Elcomsoft-Cracked E-Books</A> [slashdot.org] <br>
+<A HREF="http://science.slashdot.org/article.pl?sid=02/12/07/2252259&amp;mode=thread&amp;tid=126">Journal of Applied Physics, NASA, and the Hydrino</A> [slashdot.org] <br>
+<A HREF="http://slashdot.org/article.pl?sid=02/12/07/2224225&amp;mode=thread&amp;tid=127">IEEE Spectrum Surveys Current Games' AI Technology</A> [slashdot.org] <br>
+<A HREF="http://slashdot.org/article.pl?sid=02/12/07/2023243&amp;mode=thread&amp;tid=117">Gobe Productive GPL Release In Danger</A> [slashdot.org] <br>
+<A HREF="http://slashdot.org/article.pl?sid=02/12/07/209230&amp;mode=thread&amp;tid=137">First Desktop Computer To Use Intel's XScale</A> [slashdot.org] <br>
+<A HREF="http://slashdot.org/article.pl?sid=02/12/07/1812204&amp;mode=thread&amp;tid=126">Clothes Make the Network</A> [slashdot.org] <br>
+<A HREF="http://slashdot.org/article.pl?sid=02/12/07/1727235&amp;mode=thread&amp;tid=137">1.0GHz P3 In A CD-ROM Drive Bay</A> [slashdot.org] <br>
+<A HREF="http://yro.slashdot.org/article.pl?sid=02/12/07/1431211&amp;mode=thread&amp;tid=98">Your Rights Online: ISP's Slapping Techs For Lending A Hand</A> [slashdot.org] <br>
+<A HREF="http://features.slashdot.org/article.pl?sid=02/12/07/1413245&amp;mode=thread&amp;tid=97">Solaris: Another View</A> [slashdot.org] <br>
+<A HREF="http://slashdot.org/article.pl?sid=02/12/07/1357225&amp;mode=thread&amp;tid=133">Tablet PC Rorschach Inkblot Test</A> [slashdot.org] <br>
+<br>
+<br>
+In the new economy we all get pushed to do more than we should.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837628">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837630"><B>Good and Bad Points</B></A> (Score:1)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~fozzy(pro)">fozzy(pro) (267441)</A> 
+				on Sunday December 08, @10:45AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837630">#4837630</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				I've seen Rational Software (Rational Rose Mainly) has improved in Stability since 1998 on the windows platform, but on Solaris it is better but still buggy.  Hopefully IBM will improve the performance in Solaris.  I hear it is ok in Linux, but room for improvement exists so we will se an improvement there, I've never personally used any Rational Software in Linux so I’m assuming what I’ve been told is true.  I do hope IBM ports the software to other platforms well.  I would sure love being able to make up some UML Diagrams on any system I desire with the same program.  Together Soft is what I use often because it works so well on many platforms without fuss, but I prefer Rose as its UML is more standard and it just seems to crash less.<BR><BR>IBM could also do what our "friends" at Microsoft did to Visio and ruin a good piece of software with patented Microsoft bloat.<BR>
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837630">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837654"><B>I can't help myself ...</B></A> (Score:1)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~YahoKa">YahoKa (577942)</A> 
+				on Sunday December 08, @10:53AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837654">#4837654</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://slashdot.org/">http://slashdot.org/</A> | Last Journal: <A HREF="//slashdot.org/~YahoKa/journal/">Wednesday November 20, @10:45PM</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				Can this be expressed as a fraction?
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837654">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837660"><B>Rational software quality</B></A> (Score:2, Insightful)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~pcraven">pcraven (191172)</A>  &lt;<A HREF="mailto:paul%40cravenfamily.MOSCOWcom%20minus%20city">paul@cravenfamily.MOSCOWcom minus city</A>&gt;
+				on Sunday December 08, @10:55AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837660">#4837660</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://www.cravenfamily.com/">http://www.cravenfamily.com/</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				Rational software is some of the worst designed examples of user interface out there. There are two types of people that like rational software:<BR><BR>1. They haven't used anything better like togethersoft or visio.<BR>2. They are management and don't actually have to use it.<BR><BR>Rational and IBM should get along great. Neither company produces good software. But both companies produce incredible salespeople. Working for a large bank, I have a great deal of respect for these guys. How would you like to try selling IBM or rational products? As engineers we are usually too honest. I'd never get anywhere.<BR><BR>Rational sells a process. The process is great for business people because it produces visible artifacts. (Aptly named, as they don't get used and are only good in the archeological sense.)<BR><BR>Togethersoft (recently bought by Borland) has much better software but it is very expensive, and they don't have the quality salesforce IBM has.<BR><BR>So if you think that salespeople don't matter, think again. In this case, they can take a barely functional product and have it dominate that sector of industry. Even in the face of better products.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837660">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837665"><B>Also check the internal memo</B></A> (Score:1)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~derekb">derekb (262726)</A> 
+				on Sunday December 08, @10:57AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837665">#4837665</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				<BR>Also check Fucked Company  There's an internal memo there.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837665">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837666"><B>Does this affect the free software community?</B></A> (Score:1)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~jhair_tocancipa">jhair_tocancipa (545029)</A> 
+				on Sunday December 08, @10:57AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837666">#4837666</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://slashdot.org/">http://slashdot.org/</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				Anyway, not many free software projects (if any) use UML for its design at all<nobr> <wbr></nobr>... Or I am wrong?
+
+In other words: do we need UML to design free software?
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837666">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837676"><B>Clearcase</B></A> (Score:1)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~pcraven">pcraven (191172)</A>  &lt;<A HREF="mailto:paul%40cravenfamily.MOSCOWcom%20minus%20city">paul@cravenfamily.MOSCOWcom minus city</A>&gt;
+				on Sunday December 08, @10:59AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837676">#4837676</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://www.cravenfamily.com/">http://www.cravenfamily.com/</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				Clearcase is another of rational's products. I'm curious about other people's experiences. Things I don't like:<BR><BR>1. Network dependent. Since the code is on a 'mounted' drive, everything is slower. I have to go to the network for everything.<BR>2. Integrates into Windows OS. If clearcase or the network has problems, I have to reboot.<BR>3. Takes to long. The whole integration stream, delivery, etc. takes about 10 button pushes and a good minute of time.<BR>4. Costs too much. CVS works better, and is free.<BR><BR>Advantages of Clearcase:<BR>1. Has salespeople.
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837676">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837678"><B>On Demand Computing</B></A> (Score:2)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~joel8x">joel8x (324102)</A> 
+				on Sunday December 08, @11:00AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837678">#4837678</A>)
+				<BR><FONT SIZE="-1">(<A HREF="http://www.latexgeneration.com/">http://www.latexgeneration.com/</A>)</FONT> 
+			</TD></TR>
+			<TR><TD>
+				This purchase is another piece of <A HREF="http://www.news.com.au/common/story_page/0,4057,5396240%255E15306,00.html">IBM's new strategy</A> [news.com.au].  It will be interesting to see how Rational's offerings contribute to thier new initiative and what software will remain "as is".<BR><BR>
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837678">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+			<TR><TD BGCOLOR="#E0E0E0">
+				<FONT SIZE="3" COLOR="#000000">
+				<A NAME="4837681"><B>Let's be grateful that IBM rescued Lotus...</B></A> (Score:2)
+				</FONT>
+				<BR>by <A HREF="//slashdot.org/~dpbsmith">dpbsmith (263124)</A> 
+				on Sunday December 08, @11:00AM (<A HREF="//slashdot.org/comments.pl?sid=47216&amp;cid=4837681">#4837681</A>)
+				 
+			</TD></TR>
+			<TR><TD>
+				...otherwise there would be nobody challenging Microsoft in the spreadsheet arena, and we would probably all be forced to use Excel for want of a credible alternative.<BR><BR>I'm sure IBM's acquisition of Rational wlll be equally successful.<BR><BR>
+			</TD></TR>
+				<TR><TD>
+					<FONT SIZE="2">
+					[ <A HREF="//slashdot.org/comments.pl?sid=47216&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=4837681">Reply to This</A>
+ ]
+					</FONT>
+				</TD></TR>
+				<TR><TD>
+<TR><TD BGCOLOR="#E0E0E0"><LI><FONT SIZE="2"><B><A HREF="//slashdot.org/comments.pl?sid=47216&amp;threshold=-1&amp;commentsort=0&amp;tid=136&amp;mode=thread&amp;pid=0">8 replies</A>
+ beneath your current threshold.</B></FONT></TD></TR>
+	
+	
+
+
+
+</TABLE></FONT></TD><TD>&nbsp;</TD></TR></TABLE>
+
+<TABLE WIDTH="99%" BORDER="0" CELLPADDING="0" CELLSPACING="0" ALIGN="CENTER" BGCOLOR="#FFFFFF">
+	<TR>
+		<TD COLSPAN="4" ALIGN="CENTER"><IMG SRC="//images.slashdot.org/greendot.gif" ALT="" WIDTH="80%" HEIGHT="1" HSPACE="10" VSPACE="30"></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="CENTER">
+<FONT SIZE="2" FACE="arial,helvetica">
+
+  <FORM METHOD="GET" ACTION="//slashdot.org/search.pl">
+         <INPUT TYPE="TEXT" NAME="query" VALUE="" SIZE="20">
+        <INPUT TYPE="SUBMIT" VALUE="Search">
+  </FORM>
+
+  </FONT>
+</TD>
+		<TD BGCOLOR="#ffffff" WIDTH="25"> &nbsp; </TD>
+		<TD ALIGN="CENTER">
+
+<FONT SIZE="2" FACE="arial,helvetica"><I>The program isn't debugged until the last user is dead.</I></FONT>
+
+		</TD></TR>
+		<TR><TD ALIGN="CENTER" COLSPAN="4">
+			<FONT size=1 color="#006666" face="arial,helvetica">
+
+ All trademarks and copyrights on this
+  page are owned by their respective owners.  Comments
+  are owned by the Poster.
+  The Rest © 1997-2002 <A href="http://www.osdn.com/">OSDN</A>.
+</FONT>
+             </TD>
+			</TR></TABLE>
+<CENTER>
+	<FONT SIZE="2" COLOR="#336699"> [
+		<A HREF="//slashdot.org/"><FONT COLOR="#FFFFFF">home</FONT></A> |
+		<A HREF="//slashdot.org/awards.shtml"><FONT COLOR="#FFFFFF">awards</FONT></A> |
+		<A HREF="//slashdot.org/submit.pl"><FONT COLOR="#FFFFFF">contribute story</FONT></A> |
+		<A HREF="//slashdot.org/search.pl"><FONT COLOR="#FFFFFF">older articles</FONT></A> |
+		<A HREF="http://www.osdn.com/"><FONT COLOR="#FFFFFF">OSDN</FONT></A> |
+		<A HREF="http://www.osdn.com/advertise/"><FONT COLOR="#FFFFFF">advertise</FONT></A> |
+		<A HREF="http://selfserve.osdn.com/introduction.html"><FONT COLOR="#FFFFFF">self serve ad system</FONT></A> |
+		<A HREF="//slashdot.org/about.shtml"><FONT COLOR="#FFFFFF">about</FONT></A> |
+		<A HREF="http://www.osdn.com/terms.shtml"><FONT COLOR="#FFFFFF">terms of service</FONT></A> |
+		<A HREF="http://osdn.com/privacy.shtml"><FONT COLOR="#FFFFFF">privacy</FONT></A> |
+		<A HREF="//slashdot.org/faq/"><FONT COLOR="#FFFFFF">faq</FONT></A> ]
+	</FONT>
+</CENTER>
+</TD></TR></TABLE>
+</BODY>
+</HTML>

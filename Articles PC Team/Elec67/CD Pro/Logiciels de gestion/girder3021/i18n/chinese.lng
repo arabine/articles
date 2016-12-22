@@ -1,0 +1,572 @@
+&File
+文件(&F)
+&New
+新建(&N)
+&Open...
+打开...(&O)
+&Save
+保存(&S)
+&Edit
+编辑(&E)
+&Copy
+复制(&C)
+&Paste
+粘贴(&P)
+&Add Command
+添加命令(&A)
+&Delete
+删除(&D)
+&Test Command
+测试命令(&T)
+&Reset All States
+复位所有的状态值(&R)
+&Help
+帮助(&H)
+&About
+关于(&A)
+&Disable Input Device(s)
+禁止输入设备(&D)
+&Enable Input Device(s)
+允许输入设备(&E)
+Apply
+应用
+APM Event Generator
+高级电源管理
+APM Event Plugin 1.0 for Girder 3.0
+高级电源管理插件
+Add &MultiGroup
+添加命令组(&M)
+Add &Group
+添加组(&G)
+Antirepeat wait time [ms]
+防按键重复等待时间 [ms]
+Accelerate
+加速
+Alt
+Alt
+Autoload file does not exist.
+自动载入文件不存在
+Auto Enable Input device
+自动允许输入设备
+Auto Load
+自动载入设置文件
+Auto execute on startup
+GIRDER启动时自动运行
+Available plugins
+可用插件
+Action Plugins
+动作插件
+Antirepeat active
+激活防按键错误功能
+About
+关于
+Allowed Clients
+允许客户机
+Address
+地址
+Address edit
+编辑地址
+Add
+添加
+Browse
+浏览
+Begin state
+初始状态值
+Baud Rate
+波特率
+Cancel
+取消
+Comport
+端口选择
+Captured IR code.
+捕获红外信号
+Cannot load plugin.
+不能载入插件
+Cannot save datafile.
+不能存储数据文件
+Cannot load datafile.
+不能载入数据文件
+Could not enable IR device.
+不允许红外设备
+Contents
+帮助主题
+Capture Window
+捕获窗口
+Contact and Copyright information
+联系方法及版权信息
+Clicked
+点击
+Close
+关闭
+Command
+命令
+Capture
+捕获
+Control
+Ctrl
+Cannot find window
+找不到窗口
+Child Name
+子类名称
+Child Class
+子类
+Checking the Settings
+检查重复设置
+Class Name
+类名
+Clear List
+清除列表
+Cannot enable
+不允许
+Cannot play wavfile.
+不能播放wav文件
+Cannot Shutdown windows.
+不能关闭WINDOWS
+Clicked sent.
+点击命令发送完成
+Close sent.
+关闭命令发送完成
+Command State
+调整命令响应次序
+Current State
+当前状态值
+Cannot find group
+找不到组
+Cannot find icon
+找不到图标
+Cannot Find Softplugin.
+找不到插件
+Could not enable input device(s).
+不能打开输入设备
+Command executed
+执行命令
+Command ID
+命令 ID
+Change the Target Settings of the follwing command ?
+下一命令改变目标设置吗？
+Cannot import group.
+不能导入组文件
+Cannot export group.
+不能导出组文件
+Default
+默认值
+Double Clicked
+双击
+Don't send the IR commands when Girder is the Foreground window
+当Girder为当前窗口时，不要响应红外命令。
+Display Splashscreen
+显示启动画面
+Description
+描述
+Delete
+删除
+Dotmatrix font
+点阵字体
+Example plugin for Girder 3.0
+Girder 3.0 示范插件
+Executable (*.exe)|*.EXE|Wav files (*.wav)|*.WAV
+可执行文件 (*.exe)|*.EXE|Wav 文件 (*.wav)|*.WAV
+E&xit
+退出(&X)
+Enabled
+允许
+Execute
+执行
+Executable
+文件名
+Error: Cannot set volume
+错误信息：不能设置音量
+Execute on all states except 1
+响应除状态值1外的所有状态值
+Error: Cannot execute command.
+错误信息：不能执行命令
+Export Group...
+导出组文件...
+Fast UIR Init
+快速初始化UIR
+Fast
+加快
+File
+文件
+Filename
+文件名
+Find
+查找
+GNU General Public License
+GNU General Public License
+Girder files (*.gir)|*.GIR
+Girder 文件 (*.gir)|*.GIR
+Group Enable
+允许组
+Group Disable
+禁止组
+Girder Standby Toggle
+Girder 待机
+General
+常规
+Girder will attempt to fill the target options based on the info here. This might need some manual tuning
+girder尝试基于当前信息补充目标参数。这可能需要手动调整。
+Group Enabled
+允许组
+Group Disabled
+禁止组
+Girder Standby
+Girder 待机
+Girder Active
+激活 Girder
+Girder Homepage: Http://www.stack.nl/~stilgar
+Girder Homepage: Http://www.stack.nl/~stilgar
+Goto
+转到
+Hibernate
+休眠
+Howto
+问答
+Hide
+隐藏
+Hide on startup
+启动后隐藏
+Hardware Plugins
+硬件插件
+Handle
+句柄
+Hide sent.
+隐藏命令发送完成
+Host IP
+主机IP
+Host Port
+主机端口
+IRSpeed
+IR速度
+I Was here
+我在这儿
+I Was Here
+我在这儿
+IR Device Enabled.
+允许红外设备
+Icon files (*.ico)|*.ICO
+图标文件 (*.ico)|*.ICO
+Icon
+图标
+Input Device
+输入设备
+I'm searching for people who are willing to translate Girder, it's very easy and will bring joy to a lot of people :). Most important: your name will be noted in the Thanks section of the Girder helpfile!
+
+Initializing the Input Device(s)
+正在初始化输入设备
+Input Device Enabled.
+允许输入设备
+Input Device Disabled.
+禁止输入设备
+IrDA Settings
+IrDA 设置
+Import Group...
+导入组文件...
+Icons on the action tabs
+当前表的图标
+Keep focus
+保持聚焦
+Key sent
+键发送完成
+Keyboard
+键盘
+Learn IR
+按键学习
+LogOff
+退出
+LParam
+LParam
+Launch Girder on windows startup
+WINDOWS启动时运行Girder
+Language
+语言
+Main Window
+主窗口
+Monitor On
+开启显示器
+Monitor Off
+关闭显示器
+Maximize
+最大化
+Minimize
+最小化
+Minimize Girder
+最小化 Girder
+Mouse
+鼠标
+Mouse Up
+鼠标 上
+Mouse Down
+鼠标 下
+Mouse Left
+鼠标 左
+Mouse Right
+鼠标 右
+Mouse Left Click
+鼠标 左键单击
+Mouse Left Doubleclick
+鼠标 左键双击
+Mouse Right Click
+鼠标 右键单击
+Match invisble Tasks
+匹配不可见的任务
+Minimized
+最小化
+Maximum number of ClientAddresses reached cannot add.
+客户机地址数已达到最大，不能再增加。
+Mouse Right Doubleclick
+鼠标 右键双击
+Mouse Middle click
+鼠标 中键单击
+Mouse Middle Doubleclick
+鼠标 中键双击
+Mouse Up Right
+鼠标 上右
+Mouse Up Left
+鼠标 上左
+Mouse Down Right
+鼠标 下右
+Mouse Down Left
+鼠标 下左
+Mouse Wheel Up
+鼠标滚轴上
+Mouse Wheel Down
+鼠标滚轴下
+New
+新建
+Not found.
+没找到
+Name
+窗口名
+None
+无
+Ok
+确定
+O.S.
+系统
+Only send to first match
+只响应第一个匹配的
+OSD
+屏显OSD
+Play Wav
+播放声音
+Poweroff
+关闭电源
+Path to Hardware plugins
+硬件插件文件的路径
+Path to Action plugins
+动作插件的路径
+Process ID
+进程号
+Parent
+父
+Plugins
+插件
+Port
+端口
+Password
+口令
+Question
+问题
+Reboot
+重新启动
+Register Filetype
+注册文件类型
+Running Tasks/Windows
+当前运行的任务/窗口
+Refresh
+刷新
+Ready.
+准备
+Rename
+重命名
+Repeat Tolerance
+重复允许误差
+Recognition Tolerance
+识别允许误差
+Skip UIR init check
+跳过UIR初始化检测
+Strip Zeros from UIR string
+从UIR字符串中去掉0
+Slow
+减慢
+Suspend Mode
+休眠模式
+Suspend to Ram
+休眠到内存
+Select destination.
+选择目标
+Save &as...
+另存为(&A)...
+Se&ttings...
+系统设置(&T)...
+Settings Window
+设置窗口
+State Window
+响应次序窗口
+State
+响应次序
+Show
+显示
+Set Focus
+设为焦点
+Screen Saver
+屏幕保护
+Shutdown
+终止
+Step Size
+步长
+Startup Options
+启动选择
+SysCommand
+系统命令
+Set On-Trayicon
+设定系统栏开启图标
+Set Off-Trayicon
+设定系统栏关闭图标
+Set Active-Trayicon
+设定系统栏激活图标
+Set Standby-Trayicon
+设定系统栏待机图标
+Step
+步
+Shift
+Shift
+Special Key
+特殊键
+Sentence
+句子
+Settings
+设置
+Save datafile on shutdown/poweroff/logoff
+当终止/关机/退出时自动存储设置文件
+Scale Main Form
+缩放主窗口
+State.
+响应次序
+Selected Task's Childobjects
+选择任务的子目标
+Send to foreground task
+只响应前台任务
+Substring matching
+部分匹配
+Start Capture
+开始捕获
+Stop Capture
+停止捕获
+System Wide Capturing
+系统广泛捕获
+SmartFill
+智能补充参数
+Show sent.
+显示命令发送
+State Count
+最大状态值
+See file Copying.txt for license details
+详细授权信息请查看Copying.txt
+String
+字符串
+Set Group Targets
+设置一组目标
+Show Girder
+显示 Girder
+Text
+文本
+This plugin sends a WM_SETTEXT message to the targets.
+插件向目标发送了一条WM_SETTEXT信息
+The file has changed, save ?
+文件已改变，是否存储？
+Target Window
+目标窗口
+Target
+目标
+Traybar mode
+缩放到系统栏
+The New input device gets activated when you press the apply button.
+当你按下“应用”键，新输入设备将被激活。
+This is not a Girder 3.0 Datafile, should I try to import from 2.x ? If you save this file Girder 2.x cannot open it anymore.
+这不是有效的Girder 3.0数据文件，是否尝试从2.X导入？如果你存储这个文件，Girder2.X将无法再打开它。 
+Target Selector
+目标选择窗口
+Test Event
+测试事件
+Type
+类型
+Translation written by Ron Bessems <R.E.M.W.Bessems@stud.tue.nl>
+汉化：EDIY Studio  <主页：http://ediy.yeah.net>
+TCP/IP Server Settings
+TCP/IP 服务器设置
+TCP/IP Client
+TCP/IP 客户机
+Talking Clock
+报时
+Timer
+时间
+Timer plugin for Girder 3.0
+时间插件
+This plugin executes a command after a preset timeout.
+定时执行命令的插件
+This is not a Girder 3.0 ExportFile.
+这不是Girder 3.0导入文件
+UIR/IRman Settings
+UIR/IRman 设置
+Unregister Filetype
+取消注册文件类型
+User Interface
+用户界面
+Volume Window
+音量窗口
+Volume Change
+调整音量
+Volume Right Change
+增大音量
+Volume Left Change
+减小音量
+Volume Balance Change
+调整音量平衡
+Volume Mute Toggle
+静音
+Volume ID
+音量 ID
+Volume
+音量
+Version
+版本
+Volume Settings
+音量设置
+Volume Left
+减小音量
+Volume Right
+增大音量
+Volume Mute
+静音
+Waiting for IR Code.
+等待红外信号
+Window
+窗口
+Wait
+等待
+Wait for Window
+等待窗口
+WParam
+WParam
+Window Name
+窗口名
+Window Class
+窗口类名
+Wparam
+Wparam
+Wavfile played.
+正在播放声音文件
+Windows is shutting down.
+WINDOWS正在关闭
+Wav files (*.wav)|*.WAV|Executable (*.exe)|*.EXE
+Wav文件(*.wav)|*.WAV|可执行文件(*.exe)|*.EXE
+X/Timeout [ms]
+X/超时 [ms]
+Y
+Y
+command sent.
+命令发送完成
+sys command sent.
+系统命令发送完成

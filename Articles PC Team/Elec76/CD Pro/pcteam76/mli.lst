@@ -1,0 +1,449 @@
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         ; on utilise les librairies du 16F84A
+                      00002     LIST  P=16F84A
+                      00003     include     <p16f84a.inc>
+                      00001         LIST
+                      00002 ; P16F84A.INC  Standard Header File, Version 2.00    Microchip Technology, Inc.
+                      00134         LIST
+                      00004 
+                      00005     ; Directives pour le programmateur (oscillateur rapide)
+2007   3FF2           00006     __CONFIG   _CP_OFF & _PWRTE_ON & _WDT_OFF & _HS_OSC
+                      00007 
+                      00008 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                      00009 ; Configuration du Hard
+                      00010 ; 4 bits poids faible du port B reliés au 
+                      00011 ; PIC numéro 1 : le cerveau
+                      00012 ; TABLE DE VERITE :
+                      00013 ;
+                      00014 ;  PA3   |   PA2    |   PA1    |   PA0    | Vitesse
+                      00015 ; ------ | -------- | -------- | -------- | --------
+                      00016 ;  0     |    0     |   0      |   0      | Arrêt robot  <---- la seule config qui arrête le robot : TOU
+                            S les bits à 0
+                      00017 ;  0     |    0     |   0      |   1      | Vitesse 25% avant
+                      00018 ;  0     |    0     |   1      |   0      | Vitesse 50% avant
+                      00019 ;  0     |    0     |   1      |   1      | Vitesse 75% avant
+                      00020 ;  0     |    1     |   0      |   0      | 
+                      00021 ;  0     |    1     |   0      |   1      | 
+                      00022 ;  0     |    1     |   1      |   0      | Vitesse 50% moteur gauche off, moteur droit on (rotation)
+                      00023 ;  0     |    1     |   1      |   1      | Vitesse 100% avant
+                      00024 ;  1     |    0     |   0      |   0      | 
+                      00025 ;  1     |    0     |   0      |   1      | Vitesse 25% arrière
+                      00026 ;  1     |    0     |   1      |   0      | Vitesse 50% arrière
+                      00027 ;  1     |    0     |   1      |   1      | Vitesse 75% arrière
+                      00028 ;  1     |    1     |   0      |   0      | 
+                      00029 ;  1     |    1     |   0      |   1      | 
+                      00030 ;  1     |    1     |   1      |   0      | Vitesse 50% moteur gauche on, moteur droit off (rotation)
+                      00031 ;  1     |    1     |   1      |   1      | Vitesse 100% arrière
+                      00032 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                      00033 
+                      00034 
+                      00035 ;;;;;;;;;;;;
+                      00036 ; DEFINES
+                      00037 ;;;;;;;;;;;;
+                      00038 
+                      00039 ; Broches en sortie
+                      00040 
+  00000004            00041 SENS_D  EQU     0x04 ; Sens moteur droit RB4
+  00000005            00042 SENS_G  EQU     0x05 ; Sens moteur gauche RB5
+  00000006            00043 PWM_D   EQU     0x06 ; PWM moteur droit RB6
+  00000007            00044 PWM_G   EQU     0x07 ; PWM moteur gauche RB7
+                      00045 
+                      00046 ;;;;;;;;;;;;;;;;;;;;;;;;;;
+                      00047 ; VARIABLES EN RAM
+                      00048 ; LA RAM COMMENCE EN 0x0C
+                      00049 ;;;;;;;;;;;;;;;;;;;;;;;;;;
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (CBLOCK)
+                      00050 CBLOCK 0x20
+                      00051 
+  00000020            00052     Image:1 ; l'octet image des broches du port B
+                      00053 
+                      00054 ; mémorisation des ordres pour chaque moteur
+                      00055 ;         6   5   4   3   2   1   0
+                      00056 ; MOT_X   -   -  100  75  50  25  SENS
+                      00057 ;
+                      00058 ; SENS=1 : avant , SENS=0 : arrière
+  00000021            00059     Ordre:1 ; L'octet image du port A en provenance du PIC cerveau
+  00000022            00060     VAR:1
+  00000023            00061     MOT_G:1
+  00000024            00062     MOT_D:1
+Warning[205]: Found directive in column 1. (ENDC)
+                      00063 ENDC    ; Fin de la RAM 
+                      00064 
+                      00065 ;;;;;;;;;;;;;;;;;;;;;;
+                      00066 ; PROGRAMME PRINCIPAL
+                      00067 ;;;;;;;;;;;;;;;;;;;;;;
+                      00068 
+0000                  00069         org     0                
+0000   2805           00070         goto    START
+0005                  00071     org 0x5
+                      00072 
+0005                  00073 START:
+0005   205C           00074     call INIT
+                      00075     
+                      00076     ; Après l'init, on va chercher les ordres sur le port A
+0006   2835           00077     goto LOOP
+                      00078 
+0007                  00079 REB:
+                      00080 
+                      00081 ; début de la MLI
+                      00082 ;
+                      00083 ; On fait perdre du temps au micro.
+                      00084 ; Calcul : 15khz -> 70 us -> 350 cycles -> la MLI est divisée par 4, soit 17,5 us par quart de cycle
+                      00085 ; la routine de test de MLI fait 2us, il faut donc faire une perte de temps de 15,5us :
+                      00086 
+                      00087 ; Delay de 15,5us
+0007   3019           00088     movlw   d'25'
+0008   00A2           00089     movwf   VAR
+0009                  00090 Boucle1:
+0009   0BA2           00091     decfsz  VAR,1
+000A   2809           00092     goto    Boucle1    
+                      00093 
+                      00094 
+                      00095 ; on teste si on remet la MLI à 0 à 25%...
+                      00096 ; La routine suivante dure 2 us
+000B   18A3           00097     btfsc   MOT_G,0x01   ; MLI Moteur gauche = 25% ?
+000C   280E           00098     goto    Oui_G_25
+000D   280F           00099     goto    Next_25
+000E   13A0           00100 Oui_G_25:   bcf     Image,PWM_G      ; oui
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+000F   18A4           00101 Next_25:   btfsc   MOT_D,0x01   ; MLI Moteur droit = 25% ?
+0010   2812           00102     goto    Oui_D_25
+0011   2813           00103     goto MLI_25
+0012   1320           00104 Oui_D_25:   bcf     Image,PWM_D      ; oui
+                      00105 
+0013                  00106 MLI_25:
+                      00107 ; MLI = 25% : On envoie l'image des broches sur le portb
+0013   0820           00108     movf   Image,0
+0014   0086           00109     movwf   PORTB
+                      00110 
+                      00111 ; Delay de 15,5us
+0015   3019           00112     movlw   d'25'
+0016   00A2           00113     movwf   VAR
+0017                  00114 Boucle2:
+0017   0BA2           00115     decfsz  VAR,1
+0018   2817           00116     goto    Boucle2
+                      00117 
+                      00118 
+                      00119 ; on teste si on remet la MLI à 0 à 50%...
+0019   1923           00120     btfsc   MOT_G,0x02   ; MLI Moteur gauche = 50% ?
+001A   281C           00121     goto    Oui_G_50
+001B   281D           00122     goto    Next_50
+001C   13A0           00123 Oui_G_50:   bcf     Image,PWM_G      ; oui
+001D   1924           00124 Next_50:   btfsc   MOT_D,0x02   ; MLI Moteur droit = 50% ?
+001E   2820           00125     goto    Oui_D_50
+001F   2821           00126     goto MLI_50
+0020   1320           00127 Oui_D_50:   bcf     Image,PWM_D      ; oui
+                      00128 
+0021                  00129 MLI_50:
+                      00130 ; MLI = 50%
+0021   0820           00131     movf   Image,0
+0022   0086           00132     movwf   PORTB
+                      00133 
+                      00134 
+                      00135 ; Delay de 15,5us
+0023   3019           00136     movlw   d'25'
+0024   00A2           00137     movwf   VAR
+0025                  00138 Boucle3:
+0025   0BA2           00139     decfsz  VAR,1
+0026   2825           00140     goto    Boucle3
+                      00141 
+                      00142 
+                      00143 ; on teste si on remet la MLI à 0 à 75%...
+0027   19A3           00144     btfsc   MOT_G,0x03   ; MLI Moteur gauche = 75% ?
+0028   282A           00145     goto    Oui_G_75
+0029   282B           00146     goto    Next_75
+002A   13A0           00147 Oui_G_75:   bcf     Image,PWM_G      ; oui
+002B   19A4           00148 Next_75:   btfsc   MOT_D,0x03   ; MLI Moteur droit = 75% ?
+002C   282E           00149     goto    Oui_D_75
+002D   282F           00150     goto MLI_75
+002E   1320           00151 Oui_D_75:   bcf     Image,PWM_D      ; oui
+                      00152 
+002F                  00153 MLI_75:
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00154 ; MLI = 75%
+002F   0820           00155     movf   Image,0
+0030   0086           00156     movwf   PORTB
+                      00157 
+                      00158 ;  Ce delay est à ajuster quand le décodage des bits de sens sera fait
+                      00159 ; Delay de 15,5us
+0031   3015           00160     movlw   d'21'
+0032   00A2           00161     movwf   VAR
+0033                  00162 Boucle4:
+0033   0BA2           00163     decfsz  VAR,1
+0034   2833           00164     goto    Boucle4
+                      00165 
+                      00166         
+                      00167 ; On lit les ordres sur le port A pour le prochain tour
+0035                  00168 LOOP:
+0035   0805           00169     movf   PORTA,0
+0036   00A1           00170     movwf   Ordre
+0037   0821           00171     movf    Ordre,0
+0038   1D03           00172     btfss   STATUS,Z ; on teste si Image=0
+0039   283C           00173     goto    DECODE   ; Image!=0, on a un ordre valide que l'on va décoder
+003A   0186           00174     clrf    PORTB    ; Image=0, on arrête le robot
+003B   2835           00175     goto    LOOP     ; Et on reboucle : attente de nouveaux ordres
+                      00176 
+                      00177 ; décodage des ordres selon la table de vérité
+003C                  00178 DECODE:
+003C   01A3           00179     clrf    MOT_G   ; RAZ des ordres pour le moteur gauche
+003D   01A4           00180     clrf    MOT_D   ; RAZ des ordres pour le moteur droit
+                      00181 
+                      00182 ; commencement des tests
+003E   1821           00183     btfsc   Ordre,0x00 ; PA0=1 ?
+003F   2843           00184     goto    Yes_1 ; oui 
+                      00185 ; non : PA0 = 0, on teste PA1
+0040   18A1           00186     btfsc   Ordre,0x01 ; PA1=1 ?
+0041   2846           00187     goto    Yes_2 ; oui
+0042   286E           00188     goto    ERREUR
+                      00189 
+0043   18A1           00190 Yes_1:  btfsc   Ordre,0x01 ; PA1=0 ?
+0044   2849           00191     goto    Suite_1 ; non
+0045   284C           00192     goto    Vit_25 ; oui
+                      00193 
+0046   1D21           00194 Yes_2:  btfss Ordre,0x02 ; PA2=0 ? ;
+0047   284F           00195         goto    Vit_50 ; non, alors c'est la vitesse 50%
+0048   286E           00196         goto    ERREUR ; va vers les rotations. Pour l'instant on dirige vers l'erreur
+                      00197 ;;;;;;;;;;;;;;;;;
+                      00198 ; TO DO ICI
+                      00199 ; RAJOUTER UNE SERIE DE TESTS POUR LES ROTATIONS
+                      00200 ;;;;;;;;  
+                      00201 ; Labels pour les rotations, pas encore fait
+0049                  00202 ROTATE_G:
+                      00203 
+0049                  00204 ROTATE_D:
+                      00205 ; fin labels des rotations
+                      00206 ;;;;;;;;;;;;;;;;;;;;;;;
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00207 
+0049   1921           00208 Suite_1: btfsc Ordre,0x02 ; PA2=0 ? ; on teste PA2...
+004A   2855           00209     goto    Vit_100 ; PA2=1, vitesse = 100%
+004B   2852           00210     goto    Vit_75  ; PA2=0, vitesse = 75%
+                      00211 
+004C                  00212 Vit_25:
+004C   14A3           00213     bsf MOT_G,0x01
+004D   14A4           00214     bsf MOT_D,0x01
+004E   2857           00215     goto SUITE
+004F                  00216 Vit_50:
+004F   1523           00217     bsf MOT_G,0x02
+0050   1524           00218     bsf MOT_D,0x02
+0051   2857           00219     goto SUITE
+0052                  00220 Vit_75:
+0052   15A3           00221     bsf MOT_G,0x03
+0053   15A4           00222     bsf MOT_D,0x03
+0054   2857           00223     goto SUITE
+                      00224 ; même si on ne teste jamais le bit 100% dans MOT_G/D, on le met à 1, pour la forme et pour contrôler...
+0055                  00225 Vit_100:
+0055   1623           00226     bsf MOT_G,0x04
+0056   1624           00227     bsf MOT_D,0x04
+0057                  00228 SUITE:
+0057   17A0           00229     bsf     Image,PWM_G
+0058   1720           00230     bsf     Image,PWM_D
+                      00231 ; On écrit les ordres sur les broches du port B
+0059   0820           00232     movf   Image,0
+005A   0086           00233     movwf   PORTB
+005B   2807           00234     goto    REB
+                      00235 
+                      00236 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                      00237 ; CONFIGURATION DES PORTS ET DES REGISTRES
+                      00238 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                      00239 
+005C                  00240 INIT:
+005C   1283           00241     bcf     STATUS, RP0 ; Select Bank 0
+005D   0185           00242     clrf    PORTA
+005E   0186           00243     clrf    PORTB
+005F   0181           00244     clrf    TMR0
+0060   1683           00245     bsf     STATUS, RP0 ; Select Bank 1
+                      00246     ; Le port A contient les ordres en provenance de PIC1
+0061   30FF           00247     movlw 0xFF ; 0 = sortie, 1 = entrée
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0062   0085           00248     movwf TRISA
+                      00249     
+                      00250     ; Tout le port B en sortie
+0063   3000           00251     movlw 0x00
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0064   0086           00252     movwf TRISB
+0065   305F           00253     movlw   B'01011111' ; pull up sur portb et timer
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0066   0081           00254     movwf   OPTION_REG
+0067   1283           00255     bcf     STATUS, RP0 ; Select Bank 0
+                      00256     
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00257  
+                      00258     ; Par défaut, PORTB=0  et PORTA=0 donc le robot est à l'arrêt
+                      00259     ; La variable Image est l'image du port B
+0068   01A0           00260     clrf    Image
+0069   0186           00261     clrf    PORTB
+006A   01A3           00262     clrf    MOT_G
+006B   01A4           00263     clrf    MOT_D
+006C   1406           00264     bsf     PORTB,0 ; pour les tests uniquement
+006D   0008           00265     return
+                      00266 
+                      00267 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                      00268 ; FIN DU FICHIER
+                      00269 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+006E   286E           00270 ERREUR: goto ERREUR ; échappatoire pour les codes de la table de vérité non implémentés
+                      00271 
+                      00272     end
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+Boucle1                           00000009
+Boucle2                           00000017
+Boucle3                           00000025
+Boucle4                           00000033
+C                                 00000000
+DC                                00000001
+DECODE                            0000003C
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+ERREUR                            0000006E
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INIT                              0000005C
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+Image                             00000020
+LOOP                              00000035
+MLI_25                            00000013
+MLI_50                            00000021
+MLI_75                            0000002F
+MOT_D                             00000024
+MOT_G                             00000023
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+Next_25                           0000000F
+Next_50                           0000001D
+Next_75                           0000002B
+OPTION_REG                        00000081
+Ordre                             00000021
+Oui_D_25                          00000012
+Oui_D_50                          00000020
+Oui_D_75                          0000002E
+Oui_G_25                          0000000E
+Oui_G_50                          0000001C
+Oui_G_75                          0000002A
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PWM_D                             00000006
+PWM_G                             00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+REB                               00000007
+ROTATE_D                          00000049
+ROTATE_G                          00000049
+RP0                               00000005
+RP1                               00000006
+SENS_D                            00000004
+SENS_G                            00000005
+START                             00000005
+STATUS                            00000003
+SUITE                             00000057
+Suite_1                           00000049
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TMR0                              00000001
+TRISA                             00000085
+TRISB                             00000086
+VAR                               00000022
+Vit_100                           00000055
+Vit_25                            0000004C
+Vit_50                            0000004F
+Vit_75                            00000052
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Yes_1                             00000043
+Yes_2                             00000046
+Z                                 00000002
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+MPASM 02.80 Released              MLI.ASM   11-11-2001  23:11:04         PAGE  9
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+
+0000 : X----XXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXX- ----------------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   107
+Program Memory Words Free:   917
+
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     3 reported,     0 suppressed
+
+

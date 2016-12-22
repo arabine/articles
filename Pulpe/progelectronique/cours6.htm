@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-16">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="generator" content="NeoEZ (C)2001 Romain Guy">
+    <meta name="author" content="Anthony Rabine">
+    <meta name="keywords" content="carte puce t&eacute;l&eacute;phonique">
+    <meta name="description" content="carte puce t&eacute;l&eacute;phonique">
+
+    <title>Les cartes &agrave; puce</title>
+    <link title="Style" href="http://www.programmationworld.com/site/stylesheet.css" type="text/css" rel=
+    "stylesheet">
+  </head>
+
+  <body bgcolor="#ffffff">
+    <table class="main" width="99%">
+      <tr>
+        <td class="titleprincipal">Les cartes &agrave; puce<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        <br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int&eacute;ressons-nous cette fois ci aux cartes
+            &agrave; puce, un sujet encore sous les feux de l'actualit&eacute; il y a peu. Nous n'avons pas
+            la pr&eacute;tention de faire de vous des petits Humpich mais de vous familiariser avec ces
+            cartes aux possibilit&eacute;s tr&egrave;s int&eacute;ressantes. La carte &agrave; puce est une
+            invention du fran&ccedil;ais Roland Moreno qui continue encore aujourd'hui &agrave;
+            am&eacute;liorer son invention. Elle a avantageusement remplac&eacute; les cartes
+            magn&eacute;tiques dans de nombreux domaines comme la t&eacute;l&eacute;phonie et le
+            syst&egrave;me bancaire. Depuis le temps qu'elles existent, les puces n'ont pas vraiment
+            &eacute;volu&eacute;es. Il existe beaucoup de formats propri&eacute;taires et le co&ucirc;t des
+            terminaux de paiement limite la rapidit&eacute; des &eacute;volutions. Cela se voit encore
+            aujourd'hui avec le probl&egrave;me du num&eacute;ro de carte qui appara&icirc;t sur les
+            re&ccedil;us. Cependant, il est possible de s'amuser avec peu de composants et de quelques lignes
+            de code.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <h4><u>Sommaire</u></h4>
+
+          <div style="margin-left:1em">
+            1. <a href="#_topic_1">Les diff&eacute;rentes cartes</a>
+          </div>
+
+          <div style="margin-left:1em">
+            2. <a href="#_topic_2">Le montage</a>
+          </div>
+
+          <div style="margin-left:1em">
+            3. <a href="#_topic_3">La programmation</a>
+          </div>
+
+          <div style="margin-left:1em">
+            4. <a href="#_topic_4">Les informations de la carte</a>
+          </div>
+
+          <div style="margin-left:1em">
+            5. <a href="#_topic_5">Conclusion</a>
+          </div>
+
+          <div style="margin-left:1em">
+            6. <a href="#_topic_6">T&eacute;l&eacute;chargements</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_1"></a>Les diff&eacute;rentes cartes</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Il existe, au risque de simplifier les choses,
+            trois types de cartes : les cartes &agrave; m&eacute;moire programmable (D2000 par exemple,
+            disponible aupr&egrave;s des magasins d'&eacute;lectronique), les cartes &agrave; m&eacute;moire
+            prot&eacute;g&eacute;e (les cartes de t&eacute;l&eacute;phone par exemple, du moins pour une
+            certaine partie), et les cartes &agrave; microprocesseur. Ce dernier type constitue ce qui se
+            fait de mieux &agrave; l'heure actuelle ; ces puces sont de v&eacute;ritables petits
+            syst&egrave;mes embarqu&eacute;s comprenant le c&oelig;ur du processeur, de la m&eacute;moire de
+            type EEPROM (reprogrammable) et de la RAM. Certaines personnes s'en sont d'ailleurs servies pour
+            simuler, ill&eacute;galement bien entendu, des cartes de t&eacute;l&eacute;phone entres autres.
+            On peut ainsi trouver des cartes &agrave; puce contenant des microcontr&ocirc;leurs assez
+            puissant comme le 16F84, ou un un processeur Atmel comme dans les Basic Card. Aujourd'hui, les
+            cartes t&eacute;l&eacute;phoniques en sont &agrave; leur deuxi&egrave;me
+            g&eacute;n&eacute;ration. On peut le voir gr&acirc;ce &agrave; la mention "T2G"
+            (t&eacute;l&eacute;carte deuxi&egrave;me g&eacute;n&eacute;ration) &agrave; c&ocirc;t&eacute; du
+            nombre de tirage de la carte. En ce qui concerne la position de la puce, deux formats existent :
+            la position Afnor et ISO (les cartes t&eacute;l&eacute;phoniques). Remarquez sur le sch&eacute;ma
+            ci-contre la diff&eacute;rence de la position de la puce ainsi que son orientation. Nous allons
+            utiliser dans cet article une carte ISO. La capacit&eacute; m&eacute;moire de la puce est
+            tr&egrave;s r&eacute;duite : 256*1 bits pour les cartes T1G et 512*1 bits pour les cartes T2G.
+            Sans entrer dans les d&eacute;tails, sachez que cette zone m&eacute;moire est
+            s&eacute;par&eacute;e en deux grandes parties : la premi&egrave;re contient toutes les
+            informations relatives &agrave; la carte (nombre d'unit&eacute;s, type, num&eacute;ro de
+            s&eacute;rie etc.), elle est diff&eacute;rente pour chaque carte et n'est accessible qu'en
+            lecture. La deuxi&egrave;me contient le nombre d'unit&eacute;s restantes dans la carte, chaque 0
+            repr&eacute;sente une unit&eacute; non consomm&eacute;e et chaque 1 repr&eacute;sente une
+            unit&eacute; d&eacute;pens&eacute;e. Bien s&ucirc;r, cette zone est prot&eacute;g&eacute;e :-).
+            Enfin, il existe quelques parties libres d'acc&egrave;s en &eacute;criture.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours7/cartes.jpg"><br>
+        <b><u>Une carte ISO &agrave; gauche et une carte Afnor &agrave; droite.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_2"></a>Le montage</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le montage est vraiment tr&egrave;s simple et
+            nous donnera acc&egrave;s &agrave; la carte en lecture seulement. Nos outils seront Visual Basic
+            (ou tout autre langage) et un r&eacute;cepteur de carte &agrave; puce qui permet de placer des
+            contacts sur la puce, ce qui est bien pratique. Le port parall&egrave;le sera parfait pour y
+            c&acirc;bler notre connecteur. Ce r&eacute;cepteur pour carte ne co&ucirc;te que quelques
+            dizaines de francs et est disponible dans tout bon magasin d'&eacute;lectronique. Notez que si
+            vous souhaitez &eacute;crire dans le circuit, il vous faudra poss&eacute;der une tension de 21V
+            &agrave; l'aide de quelques composants suppl&eacute;mentaires. A part cela, une alimentation
+            externe de 5V sera parfaite, bien qu'il soit possible d'alimenter la carte &agrave; l'aide des
+            broches du port parall&egrave;le car une carte &agrave; puce ne consomme pas beaucoup (5mA
+            environ). En ce qui concerne les signaux, la puce est compatible TTL ce qui rend le sch&eacute;ma
+            exempt de composants suppl&eacute;mentaires. Si vous avez des probl&egrave;mes de lecture, vous
+            pouvez essayer de filtrer l'alimentation &agrave; l'aide de condensateurs ad&eacute;quats.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours7/montage.jpg"><br>
+        <b><u>Le sch&eacute;ma est tr&egrave;s simple pour lire la m&eacute;moire de la puce.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <table border="1" cellspacing="1" cellpadding="2" align="center" bgcolor="#FFFFCC">
+              <tr>
+                <td>Broche</td>
+
+                <td>Nom</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+
+                <td>Vcc = 5V (alimentation)</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+
+                <td>R/W (lecture/&eacute;criture)</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+
+                <td>Horloge</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+
+                <td>Reset/Up</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+
+                <td>Masse</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+
+                <td>Vpp = 21V (tension d'&eacute;criture)</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+
+                <td>E/S (donn&eacute;es)</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+
+                <td>Fusible</td>
+              </tr>
+            </table>
+            <br>
+
+            <div align="center">
+              <u><b>Brochage de la puce</b></u>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_3"></a>La programmation</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comme nous en avons l'habitude dans cette
+            rubrique depuis quelques temps, nous allons cr&eacute;er notre propre logiciel. Bien s&ucirc;r,
+            celui-ci reste tr&egrave;s simpliste mais il ne demande qu'&agrave; &ecirc;tre am&eacute;liorer
+            pas vos soins. Nous allons utiliser Visual Basic qui se trouve &ecirc;tre l'outil parfait pour
+            cette application. N'oublions pas la dll inpout.dll qui nous est maintenant famili&egrave;re. En
+            regardant les broches de la puce, nous voyons qu'il y a trois signaux d'entr&eacute;e de
+            contr&ocirc;le :<br>
+            <br>
+
+            <ul>
+              <li>Read/Write = 1 la puce est en mode &eacute;criture, Read/Write = 0 la puce est en mode
+              lecture</li>
+
+              <li>Horloge : sert &agrave; faire avancer le compteur d'adresse sur un front montant</li>
+
+              <li>Reset = 0 permet de faire remettre le compteur d'adresse &agrave; z&eacute;ro sur un front
+              descendant de l'horloge, Reset = 1 fonctionnement normal de la puce</li>
+            </ul>
+            <br>
+            <br>
+            A cela s'ajoute bien s&ucirc;r la broche de donn&eacute;es qui, en cas de mode lecture, contient
+            la donn&eacute;e situ&eacute;e &agrave; l'adresse m&eacute;moire courante. Le principe, est le
+            suivant : apr&egrave;s une initialisation, nous allons faire d&eacute;filer un &agrave; un les
+            bits de la m&eacute;moire en incr&eacute;mentant l'adresse. Reportez-vous au chronogramme
+            ci-contre.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours7/chrono.jpg"><br>
+        <b><u>Les chronogrammes pour une lecture de la m&eacute;moire.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'initialisation est tr&egrave;s importante : en
+            effet, si le compteur m&eacute;moire n'est pas bien initalis&eacute; vous ne pourrez jamais avoir
+            toutes les informations. De plus, seule une phase d'initialisation permettra de fixer les
+            potentiels sur les broches de la puce. Pour remettre le compteur &agrave; z&eacute;ro, il faut
+            cr&eacute;er un front descendant sur l'horloge lorsque la broche Reset est &agrave; z&eacute;ro.
+            Voici comment se traduit cet algorithme :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#0000FF"><b>Private</b></font> <font color=
+"#0000FF"><b>Sub</b></font> Reset_Puce()
+    <font color="#009900"><i>' Toutes les broches &agrave; z&eacute;ro</i></font>
+    Out BASEPORT, &amp;H0
+    Delay (20)
+    <font color=
+"#009900"><i>' On initialise le compteur d'adresse en provoquant un front descendant</i></font>
+    Out BASEPORT, &amp;H4 <font color="#009900"><i>' Horloge = 1</i></font>
+    Delay (20)
+    Out BASEPORT, &amp;H0 <font color="#009900"><i>' Horloge = 0</i></font>
+    Delay (20)
+    <font color="#009900"><i>' On termine l'initialisation en remontant le reset</i></font>
+    Out BASEPORT, &amp;H8 <font color="#009900"><i>' reset = 1</i></font>
+<font color="#0000FF"><b>End</b></font> <font color="#0000FF"><b>Sub</b></font>
+</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            Voici l'algorithme proprement dit qui permet de lire les 512 bits de la m&eacute;moire :
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="source">
+<pre>
+<font color="#000000"><font color="#0000FF"><b>Do</b></font>
+        Buffer = Buffer &amp; Int(Inp(STATUS) <font color="#FFC800"><b>And</b></font> &amp;H40) / 64 <font
+color="#009900"><i>' On lit et on stocke la valeur</i></font>
+        Delay (20)
+        Out BASEPORT, Inp(BASEPORT) <font color="#FFC800"><b>Or</b></font> &amp;H4 <font color=
+"#009900"><i>' Horloge = 1 le compteur d'adresse est incr&eacute;ment&eacute;</i></font>
+        Delay (20)
+        Out BASEPORT, Inp(BASEPORT) <font color="#FFC800"><b>And</b></font> &amp;HFB <font color=
+"#009900"><i>' Horloge = 0, la donn&eacute;e est pr&eacute;sente sur la ligne</i></font>
+        Delay (20)
+        i = i + 1
+<font color="#0000FF"><b>Loop</b></font> <font color="#0000FF"><b>While</b></font> i &lt; 512
+</font>
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C'est aussi simple que cela. Apr&egrave;s coup,
+            il est plus simple de regrouper ces bits par octets comme dans notre application (voir la capture
+            ci-contre), et pourquoi pas les afficher en hexad&eacute;cimal, plus simple &agrave; lire. Nous
+            voici maintenant en possession du contenu de la m&eacute;moire de la puce, qui contient des
+            informations tr&egrave;s int&eacute;ressantes.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_4"></a>Les informations de la carte</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les cartes T2G sont un peu plus
+            compliqu&eacute;es que leurs a&icirc;n&eacute;es car elles contiennent des informations plus
+            compl&egrave;tes, notamment sur le cryptage de certaines informations. Il y a beaucoup de bits
+            sans signification et de place libre. N&eacute;anmoins, nous pouvons voir les d&eacute;tails
+            suivants. Les deux premiers octets (octets 0 et 1) nous indiquent le type de carte : nous avons
+            0x8140, ce qui correspond &agrave; une carte T2G. Les bits de poids faible de l'octet 6 ainsi que
+            l'octet 7 nous donnent le nombre d'unit&eacute;s de la carte : nous avons ici 0x005 soit 50
+            unit&eacute;s. De m&ecirc;me, l'octet 12 vaut 0x7F quand la carte n'est pas vide et 0xFF lorsque
+            celle ci est vide. Enfin, int&eacute;ressons-nous au nombre d'unit&eacute;s restantes sur cette
+            carte : pour une T2G de France T&eacute;l&eacute;com, cette information se lit dans les octets 8
+            &agrave; 11. Le proc&eacute;d&eacute; de lecture est un peu particulier. Il s'agit d'un calcul en
+            octal, les octets 8, 9, 10, 11 ont respectivement les poids 512, 64, 8, 1. Le nombre de 1 dans
+            chaque octet repr&eacute;sente le multiple de ces poids. Ainsi, nous avons pour cette carte :
+            0*512 + 0*64 + 7*8 + 1*1 = 57 unit&eacute;s de consomm&eacute;es. Or, le total n'est en
+            r&eacute;alit&eacute; pas 50 comme on pourrait le croire, mais 59. En fait, France
+            T&eacute;l&eacute;com rajoute 9 unit&eacute;s &agrave; la fabrication de la puce pour
+            r&eacute;aliser des tests en usine. Au final, il nous reste donc 59-57 = 2 unit&eacute;s !
+            Beaucoup d'autres choses peuvent encore &ecirc;tre d&eacute;cod&eacute;es et nous vous renvoyons
+            vers les bookmarks et une documentation disponible en bas de cette page.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><img src="images/cours7/teampuce.jpg"><br>
+        <b><u>Et hop ! Les 512 bits d'une carte T2G.</u></b></td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_5"></a>Conclusion</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous esp&eacute;rons que cette petite
+            introduction aux cartes &agrave; puce vous a int&eacute;ress&eacute;, n'h&eacute;sitez pas
+            &agrave; surfer sur Internet en qu&ecirc;tes de montage et d'informations suppl&eacute;mentaires.
+            Nous vous dirigeons vers des livres de r&eacute;f&eacute;rence comme "PC et cartes &agrave; puce"
+            et "Cartes &agrave; puces, initiation et applications" aux &eacute;ditions ETSF qui vous
+            permettra de construire des montages plus &eacute;volu&eacute;s. Bien s&ucirc;r, nous attendons
+            avec impatience vos r&eacute;alisations ou vos id&eacute;es sur ce sujet, comme l'a fait Werner
+            BEROUX (voir dans la partie "contributions" &agrave; l'indexe) ; il pr&eacute;sente un logiciel
+            en C++ plus &eacute;volu&eacute; que celui pr&eacute;sent sur cette page. Allez tout de suite y
+            faire un saut <a href="contribution.htm">ici</a> !<br>
+            <br>
+            Bookmark :<br>
+            <br>
+
+            <ul>
+              <li><a href="http://parodie.com/humpich/" target="_blank">http://parodie.com/humpich/</a></li>
+
+              <li><a href="http://www.basiccard.com" target="_blank">http://www.basiccard.com</a></li>
+
+              <li><a href="http://www.epanorama.net/smartcards.html" target=
+              "_blank">http://www.epanorama.net/smartcards.html</a></li>
+
+              <li><a href="http://www.hut.fi/Misc/Electronics/docs/smartcard/how_chips_work.txt" target=
+              "_blank">http://www.hut.fi/Misc/Electronics/docs/smartcard/how_chips_work.txt</a></li>
+
+              <li><a href="http://perso.wanadoo.fr/telecard/html/an_t2g.htm" target=
+              "_blank">http://perso.wanadoo.fr/telecard/html/an_t2g.htm</a></li>
+
+              <li><a href="http://www.elec.fr.st/" target="_blank">http://www.elec.fr.st/</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title"><a name="_topic_6"></a>T&eacute;l&eacute;chargements</td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div style="text-align:justify;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <ul>
+              <li><a href="downloads/cours7/teampuce.zip">teampuce.zip</a> : Le programme
+              pr&eacute;sent&eacute; ci-dessus, accompagn&eacute; de ses sources (24,1 Ko)</li>
+
+              <li><a href="downloads/cours7/phonecards.zip">phonecards.zip</a> : Une documentation
+              additionnelle qui vous donnera la signification de chaque bit. (20,6 Ko)</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><br>
+        <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p align="center">[ <a href="cours5.htm">Pr&eacute;c&eacute;dent</a> | <a href=
+          "index.htm">Index</a> | Suivant ]</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center"><font color="#9999FF" size="-3"><br>
+        <br>
+         par Anthony Rabine<br>
+        <a href="mailto:arabine@programmationworld.com">arabine@programmationworld.com</a><br>
+        <a href="http://www.programmationworld.com">http://www.programmationworld.com</a><br>
+         Derni&egrave;re mise &agrave; jour: 
+<script type="text/javascript" language="javascript">
+                  document.writeln(document.lastModified.substring(0, 10))
+                
+</script>
+        </font></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
